@@ -15,10 +15,10 @@ const IndexPage = () => {
 			<SEO title="Home" />
 
 			<div
-				className="title-container">
+				className="site-title-container">
 
 				<h1
-					className="title">
+					className="site-title">
 					The Book of Shevon
 					<span
 						id="dot"

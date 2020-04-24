@@ -1,0 +1,49 @@
+#about-page{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.title{
+    font-family: "Old English (Let)";
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    padding: 0.25rem;
+}
+
+h1.title{
+    margin-bottom: 0.5rem !important;
+}
+
+.thicc-line{
+    background: black;
+    height: 2px;
+}
+
+.thicc-line:nth-of-type(1){
+    margin-bottom: 0.25rem;
+}
+
+.thicc-line:nth-of-type(odd){
+    margin-top: 0.25rem;
+}
+
+.thin-line{
+    background: black;
+    height: 1px;
+}
+
+.blog-details{
+    display: flex;
+    justify-content: space-around;
+}
+
+p{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
