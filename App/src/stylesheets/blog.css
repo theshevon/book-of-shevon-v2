@@ -40,10 +40,15 @@ h1.title{
     justify-content: space-around;
 }
 
-p{
+p.detail{
     width: 100%;
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 0;
     font-family: 'Times New Roman', Times, serif;
+}
+
+.blog-posts{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }

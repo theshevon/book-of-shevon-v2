@@ -29,17 +29,31 @@ const IndexPage = () => {
 
 				<div
 					className="links">
-					<a href="mailto:shevonmendis98@gmail.com">
-						<FontAwesomeIcon icon={ faEnvelope }/>
+					<a
+						href="mailto:shevonmendis98@gmail.com">
+						<FontAwesomeIcon
+							icon={ faEnvelope }/>
 					</a>
-					<a href="https://github.com/theshevon" target="_blank">
-						<FontAwesomeIcon icon={ faGithub }/>
+					<a
+						href="https://github.com/theshevon"
+						target="_blank"
+						rel="noopener noreferrer">
+						<FontAwesomeIcon
+							icon={ faGithub }/>
 					</a>
-					<a href="https://www.linkedin.com/in/mendiss" target="_blank">
-						<FontAwesomeIcon icon={ faLinkedin }/>
+					<a
+						href="https://www.linkedin.com/in/mendiss"
+						target="_blank"
+						rel="noopener noreferrer">
+						<FontAwesomeIcon
+							icon={ faLinkedin }/>
 					</a>
-					<a href="https://medium.com/@shevon_mendis" target="_blank">
-						<FontAwesomeIcon icon={ faMedium }/>
+					<a
+						href="https://medium.com/@shevon_mendis"
+						target="_blank"
+						rel="noopener noreferrer">
+						<FontAwesomeIcon
+							icon={ faMedium }/>
 					</a>
 				</div>
 
