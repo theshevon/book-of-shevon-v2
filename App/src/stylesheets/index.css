@@ -1,4 +1,4 @@
-.title-container{
+.site-title-container{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.title{
+.site-title{
     font-family: 'FreeMono', monospace;
     font-size: 3.5rem;
     font-weight: 500;
@@ -18,7 +18,7 @@
     transition-delay: 500ms;
 }
 
-.title #dot{
+.site-title #dot{
     animation: change 1500ms step-end forwards;
 }
 
