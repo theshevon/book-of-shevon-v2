@@ -1,9 +1,10 @@
-import React from "react"
+import React from "react";
 
-import SEO from "../components/seo"
-import "../stylesheets/blog.css"
-import BlogPost from "../components/blogPost"
+import SEO              from "../components/seo";
+import BlogPost         from "../components/BlogPost";
+import BlogPostSkeleton from "../components/BlogPostSkeleton";
 
+import "../stylesheets/blog.css";
 
 class BlogPage extends React.Component {
 
@@ -12,11 +13,12 @@ class BlogPage extends React.Component {
         this.state = {
             date : '',
             posts : [],
-            loading : true
+            loading : false
         }
     }
 
     componentDidMount(){
+
         const currDate = new Date().toDateString()
         let day = currDate.substring(0,3)
         let mm = currDate.substring(4, 7)
@@ -26,19 +28,33 @@ class BlogPage extends React.Component {
         this.setState({ date : `${ day }, ${ dd } ${ mm } ${ yyyy }` })
 
         fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@shevon_mendis")
-        .then(res => res.json())
-        .catch(err => console.log(err))
-        .then(feed => this.setState({ posts : feed.items.filter(item => item.categories.length > 0), loading : false }))
+            .then(res => res.json())
+            .catch(err => console.log(err))
+            .then(feed =>
+                    this.setState({
+                                    posts : feed.items.filter(item =>
+                                        item.categories.length > 0),
+                                    loading : false }))
     }
 
     render() {
 
         const { date, posts, loading } = this.state
 
-        let blog_posts = null;
+        let blog_posts = (
+            <div
+                className="skeleton-blog-posts">
+                <BlogPostSkeleton />
+            </div>
+        );
+
         if (!loading){
             if (posts.length === 0){
-                blog_posts = (<h1> Sorry, no posts have been published yet :(</h1>)
+                blog_posts =
+                    (<h1
+                        className="sorry-msg">
+                        Sorry, no posts have been published yet 😞
+                    </h1>)
             } else{
                 blog_posts = (
                     <div
@@ -66,30 +82,40 @@ class BlogPage extends React.Component {
                 <div
                     className="blog-header">
 
-
                         <h1
-                            className="title">
+                            className="blog-title">
                                 Blog
                         </h1>
 
-                        <div className="thicc-line"></div>
-                        <div className="thin-line"></div>
+                        <div
+                            className="thicc-line">
+                        </div>
+                        <div
+                            className="thin-line">
+                        </div>
 
                         <div
                             className="blog-details">
-                            <p className="detail">NO.{ posts.length }</p>
-                            <p className="detail">{ date }</p>
-                            <p className="detail">F.O.B EDITION</p>
+                            <p
+                                className="detail detail-1">NO.{ posts.length }
+                            </p>
+                            <p
+                                className="detail detail-2">{ date }
+                                </p>
+                            <p
+                                className="detail detail-3">F.O.B EDITION
+                                </p>
                         </div>
 
-                        <div className="thin-line"></div>
-                        <div className="thicc-line"></div>
-
-                        { blog_posts }
-
-
+                        <div
+                            className="thin-line">
+                        </div>
+                        <div
+                            className="thicc-line">
+                        </div>
                 </div>
 
+                { blog_posts }
 
             </div>
         )
