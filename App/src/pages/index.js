@@ -1,21 +1,52 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import "../stylesheets/index.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faGithub, faLinkedin, faMedium } from '@fortawesome/free-brands-svg-icons'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = () => {
+
+	return (
+
+		<div>
+
+			<SEO title="Home" />
+
+			<div
+				className="title-container">
+
+				<h1
+					className="title">
+					The Book of Shevon
+					<span
+						id="dot"
+						style={{color:"white"}}>
+						.
+					</span>
+				</h1>
+
+				<div
+					className="links">
+					<a href="mailto:shevonmendis98@gmail.com">
+						<FontAwesomeIcon icon={ faEnvelope }/>
+					</a>
+					<a href="https://github.com/theshevon" target="_blank">
+						<FontAwesomeIcon icon={ faGithub }/>
+					</a>
+					<a href="https://www.linkedin.com/in/mendiss" target="_blank">
+						<FontAwesomeIcon icon={ faLinkedin }/>
+					</a>
+					<a href="https://medium.com/@shevon_mendis" target="_blank">
+						<FontAwesomeIcon icon={ faMedium }/>
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+	)
+}
 
 export default IndexPage
