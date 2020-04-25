@@ -11,10 +11,10 @@ const CodeRepo = (props) => {
         <div
             className="repo-tech-stack-container">
 
-            <h6
+            <h4
                 className="repo-subheading">
                 Tech Stack
-            </h6>
+            </h4>
 
             <ul
                 className="repo-tech-stack">
@@ -42,10 +42,10 @@ const CodeRepo = (props) => {
             <div
                 className="repo-contributors-container">
 
-                <h6
+                <h4
                     className="repo-subheading">
                     Other Contributors
-                </h6>
+                </h4>
 
                 <ul
                     className="repo-contributors">
@@ -82,10 +82,10 @@ const CodeRepo = (props) => {
                 alt={`${title} cover`}
                 className="repo-img"/>
 
-            <h6
+            <h4
                 className="repo-subheading">
                 Description
-            </h6>
+            </h4>
 
             <p
                 className="repo-desc">
