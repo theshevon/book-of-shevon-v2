@@ -33,7 +33,8 @@ button:focus{
 }
 
 .sel-lang{
-    font-weight: bold
+    font-weight: bold;
+    cursor: default;
 }
 
 .lang{
