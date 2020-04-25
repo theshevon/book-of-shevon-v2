@@ -103,7 +103,7 @@ const CodeRepo = (props) => {
                     href= { link }
                     target="_blank"
                     rel="noopener noreferrer">
-                    Link
+                    View Repo
                 </a>
             </button>
 

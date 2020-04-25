@@ -8,6 +8,7 @@
 
 .repo-title{
     text-align: center;
+    font-weight: 800;
 }
 
 .repo-tech-stack, .repo-contributors {
@@ -41,7 +42,7 @@
 }
 
 .gatsbyjs{
-    background: rgb(255, 227, 167);
+    background: rgb(190, 247, 255);
 }
 
 .html{
@@ -97,23 +98,47 @@
 }
 
 .contributor{
-    padding: 5px;
-    border: 1px solid rgb(117, 211, 83);
+    padding: 4px 10px;
+    border: 2px solid gold;
     border-radius: 4px;
     transition: 400ms;
 }
 
 .contributor:hover{
-    background-color: rgb(117, 211, 83);
+    background-color: gold;
 }
 
 .contributor a{
     transition: 400ms;
-    color: rgb(117, 211, 83);
-    font-weight: bold;
+    color: #3e3e3e;
+    font-size: 0.85rem;
+    font-weight: bolder;
     text-decoration: none;
 }
 
 .contributor:hover a{
     color: white;
 }
+
+.repo-btn{
+    border: 2px solid rgb(68, 184, 84);
+    border-radius: 5px;
+    padding: 4px 10px;
+    transition: 400ms;
+}
+
+.repo-btn a{
+    color: #3e3e3e;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 400ms;
+}
+
+.repo-btn:hover{
+    background-color: rgb(68, 184, 84);
+}
+
+.repo-btn:hover a{
+    color: white;
+}
+
