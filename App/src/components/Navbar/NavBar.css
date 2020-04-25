@@ -57,7 +57,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background: rgba(58, 58, 58, 80%);
+    background: rgba(40, 40, 40, 0.8);
     backdrop-filter: blur(3px);
     height: 100px;
     padding-bottom: 10px;
@@ -76,17 +76,27 @@
     margin-bottom: 0;
 }
 
-.menu ul li a{
+.nav-link{
     font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
     color: white;
     font-weight: 400;
     font-size: 0.85rem;
     text-decoration: none;
+    position: relative;
 }
 
-.menu ul li a:hover{
-    color: white;
+.nav-link:hover:after{
+    position: absolute;
+    content: '';
+    height: 5px;
+    width: 5px;
+    bottom: -7.5px;
+    background: white;
+    border-radius: 50%;
+    right: 50%;
+    transform: translateX(50%)
 }
+
 
 @media(max-width: 576px){
 

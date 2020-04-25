@@ -13,12 +13,12 @@ button:focus{
     padding: 0.4rem 1rem;
     color: white;
     backdrop-filter: blur(3px);
-    background: rgba(58, 58, 58, 80%);
+    background: rgba(40, 40, 40, 80%);
 }
 
 .lang-btn:hover{
     background: rgb(228, 228, 228);
-    color: #3a3a3a;
+    color: rgba(40, 40, 40);;
 }
 
 .lang-btn ul{
@@ -56,5 +56,5 @@ button:focus{
 }
 
 .lang-btn:hover .lang:hover:after{
-    background: #3a3a3a;
+    background: rgba(40, 40, 40, 80%);
 }

@@ -8,7 +8,7 @@ import LangButton   from './MenuButtons/LangButton';
 // custom css
 import "./NavBar.css";
 
-class NavBar extends Component {
+class NavBar extends React.Component {
 
     render(){
 
@@ -74,7 +74,8 @@ class NavBar extends Component {
                                 <li
                                     key={ index }>
                                     <a
-                                        href={ link }>
+                                        href={ link }
+                                        className="nav-link">
                                         { link.toUpperCase() }
                                     </a>
                                 </li>

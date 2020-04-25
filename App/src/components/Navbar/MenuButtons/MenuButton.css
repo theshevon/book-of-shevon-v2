@@ -14,12 +14,12 @@ button:focus{
     padding: 0.4rem 0.8rem;
     color: white;
     backdrop-filter: blur(3px);
-    background: rgba(58, 58, 58, 80%);
+    background: rgba(40, 40, 40, 80%);;
 }
 
 .menu-btn:hover{
-    background: white;
-    color: #3a3a3a;
+    background: rgb(228, 228, 228);
+    color: rgb(40, 40, 40);
     cursor: pointer;
 }
 
