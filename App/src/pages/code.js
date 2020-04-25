@@ -8,7 +8,7 @@ const CodePage = () => {
     return (
 
         <div
-            class="code-page">
+            className="code-page">
 
             <div
                 className="code-repos">

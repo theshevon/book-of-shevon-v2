@@ -53,7 +53,8 @@ const CodeRepo = (props) => {
                     { other_contributors.map((contributor, index) => (
 
                         <li
-                            key={ index }>
+                            key={ index }
+                            className="contributor">
                             <a
                                 href={ contributor.github }>
                                 { contributor.name }
