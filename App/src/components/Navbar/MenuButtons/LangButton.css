@@ -10,7 +10,7 @@ button:focus{
     box-sizing: border-box;
     transition: 0.4s;
     margin: 0px 5px !important;
-    padding: 0.4rem 0.8rem;
+    padding: 0.4rem 1rem;
     color: white;
     backdrop-filter: blur(3px);
     background: rgba(58, 58, 58, 80%);
@@ -27,16 +27,34 @@ button:focus{
     margin: 0;
 }
 
-.lang, .selected-lang{
+.lang, .sel-lang{
     font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
     margin-bottom: 0;
 }
 
-.lang:hover{
-    cursor: pointer;
-    text-decoration: underline;
+.sel-lang{
+    font-weight: bold
 }
 
-.selected-lang{
-    text-decoration: underline;
+.lang{
+    position: relative;
+}
+
+.lang:hover{
+    cursor: pointer;
+}
+
+.lang:hover:after {
+    position: absolute;
+    content: '';
+    background: white;
+    height: 2px;
+    width: 33px;
+    bottom: 0px;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.lang-btn:hover .lang:hover:after{
+    background: #3a3a3a;
 }

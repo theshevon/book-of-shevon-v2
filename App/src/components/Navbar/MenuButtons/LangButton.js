@@ -27,7 +27,7 @@ class LangButton extends Component {
                 { this.langs.map((lang, index) => (
                     <p
                         key={index}
-                        className={lang.id === this.state.lang ? "selected-lang" : "lang"}
+                        className={lang.id === this.state.lang ? "sel-lang" : "lang"}
                         onClick={ () => this.setLang(lang.id) }>
                         { lang.sym }
                     </p>

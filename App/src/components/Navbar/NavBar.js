@@ -75,7 +75,7 @@ class NavBar extends Component {
                                     key={ index }>
                                     <a
                                         href={ link }>
-                                        { link }
+                                        { link.toUpperCase() }
                                     </a>
                                 </li>
                             ))}
