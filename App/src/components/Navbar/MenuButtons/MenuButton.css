@@ -1,0 +1,25 @@
+button:focus{
+    outline: none !important;
+}
+
+.menu-btn {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+    background: none;
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 5px;
+    min-width: 115px !important;
+    box-sizing: border-box;
+    transition: 0.4s;
+    margin: 0px 5px !important;
+    padding: 0.4rem 0.8rem;
+    color: white;
+    backdrop-filter: blur(3px);
+    background: rgba(58, 58, 58, 80%);
+}
+
+.menu-btn:hover{
+    background: white;
+    color: #3a3a3a;
+    cursor: pointer;
+}
+

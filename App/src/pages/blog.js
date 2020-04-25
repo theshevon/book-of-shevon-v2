@@ -1,6 +1,7 @@
 import React from "react";
 
 import SEO              from "../components/seo";
+import Layout           from "../components/layout";
 import BlogPost         from "../components/BlogPost";
 import BlogPostSkeleton from "../components/BlogPostSkeleton";
 
@@ -74,7 +75,7 @@ class BlogPage extends React.Component {
 
         return (
 
-            <div
+            <Layout
                 id="about-page">
 
                 <SEO title="About" />
@@ -117,7 +118,7 @@ class BlogPage extends React.Component {
 
                 { blog_posts }
 
-            </div>
+            </Layout>
         )
     }
 }

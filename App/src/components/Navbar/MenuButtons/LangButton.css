@@ -1,0 +1,42 @@
+button:focus{
+    outline: none !important;
+}
+
+.lang-btn{
+    background: none;
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 5px;
+    min-width: 115px !important;
+    box-sizing: border-box;
+    transition: 0.4s;
+    margin: 0px 5px !important;
+    padding: 0.4rem 0.8rem;
+    color: white;
+    backdrop-filter: blur(3px);
+    background: rgba(58, 58, 58, 80%);
+}
+
+.lang-btn:hover{
+    background: rgb(228, 228, 228);
+    color: #3a3a3a;
+}
+
+.lang-btn ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.lang, .selected-lang{
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+    margin-bottom: 0;
+}
+
+.lang:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.selected-lang{
+    text-decoration: underline;
+}

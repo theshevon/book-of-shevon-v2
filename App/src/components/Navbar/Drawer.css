@@ -1,0 +1,75 @@
+.drawer{
+    background: white !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.045);
+    /* z-index: 50; */
+    position: fixed;
+    left: 0 !important;
+    transition: transform 0.3s ease-out;
+}
+
+.bottom-drawer{
+    height: 98px;
+    width: 100%;
+    padding: 0 20%;
+}
+
+.side-drawer{
+    height: 100%;
+    position: fixed;
+    width: 400px;
+    transform: translateX(-100%);
+}
+
+.bottom-drawer-open{
+    transform: translateY(0);
+}
+
+.side-drawer.open{
+    transform: translateX(0);
+}
+
+.drawer ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+}
+
+.drawer ul li a{
+    text-decoration: none !important;
+    color: gray;
+    font-weight: 400;
+    transition: 300ms;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+}
+
+.drawer ul li a:hover,
+.drawer ul li a:active{
+    color: #3a3a3a;
+}
+
+.bottom-drawer ul{
+    padding-top: 67.5px;
+    padding-bottom: 80px;
+}
+
+.side-drawer ul{
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.2rem;
+}
+
+.side-drawer li{
+    margin: 0.5rem 0;
+}
+
+.side-drawer a:hover,
+.side-drawer a:active {
+    color: orange;
+}
+
+.side-drawer a{
+    color: orange;
+    text-decoration: none;
+}

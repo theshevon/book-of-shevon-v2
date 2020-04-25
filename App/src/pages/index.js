@@ -1,5 +1,6 @@
 import React from "react"
 
+import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../stylesheets/index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,7 +11,7 @@ const IndexPage = () => {
 
 	return (
 
-		<div>
+		<Layout>
 
 			<SEO title="Home" />
 
@@ -59,7 +60,7 @@ const IndexPage = () => {
 
 			</div>
 
-		</div>
+		</Layout>
 	)
 }
 
