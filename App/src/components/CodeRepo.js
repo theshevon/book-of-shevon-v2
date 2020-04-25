@@ -22,7 +22,8 @@ const CodeRepo = (props) => {
                 { stack.map((tech, index) => (
 
                     <li
-                        key={ index }>
+                        key={ index }
+                        className={ `capsule ${ tech.toLowerCase().replace('.', '').replace('#', "sharp")}` }>
                         { tech }
                     </li>
 

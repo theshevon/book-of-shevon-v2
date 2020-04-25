@@ -11,12 +11,11 @@ const CodePage = () => {
 
             <div
                 className="code-repos">
-
                 <CodeRepo
                     title="Project"
                     imgSrc={ img }
-                    desc="this is a project I did"
-                    stack={ ["React.js", "GraphQL"] }
+                    desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
+                    stack={ ["React.js", "GraphQL", "Python", "MongoDB", "Firebase", "HTML", "CSS", "Javascript", "Node.js", "C", "C#", "Haskell", "Prolog", "Java"] }
                     other_contributors={ [{ name: "John Smith", github: "a.com"}, { name : "Smith John", github: "b.com" }] }
                     link={ "google.com.au" }/>
                 <CodeRepo
