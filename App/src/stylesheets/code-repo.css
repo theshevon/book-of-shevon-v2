@@ -1,14 +1,33 @@
 .code-repo{
-    padding: 5%;
-    border: 2px solid black;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    border-radius: 4px
+}
+
+.code-repo{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
 }
 
 .repo-title{
     text-align: center;
-    font-weight: 800;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.repo-img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.repo-desc{
+    text-align: justify;
+    font-size: .85rem;
+    margin-bottom: 0.8rem;
 }
 
 .repo-tech-stack, .repo-contributors {
@@ -17,6 +36,7 @@
     justify-content: left;
     flex-wrap: wrap;
     margin-left: 0;
+    margin-bottom: 0;
 }
 
 .repo-tech-stack li, .repo-contributors li{
@@ -28,6 +48,14 @@
     width: 100%;
 }
 
+.repo-tech-stack-container, .repo-contributors-container{
+    margin-bottom: 0.8rem;
+}
+
+.repo-subheading{
+    margin-bottom: 0.75rem;
+}
+
 .capsule{
     border-radius: 15px;
     padding-right: 15px;
@@ -35,6 +63,7 @@
     font-size: 0.85rem;
     font-weight: 500;
     text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 .reactjs{
@@ -70,11 +99,11 @@
 }
 
 .firebase{
-    background: #ff6c6c;
+    background: #ff7878;
 }
 
 .nodejs{
-    background: #ff79a6;
+    background: #ff87af;
 }
 
 .haskell{
@@ -97,10 +126,12 @@
     background: #D1F7C4;
 }
 
+.unity{
+    background: rgb(128, 193, 255);
+}
+
 .contributor{
-    padding: 4px 10px;
-    border: 2px solid gold;
-    border-radius: 4px;
+    background-color: #ececec;
     transition: 400ms;
 }
 
@@ -117,18 +148,19 @@
 }
 
 .contributor:hover a{
-    color: white;
+    color: black;
 }
 
 .repo-btn{
     border: 2px solid rgb(68, 184, 84);
+    background: rgb(68, 184, 84);
     border-radius: 5px;
     padding: 4px 10px;
     transition: 400ms;
 }
 
 .repo-btn a{
-    color: #3e3e3e;
+    color: white;
     font-weight: bold;
     text-decoration: none;
     transition: 400ms;
@@ -142,3 +174,17 @@
     color: white;
 }
 
+@media(min-width: 576px){
+
+    .code-repo{
+        width: 30%;
+    }
+
+    .repo-btn{
+        background: white;
+    }
+
+    .repo-btn a{
+        color: #3e3e3e;
+    }
+}

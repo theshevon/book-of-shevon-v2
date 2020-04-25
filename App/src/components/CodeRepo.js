@@ -54,7 +54,7 @@ const CodeRepo = (props) => {
 
                         <li
                             key={ index }
-                            className="contributor">
+                            className="contributor capsule">
                             <a
                                 href={ contributor.github }>
                                 { contributor.name }
@@ -73,10 +73,10 @@ const CodeRepo = (props) => {
         <div
             className="code-repo">
 
-            <h3
+            <h2
                 className="repo-title">
                 { title }
-            </h3>
+            </h2>
 
             <img
                 src={ imgSrc }
