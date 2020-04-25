@@ -18,6 +18,13 @@
     margin-bottom: 0.75rem;
 }
 
+.repo-title::after{
+    content: '';
+    height: 2px;
+    width: 10px;
+    background: black;
+}
+
 .repo-img{
     width: 100%;
     object-fit: cover;
@@ -28,6 +35,7 @@
     text-align: justify;
     font-size: .85rem;
     margin-bottom: 0.8rem;
+    line-height: 1.2rem;
 }
 
 .repo-tech-stack, .repo-contributors {
