@@ -75,48 +75,52 @@ class BlogPage extends React.Component {
 
         return (
 
-            <Layout
-                id="about-page">
-
-                <SEO title="About" />
+            <Layout>
 
                 <div
-                    className="blog-header">
+                    className="blog-page">
 
-                        <h1
-                            className="blog-title">
-                                Blog
-                        </h1>
+                    <SEO title="Blog" />
 
-                        <div
-                            className="thicc-line">
-                        </div>
-                        <div
-                            className="thin-line">
-                        </div>
+                    <div
+                        className="blog-header">
 
-                        <div
-                            className="blog-details">
-                            <p
-                                className="detail detail-1">NO.{ posts.length }
-                            </p>
-                            <p
-                                className="detail detail-2">{ date }
+                            <h1
+                                className="blog-title">
+                                    Blog
+                            </h1>
+
+                            <div
+                                className="thicc-line">
+                            </div>
+                            <div
+                                className="thin-line">
+                            </div>
+
+                            <div
+                                className="blog-details">
+                                <p
+                                    className="detail detail-1">NO.{ posts.length }
                                 </p>
-                            <p
-                                className="detail detail-3">F.O.B EDITION
-                                </p>
-                        </div>
+                                <p
+                                    className="detail detail-2">{ date }
+                                    </p>
+                                <p
+                                    className="detail detail-3">F.O.B EDITION
+                                    </p>
+                            </div>
 
-                        <div
-                            className="thin-line">
-                        </div>
-                        <div
-                            className="thicc-line">
-                        </div>
+                            <div
+                                className="thin-line">
+                            </div>
+                            <div
+                                className="thicc-line">
+                            </div>
+                    </div>
+
+                    { blog_posts }
+
                 </div>
-
-                { blog_posts }
 
             </Layout>
         )

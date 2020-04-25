@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Gravitas+One&display=swap');
 
-#about-page{
+.blog-page{
     overflow-y: auto;
 }
 
@@ -84,7 +84,7 @@
 }
 
 @media(min-width: 576px){
-    #about-page{
+    .blog-page{
         margin-left: 10%;
         margin-right: 10%;
         border-right: 1px solid #F5F5F5;
