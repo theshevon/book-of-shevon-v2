@@ -14,7 +14,7 @@ class BlogPage extends React.Component {
         this.state = {
             date : '',
             posts : [],
-            loading : false
+            loading : true
         }
     }
 
@@ -54,7 +54,12 @@ class BlogPage extends React.Component {
                 blog_posts =
                     (<h1
                         className="sorry-msg">
-                        Sorry, no posts have been published yet 😞
+                        Sorry, no posts have been published yet&nbsp;
+                        <span
+                            role="img"
+                            aria-label="jsx-a11y/accessible-emoji">
+                            😞
+                        </span>
                     </h1>)
             } else{
                 blog_posts = (

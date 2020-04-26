@@ -12,7 +12,8 @@ const MenuButton = (props) => {
     return (
         <button
             className={ classes }
-            onClick={ action }>
+            onClick={ action }
+            onKeyDown={ action }>
             { text }
         </button>
     );

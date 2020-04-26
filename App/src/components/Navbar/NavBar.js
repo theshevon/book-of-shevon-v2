@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 // custom components
 import ToggleButton from './ToggleButton';
@@ -12,7 +12,7 @@ class NavBar extends React.Component {
 
     render(){
 
-        const { active, links, menuOpen } = this.props;
+        const { active, showOptions, links, menuOpen } = this.props;
 
         return (
 
@@ -20,7 +20,7 @@ class NavBar extends React.Component {
 
                 {/* Default menu showing only the menu options */}
                 <div
-                    className="navbar">
+                    className={ showOptions ? "navbar show" : "navbar hide" }>
 
                     <nav
                         className="navbar_options">
@@ -64,7 +64,7 @@ class NavBar extends React.Component {
 
                 {/* Drawer that shows all the navlinks */}
                 <div
-                    className={ menuOpen ? "menu-wrapper-open" : "menu-wrapper" }>
+                    className={ menuOpen && showOptions ? "menu-wrapper-open" : "menu-wrapper" }>
 
                     <div
                         className="menu">
