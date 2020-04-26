@@ -97,14 +97,6 @@
     transform: translateX(50%)
 }
 
-.navbar.hide{
-    transform: translateY(-120px);
-}
-
-.navbar.show{
-    transform: translateY(0);
-}
-
 @media(max-width: 576px){
 
     .menu-wrapper-open{
@@ -132,6 +124,24 @@
         display: none !important;
     }
 
+    .nav-link{
+        font-weight: 600;
+    }
+
+}
+
+@media(min-width: 576px){
+    .toggle-button{
+        display: none;
+    }
+
+    .navbar.hide{
+        transform: translateY(-120px);
+    }
+
+    .navbar.show{
+        transform: translateY(0);
+    }
 }
 
 

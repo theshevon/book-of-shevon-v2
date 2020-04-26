@@ -8,7 +8,8 @@
     border: none;
     padding: 0.5rem 0;
     box-sizing: border-box;
-    margin-right: 30px;
+    right: 25px;
+    position: absolute;
 }
 
 .toggle-button:focus {
@@ -24,7 +25,7 @@
 .line:after,
 .line:before,
 .line div {
-  background: #fff;
+  background: #3a3a3a;
   border-radius: 3px;
   content: '';
   display: block;
@@ -38,10 +39,12 @@
 }
 
 .line.active:before {
+    background: white;
     transform: translateY(5px) rotate(135deg) scale(0.75);
 }
 
 .line.active:after {
+    background: white;
     transform: translateY(-5px) rotate(-135deg) scale(0.75);
 }
 
