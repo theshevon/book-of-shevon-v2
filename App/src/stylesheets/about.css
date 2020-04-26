@@ -1,8 +1,5 @@
 .about-page{
-    margin: 200px 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 120px 25%;
     font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
 }
 
@@ -11,4 +8,47 @@
     width: auto;
     border-radius: 50%;
     left: 50%;
+}
+
+#profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section{
+    width: 100%;
+}
+
+section h4{
+    text-align: center;
+}
+
+.subheading{
+    text-transform: uppercase;
+}
+
+.skills{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.skill{
+    border-radius: 5px;
+    padding: 4px 8px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.skill.proficient{
+    background: rgb(255, 119, 153);
+}
+
+.skill.familiar{
+    background: rgb(211, 145, 255);
 }
