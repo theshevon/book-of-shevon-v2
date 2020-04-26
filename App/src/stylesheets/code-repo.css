@@ -74,6 +74,10 @@
     margin-bottom: 0.5rem;
 }
 
+.capsule:hover{
+    cursor: default;
+}
+
 .reactjs{
     background: #FEDCE5;
 }
@@ -165,10 +169,7 @@
     border-radius: 5px;
     padding: 4px 10px;
     transition: 400ms;
-}
-
-.repo-btn a{
-    color: white;
+    color: #3e3e3e;
     font-weight: bold;
     text-decoration: none;
     transition: 400ms;
@@ -176,9 +177,6 @@
 
 .repo-btn:hover{
     background-color: rgb(68, 184, 84);
-}
-
-.repo-btn:hover a{
     color: white;
 }
 

@@ -97,15 +97,14 @@ const CodeRepo = (props) => {
 
             { contributors }
 
-            <button
+
+            <a
+                href= { link }
+                target="_blank"
+                rel="noopener noreferrer"
                 className="repo-btn">
-                <a
-                    href= { link }
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    View Repo
-                </a>
-            </button>
+                View Repo
+            </a>
 
         </div>
     )
