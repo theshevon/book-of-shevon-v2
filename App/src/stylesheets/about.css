@@ -1,5 +1,7 @@
 .about-page{
-    margin: 120px 25%;
+    margin: 100px 10%;
+    padding: 50px 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
     font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
 }
 
@@ -8,6 +10,15 @@
     width: auto;
     border-radius: 50%;
     left: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #D4AF37;
+    border-color: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
+    border-color: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #D4AF37), color-stop(100%, #C5A028));
+    border-color: -webkit-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
+    border-color: -moz-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
+    border-color: -o-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
+    border-color: -ms-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
 }
 
 #profile{
