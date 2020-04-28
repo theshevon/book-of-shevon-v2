@@ -9,10 +9,6 @@ import 'aos/dist/aos.css'
 
 class AboutPage extends React.Component {
 
-    constructor(props){
-        super(props);
-    }
-
     componentDidMount(){
         AOS.init({
             duration: 1500
@@ -31,7 +27,7 @@ class AboutPage extends React.Component {
                 { this.proficientSkills.map((skill, index) => (
                     <li
                         key={ index}
-                        className="capsule proficient">
+                        className="skill capsule proficient">
                         { skill }
                     </li>
 
@@ -45,7 +41,7 @@ class AboutPage extends React.Component {
                 { this.familiarSkills.map((skill, index) => (
                     <li
                         key={ index}
-                        className="capsule familiar">
+                        className="skill capsule familiar">
                         { skill }
                     </li>
 
@@ -58,7 +54,7 @@ class AboutPage extends React.Component {
             <Layout>
 
                 <div
-                    className="capsule about-page">
+                    className="about-page">
 
                     <section
                         id="profile">
@@ -80,20 +76,28 @@ class AboutPage extends React.Component {
                         id="education"
                         data-aos="fade-up">
 
-                        <h4
-                            class="subheading">
+                        <h3
+                            class="subheading-1">
                             EDUCATION
-                        </h4>
+                        </h3>
 
                         <ul>
                             <li>
-                                Bachelor of Science, The University of Melbourne Feb 2017 - Dec 2019
-                            </li>
-                            <li>
-                                Major: Computing & Software Systems
-                            </li>
-                            <li>
-                                Weighted Average Mark: 80.583 (H1)
+                                <span className="subtext-1">
+                                    Bachelor of Science, The University of Melbourne
+                                </span>
+                                <ul>
+                                    <li>
+                                        <span className="subtext-2">
+                                            <strong>Major:</strong> Computing & Software Systems
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span className="subtext-2">
+                                            <strong>Weighted Average Mark:</strong> 80.583 (H1)
+                                        </span>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </section>
@@ -102,10 +106,10 @@ class AboutPage extends React.Component {
                         id="experience"
                         data-aos="fade-up">
 
-                        <h4
-                            class="subheading">
+                        <h3
+                            class="subheading-1">
                             EXPERIENCE
-                        </h4>
+                        </h3>
 
                         <ul>
                             <li>
@@ -149,27 +153,23 @@ class AboutPage extends React.Component {
                         id="skills"
                         data-aos="fade-up">
 
-                        <h4
-                            className="subheading">
+                        <h3
+                            className="subheading-1">
                             TECHNICAL SKILLS
-                        </h4>
+                        </h3>
 
-                        <ul>
+                        <h5>
+                            Proficient with:
+                        </h5>
 
-                            <li>
-                                Proficient with:
+                        { proficientSkills }
 
-                                { proficientSkills }
+                        <h5>
+                            Familiar with:
+                        </h5>
 
-                            </li>
+                        { familiarSkills }
 
-                            <li>
-                                Familiar with:
-
-                                { familiarSkills }
-
-                            </li>
-                        </ul>
                     </section>
 
                 </div>

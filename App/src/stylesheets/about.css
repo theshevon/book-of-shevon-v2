@@ -52,11 +52,11 @@ section{
     margin-bottom: 50px;
 }
 
-section h4{
+section h3{
     text-align: center;
 }
 
-.subheading{
+.subheading-1{
     text-transform: uppercase;
 }
 
@@ -67,20 +67,42 @@ section h4{
     margin: 0;
 }
 
-.skill{
-    border-radius: 5px;
-    padding: 4px 8px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    box-sizing: border-box;
-    font-size: 0.8rem;
+.capsule{
+    border-radius: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 0.85rem;
     font-weight: 500;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
 }
 
-.skill.proficient{
-    background: rgb(255, 119, 153);
+.skill{
+    margin-right: 5px;
 }
 
-.skill.familiar{
-    background: rgb(211, 145, 255);
+.capsule.proficient{
+    background: #cbd4db;
+    background: -webkit-linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
+    background: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
+}
+
+.capsule.familiar, .capsule.proficient{
+    background: #d7dde2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #eef2f3, #d7dde2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #eef2f3, #d7dde2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.subtext-2{
+    font-size: 0.9rem;
+}
+
+.subtext-1{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+li{
+    margin-bottom: 0.3rem;
 }
