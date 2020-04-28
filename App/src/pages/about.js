@@ -295,7 +295,7 @@ class AboutPage extends React.Component {
                                     <p className="position">
                                         Publicity Sub-Committee Member
                                     </p>
-                                    <a className="company" href="https://www.umisc.info/" target="_blank" rel="noopener noreferrer">
+                                    <a className="company" href="https://cissa.org.au/" target="_blank" rel="noopener noreferrer">
                                         CISSA (Computing and Information Systems Students Association)
                                     </a>
                                     <p className="duration">
