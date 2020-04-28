@@ -31,7 +31,7 @@
     margin-bottom: 0.5rem;
 }
 
-#profile .underline{
+.underline{
     height: 3px;
     background: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
     animation: stretch 1.5s ease 1;
@@ -49,7 +49,7 @@
 
 section{
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 section h3{
@@ -58,10 +58,11 @@ section h3{
 
 .subheading-1{
     text-transform: uppercase;
+    margin-bottom: 2rem;
 }
 
 .skills{
-    list-style-type: none;
+    list-style-type: none !important;
     display: flex;
     flex-wrap: wrap;
     margin: 1rem 0;
@@ -117,3 +118,37 @@ p.subtext-2 ~ ul{
 li{
     margin-bottom: 1rem;
 }
+
+.position-meta-info{
+    margin-bottom: 0.5rem;
+}
+.position-meta-info p{
+    margin-bottom: 0;
+}
+
+.position{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.company, .duration{
+    font-size: 0.9rem;
+}
+
+.duration{
+    color: #7c7c7c
+}
+
+/* section > ul{
+    list-style: none;
+}
+
+section > ul > li:before{
+    content: "\2022";
+    color: #D4AF37;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+} */
