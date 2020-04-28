@@ -171,15 +171,17 @@ class AboutPage extends React.Component {
                             TECHNICAL SKILLS
                         </h3>
 
-                        <h5>
+                        <p
+                            className="subtext-1">
                             Proficient with:
-                        </h5>
+                        </p>
 
                         { proficientSkills }
 
-                        <h5>
+                        <p
+                            className="subtext-1">
                             Familiar with:
-                        </h5>
+                        </p>
 
                         { familiarSkills }
 
