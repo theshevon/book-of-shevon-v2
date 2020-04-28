@@ -77,25 +77,27 @@ class AboutPage extends React.Component {
                         data-aos="fade-up">
 
                         <h3
-                            class="subheading-1">
+                            className="subheading-1">
                             EDUCATION
                         </h3>
 
                         <ul>
                             <li>
-                                <span className="subtext-1">
+                                <p className="subtext-1">
                                     Bachelor of Science, The University of Melbourne
-                                </span>
+                                </p>
                                 <ul>
-                                    <li>
-                                        <span className="subtext-2">
+                                    <li
+                                        className="list-item-2">
+                                        <p className="subtext-2">
                                             <strong>Major:</strong> Computing & Software Systems
-                                        </span>
+                                        </p>
                                     </li>
-                                    <li>
-                                        <span className="subtext-2">
+                                    <li
+                                        className="list-item-2">
+                                        <p className="subtext-2">
                                             <strong>Weighted Average Mark:</strong> 80.583 (H1)
-                                        </span>
+                                        </p>
                                     </li>
                                 </ul>
                             </li>
@@ -107,44 +109,55 @@ class AboutPage extends React.Component {
                         data-aos="fade-up">
 
                         <h3
-                            class="subheading-1">
+                            className="subheading-1">
                             EXPERIENCE
                         </h3>
 
                         <ul>
                             <li>
-                                <h5>
-                                    Academic Tutor - The University of Melbourne
-                                </h5>
-                                <p>
-                                    Responsibilities include:
-                                    <ul>
-                                        <li>
-                                            Assisting students in learning and understanding programming concepts in Python, both in class (in
-    sizes of 25 - 30) and via Grok monitoring.
-                                        </li>
-                                       <li>
-                                            Marking students' projects and exams.
-                                        </li>
-                                    </ul>
+                                <p className="subtext-1">
+                                    Academic Tutor - Foundations of Computing, The University of Melbourne
                                 </p>
+                                <p className="subtext-2">
+                                    Responsibilities include:
+                                </p>
+                                <ul>
+                                    <li
+                                        className="list-item-2">
+                                        <p className="subtext-2">
+                                            Assisting students in learning and understanding programming concepts in Python, both in class (in sizes of 25 - 30) and via Grok monitoring.
+                                        </p>
+                                    </li>
+                                    <li
+                                        className="list-item-2">
+                                        <p className="subtext-2">
+                                            Marking students' projects and exams.
+                                        </p>
+                                    </li>
+                                </ul>
                             </li>
 
                             <li>
-                                <h5>
-                                    Freelance Web Developer
-                                </h5>
-                                <p>
-                                    Notable work:
-                                    <ul>
-                                        <li>
-                                            Built a website for STM Developments using Wordpress.
-                                        </li>
-                                       <li>
-                                            Contributed to building the website for R.S. Digital, a local startup.
-                                        </li>
-                                    </ul>
+                                <p className="subtext-1">
+                                    Web Developer, Freelance
                                 </p>
+                                <p className="subtext-2">
+                                    Notable work:
+                                </p>
+                                <ul>
+                                    <li
+                                        className="list-item-2">
+                                        <p className="subtext-2">
+                                            Built a website for STM Developments using Wordpress.
+                                        </p>
+                                    </li>
+                                    <li
+                                        className="list-item-2">
+                                        <p className="subtext-2">
+                                            Contributed to building the website for R.S. Digital, a local startup.
+                                        </p>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </section>
