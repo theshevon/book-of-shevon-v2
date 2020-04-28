@@ -17,7 +17,7 @@ class AboutPage extends React.Component {
     }
 
 
-    proficientSkills = ['Python', 'Java', 'HTML', 'CSS', 'JavaScript', 'MySQL', 'Haskell', 'Node.js', 'React / Redux', 'MongoDB', 'Unix / Linux', 'Boostrap', 'Git', 'REST', 'Agile Development (SCRUM)', 'Algorithms']
+    proficientSkills = ['Python', 'C', 'Java', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'React / Redux', 'MongoDB', 'MySQL', 'Haskell', 'Unix / Linux', 'Boostrap', 'Git', 'REST', 'Agile Development (SCRUM)', 'Algorithms']
     familiarSkills = ['Gatsby.js', 'GraphQL', 'Prolog', 'Firebase', 'Swift', 'Wordpress', 'Machine Learning', 'Artificial Intelligence', 'Microservices']
 
     render() {
@@ -259,9 +259,9 @@ class AboutPage extends React.Component {
                                     <p className="position">
                                         General Committee Member
                                     </p>
-                                    <p className="company">
+                                    <a className="company" href="https://www.umisc.info/" target="_blank" rel="noopener noreferrer">
                                         UMISC (University of Melbourne Information Security Club)
-                                    </p>
+                                    </a>
                                     <p className="duration">
                                         Sep 2018 - Sep 2019
                                     </p>
@@ -277,8 +277,7 @@ class AboutPage extends React.Component {
                                     <li
                                         className="list-item-2">
                                         <p className="subtext-2">
-                                            Created and maintained the club's website, and designed all of event
-    posters and other marketing material
+                                            Created and maintained the club's former (and first) website, and designed all of event posters and other marketing material
                                         </p>
                                     </li>
                                     <li
@@ -296,9 +295,9 @@ class AboutPage extends React.Component {
                                     <p className="position">
                                         Publicity Sub-Committee Member
                                     </p>
-                                    <p className="company">
+                                    <a className="company" href="https://www.umisc.info/" target="_blank" rel="noopener noreferrer">
                                         CISSA (Computing and Information Systems Students Association)
-                                    </p>
+                                    </a>
                                     <p className="duration">
                                         Apr 2019 - Oct 2019
                                     </p>

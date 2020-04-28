@@ -10,7 +10,7 @@
     width: auto;
     border-radius: 50%;
     left: 50%;
-    border-width: 5px;
+    border-width: 4px;
     border-style: solid;
     border-color: #D4AF37;
     border-color: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
@@ -59,6 +59,7 @@ section h3{
 .subheading-1{
     text-transform: uppercase;
     margin-bottom: 2rem;
+    font-weight: bold;
 }
 
 .skills{
@@ -127,12 +128,26 @@ li{
 }
 
 .position{
+    color:#C5A028;
     font-weight: bold;
     font-size: 1rem;
 }
 
 .company, .duration{
     font-size: 0.9rem;
+}
+
+.company{
+    color: black;
+    font-weight: 500;
+}
+
+a.company{
+    text-decoration: none;
+}
+
+a.company:hover{
+    text-decoration: underline;
 }
 
 .duration{
