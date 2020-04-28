@@ -1,6 +1,6 @@
 .about-page{
     margin: 100px 10%;
-    padding: 50px 10%;
+    padding: 75px 10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
     font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
 }
@@ -29,6 +29,7 @@
 
 #profile h1{
     margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .underline{
@@ -167,3 +168,10 @@ section > ul > li:before{
     margin-right: 1em;
     margin-top: 1em;
 } */
+
+@media(max-width: 576px){
+    .about-page{
+        margin: 75px 5%;
+        padding: 50px 7.5%;
+    }
+}
