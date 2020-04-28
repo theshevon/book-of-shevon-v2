@@ -1,158 +1,181 @@
 import React from 'react';
+import AOS from 'aos';
 
 import Layout from "../components/layout";
 import photo from "../images/pic.jpg";
 
 import "../stylesheets/about.css";
+import 'aos/dist/aos.css'
 
-const AboutPage = () => {
+class AboutPage extends React.Component {
 
-    let proficientSkills = ['Python', 'Java', 'HTML', 'CSS', 'JavaScript', 'MySQL', 'Haskell', 'Node.js', 'React / Redux', 'MongoDB', 'Unix / Linux', 'Boostrap', 'Git', 'REST', 'Agile Development (SCRUM)', 'Algorithms']
-    let familiarSkills = ['Gatsby.js', 'GraphQL', 'Prolog', 'Firebase', 'Swift', 'Wordpress', 'Machine Learning', 'Artificial Intelligence', 'Microservices']
+    constructor(props){
+        super(props);
+    }
 
-    proficientSkills = (
-        <ul
-            className="skills">
-            { proficientSkills.map((skill, index) => (
-                <li
-                    key={ index}
-                    className="skill proficient">
-                    { skill }
-                </li>
+    componentDidMount(){
+        AOS.init({
+            duration: 1500
+        });
+    }
 
-            ))}
-        </ul>
-    )
 
-    familiarSkills = (
-        <ul
-            className="skills">
-            { familiarSkills.map((skill, index) => (
-                <li
-                    key={ index}
-                    className="skill familiar">
-                    { skill }
-                </li>
+    proficientSkills = ['Python', 'Java', 'HTML', 'CSS', 'JavaScript', 'MySQL', 'Haskell', 'Node.js', 'React / Redux', 'MongoDB', 'Unix / Linux', 'Boostrap', 'Git', 'REST', 'Agile Development (SCRUM)', 'Algorithms']
+    familiarSkills = ['Gatsby.js', 'GraphQL', 'Prolog', 'Firebase', 'Swift', 'Wordpress', 'Machine Learning', 'Artificial Intelligence', 'Microservices']
 
-            ))}
-        </ul>
-    )
+    render() {
 
-    return (
+        let proficientSkills = (
+            <ul
+                className="skills">
+                { this.proficientSkills.map((skill, index) => (
+                    <li
+                        key={ index}
+                        className="capsule proficient">
+                        { skill }
+                    </li>
 
-        <Layout>
+                ))}
+            </ul>
+        )
 
-            <div
-                className="about-page">
+        let familiarSkills = (
+            <ul
+                className="skills">
+                { this.familiarSkills.map((skill, index) => (
+                    <li
+                        key={ index}
+                        className="capsule familiar">
+                        { skill }
+                    </li>
 
-                <section
-                    id="profile">
+                ))}
+            </ul>
+        )
 
-                    <img
-                        src={photo}
-                        alt="portrait"
-                        className="profile-pic"/>
+        return (
 
-                    <h1>Shevon Mendis</h1>
+            <Layout>
 
-                </section>
+                <div
+                    className="capsule about-page">
 
-                <section
-                    id="experience">
+                    <section
+                        id="profile">
 
-                    <h4
-                        class="subheading">
-                        EDUCATION
-                    </h4>
+                        <img
+                            src={photo}
+                            alt="portrait"
+                            className="profile-pic"/>
 
-                    <ul>
-                        <li>
-                            Bachelor of Science, The University of Melbourne Feb 2017 - Dec 2019
-                        </li>
-                        <li>
-                            Major: Computing & Software Systems
-                        </li>
-                        <li>
-                            Weighted Average Mark: 80.583 (H1)
-                        </li>
-                    </ul>
-                </section>
+                        <h1>Shevon Mendis</h1>
 
-                <section
-                    id="education">
+                        <div
+                            className="underline">
+                        </div>
 
-                    <h4
-                        class="subheading">
-                        EXPERIENCE
-                    </h4>
+                    </section>
 
-                    <ul>
-                        <li>
-                            <h5>
-                                Academic Tutor - The University of Melbourne
-                            </h5>
-                            <p>
-                                Responsibilities include:
-                                <ul>
-                                    <li>
-                                        Assisting students in learning and understanding programming concepts in Python, both in class (in
-sizes of 25 - 30) and via Grok monitoring.
-                                    </li>
-                                   <li>
-                                        Marking students' projects and exams.
-                                    </li>
-                                </ul>
-                            </p>
-                        </li>
+                    <section
+                        id="education"
+                        data-aos="fade-up">
 
-                        <li>
-                            <h5>
-                                Freelance Web Developer
-                            </h5>
-                            <p>
-                                Notable work:
-                                <ul>
-                                    <li>
-                                        Built a website for STM Developments using Wordpress.
-                                    </li>
-                                   <li>
-                                        Contributed to building the website for R.S. Digital, a local startup.
-                                    </li>
-                                </ul>
-                            </p>
-                        </li>
-                    </ul>
-                </section>
+                        <h4
+                            class="subheading">
+                            EDUCATION
+                        </h4>
 
-                <section
-                    id="skills">
+                        <ul>
+                            <li>
+                                Bachelor of Science, The University of Melbourne Feb 2017 - Dec 2019
+                            </li>
+                            <li>
+                                Major: Computing & Software Systems
+                            </li>
+                            <li>
+                                Weighted Average Mark: 80.583 (H1)
+                            </li>
+                        </ul>
+                    </section>
 
-                    <h4
-                        className="subheading">
-                        TECHNICAL SKILLS
-                    </h4>
+                    <section
+                        id="experience"
+                        data-aos="fade-up">
 
-                    <ul>
+                        <h4
+                            class="subheading">
+                            EXPERIENCE
+                        </h4>
 
-                        <li>
-                            Proficient with:
+                        <ul>
+                            <li>
+                                <h5>
+                                    Academic Tutor - The University of Melbourne
+                                </h5>
+                                <p>
+                                    Responsibilities include:
+                                    <ul>
+                                        <li>
+                                            Assisting students in learning and understanding programming concepts in Python, both in class (in
+    sizes of 25 - 30) and via Grok monitoring.
+                                        </li>
+                                       <li>
+                                            Marking students' projects and exams.
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
 
-                            { proficientSkills }
+                            <li>
+                                <h5>
+                                    Freelance Web Developer
+                                </h5>
+                                <p>
+                                    Notable work:
+                                    <ul>
+                                        <li>
+                                            Built a website for STM Developments using Wordpress.
+                                        </li>
+                                       <li>
+                                            Contributed to building the website for R.S. Digital, a local startup.
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
 
-                        </li>
+                    <section
+                        id="skills"
+                        data-aos="fade-up">
 
-                        <li>
-                            Familiar with:
+                        <h4
+                            className="subheading">
+                            TECHNICAL SKILLS
+                        </h4>
 
-                            { familiarSkills }
+                        <ul>
 
-                        </li>
-                    </ul>
-                </section>
+                            <li>
+                                Proficient with:
 
-            </div>
-        </Layout>
-    )
+                                { proficientSkills }
+
+                            </li>
+
+                            <li>
+                                Familiar with:
+
+                                { familiarSkills }
+
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+            </Layout>
+        )
+    }
 }
 
 export default AboutPage;

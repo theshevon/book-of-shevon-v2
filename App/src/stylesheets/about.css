@@ -27,8 +27,29 @@
     align-items: center;
 }
 
+#profile h1{
+    margin-bottom: 0.5rem;
+}
+
+#profile .underline{
+    height: 3px;
+    background: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
+    animation: stretch 1.5s ease 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes stretch{
+    0% {
+        width: 0px
+    }
+    100%{
+        width: 75px
+    }
+}
+
 section{
     width: 100%;
+    margin-bottom: 50px;
 }
 
 section h4{
