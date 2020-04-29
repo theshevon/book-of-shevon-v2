@@ -35,7 +35,7 @@
 .underline{
     height: 3px;
     background: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
-    animation: stretch 1.5s ease 1;
+    animation: stretch 1.75s ease 1;
     animation-fill-mode: forwards;
 }
 
@@ -57,7 +57,7 @@ section h3{
     text-align: center;
 }
 
-.subheading-1{
+.subheading{
     text-transform: uppercase;
     margin-bottom: 2rem;
     font-weight: bold;
@@ -82,34 +82,30 @@ section h3{
 }
 
 .skill{
-    margin-right: 5px;
-}
-
-
-.capsule.familiar, .capsule.proficient{
+    margin-right: 3.5px;
     background: #f0f0f0;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #f0f0f0, #e9e9e9);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #f0f0f0, #e9e9e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.subtext-2{
-    font-size: 0.9rem;
-}
-
-.subtext-1{
+.text-1{
     font-weight: bold;
     font-size: 1rem;
 }
 
-p.subtext-1, p.subtext-2{
+.text-2{
+    font-size: 0.9rem;
+}
+
+p.text-1, p.text-2{
     margin-bottom: 0;
 }
 
-p.subtext-1 ~ p.subtext-2{
+p.text-1 ~ p.text-2{
     margin-top: 0.725rem;
 }
 
-p.subtext-2 ~ ul{
+p.text-2 ~ ul{
     margin-top: 0.15rem;
 }
 
@@ -124,6 +120,7 @@ li{
 .position-meta-info{
     margin-bottom: 0.5rem;
 }
+
 .position-meta-info p{
     margin-bottom: 0;
 }
@@ -154,20 +151,6 @@ a.company:hover{
 .duration{
     color: #7c7c7c
 }
-
-/* section > ul{
-    list-style: none;
-}
-
-section > ul > li:before{
-    content: "\2022";
-    color: #D4AF37;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-right: 1em;
-    margin-top: 1em;
-} */
 
 @media(max-width: 576px){
     .about-page{
