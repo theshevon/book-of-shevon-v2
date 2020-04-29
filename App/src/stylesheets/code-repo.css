@@ -110,6 +110,10 @@
     background: #FEDAF6;
 }
 
+.redux{
+    background: rgb(231, 218, 254);
+}
+
 .firebase{
     background: #ff7878;
 }
@@ -142,6 +146,14 @@
     background: rgb(128, 193, 255);
 }
 
+.android.studio{
+    background: #f1ffb1;
+}
+
+.jquery{
+    background: rgb(255, 193, 151);
+}
+
 .contributor{
     background-color: #ececec;
     transition: 400ms;
@@ -169,10 +181,11 @@
     border-radius: 5px;
     padding: 4px 10px;
     transition: 400ms;
-    color: #3e3e3e;
+    color: white;
     font-weight: bold;
     text-decoration: none;
     transition: 400ms;
+    justify-self: flex-end;
 }
 
 .repo-btn:hover{
@@ -187,7 +200,9 @@
     }
 
     .repo-btn{
+        justify-self: flex-end;
         background: white;
+        color: #3e3e3e;
     }
 
     .repo-btn a{
