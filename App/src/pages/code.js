@@ -3,8 +3,12 @@ import React from 'react';
 import CodeRepo from "../components/CodeRepo";
 import img from "../images/stub.png";
 import "../stylesheets/code.css";
+import parseData from "../utilities/BlogPostParser";
 
-const CodePage = () => {
+const CodePage = ({ data }) => {
+
+    let blogPosts = parseData(data.allBlogPostsCsv.nodes)
+
     return (
 
         <div
@@ -63,5 +67,21 @@ const CodePage = () => {
         </div>
     )
 }
+
+
+export const query = graphql`
+  {
+    __typename
+    allBlogPostsCsv {
+      nodes {
+        name
+        img_src
+        description
+        tech_stack
+        other_contributors
+      }
+    }
+  }
+`
 
 export default CodePage;
