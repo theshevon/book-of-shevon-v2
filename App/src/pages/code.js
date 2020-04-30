@@ -3,18 +3,35 @@ import React from 'react';
 import CodeRepo from "../components/CodeRepoCard";
 import img from "../images/stub.png";
 import "../stylesheets/code.css";
-import parseData from "../utilities/BlogPostParser";
+import parseData from "../utilities/ProjectsParser";
 
 const CodePage = ({ data }) => {
+    let projects = parseData(data.allProjectsCsv.nodes);
 
-    let blogPosts = parseData(data.allBlogPostsCsv.nodes)
+    let individualProjects = (
 
-    blogPosts = (
+      <div
+          className="code-repos">
+
+          { projects.individual.map((repo, index) => (
+              <CodeRepo
+                  key={ index }
+                  title={ repo.name }
+                  imgSrc={ require(`../images/code_repos/${repo.img_src}`) }
+                  desc={ repo.description }
+                  stack={ repo.tech_stack }
+                  other_contributors={ repo.other_contributors }
+                  link={ "google.com.au" }/>
+          ))}
+      </div>
+  )
+
+    let groupProjects = (
 
         <div
             className="code-repos">
 
-            { blogPosts.map((repo, index) => (
+            { projects.group.map((repo, index) => (
                 <CodeRepo
                     key={ index }
                     title={ repo.name }
@@ -37,7 +54,8 @@ const CodePage = ({ data }) => {
                 Projects
             </h1>
 
-            { blogPosts }
+            { individualProjects }
+            { groupProjects }
 
         </div>
     )
@@ -47,7 +65,7 @@ const CodePage = ({ data }) => {
 export const query = graphql`
   {
     __typename
-    allBlogPostsCsv {
+    allProjectsCsv {
       nodes {
         name
         img_src

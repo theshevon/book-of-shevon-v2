@@ -15,7 +15,7 @@
     text-align: center;
     font-weight: 800;
     margin-bottom: 0.75rem;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: monospace */
 }
 
 /* .repo-title::after{
@@ -40,6 +40,10 @@
     line-height: 1.2rem;
 }
 
+.repo-tech-stack{
+    align-self: flex-end;
+    justify-self: flex-end;
+}
 .repo-tech-stack, .repo-contributors {
     list-style-type: none;
     display: flex;
@@ -138,7 +142,7 @@
 }
 
 .mongodb{
-    background: rgb(254, 220, 220);
+    background: rgb(247, 220, 254);
 }
 
 .c{
@@ -185,6 +189,7 @@
 }
 
 .repo-btn{
+    margin-top: auto;
     border: 2px solid #3e3e3e;
     border-radius: 5px;
     padding: 4px 10px;
@@ -217,4 +222,14 @@
     .repo-btn a{
         color: #3e3e3e;
     }
+}
+
+.nav-buttons{
+    display: flex;
+    justify-self: flex-end !important;
+}
+
+.nav-buttons svg{
+    height: 1.25rem !important;
+    width: 1.25rem !important;
 }
