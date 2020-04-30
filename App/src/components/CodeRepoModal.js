@@ -78,10 +78,10 @@ const CodeRepo = (props) => {
                 { title }
             </h4>
 
-            <img
+            {/* <img
                 src={ imgSrc }
                 alt={`${title} cover`}
-                className="repo-img"/>
+                className="repo-img"/> */}
 
             <h4
                 className="repo-subheading">

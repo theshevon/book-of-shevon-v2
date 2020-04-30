@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CodeRepo from "../components/CodeRepo";
+import CodeRepo from "../components/CodeRepoCard";
 import img from "../images/stub.png";
 import "../stylesheets/code.css";
 import parseData from "../utilities/BlogPostParser";

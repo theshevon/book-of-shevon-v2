@@ -186,7 +186,6 @@
 
 .repo-btn{
     border: 2px solid #3e3e3e;
-    background: rgb(68, 184, 84);
     border-radius: 5px;
     padding: 4px 10px;
     transition: 400ms;
@@ -198,14 +197,15 @@
 }
 
 .repo-btn:hover{
-    background-color: rgb(68, 184, 84);
+    background: rgb(83, 197, 98);
+    border-color: rgb(83, 197, 98);
     color: white;
 }
 
 @media(min-width: 576px){
 
     .code-repo{
-        width: 45%;
+        width: 30%;
     }
 
     .repo-btn{
