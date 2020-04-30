@@ -5,30 +5,32 @@
     align-items: center;
     margin-right: 1%;
     margin-bottom: 1%;
-    border-radius: 4px
-}
-
-.code-repo{
+    border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
+    background: white;
 }
 
 .repo-title{
+    font-size: 1.35rem;
     text-align: center;
-    font-weight: bold;
+    font-weight: 800;
     margin-bottom: 0.75rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.repo-title::after{
+/* .repo-title::after{
     content: '';
     height: 2px;
     width: 10px;
     background: black;
-}
+} */
 
 .repo-img{
     width: 100%;
+    height: 250px;
     object-fit: cover;
-    border-radius: 4px;
+    object-position: center top !important;
+    border-radius: 2px;
 }
 
 .repo-desc{
@@ -41,7 +43,7 @@
 .repo-tech-stack, .repo-contributors {
     list-style-type: none;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     flex-wrap: wrap;
     margin-left: 0;
     margin-bottom: 0;
@@ -52,7 +54,6 @@
 }
 
 .repo-tech-stack-container, .repo-contributors-container, .repo-subheading{
-    text-align: left;
     width: 100%;
 }
 
@@ -61,7 +62,9 @@
 }
 
 .repo-subheading{
+    text-align: center;
     margin-bottom: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 .capsule{
@@ -83,15 +86,17 @@
 }
 
 .gatsbyjs{
-    background: rgb(190, 247, 255);
+    background: rgb(217, 206, 253);
 }
 
 .html{
-    background: rgb(237, 243, 133);
+    background: #CFDFFF;
+    /* background: rgb(237, 243, 133); */
 }
 
 .css{
-    background: #b1ffb5;
+    background: rgb(239, 213, 254);
+    /* background: #b1ffb5; */
 }
 
 .python{
@@ -99,7 +104,7 @@
 }
 
 .java{
-    background: #CFDFFF;
+    background: rgb(255, 240, 153);
 }
 
 .javascript{
@@ -115,11 +120,13 @@
 }
 
 .firebase{
-    background: #ff7878;
+    background: #D0F0FD;
+    /* background: #ff7878; */
 }
 
 .nodejs{
-    background: #ff87af;
+    background: #FEDAF6;
+    /* background: #ff87af; */
 }
 
 .haskell{
@@ -131,7 +138,7 @@
 }
 
 .mongodb{
-    background: #FEE2D5;
+    background: rgb(254, 220, 220);
 }
 
 .c{
@@ -143,7 +150,8 @@
 }
 
 .unity{
-    background: rgb(128, 193, 255);
+    background: #C2F5E9;
+    /* background: rgb(128, 193, 255); */
 }
 
 .android.studio{
@@ -151,7 +159,8 @@
 }
 
 .jquery{
-    background: rgb(255, 193, 151);
+    background: rgb(207, 220, 255);
+    /* background: rgb(255, 193, 151); */
 }
 
 .contributor{
@@ -160,14 +169,14 @@
 }
 
 .contributor:hover{
-    background-color: gold;
+    background: rgb(255, 231, 153);
 }
 
 .contributor a{
     transition: 400ms;
     color: #3e3e3e;
     font-size: 0.85rem;
-    font-weight: bolder;
+    /* font-weight: bolder; */
     text-decoration: none;
 }
 
@@ -176,7 +185,7 @@
 }
 
 .repo-btn{
-    border: 2px solid rgb(68, 184, 84);
+    border: 2px solid #3e3e3e;
     background: rgb(68, 184, 84);
     border-radius: 5px;
     padding: 4px 10px;
@@ -196,7 +205,7 @@
 @media(min-width: 576px){
 
     .code-repo{
-        width: 30%;
+        width: 45%;
     }
 
     .repo-btn{

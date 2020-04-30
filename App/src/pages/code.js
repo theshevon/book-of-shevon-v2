@@ -18,7 +18,7 @@ const CodePage = ({ data }) => {
                 <CodeRepo
                     key={ index }
                     title={ repo.name }
-                    imgSrc={img}
+                    imgSrc={ require(`../images/code_repos/${repo.img_src}`) }
                     desc={ repo.description }
                     stack={ repo.tech_stack }
                     other_contributors={ repo.other_contributors }

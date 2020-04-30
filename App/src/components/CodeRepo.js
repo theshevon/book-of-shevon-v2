@@ -73,10 +73,10 @@ const CodeRepo = (props) => {
         <div
             className="code-repo">
 
-            <h2
+            <h4
                 className="repo-title">
                 { title }
-            </h2>
+            </h4>
 
             <img
                 src={ imgSrc }
