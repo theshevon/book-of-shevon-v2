@@ -1,6 +1,6 @@
 const parseData = (data) => {
 
-    let projects = { individual : [], group : [] }
+    let projects = []
 
     for (let i=0; i<data.length; i++){
 
@@ -10,7 +10,8 @@ const parseData = (data) => {
 
         project.name = node.name;
         project.description = node.description;
-        project.img_src = node.img_src;
+        project.year = node.year;
+        project.link = node.link;
 
         // extract tech stack
         project.tech_stack = node.tech_stack.substring(1, node.tech_stack.length-1).split(",");
@@ -29,12 +30,7 @@ const parseData = (data) => {
         }
         project.other_contributors = other_contributors;
 
-        // categorise project
-        if (n_contributors === 0){
-            projects.individual.push(project);
-        } else {
-            projects.group.push(project);
-        }
+        projects.push(project);
     }
 
     return projects;

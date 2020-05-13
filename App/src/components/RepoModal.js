@@ -1,10 +1,8 @@
 import React from 'react';
 
-import "../stylesheets/code-repo.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import "../stylesheets/repo.css"
 
-const CodeRepo = (props) => {
+const RepoModal = (props) => {
 
     const { title, imgSrc, desc, stack, other_contributors, link } = props
 
@@ -85,10 +83,10 @@ const CodeRepo = (props) => {
                 alt={`${title} cover`}
                 className="repo-img"/> */}
 
-            {/* <h4
+            <h4
                 className="repo-subheading">
                 Description
-            </h4> */}
+            </h4>
 
             <p
                 className="repo-desc">
@@ -108,15 +106,8 @@ const CodeRepo = (props) => {
                 View Repo
             </a>
 
-            {/* <div class="nav-buttons">
-                <FontAwesomeIcon
-				icon={ faAngleLeft }/>
-            <FontAwesomeIcon
-				icon={ faAngleRight }/>
-            </div> */}
-
         </div>
     )
 }
 
-export default CodeRepo;
+export default RepoModal;

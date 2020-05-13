@@ -1,8 +1,8 @@
-.code-page{
+.projects-page{
     font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
 }
 
-.code-repos{
+.projects{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -10,7 +10,15 @@
     margin: auto 5%;
 }
 
-.code-page-title{
+.projects-page-title{
     text-align: center;
     font-family: "FreeMono", monospace;
+    position: relative;
+}
+
+.projects-page-title:before{
+    content: ">>>";
+    font-weight: 100;
+    position: absolute;
+    transform: translateX(-90px);
 }

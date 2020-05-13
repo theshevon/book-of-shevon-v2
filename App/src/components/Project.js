@@ -1,23 +1,23 @@
 import React from 'react';
 
-import "../stylesheets/code-repo.css"
+import "../stylesheets/project.css";
 
-const CodeRepo = (props) => {
+const Project = (props) => {
 
-    const { title, imgSrc, desc, stack, other_contributors, link } = props
+    const { title, year, desc, stack, other_contributors, link } = props
 
     let tech_stack = (
 
         <div
-            className="repo-tech-stack-container">
+            className="project-tech-stack-container">
 
             <h4
-                className="repo-subheading">
+                className="project-subheading">
                 Tech Stack
             </h4>
 
             <ul
-                className="repo-tech-stack">
+                className="project-tech-stack">
 
                 { stack.map((tech, index) => (
 
@@ -40,25 +40,29 @@ const CodeRepo = (props) => {
         contributors = (
 
             <div
-                className="repo-contributors-container">
+                className="project-contributors-container">
 
                 <h4
-                    className="repo-subheading">
+                    className="project-subheading">
                     Other Contributors
                 </h4>
 
                 <ul
-                    className="repo-contributors">
+                    className="project-contributors">
 
                     { other_contributors.map((contributor, index) => (
 
                         <li
                             key={ index }
                             className="contributor capsule">
+
                             <a
-                                href={ contributor.github }>
+                                href={ contributor.github }
+                                target="_blank"
+                                rel="noopener noreferrer">
                                 { contributor.name }
                             </a>
+
                         </li>
 
                     ))}
@@ -70,26 +74,22 @@ const CodeRepo = (props) => {
     }
 
     return (
+
         <div
-            className="code-repo">
+            className="project">
 
             <h4
-                className="repo-title">
+                className="project-title">
                 { title }
             </h4>
 
-            {/* <img
-                src={ imgSrc }
-                alt={`${title} cover`}
-                className="repo-img"/> */}
-
-            <h4
-                className="repo-subheading">
-                Description
-            </h4>
+            <p
+                className="project-year">
+                { year }
+            </p>
 
             <p
-                className="repo-desc">
+                className="project-desc">
                 { desc }
             </p>
 
@@ -97,17 +97,16 @@ const CodeRepo = (props) => {
 
             { contributors }
 
-
             <a
                 href= { link }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="repo-btn">
-                View Repo
+                className="project-btn">
+                View project
             </a>
 
         </div>
     )
 }
 
-export default CodeRepo;
+export default Project;
