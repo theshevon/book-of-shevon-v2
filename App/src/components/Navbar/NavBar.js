@@ -74,7 +74,7 @@ class NavBar extends React.Component {
                                 <li
                                     key={ index }>
                                     <a
-                                        href={ link }
+                                        href={ link !== "home" ? link : '/' }
                                         className="nav-link">
                                         { link.toUpperCase() }
                                     </a>
