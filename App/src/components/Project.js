@@ -4,6 +4,7 @@ import "../stylesheets/project.css";
 
 const Project = (props) => {
 
+
     const { title, year, desc, stack, other_contributors, link } = props
 
     let tech_stack = (

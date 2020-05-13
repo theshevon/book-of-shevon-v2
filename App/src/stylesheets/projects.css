@@ -1,5 +1,7 @@
 .projects-page{
     font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 .projects{
@@ -11,9 +13,10 @@
 }
 
 .projects-page-title{
-    text-align: center;
     font-family: "FreeMono", monospace;
     position: relative;
+    margin-bottom: 50px;
+    margin-left: 205px;
 }
 
 .projects-page-title:before{
