@@ -13,7 +13,7 @@ class BlogPage extends React.Component {
         this.state = {
             date : '',
             posts : [],
-            loading : false
+            loading : true
         }
     }
 
