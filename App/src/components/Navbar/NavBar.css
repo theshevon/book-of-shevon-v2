@@ -74,6 +74,8 @@
 
 .menu ul li{
     margin-bottom: 0;
+    min-width: 75px;
+    text-align: center;
 }
 
 .nav-link{

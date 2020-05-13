@@ -2,8 +2,8 @@ import React from 'react';
 
 // custom components
 import ToggleButton from './ToggleButton';
-import MenuButton   from '../../pages/MenuButtons/MenuButton';
-import LangButton   from '../../pages/MenuButtons/LangButton';
+import MenuButton   from './MenuButtons/MenuButton';
+import LangButton   from './MenuButtons/LangButton';
 
 // custom css
 import "./NavBar.css";
