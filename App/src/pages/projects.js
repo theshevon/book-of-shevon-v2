@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Project from "../components/Project";
+import Layout    from "../components/layout";
+import Project   from "../components/Project";
 import parseData from "../utilities/ProjectsParser";
 
 import "../stylesheets/projects.css";
@@ -30,17 +31,21 @@ const ProjectsPage = ({ data }) => {
 
     return (
 
-        <div
-            className="projects-page">
+		<Layout>
 
-            <h1
-                className="projects-page-title">
-                ls projects
-            </h1>
+			<div
+			className="projects-page">
 
-            { allProjects }
+			<h1
+				className="projects-page-title">
+				ls projects
+			</h1>
 
-        </div>
+			{ allProjects }
+
+			</div>
+
+		</Layout>
     )
 }
 

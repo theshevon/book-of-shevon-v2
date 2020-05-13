@@ -17,7 +17,7 @@ class AboutPage extends React.Component {
     }
 
     proficientSkills = ['Python', 'C', 'Java', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'React / Redux', 'MongoDB', 'MySQL', 'Haskell', 'Unix / Linux', 'Boostrap', 'Git', 'REST', 'Agile Development (SCRUM)', 'Algorithms']
-    familiarSkills = ['Gatsby.js', 'GraphQL', 'Prolog', 'Firebase', 'Swift', 'Wordpress', 'Machine Learning', 'Artificial Intelligence', 'Microservices']
+    familiarSkills = ['Prolog', 'Gatsby.js', 'GraphQL', 'Firebase', 'Swift', 'Wordpress', 'Machine Learning', 'Microservices', 'Artificial Intelligence']
 
     render() {
 
