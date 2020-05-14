@@ -6,8 +6,11 @@ import "../stylesheets/index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faGithub, faLinkedin, faMedium } from '@fortawesome/free-brands-svg-icons'
+import { translate } from "react-i18next"
 
-const IndexPage = () => {
+const IndexPage = (props) => {
+
+	const { t } = props;
 
 	return (
 
@@ -20,7 +23,7 @@ const IndexPage = () => {
 
 				<h1
 					className="site-title">
-					The Book of Shevon
+					{ t("heading") }
 					<span
 						id="dot"
 						style={{color:"white"}}>
@@ -64,4 +67,4 @@ const IndexPage = () => {
 	)
 }
 
-export default IndexPage
+export default translate("IndexPage")(IndexPage)
