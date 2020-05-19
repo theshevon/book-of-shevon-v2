@@ -1,20 +1,23 @@
 import React, { Component } from 'react'
 import "./LangButton.css"
+import { translate } from "react-i18next"
 
 class LangButton extends Component {
 
     state = {
-        lang : "eng"
+        lang : "en"
     }
 
     // store this in redux store
     langs = [
-        { id : "eng", sym : "ENG"},
-        { id : "kor", sym : "한글" }
+        { code : "en", label : "ENG"},
+        { code : "ko", label : "한글" }
     ];
 
-    setLang = (lang_id) => {
-        this.setState({ lang : lang_id });
+    setLang = (code) => {
+        this.setState({ lang : code });
+        const { i18n } = this.props
+        i18n.changeLanguage(code)
         // window.location.reload();
     }
 
@@ -25,9 +28,9 @@ class LangButton extends Component {
                 { this.langs.map((lang, index) => (
                     <p
                         key={index}
-                        className={lang.id === this.state.lang ? "sel-lang" : "lang"}
-                        onClick={ () => this.setLang(lang.id) }
-                        onKeyDown={ () => this.setLang(lang.id) }>
+                        className={lang.code === this.state.lang ? "sel-lang" : "lang"}
+                        onClick={ () => this.setLang(lang.code) }
+                        onKeyDown={ () => this.setLang(lang.code) }>
                         { lang.sym }
                     </p>
                 ))}
