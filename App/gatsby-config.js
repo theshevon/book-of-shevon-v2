@@ -34,7 +34,18 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
-    `gatsby-transformer-csv`
+    `gatsby-transformer-csv`,
+    {
+      resolve: '@wapps/gatsby-plugin-i18next',
+      options: {
+        availableLngs: ['en', 'el'],
+        fallbackLng: 'el',
+        i18nextOptions: {
+          debug: false,
+        },
+      },
+    },
+    'gatsby-plugin-offline',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -31,7 +31,7 @@ class LangButton extends Component {
                         className={lang.code === this.state.lang ? "sel-lang" : "lang"}
                         onClick={ () => this.setLang(lang.code) }
                         onKeyDown={ () => this.setLang(lang.code) }>
-                        { lang.sym }
+                        { lang.label }
                     </p>
                 ))}
             </ul>

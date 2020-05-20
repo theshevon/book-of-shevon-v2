@@ -6,7 +6,7 @@ import "../stylesheets/index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faGithub, faLinkedin, faMedium } from '@fortawesome/free-brands-svg-icons'
-import { translate } from "react-i18next"
+import { withTranslation } from "react-i18next"
 
 const IndexPage = (props) => {
 
@@ -23,7 +23,7 @@ const IndexPage = (props) => {
 
 				<h1
 					className="site-title">
-					{ t("heading") }
+					{ t("title") }
 					<span
 						id="dot"
 						style={{color:"white"}}>
@@ -67,4 +67,4 @@ const IndexPage = (props) => {
 	)
 }
 
-export default translate("IndexPage")(IndexPage)
+export default withTranslation("IndexPage")(IndexPage)
