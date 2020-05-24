@@ -16,7 +16,7 @@
     font-family: "FreeMono", monospace;
     position: relative;
     margin-bottom: 50px;
-    margin-left: 205px;
+    text-align: center;
 }
 
 .projects-page-title:before{
