@@ -1,16 +1,17 @@
 import React from "react"
 
+import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../stylesheets/index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
-import { faGithub, faLinkedin, faMedium } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin, faMedium, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 const IndexPage = () => {
 
 	return (
 
-		<div>
+		<Layout>
 
 			<SEO title="Home" />
 
@@ -55,11 +56,18 @@ const IndexPage = () => {
 						<FontAwesomeIcon
 							icon={ faMedium }/>
 					</a>
+					<a
+						href="https://www.youtube.com/channel/UCkL1cYAWa9Wsx6xDT2H8zOg?view_as=subscriber"
+						target="_blank"
+						rel="noopener noreferrer">
+						<FontAwesomeIcon
+							icon={ faYoutube }/>
+					</a>
 				</div>
 
 			</div>
 
-		</div>
+		</Layout>
 	)
 }
 

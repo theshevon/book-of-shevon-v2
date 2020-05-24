@@ -13,9 +13,9 @@
     font-size: 3.5rem;
     font-weight: 500;
     color: black;
-    white-space: nowrap;
     content: "Book of S" !important;
     transition-delay: 500ms;
+    word-spacing: 1000px;
 }
 
 .site-title #dot{
@@ -34,12 +34,29 @@
 
 .links{
     display: flex;
-    width: 35%;
     justify-content: space-around;
+    width: 100%;
 }
 
-svg{
+.links svg{
     color: black;
-    height: 1.75rem !important;
-    width: 1.75rem !important;
+    height: 2rem !important;
+    width: 2rem !important;
+}
+
+@media(min-width: 576px){
+
+    .site-title{
+        white-space: nowrap;
+        word-spacing: normal;
+    }
+
+    .links{
+        width: 40%;
+    }
+
+    svg{
+        height: 1.75rem !important;
+        width: 1.75rem !important;
+    }
 }

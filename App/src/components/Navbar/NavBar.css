@@ -1,0 +1,150 @@
+.navbar{
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 120px;
+    background: transparent;
+    transition: all 300ms ease-out, transform 0.45s ease-in-out 0.2s;
+    z-index: 100;
+}
+
+/* .navbar-logo {
+    margin-left: 2rem;
+}
+
+.navbar__logo a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-left: 30px;
+    transition: all 0.5s ease;
+}
+
+.navbar__logo.active a{
+    color:#3a3a3a;
+} */
+
+.navbar_options{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-buttons{
+    display: flex;
+}
+
+.menu-wrapper, .menu-wrapper-open{
+    overflow: hidden;
+    transition: max-height .45s ease-in-out;
+    width: 100%;
+    max-height: 0px;
+    position: fixed;
+    top: 0;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.menu-wrapper-open{
+    max-height: 200px;
+}
+
+.menu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: rgba(40, 40, 40, 0.8);
+    backdrop-filter: blur(3px);
+    height: 100px;
+    padding-bottom: 10px;
+}
+
+.menu ul{
+    list-style: none;
+    width: 70%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu ul li{
+    margin-bottom: 0;
+    min-width: 75px;
+    text-align: center;
+}
+
+.nav-link{
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+    color: white;
+    font-weight: 400;
+    font-size: 0.85rem;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-link:hover:after{
+    position: absolute;
+    content: '';
+    height: 5px;
+    width: 5px;
+    bottom: -7.5px;
+    background: white;
+    border-radius: 50%;
+    right: 50%;
+    transform: translateX(50%)
+}
+
+@media(max-width: 576px){
+
+    .menu-wrapper-open{
+        max-height: 100vh;
+        transition: max-height .8s ease;
+    }
+
+    .menu{
+        min-height: 35vh;
+        padding: 1rem 0;
+    }
+
+    .menu ul{
+        flex-direction: column;
+        padding-left: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu ul li{
+        padding: 0.5rem 1rem;
+    }
+
+    .menu-buttons{
+        display: none !important;
+    }
+
+    .nav-link{
+        font-weight: 600;
+    }
+
+}
+
+@media(min-width: 576px){
+    .toggle-button{
+        display: none;
+    }
+
+    .navbar.hide{
+        transform: translateY(-120px);
+    }
+
+    .navbar.show{
+        transform: translateY(0);
+    }
+}
+
+
+
