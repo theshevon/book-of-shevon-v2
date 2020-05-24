@@ -4,6 +4,7 @@ module.exports = {
     description: `Shevy Westside's Portfolio`,
     author: `Shevon Mendis`,
   },
+  pathPrefix: "/Portfolio_v2",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
