@@ -4,6 +4,7 @@ import React from 'react';
 import ToggleButton from './ToggleButton';
 import MenuButton   from './MenuButtons/MenuButton';
 import LangButton   from './MenuButtons/LangButton';
+import { Link } from "gatsby";
 
 // custom css
 import "./NavBar.css";
@@ -73,11 +74,11 @@ class NavBar extends React.Component {
                             { links.map((link, index) => (
                                 <li
                                     key={ index }>
-                                    <a
-                                        href={ link !== "home" ? `/${link}` : '/' }
+                                    <Link
+                                        to={ link === "home" ? "/" : `/${link}` }
                                         className="nav-link">
                                         { link.toUpperCase() }
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
