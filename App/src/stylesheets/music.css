@@ -1,0 +1,29 @@
+.music-page{
+    /* background: rgb(60, 161, 255); */
+    padding-top: 100px;
+    text-align: center;
+}
+
+.music-videos{
+    margin: auto 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.music-vid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 0.5625 */
+iframe{
+    width: 475px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.music-page-title{
+    margin-bottom: 50px;
+}
