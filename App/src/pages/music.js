@@ -16,21 +16,25 @@ const music = () => {
 
                 <div class="music-videos">
 
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube-nocookie.com/embed/EDajeXIr6Jg"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                    <div class="music-vid">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/EDajeXIr6Jg"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                        <p>Don't Look Back in Anger - Noel Gallagher</p>
+                    </div>
 
-                    <iframe
-                        src="https://www.youtube-nocookie.com/embed/a2CVi2pXNxA"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                    <div class="music-vid">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/a2CVi2pXNxA"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                        <p>I Like Me Better - Lauv</p>
+                    </div>
 
                 </div>
 
