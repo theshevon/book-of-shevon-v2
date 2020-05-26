@@ -51,6 +51,7 @@ class ArtPage extends React.Component {
                     <img
                         key={index}
                         src={image}
+                        alt={`artwork-${index}`}
                         className="photo"
                     />
                 ))}

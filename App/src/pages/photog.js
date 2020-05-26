@@ -35,6 +35,7 @@ class PhotographyPage extends React.Component {
                     <img
                         key={index}
                         src={image}
+                        alt={`photog-${index}`}
                         className="photo"
                     />
                 ))}

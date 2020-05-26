@@ -18,6 +18,7 @@ const music = () => {
 
                     <div class="music-vid">
                         <iframe
+                            title="dlbia"
                             src="https://www.youtube-nocookie.com/embed/EDajeXIr6Jg"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -28,6 +29,7 @@ const music = () => {
 
                     <div class="music-vid">
                         <iframe
+                            title="ilmb"
                             src="https://www.youtube-nocookie.com/embed/a2CVi2pXNxA"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

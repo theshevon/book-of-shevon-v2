@@ -18,10 +18,14 @@ button:focus{
 
 .lang-btn:hover{
     background: rgb(228, 228, 228);
-    color: rgba(40, 40, 40);;
+    color: rgba(40, 40, 40);
 }
 
-.lang-btn ul{
+.lang-btn:hover button{
+    color: rgba(40, 40, 40);
+}
+
+.lang-btn div{
     display: flex;
     justify-content: space-between;
     margin: 0;
@@ -58,4 +62,11 @@ button:focus{
 
 .lang-btn:hover .lang:hover:after{
     background: rgba(40, 40, 40, 80%);
+}
+
+.lang-btn button{
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 0;
 }

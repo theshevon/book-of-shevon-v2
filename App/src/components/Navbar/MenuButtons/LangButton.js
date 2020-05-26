@@ -21,17 +21,17 @@ class LangButton extends Component {
     render() {
 
         let langOpts = (
-            <ul>
+            <div>
                 { this.langs.map((lang, index) => (
-                    <p
+                    <button
                         key={index}
                         className={lang.id === this.state.lang ? "sel-lang" : "lang"}
                         onClick={ () => this.setLang(lang.id) }
                         onKeyDown={ () => this.setLang(lang.id) }>
                         { lang.sym }
-                    </p>
+                    </button>
                 ))}
-            </ul>
+            </div>
         );
 
         return (
