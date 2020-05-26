@@ -107,7 +107,8 @@
 
     .menu{
         min-height: 35vh;
-        padding: 1rem 0;
+        padding-top: 50px;
+        padding-bottom: 1rem;
     }
 
     .menu ul{

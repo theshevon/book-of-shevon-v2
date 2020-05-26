@@ -10,15 +10,7 @@
     width: auto;
     border-radius: 50%;
     left: 50%;
-    border-width: 4px;
-    border-style: solid;
-    border-color: #D4AF37;
-    border-color: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
-    border-color: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #D4AF37), color-stop(100%, #C5A028));
-    border-color: -webkit-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
-    border-color: -moz-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
-    border-color: -o-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
-    border-color: -ms-linear-gradient(top, #D4AF37 0%, #C5A028 100%);
+    border: 4px solid #D4AF37;
 }
 
 #profile{
