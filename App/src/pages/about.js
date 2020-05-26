@@ -140,6 +140,47 @@ class AboutPage extends React.Component {
                                     className="position-meta-info">
                                     <p
                                         className="position">
+                                        Web Developer / Systems Integrator
+                                    </p>
+                                    <p
+                                        className="company">
+                                        The University of Melbourne
+                                    </p>
+                                    <p
+                                        className="duration">
+                                        May 2020 - Present
+                                    </p>
+                                </div>
+
+                                <p
+                                    className="text-2">
+                                    Responsibilities include:
+                                </p>
+
+                                <ul>
+                                    <li
+                                        className="list-item-2">
+                                        <p
+                                            className="text-2">
+                                            Developing a web app that would allow individuals to visualise and analyse data sourced from COVID-19 literature
+                                        </p>
+                                    </li>
+                                    <li
+                                        className="list-item-2">
+                                        <p
+                                            className="text-2">
+                                            Integrating indiviudally developed analysis/ visualisation tools into a web server that would act as the API for the client app
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+
+                                <div
+                                    className="position-meta-info">
+                                    <p
+                                        className="position">
                                         Academic Tutor, Foundations of Computing
                                     </p>
                                     <p
