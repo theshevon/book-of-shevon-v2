@@ -135,6 +135,47 @@ const About = () => {
                             className="position-meta-info">
                             <p
                                 className="position">
+                                Software Engineer, Professional Services
+                            </p>
+                            <p
+                                className="company">
+                                DGiT Systems
+                            </p>
+                            <p
+                                className="duration">
+                                Jul 2020 - Present
+                            </p>
+                        </div>
+
+                        <p
+                            className="text-2">
+                            Responsibilities include:
+                        </p>
+
+                        <ul>
+                            <li
+                                className="list-item-2">
+                                <p
+                                    className="text-2">
+                                    Designing, building and testing platform-based solutions that meet clients' requirements
+                                </p>
+                            </li>
+                            <li
+                                className="list-item-2">
+                                <p
+                                    className="text-2">
+                                    Performing thorough code reviews
+                                </p>
+                            </li>
+                        </ul>
+                    </li>       
+
+                    <li>
+
+                        <div
+                            className="position-meta-info">
+                            <p
+                                className="position">
                                 Web Developer / Systems Integrator
                             </p>
                             <p
@@ -143,7 +184,7 @@ const About = () => {
                             </p>
                             <p
                                 className="duration">
-                                May 2020 - Present
+                                May 2020 - Dec 2020
                             </p>
                         </div>
 
@@ -184,7 +225,7 @@ const About = () => {
                             </p>
                             <p
                                 className="duration">
-                                July 2019 - Present
+                                Jul 2019 - Jul 2020
                             </p>
                         </div>
 
