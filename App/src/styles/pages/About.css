@@ -1,11 +1,11 @@
-.about-page{
+.about-page {
     margin: 100px 10%;
     padding: 75px 10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
     font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
 }
 
-.profile-pic{
+.profile-pic {
     height: 200px;
     width: auto;
     border-radius: 50%;
@@ -13,128 +13,143 @@
     border: 4px solid #D4AF37;
 }
 
-#profile{
+#profile {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#profile h1{
+#profile h1 {
     margin-bottom: 0.5rem;
     text-align: center;
 }
 
-.underline{
+.underline {
     height: 3px;
     background: linear-gradient(to bottom, #D4AF37 0%, #C5A028 100%);
     animation: stretch 1.75s ease 1;
     animation-fill-mode: forwards;
 }
 
-@keyframes stretch{
-    0% {
-        width: 0px
-    }
-    100%{
-        width: 75px
-    }
-}
-
-section{
+section {
     width: 100%;
     margin-bottom: 60px;
 }
 
-section h3{
+section h3 {
     text-align: center;
 }
 
-.subheading{
+.subheading {
     text-transform: uppercase;
     margin-bottom: 2rem;
     font-weight: bold;
 }
 
-.skills{
+
+.skills {
     list-style-type: none !important;
     display: flex;
     flex-wrap: wrap;
     margin: 1rem 0;
+    padding-left: 0;
 }
 
-.skill{
+.skill {
     margin-right: 3.5px;
     background: #f0f0f0;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #f0f0f0, #e9e9e9);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #f0f0f0, #e9e9e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.text-1{
+#skills p {
     font-weight: bold;
     font-size: 1rem;
 }
 
-.text-2{
+.responsibilities {
+    margin-top: 10px;
+}
+
+.responsibility {
     font-size: 0.9rem;
+    margin-bottom: 7.5px;
+    text-align: justify;
 }
 
-p.text-1, p.text-2{
-    margin-bottom: 0;
+.position-container {
+    margin-bottom: 30px;
 }
 
-p.text-1 ~ p.text-2{
+.position-container > p {
     margin-top: 0.725rem;
+    font-size: 0.95rem;
 }
 
-p.text-2 ~ ul{
-    margin-top: 0.15rem;
-}
-
-.list-item-2{
+.list-item-2 {
     margin-bottom: 0.15rem;
 }
 
-li{
+li {
     margin-bottom: 1rem;
 }
 
-.position-meta-info{
+.position-meta-info {
     margin-bottom: 0.5rem;
 }
 
-.position-meta-info p{
+.position-meta-info p {
     margin-bottom: 0;
 }
 
-.position{
+p.position {
     color:#C5A028;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1rem;
+    margin-bottom: 7.5px;
 }
 
-.company, .duration{
+.company, .duration {
     font-size: 0.9rem;
 }
 
-.company{
+.company {
+    margin-top: 0;
     color: black;
     font-weight: 500;
 }
 
-a.company{
+a.company {
     text-decoration: none;
 }
 
-a.company:hover{
+a.company:hover {
     text-decoration: underline;
 }
 
-.duration{
-    color: #7c7c7c
+.duration {
+    margin-top: 7.5px;
+    color: #7c7c7c;
 }
 
-@media(max-width: 576px){
-    .about-page{
+.about-page ul:not(.responsibilities) {
+    padding-left: 0;
+}
+
+@keyframes stretch {
+    
+    0% {
+        width: 0px
+    }
+
+    100% {
+        width: 75px
+    }
+}
+
+@media(max-width: 576px) {
+    
+    .about-page {
         margin: 75px 5%;
         padding: 50px 7.5%;
     }

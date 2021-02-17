@@ -78,7 +78,8 @@ const About = () => {
 
                 <ul>
 
-                    <li>
+                    <li
+                        className="position-container">
 
                         <div
                             className="position-meta-info">
@@ -92,22 +93,17 @@ const About = () => {
                             </p>
                         </div>
 
-                        <ul>
+                        <ul
+                            className="responsibilities">
 
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    <strong>Major:</strong> Computing & Software Systems
-                                </p>
+                                className="responsibility">
+                                <strong>Major:</strong> Computing &amp; Software Systems
                             </li>
 
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    <strong>Weighted Average Mark:</strong> 80.583 (H1)
-                                </p>
+                                className="responsibility">
+                                <strong>Weighted Average Mark:</strong> 80.583 (H1)
                             </li>
 
                         </ul>
@@ -129,7 +125,8 @@ const About = () => {
 
                 <ul>
 
-                    <li>
+                    <li
+                        className="position-container">
 
                         <div
                             className="position-meta-info">
@@ -152,32 +149,25 @@ const About = () => {
                             Responsible for:
                         </p>
 
-                        <ul>
+                        <ul
+                            className="responsibilities">
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Designing, building and testing platform-based solutions that meet clients' requirements
-                                </p>
+                                className="responsibility">
+                                Designing, building and testing platform-based solutions that meet clients' requirements
                             </li>
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Performing thorough code reviews
-                                </p>
+                                className="responsibility">
+                                Performing thorough code reviews
                             </li>
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Winning the ”Best Rookie” (2020) Award
-                                </p>
+                                className="responsibility">
+                                Winning the ”Best Rookie” (2020) Award
                             </li>
                         </ul>
                     </li>       
 
-                    <li>
+                    <li
+                        className="position-container">
 
                         <div
                             className="position-meta-info">
@@ -200,25 +190,21 @@ const About = () => {
                             Responsible for:
                         </p>
 
-                        <ul>
+                        <ul
+                            className="responsibilities">
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Developing a web app that would allow individuals to visualise and analyse data sourced from COVID-19 literature
-                                </p>
+                                className="responsibility">
+                                Developing a web app that would allow individuals to visualise and analyse data sourced from COVID-19 literature
                             </li>
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Integrating indiviudally developed analysis/ visualisation tools into a web server that would act as the API for the client app
-                                </p>
+                                className="responsibility">
+                                Integrating indiviudally developed analysis/ visualisation tools into a web server that would act as the API for the client app
                             </li>
                         </ul>
                     </li>
 
-                    <li>
+                    <li
+                        className="position-container">
 
                         <div
                             className="position-meta-info">
@@ -241,26 +227,22 @@ const About = () => {
                             Responsible for:
                         </p>
 
-                        <ul>
+                        <ul
+                            className="responsibilities">
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Assisting students in learning and understanding programming concepts in Python, both in class (in sizes of 25 - 30) and via Grok monitoring
-                                </p>
+                                className="responsibility">
+                                Assisting students in learning and understanding programming concepts in Python, both in class (in sizes of 25 - 30) and via Grok monitoring
                             </li>
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Marking students' projects and exams
-                                </p>
+                                className="responsibility">
+                                Marking students' projects and exams
                             </li>
                         </ul>
 
                     </li>
 
-                    <li>
+                    <li
+                        className="position-container">
 
                         <div
                             className="position-meta-info">
@@ -283,21 +265,17 @@ const About = () => {
                             Notable work:
                         </p>
 
-                        <ul>
+                        <ul
+                            className="responsibilities">
 
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Built a website for STM Developments using Wordpress
-                                </p>
+                                className="responsibility">
+                                Built a website for STM Developments using Wordpress
                             </li>
 
                             <li
-                                className="list-item-2">
-                                <p className="text-2">
-                                    Contributed to building the website for R.S. Digital, a local startup
-                                </p>
+                                className="responsibility">
+                                Contributed to building the website for R.S. Digital, a local startup
                             </li>
 
                         </ul>
@@ -317,15 +295,13 @@ const About = () => {
                     TECHNICAL SKILLS
                 </h3>
 
-                <p
-                    className="text-1">
+                <p>
                     Proficient with:
                 </p>
 
                 { proficientSkills }
 
-                <p
-                    className="text-1">
+                <p>
                     Familiar with:
                 </p>
 
@@ -344,13 +320,14 @@ const About = () => {
 
                 <ul>
 
-                    <li>
+                    <li
+                        className="position-container">
 
                         <div
                             className="position-meta-info">
                             <p
                                 className="position">
-                                Co-Founder & Vice President
+                                Co-Founder &amp; Vice President
                             </p>
                             <p
                                 className="company">
@@ -362,31 +339,27 @@ const About = () => {
                             </p>
                         </div>
 
-                        <ul>
+                        <ul
+                            className="responsibilities">
 
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Inaugural member of the committee that accumulated over 150 memberships in its first semester
+                                className="responsibility">
+                                Inaugural member of the committee that accumulated over 150 memberships in its first semester
 and was awarded the title of 'Best New Club' by the University of Melbourne's Student Union
-                                </p>
                             </li>
 
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Touched base with every aspect of the club including designing the banner and logo, as well as
+                                className="responsibility">
+                                Touched base with every aspect of the club including designing the banner and logo, as well as
 in planning workshops for students interested in animation and game design
-                                </p>
                             </li>
 
                         </ul>
 
                     </li>
 
-                    <li>
+                    <li
+                        className="position-container">
 
                         <div
                             className="position-meta-info">
@@ -407,35 +380,31 @@ in planning workshops for students interested in animation and game design
                             </p>
                         </div>
 
-                        <ul>
+                        <ul
+                            className="responsibilities">
 
                             <li
-                                className="list-item-2">
-                                <p className="text-2">
-                                    Member of the committee that revived the club from dormancy and attained a 12% increase in
+                                className="responsibility">
+                                Member of the committee that revived the club from dormancy and attained a 12% increase in
 club memberships as well as a steep rise in engagement compared to the previous year
-                                </p>
                             </li>
 
                             <li
-                                className="list-item-2">
-                                <p className="text-2">
+                                className="responsibility">
                                     Created and maintained the club's former (and first) website, and designed all of event posters and other marketing material
-                                </p>
                             </li>
 
                             <li
-                                className="list-item-2">
-                                <p className="text-2">
-                                    Created the design that was a runner-up for 'Most Entertaining Design' at the University of Melbourne's Clubs & Societies Awards Night
-                                </p>
+                                className="responsibility">
+                                Created the design that was a runner-up for 'Most Entertaining Design' at the University of Melbourne's Clubs & Societies Awards Night
                             </li>
 
                         </ul>
 
                     </li>
 
-                    <li>
+                    <li
+                        className="position-container">
 
                         <div
                             className="position-meta-info">
@@ -456,23 +425,18 @@ club memberships as well as a steep rise in engagement compared to the previous 
                             </p>
                         </div>
 
-                        <ul>
+                        <ul
+                            className="responsibilities">
 
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Responsible for designing marketing and promotional material for both club events and sponsor-
+                                className="responsibility">
+                                Responsible for designing marketing and promotional material for both club events and sponsor-
 collaborated events, as well as management of club's social media
-                                </p>
                             </li>
 
                             <li
-                                className="list-item-2">
-                                <p
-                                    className="text-2">
-                                    Created the design that won 'Most Entertaining Design' at the University of Melbourne's Clubs & Societies Awards Night
-                                </p>
+                                className="responsibility">
+                                Created the design that won 'Most Entertaining Design' at the University of Melbourne's Clubs & Societies Awards Night
                             </li>
 
                         </ul>
