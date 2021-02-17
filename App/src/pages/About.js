@@ -149,7 +149,7 @@ const About = () => {
 
                         <p
                             className="text-2">
-                            Responsibilities include:
+                            Responsible for:
                         </p>
 
                         <ul>
@@ -165,6 +165,13 @@ const About = () => {
                                 <p
                                     className="text-2">
                                     Performing thorough code reviews
+                                </p>
+                            </li>
+                            <li
+                                className="list-item-2">
+                                <p
+                                    className="text-2">
+                                    Winning the ”Best Rookie” (2020) Award
                                 </p>
                             </li>
                         </ul>
@@ -190,7 +197,7 @@ const About = () => {
 
                         <p
                             className="text-2">
-                            Responsibilities include:
+                            Responsible for:
                         </p>
 
                         <ul>
@@ -231,7 +238,7 @@ const About = () => {
 
                         <p
                             className="text-2">
-                            Responsibilities include:
+                            Responsible for:
                         </p>
 
                         <ul>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Project from "../components/Project";
 
@@ -7,6 +7,7 @@ import projectsJson from "../assets/projects/projects.json";
 import "../styles/pages/Projects.css";
 
 const Projects = () => {
+
 
     const projects = (
 

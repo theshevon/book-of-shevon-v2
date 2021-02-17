@@ -114,7 +114,7 @@ class Project extends React.Component{
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-btn">
-                    View project
+                    View Project
                 </a>
 
             </div>

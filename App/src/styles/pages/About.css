@@ -62,17 +62,6 @@ section h3{
     margin: 1rem 0;
 }
 
-.capsule{
-    border-radius: 15px;
-    padding-right: 15px;
-    padding-left: 15px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    box-sizing: border-box;
-}
-
 .skill{
     margin-right: 3.5px;
     background: #f0f0f0;  /* fallback for old browsers */
