@@ -1,7 +1,7 @@
 import React from 'react';
 import AOS   from 'aos';
 
-import "../stylesheets/project.css";
+import "../styles/components/Project.css";
 import 'aos/dist/aos.css';
 
 class Project extends React.Component{
@@ -114,7 +114,7 @@ class Project extends React.Component{
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-btn">
-                    View project
+                    View Project
                 </a>
 
             </div>

@@ -45,7 +45,7 @@ class MainNavBar extends React.Component {
 
     render() {
 
-        const navLinks = ["about", "projects", "photog", "home", "blog", "music", "art"];
+        const navLinks = ["about", "projects", "photog", "home", "blog", "youtube", "art"];
 
         return (
 
