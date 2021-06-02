@@ -9,14 +9,10 @@ import NavBar  from "./NavBar";
  */
 class MainNavBar extends React.Component {
 
-    constructor(){
-        super()
-
-        this.state = {
-            showOptions : true,
-            showMenu    : false,
-            prevTime    : (new Date()).getTime()
-        }
+    state = {
+        showOptions : true,
+        showMenu    : false,
+        prevTime    : (new Date()).getTime()
     }
 
     async componentDidMount(){
@@ -38,7 +34,7 @@ class MainNavBar extends React.Component {
     }
 
     drawerClickHandler = () => {
-        this.setState(prevState => {
+        this.setState((prevState: { showOptions: boolean, showMenu: boolean, prevTime: number}) => {
             return { showMenu : !prevState.showMenu }
         });
     }
@@ -54,7 +50,8 @@ class MainNavBar extends React.Component {
                     links={ navLinks }
                     showOptions= { this.state.showOptions }
                     menuOpen={ this.state.showMenu }
-                    clickHandler={ this.drawerClickHandler }/>
+                    active={ this.state.showMenu }
+                    onClickHandler={ this.drawerClickHandler }/>
             </div>
         );
     }

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { importAll }                  from "../util/ImageImporter.js";
+import { importAll }                  from "../util/ImageImporter";
 
 import "../styles/pages/Photog.css";
 
 const Art = () => {
 
-    const [handDrawn, setHandDrawn] = useState([]);
-    const [digital, setDigital]     = useState([]);
-    const [posters, setPosters]     = useState([]);
-    const [models, setModels]       = useState([]);
+    const [handDrawn, setHandDrawn] = useState<string[]>([]);
+    const [digital, setDigital]     = useState<string[]>([]);
+    const [posters, setPosters]     = useState<string[]>([]);
+    const [models, setModels]       = useState<string[]>([]);
 
     useEffect(() => {
         setHandDrawn(importAll(require.context("../assets/art/handDrawn", false, /\.(png|jpe?g|svg)$/)));

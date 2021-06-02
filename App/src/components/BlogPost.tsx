@@ -2,18 +2,35 @@ import React from 'react'
 
 import "../styles/components/BlogPost.css";
 
-const getShortenedText = (str, maxLen, separator = ' ') => {
+const getShortenedText = (str: string, maxLen: number, separator: string = ' '): string => {
     if (str.length <= maxLen) return str;
     return str.substr(0, str.lastIndexOf(separator, maxLen));
 }
 
-const getContentSnippet = (text) => {
+const getContentSnippet = (text: string): string => {
     return getShortenedText(text.replace(/(<([^>]+)>)/ig," "), 175) + "..."
 }
 
-const BlogPost = (props) => {
+type BlogPostProps = {
+    title: string,
+    imgURL: string,
+    content: string,
+    postURL: string,
+}
 
-    const { title, imgURL, content, postURL } = props
+const BlogPost = (props: BlogPostProps): JSX.Element => {
+
+    const { 
+        title, 
+        imgURL, 
+        content, 
+        postURL,
+    } : {
+        title: string,
+        imgURL: string,
+        content: string,
+        postURL: string,
+    } = props
     let contentSnippet = getContentSnippet(content);
 
     return (

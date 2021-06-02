@@ -8,11 +8,19 @@ import LangButton   from './MenuButtons/LangButton';
 // custom css
 import "./NavBar.css";
 
-class NavBar extends React.Component {
+type NavBarProps = {
+    active: boolean,
+    showOptions: boolean,
+    links: string[],
+    menuOpen: boolean,
+    onClickHandler: () => void,
+}
+
+class NavBar extends React.Component<NavBarProps> {
 
     render(){
 
-        const { active, showOptions, links, menuOpen } = this.props;
+        const { active, showOptions, links, menuOpen, onClickHandler } = this.props;
 
         return (
 
@@ -38,17 +46,14 @@ class NavBar extends React.Component {
                             className="menu-buttons">
 
                             <MenuButton
-                                className="px-2"
                                 menuOpen={ menuOpen }
                                 menuActive={ active }
-                                action={ this.props.clickHandler }/>
+                                action={ onClickHandler }/>
 
                             <LangButton
-                                className="px-2"
                                 menuOpen={ menuOpen }
                                 menuActive={ active }
-                                langIdx={1}
-                                action={ null }/>
+                                langIndex={0}/>
 
                         </div>
 
@@ -56,7 +61,7 @@ class NavBar extends React.Component {
                         {/* Hamburger */}
                         <ToggleButton
                             active={ menuOpen }
-                            clickHandler={ this.props.clickHandler }/>
+                            clickHandler={ onClickHandler }/>
 
                     </nav>
 

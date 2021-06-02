@@ -2,7 +2,13 @@ import React from 'react';
 
 import "./MenuButton.css";
 
-const MenuButton = (props) => {
+type MenuButtonProps = {
+    menuOpen: boolean,
+    menuActive: boolean,
+    action: () => void,
+}
+
+const MenuButton = (props: MenuButtonProps) => {
 
     let { menuOpen, menuActive, action } = props;
 

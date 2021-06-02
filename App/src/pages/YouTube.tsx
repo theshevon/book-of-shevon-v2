@@ -26,7 +26,7 @@ const YouTube = () => {
                     <p>Don't Look Back in Anger - Noel Gallagher</p>
                 </div>
 
-                <div class="music-vid">
+                <div className="music-vid">
                     <iframe
                         title="ilmb"
                         src="https://www.youtube-nocookie.com/embed/a2CVi2pXNxA"

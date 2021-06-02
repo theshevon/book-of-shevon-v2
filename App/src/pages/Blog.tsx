@@ -7,11 +7,18 @@ import "../styles/pages/Blog.css";
 
 const MEDIUM_BLOG_LINK = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@shevon_mendis";
 
+type Post = {
+    title: string,
+    thumbnail: string,
+    description: string,
+    link: string,
+}
+
 const Blog = () => {
 
-    const [date, setDate] = useState('');
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [date, setDate] = useState<string>('');
+    const [posts, setPosts] = useState<Post[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         
@@ -27,7 +34,7 @@ const Blog = () => {
             .then(res => res.json())
             .catch(err => console.log(err))
             .then(feed => {
-                setPosts(feed.items.filter(item => item.categories.length > 0));
+                setPosts(feed.items.filter((item: { categories: string[] }) => item.categories.length > 0));
                 setLoading(false);
             })
     }, []);
