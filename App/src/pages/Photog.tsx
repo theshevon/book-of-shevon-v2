@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { importAll }                  from "../util/ImageImporter.js";
+import { importAll }                  from "../util/ImageImporter";
 
 import "../styles/pages/Photog.css";
 
 const Photog = () => {
 
-    const [photos, setPhotos] = useState([]);
+    const [photos, setPhotos] = useState<string[]>([]);
 
     useEffect(() => {
         setPhotos(importAll(require.context("../assets/photog", false, /\.(png|jpe?g|svg)$/)))

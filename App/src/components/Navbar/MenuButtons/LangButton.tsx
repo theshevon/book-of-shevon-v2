@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import "./LangButton.css"
 
-class LangButton extends Component {
+type LangButtonProps = {
+    menuOpen: boolean,
+    menuActive: boolean,
+    action?: () => void,
+    langIndex: number,
+}
+
+class LangButton extends Component<LangButtonProps> {
 
     state = {
         lang : "eng"
@@ -13,7 +20,7 @@ class LangButton extends Component {
         { id : "kor", sym : "한글" }
     ];
 
-    setLang = (lang_id) => {
+    setLang = (lang_id: string) => {
         this.setState({ lang : lang_id });
         // window.location.reload();
     }

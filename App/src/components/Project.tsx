@@ -4,20 +4,41 @@ import AOS   from 'aos';
 import "../styles/components/Project.css";
 import 'aos/dist/aos.css';
 
-class Project extends React.Component{
+type ProjectProps = {
+    title: string,
+    year: number,
+    desc: string,
+    stack: string[],
+    other_contributors: contributor[],
+    link: string,
+}
 
-    componentDidMount(){
+type contributor = {
+    name: string,
+    github: string,
+}
+
+class Project extends React.Component<ProjectProps> {
+
+    componentDidMount() {
         AOS.init({
             duration: 1500,
             once: true
         });
     }
 
-    render(){
+    render() {
 
-        const { title, year, desc, stack, other_contributors, link } = this.props
+        const { 
+            title,
+            year,
+            desc,
+            stack,
+            other_contributors,
+            link
+        } = this.props
 
-        let tech_stack = (
+        const tech_stack = (
 
             <div
                 className="project-tech-stack-container">
@@ -43,7 +64,7 @@ class Project extends React.Component{
                 </ul>
 
             </div>
-        )
+        );
 
         let contributors = null;
         if (other_contributors.length > 0){

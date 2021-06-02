@@ -2,7 +2,12 @@ import React from 'react';
 
 import "./ToggleButton.css";
 
-const toggleButton = props => {
+type ToggleButtonProps = {
+    active: boolean,
+    clickHandler: () => void,
+}
+
+const toggleButton = (props: ToggleButtonProps) => {
 
     let class_ = "line";
     if (props.active) class_ += " active";
