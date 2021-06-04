@@ -6,4 +6,4 @@ _Initially, the website was called "The Book of Shevon", but then I thought "dro
 
 **Description:** My portfolio website.
 
-**Tech Stack: React, Typescript
+**Tech Stack:** React, Typescript
