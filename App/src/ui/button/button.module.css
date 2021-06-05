@@ -1,0 +1,20 @@
+@value lightGrey from './../colors/colors.css';
+
+.button {
+  background: none;
+  border: 1px solid lightGrey;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: 0.4s;
+  padding: 0.4rem 1rem;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:disabled {
+  cursor: not-allowed
+}
+
+/* TODO: focus and active state styling */
