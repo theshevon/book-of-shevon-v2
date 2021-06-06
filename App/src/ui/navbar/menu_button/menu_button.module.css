@@ -1,0 +1,17 @@
+@value darkGrey, lightGrey from '../../colors/colors.css';
+
+.navbarButton {
+  border: 1px solid lightGrey;
+  box-sizing: border-box;
+  transition: 0.4s;
+  color: white;
+  background: darkGrey 80%;
+  text-transform: uppercase;
+  min-width: 115px;
+  backdrop-filter: blur(3px);
+}
+
+.navbarButton:hover {
+  color: darkGrey;
+  background-color: lightGrey;
+}

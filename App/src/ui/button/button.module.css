@@ -2,11 +2,11 @@
 
 .button {
   background: none;
-  border: 1px solid lightGrey;
   border-radius: 5px;
+  border: 1px solid black;
   box-sizing: border-box;
   transition: 0.4s;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0.8rem;
 }
 
 .button:hover {
@@ -14,7 +14,8 @@
 }
 
 .button:disabled {
-  cursor: not-allowed
+  cursor: not-allowed;
+  border: 1px solid lightGrey;
 }
 
 /* TODO: focus and active state styling */
