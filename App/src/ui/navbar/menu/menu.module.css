@@ -1,0 +1,28 @@
+.menu {
+  list-style: none;
+  width: 70%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 400;
+  font-size: 0.85rem;
+  text-decoration: none;
+  position: relative;
+}
+
+.link.active:after {
+  content: '';
+  height: 1px;
+  width: 60%;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 125%;
+  transform: translateX(-50%);
+}

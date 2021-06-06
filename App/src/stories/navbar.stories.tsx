@@ -3,11 +3,30 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { StoryGroup } from './stories';
+import { Menu } from '../ui/navbar/menu/menu';
 import { MenuButton } from '../ui/navbar/menu_button/menu_button';
 
 import BgImage from './assets/abstract_bg.jpeg';
 
-storiesOf('UI/NavBar', module)
+const links = [
+  {
+    label: 'About',
+    route: 'about',
+    active: false,
+  },
+  {
+    label: 'Home',
+    route: '/',
+    active: true,
+  },
+  {
+    label: 'Blog',
+    route: 'blog',
+    active: false,
+  }
+]
+
+storiesOf('UI/NavBar/MenuButton', module)
   .add('Menu Button', () => (
     <StoryGroup>
       <MenuButton
@@ -35,4 +54,21 @@ storiesOf('UI/NavBar', module)
         />
       </div>
     </>
+  ));
+
+storiesOf('UI/NavBar/Menu', module)
+  .add('Menu', () => (
+    <div
+        style={{ 
+          height: '50px', 
+          display: 'flex', 
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'rgba(40, 40, 40, 80%)'
+        }}
+    >  
+      <Menu
+          links={links}
+      />
+    </div>
   ));
