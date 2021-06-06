@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { StoryGroup } from './stories';
@@ -10,8 +9,16 @@ import BgImage from './assets/abstract_bg.jpeg';
 
 storiesOf('UI/NavBar', module)
   .add('Menu Button', () => (
-    <MenuButton
-        onClick={action('Menu Toggle Clicked!')}/>
+    <StoryGroup>
+      <MenuButton
+          menuOpen={false}
+          onClick={action('Menu Toggle Clicked!')}
+      />
+      <MenuButton
+          menuOpen={true}
+          onClick={action('Menu Toggle Clicked!')}
+      />
+    </StoryGroup>
   ))
   .add('Menu Button with (distracting) background', () => (
     <>
@@ -23,6 +30,7 @@ storiesOf('UI/NavBar', module)
           style={{ padding: '25px' }}
       >
         <MenuButton
+            menuOpen={false}
             onClick={action('Menu Toggle Clicked!')}
         />
       </div>
