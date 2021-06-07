@@ -1,0 +1,43 @@
+@value semiTransparentDarkGrey from '../colors/colors.css';
+@value menuHeight from './menu/menu.module.css';
+
+@value navbarHeight: 65px;
+@value menuContainerHeight: calc(navbarHeight + menuHeight);
+
+.navbarContainer {
+    height: navbarHeight;
+    box-sizing: border-box;
+    border: 1px solid black;
+    position: fixed;
+    width: 100%;
+    z-index: 20000;
+}
+
+.mainNavbar {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 200;
+}
+
+.menuContainer {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: semiTransparentDarkGrey;
+    padding: 2.5px 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: menuContainerHeight;
+    z-index: 1;
+    transition: transform 500ms ease-in-out;
+    transform: translateY(calc(-1 * menuContainerHeight));
+}
+
+.menuContainer.withMenuOpen {
+    transform: translateY(0);
+}

@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { StoryGroup } from './stories';
 import { Menu } from '../ui/navbar/menu/menu';
 import { MenuButton } from '../ui/navbar/menu_button/menu_button';
+import { Navbar } from '../ui/navbar/navbar';
 
 import BgImage from './assets/abstract_bg.jpeg';
 
@@ -71,4 +72,9 @@ storiesOf('UI/NavBar/Menu', module)
           links={links}
       />
     </div>
+  ));
+
+storiesOf('UI/NavBar/Navbar', module)
+  .add('Navbar', () => (
+    <Navbar />
   ));

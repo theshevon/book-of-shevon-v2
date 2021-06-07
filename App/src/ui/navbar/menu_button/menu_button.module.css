@@ -1,18 +1,18 @@
 @value lightGrey, semiTransparentDarkGrey from '../../colors/colors.css';
 
 .navbarButton {
-  border: 1px solid lightGrey;
-  box-sizing: border-box;
-  transition: 0.4s;
-  color: white;
-  background: semiTransparentDarkGrey;
-  text-transform: uppercase;
-  min-width: 115px;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+    border: 1px solid lightGrey;
+    box-sizing: border-box;
+    transition: 0.4s;
+    color: white;
+    background: semiTransparentDarkGrey;
+    text-transform: uppercase;
+    min-width: 115px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .navbarButton:hover {
-  color: darkGrey;
-  background-color: lightGrey;
+    color: darkGrey;
+    background-color: lightGrey;
 }

@@ -11,12 +11,12 @@ type MenuButtonProps = {
 }
 
 export const MenuButton = ({
-    menuOpen,
-    onClick,
-  }: MenuButtonProps) => (
-      <Button
-          label={menuOpen ? Messages.CloseMenuButtonLabel() : Messages.OpenMenuButtonLabel()}
-          onClick={onClick}
-          extraClassNames={styles.navbarButton}
-      />
-    );
+  menuOpen,
+  onClick,
+}: MenuButtonProps) => (
+  <Button
+      label={menuOpen ? Messages.CloseMenuButtonLabel() : Messages.OpenMenuButtonLabel()}
+      onClick={onClick}
+      extraClassNames={styles.navbarButton}
+  />
+);

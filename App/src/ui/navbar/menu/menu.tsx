@@ -14,26 +14,24 @@ type MenuProps = {
 }
 
 export const Menu = ({
-    links,
-  }: MenuProps) => {
-    return (
-      <ul
-          className={styles.menu}    
+  links,
+}: MenuProps) => (
+  <ul
+      className={styles.menu}    
+  >
+    { links.map(link => (
+      <li
+          key={link.label}
       >
-        { links.map(link => (
-          <li
-              key={link.label}
-          >
-            <a
-                href={link.route}
-                className={classNames(styles.link, {
-                  [styles.active]: link.active,
-                })}
-            >
-                { link.label }
-            </a>
-          </li>
-        ))}
-      </ul>
-    )
-}
+        <a
+            href={link.route}
+            className={classNames(styles.link, {
+              [styles.active]: link.active,
+            })}
+        >
+            { link.label }
+        </a>
+      </li>
+    ))}
+  </ul>
+);

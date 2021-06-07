@@ -15,12 +15,12 @@ export const Button = ({
   onClick,
   disabled=false,
   extraClassNames='',
-	}: ButtonProps) => (
-    <button
-        className={classNames(styles.button, extraClassNames)}
-        onClick={onClick}
-        disabled={disabled}
-    >
-      { label }
-    </button>
-	);
+}: ButtonProps) => (
+  <button
+      className={classNames(styles.button, extraClassNames)}
+      onClick={onClick}
+      disabled={disabled}
+  >
+    { label }
+  </button>
+);
