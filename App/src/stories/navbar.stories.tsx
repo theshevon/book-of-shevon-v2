@@ -11,17 +11,17 @@ import BgImage from './assets/abstract_bg.jpeg';
 const links = [
   {
     label: 'About',
-    route: 'about',
+    route: '#',
     active: false,
   },
   {
     label: 'Home',
-    route: '/',
+    route: '#',
     active: true,
   },
   {
     label: 'Blog',
-    route: 'blog',
+    route: '#',
     active: false,
   }
 ]
