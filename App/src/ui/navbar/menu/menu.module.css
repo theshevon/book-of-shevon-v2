@@ -9,6 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation: fadeIn 300ms;
 }
 
 .link {
@@ -30,4 +31,22 @@
     left: 50%;
     bottom: -5px;
     transform: translateX(-50%);
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
 }

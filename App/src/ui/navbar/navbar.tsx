@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 
 import { Menu } from './menu/menu';
@@ -24,10 +24,43 @@ const links = [
   }
 ]
 
+const useFade = (init: boolean) => {
+
+  const [show, setShow] = useState<boolean>(init);
+  const [visible, setVisible] = useState<boolean>(show);
+
+  useEffect(() => {
+    if (show) setVisible(true); 
+  }, [show]);
+
+  const onAnimationEnd = () => {
+    if (!setShow) setVisible(false);
+  }
+
+  const style = {};
+
+  const fadeProps = {
+    style,
+    onAnimationEnd,
+  }
+
+  return {
+    show, 
+    visible, 
+    setShow, 
+    fadeProps
+  };
+}
+
 export const Navbar = () => {
 
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  
+  const {
+    show: menuOpen, 
+    visible: menuVisible, 
+    setShow: setMenuOpen, 
+    fadeProps,
+  } = useFade(false);
+
   return (
     <div
         className={styles.navbarContainer}  
@@ -40,12 +73,16 @@ export const Navbar = () => {
             onClick={() => setMenuOpen(!menuOpen)}/>
       </div>
       <div
-          className={classNames(styles.menuContainer, {
+          className={classNames(styles.menuContainerOuter, {
             [styles.withMenuOpen]: menuOpen,
           })}
       >
-        <Menu
-            links={links}/>
+        <div 
+          className={styles.menuContainerInner}
+        >
+          <Menu
+              links={links}/>
+        </div>
       </div>
     </div>
   );

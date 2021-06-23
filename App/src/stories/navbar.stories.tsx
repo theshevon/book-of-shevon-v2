@@ -59,19 +59,21 @@ storiesOf('UI/NavBar/MenuButton', module)
 
 storiesOf('UI/NavBar/Menu', module)
   .add('Menu', () => (
-    <div
-        style={{ 
-          height: '50px', 
-          display: 'flex', 
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'rgba(40, 40, 40, 80%)'
-        }}
-    >  
-      <Menu
-          links={links}
-      />
-    </div>
+    <StoryGroup>
+      <div
+          style={{ 
+            height: '50px', 
+            display: 'flex', 
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: 'rgba(40, 40, 40, 80%)'
+          }}
+      >  
+        <Menu
+            links={links}
+        />
+      </div>
+    </StoryGroup>
   ));
 
 storiesOf('UI/NavBar/Navbar', module)

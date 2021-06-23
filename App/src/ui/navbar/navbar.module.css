@@ -1,14 +1,15 @@
 @value semiTransparentDarkGrey from '../colors/colors.css';
 @value menuHeight from './menu/menu.module.css';
 
-@value navbarHeight: 65px;
+@value navbarHeight: 50px;
 @value menuContainerHeight: calc(navbarHeight + menuHeight);
 
 .navbarContainer {
     height: navbarHeight;
     box-sizing: border-box;
-    border: 1px solid black;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 20000;
 }
@@ -22,7 +23,7 @@
     z-index: 200;
 }
 
-.menuContainer {
+.menuContainerOuter {
     display: flex;
     box-sizing: border-box;
     justify-content: center;
@@ -38,6 +39,12 @@
     transform: translateY(calc(-1 * menuContainerHeight));
 }
 
-.menuContainer.withMenuOpen {
+.menuContainerOuter.withMenuOpen {
     transform: translateY(0);
+}
+
+.menuContainerInner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
