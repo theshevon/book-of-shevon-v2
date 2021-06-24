@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import { Menu } from './menu/menu';
@@ -24,42 +24,9 @@ const links = [
   }
 ]
 
-const useFade = (init: boolean) => {
-
-  const [show, setShow] = useState<boolean>(init);
-  const [visible, setVisible] = useState<boolean>(show);
-
-  useEffect(() => {
-    if (show) setVisible(true); 
-  }, [show]);
-
-  const onAnimationEnd = () => {
-    if (!setShow) setVisible(false);
-  }
-
-  const style = {};
-
-  const fadeProps = {
-    style,
-    onAnimationEnd,
-  }
-
-  return {
-    show, 
-    visible, 
-    setShow, 
-    fadeProps
-  };
-}
-
 export const Navbar = () => {
 
-  const {
-    show: menuOpen, 
-    visible: menuVisible, 
-    setShow: setMenuOpen, 
-    fadeProps,
-  } = useFade(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
     <div
