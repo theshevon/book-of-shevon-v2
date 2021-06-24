@@ -1,23 +1,26 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import styles from './button.module.css';
 
-export type ButtonProps = {
+type ButtonProps = {
   label: string,
   onClick: () => void,
   disabled?: boolean,
+  extraClassNames?: string,
 }
 
 export const Button = ({
   label,
   onClick,
   disabled=false,
-	}: ButtonProps) => (
-    <button
-        className={styles.button}
-        onClick={onClick}
-        disabled={disabled}
-    >
-      { label }
-    </button>
-	);
+  extraClassNames='',
+}: ButtonProps) => (
+  <button
+      className={classNames(styles.button, extraClassNames)}
+      onClick={onClick}
+      disabled={disabled}
+  >
+    { label }
+  </button>
+);
