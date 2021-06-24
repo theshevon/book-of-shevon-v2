@@ -11,10 +11,10 @@ import Photog   from "./pages/Photog";
 import About    from "./pages/About";
 import Error    from "./pages/Error";
 import Blog     from "./pages/Blog";
-import Home     from "./pages/Home";
 import Art      from "./pages/Art";
+import Home from './pages/home/home';
+import { Navbar } from './ui/navbar/navbar';
 
-import Navbar from "./components/Navbar/MainNavBar";
 // import Footer from "./components/Footer";
 
 import "./App.css";
