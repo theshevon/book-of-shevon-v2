@@ -15,7 +15,6 @@ export const Home = () => (
 		>
 			{Messages.SiteTitle()}
 		</h1>
-
 		<div
 				className={styles.links}
 		>

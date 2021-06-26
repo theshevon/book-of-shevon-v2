@@ -3,11 +3,3 @@
     height: 2rem !important;
     width: 2rem !important;
 }
-
-@media(min-width: 576px) {
-
-    .iconLink svg {
-        height: 1.75rem !important;
-        width: 1.75rem !important;
-    }
-}

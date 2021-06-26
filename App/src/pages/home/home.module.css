@@ -6,21 +6,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 80%;
 }
 
 .siteTitle {
     font-family: 'FreeMono', monospace;
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-weight: 500;
     color: black;
+    content: "Book of S" !important;
+    transition-delay: 500ms;
     word-spacing: 1000px;
+    text-align: center;
 }
 
 .links {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
+    width: 80%;
 }
 
 @media(min-width: 576px) {
@@ -28,9 +31,11 @@
     .siteTitle {
         white-space: nowrap;
         word-spacing: normal;
+        font-size: 3.5rem;
     }
 
     .links {
-        width: 40%;
+        justify-content: space-around;
+        width: 30%;
     }
 }
