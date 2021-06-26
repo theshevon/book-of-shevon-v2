@@ -1,4 +1,4 @@
-@value semiTransparentDarkGrey from '../colors/colors.css';
+@value semiTransparentDarkGrey from '../../colors/colors.css';
 @value menuHeight from './menu/menu.module.css';
 
 @value navbarHeight: 50px;

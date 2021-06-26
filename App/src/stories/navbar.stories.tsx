@@ -3,53 +3,54 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { StoryGroup } from './stories';
-import { Menu } from '../ui/navbar/menu/menu';
-import { MenuButton } from '../ui/navbar/menu_button/menu_button';
-import { Navbar } from '../ui/navbar/navbar';
+import { Menu } from '../ui/navbar/navbar/menu/menu';
+import { ToggleMenuButton } from '../ui/navbar/navbar/buttons/toggle_menu_button/toggle_menu_button';
+import { Navbar } from '../ui/navbar/navbar/navbar';
 
 import BgImage from './assets/abstract_bg.jpeg';
 
-const links = [
+const routes = [
   {
     label: 'About',
     route: '#',
-    active: false,
+    index: -1,
   },
   {
     label: 'Home',
     route: '#',
-    active: true,
+    index: 0,
   },
   {
     label: 'Blog',
     route: '#',
-    active: false,
+    index: 1,
   }
 ]
 
-storiesOf('UI/NavBar/MenuButton', module)
-  .add('Menu Button', () => (
+storiesOf('UI/NavBar/ToggleMenuButton', module)
+  .add('Toggle Menu Button', () => (
     <StoryGroup>
-      <MenuButton
+      <ToggleMenuButton
           menuOpen={false}
           onClick={action('Menu Toggle Clicked!')}
       />
-      <MenuButton
+      <ToggleMenuButton
           menuOpen={true}
           onClick={action('Menu Toggle Clicked!')}
       />
     </StoryGroup>
   ))
-  .add('Menu Button with (distracting) background', () => (
+  .add('ToggleMenu Button with (distracting) background', () => (
     <>
       <img
           src={BgImage}
           style={{ position: 'absolute', clip: 'rect(0px,165px,80px,0px)' }}
+          alt={"Distracting background image"}
       />
       <div
           style={{ padding: '25px' }}
       >
-        <MenuButton
+        <ToggleMenuButton
             menuOpen={false}
             onClick={action('Menu Toggle Clicked!')}
         />
@@ -70,7 +71,8 @@ storiesOf('UI/NavBar/Menu', module)
           }}
       >  
         <Menu
-            links={links}
+            routes={routes}
+            activeRoute={'/'}
         />
       </div>
     </StoryGroup>
@@ -78,5 +80,8 @@ storiesOf('UI/NavBar/Menu', module)
 
 storiesOf('UI/NavBar/Navbar', module)
   .add('Navbar', () => (
-    <Navbar />
+    <Navbar 
+      routes={routes}
+      activeRoute={'/'}
+    />
   ));
