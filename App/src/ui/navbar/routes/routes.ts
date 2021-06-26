@@ -6,7 +6,7 @@ export type Route = {
     index: number,
 }
 
-export const Routes = [
+export const Routes: Route[] = [
     {
         route: '/',
         label: RoutesMessages.Home(),
