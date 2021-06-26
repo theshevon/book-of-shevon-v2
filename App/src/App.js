@@ -13,18 +13,20 @@ import Error    from "./pages/Error";
 import Blog     from "./pages/Blog";
 import Art      from "./pages/Art";
 import Home from './pages/home/home';
-import { Navbar } from './ui/navbar/navbar';
+import { createNavbar } from './ui/navbar/create';
 
 // import Footer from "./components/Footer";
 
-import "./App.css";
-
+// import "./App.css";
 const App = () => {
+
+		// TODO: replace this with actual link
+		const Navbar = createNavbar({ activeRoute: '/' });
 
 		return (
 			<Router>
 
-				<Navbar/>
+				{ Navbar }
 
 				<Switch>
 

@@ -1,35 +1,33 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import { Route } from '../../routes/routes';
 import styles from './menu.module.css';
 
-type Link = {
-  label: string, 
-  route: string,
-  active: boolean,
-}
-
 type MenuProps = {
-  links: Link[],
+  routes: Route[],
+  activeRoute: string,
 }
 
 export const Menu = ({
-  links,
+  routes,
+  activeRoute,
 }: MenuProps) => (
   <ul
       className={styles.menu}    
   >
-    { links.map(link => (
+    { routes.map(route => (
       <li
-          key={link.label}
+          key={route.label}
       >
         <a
-            href={link.route}
+            href={route.route}
             className={classNames(styles.link, {
-              [styles.active]: link.active,
+              // TODO: make this observable so it updates correctly
+              [styles.active]: route.route === activeRoute,
             })}
         >
-            { link.label }
+            { route.label }
         </a>
       </li>
     ))}

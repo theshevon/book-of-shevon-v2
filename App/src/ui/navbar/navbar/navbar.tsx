@@ -2,40 +2,31 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import { Menu } from './menu/menu';
-import { MenuButton } from './menu_button/menu_button';
+import type { Route } from '../routes/routes';
+import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
 
 import styles from './navbar.module.css';
 
-const links = [
-  {
-    label: 'About',
-    route: '#',
-    active: false,
-  },
-  {
-    label: 'Home',
-    route: '#',
-    active: true,
-  },
-  {
-    label: 'Blog',
-    route: '#',
-    active: false,
-  }
-]
+type NavbarProps = {
+  routes: Route[],
+  activeRoute: string,
+}
 
-export const Navbar = () => {
+export const Navbar = ({
+  routes,
+  activeRoute,
+}: NavbarProps) => {
 
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
     <div
-        className={styles.navbarContainer}  
+        className={styles.navbarContainer}
     >
       <div
           className={styles.mainNavbar}
       >
-        <MenuButton
+        <ToggleMenuButton
             menuOpen={menuOpen}
             onClick={() => setMenuOpen(!menuOpen)}/>
       </div>
@@ -48,7 +39,9 @@ export const Navbar = () => {
           className={styles.menuContainerInner}
         >
           <Menu
-              links={links}/>
+              routes={routes}
+              activeRoute={activeRoute}
+          />
         </div>
       </div>
     </div>
