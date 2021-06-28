@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import { Home } from './pages/home/home';
-import { About } from './pages/about/about';
+import { About } from './pages/about/oldAbout';
 import { createNavbar } from './ui/navbar/create';
 import { Routes as routes } from './routes/routes';
 
