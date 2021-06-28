@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import { Menu } from './menu/menu';
-import type { Route } from '../routes/routes';
+import type { Route } from '../../../routes/routes';
 import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
 
 import styles from './navbar.module.css';
