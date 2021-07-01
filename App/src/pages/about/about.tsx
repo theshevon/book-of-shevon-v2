@@ -4,7 +4,8 @@ import AOS                  from 'aos';
 import profilePic from './profile_pic.jpg';
 
 import { InfoSection } from './info_section/info_section';
-import styles from 'about.module.css';
+import { Experience } from './experience/experience';
+import styles from './about.module.css';
 import 'aos/dist/aos.css';
 
 const SKILLS_PROFICIENT = ['Python', 'C', 'Java', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'React / Redux', 'MongoDB', 'MySQL', 'Haskell', 'Unix / Linux', 'Boostrap', 'Git', 'REST', 'Agile Development (SCRUM)', 'Algorithms']
@@ -78,7 +79,7 @@ export const About = () => {
 				<ul
 				>
 					<li
-							className='position-container'
+							className={styles.positionContainer}
 					>
 						<div
 								className='position-meta-info'
@@ -119,178 +120,49 @@ export const About = () => {
 				<ul
 				>
 					<li
-							className='position-container'
+							className={styles.positionContainer}
 					>
-						<div
-								className='position-meta-info'
-						>
-							<p
-									className='position'
-							>
-									Software Engineer, Professional Services
-							</p>
-							<p
-									className='company'
-							>
-									DGiT Systems
-							</p>
-							<p
-									className='duration'
-							>
-									Jul 2020 - Present
-							</p>
-						</div>
-						<p
-								className='text-2'
-						>
-								Responsible for:
-						</p>
-						<ul
-								className='responsibilities'
-						>
-							<li
-									className='responsibility'
-							>
-									Designing, building and testing platform-based solutions that meet clients' requirements
-							</li>
-							<li
-									className='responsibility'
-							>
-									Performing thorough code reviews
-							</li>
-							<li
-									className='responsibility'
-							>
-									Winning the ”Best Rookie” (2020) Award
-							</li>
-						</ul>
-						</li>       
+						<Experience
+								role='Software Engineer'
+								company='Canva'
+								startDate='Apr 2021'
+								endDate='Present'
+								responsibilities={['Building and maintaing UI components', 'Performing code reviews']}
+						/>
+					</li> 
 					<li
-							className='position-container'
+							className={styles.positionContainer}
 					>
-							<div
-									className='position-meta-info'
-							>
-								<p
-										className='position'
-								>
-									Web Developer / Systems Integrator
-								</p>
-								<p
-										className='company'
-								>
-									The University of Melbourne
-								</p>
-								<p
-										className='duration'
-								>
-									May 2020 - Dec 2020
-								</p>
-							</div>
-							<p
-									className='text-2'
-							>
-								Responsible for:
-							</p>
-							<ul
-									className='responsibilities'
-							>
-									<li
-											className='responsibility'
-									>
-										Developing a web app that would allow individuals to visualise and analyse data sourced from COVID-19 literature
-									</li>
-									<li
-											className='responsibility'
-									>
-										Integrating indiviudally developed analysis/ visualisation tools into a web server that would act as the API for the client app
-									</li>
-							</ul>
-						</li>
+						<Experience
+								role='Software Engineer, Professional Services'
+								company='DGiT Systems'
+								startDate='Jul 2020'
+								endDate='Mar 2021'
+								responsibilities={['Designing, building and testing platform-based solutions that meet clients', 'Winning the ”Best Rookie” (2020) Award']}
+						/>
+					</li>      
 					<li
-							className='position-container'
+							className={styles.positionContainer}
 					>
-						<div
-								className='position-meta-info'
-						>
-								<p
-										className='position'
-								>
-									Academic Tutor, Foundations of Computing
-								</p>
-								<p
-										className='company'
-								>
-									The University of Melbourne
-								</p>
-								<p
-										className='duration'
-								>
-									Jul 2019 - Jul 2020
-								</p>
-						</div>
-						<p
-								className='text-2'
-						>
-							Responsible for:
-						</p>
-						<ul
-								className='responsibilities'
-						>
-							<li
-									className='responsibility'
-							>
-								Assisting students in learning and understanding programming concepts in Python, both in class (in sizes of 25 - 30) and via Grok monitoring
-							</li>
-							<li
-									className='responsibility'
-							>
-								Marking students' projects and exams
-							</li>
-						</ul>
+						<Experience
+								role='Web Developer / Systems Integrator'
+								company='The University of Melbourne'
+								startDate='May 2020'
+								endDate='Dec 2020'
+								responsibilities={['Developing a web app that would allow individuals to visualise and analyse data sourced from COVID-19 literature', 'Integrating indiviudally developed analysis/ visualisation tools into a web server that would act as the API for the client app']}
+						/>
 					</li>
 					<li
-							className='position-container'
+							className={styles.positionContainer}
 					>
-							<div
-									className='position-meta-info'
-							>
-									<p
-											className='position'
-									>
-										Web Developer
-									</p>
-									<p
-											className='company'
-									>
-										Freelance
-									</p>
-									<p
-											className='duration'
-									>
-										Mar 2019 - Oct 2019
-									</p>
-							</div>
-							<p
-									className='text-2'
-							>
-								Notable work:
-							</p>
-							<ul
-									className='responsibilities'
-							>
-									<li
-											className='responsibility'
-									>
-										Built a website for STM Developments using Wordpress
-									</li>
-									<li
-											className='responsibility'
-									>
-										Contributed to building the website for R.S. Digital, a local startup
-									</li>
-							</ul>
-						</li>
+						<Experience
+								role='Academic Tutor, Foundations of Computing'
+								company='The University of Melbourne'
+								startDate='July 2019'
+								endDate='July 2020'
+								responsibilities={['Assisting students in learning and understanding programming concepts in Python, both in class (in sizes of 25 - 30) and via Grok monitoring', 'Marking students\' projects and exams']}
+						/>
+					</li>
 				</ul>
 			</InfoSection>
 
@@ -315,130 +187,40 @@ export const About = () => {
 				<ul
 				>
 					<li
-							className='position-container'
+							className={styles.positionContainer}
 					>
-						<div
-								className='position-meta-info'
-						>
-							<p
-									className='position'
-							>
-								Co-Founder &amp; Vice President
-							</p>
-							<p
-									className='company'
-							>
-								CODEC (Community for Digital Entertainment Creation)
-							</p>
-							<p
-									className='duration'
-							>
-								Mar 2019 - Oct 2019
-							</p>
-						</div>
-						<ul
-								className='responsibilities'>
-							<li
-									className='responsibility'>
-								Inaugural member of the committee that accumulated over 150 memberships in its first semester
-and was awarded the title of 'Best New Club' by the University of Melbourne's Student Union
-							</li>
-							<li
-									className='responsibility'>
-								Touched base with every aspect of the club including designing the banner and logo, as well as
-in planning workshops for students interested in animation and game design
-							</li>
-						</ul>
+						<Experience
+								role='Co-Founder & Vice President'
+								company='CODEC (Community for Digital Entertainment Creation)'
+								startDate='Mar 2019'
+								endDate='Oct 2019'
+								responsibilities={['Inaugural member of the committee that accumulated over 150 memberships in its first semester and was awarded the title of \'Best New Club\' by the University of Melbourne\'s Student Union', 'Touched base with every aspect of the club including designing the banner and logo, as well as in planning workshops for students interested in animation and game design']}
+						/>
+					</li> 
+					<li
+							className={styles.positionContainer}
+					>
+						<Experience
+								role='General Committee Member'
+								company='UMISC (University of Melbourne Information Security Club)'
+								startDate='Sep 2018'
+								endDate='Sep 2019'
+								responsibilities={['Member of the committee that revived the club from dormancy and attained a 12% increase in club memberships as well as a steep rise in engagement compared to the previous year', 'Created and maintained the club\'s former (and first) website, and designed all of event posters and other marketing material', 'Created the design that was a runner-up for \'Most Entertaining Design\' at the University of Melbourne\'s Clubs & Societies Awards Night']}
+						/>
+					</li> 
+					<li
+							className={styles.positionContainer}
+					>
+						<Experience
+								role='Publicity Sub-Committee Member'
+								company='CISSA (Computing and Information Systems Students Association)'
+								startDate='Apr 2019'
+								endDate='Oct 2019'
+								responsibilities={['Responsible for designing marketing and promotional material for both club events and sponsor-collaborated events, as well as management of club\'s social media', 'Created the design that won \'Most Entertaining Design\' at the University of Melbourne\'s Clubs & Societies Awards Night']}
+						/>
 					</li>
-						<li
-								className='position-container'
-						>
-							<div
-									className='position-meta-info'
-							>
-								<p
-										className='position'
-								>
-										General Committee Member
-								</p>
-								<a
-										className='company'
-										href='https://www.umisc.info/'
-										target='_blank'
-										rel='noopener noreferrer'
-								>
-									UMISC (University of Melbourne Information Security Club)
-								</a>
-								<p
-										className='duration'
-								>
-									Sep 2018 - Sep 2019
-								</p>
-							</div>
-							<ul
-									className='responsibilities'
-							>
-								<li
-										className='responsibility'
-								>
-										Member of the committee that revived the club from dormancy and attained a 12% increase in
-club memberships as well as a steep rise in engagement compared to the previous year
-								</li>
-								<li
-										className='responsibility'
-								>
-										Created and maintained the club's former (and first) website, and designed all of event posters and other marketing material
-								</li>
-								<li
-										className='responsibility'
-								>
-										Created the design that was a runner-up for 'Most Entertaining Design' at the University of Melbourne's Clubs & Societies Awards Night
-								</li>
-							</ul>
-						</li>
-						<li
-								className='position-container'
-						>
-							<div
-									className='position-meta-info'
-							>
-								<p
-										className='position'
-								>
-									Publicity Sub-Committee Member
-								</p>
-								<a
-										className='company'
-										href='https://cissa.org.au/'
-										target='_blank'
-										rel='noopener noreferrer'
-								>
-									CISSA (Computing and Information Systems Students Association)
-								</a>
-								<p
-										className='duration'
-								>
-									Apr 2019 - Oct 2019
-								</p>
-							</div>
-							<ul
-									className='responsibilities'
-							>
-								<li
-										className='responsibility'
-								>
-									Responsible for designing marketing and promotional material for both club events and sponsor-
-collaborated events, as well as management of club's social media
-								</li>
-								<li
-										className='responsibility'
-								>
-									Created the design that won 'Most Entertaining Design' at the University of Melbourne's Clubs & Societies Awards Night
-								</li>
-							</ul>
-						</li>
 				</ul>
-		</InfoSection>
+			</InfoSection>
     
 		</div>
 	);

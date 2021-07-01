@@ -19,7 +19,7 @@ export const InfoSection: React.FC<InfoSectionProps> = ({
 			{title}
 		</h3>
 		<div
-			className={styles.info}
+				className={styles.info}
 		>
 			{children}
 		</div>        
