@@ -1,6 +1,6 @@
 import { SkillsMessages as Messages } from './skills.messages';
 
-export const ProficientSkills = [
+export const ProficientSkills: string[] = [
   Messages.Python(),
   Messages.C(),
   Messages.Java(),
@@ -13,10 +13,10 @@ export const ProficientSkills = [
   Messages.Git(),
 ];
 
-export const FamiliarSkills = [
+export const FamiliarSkills: string[] = [
   Messages.Haskell(),
   Messages.Prolog(),
-  Messages.Neo4j,
+  Messages.Neo4j(),
   Messages.Firebase(),
   Messages.Swift(),
   Messages.MachineLearning(),

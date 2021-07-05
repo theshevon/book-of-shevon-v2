@@ -5,11 +5,28 @@ import profilePic from './profile_pic.jpg';
 
 import { InfoSection } from './info_section/info_section';
 import { Experience } from './experience/experience';
+import { FamiliarSkills, ProficientSkills } from './skills/skills';
 import styles from './about.module.css';
 import 'aos/dist/aos.css';
 
-const SKILLS_PROFICIENT = ['Python', 'C', 'Java', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'React / Redux', 'MongoDB', 'MySQL', 'Haskell', 'Unix / Linux', 'Boostrap', 'Git', 'REST', 'Agile Development (SCRUM)', 'Algorithms']
-const SKILLS_FAMILIAR = ['Prolog', 'Firebase', 'Swift', 'Wordpress', 'Machine Learning', 'Artificial Intelligence']
+const SkillsSection = ({
+	skills,
+}: {
+	skills: string[],
+}) => (
+	<ul
+			className={styles.skillsSection}
+	>
+		{skills.map(skill => (
+			<li
+					key={skill} // TODO: replace with something better
+					className={styles.skill}
+			>
+				{skill}
+			</li>
+		))}
+	</ul>
+);
 
 export const About = () => {
 
@@ -19,32 +36,6 @@ export const About = () => {
 					once: true
 			});
 	});
-
-	let proficientSkills = (
-			<ul
-					className='skills'>
-					{ SKILLS_PROFICIENT.map((skill, index) => (
-							<li
-									key={ index }
-									className='skill capsule'>
-									{ skill }
-							</li>
-					))}
-			</ul>
-	);
-
-	let familiarSkills = (
-			<ul
-					className='skills'>
-					{ SKILLS_FAMILIAR.map((skill, index) => (
-							<li
-									key={ index }
-									className='skill capsule'>
-									{ skill }
-							</li>
-					))}
-			</ul>
-	);
 
 	return (
 
@@ -171,11 +162,15 @@ export const About = () => {
 				<p>
 					Proficient with:
 				</p>
-				{ proficientSkills }
+				<SkillsSection
+					skills={ProficientSkills}
+				/>
 				<p>
 					Familiar with:
 				</p>
-				{ familiarSkills }
+				<SkillsSection
+					skills={FamiliarSkills}
+				/>
 			</InfoSection>
 
 			{/* VOLUNTEER SECTION */}
