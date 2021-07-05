@@ -29,7 +29,6 @@ export const About = () => {
 									className='skill capsule'>
 									{ skill }
 							</li>
-
 					))}
 			</ul>
 	);
@@ -43,7 +42,6 @@ export const About = () => {
 									className='skill capsule'>
 									{ skill }
 							</li>
-
 					))}
 			</ul>
 	);
@@ -60,7 +58,7 @@ export const About = () => {
 			>
 				<img
 						src={ profilePic }
-						alt='portrait'
+						alt='portrait of handsome man wearing a regalia'
 						className='profile-pic'
 				/>
 				<h1>
