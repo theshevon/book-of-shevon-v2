@@ -8,9 +8,14 @@ type Date = {
   year: number,
 }
 
-type ExperienceProps = {
+type Link = {
+  anchorText: string,
+  url: string,
+}
+
+export type ExperienceProps = {
   role: string,
-  company: string,
+  company: string | Link,
   startDate: Date,
   endDate?: Date,
   responsibilities: string[],
