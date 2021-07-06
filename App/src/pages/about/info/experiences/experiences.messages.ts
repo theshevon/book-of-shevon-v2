@@ -1,12 +1,10 @@
-const ExperiencesMessages = {
+export const ExperiencesMessages = {
 
   SoftwareEngineer: (): string => 'Software Engineer',
 
   Canva: (): string => 'Canva',
 
   April: (): string => 'Apr',
-
-  Present: (): string => 'Present',
 
   CanvaResponsibility1: (): string => 'Building and maintaing UI components',
 

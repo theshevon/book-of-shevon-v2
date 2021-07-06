@@ -1,12 +1,18 @@
 import React from 'react';
 
+import { ExperienceMessages as Messages } from './experience.messages';
 import styles from 'experience.module.css';
+
+type Date = {
+  month: string,
+  year: number,
+}
 
 type ExperienceProps = {
   role: string,
   company: string,
-  startDate: string,
-  endDate: string,
+  startDate: Date,
+  endDate?: Date,
   responsibilities: string[],
 }
 
@@ -30,11 +36,10 @@ export const Experience = ({
     >
       {company}
     </p>
-    <p
-        className={styles.period}
-    >
-      {startDate} - {endDate}
-    </p>
+    <TimePeriod
+        startDate={startDate}
+        endDate={endDate}
+    />
     <Responsibilities
         responsibilities={responsibilities}
     />
@@ -46,16 +51,42 @@ const Responsibilities = ({
 }: {
   responsibilities: string[],
 }) => (
-  <ul
-      className={styles.responsibilites}
+  <div
+      className={styles.responsibilitesContainer}
   >
-    {responsibilities.map((responsibility, index) => (
-      <li
-          key={index} // should be fine using index here since the order will never change
-          className={styles.responsibility}
-      >
-        {responsibility}
-      </li>
-    ))}
-  </ul>
+    <p>
+      {Messages.ResponsibleFor()}
+    </p>
+    <ul
+        className={styles.responsibilites}
+    >
+      {responsibilities.map((responsibility, index) => (
+        <li
+            key={index} // should be fine using index here since the order will never change
+            className={styles.responsibility}
+        >
+          {responsibility}
+        </li>
+      ))}
+    </ul>
+  </div>
 );
+
+const TimePeriod = ({
+  startDate,
+  endDate,
+} : {
+  startDate: Date,
+  endDate?: Date,
+}) => {
+  const start = `${startDate.month} ${startDate.year}`;
+  const end = endDate ? `${endDate.month} ${endDate.year}` : Messages.Present();
+  const period = `${start} - ${end}`;
+  return (
+    <p
+        className={styles.period}
+    >
+      {period}
+    </p>
+  );
+}

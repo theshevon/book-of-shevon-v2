@@ -125,7 +125,7 @@ export const About = () => {
 						<Experience
 								role='Software Engineer, Professional Services'
 								company='DGiT Systems'
-								startDate='Jul 2020'
+								startDate={'Jul 2020'}
 								endDate='Mar 2021'
 								responsibilities={['Designing, building and testing platform-based solutions that meet clients', 'Winning the ”Best Rookie” (2020) Award']}
 						/>
