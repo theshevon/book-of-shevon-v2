@@ -4,6 +4,7 @@ import AOS                  from 'aos';
 import profilePic from './profile_pic.jpg';
 
 import { Section } from './section/section';
+import { createProfile } from './profile/create';
 import { Skills } from './skills/skills';
 import { Experiences } from './experiences/experiences';
 import { FamiliarSkills, ProficientSkills } from './info/skills/skills';
@@ -21,6 +22,8 @@ export const About = () => {
 			});
 	});
 
+	const Profile = createProfile();
+
 	return (
 
 		<div
@@ -31,18 +34,7 @@ export const About = () => {
 			<section
 					id='profile'
 			>
-				<img
-						src={ profilePic }
-						alt='portrait of handsome man wearing a regalia'
-						className='profile-pic'
-				/>
-				<h1>
-					Shevon Mendis
-				</h1>
-				<div
-						className='underline'
-				>
-				</div>
+				{Profile}
 			</section>
 
 			{/* EDUCATION SECTION */}
