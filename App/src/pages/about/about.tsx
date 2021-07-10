@@ -31,15 +31,11 @@ export const About = () => {
 		>
 
 			{/* PROFILE SECTION */}
-			<section
-					id='profile'
-			>
-				{Profile}
-			</section>
+			{Profile}
 
 			{/* EDUCATION SECTION */}
 			<Section
-					title={'Education'}
+					titleOpt={'education'}
 			>
 				<ul
 				>
@@ -80,7 +76,7 @@ export const About = () => {
 
 			{/* EXPERIENCE SECTION */}
 			<Section
-					title={'Experience'}
+					titleOpt={'commercialXp'}
 			>
 				<Experiences
 						experiences={CommercialExperiences}
@@ -89,7 +85,7 @@ export const About = () => {
 
 			{/* SKILLS SECTION */}
 			<Section
-					title={'Skills'}
+					titleOpt={'skills'}
 			>
 				<Skills
 					label={'proficient'}
@@ -103,7 +99,7 @@ export const About = () => {
 
 			{/* VOLUNTEER SECTION */}
 			<Section
-				title={'Volunteer Experience'}
+				titleOpt={'volunteerXp'}
 			>
 				<Experiences
 						experiences={VolunteerExperiences}
