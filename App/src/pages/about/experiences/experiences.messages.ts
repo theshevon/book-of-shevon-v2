@@ -1,4 +1,4 @@
-export const ExperienceMessages = {
+export const ExperiencesMessages = {
 
   ResponsibleFor: (): string => 'Responsible for',
 

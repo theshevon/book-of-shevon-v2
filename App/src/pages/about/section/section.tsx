@@ -1,17 +1,17 @@
 import React from 'react';
 
-import styles from './info_section.module.css';
+import styles from './section.module.css';
 
-type InfoSectionProps = {
+type SectionProps = {
 	title: string,
 }
 
-export const InfoSection: React.FC<InfoSectionProps> = ({
+export const Section: React.FC<SectionProps> = ({
 	title,
 	children,
 }) => (
 	<section
-			className={styles.infoSection}
+			className={styles.section}
 	>
 		<h3
 				className={styles.title}

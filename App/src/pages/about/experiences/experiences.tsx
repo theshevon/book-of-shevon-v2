@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ExperienceMessages as Messages } from './experience.messages';
-import styles from 'experience.module.css';
+import { ExperiencesMessages as Messages } from './experiences.messages';
+import styles from 'experiences.module.css';
 
 type Date = {
   month: string,
@@ -21,7 +21,28 @@ export type ExperienceProps = {
   responsibilities: string[],
 }
 
-export const Experience = ({
+export const Experiences = ({
+	experiences,
+}: {
+	experiences: ExperienceProps[],
+}) => (
+	<ul
+			className={styles.experiences}
+	>
+		{experiences.map(experience => (
+			<li
+					key={experience.company + experience.startDate.month}
+					className={styles.experienceContainer}
+			>
+				<Experience
+						{...experience}
+				/>
+			</li>
+		))}
+	</ul>
+)
+
+const Experience = ({
   role,
   company,
   startDate,
