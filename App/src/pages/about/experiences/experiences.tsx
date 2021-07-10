@@ -31,7 +31,7 @@ export const Experiences = ({
 	>
 		{experiences.map(experience => (
 			<li
-					key={experience.company + experience.startDate.month}
+					key={experience.company + experience.startDate.month + experience.startDate.year}
 					className={styles.experienceContainer}
 			>
 				<Experience
@@ -98,7 +98,7 @@ const Responsibilities = ({
   </div>
 );
 
-const TimePeriod = ({
+export const TimePeriod = ({
   startDate,
   endDate,
 } : {

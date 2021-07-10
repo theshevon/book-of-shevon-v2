@@ -6,11 +6,11 @@ import styles from './section.module.css';
 type SectionTitleOpt = 'education' | 'commercialXp' | 'skills' | 'volunteerXp';
 
 type SectionProps = {
-	titleOpt: SectionTitleOpt,
+	title: SectionTitleOpt,
 }
 
 export const Section: React.FC<SectionProps> = ({
-	titleOpt,
+	title,
 	children,
 }) => (
 	<section
@@ -19,7 +19,7 @@ export const Section: React.FC<SectionProps> = ({
 		<h3
 				className={styles.title}
 		>
-			{getTitle(titleOpt)}
+			{getSectionTitleLabel(title)}
 		</h3>
 		<div
 				className={styles.info}
@@ -29,7 +29,7 @@ export const Section: React.FC<SectionProps> = ({
 	</section>
 );
 
-const getTitle = (sectionTitleOpt: SectionTitleOpt): string => {
+const getSectionTitleLabel = (sectionTitleOpt: SectionTitleOpt): string => {
 	switch(sectionTitleOpt) {
 		case 'education':
 			return Messages.education();

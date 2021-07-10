@@ -1,6 +1,7 @@
 import { ExperiencesMessages as Messages } from './experiences.messages';
 import type { ExperienceProps } from '../../experiences/experiences';
 
+// TODO: add links to companies
 export const CommercialExperiences: ExperienceProps[] = [
   {
     role: Messages.SoftwareEngineer(),

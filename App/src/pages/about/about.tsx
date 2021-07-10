@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import AOS                  from 'aos';
 
-import profilePic from './profile_pic.jpg';
-
 import { Section } from './section/section';
 import { createProfile } from './profile/create';
 import { Skills } from './skills/skills';
 import { Experiences } from './experiences/experiences';
+import { TertiaryEducation } from './info/education/education';
 import { FamiliarSkills, ProficientSkills } from './info/skills/skills';
 import { CommercialExperiences, VolunteerExperiences } from './info/experiences/experiences';
 
 import styles from './about.module.css';
 import 'aos/dist/aos.css';
+import { Education } from './education/education';
 
 export const About = () => {
 
@@ -35,48 +35,16 @@ export const About = () => {
 
 			{/* EDUCATION SECTION */}
 			<Section
-					titleOpt={'education'}
+					title={'education'}
 			>
-				<ul
-				>
-					<li
-							className={styles.positionContainer}
-					>
-						<div
-								className='position-meta-info'
-						>
-								<p
-										className='position'
-								>
-										The University of Melbourne
-								</p>
-								<p
-										className='company'
-								>
-								Bachelor of Science
-								</p>
-						</div>
-						<ul
-								className='responsibilities'
-						>
-								<li
-										className='responsibility'
-								>
-									<strong>Major:</strong> Computing &amp; Software Systems
-								</li>
-								<li
-										className='responsibility'
-								>
-										<strong>Weighted Average Mark:</strong> 80.583 (H1)
-								</li>
-						</ul>
-					</li>
-				</ul>
+				<Education
+					education={TertiaryEducation}
+				/>
 			</Section>
 
 			{/* EXPERIENCE SECTION */}
 			<Section
-					titleOpt={'commercialXp'}
+					title={'commercialXp'}
 			>
 				<Experiences
 						experiences={CommercialExperiences}
@@ -85,7 +53,7 @@ export const About = () => {
 
 			{/* SKILLS SECTION */}
 			<Section
-					titleOpt={'skills'}
+					title={'skills'}
 			>
 				<Skills
 					label={'proficient'}
@@ -99,7 +67,7 @@ export const About = () => {
 
 			{/* VOLUNTEER SECTION */}
 			<Section
-				titleOpt={'volunteerXp'}
+				title={'volunteerXp'}
 			>
 				<Experiences
 						experiences={VolunteerExperiences}
