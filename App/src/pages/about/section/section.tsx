@@ -7,14 +7,17 @@ type SectionTitleOpt = 'education' | 'commercialXp' | 'skills' | 'volunteerXp';
 
 type SectionProps = {
 	title: SectionTitleOpt,
+	aosAnimation?: string,
 }
 
 export const Section: React.FC<SectionProps> = ({
 	title,
+	aosAnimation = 'fade-up',
 	children,
 }) => (
 	<section
 			className={styles.section}
+			data-aos={aosAnimation}
 	>
 		<h3
 				className={styles.title}

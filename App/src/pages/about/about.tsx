@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import AOS                  from 'aos';
+import AOS from 'aos';
 
 import { Section } from './section/section';
 import { createProfile } from './profile/create';
@@ -13,14 +13,16 @@ import styles from './about.module.css';
 import 'aos/dist/aos.css';
 import { Education } from './education/education';
 
+const AOS_DURATION_MILLISECONDS = 1500;
+
 export const About = () => {
 
 	useEffect(() => {
-			AOS.init({
-					duration: 1500,
-					once: true
-			});
-	});
+		AOS.init({
+				duration: AOS_DURATION_MILLISECONDS,
+				once: true
+		});
+	}, []);
 
 	const Profile = createProfile();
 
@@ -38,7 +40,7 @@ export const About = () => {
 					title={'education'}
 			>
 				<Education
-					education={TertiaryEducation}
+						education={TertiaryEducation}
 				/>
 			</Section>
 
@@ -56,18 +58,18 @@ export const About = () => {
 					title={'skills'}
 			>
 				<Skills
-					label={'proficient'}
-					skills={ProficientSkills}
+						label={'proficient'}
+						skills={ProficientSkills}
 				/>
 				<Skills
-					label={'familiar'}
-					skills={FamiliarSkills}
+						label={'familiar'}
+						skills={FamiliarSkills}
 				/>
 			</Section>
 
 			{/* VOLUNTEER SECTION */}
 			<Section
-				title={'volunteerXp'}
+					title={'volunteerXp'}
 			>
 				<Experiences
 						experiences={VolunteerExperiences}

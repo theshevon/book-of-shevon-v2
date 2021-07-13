@@ -4,16 +4,10 @@ import {
 	faMedium,
 	faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 import { IconLinkProps as Link } from './icon_link/icon_link';
 
 export const Links: Link[] = [
-	{
-		type: 'mail',
-		href: 'mailto:shevonmendis98@gmail.com',
-		icon: faEnvelope,
-	},
 	{
 		type:	'web',
 		href: 'https://github.com/theshevon',
