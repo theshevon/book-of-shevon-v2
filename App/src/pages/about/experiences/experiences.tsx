@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ExperiencesMessages as Messages } from './experiences.messages';
-import styles from 'experiences.module.css';
+import styles from './experiences.module.css';
 
 type Date = {
   month: string,

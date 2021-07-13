@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { SkillsMessages as Messages } from './skills.messages';
-import styles from 'skills.module.css';
+import styles from './skills.module.css';
 
 type SkillsProps = {
 	label: 'proficient' | 'familiar',

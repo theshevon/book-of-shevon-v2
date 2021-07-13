@@ -13,8 +13,13 @@ export const Routes: Route[] = [
         index: 1,
     },
     {
-        route: '/about',
-        label: RoutesMessages.About(),
+        route: '/old-about',
+        label: 'Old ' + RoutesMessages.About(),
+        index: -1,
+    },
+    {
+        route: '/new-about',
+        label: 'New ' + RoutesMessages.About(),
         index: -1,
     },
 ];

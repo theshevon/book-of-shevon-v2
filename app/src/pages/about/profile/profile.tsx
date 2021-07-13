@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from 'profile.module.css';
+import styles from './profile.module.css';
 
 export type ProfileProps = {
   name: string,
