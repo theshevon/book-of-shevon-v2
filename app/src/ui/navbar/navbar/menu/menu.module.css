@@ -1,0 +1,52 @@
+@value menuHeight: 35px;
+
+.menu {
+    list-style: none;
+    height: menuHeight;
+    width: 70%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 300ms;
+}
+
+.link {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 400;
+    font-size: 0.85rem;
+    text-decoration: none;
+    position: relative;
+}
+
+.link.active:after {
+    content: '';
+    height: 2px;
+    border-radius: 1px;
+    width: 50%;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}

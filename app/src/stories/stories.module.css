@@ -1,0 +1,14 @@
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+.storyInGroup {
+  padding: 10px;
+  border: 1px dashed black;
+  position: relative;
+}
+
+.storyInGroup:not(:first-of-type) {
+  margin-top: 10px;
+}
