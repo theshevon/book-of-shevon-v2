@@ -12,7 +12,6 @@ export const CommercialExperiences: ExperienceProps[] = [
     },
     responsibilities: [
       Messages.CanvaResponsibility1(),
-      Messages.CanvaResponsibility2(),
     ],
   },
   {
@@ -60,7 +59,7 @@ export const CommercialExperiences: ExperienceProps[] = [
     },
     responsibilities: [
       Messages.UniMelbTutResponsibility1(),
-      Messages.UniMelbEngResponsibility2(),
+      Messages.UniMelbTutResponsibility2(),
     ],
   },
 ];

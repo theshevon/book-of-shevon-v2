@@ -22,7 +22,7 @@ export const Profile = ({
         alt={imgAltTag}
     />
     <h1
-      className={styles.name}
+        className={styles.name}
     >
       {name}
     </h1>

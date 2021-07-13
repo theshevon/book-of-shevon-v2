@@ -31,13 +31,11 @@ export const ExperiencesMessages = {
 
   CanvaResponsibility1: (): string => 'Building and maintaing UI components',
 
-  CanvaResponsibility2: (): string => 'Performing code reviews',
-
   DgitSystems: (): string => 'DGiT Systems',
 
-  DgitResponsibility1: (): string => 'Designing, building and testing platform-based solutions that meet clients',
+  DgitResponsibility1: (): string => 'Designing, building and testing platform-based solutions that meet clients requirements',
 
-  DgitResponsibility2: (): string => 'Winning the ”Best Rookie” (2020) Award',
+  DgitResponsibility2: (): string => 'Winning the \'Best Rookie\' Award',
 
   UniMelb: (): string => 'The University of Melbourne',
 

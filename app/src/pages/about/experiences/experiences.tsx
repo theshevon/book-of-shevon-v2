@@ -81,7 +81,7 @@ const Responsibilities = ({
       className={styles.responsibilitesContainer}
   >
     <p>
-      {Messages.ResponsibleFor()}
+      {Messages.ResponsibleFor()}:
     </p>
     <ul
         className={styles.responsibilites}
