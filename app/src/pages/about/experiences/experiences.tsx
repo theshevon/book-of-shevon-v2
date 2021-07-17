@@ -18,6 +18,7 @@ export type ExperienceProps = {
   company: string | Link,
   startDate: Date,
   endDate?: Date,
+  useResponsibilitiesLabel?: boolean,
   responsibilities: string[],
 }
 
@@ -47,7 +48,8 @@ const Experience = ({
   company,
   startDate,
   endDate,
-  responsibilities
+  useResponsibilitiesLabel=true,
+  responsibilities,
 }: ExperienceProps) => (
   <div
       className={styles.experience}
@@ -67,24 +69,29 @@ const Experience = ({
         endDate={endDate}
     />
     <Responsibilities
+        useResponsibilitiesLabel={useResponsibilitiesLabel}
         responsibilities={responsibilities}
     />
   </div>
 );
 
 const Responsibilities = ({
+  useResponsibilitiesLabel,
   responsibilities,
 }: {
+  useResponsibilitiesLabel: boolean,
   responsibilities: string[],
 }) => (
   <div
       className={styles.responsibilitiesContainer}
   >
-    <p
-        className={styles.label}
-    >
-      {Messages.ResponsibleFor()}:
-    </p>
+    {useResponsibilitiesLabel && 
+      <p
+          className={styles.label}
+      >
+        {Messages.ResponsibleFor()}:
+      </p>
+    }
     <ul
         className={styles.responsibilites}
     >

@@ -16,7 +16,7 @@ export const ExperiencesMessages = {
   September: (): string => 'Sep',
 
   /* 3 character abbreviation for the month of October */
-  October: (): string => 'October',
+  October: (): string => 'Oct',
 
   /* 3 character abbreviation for the month of December */
   December: (): string => 'Dec',

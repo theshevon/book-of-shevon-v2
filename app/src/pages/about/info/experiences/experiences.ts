@@ -76,6 +76,7 @@ export const VolunteerExperiences: ExperienceProps[] = [
       month: Messages.October(),
       year: 2019,
     },
+    useResponsibilitiesLabel: false,
     responsibilities: [
       Messages.CodecResponsibility1(),
       Messages.CodecResponsibility2(),
@@ -86,12 +87,13 @@ export const VolunteerExperiences: ExperienceProps[] = [
     company: Messages.Misc(),
     startDate: {
       month: Messages.September(),
-      year: 2019,
+      year: 2018,
     },
     endDate: {
       month: Messages.September(),
       year: 2019,
     },
+    useResponsibilitiesLabel: false,
     responsibilities: [
       Messages.MiscResponsibility1(),
       Messages.MiscResponsibility2(),
@@ -109,6 +111,7 @@ export const VolunteerExperiences: ExperienceProps[] = [
       month: Messages.October(),
       year: 2019,
     },
+    useResponsibilitiesLabel: false,
     responsibilities: [
       Messages.CissaResponsibility1(),
       Messages.CissaResponsibility2(),
