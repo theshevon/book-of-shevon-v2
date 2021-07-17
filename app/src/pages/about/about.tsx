@@ -6,7 +6,7 @@ import { createProfile } from './profile/create';
 import { Skills } from './skills/skills';
 import { Experiences } from './experiences/experiences';
 import { TertiaryEducation } from './info/education/education';
-import { FamiliarSkills, ProficientSkills } from './info/skills/skills';
+import { SkillsLists } from './info/skills/skills';
 import { CommercialExperiences, VolunteerExperiences } from './info/experiences/experiences';
 
 import styles from './about.module.css';
@@ -49,12 +49,7 @@ export const About = () => {
 					title={'skills'}
 			>
 				<Skills
-						label={'proficient'}
-						skills={ProficientSkills}
-				/>
-				<Skills
-						label={'familiar'}
-						skills={FamiliarSkills}
+						skillsLists={SkillsLists}
 				/>
 			</Section>
 

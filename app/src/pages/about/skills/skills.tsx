@@ -3,17 +3,38 @@ import React from 'react';
 import { SkillsMessages as Messages } from './skills.messages';
 import styles from './skills.module.css';
 
-type SkillsProps = {
+export type SkillsListProps = {
 	label: 'proficient' | 'familiar',
 	skills: string[],
 };
 
 export const Skills = ({
-	label,
-	skills,
-}: SkillsProps) => (
+	skillsLists,
+}: {
+	skillsLists: SkillsListProps[],
+}) => (
+	<ul
+			className={styles.skills}
+	>
+		{skillsLists.map(skillsList => (
+			<li
+					key={skillsList.label} // assumption: there will at most be two lists: one for 'proficient' and one for 'familiar'
+					className={styles.skillsListContainer}
+			>
+				<SkillsList
+						{...skillsList}
+				/>
+			</li>
+		))}
+	</ul>
+);
+
+const SkillsList = ({
+		label,
+		skills,
+}: SkillsListProps) => (
 	<div
-			className={styles.skillsContainer}
+			className={styles.skillsList}
 	>
 		<p
 				className={styles.label}
@@ -21,7 +42,7 @@ export const Skills = ({
 			{label === 'proficient' ? Messages.ProficientWith() : Messages.FamiliarWith()}:
 		</p>
 		<ul
-				className={styles.skillsList}
+				className={styles.list}
 		>
 			{skills.map(skill => (
 				<li
