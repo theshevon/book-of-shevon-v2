@@ -1,3 +1,5 @@
+@value mobileBreakpoint from '../../ui/metrics/metrics.module.css';
+
 .siteTitleContainer {
     position: absolute;
     left: 50%;
@@ -26,7 +28,7 @@
     width: 80%;
 }
 
-@media(min-width: 576px) {
+@media(min-width: mobileBreakpoint) {
 
     .siteTitle {
         white-space: nowrap;

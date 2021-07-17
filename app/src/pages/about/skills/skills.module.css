@@ -1,4 +1,5 @@
-@value lightGrey from '../../../ui/colors/colors.css';
+@value lightGrey from '../../../ui/colors/colors.module.css';
+@value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
 
 .skills {
     padding-left: 0;
@@ -30,4 +31,12 @@
 
 .skill:not(.skill:last-of-type) {
     margin-right: 5px;
+}
+
+@media(max-width: mobileBreakpoint) {
+
+    .skills {
+        list-style: none;
+    }
+
 }

@@ -1,4 +1,4 @@
-@value flatGold from '../../../ui/colors/colors.css';
+@value flatGold from '../../../ui/colors/colors.module.css';
 
 .profile {
     display: flex;

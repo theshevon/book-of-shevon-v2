@@ -122,7 +122,7 @@ const Responsibilities = ({
       </p>
     }
     <ul
-        className={styles.responsibilites}
+        className={styles.responsibilities}
     >
       {responsibilities.map((responsibility, index) => (
         <li

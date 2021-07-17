@@ -1,4 +1,4 @@
-@value lightGrey from './../colors/colors.css';
+@value lightGrey from './../colors/colors.module.css';
 
 .button {
     background: none;

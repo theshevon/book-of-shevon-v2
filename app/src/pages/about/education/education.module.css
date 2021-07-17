@@ -1,4 +1,5 @@
-@value flatGold from '../../../ui/colors/colors.css';
+@value flatGold from '../../../ui/colors/colors.module.css';
+@value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
 
 @value bottomMargin: 7.5px;
 @value boldFontWeight: 500;
@@ -27,3 +28,12 @@ strong {
     color: flatGold;
     font-size: 17.5px;
 }
+
+@media(max-width: mobileBreakpoint) {
+
+    .education {
+        list-style: none;
+    }
+
+}
+
