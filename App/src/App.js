@@ -6,8 +6,7 @@ import {
 } from 'react-router-dom';
 
 import { Home } from './pages/home/home';
-import { About as oldAbout } from './pages/about/oldAbout';
-import { About as newAbout } from './pages/about/about';
+import { About } from './pages/about/about';
 import { createNavbar } from './ui/navbar/create';
 import { Routes as routes } from './routes/routes';
 
@@ -30,13 +29,8 @@ export const App = () => {
 					/>
 					<Route
               exact
-              path='/old-about'
-              component={oldAbout}
-					/>
-					<Route
-              exact
-              path='/new-about'
-              component={newAbout}
+              path='/about'
+              component={About}
 					/>
 				</Switch>
 			</Router>

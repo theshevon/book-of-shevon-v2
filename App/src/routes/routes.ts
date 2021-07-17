@@ -8,18 +8,13 @@ export type Route = {
 
 export const Routes: Route[] = [
     {
+        route: '/about',
+        label: RoutesMessages.About(),
+        index: -1,
+    },
+    {
         route: '/',
         label: RoutesMessages.Home(),
         index: 1,
-    },
-    {
-        route: '/old-about',
-        label: 'Old ' + RoutesMessages.About(),
-        index: -1,
-    },
-    {
-        route: '/new-about',
-        label: 'New ' + RoutesMessages.About(),
-        index: -1,
     },
 ];
