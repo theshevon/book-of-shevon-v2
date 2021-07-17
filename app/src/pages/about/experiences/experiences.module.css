@@ -43,3 +43,7 @@
 .experience {
     margin-bottom: calc(3 * bottomMargin);
 }
+
+.experience:last-of-type {
+    margin-bottom: 0;
+}

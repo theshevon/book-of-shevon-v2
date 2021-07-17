@@ -1,0 +1,12 @@
+.section {
+    margin-bottom: 0;
+}
+
+.title {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+    text-transform: uppercase;
+}
+
+.info {
+    padding: 15px 0px;
+}
