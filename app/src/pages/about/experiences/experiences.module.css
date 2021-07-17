@@ -40,10 +40,6 @@
     padding-left: 0;
 }
 
-.experience {
+.experience:not(.experience:last-of-type) {
     margin-bottom: calc(3 * bottomMargin);
-}
-
-.experience:last-of-type {
-    margin-bottom: 0;
 }

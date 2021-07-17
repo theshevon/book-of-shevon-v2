@@ -12,7 +12,11 @@ export const SkillsMessages = {
   
   JavaScript: (): string => 'JavaScript', 
     
-  React: (): string => 'React / Redux', 
+  React: (): string => 'React',
+
+  Redux: (): string => 'Redux',
+
+  MobX: (): string => 'MobX',
   
   MongoDb: (): string => 'MongoDB', 
   

@@ -18,7 +18,7 @@ export const Skills = ({
 		<p
 				className={styles.label}
 		>
-			{ label === 'proficient' ? Messages.ProficientWith() : Messages.FamiliarWith() }:
+			{label === 'proficient' ? Messages.ProficientWith() : Messages.FamiliarWith()}:
 		</p>
 		<ul
 				className={styles.skillsList}

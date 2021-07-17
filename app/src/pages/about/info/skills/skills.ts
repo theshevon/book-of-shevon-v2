@@ -15,6 +15,8 @@ export const ProficientSkills: string[] = [
 
 export const FamiliarSkills: string[] = [
   Messages.Haskell(),
+  Messages.Redux(),
+  Messages.MobX(),
   Messages.Prolog(),
   Messages.Neo4j(),
   Messages.Firebase(),
