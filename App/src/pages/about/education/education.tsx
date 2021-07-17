@@ -57,7 +57,7 @@ const CourseOfStudy = ({
       className={styles.courseOfStudy}
   >
     <p
-        className='university'
+        className={styles.university}
     >
       {university}
     </p>
@@ -71,25 +71,25 @@ const CourseOfStudy = ({
         endDate={endDate}
     />
     <ul
-        className='course-details'
+        className={styles.courseDetails}
     >
-        <li
-            className='responsibility'
-        >
-          <strong>
-            {Messages.Major()}:&nbsp;
-          </strong>
-          {major}
-        </li>
+      <li
+          className={styles.detail}
+      >
+        <strong>
+          {Messages.Major()}:&nbsp;
+        </strong>
+        {major}
+      </li>
 
-        <li
-            className='responsibility'
-        >
-          <strong>
-            {getGradingSystemLabel(gradingSystem)}:&nbsp;
-          </strong>
-          {mark}&nbsp;({grade})
-        </li>
+      <li
+          className={styles.detail}
+      >
+        <strong>
+          {getGradingSystemLabel(gradingSystem)}:&nbsp;
+        </strong>
+        {mark}&nbsp;({grade})
+      </li>
     </ul>
   </div>
 );
