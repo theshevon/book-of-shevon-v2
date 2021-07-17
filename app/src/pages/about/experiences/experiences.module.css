@@ -1,0 +1,72 @@
+@value midGrey, flatGold from '../../../ui/colors/colors.module.css';
+@value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
+
+@value bottomMargin: 7.5px;
+@value boldFontWeight: 500;
+@value experienceBottom: calc(4 * bottomMargin);
+
+.experiences {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+    padding-left: 0;
+}
+
+.experienceContainer:not(:last-of-type) {
+    margin-bottom: experienceBottom;
+}
+
+.role,
+.company,
+.period,
+.label,
+.responsibility {
+    margin-top: 0;
+    margin-bottom: bottomMargin;
+    font-size: 15px;
+}
+
+.role,
+.company {
+    font-weight: boldFontWeight;
+}
+
+.role {
+    color: flatGold;
+    font-size: 17.5px;
+}
+
+.company {
+    font-weight: bold;
+}
+
+.company .link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.company .link:hover {
+    text-decoration: underline;
+}
+
+.period {
+    color: darkGrey;
+}
+
+.responsibilities {
+    margin-top: 0;
+}
+
+@media(max-width: mobileBreakpoint) {
+
+    .experiences {
+        list-style: none;
+    }
+
+    .responsibilities {
+        padding-left: 7.5%;
+    }
+
+    .responsibility {
+        text-align: justify;
+    }
+
+}

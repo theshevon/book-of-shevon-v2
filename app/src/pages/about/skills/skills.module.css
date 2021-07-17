@@ -1,0 +1,46 @@
+@value lightGrey from '../../../ui/colors/colors.module.css';
+@value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
+
+.skillsListContainer:not(:last-of-type) {
+    margin-bottom: calc(3 * 7.5px);
+}
+
+.skills {
+    padding-left: 0;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+    font-size: 15px;
+}
+
+.label {
+    margin-top: 0;
+    margin-bottom: 7.5px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.skill {
+    border-radius: 15px;
+    padding: 3px 15px;
+    font-size: 15px;
+    text-align: center;
+    background-color: lightGrey;
+    margin-bottom: 7.5px;
+}
+
+.skill:not(.skill:last-of-type) {
+    margin-right: 5px;
+}
+
+@media(max-width: mobileBreakpoint) {
+
+    .skills {
+        list-style: none;
+    }
+
+}

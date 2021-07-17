@@ -1,0 +1,39 @@
+@value flatGold from '../../../ui/colors/colors.module.css';
+@value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
+
+@value bottomMargin: 7.5px;
+@value boldFontWeight: 500;
+
+.education {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+    padding-left: 0;
+}
+
+.university,
+.course,
+.period,
+.detail {
+    margin-top: 0;
+    margin-bottom: bottomMargin;
+    font-size: 15px;
+}
+
+.university,
+.course,
+strong {
+    font-weight: boldFontWeight;
+}
+
+.university {
+    color: flatGold;
+    font-size: 17.5px;
+}
+
+@media(max-width: mobileBreakpoint) {
+
+    .education {
+        list-style: none;
+    }
+
+}
+
