@@ -77,7 +77,7 @@ const CourseOfStudy = ({
             className='responsibility'
         >
           <strong>
-            {Messages.Major()}&nbsp;
+            {Messages.Major()}:&nbsp;
           </strong>
           {major}
         </li>

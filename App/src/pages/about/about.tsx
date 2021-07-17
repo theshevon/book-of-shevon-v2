@@ -35,16 +35,7 @@ export const About = () => {
 			{/* PROFILE SECTION */}
 			{Profile}
 
-			{/* EDUCATION SECTION */}
-			<Section
-					title={'education'}
-			>
-				<Education
-						education={TertiaryEducation}
-				/>
-			</Section>
-
-			{/* EXPERIENCE SECTION */}
+			{/* WORK EXPERIENCE SECTION */}
 			<Section
 					title={'commercialXp'}
 			>
@@ -67,7 +58,16 @@ export const About = () => {
 				/>
 			</Section>
 
-			{/* VOLUNTEER SECTION */}
+			{/* EDUCATION SECTION */}
+			<Section
+					title={'education'}
+			>
+				<Education
+						education={TertiaryEducation}
+				/>
+			</Section>
+
+			{/* VOLUNTEER EXPERIENCE SECTION */}
 			<Section
 					title={'volunteerXp'}
 			>

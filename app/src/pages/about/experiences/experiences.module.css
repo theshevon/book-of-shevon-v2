@@ -1,0 +1,45 @@
+@value midGrey, flatGold from '../../../ui/colors/colors.css';
+
+@value bottomMargin: 7.5px;
+@value boldFontWeight: 500;
+
+.role,
+.company,
+.period,
+.label,
+.responsibility {
+    margin-top: 0;
+    margin-bottom: bottomMargin;
+    font-size: 15px;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+}
+
+.role,
+.company {
+    font-weight: boldFontWeight;
+}
+
+.role {
+    color: flatGold;
+    font-size: 17.5px;
+}
+
+.company {
+    font-weight: bold;
+}
+
+.period {
+    color: darkGrey;
+}
+
+.responsibilities {
+    margin-top: 0;
+}
+
+.experiences {
+    padding-left: 0;
+}
+
+.experience {
+    margin-bottom: calc(3 * bottomMargin);
+}

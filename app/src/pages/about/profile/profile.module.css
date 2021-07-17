@@ -1,4 +1,4 @@
-@value flatGold: #D4AF37;
+@value flatGold from '../../../ui/colors/colors.css';
 
 .profile {
     display: flex;

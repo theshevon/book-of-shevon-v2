@@ -78,9 +78,11 @@ const Responsibilities = ({
   responsibilities: string[],
 }) => (
   <div
-      className={styles.responsibilitesContainer}
+      className={styles.responsibilitiesContainer}
   >
-    <p>
+    <p
+        className={styles.label}
+    >
       {Messages.ResponsibleFor()}:
     </p>
     <ul

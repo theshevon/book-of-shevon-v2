@@ -2,7 +2,7 @@ export const SectionMessages = {
 
   education: (): string => 'Education',
 
-  commercialExperience: (): string => 'Experience',
+  commercialExperience: (): string => 'Work Experience',
 
   skills: (): string => 'Skills',
 
