@@ -1,11 +1,13 @@
 import { ExperiencesMessages as Messages } from './experiences.messages';
 import type { ExperienceProps } from '../../experiences/experiences';
 
-// TODO: add links to companies
 export const CommercialExperiences: ExperienceProps[] = [
   {
     role: Messages.SoftwareEngineer(),
-    company: Messages.Canva(),
+    company: {
+      anchorText: Messages.Canva(),
+      url: 'https://www.canva.com/',
+    },
     startDate: {
       month: Messages.April(),
       year: 2021,
@@ -16,7 +18,10 @@ export const CommercialExperiences: ExperienceProps[] = [
   },
   {
     role: Messages.SoftwareEngineer(),
-    company: Messages.DgitSystems(),
+    company: {
+      anchorText: Messages.DgitSystems(),
+      url: 'https://www.dgitsystems.com/',
+    },
     startDate: {
       month: Messages.July(),
       year: 2020,
@@ -32,7 +37,10 @@ export const CommercialExperiences: ExperienceProps[] = [
   },
   {
     role: Messages.SoftwareEngineer(),
-    company: Messages.UniMelb(),
+    company: {
+      anchorText: Messages.UniMelb(),
+      url: 'https://www.unimelb.edu.au/',
+    },
     startDate: {
       month: Messages.May(),
       year: 2020,
@@ -48,7 +56,10 @@ export const CommercialExperiences: ExperienceProps[] = [
   },
   {
     role: Messages.AcademicTutor(),
-    company: Messages.UniMelb(),
+    company: {
+      anchorText: Messages.UniMelb(),
+      url: 'https://www.unimelb.edu.au/',
+    },
     startDate: {
       month: Messages.July(),
       year: 2019,
@@ -84,7 +95,10 @@ export const VolunteerExperiences: ExperienceProps[] = [
   },
   {
     role: Messages.GenCommMember(),
-    company: Messages.Misc(),
+    company: {
+      anchorText: Messages.Misc(),
+      url: 'https://www.umisc.info/',
+    },
     startDate: {
       month: Messages.September(),
       year: 2018,
@@ -102,7 +116,10 @@ export const VolunteerExperiences: ExperienceProps[] = [
   },
   {
     role: Messages.PubGenCommMember(),
-    company: Messages.Cissa(),
+    company: {
+      anchorText: Messages.Cissa(),
+      url: 'https://cissa.org.au/',
+    },
     startDate: {
       month: Messages.April(),
       year: 2019,

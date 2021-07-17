@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React from 'react';
 
 import { ExperiencesMessages as Messages } from './experiences.messages';
@@ -59,11 +60,9 @@ const Experience = ({
     >
       {role}
     </p>
-    <p
-        className={styles.company}
-    >
-      {company}
-    </p>
+    <Company
+        company={company}
+    />
     <TimePeriod
         startDate={startDate}
         endDate={endDate}
@@ -74,6 +73,36 @@ const Experience = ({
     />
   </div>
 );
+
+const Company = ({
+  company,
+}: {
+  company: string | Link,
+}) => {
+  let content;
+  if (typeof company === 'string') {
+    content = company;
+  } else {
+    const { anchorText, url } = company as Link;
+    content = (
+      <a
+          href={url}
+          target='_blank'
+          rel='noreferrer'
+          className={styles.link}
+      >
+        {anchorText}
+      </a>
+    );
+  }
+  return (
+    <p
+        className={styles.company}
+    >
+      {content}
+    </p>
+  );
+}
 
 const Responsibilities = ({
   useResponsibilitiesLabel,
