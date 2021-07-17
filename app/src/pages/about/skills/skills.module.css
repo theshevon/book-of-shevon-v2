@@ -1,6 +1,10 @@
 @value lightGrey from '../../../ui/colors/colors.module.css';
 @value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
 
+.skillsListContainer:not(:last-of-type) {
+    margin-bottom: calc(3 * 7.5px);
+}
+
 .skills {
     padding-left: 0;
     font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
