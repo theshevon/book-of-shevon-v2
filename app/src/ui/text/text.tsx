@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import styles from './text.module.css';
 
-type Alignment = 'left' | 'right' | 'centered' | 'justified';
+type Alignment = 'left' | 'right' | 'center' | 'justify';
 
 type FontWeight = 'light' | 'normal' | 'semi-bold' | 'bold';
 
@@ -18,11 +18,11 @@ const getAligmentClassName = (alignment: Alignment) => {
   switch (alignment) {
     case 'left':
       return styles.left;
-    case 'centered':
+    case 'center':
       return styles.center;
     case 'right':
       return styles.right;
-    case 'justified':
+    case 'justify':
       return styles.justified
   }
 }
@@ -54,10 +54,6 @@ const getClassNames = ({
     {[styles.italicised]: italicised},
   );
 }
-
-const a = 1;
-const b = {d:2};
-const c = { a, ...b};
 
 const Small: React.FC<TextProps> = (props) => (
   <p

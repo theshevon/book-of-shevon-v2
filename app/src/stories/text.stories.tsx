@@ -1,33 +1,49 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { boolean, select } from '@storybook/addon-knobs';
 
 import { StoryGroup } from './stories';
 import { Text } from '../ui/text/text';
 
 storiesOf('UI/Text', module)
   .add('Overview', () => {
+    const alignment = select('Alignment', {
+      'Left': 'left',
+      'Right': 'right',
+      'Center': 'center',
+      'Justify': 'justify',
+    }, 'left');
+    const fontWeight = select('Font Weight', {
+      'Light': 'light',
+      'Normal': 'normal',
+      'Semi-Bold': 'semi-bold',
+      'Bold': 'bold',
+    }, 'normal');
     const italicised = boolean('Italicised', false);
+    const props = {
+      alignment,
+      fontWeight,
+      italicised,
+    }
     return (
       <StoryGroup>
         <Text.Small
-            italicised={italicised}
+            {...props}
         >
           This is a sentence using small text
         </Text.Small>
         <Text.Medium
-            italicised={italicised}
+            {...props}
         >
           This is a sentence using medium text
         </Text.Medium>
         <Text.Large
-            italicised={italicised}
+            {...props}
         >
           This is a sentence using large text
         </Text.Large>
         <Text.ExtraLarge
-            italicised={italicised}
+            {...props}
         >
           This is a sentence using extra large text
         </Text.ExtraLarge>
