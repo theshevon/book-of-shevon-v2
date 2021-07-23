@@ -1,0 +1,36 @@
+.text {
+    margin: 0;
+    font-weight: normal;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.italicised {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.semiBold {
+    font-weight: bolder;
+}
+
+.light {
+    font-weight: lighter;
+}
