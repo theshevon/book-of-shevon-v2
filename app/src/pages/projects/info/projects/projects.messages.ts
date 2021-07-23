@@ -1,12 +1,16 @@
-export const ProjectMessages = {
+export const ProjectsMessages = {
 
   InvoiceMaker: (): string => 'Invoice Maker',
 
   InvoiceMakerDesc: (): string => 'A script to automate invoicing based on information stored in a Google Sheet.',
 
-  BookOfShevon: (): string => 'Book of Shevon',
+  BookOfShevonV1: (): string => 'Book of Shevon v1',
 
-  BookOfShevonDesc: (): string => 'Current portfolio website.',
+  BookOfShevonV1Desc: (): string => 'Original portfolio website.',
+  
+  BookOfShevonV2: (): string => 'Book of Shevon v2',
+
+  BookOfShevonV2Desc: (): string => 'Current portfolio website.',
 
   MiscWebsite: (): string => 'MISC Website',
 
