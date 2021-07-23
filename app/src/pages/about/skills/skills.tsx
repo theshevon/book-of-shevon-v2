@@ -1,6 +1,8 @@
 import React from 'react';
 
+import { Capsule } from './../../../ui/capsule/capsule'; 
 import { SkillsMessages as Messages } from './skills.messages';
+
 import styles from './skills.module.css';
 
 export type SkillsListProps = {
@@ -49,7 +51,9 @@ const SkillsList = ({
 						key={skill}
 						className={styles.skill}
 				>
-					{skill}
+					<Capsule
+							text={skill}
+					/>
 				</li>
 			))}
 		</ul>

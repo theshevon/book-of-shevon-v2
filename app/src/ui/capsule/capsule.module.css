@@ -1,0 +1,10 @@
+@value lightGrey from './../colors/colors.module.css';
+
+.capsule {
+    border-radius: 15px;
+    padding: 3px 15px;
+    font-size: 15px;
+    text-align: center;
+    background-color: lightGrey;
+    margin-bottom: 7.5px;
+}
