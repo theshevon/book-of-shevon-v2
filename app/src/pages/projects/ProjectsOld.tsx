@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 
-import Project from "../components/Project";
+import Project from "../../components/Project";
 
-import projectsJson from "../assets/projects/projects.json";
+import projectsJson from "../../assets/projects/projects.json";
 
-import "../styles/pages/Projects.css";
+import "./Projects.css";
 
-const Projects = () => {
+export const Projects = () => {
 
 
     const projects = (
@@ -42,5 +42,3 @@ const Projects = () => {
         </div>
     )
 }
-
-export default Projects;
