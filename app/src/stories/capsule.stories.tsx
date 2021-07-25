@@ -2,23 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Capsule } from '../ui/capsule/capsule';
+import { Text } from '../ui/text/text';
 
 storiesOf('UI/Capsule', module)
   .add('Capsule', () => (
       <div
           style={{ display: 'flex' }}
       >
-        <Capsule
-            content={'These'}
-        />
-        <Capsule
-            content={'are'}
-        />
-        <Capsule
-            content={'some'}
-        />
-        <Capsule
-            content={'capsules'}
-        />
+        <Capsule>
+          <Text.Small
+              text={'This is a capsule'}
+          />
+        </Capsule>
       </div>
   ));

@@ -9,9 +9,11 @@ type Alignment = 'left' | 'right' | 'center' | 'justify';
 type FontWeight = 'light' | 'normal' | 'semi-bold' | 'bold';
 
 type TextProps = {
+  text: string,
   alignment?: Alignment,
   fontWeight?: FontWeight,
   italicised?: boolean,
+  className?: string,
 }
 
 const getAligmentClassName = (alignment: Alignment) => {
@@ -45,6 +47,7 @@ const getClassNames = ({
   alignment = 'left',
   fontWeight = 'normal',
   italicised = false,
+  className,
 }: { size: string } & TextProps) => {
   return classNames(
     styles.text,
@@ -52,50 +55,51 @@ const getClassNames = ({
     getAligmentClassName(alignment),
     getFontWeightClassName(fontWeight),
     {[styles.italicised]: italicised},
+    className,
   );
 }
 
-const Small: React.FC<TextProps> = (props) => (
+const Small = (props: TextProps) => (
   <p
       className={getClassNames({
         size: styles.small,
         ...props
       })}
   >
-    {props.children}
+    {props.text}
   </p>
 );
 
-const Medium: React.FC<TextProps> = (props) => (
+const Medium = (props: TextProps) => (
   <h3
       className={getClassNames({
         size: styles.medium,
         ...props
       })}
   >
-    {props.children}
+    {props.text}
   </h3>
 );
 
-const Large: React.FC<TextProps> = (props) => (
+const Large = (props: TextProps) => (
   <h2
       className={getClassNames({
         size: styles.large,
         ...props
       })}
   >
-    {props.children}
+    {props.text}
   </h2>
 );
   
-const ExtraLarge: React.FC<TextProps> = (props) => (
+const ExtraLarge = (props: TextProps) => (
   <h1
       className={getClassNames({
         size: styles.extraLarge,
         ...props
       })}
   >
-    {props.children}
+    {props.text}
   </h1>
 );
 
