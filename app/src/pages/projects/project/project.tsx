@@ -1,9 +1,10 @@
 import React from 'react'
 
 import { Text } from './../../../ui/text/text';
-import { Link, ButtonLink } from './../../../ui/link/link';
 import { Capsule } from './../../../ui/capsule/capsule';
+import { Link, ButtonLink } from './../../../ui/link/link';
 import { ProjectMessages as Messages } from './project.messages';
+import { TechCapsule } from './tech_capsule/tech_capsule';
 
 import styles from './project.module.css';
 
@@ -111,11 +112,9 @@ const TechStack = ({
           key={tech}
           className={styles.listCapsule}
       >
-        <Capsule>
-          <Text.Small
-            text={tech}
-          />
-        </Capsule>
+        <TechCapsule
+            tech={tech}
+        />
       </li>
     ))}
   </ul>

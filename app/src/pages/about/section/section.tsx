@@ -33,7 +33,7 @@ export const Section: React.FC<SectionProps> = ({
 );
 
 const getSectionTitleLabel = (sectionTitleOpt: SectionTitleOpt): string => {
-	switch(sectionTitleOpt) {
+	switch (sectionTitleOpt) {
 		case 'education':
 			return Messages.education();
 		case 'commercialXp':

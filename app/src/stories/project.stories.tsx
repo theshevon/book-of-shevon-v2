@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Project } from './../pages/projects/project/project';
+import { TechCapsule } from './../pages/projects/project/tech_capsule/tech_capsule';
 
 storiesOf('Pages/Projects/Project', module)
   .add('Project', () => (
@@ -9,20 +10,67 @@ storiesOf('Pages/Projects/Project', module)
         name='Test Project'
         year={2021}
         description={'Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsum'}
-        techStack={['react', 'mobx']}
+        techStack={['React', 'MobX']}
         otherContributors={[{name:'Test Contributor', githubUrl:'#'}]}
         githubUrl='#'
     />
   ));
 
-storiesOf('Pages/Projects/Tech', module)
-  .add('Tech', () => (
-    <Project
-        name='Test Project'
-        year={2021}
-        description={'Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsum'}
-        techStack={['react', 'mobx']}
-        otherContributors={[{name:'Test Contributor', githubUrl:'#'}]}
-        githubUrl='#'
-    />
+storiesOf('Pages/Projects/Tech Capsule', module)
+  .add('Tech Capsule', () => (
+    <div
+        style={{display: 'flex', flexWrap: 'wrap'}}
+    >
+      <TechCapsule
+          tech='python'
+      />
+      <TechCapsule
+          tech='csharp'
+      />
+      <TechCapsule
+          tech='java'
+      />
+      <TechCapsule
+          tech='html'
+      />
+      <TechCapsule
+          tech='css'
+      />
+      <TechCapsule
+          tech='javascript'
+      />
+      <TechCapsule
+          tech='react'
+      />
+      <TechCapsule
+          tech='redux'
+      />
+      <TechCapsule
+          tech='mobx'
+      />
+      <TechCapsule
+          tech='mongodb'
+      />
+      <TechCapsule
+          tech='mySql'
+      />
+      <TechCapsule
+          tech='git'
+      />
+      <TechCapsule
+          tech='firebase'
+      />
+      <TechCapsule
+          tech='jquery'
+      />
+      <TechCapsule
+          tech='node'
+      />
+      <TechCapsule
+          tech='androidStudio'
+      />
+      <TechCapsule
+          tech='unity'
+      />
+    </div>
   ));

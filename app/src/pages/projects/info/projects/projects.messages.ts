@@ -64,15 +64,9 @@ export const ProjectsMessages = {
   
   MySql: (): string => 'MySQL', 
   
-  Git: (): string => 'Git', 
-
-  Haskell: (): string => 'Haskell', 
-
-  Prolog: (): string => 'Prolog', 
+  Git: (): string => 'Git',
   
   Firebase: (): string => 'Firebase', 
-  
-  Swift: (): string => 'Swift',
 
   JQuery: (): string => 'JQuery',
 
