@@ -1,9 +1,6 @@
 import React from 'react'
 import classNames from 'classnames';
 
-import { Text } from './../text/text';
-import { Capsule } from './../capsule/capsule'
-
 import styles from './link.module.css';
 
 export type LinkProps = {
@@ -23,9 +20,7 @@ export const Link = ({
       rel='noreferrer'
       className={classNames(styles.link, className)}
   >
-    <Text.Small
-        text={anchorText}
-    />
+    {anchorText}
   </a>
 );
 

@@ -105,7 +105,7 @@ const TechStack = ({
     {techStack.map(tech => (
       <li
           key={tech}
-          className={styles.tech}
+          className={styles.listCapsule}
       >
         <Capsule>
           <Text.Small
@@ -128,7 +128,7 @@ const OtherContributors = ({
     {otherContributors.map(otherContributor => (
       <li
           key={otherContributor.name}
-          className={styles.otherContributor}
+          className={styles.listCapsule}
       >
         <Capsule>
           <Link

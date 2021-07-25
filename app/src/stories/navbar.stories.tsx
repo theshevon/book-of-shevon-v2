@@ -45,7 +45,7 @@ storiesOf('UI/NavBar/ToggleMenuButton', module)
       <img
           src={BgImage}
           style={{ position: 'absolute', clip: 'rect(0px,165px,80px,0px)' }}
-          alt={"Distracting background image"}
+          alt={"Distracting background"}
       />
       <div
           style={{ padding: '25px' }}
