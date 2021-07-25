@@ -52,7 +52,7 @@ const SkillsList = ({
 						className={styles.skill}
 				>
 					<Capsule
-							text={skill}
+							content={skill}
 					/>
 				</li>
 			))}

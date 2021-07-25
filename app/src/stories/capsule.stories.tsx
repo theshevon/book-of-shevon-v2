@@ -9,16 +9,16 @@ storiesOf('UI/Capsule', module)
           style={{ display: 'flex' }}
       >
         <Capsule
-            text={'These'}
+            content={'These'}
         />
         <Capsule
-            text={'are'}
+            content={'are'}
         />
         <Capsule
-            text={'some'}
+            content={'some'}
         />
         <Capsule
-            text={'capsules'}
+            content={'capsules'}
         />
       </div>
   ));
