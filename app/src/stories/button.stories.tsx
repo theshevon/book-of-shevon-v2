@@ -11,16 +11,19 @@ storiesOf('UI/Button', module)
     <Button
         label={text('label', 'click me')}
         onClick={action('clicked')}
-        disabled={boolean('disabled', false)}/>
+        disabled={boolean('disabled', false)}
+    />
   ))
   .add('Overview (all states)', () => (
     <StoryGroup>
       <Button
           label={'click me'}
-          onClick={action('clicked')}/>
+          onClick={action('clicked')}
+      />
       <Button
           label={'disabled'}
           onClick={action('clicked')}
-          disabled={true}/>
+          disabled={true}
+      />
     </StoryGroup>
   ));

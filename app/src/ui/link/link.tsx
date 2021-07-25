@@ -6,7 +6,7 @@ import styles from './link.module.css';
 export type LinkProps = {
   anchorText: string,
   url: string,
-  className?: string,
+  className?: string[],
 }
 
 export const Link = ({
@@ -24,9 +24,14 @@ export const Link = ({
   </a>
 );
 
-export const ButtonLink = (props: LinkProps) => (
+export const ButtonLink = ({
+  anchorText,
+  url,
+  className = [],
+}: LinkProps) => (
   <Link
-      className={styles.buttonLink}
-      {...props}
+      anchorText={anchorText}
+      url={url}
+      className={[styles.buttonLink, ...className]}
   />
 );

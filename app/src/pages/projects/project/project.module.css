@@ -27,3 +27,22 @@
 .listCapsule {
 	margin-right: 5px;
 }
+
+.githubLinkContainer {
+	justify-self: flex-end;
+	display: flex;
+	justify-content: center;
+}
+
+.githubLink {
+	color: #3e3e3e;
+    border: 2px solid #3e3e3e;
+	font-weight: bold;
+	align-self: center;
+}
+
+.githubLink:hover {
+	background-color: rgb(83, 197, 98);
+    border-color: rgb(83, 197, 98);
+    color: white;
+}

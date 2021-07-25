@@ -85,11 +85,15 @@ export const Project = ({
     }
 
     {/* GITHUB LINK */}
-    <ButtonLink
-        url={githubUrl}
-        anchorText={'hi'}
-        className={styles.githubLink}
-    />
+    <div
+        className={styles.githubLinkContainer}
+    >
+      <ButtonLink
+          url={githubUrl}
+          anchorText={Messages.ViewProject()}
+          className={[styles.githubLink]}
+      />
+    </div>
     
   </div>
 );
