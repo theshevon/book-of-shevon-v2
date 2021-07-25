@@ -35,6 +35,7 @@ export const Project = ({
     {/* TITLE */}
     <Text.Large
         text={name}
+        alignment='center'
         fontWeight='bold'
         className={styles.title}
     />
@@ -42,12 +43,14 @@ export const Project = ({
     {/* YEAR */}
     <Text.Small
         text={year.toString()}
+        alignment='center'
         className={styles.year}
     />
 
     {/* DESCRIPTION */}
     <Text.Small
         text={description}
+        alignment='justify'
         className={styles.description}
     />
 
@@ -56,7 +59,8 @@ export const Project = ({
         className={styles.techStack}
     >
       <Text.Medium
-          text={Messages.TechStack()}
+          text={Messages.TechStack() + ':'}
+          alignment='center'
           fontWeight='bold'
       />
       <TechStack
@@ -70,7 +74,8 @@ export const Project = ({
           className={styles.otherContributors}
       >
         <Text.Medium
-            text={Messages.OtherContributors()}
+            text={Messages.OtherContributors() + ':'}
+            alignment='center'
             fontWeight='bold'
         />
         <OtherContributors
@@ -100,6 +105,7 @@ const TechStack = ({
     {techStack.map(tech => (
       <li
           key={tech}
+          className={styles.tech}
       >
         <Capsule>
           <Text.Small
@@ -117,11 +123,12 @@ const OtherContributors = ({
   otherContributors: Contributor[],
 }) => (
   <ul
-      className={styles.contributors}
+      className={styles.contributorsList}
   >
     {otherContributors.map(otherContributor => (
       <li
           key={otherContributor.name}
+          className={styles.otherContributor}
       >
         <Capsule>
           <Link

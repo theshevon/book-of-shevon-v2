@@ -1,0 +1,29 @@
+@value midGrey from '../../../ui/colors/colors.module.css';
+
+.project {
+	width: 30vw;
+}
+
+.title {
+	margin-bottom: 10px;
+}
+
+.year {
+	color: midGrey;
+	margin-bottom: 25px;
+}
+
+.description {
+	margin-bottom: 15px;
+}
+
+.techList, .contributorsList {
+	padding-left: 0;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+.listCapsule {
+	margin-right: 5px;
+}
