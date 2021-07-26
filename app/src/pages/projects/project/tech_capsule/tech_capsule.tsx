@@ -6,10 +6,10 @@ import { Text } from './../../../../ui/text/text';
 import styles from './tech_capsule.module.css';
 
 const getTechClassName = (tech: string) => { 
-  switch (tech.toLocaleLowerCase()) {
+  switch (tech.replace(/\s+/g, '').toLocaleLowerCase()) {
     case 'python':
       return styles.python;
-    case 'csharp':
+    case 'c#':
       return styles.cSharp;
     case 'java':
       return styles.java;

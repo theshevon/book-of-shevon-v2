@@ -16,61 +16,61 @@ storiesOf('Pages/Projects/Project', module)
     />
   ));
 
-storiesOf('Pages/Projects/Tech Capsule', module)
-  .add('Tech Capsule', () => (
+storiesOf('pages/projects/tech_capsule', module)
+  .add('TechCapsule', () => (
     <div
         style={{display: 'flex', flexWrap: 'wrap'}}
     >
       <TechCapsule
-          tech='python'
+          tech='Python'
       />
       <TechCapsule
-          tech='csharp'
+          tech='C#'
       />
       <TechCapsule
-          tech='java'
+          tech='Java'
       />
       <TechCapsule
-          tech='html'
+          tech='HTML'
       />
       <TechCapsule
-          tech='css'
+          tech='CSS'
       />
       <TechCapsule
-          tech='javascript'
+          tech='Javascript'
       />
       <TechCapsule
-          tech='react'
+          tech='React'
       />
       <TechCapsule
-          tech='redux'
+          tech='Redux'
       />
       <TechCapsule
-          tech='mobx'
+          tech='MobX'
       />
       <TechCapsule
-          tech='mongodb'
+          tech='MongoDB'
       />
       <TechCapsule
-          tech='mySql'
+          tech='MySql'
       />
       <TechCapsule
-          tech='git'
+          tech='Git'
       />
       <TechCapsule
-          tech='firebase'
+          tech='Firebase'
       />
       <TechCapsule
-          tech='jquery'
+          tech='jQuery'
       />
       <TechCapsule
-          tech='node'
+          tech='Node'
       />
       <TechCapsule
-          tech='androidStudio'
+          tech='Android Studio'
       />
       <TechCapsule
-          tech='unity'
+          tech='Unity'
       />
     </div>
   ));
