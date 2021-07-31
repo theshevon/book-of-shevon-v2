@@ -16,10 +16,10 @@ storiesOf('Pages/Projects/Project', module)
     />
   ));
 
-storiesOf('pages/projects/tech_capsule', module)
+storiesOf('pages/projects/TechCapsule', module)
   .add('TechCapsule', () => (
     <div
-        style={{display: 'flex', flexWrap: 'wrap'}}
+        style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}
     >
       <TechCapsule
           tech='Python'

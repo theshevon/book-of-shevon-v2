@@ -1,5 +1,5 @@
 import { ProjectsMessages as Messages } from './projects.messages';
-import type { ProjectProps } from '../../project/project';
+import type { ProjectProps } from '../project/project';
 
 export const Projects: ProjectProps[] = [
   {
@@ -8,8 +8,7 @@ export const Projects: ProjectProps[] = [
     description: Messages.BookOfShevonV2Desc(),
     techStack: [
       Messages.React(),
-    ],
-    otherContributors: [],
+    ], 
     githubUrl: 'https://github.com/theshevon/book-of-shevon-v2',
   },
   {
@@ -19,7 +18,6 @@ export const Projects: ProjectProps[] = [
     techStack: [
       Messages.Python(),
     ],
-    otherContributors: [],
     githubUrl: 'https://github.com/theshevon/invoice-maker',
   },
   {
@@ -82,7 +80,7 @@ export const Projects: ProjectProps[] = [
       Messages.Node(),
       Messages.MongoDb(),
     ],
-    otherContributors: [],
+  
     githubUrl: 'https://github.com/theshevon/book-of-shevon-v1',
   },
   {
@@ -95,8 +93,7 @@ export const Projects: ProjectProps[] = [
       Messages.JQuery(),
       Messages.Node(),
       Messages.MongoDb(),
-    ],
-    otherContributors: [],
+    ],  
     githubUrl: 'https://github.com/theshevon/misc-website',
   },
   {
@@ -142,8 +139,7 @@ export const Projects: ProjectProps[] = [
     techStack: [
       Messages.Java(),
       Messages.AndroidStudio(),
-    ],
-    otherContributors: [],
+    ], 
     githubUrl: 'https://github.com/theshevon/luby-jump-android',
   },
 ];

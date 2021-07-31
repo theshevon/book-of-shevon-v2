@@ -51,7 +51,7 @@ export const Project = ({
     {/* DESCRIPTION */}
     <Text.Small
         text={description}
-        alignment='justify'
+        alignment='center'
         className={styles.description}
     />
 

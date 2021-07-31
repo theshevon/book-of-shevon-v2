@@ -1,7 +1,11 @@
 @value midGrey from '../../../ui/colors/colors.module.css';
 
 .project {
-	width: 30vw;
+	width: 25vw;
+	border-radius: 4px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
+	display: flex;
+	flex-direction: column;
 }
 
 .title {
@@ -21,6 +25,7 @@
 	padding-left: 0;
 	list-style: none;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 }
 
@@ -29,20 +34,37 @@
 }
 
 .githubLinkContainer {
-	justify-self: flex-end;
+	margin-top: auto;
 	display: flex;
 	justify-content: center;
 }
 
 .githubLink {
 	color: #3e3e3e;
-    border: 2px solid #3e3e3e;
+	border: 2px solid #3e3e3e;
 	font-weight: bold;
 	align-self: center;
 }
 
 .githubLink:hover {
 	background-color: rgb(83, 197, 98);
-    border-color: rgb(83, 197, 98);
-    color: white;
+	border-color: rgb(83, 197, 98);
+	color: white;
+}
+
+@media(min-width: 576px){
+
+	.project {
+			padding: 25px;
+	}
+
+	/* .project-btn {
+			background: white;
+			color: #3e3e3e;
+			border: 2px solid #3e3e3e;
+	}
+
+	.project-btn a {
+			color: #3e3e3e;
+	} */
 }
