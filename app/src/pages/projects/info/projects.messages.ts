@@ -2,43 +2,43 @@ export const ProjectsMessages = {
 
   InvoiceMaker: (): string => 'Invoice Maker',
 
-  InvoiceMakerDesc: (): string => 'A script to automate invoicing based on information stored in a Google Sheet.',
+  InvoiceMakerDesc: (): string => 'A script to automate invoicing based on information stored in a Google Sheet',
 
   BookOfShevonV1: (): string => 'Book of Shevon v1',
 
-  BookOfShevonV1Desc: (): string => 'Original portfolio website.',
+  BookOfShevonV1Desc: (): string => 'Original portfolio website',
   
   BookOfShevonV2: (): string => 'Book of Shevon v2',
 
-  BookOfShevonV2Desc: (): string => 'Current portfolio website.',
+  BookOfShevonV2Desc: (): string => 'Current portfolio website',
 
   MiscWebsite: (): string => 'MISC Website',
 
-  MiscWebsiteDesc: (): string => 'Former (and inaugral) website for the University of Melbourne\'s Information Security Club.',
+  MiscWebsiteDesc: (): string => 'Former (and inaugral) website for the University of Melbourne\'s Information Security Club',
 
   LubyJump: (): string => 'Luby Jump',
 
-  LubyJumpDesc: (): string => 'A \'Flappy Bird\'-style mobile game. The \'pipes\' in this game are dynamic and so, make the game quite difficult to beat. The current high score sits at 115.',
+  LubyJumpDesc: (): string => 'A \'Flappy Bird\'-style mobile game. The \'pipes\' in this game are dynamic and so, make the game quite difficult to beat. The current high score sits at 115',
 
   TheTreasurePlatform: (): string => 'The Treasure Platform',
 
-  TheTreasurePlatformDesc: (): string => 'A web application that would allow an individual to effectively catalogue family artefacts that they may want to pass down the generations over the years.',
+  TheTreasurePlatformDesc: (): string => 'A web application that would allow an individual to effectively catalogue family artefacts that they may want to pass down the generations over the years',
 
   ReviewMyResume: (): string => 'ReviewMyResume',
 
-  ReviewMyResumeDesc: (): string => 'A web application that would allow students to upload and receive feedback on their resumes from other users on the site, which included dedicated reviewers.',
+  ReviewMyResumeDesc: (): string => 'A web application that would allow students to upload and receive feedback on their resumes from other users on the site, which included dedicated reviewers',
 
   TheAdventuresOfSquidwod: (): string => 'The Adventures of Squidwod',
   
-  TheAdventuresOfSquidwodDesc: (): string => 'A Unity game that involves collecting Eggs and fighting a giant fire-breathing, laser-eyed, grenade-tossing Seagull.',
+  TheAdventuresOfSquidwodDesc: (): string => 'A Unity game that involves collecting Eggs and fighting a giant fire-breathing, laser-eyed, grenade-tossing Seagull',
 
   LearningToEscape: (): string => 'Learning to Escape',
 
-  LearningToEscapeDesc: (): string => 'An AI controller that navigates a car through a maze in such a way that it collects the required keys to escape while simultaneously avoiding traps.',
+  LearningToEscapeDesc: (): string => 'An AI controller that navigates a car through a maze in such a way that it collects the required keys to escape while simultaneously avoiding traps',
 
   LandscapeGenerator: (): string => 'Landscape Generator',
 
-  LandscapeGeneratorDesc: (): string => 'A Unity project that dynamically generates a stochastic landscape, inclusive of a terrain, a body of water and an orbiting sun.',
+  LandscapeGeneratorDesc: (): string => 'A Unity project that dynamically generates a stochastic landscape, inclusive of a terrain, a body of water and an orbiting sun',
 
   Python: (): string => 'Python',
   

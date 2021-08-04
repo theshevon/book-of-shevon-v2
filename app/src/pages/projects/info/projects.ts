@@ -72,7 +72,7 @@ export const Projects: ProjectProps[] = [
   {
     name: Messages.BookOfShevonV1(),
     year: 2019,
-    description: Messages.BookOfShevonV1(),
+    description: Messages.BookOfShevonV1Desc(),
     techStack: [
       Messages.Html(),
       Messages.Css(),

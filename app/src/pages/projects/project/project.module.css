@@ -1,11 +1,15 @@
 @value midGrey from '../../../ui/colors/colors.module.css';
 
+@value githubGreen: rgb(83, 197, 98);
+
 .project {
-	width: 25vw;
+	width: 100%;
 	border-radius: 4px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
 	display: flex;
 	flex-direction: column;
+	font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+	padding: 5%;
 }
 
 .title {
@@ -47,15 +51,16 @@
 }
 
 .githubLink:hover {
-	background-color: rgb(83, 197, 98);
-	border-color: rgb(83, 197, 98);
+	background-color: githubGreen;
+	border-color: githubGreen;
 	color: white;
 }
 
 @media(min-width: 576px){
 
 	.project {
-			padding: 25px;
+		width: 25vw;
+		padding: 2.5%;
 	}
 
 	/* .project-btn {

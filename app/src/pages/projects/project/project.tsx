@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Text  } from './../../../ui/text/text';
+import { Text } from './../../../ui/text/text';
 import { Capsule } from './../../../ui/capsule/capsule';
 import { Link, ButtonLink } from './../../../ui/link/link';
 import { ProjectMessages as Messages } from './project.messages';
@@ -143,4 +143,3 @@ const OtherContributors = ({
     ))}
   </ul>
 );
-
