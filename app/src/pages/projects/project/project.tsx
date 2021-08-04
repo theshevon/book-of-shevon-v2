@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Text } from './../../../ui/text/text';
+import { Text  } from './../../../ui/text/text';
 import { Capsule } from './../../../ui/capsule/capsule';
 import { Link, ButtonLink } from './../../../ui/link/link';
 import { ProjectMessages as Messages } from './project.messages';
@@ -60,7 +60,7 @@ export const Project = ({
         className={styles.techStack}
     >
       <Text.Medium
-          text={Messages.TechStack() + ':'}
+          text={Messages.TechStack()}
           alignment='center'
           fontWeight='bold'
       />
@@ -75,7 +75,7 @@ export const Project = ({
           className={styles.otherContributors}
       >
         <Text.Medium
-            text={Messages.OtherContributors() + ':'}
+            text={Messages.OtherContributors()}
             alignment='center'
             fontWeight='bold'
         />
@@ -143,3 +143,4 @@ const OtherContributors = ({
     ))}
   </ul>
 );
+
