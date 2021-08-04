@@ -1,7 +1,18 @@
+.projectsPage {
+  padding: 5% 2.5%;
+}
+
+.pageTitle {
+  font-family: "FreeMono", monospace;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
 .projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 5% 2.5%;
   gap: 25px;
 }

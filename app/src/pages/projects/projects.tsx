@@ -8,10 +8,17 @@ import { Project } from './project/project';
 import styles from './projects.module.css';
 
 export const Projects = () => (
-  <div>
-    <Text.Large
-        text='>>> ls projects'
-    />
+  <div
+    className={styles.projectsPage}
+  >
+    <div
+      className={styles.pageTitle}
+    >
+      <Text.ExtraLarge
+          text='ls projects'
+          fontWeight='bold'
+      />
+    </div>
     <div
         className={styles.projects}
     >
