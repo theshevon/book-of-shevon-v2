@@ -98,7 +98,7 @@ export const Projects: ProjectProps[] = [
   },
   {
     name: Messages.TheAdventuresOfSquidwod(),
-    year: 2019,
+    year: 2018,
     description: Messages.TheAdventuresOfSquidwodDesc(),
     techStack: [
       Messages.CSharp(),
@@ -117,8 +117,27 @@ export const Projects: ProjectProps[] = [
     githubUrl: 'https://github.com/theshevon/the-adventures-of-squidwod',
   },
   {
+    name: Messages.LearningToEscape(),
+    year: 2018,
+    description: Messages.LearningToEscapeDesc(),
+    techStack: [
+      Messages.Java(),
+    ],
+    otherContributors: [
+      {
+        name: Messages.AndrewGourley(),
+        githubUrl: 'https://github.com/eindy',
+      },
+      {
+        name: Messages.DavidCrowe(),
+        githubUrl: 'https://github.com/crowe099',
+      },
+    ],
+    githubUrl: 'https://github.com/theshevon/learning-to-escape',
+  },
+  {
     name: Messages.LandscapeGenerator(),
-    year: 2019,
+    year: 2018,
     description: Messages.LandscapeGenerator(),
     techStack: [
       Messages.CSharp(),
