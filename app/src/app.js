@@ -9,8 +9,7 @@ import 'aos/dist/aos.css';
 
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
-import { Projects as NewProjects } from './pages/projects/projects';
-import { Projects } from './pages/projects/ProjectsOld';
+import { Projects } from './pages/projects/projects';
 import { createNavbar } from './ui/navbar/create';
 import { Routes as routes } from './routes/routes';
 
@@ -49,11 +48,6 @@ export const App = () => {
               exact
               path='/projects'
               component={Projects}
-					/>
-					<Route
-              exact
-              path='/newProjects'
-              component={NewProjects}
 					/>
 				</Switch>
 			</Router>
