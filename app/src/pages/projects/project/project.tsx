@@ -20,6 +20,7 @@ export type ProjectProps = {
   techStack: string[],
   otherContributors?: Contributor[],
   githubUrl: string,
+  aosAnimation?: string,
 }
 
 export const Project = ({
@@ -29,9 +30,11 @@ export const Project = ({
   techStack,
   otherContributors,
   githubUrl,
+  aosAnimation = 'fade-left',
 }: ProjectProps) => (
   <div
       className={styles.project}
+      data-aos={aosAnimation}
   >
     {/* TITLE */}
     <Text.Large

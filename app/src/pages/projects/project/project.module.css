@@ -34,6 +34,10 @@
 	gap: 5px;
 }
 
+.contributorsList {
+	margin-bottom: 25px;
+}
+
 .contributorCapsuleContainer {
 	height: 24px;
 }
