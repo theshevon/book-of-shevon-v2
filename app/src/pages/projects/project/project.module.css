@@ -31,10 +31,11 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	gap: 5px;
 }
 
-.listCapsule {
-	margin-right: 5px;
+.contributorCapsuleContainer {
+	height: 24px;
 }
 
 .githubLinkContainer {

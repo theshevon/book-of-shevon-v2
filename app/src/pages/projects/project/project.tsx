@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Text } from './../../../ui/text/text';
 import { Capsule } from './../../../ui/capsule/capsule';
-import { Link, ButtonLink } from './../../../ui/link/link';
+import { ButtonLink, CapsuleLink } from './../../../ui/link/link';
 import { ProjectMessages as Messages } from './project.messages';
 import { TechCapsule } from './tech_capsule/tech_capsule';
 
@@ -131,15 +131,13 @@ const OtherContributors = ({
     {otherContributors.map(otherContributor => (
       <li
           key={otherContributor.name}
-          className={styles.listCapsule}
+          className={styles.contributorCapsuleContainer}
       >
-        {/* TODO: fix this */}
-        <Capsule>
-          <Link
-              url={otherContributor.githubUrl}
-              anchorText={otherContributor.name}
-          />
-        </Capsule>
+        <CapsuleLink
+            url={otherContributor.githubUrl}
+            anchorText={otherContributor.name}
+            className={[styles.contributorCapsule]}
+        />
       </li>
     ))}
   </ul>

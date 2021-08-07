@@ -4,7 +4,7 @@ import { text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { StoryGroup } from './stories';
-import { Link, ButtonLink } from '../ui/link/link';
+import { Link, ButtonLink, CapsuleLink } from '../ui/link/link';
 
 storiesOf('UI/Link', module)
   .add('Link', () => (
@@ -16,6 +16,12 @@ storiesOf('UI/Link', module)
   .add('ButtonLink', () => (
     <ButtonLink
         anchorText='Button Link'
+        url='#'
+    />
+  ))
+  .add('CapsuleLink', () => (
+    <CapsuleLink
+        anchorText='Capsule Link'
         url='#'
     />
   ));
