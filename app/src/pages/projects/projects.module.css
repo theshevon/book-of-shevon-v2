@@ -1,0 +1,28 @@
+.projectsPage {
+  padding: 5% 2.5%;
+}
+
+.pageTitleContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.pageTitle {
+  font-family: "FreeMono", monospace;
+  position: relative;
+}
+
+.pageTitle:before {
+  content: ">>>";
+  font-weight: 100;
+  position: absolute;
+  transform: translateX(-75px);
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}

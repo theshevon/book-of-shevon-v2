@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
+import React from 'react';
 
 import { Section } from './section/section';
 import { createProfile } from './profile/create';
@@ -10,19 +9,9 @@ import { SkillsLists } from './info/skills/skills';
 import { CommercialExperiences, VolunteerExperiences } from './info/experiences/experiences';
 
 import styles from './about.module.css';
-import 'aos/dist/aos.css';
 import { Education } from './education/education';
 
-const AOS_DURATION_MILLISECONDS = 1500;
-
 export const About = () => {
-
-	useEffect(() => {
-		AOS.init({
-				duration: AOS_DURATION_MILLISECONDS,
-				once: true
-		});
-	}, []);
 
 	const Profile = createProfile();
 

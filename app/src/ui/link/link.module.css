@@ -1,0 +1,37 @@
+@value lightGrey, midGrey from './../colors/colors.module.css';
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.buttonLink:hover, .capsuleLink:hover {
+  text-decoration: none;
+}
+
+.buttonLink {
+  background: none;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  transition: 0.3s;
+  padding: 0.4rem 0.8rem;
+}
+
+.capsuleLink {
+  border-radius: 15px;
+  padding: 3px 15px;
+  font-size: 15px;
+  text-align: center;
+  background-color: lightGrey;
+  transition: 0.3s;
+}
+
+.capsuleLink:hover {
+  color: white;
+  background-color: midGrey;
+}

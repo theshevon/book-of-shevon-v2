@@ -28,25 +28,21 @@ storiesOf('UI/Text', module)
     return (
       <StoryGroup>
         <Text.Small
+            text={'This is a sentence using small text'}
             {...props}
-        >
-          This is a sentence using small text
-        </Text.Small>
+        />
         <Text.Medium
+            text={'This is a sentence using medium text'}
             {...props}
-        >
-          This is a sentence using medium text
-        </Text.Medium>
+        />
         <Text.Large
+            text={'This is a sentence using large text'}
             {...props}
-        >
-          This is a sentence using large text
-        </Text.Large>
+        />
         <Text.ExtraLarge
+            text={'This is a sentence using extra large text'}
             {...props}
-        >
-          This is a sentence using extra large text
-        </Text.ExtraLarge>
+        />
       </StoryGroup>
     );
   });

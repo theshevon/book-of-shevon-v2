@@ -12,6 +12,12 @@
     animation: fadeIn 300ms;
 }
 
+.linkContainer {
+    width: 75px;
+    display: flex;
+    justify-content: center;
+}
+
 .link {
     text-transform: uppercase;
     color: white;

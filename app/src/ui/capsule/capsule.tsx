@@ -4,17 +4,16 @@ import classNames from 'classnames';
 import styles from './capsule.module.css';
 
 type CapsuleProps = {
-  text: string,
-  className?: string[],
+  className?: string,
 }
 
-export const Capsule = ({
-  text,
-  className = [],
-}: CapsuleProps) => (
+export const Capsule: React.FC<CapsuleProps> = ({
+  className,
+  children,
+}) => (
   <div
-      className={classNames(styles.capsule, ...className)}
+      className={classNames(styles.capsule, className)}
   >
-    {text}
+    {children}
   </div>
 );

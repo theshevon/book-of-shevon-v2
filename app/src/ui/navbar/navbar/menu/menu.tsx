@@ -19,6 +19,7 @@ export const Menu = ({
     { routes.map(route => (
       <li
           key={route.label}
+          className={styles.linkContainer}
       >
         <a
             href={route.route}

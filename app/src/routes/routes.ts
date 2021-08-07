@@ -15,6 +15,11 @@ export const Routes: Route[] = [
     {
         route: '/',
         label: RoutesMessages.Home(),
+        index: 0,
+    },
+    {
+        route: '/projects',
+        label: RoutesMessages.Projects(),
         index: 1,
     },
 ];
