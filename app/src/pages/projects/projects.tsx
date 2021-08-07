@@ -12,11 +12,12 @@ export const Projects = () => (
     className={styles.projectsPage}
   >
     <div
-      className={styles.pageTitle}
+      className={styles.pageTitleContainer}
     >
       <Text.ExtraLarge
           text='ls projects'
           fontWeight='bold'
+          className={styles.pageTitle}
       />
     </div>
     <div
