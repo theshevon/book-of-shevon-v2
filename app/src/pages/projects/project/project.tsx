@@ -133,6 +133,7 @@ const OtherContributors = ({
           key={otherContributor.name}
           className={styles.listCapsule}
       >
+        {/* TODO: fix this */}
         <Capsule>
           <Link
               url={otherContributor.githubUrl}
