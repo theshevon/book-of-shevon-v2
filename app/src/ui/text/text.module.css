@@ -1,6 +1,9 @@
 .text {
-    margin: 0;
     font-weight: normal;
+}
+
+.removeMargins {
+    margin: 0;
 }
 
 .left {
