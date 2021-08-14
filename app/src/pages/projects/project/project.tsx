@@ -38,35 +38,39 @@ export const Project = ({
   >
     {/* TITLE */}
     <Text.Large
-        text={name}
         alignment='center'
         fontWeight='bold'
         className={styles.title}
-    />
+    >
+      {name}
+    </Text.Large>
 
     {/* YEAR */}
     <Text.Small
-        text={year.toString()}
         alignment='center'
         className={styles.year}
-    />
+    >
+      {year.toString()}
+    </Text.Small>
 
     {/* DESCRIPTION */}
     <Text.Small
-        text={description}
         alignment='center'
         className={styles.description}
-    />
+    >
+      {description}
+    </Text.Small>
 
     {/* TECH STACK */}
     <div
         className={styles.techStack}
     >
       <Text.Medium
-          text={Messages.TechStack()}
           alignment='center'
           fontWeight='bold'
-      />
+      >
+        {Messages.TechStack()}
+      </Text.Medium>
       <TechStack
           techStack={techStack}
       />
@@ -78,10 +82,11 @@ export const Project = ({
           className={styles.otherContributors}
       >
         <Text.Medium
-            text={Messages.OtherContributors()}
             alignment='center'
             fontWeight='bold'
-        />
+        >
+          {Messages.OtherContributors()}
+        </Text.Medium>
         <OtherContributors
             otherContributors={otherContributors}
         />

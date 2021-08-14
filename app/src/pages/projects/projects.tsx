@@ -14,11 +14,13 @@ export const Projects = () => (
     <div
       className={styles.pageTitleContainer}
     >
-      <Text.ExtraLarge
-          text='ls projects'
+      <Text.LargeTitle
           fontWeight='bold'
           className={styles.pageTitle}
-      />
+      >
+        {/* TODO: replace with a message */}
+        {'ls projects'}
+      </Text.LargeTitle>
     </div>
     <div
         className={styles.projects}

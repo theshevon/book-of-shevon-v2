@@ -17,6 +17,7 @@ type TextProps = {
   fontWeight?: FontWeight,
   italicised?: boolean,
   keepDefaultMargins?: boolean,
+  className?: string,
 }
 
 const getSizeClassName = (size: Size | undefined) => {
@@ -68,13 +69,15 @@ const getClassNames = ({
   fontWeight = 'normal',
   italicised = false,
   keepDefaultMargins = false,
+  className,
 }: { size: Size | undefined } & TextProps) => {
   return classNames(
     getSizeClassName(size),
     getAligmentClassName(alignment),
     getFontWeightClassName(fontWeight),
     {[styles.italicised]: italicised},
-    {[styles.removeMargins]: !keepDefaultMargins}
+    {[styles.removeMargins]: !keepDefaultMargins},
+    className,
   );
 }
 
@@ -85,6 +88,7 @@ const renderText = ({
   fontWeight,
   italicised,
   keepDefaultMargins,
+  className,
   children,
 }: {
   tag: Tag,
@@ -92,7 +96,7 @@ const renderText = ({
   children?: React.ReactNode,
 } & TextProps) => React.createElement(
   tag, 
-  { className: getClassNames({ size, alignment, fontWeight, italicised, keepDefaultMargins }) },
+  { className: getClassNames({ size, alignment, fontWeight, italicised, keepDefaultMargins, className }) },
   children
 );
 

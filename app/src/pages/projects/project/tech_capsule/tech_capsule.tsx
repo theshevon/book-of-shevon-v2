@@ -52,8 +52,6 @@ export const TechCapsule = ({
   <Capsule
       className={getTechClassName(tech)}  
   >
-    <Text.Small
-        text={tech}
-    />
+    {tech}
   </Capsule>
 );

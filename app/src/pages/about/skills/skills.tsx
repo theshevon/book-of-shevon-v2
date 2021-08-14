@@ -53,9 +53,7 @@ const SkillsList = ({
 						className={styles.skill}
 				>
 					<Capsule>
-						<Text.Small
-								text={skill}
-						/>
+						{skill}
 					</Capsule>
 				</li>
 			))}
