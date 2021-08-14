@@ -1,4 +1,4 @@
-@value lightGrey from './../colors/colors.module.css';
+@value monoLightGrey from './../colors/colors.module.css';
 
 .button {
     background: none;
@@ -15,7 +15,7 @@
 
 .button:disabled {
     cursor: not-allowed;
-    border: 1px solid lightGrey;
+    border: 1px solid monoLightGrey;
 }
 
 /* TODO: focus and active state styling */

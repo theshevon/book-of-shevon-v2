@@ -1,8 +1,8 @@
-@value lightGrey from './../colors/colors.module.css';
+@value monoLightGrey from './../colors/colors.module.css';
 
 .capsule {
     border-radius: 15px;
     padding: 5px 15px;
     text-align: center;
-    background-color: lightGrey;
+    background-color: monoLightGrey;
 }

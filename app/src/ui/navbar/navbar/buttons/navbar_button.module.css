@@ -1,7 +1,7 @@
-@value lightGrey, semiTransparentDarkGrey from '../../../colors/colors.module.css';
+@value monoLightGrey, semiTransparentDarkGrey from '../../../colors/colors.module.css';
 
 .navbarButton {
-    border: 1px solid lightGrey;
+    border: 1px solid monoLightGrey;
     box-sizing: border-box;
     transition: 0.4s;
     color: white;
@@ -13,6 +13,6 @@
 }
 
 .navbarButton:hover {
-    color: darkGrey;
-    background-color: lightGrey;
+    color: monoDarkGrey;
+    background-color: monoLightGrey;
 }

@@ -1,4 +1,4 @@
-@value lightGrey from '../../../ui/colors/colors.module.css';
+@value monoLightGrey from '../../../ui/colors/colors.module.css';
 @value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
 
 .skillsListContainer:not(:last-of-type) {

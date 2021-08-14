@@ -1,4 +1,4 @@
-@value midGrey from '../../../ui/colors/colors.module.css';
+@value monoMidGrey from '../../../ui/colors/colors.module.css';
 @value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
 
 @value githubGreen: rgb(83, 197, 98);
@@ -6,11 +6,22 @@
 .project {
 	width: 100%;
 	border-radius: 4px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
 	display: flex;
 	flex-direction: column;
 	font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
 	padding: 5%;
+	position: relative;
+}
+
+.project:not(:last-of-type):after {
+	position: absolute;
+	bottom: -11px; /* row gap (10px) / 2 + height of line (2px) / 2 */
+	left: 50%;
+	transform: translateX(-50%);
+	content: '';
+	width: 90%;
+	height: 2px;
+	background-color: monoLightGrey;
 }
 
 .title {
@@ -18,7 +29,7 @@
 }
 
 .year {
-	color: midGrey;
+	color: monoMidGrey;
 	margin-bottom: 25px;
 }
 
@@ -67,6 +78,7 @@
 	.project {
 		width: 25vw;
 		padding: 2.5%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
 	}
 
 }
