@@ -6,7 +6,7 @@ export const CommercialExperiences: ExperienceProps[] = [
     role: Messages.SoftwareEngineer(),
     company: {
       anchorText: Messages.Canva(),
-      url: 'https://www.canva.com/',
+      url: 'https://www.canva.com/about',
     },
     startDate: {
       month: Messages.April(),
