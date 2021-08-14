@@ -58,11 +58,11 @@ const CourseOfStudy = ({
   <div
       className={styles.courseOfStudy}
   >
-    <Text.Small
+    <Text.ExtraSmall
         className={styles.university}
     >
       {university}
-    </Text.Small>
+    </Text.ExtraSmall>
     <Text.ExtraSmall
         className={styles.course}
     >
@@ -75,30 +75,40 @@ const CourseOfStudy = ({
     <ul
         className={styles.courseDetails}
     >
-      <li
-          className={styles.detail}
-      >
-        <Text.ExtraSmall
-          fontWeight='semi-bold'
+      <li>
+        <div
+          className={styles.detailContainer}
         >
-          {Messages.Major()}:&nbsp;
-        </Text.ExtraSmall>
-        <Text.ExtraSmall>
-          {major}
-        </Text.ExtraSmall>
+          <Text.ExtraSmall
+            fontWeight='semi-bold'
+            className={styles.detail}
+          >
+            {Messages.Major()}:&nbsp;
+          </Text.ExtraSmall>
+          <Text.ExtraSmall
+            className={styles.detail}
+          >
+            {major}
+          </Text.ExtraSmall>
+        </div>
       </li>
 
-      <li
-          className={styles.detail}
-      >
-        <Text.ExtraSmall
-          fontWeight='semi-bold'
+      <li>
+        <div
+          className={styles.detailContainer}
         >
-          {getGradingSystemLabel(gradingSystem)}:&nbsp;
-        </Text.ExtraSmall>
-        <Text.ExtraSmall>
-          {mark}&nbsp;({grade})
-        </Text.ExtraSmall>
+          <Text.ExtraSmall
+            fontWeight='semi-bold'
+            className={styles.detail}
+          >
+            {getGradingSystemLabel(gradingSystem)}:&nbsp;
+          </Text.ExtraSmall>
+          <Text.ExtraSmall
+            className={styles.detail}
+          >
+            {mark}&nbsp;({grade})
+          </Text.ExtraSmall>
+        </div>
       </li>
     </ul>
   </div>

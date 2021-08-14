@@ -23,7 +23,7 @@ strong {
     font-weight: boldFontWeight;
 }
 
-.detail {
+.detailContainer {
     display: flex;
 }
 
@@ -35,6 +35,10 @@ strong {
 
     .education {
         list-style: none;
+    }
+
+    .courseDetails {
+        padding-left: 7.5%;
     }
 
 }

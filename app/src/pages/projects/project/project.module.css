@@ -1,4 +1,5 @@
 @value midGrey from '../../../ui/colors/colors.module.css';
+@value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
 
 @value githubGreen: rgb(83, 197, 98);
 
@@ -61,20 +62,11 @@
 	color: white;
 }
 
-@media(min-width: 576px){
+@media(min-width: mobileBreakpoint){
 
 	.project {
 		width: 25vw;
 		padding: 2.5%;
 	}
 
-	/* .project-btn {
-			background: white;
-			color: #3e3e3e;
-			border: 2px solid #3e3e3e;
-	}
-
-	.project-btn a {
-			color: #3e3e3e;
-	} */
 }
