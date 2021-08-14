@@ -1,6 +1,8 @@
 import React from 'react';
 
+import { Text } from './../../../ui/text/text';
 import { TimePeriod } from '../experiences/experiences';
+
 import { EducationMessages as Messages } from './education.messages';
 import styles from './education.module.css';
 
@@ -56,16 +58,16 @@ const CourseOfStudy = ({
   <div
       className={styles.courseOfStudy}
   >
-    <p
+    <Text.ExtraSmall
         className={styles.university}
     >
       {university}
-    </p>
-    <p
+    </Text.ExtraSmall>
+    <Text.ExtraSmall
         className={styles.course}
     >
       {course}
-    </p>
+    </Text.ExtraSmall>
     <TimePeriod
         startDate={startDate}
         endDate={endDate}
@@ -73,22 +75,40 @@ const CourseOfStudy = ({
     <ul
         className={styles.courseDetails}
     >
-      <li
-          className={styles.detail}
-      >
-        <strong>
-          {Messages.Major()}:&nbsp;
-        </strong>
-        {major}
+      <li>
+        <div
+          className={styles.detailContainer}
+        >
+          <Text.ExtraSmall
+            fontWeight='semi-bold'
+            className={styles.detail}
+          >
+            {Messages.Major()}:&nbsp;
+          </Text.ExtraSmall>
+          <Text.ExtraSmall
+            className={styles.detail}
+          >
+            {major}
+          </Text.ExtraSmall>
+        </div>
       </li>
 
-      <li
-          className={styles.detail}
-      >
-        <strong>
-          {getGradingSystemLabel(gradingSystem)}:&nbsp;
-        </strong>
-        {mark}&nbsp;({grade})
+      <li>
+        <div
+          className={styles.detailContainer}
+        >
+          <Text.ExtraSmall
+            fontWeight='semi-bold'
+            className={styles.detail}
+          >
+            {getGradingSystemLabel(gradingSystem)}:&nbsp;
+          </Text.ExtraSmall>
+          <Text.ExtraSmall
+            className={styles.detail}
+          >
+            {mark}&nbsp;({grade})
+          </Text.ExtraSmall>
+        </div>
       </li>
     </ul>
   </div>

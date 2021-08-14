@@ -10,9 +10,7 @@ storiesOf('UI/Capsule', module)
           style={{ display: 'flex' }}
       >
         <Capsule>
-          <Text.Small
-              text={'This is a capsule'}
-          />
+          This is a capsule
         </Capsule>
       </div>
   ));

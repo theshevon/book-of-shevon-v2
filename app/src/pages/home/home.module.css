@@ -13,13 +13,9 @@
 
 .siteTitle {
     font-family: 'FreeMono', monospace;
-    font-size: 4.5rem;
-    font-weight: 500;
-    color: black;
-    content: "Book of S" !important;
-    transition-delay: 500ms;
-    word-spacing: 1000px;
-    text-align: center;
+    white-space: nowrap;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
 .links {
@@ -31,9 +27,8 @@
 @media(min-width: mobileBreakpoint) {
 
     .siteTitle {
-        white-space: nowrap;
-        word-spacing: normal;
         font-size: 3.5rem;
+        word-spacing: normal;
     }
 
     .links {

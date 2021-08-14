@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 
+import { Text } from './../../../ui/text/text';
 import { ExperiencesMessages as Messages } from './experiences.messages';
 import styles from './experiences.module.css';
 
@@ -55,11 +56,11 @@ const Experience = ({
   <div
       className={styles.experience}
   >
-    <p
+    <Text.Small
         className={styles.role}
     >
       {role}
-    </p>
+    </Text.Small>
     <Company
         company={company}
     />
@@ -96,11 +97,12 @@ const Company = ({
     );
   }
   return (
-    <p
+    <Text.ExtraSmall
+        fontWeight='bold'
         className={styles.company}
     >
       {content}
-    </p>
+    </Text.ExtraSmall>
   );
 }
 
@@ -115,11 +117,11 @@ const Responsibilities = ({
       className={styles.responsibilitiesContainer}
   >
     {useResponsibilitiesLabel && 
-      <p
+      <Text.ExtraSmall
           className={styles.label}
       >
         {Messages.ResponsibleFor()}:
-      </p>
+      </Text.ExtraSmall>
     }
     <ul
         className={styles.responsibilities}
@@ -129,7 +131,9 @@ const Responsibilities = ({
             key={index} // should be fine using index here since the order will never change
             className={styles.responsibility}
         >
-          {responsibility}
+          <Text.ExtraSmall>
+            {responsibility}
+          </Text.ExtraSmall>
         </li>
       ))}
     </ul>
@@ -147,10 +151,10 @@ export const TimePeriod = ({
   const end = endDate ? `${endDate.month} ${endDate.year}` : Messages.Present();
   const period = `${start} - ${end}`;
   return (
-    <p
+    <Text.ExtraSmall
         className={styles.period}
     >
       {period}
-    </p>
+    </Text.ExtraSmall>
   );
 }

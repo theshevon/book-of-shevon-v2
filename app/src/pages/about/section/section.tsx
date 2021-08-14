@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Text } from './../../../ui/text/text';
+
 import { SectionMessages as Messages } from './section.messages';
 import styles from './section.module.css';
 
@@ -19,11 +21,14 @@ export const Section: React.FC<SectionProps> = ({
 			className={styles.section}
 			data-aos={aosAnimation}
 	>
-		<h3
+		<Text.SmallTitle
+				fontWeight='bold'
+				alignment='center'
+				textCase='uppercase'
 				className={styles.title}
 		>
 			{getSectionTitleLabel(title)}
-		</h3>
+		</Text.SmallTitle>
 		<div
 				className={styles.info}
 		>

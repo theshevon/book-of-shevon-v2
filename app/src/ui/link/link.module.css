@@ -1,4 +1,5 @@
 @value lightGrey, midGrey from './../colors/colors.module.css';
+@value ordTextSizeXSmall from './../text/text.module.css';
 
 .link {
   color: black;
@@ -24,8 +25,8 @@
 
 .capsuleLink {
   border-radius: 15px;
-  padding: 3px 15px;
-  font-size: 15px;
+  padding: 5px 15px;
+  font-size: ordTextSizeXSmall;
   text-align: center;
   background-color: lightGrey;
   transition: 0.3s;

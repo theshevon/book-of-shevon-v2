@@ -1,6 +1,32 @@
-.text {
+/* Ordinary text sizes */
+@value ordTextSizeXSmall: 1.0rem;
+@value ordTextSizeSmall: 1.1rem;
+@value ordTextSizeMedium: 1.2rem;
+@value ordTextSizeLarge: 1.4rem;
+@value ordTextSizeXLarge: 1.6rem;
+
+p.xSmall {
+    font-size: ordTextSizeXSmall;
+}
+
+p.small {
+    font-size: ordTextSizeSmall;
+}
+
+p.medium {
+    font-size: ordTextSizeMedium;
+}
+
+p.large {
+    font-size: ordTextSizeLarge;
+}
+
+p.xLarge {
+    font-size: ordTextSizeXLarge;
+}
+
+.removeMargins {
     margin: 0;
-    font-weight: normal;
 }
 
 .left {
@@ -23,14 +49,34 @@
     font-style: italic;
 }
 
-.bold {
-    font-weight: bold;
+.light {
+    font-weight: 300;
+}
+
+.normal {
+    font-weight: normal;
 }
 
 .semiBold {
-    font-weight: bolder;
+    font-weight: 500;
 }
 
-.light {
-    font-weight: lighter;
+.bold {
+    font-weight: 700;
+}
+
+.none {
+    text-transform: none;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }

@@ -39,11 +39,11 @@ const SkillsList = ({
 	<div
 			className={styles.skillsList}
 	>
-		<p
+		<Text.ExtraSmall
 				className={styles.label}
 		>
 			{label === 'proficient' ? Messages.ProficientWith() : Messages.FamiliarWith()}:
-		</p>
+		</Text.ExtraSmall>
 		<ul
 				className={styles.list}
 		>
@@ -53,9 +53,7 @@ const SkillsList = ({
 						className={styles.skill}
 				>
 					<Capsule>
-						<Text.Small
-								text={skill}
-						/>
+						{skill}
 					</Capsule>
 				</li>
 			))}

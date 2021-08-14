@@ -20,29 +20,60 @@ storiesOf('UI/Text', module)
       'Bold': 'bold',
     }, 'normal');
     const italicised = boolean('Italicised', false);
+    const textCase = select('Text Case', {
+      'None': 'none',
+      'Lowercase': 'lowercase',
+      'Uppercase': 'uppercase',
+      'Captialize': 'capitalize',
+    }, 'none');
     const props = {
       alignment,
       fontWeight,
       italicised,
+      textCase,
     }
     return (
       <StoryGroup>
+        <Text.ExtraSmall
+            {...props}
+        >
+          This is a sentence using extra small text
+        </Text.ExtraSmall>
         <Text.Small
-            text={'This is a sentence using small text'}
             {...props}
-        />
+        >
+          This is a sentence using small text
+        </Text.Small>
         <Text.Medium
-            text={'This is a sentence using medium text'}
             {...props}
-        />
+        >
+          This is a sentence using medium text
+        </Text.Medium>
         <Text.Large
-            text={'This is a sentence using large text'}
             {...props}
-        />
+        >
+          This is a sentence using large text
+        </Text.Large>
         <Text.ExtraLarge
-            text={'This is a sentence using extra large text'}
             {...props}
-        />
+        >
+          This is a sentence using extra large text
+        </Text.ExtraLarge>
+        <Text.SmallTitle
+            {...props}
+        >
+          This is a sentence using small title text
+        </Text.SmallTitle>
+        <Text.MediumTitle
+            {...props}
+        >
+          This is a sentence using medium title text
+        </Text.MediumTitle>
+        <Text.LargeTitle
+            {...props}
+        >
+          This is a sentence using large title text
+        </Text.LargeTitle>
       </StoryGroup>
     );
   });

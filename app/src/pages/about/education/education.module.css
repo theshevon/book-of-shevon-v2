@@ -15,7 +15,6 @@
 .detail {
     margin-top: 0;
     margin-bottom: bottomMargin;
-    font-size: 15px;
 }
 
 .university,
@@ -24,9 +23,12 @@ strong {
     font-weight: boldFontWeight;
 }
 
+.detailContainer {
+    display: flex;
+}
+
 .university {
     color: flatGold;
-    font-size: 17.5px;
 }
 
 @media(max-width: mobileBreakpoint) {
@@ -35,5 +37,8 @@ strong {
         list-style: none;
     }
 
-}
+    .courseDetails {
+        padding-left: 7.5%;
+    }
 
+}

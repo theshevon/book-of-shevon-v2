@@ -8,10 +8,6 @@
     position: relative;
 }
 
-.name {
-    text-transform: uppercase;
-}
-
 .picture {
     height: 200px;
     width: auto;
