@@ -1,20 +1,22 @@
 import React from 'react';
 
-import {Links} from './links';
-
-import { HomeMessages as Messages } from './home.messages';
-import styles from './home.module.css';
+import { Links } from './links';
 import { IconLink } from './icon_link/icon_link';
+import { Text } from './../../ui/text/text';
+import { HomeMessages as Messages } from './home.messages';
+
+import styles from './home.module.css';
 
 export const Home = () => (
 	<div
 			className={styles.siteTitleContainer}
 	>
-		<h1
+		<Text.LargeTitle
+				alignment='center'
 				className={styles.siteTitle}
 		>
 			{Messages.SiteTitle()}
-		</h1>
+		</Text.LargeTitle>
 		<div
 				className={styles.links}
 		>

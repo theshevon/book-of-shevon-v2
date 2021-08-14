@@ -6,9 +6,9 @@
 @value ordTextSizeXLarge: 1.6rem;
 
 /* Title text sizes */
-@value titleTextSizeSmall: 1.6rem;
-@value titleTextSizeMedium: 1.9rem;
-@value titleTextSizeLarge: 2.2rem;
+@value titleTextSizeSmall: 2.0rem;
+@value titleTextSizeMedium: 2.75rem;
+@value titleTextSizeLarge: 3.5rem;
 
 p.xSmall {
     font-size: ordTextSizeXSmall;

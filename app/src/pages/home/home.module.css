@@ -13,13 +13,7 @@
 
 .siteTitle {
     font-family: 'FreeMono', monospace;
-    font-size: 4.5rem;
-    font-weight: 500;
-    color: black;
-    content: "Book of S" !important;
-    transition-delay: 500ms;
     word-spacing: 1000px;
-    text-align: center;
 }
 
 .links {
