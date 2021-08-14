@@ -1,14 +1,9 @@
 /* Ordinary text sizes */
-@value ordTextSizeXSmall: 0.8rem;
-@value ordTextSizeSmall: 1.0rem;
+@value ordTextSizeXSmall: 1.0rem;
+@value ordTextSizeSmall: 1.1rem;
 @value ordTextSizeMedium: 1.2rem;
 @value ordTextSizeLarge: 1.4rem;
 @value ordTextSizeXLarge: 1.6rem;
-
-/* Title text sizes */
-@value titleTextSizeSmall: 2.0rem;
-@value titleTextSizeMedium: 2.75rem;
-@value titleTextSizeLarge: 3.5rem;
 
 p.xSmall {
     font-size: ordTextSizeXSmall;
@@ -28,18 +23,6 @@ p.large {
 
 p.xLarge {
     font-size: ordTextSizeXLarge;
-}
-
-h3.small {
-    font-size: titleTextSizeSmall;
-}
-
-h2.medium {
-    font-size: titleTextSizeMedium;
-}
-
-h1.large {
-    font-size: titleTextSizeLarge;
 }
 
 .removeMargins {
@@ -67,19 +50,19 @@ h1.large {
 }
 
 .light {
-    font-weight: lighter;
-}
-
-.semiBold {
-    font-weight: bolder;
+    font-weight: 300;
 }
 
 .normal {
     font-weight: normal;
 }
 
+.semiBold {
+    font-weight: 500;
+}
+
 .bold {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .none {

@@ -16,8 +16,8 @@ export const Capsule: React.FC<CapsuleProps> = ({
   <div
       className={classNames(styles.capsule, className)}
   >
-    <Text.Small>
+    <Text.ExtraSmall>
       {children}
-    </Text.Small>
+    </Text.ExtraSmall>
   </div>
 );

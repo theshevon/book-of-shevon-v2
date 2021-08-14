@@ -1,6 +1,8 @@
 import React from 'react';
 
+import { Text } from './../../../ui/text/text';
 import { TimePeriod } from '../experiences/experiences';
+
 import { EducationMessages as Messages } from './education.messages';
 import styles from './education.module.css';
 
@@ -56,16 +58,16 @@ const CourseOfStudy = ({
   <div
       className={styles.courseOfStudy}
   >
-    <p
+    <Text.Small
         className={styles.university}
     >
       {university}
-    </p>
-    <p
+    </Text.Small>
+    <Text.ExtraSmall
         className={styles.course}
     >
       {course}
-    </p>
+    </Text.ExtraSmall>
     <TimePeriod
         startDate={startDate}
         endDate={endDate}
@@ -76,19 +78,27 @@ const CourseOfStudy = ({
       <li
           className={styles.detail}
       >
-        <strong>
+        <Text.ExtraSmall
+          fontWeight='semi-bold'
+        >
           {Messages.Major()}:&nbsp;
-        </strong>
-        {major}
+        </Text.ExtraSmall>
+        <Text.ExtraSmall>
+          {major}
+        </Text.ExtraSmall>
       </li>
 
       <li
           className={styles.detail}
       >
-        <strong>
+        <Text.ExtraSmall
+          fontWeight='semi-bold'
+        >
           {getGradingSystemLabel(gradingSystem)}:&nbsp;
-        </strong>
-        {mark}&nbsp;({grade})
+        </Text.ExtraSmall>
+        <Text.ExtraSmall>
+          {mark}&nbsp;({grade})
+        </Text.ExtraSmall>
       </li>
     </ul>
   </div>

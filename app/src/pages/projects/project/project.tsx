@@ -46,12 +46,12 @@ export const Project = ({
     </Text.Large>
 
     {/* YEAR */}
-    <Text.Small
+    <Text.ExtraSmall
         alignment='center'
         className={styles.year}
     >
       {year.toString()}
-    </Text.Small>
+    </Text.ExtraSmall>
 
     {/* DESCRIPTION */}
     <Text.Small

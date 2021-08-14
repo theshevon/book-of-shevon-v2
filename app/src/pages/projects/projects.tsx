@@ -20,7 +20,6 @@ export const Projects = () => (
           fontWeight='bold'
           className={styles.pageTitle}
       >
-        {/* TODO: replace with a message */}
         {'ls ' + Messages.pageTitle()}
       </Text.LargeTitle>
     </div>

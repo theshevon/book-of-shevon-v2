@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Text } from './../../../ui/text/text';
+
 import styles from './profile.module.css';
 
 export type ProfileProps = {
@@ -21,11 +23,14 @@ export const Profile = ({
         src={imgSrc}
         alt={imgAltTag}
     />
-    <h1
+    <Text.LargeTitle
+        fontWeight='bold'
+        textCase='uppercase'
+        keepDefaultMargins={true}
         className={styles.name}
     >
       {name}
-    </h1>
+    </Text.LargeTitle>
     <div
         className={styles.underline}
     >

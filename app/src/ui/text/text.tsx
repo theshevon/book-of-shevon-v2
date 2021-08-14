@@ -54,7 +54,6 @@ const getAligmentClassName = (alignment: Alignment) => {
 }
 
 const getFontWeightClassName = (fontWeight: FontWeight) => {
-  console.log(fontWeight)
   switch (fontWeight) {
     case 'light':
       return styles.light;
