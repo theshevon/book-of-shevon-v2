@@ -20,10 +20,17 @@ storiesOf('UI/Text', module)
       'Bold': 'bold',
     }, 'normal');
     const italicised = boolean('Italicised', false);
+    const textCase = select('Text Case', {
+      'None': 'none',
+      'Lowercase': 'lowercase',
+      'Uppercase': 'uppercase',
+      'Captialize': 'capitalize',
+    }, 'none');
     const props = {
       alignment,
       fontWeight,
       italicised,
+      textCase,
     }
     return (
       <StoryGroup>

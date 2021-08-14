@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 
 import classNames from 'classnames';
 
@@ -12,11 +12,14 @@ type Alignment = 'left' | 'right' | 'center' | 'justify';
 
 type FontWeight = 'light' | 'normal' | 'semi-bold' | 'bold';
 
+type TextCase = 'none' | 'lowercase' | 'uppercase' | 'capitalize';
+
 type TextProps = {
   alignment?: Alignment,
   fontWeight?: FontWeight,
   italicised?: boolean,
   keepDefaultMargins?: boolean,
+  textCase?: TextCase,
   className?: string,
 }
 
@@ -51,6 +54,7 @@ const getAligmentClassName = (alignment: Alignment) => {
 }
 
 const getFontWeightClassName = (fontWeight: FontWeight) => {
+  console.log(fontWeight)
   switch (fontWeight) {
     case 'light':
       return styles.light;
@@ -59,7 +63,20 @@ const getFontWeightClassName = (fontWeight: FontWeight) => {
     case 'bold':
       return styles.bold;
     default:
-      return styles.default;
+      return styles.normal;
+  }
+}
+
+const getTextCaseClassName = (textCase: TextCase | undefined) => {
+  switch (textCase) {
+    case 'lowercase':
+      return styles.lowercase;
+    case 'uppercase':
+      return styles.uppercase;
+    case 'capitalize':
+      return styles.capitalize;
+    default:
+      return styles.none;
   }
 }
 
@@ -69,6 +86,7 @@ const getClassNames = ({
   fontWeight = 'normal',
   italicised = false,
   keepDefaultMargins = false,
+  textCase,
   className,
 }: { size: Size | undefined } & TextProps) => {
   return classNames(
@@ -77,6 +95,7 @@ const getClassNames = ({
     getFontWeightClassName(fontWeight),
     {[styles.italicised]: italicised},
     {[styles.removeMargins]: !keepDefaultMargins},
+    getTextCaseClassName(textCase),
     className,
   );
 }
@@ -88,6 +107,7 @@ const renderText = ({
   fontWeight,
   italicised,
   keepDefaultMargins,
+  textCase,
   className,
   children,
 }: {
@@ -96,7 +116,7 @@ const renderText = ({
   children?: React.ReactNode,
 } & TextProps) => React.createElement(
   tag, 
-  { className: getClassNames({ size, alignment, fontWeight, italicised, keepDefaultMargins, className }) },
+  { className: getClassNames({ size, alignment, fontWeight, italicised, keepDefaultMargins, textCase, className }) },
   children
 );
 
@@ -105,12 +125,12 @@ const ExtraSmall: React.FC<TextProps> = (props) => renderText({ tag: 'p', size: 
 const Small: React.FC<TextProps> = (props) => renderText({ tag: 'p', size: 's', ...props });
 const Medium: React.FC<TextProps> = (props) => renderText({ tag: 'p', size: 'm', ...props });
 const Large: React.FC<TextProps> = (props) => renderText({ tag: 'p', size: 'l', ...props });
-const ExtraLarge: React.FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xs', ...props });
+const ExtraLarge: React.FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xl', ...props });
 
 // Title text
-const SmallTitle: React.FC<TextProps> = (props) => renderText({ tag: 'h3', ...props });
-const MediumTitle: React.FC<TextProps> = (props) => renderText({ tag: 'h2', ...props });
-const LargeTitle: React.FC<TextProps> = (props) => renderText({ tag: 'h1', ...props });
+const SmallTitle: React.FC<TextProps> = (props) => renderText({ tag: 'h3', size: 's', ...props });
+const MediumTitle: React.FC<TextProps> = (props) => renderText({ tag: 'h2', size: 'm', ...props });
+const LargeTitle: React.FC<TextProps> = (props) => renderText({ tag: 'h1', size: 'l', ...props });
 
 export const Text = {
   ExtraSmall,

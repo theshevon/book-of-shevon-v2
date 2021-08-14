@@ -5,6 +5,8 @@ import { Text } from './../../ui/text/text';
 import { Projects as TechProjects } from './info/projects';
 import { Project } from './project/project';
 
+import { ProjectsMessages as Messages } from './projects.messages';
+
 import styles from './projects.module.css';
 
 export const Projects = () => (
@@ -19,7 +21,7 @@ export const Projects = () => (
           className={styles.pageTitle}
       >
         {/* TODO: replace with a message */}
-        {'ls projects'}
+        {'ls ' + Messages.pageTitle()}
       </Text.LargeTitle>
     </div>
     <div

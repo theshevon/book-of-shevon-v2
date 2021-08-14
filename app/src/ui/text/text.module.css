@@ -1,5 +1,45 @@
-.text {
-    font-weight: normal;
+/* Ordinary text sizes */
+@value ordTextSizeXSmall: 0.8rem;
+@value ordTextSizeSmall: 1.0rem;
+@value ordTextSizeMedium: 1.2rem;
+@value ordTextSizeLarge: 1.4rem;
+@value ordTextSizeXLarge: 1.6rem;
+
+/* Title text sizes */
+@value titleTextSizeSmall: 1.6rem;
+@value titleTextSizeMedium: 1.9rem;
+@value titleTextSizeLarge: 2.2rem;
+
+p.xSmall {
+    font-size: ordTextSizeXSmall;
+}
+
+p.small {
+    font-size: ordTextSizeSmall;
+}
+
+p.medium {
+    font-size: ordTextSizeMedium;
+}
+
+p.large {
+    font-size: ordTextSizeLarge;
+}
+
+p.xLarge {
+    font-size: ordTextSizeXLarge;
+}
+
+h3.small {
+    font-size: titleTextSizeSmall;
+}
+
+h2.medium {
+    font-size: titleTextSizeMedium;
+}
+
+h1.large {
+    font-size: titleTextSizeLarge;
 }
 
 .removeMargins {
@@ -26,14 +66,34 @@
     font-style: italic;
 }
 
-.bold {
-    font-weight: bold;
+.light {
+    font-weight: lighter;
 }
 
 .semiBold {
     font-weight: bolder;
 }
 
-.light {
-    font-weight: lighter;
+.normal {
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.none {
+    text-transform: none;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }
