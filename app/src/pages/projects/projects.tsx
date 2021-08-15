@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useDocumentHeader } from '../../util/util';
 import { Text } from './../../ui/text/text';
 
 import { Projects as TechProjects } from './info/projects';
@@ -9,28 +10,33 @@ import { ProjectsMessages as Messages } from './projects.messages';
 
 import styles from './projects.module.css';
 
-export const Projects = () => (
-  <div
-    className={styles.projectsPage}
-  >
+export const Projects = () => {
+
+  useDocumentHeader(Messages.pageTitle());
+
+  return (
     <div
-      className={styles.pageTitleContainer}
+      className={styles.projectsPage}
     >
-      <Text.LargeTitle
-          fontWeight='bold'
-          className={styles.pageTitle}
+      <div
+        className={styles.pageTitleContainer}
       >
-        {'ls ' + Messages.pageTitle()}
-      </Text.LargeTitle>
+        <Text.LargeTitle
+            fontWeight='bold'
+            className={styles.pageTitle}
+        >
+          {'ls ' + Messages.pageTitle()}
+        </Text.LargeTitle>
+      </div>
+      <div
+          className={styles.projects}
+      >
+        {TechProjects.map(project => (
+          <Project
+            {...project}
+          />
+        ))}
+      </div>
     </div>
-    <div
-        className={styles.projects}
-    >
-      {TechProjects.map(project => (
-        <Project
-          {...project}
-        />
-      ))}
-    </div>
-  </div>
-);
+  );
+}
