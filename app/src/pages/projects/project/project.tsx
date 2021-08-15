@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { Text } from './../../../ui/text/text';
-import { Capsule } from './../../../ui/capsule/capsule';
 import { ButtonLink, CapsuleLink } from './../../../ui/link/link';
 import { ProjectMessages as Messages } from './project.messages';
 import { TechCapsule } from './tech_capsule/tech_capsule';

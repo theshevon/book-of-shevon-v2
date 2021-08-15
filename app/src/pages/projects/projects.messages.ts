@@ -1,4 +1,4 @@
 export const ProjectsMessages = {
 
-  pageTitle: (): string => 'projects'
+  pageTitle: (): string => 'Projects',
 }
