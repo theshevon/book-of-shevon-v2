@@ -7,7 +7,7 @@ import {
 import AOS from 'aos';
 
 import { Nav as NavImpl } from './ui/nav/nav';
-import { Routes } from './routes/routes';
+import { Routes } from './routes/route_data/routes';
 import { RoutesData } from './routes/route_data/route_data';
 import { createPageContainer } from './ui/page_container/create';
 
@@ -52,12 +52,12 @@ export const App = () => {
 					/>
 					<Route
               exact
-              path='/about'
+              path={Routes.ABOUT}
               component={AboutPage}
 					/>
 					<Route
               exact
-              path='/projects'
+              path={Routes.PROJECTS}
               component={ProjectsPage}
 					/>
 					<Route

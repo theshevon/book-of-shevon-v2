@@ -1,4 +1,4 @@
-import { Routes } from '../routes';
+import { Routes } from './routes';
 import { RouteDataMessages as Messages } from './route_data.messages';
 
 export type RouteData = {
@@ -9,18 +9,23 @@ export type RouteData = {
 
 export const RoutesData: RouteData[] = [
 	{
-    pathname: Routes.ABOUT,
-    label: Messages.About(),
-    index: -1,
+		pathname: Routes.ABOUT,
+		label: Messages.about(),
+		index: -1,
 	},
 	{
-    pathname: Routes.HOME,
-    label: Messages.Home(),
-    index: 0,
+		pathname: Routes.HOME,
+		label: Messages.home(),
+		index: 0,
 	},
 	{
     pathname: Routes.PROJECTS,
-    label: Messages.Projects(),
+    label: Messages.projects(),
+    index: 1,
+	},
+	{
+    pathname: Routes.BLOG,
+    label: Messages.blog(),
     index: 1,
 	},
 ];
