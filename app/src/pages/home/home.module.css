@@ -1,4 +1,4 @@
-@value mobileBreakpoint from '../../ui/metrics/metrics.module.css';
+@value breakpointSmall from '../../ui/metrics/metrics.module.css';
 
 .siteTitleContainer {
     position: absolute;
@@ -24,7 +24,7 @@
     width: 80%;
 }
 
-@media(min-width: mobileBreakpoint) {
+@media(min-width: breakpointSmall) {
 
     .siteTitle {
         font-size: 3.5rem;

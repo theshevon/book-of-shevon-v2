@@ -1,1 +1,2 @@
-@value mobileBreakpoint: 576px;
+@value breakpointSmall: 375px;
+@value breakpointMedium: 768px;

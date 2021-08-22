@@ -1,5 +1,5 @@
 @value monoLightGrey from '../../../ui/colors/colors.module.css';
-@value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
+@value breakpointSmall from '../../../ui/metrics/metrics.module.css';
 
 .skillsListContainer:not(:last-of-type) {
     margin-bottom: calc(3 * 7.5px);
@@ -24,7 +24,7 @@
     gap: 10px 5px;
 }
 
-@media(max-width: mobileBreakpoint) {
+@media(max-width: breakpointSmall) {
 
     .skills {
         list-style: none;
