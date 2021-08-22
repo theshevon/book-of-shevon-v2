@@ -1,11 +1,11 @@
-@value semiTransparentDarkGrey from '../../colors/colors.module.css';
+@value semiTransparentDarkGrey from './../../colors/colors.module.css';
 @value menuHeight from './menu/menu.module.css';
+@value navHeight from './../nav.module.css';
 
-@value navbarHeight: 50px;
-@value menuContainerHeight: calc(navbarHeight + menuHeight);
+@value menuContainerHeight: calc(navHeight + menuHeight);
 
 .navbarContainer {
-    height: navbarHeight;
+    height: navHeight;
     box-sizing: border-box;
     position: fixed;
     top: 0;

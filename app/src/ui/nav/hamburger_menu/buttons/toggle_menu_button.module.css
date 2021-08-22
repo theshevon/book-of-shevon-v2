@@ -1,0 +1,42 @@
+@value navHeight from './../../nav.module.css';
+
+@value toggleButtonSideLength: 40px;
+@value lineHeight: 2.5px;
+@value distanceFromEdge: calc(2 * (navHeight / 2 - toggleButtonSideLength / 2));
+
+.toggleMenuButton {
+  position: fixed;
+  top: distanceFromEdge;
+  right: distanceFromEdge;
+  width: toggleButtonSideLength;
+  height: toggleButtonSideLength;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.line {
+  background-color: black;
+  width: inherit;
+  height: lineHeight;
+  transition: transform 500ms ease-in-out;
+  border-radius: 15px;
+  transform-origin: center;
+}
+
+.line:nth-of-type(1) {
+  transform: translateY(5px);
+}
+
+.line:nth-of-type(2) {
+  transform: translateY(-5px);
+}
+
+/* TODO: The 9.67px offset was eyeballed here. Ensure that this is correctly calculated */
+.menuOpen.line:nth-of-type(1) {
+  transform: translateY(9.67px) rotate(135deg);
+}
+
+.menuOpen.line:nth-of-type(2) {
+  transform: translateY(-9.67px) rotate(225deg);
+}

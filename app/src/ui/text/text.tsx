@@ -92,8 +92,10 @@ const getClassNames = ({
     getSizeClassName(size),
     getAligmentClassName(alignment),
     getFontWeightClassName(fontWeight),
-    {[styles.italicised]: italicised},
-    {[styles.removeMargins]: !keepDefaultMargins},
+    {
+      [styles.italicised]: italicised,
+      [styles.removeMargins]: !keepDefaultMargins
+    },
     getTextCaseClassName(textCase),
     className,
   );

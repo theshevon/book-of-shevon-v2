@@ -17,8 +17,6 @@ export const Navbar = observer(({
   routes,
   activeRoute,
 }: NavbarProps) => {
-  console.log(routes);
-  console.log(activeRoute);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (

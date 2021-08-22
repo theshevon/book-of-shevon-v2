@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { Route } from '../../../../routes/routes';
+import type { Route } from '../../../../routes/routes';
 import styles from './menu.module.css';
 
 type MenuProps = {
