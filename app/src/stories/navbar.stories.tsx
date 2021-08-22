@@ -3,9 +3,9 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { StoryGroup } from './stories';
-import { Menu } from '../ui/navbar/navbar/menu/menu';
-import { ToggleMenuButton } from '../ui/navbar/navbar/buttons/toggle_menu_button/toggle_menu_button';
-import { Navbar } from '../ui/navbar/navbar/navbar';
+import { Menu } from './../ui/nav/navbar/menu/menu';
+import { ToggleMenuButton } from './../ui/nav/navbar/buttons/toggle_menu_button/toggle_menu_button';
+import { Navbar } from './../ui/nav/navbar/navbar';
 
 import BgImage from './assets/abstract_bg.jpeg';
 
@@ -72,7 +72,7 @@ storiesOf('UI/NavBar/Menu', module)
       >  
         <Menu
             routes={routes}
-            activeRoute={'/'}
+            activeRoute='/'
         />
       </div>
     </StoryGroup>
@@ -82,6 +82,6 @@ storiesOf('UI/NavBar/Navbar', module)
   .add('Navbar', () => (
     <Navbar 
       routes={routes}
-      activeRoute={'/'}
+      activeRoute='/'
     />
   ));

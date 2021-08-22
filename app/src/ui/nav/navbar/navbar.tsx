@@ -7,7 +7,6 @@ import type { Route } from '../../../routes/routes';
 import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
 
 import styles from './navbar.module.css';
-import { DisplaySizeObserver } from '../../../util/display_size_observer';
 
 type NavbarProps = {
   routes: Route[],
@@ -18,9 +17,10 @@ export const Navbar = observer(({
   routes,
   activeRoute,
 }: NavbarProps) => {
-
+  console.log(routes);
+  console.log(activeRoute);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const displaySize = DisplaySizeObserver.size;
+
   return (
     <div
         className={styles.navbarContainer}
@@ -28,7 +28,6 @@ export const Navbar = observer(({
       <div
           className={styles.mainNavbar}
       >
-        <div>{displaySize}</div>
         <ToggleMenuButton
             menuOpen={menuOpen}
             onClick={() => setMenuOpen(!menuOpen)}/>
