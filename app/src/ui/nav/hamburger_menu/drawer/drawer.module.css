@@ -1,16 +1,51 @@
-@value semiTransparentDarkGrey from './../../../colors/colors.module.css';
-
+@value monoMidGrey, semiTransparentDarkGrey from './../../../colors/colors.module.css';
+@value distanceFromEdge from './../buttons/toggle_menu_button.module.css';
 @value drawerHeight: 30vh;
 
 .drawer {
   background-color: semiTransparentDarkGrey;
   display: flex;
   justify-content: center;
-  height: drawerHeight;
   transform: translateY(calc(-1 * drawerHeight));
+  padding: 70px distanceFromEdge;
   transition: 500ms;
 }
 
 .show {
   transform: translateY(0);
+}
+
+.verticalMenu {
+  list-style: none;
+  height: menuHeight;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.linkContainer {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 10px;
+  width: inherit;
+  border-radius: 6px;
+}
+
+.link.active {
+  background-color: monoMidGrey;
 }

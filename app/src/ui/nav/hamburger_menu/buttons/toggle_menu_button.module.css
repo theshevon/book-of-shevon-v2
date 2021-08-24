@@ -2,7 +2,7 @@
 
 @value toggleButtonSideLength: 40px;
 @value lineHeight: 2.5px;
-@value distanceFromEdge: calc(2 * (navHeight / 2 - toggleButtonSideLength / 2));
+@value distanceFromEdge: calc(3 * (navHeight / 2 - toggleButtonSideLength / 2));
 
 .toggleMenuButton {
   position: absolute;
