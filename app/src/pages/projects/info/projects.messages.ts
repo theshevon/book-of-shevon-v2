@@ -50,9 +50,11 @@ export const ProjectsMessages = {
   
   Html: (): string => 'HTML', 
   
-  Css: (): string => 'CSS', 
+  Css: (): string => 'CSS',
   
-  JavaScript: (): string => 'JavaScript', 
+  JavaScript: (): string => 'JavaScript',
+
+  Typescript: (): string => 'TypeScript',
     
   React: (): string => 'React',
 

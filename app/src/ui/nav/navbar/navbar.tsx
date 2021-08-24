@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import classNames from 'classnames';
 
-import { Menu } from './menu/menu';
+import { HorizontalMenu } from './horizontal_menu/horizontal_menu';
 import type { Route } from '../../../routes/routes';
 import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
 
@@ -38,7 +38,7 @@ export const Navbar = observer(({
         <div 
           className={styles.menuContainerInner}
         >
-          <Menu
+          <HorizontalMenu
               routes={routes}
               activeRoute={activeRoute}
           />

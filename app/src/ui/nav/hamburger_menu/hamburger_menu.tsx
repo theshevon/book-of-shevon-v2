@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
 import { ToggleMenuButton } from './buttons/toggle_menu_button';
+import { Drawer } from './drawer/drawer';
 import type { Route } from './../../../routes/routes';
 
-import styles from './hamburger.module.css';
+import styles from './hamburger_menu.module.css';
 
 type HamburgerMenuProps = {
   routes: Route[],
@@ -16,11 +17,18 @@ export const HamburgerMenu = ({
 }: HamburgerMenuProps) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   return (
-    <div>
+    <div
+        className={styles.hamburgerMenu}
+    >
       <ToggleMenuButton
           menuOpen={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
       />
+      <Drawer
+          routes={routes}
+          activeRoute={activeRoute}
+          show={menuOpen}
+      />
     </div>
-  )
+  );
 }

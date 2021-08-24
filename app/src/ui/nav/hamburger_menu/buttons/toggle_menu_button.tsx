@@ -16,12 +16,10 @@ export const ToggleMenuButton = ({
       onClick={onClick}
   >
     <div
-        id="upper"
         className={classnames(styles.line, { [styles.menuOpen]: menuOpen })}
     >
     </div>
     <div
-        id="lower"
         className={classnames(styles.line, { [styles.menuOpen]: menuOpen })}
     >
     </div>

@@ -2,19 +2,19 @@ import React from 'react';
 import classNames from 'classnames';
 
 import type { Route } from '../../../../routes/routes';
-import styles from './menu.module.css';
+import styles from './horizontal_menu.module.css';
 
-type MenuProps = {
+type HorizontalMenuProps = {
   routes: Route[],
   activeRoute: string,
 }
 
-export const Menu = ({
+export const HorizontalMenu = ({
   routes,
   activeRoute,
-}: MenuProps) => (
+}: HorizontalMenuProps) => (
   <ul
-      className={styles.menu}    
+      className={styles.horizontalMenu}    
   >
     { routes.map(route => (
       <li

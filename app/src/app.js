@@ -13,6 +13,8 @@ import { Projects } from './pages/projects/projects';
 import { Nav } from './ui/nav/nav';
 import { Routes as routes } from './routes/routes';
 
+import './app.css';
+
 const AOS_DURATION_MILLISECONDS = 1500;
 
 export const App = () => {

@@ -1,0 +1,16 @@
+@value semiTransparentDarkGrey from './../../../colors/colors.module.css';
+
+@value drawerHeight: 30vh;
+
+.drawer {
+  background-color: semiTransparentDarkGrey;
+  display: flex;
+  justify-content: center;
+  height: drawerHeight;
+  transform: translateY(calc(-1 * drawerHeight));
+  transition: 500ms;
+}
+
+.show {
+  transform: translateY(0);
+}

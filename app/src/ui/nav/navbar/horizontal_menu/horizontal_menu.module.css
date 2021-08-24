@@ -1,6 +1,6 @@
 @value menuHeight: 35px;
 
-.menu {
+.horizontalMenu {
     list-style: none;
     height: menuHeight;
     width: 70%;
