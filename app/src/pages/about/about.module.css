@@ -1,10 +1,10 @@
-@value mobileBreakpoint from '../../ui/metrics/metrics.module.css';
+@value breakpointSmall from '../../ui/metrics/metrics.module.css';
 
 .page {
     margin: 10% 7.5%;
 }
 
-@media(min-width: mobileBreakpoint) {
+@media(min-width: breakpointSmall) {
 
     .page {
         margin: 100px 10%;

@@ -1,0 +1,51 @@
+@value navHeight, navBackgroundColor, navBackgroundBlur, navBoxShadow, menuTransitionTime from './../nav.module.css';
+@value menuHeight from './horizontal_menu/horizontal_menu.module.css';
+
+@value menuContainerHeight: calc(navHeight + menuHeight);
+
+.navbarContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 150;
+    width: 100%;
+    height: navHeight;
+    box-sizing: border-box;
+}
+
+.mainNavbar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    height: inherit;
+}
+
+.menuContainerOuter {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+    box-shadow: navBoxShadow;
+    padding: 2.5px 0;
+    width: 100%;
+    height: menuContainerHeight;
+    box-sizing: border-box;
+    transition: transform menuTransitionTime ease-in-out;
+    transform: translateY(calc(-1 * menuContainerHeight));
+    background-color: navBackgroundColor;
+    backdrop-filter: navBackgroundBlur;
+}
+
+.menuContainerOuter.withMenuOpen {
+    transform: translateY(0);
+}
+
+.menuContainerInner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

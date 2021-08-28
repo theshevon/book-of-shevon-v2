@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 
-import { Menu } from './menu/menu';
+import { HorizontalMenu } from './horizontal_menu/horizontal_menu';
 import type { Route } from '../../../routes/routes';
 import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
 
@@ -16,9 +16,8 @@ export const Navbar = ({
   routes,
   activeRoute,
 }: NavbarProps) => {
-
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-
+  const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
     <div
         className={styles.navbarContainer}
@@ -28,7 +27,7 @@ export const Navbar = ({
       >
         <ToggleMenuButton
             menuOpen={menuOpen}
-            onClick={() => setMenuOpen(!menuOpen)}/>
+            onClick={toggleMenu}/>
       </div>
       <div
           className={classNames(styles.menuContainerOuter, {
@@ -38,7 +37,7 @@ export const Navbar = ({
         <div 
           className={styles.menuContainerInner}
         >
-          <Menu
+          <HorizontalMenu
               routes={routes}
               activeRoute={activeRoute}
           />
@@ -46,4 +45,4 @@ export const Navbar = ({
       </div>
     </div>
   );
-}
+};

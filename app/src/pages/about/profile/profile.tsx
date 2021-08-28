@@ -24,6 +24,7 @@ export const Profile = ({
         alt={imgAltTag}
     />
     <Text.LargeTitle
+        alignment='center'
         fontWeight='bold'
         textCase='uppercase'
         keepDefaultMargins={true}

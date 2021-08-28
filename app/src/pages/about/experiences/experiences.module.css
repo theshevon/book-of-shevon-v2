@@ -1,5 +1,5 @@
 @value monoDarkGrey, flatGold from '../../../ui/colors/colors.module.css';
-@value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
+@value breakpointSmall from '../../../ui/metrics/metrics.module.css';
 
 @value bottomMargin: 7.5px;
 @value boldFontWeight: 500;
@@ -49,7 +49,7 @@
     margin-top: 0;
 }
 
-@media(max-width: mobileBreakpoint) {
+@media(max-width: breakpointSmall) {
 
     .experiences {
         list-style: none;

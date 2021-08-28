@@ -1,5 +1,6 @@
 @value monoLightGrey: #e4e4e4;
 @value monoMidGrey: #7c7c7c;
 @value monoDarkGrey: #282828;
+@value semiTransparentLightGrey: rgba(20, 20, 20, 80%);
 @value semiTransparentDarkGrey: rgba(40, 40, 40, 80%);
 @value flatGold: #D4AF37;

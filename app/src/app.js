@@ -10,8 +10,10 @@ import 'aos/dist/aos.css';
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Projects } from './pages/projects/projects';
-import { createNavbar } from './ui/navbar/create';
+import { Nav } from './ui/nav/nav';
 import { Routes as routes } from './routes/routes';
+
+import './app.css';
 
 const AOS_DURATION_MILLISECONDS = 1500;
 
@@ -20,19 +22,16 @@ export const App = () => {
 		useEffect(() => {
 			AOS.init({
 					duration: AOS_DURATION_MILLISECONDS,
-					once: true
+					once: true,
 			});
 		}, []);
 
-		const Navbar = createNavbar({
-			routes,
-			// TODO: replace this with actual link
-			activeRoute: '/',
-		});
-
 		return (
 			<Router>
-				{Navbar}
+				<Nav
+						routes={routes}
+						activeRoute={window.location.pathname}
+				/>
 				<Switch>
 					<Route
               exact

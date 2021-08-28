@@ -19,7 +19,7 @@ export const Link = ({
   <a
       href={url}
       target={targetSelf ? '_self' : '_blank'}
-      rel={!targetSelf ? 'noopener' : undefined}
+      rel={!targetSelf ? 'noopener noreferrer' : 'noreferrer'}
       className={classNames(styles.link, className)}
   >
     {anchorText}

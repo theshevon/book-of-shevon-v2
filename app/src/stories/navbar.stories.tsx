@@ -1,65 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 import { StoryGroup } from './stories';
-import { Menu } from '../ui/navbar/navbar/menu/menu';
-import { ToggleMenuButton } from '../ui/navbar/navbar/buttons/toggle_menu_button/toggle_menu_button';
-import { Navbar } from '../ui/navbar/navbar/navbar';
-
-import BgImage from './assets/abstract_bg.jpeg';
+import { HorizontalMenu } from '../ui/nav/navbar/horizontal_menu/horizontal_menu';
+import { ToggleMenuButton as ToggleHorizontalMenuButton } from './../ui/nav/navbar/buttons/toggle_menu_button/toggle_menu_button';
+import { ToggleMenuButton as ToggleHamburgerMenuButton } from './../ui/nav/hamburger_menu/buttons/toggle_menu_button/toggle_menu_button';
+import { Navbar } from './../ui/nav/navbar/navbar';
+import { Drawer } from './../ui/nav/hamburger_menu/drawer/drawer';
+import { HamburgerMenu } from './../ui/nav/hamburger_menu/hamburger_menu';
 
 const routes = [
   {
-    label: 'About',
+    label: 'Route 1',
     route: '#',
     index: -1,
   },
   {
-    label: 'Home',
-    route: '#',
+    label: 'Route 2',
+    route: '##',
     index: 0,
   },
   {
-    label: 'Blog',
+    label: 'Route 3',
     route: '#',
     index: 1,
   }
 ]
 
-storiesOf('UI/NavBar/ToggleMenuButton', module)
-  .add('Toggle Menu Button', () => (
-    <StoryGroup>
-      <ToggleMenuButton
-          menuOpen={false}
-          onClick={action('Menu Toggle Clicked!')}
-      />
-      <ToggleMenuButton
-          menuOpen={true}
-          onClick={action('Menu Toggle Clicked!')}
-      />
-    </StoryGroup>
-  ))
-  .add('ToggleMenu Button with (distracting) background', () => (
-    <>
-      <img
-          src={BgImage}
-          style={{ position: 'absolute', clip: 'rect(0px,165px,80px,0px)' }}
-          alt={"Distracting background"}
-      />
-      <div
-          style={{ padding: '25px' }}
-      >
-        <ToggleMenuButton
-            menuOpen={false}
-            onClick={action('Menu Toggle Clicked!')}
+storiesOf('UI/Nav/Navbar/Buttons', module)
+  .add('ToggleMenuButton', () => {
+    const [menuOpen, setMenuOpen] = useState<boolean>(false);
+    const toggleMenu = () => setMenuOpen(!menuOpen);
+    return (
+      <StoryGroup>
+        <ToggleHorizontalMenuButton
+            menuOpen={menuOpen}
+            onClick={toggleMenu}
         />
-      </div>
-    </>
-  ));
+      </StoryGroup>
+    )
+  });
 
-storiesOf('UI/NavBar/Menu', module)
-  .add('Menu', () => (
+storiesOf('UI/Nav/Navbar/HorizontalMenu', module)
+  .add('HorizontalMenu', () => (
     <StoryGroup>
       <div
           style={{ 
@@ -67,21 +50,53 @@ storiesOf('UI/NavBar/Menu', module)
             display: 'flex', 
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: 'rgba(40, 40, 40, 80%)'
           }}
       >  
-        <Menu
+        <HorizontalMenu
             routes={routes}
-            activeRoute={'/'}
+            activeRoute='##'
         />
       </div>
     </StoryGroup>
   ));
 
-storiesOf('UI/NavBar/Navbar', module)
+storiesOf('UI/Nav/Navbar/Navbar', module)
   .add('Navbar', () => (
     <Navbar 
-      routes={routes}
-      activeRoute={'/'}
+        routes={routes}
+        activeRoute='##'
+    />
+  ));
+
+storiesOf('UI/Nav/HamburgerMenu/Buttons', module)
+.add('ToggleMenuButton', () => {
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  return (
+    <StoryGroup>
+      <ToggleHamburgerMenuButton
+          menuOpen={menuOpen}
+          onClick={toggleMenu}
+      />
+    </StoryGroup>
+  )
+});
+
+storiesOf('UI/Nav/HamburgerMenu/Drawer', module)
+  .add('Drawer', () => (
+    <StoryGroup>
+        <Drawer
+            routes={routes}
+            activeRoute='##'
+            show={true}
+        />
+    </StoryGroup>
+  ));
+
+storiesOf('UI/Nav/HamburgerMenu/HamburgerMenu', module)
+  .add('HamburgerMenu', () => (
+    <HamburgerMenu 
+        routes={routes}
+        activeRoute='##'
     />
   ));

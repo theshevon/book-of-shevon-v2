@@ -8,6 +8,8 @@ export const Projects: ProjectProps[] = [
     description: Messages.BookOfShevonV2Desc(),
     techStack: [
       Messages.React(),
+      Messages.Typescript(),
+      Messages.MobX(),
     ], 
     githubUrl: 'https://github.com/theshevon/book-of-shevon-v2',
   },
@@ -26,6 +28,7 @@ export const Projects: ProjectProps[] = [
     description: Messages.TheTreasurePlatformDesc(),
     techStack: [
       Messages.React(),
+      Messages.JavaScript(),
       Messages.Redux(),
       Messages.Node(),
       Messages.Firebase(),

@@ -1,0 +1,58 @@
+@value monoMidGrey from './../../../colors/colors.module.css';
+@value navHeight, navBackgroundColor, navBackgroundBlur, navBoxShadow, menuTransitionTime from './../../nav.module.css';
+@value toggleButtonDistanceFromEdge from './../hamburger_menu.module.css';
+@value toggleButtonSideLength from './../buttons/toggle_menu_button/toggle_menu_button.module.css';
+
+@value drawerHeight: 300px;
+
+.drawer {
+  background-color: navBackgroundColor;
+  backdrop-filter: navBackgroundBlur;
+  display: flex;
+  justify-content: center;
+  transform: translateY(calc(-1 * drawerHeight));
+  padding: 70px calc(toggleButtonSideLength + toggleButtonDistanceFromEdge);
+  transition: menuTransitionTime;
+  box-shadow: navBoxShadow;
+}
+
+.show {
+  transform: translateY(0);
+}
+
+.verticalMenu {
+  list-style: none;
+  height: menuHeight;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.linkContainer {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  text-transform: uppercase;
+  text-align: center;
+  color: monoDarkGrey;
+  font-family: 'Arial';
+  font-weight: 400;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 10px;
+  width: inherit;
+  border-radius: 5px;
+}
+
+.link.active {
+  color: white;
+  background-color: monoMidGrey;
+}

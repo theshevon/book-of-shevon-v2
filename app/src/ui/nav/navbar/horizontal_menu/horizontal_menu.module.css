@@ -1,6 +1,8 @@
+@value monoMidGrey, monoDarkGrey from './../../../colors/colors.module.css';
+
 @value menuHeight: 35px;
 
-.menu {
+.horizontalMenu {
     list-style: none;
     height: menuHeight;
     width: 70%;
@@ -19,12 +21,19 @@
 }
 
 .link {
-    text-transform: uppercase;
-    color: white;
+    position: relative;
+    font-family: 'Arial';
     font-weight: 400;
     font-size: 0.85rem;
+    text-transform: uppercase;
     text-decoration: none;
-    position: relative;
+    color: monoMidGrey;
+    transition: 0.4s;
+}
+
+.link:hover,
+.link.active {
+    color: monoDarkGrey;
 }
 
 .link.active:after {
@@ -32,7 +41,7 @@
     height: 2px;
     border-radius: 1px;
     width: 50%;
-    background-color: white;
+    background-color: monoMidGrey;
     position: absolute;
     left: 50%;
     bottom: -5px;

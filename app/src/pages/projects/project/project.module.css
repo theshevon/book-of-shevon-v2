@@ -1,5 +1,5 @@
 @value monoMidGrey from '../../../ui/colors/colors.module.css';
-@value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
+@value breakpointSmall from '../../../ui/metrics/metrics.module.css';
 
 @value githubGreen: rgb(83, 197, 98);
 
@@ -73,7 +73,7 @@
 	color: white;
 }
 
-@media(min-width: mobileBreakpoint){
+@media(min-width: breakpointSmall){
 
 	.project {
 		width: 25vw;

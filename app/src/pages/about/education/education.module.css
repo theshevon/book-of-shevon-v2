@@ -1,5 +1,5 @@
 @value flatGold from '../../../ui/colors/colors.module.css';
-@value mobileBreakpoint from '../../../ui/metrics/metrics.module.css';
+@value breakpointSmall from '../../../ui/metrics/metrics.module.css';
 
 @value bottomMargin: 7.5px;
 @value boldFontWeight: 500;
@@ -31,7 +31,7 @@ strong {
     color: flatGold;
 }
 
-@media(max-width: mobileBreakpoint) {
+@media(max-width: breakpointSmall) {
 
     .education {
         list-style: none;
