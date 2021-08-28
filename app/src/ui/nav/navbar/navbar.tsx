@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { observer } from 'mobx-react-lite';
 import classNames from 'classnames';
 
 import { HorizontalMenu } from './horizontal_menu/horizontal_menu';
@@ -13,11 +12,18 @@ type NavbarProps = {
   activeRoute: string,
 }
 
-export const Navbar = observer(({
+export const Navbar = ({
   routes,
   activeRoute,
 }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const toggleMenu = () => {
+    if (menuOpen) {
+      setMenuOpen(false);
+    } else {
+      setMenuOpen(true);
+    }
+  }
 
   return (
     <div
@@ -28,7 +34,7 @@ export const Navbar = observer(({
       >
         <ToggleMenuButton
             menuOpen={menuOpen}
-            onClick={() => setMenuOpen(!menuOpen)}/>
+            onClick={toggleMenu}/>
       </div>
       <div
           className={classNames(styles.menuContainerOuter, {
@@ -46,4 +52,4 @@ export const Navbar = observer(({
       </div>
     </div>
   );
-});
+};

@@ -7,8 +7,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 20000;
-    width: 100vw;
+    z-index: 150;
+    width: 100%;
     height: navHeight;
     box-sizing: border-box;
 }
@@ -34,7 +34,7 @@
     width: 100%;
     height: menuContainerHeight;
     box-sizing: border-box;
-    transition: transform 500ms ease-in-out;
+    transition: transform menuTransitionTime ease-in-out;
     transform: translateY(calc(-1 * menuContainerHeight));
     background-color: navBackgroundColor;
     backdrop-filter: navBackgroundBlur;
