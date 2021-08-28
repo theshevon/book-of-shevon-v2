@@ -1,7 +1,19 @@
+@value navHeight from './../nav.module.css';
+@value toggleButtonSideLength from './buttons/toggle_menu_button/toggle_menu_button.module.css';
+
+@value toggleButtonDistanceFromEdge: calc(3 * (navHeight / 2 - toggleButtonSideLength / 2));
+
 .hamburgerMenu {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 150;
   width: 100%;
+}
+
+.toggleButtonContainer {
+  position: absolute;
+  top: toggleButtonDistanceFromEdge;
+  right: toggleButtonDistanceFromEdge;
+  z-index: 150;
 }

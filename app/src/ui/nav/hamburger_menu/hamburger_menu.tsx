@@ -16,22 +16,19 @@ export const HamburgerMenu = ({
   activeRoute,
 }: HamburgerMenuProps) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(true);
-  const toggleMenu = () => {
-    if (menuOpen) {
-      setMenuOpen(false);
-    } else {
-      setMenuOpen(true);
-    }
-  }
-
+  const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
     <div
         className={styles.hamburgerMenu}
     >
-      <ToggleMenuButton
-          menuOpen={menuOpen}
-          onClick={toggleMenu}
-      />
+      <div
+          className={styles.toggleButtonContainer}
+      >
+        <ToggleMenuButton
+            menuOpen={menuOpen}
+            onClick={toggleMenu}
+        />
+      </div>
       <Drawer
           routes={routes}
           activeRoute={activeRoute}

@@ -1,20 +1,14 @@
-@value navHeight from './../../../nav.module.css';
 @value monoDarkGrey from './../../../../colors/colors.module.css';
 
 @value toggleButtonSideLength: 40px;
 @value lineHeight: 2.5px;
-@value distanceFromEdge: calc(3 * (navHeight / 2 - toggleButtonSideLength / 2));
 
 .toggleMenuButton {
-  position: absolute;
-  top: distanceFromEdge;
-  right: distanceFromEdge;
   width: toggleButtonSideLength;
   height: toggleButtonSideLength;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  z-index: 150;
 }
 
 .toggleMenuButton:hover {

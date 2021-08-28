@@ -17,14 +17,7 @@ export const Navbar = ({
   activeRoute,
 }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const toggleMenu = () => {
-    if (menuOpen) {
-      setMenuOpen(false);
-    } else {
-      setMenuOpen(true);
-    }
-  }
-
+  const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
     <div
         className={styles.navbarContainer}
