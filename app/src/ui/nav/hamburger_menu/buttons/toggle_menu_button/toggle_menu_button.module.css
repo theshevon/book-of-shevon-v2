@@ -1,4 +1,5 @@
-@value navHeight from './../../nav.module.css';
+@value navHeight from './../../../nav.module.css';
+@value monoDarkGrey from './../../../../colors/colors.module.css';
 
 @value toggleButtonSideLength: 40px;
 @value lineHeight: 2.5px;
@@ -21,7 +22,7 @@
 }
 
 .line {
-  background-color: black;
+  background-color: monoDarkGrey;
   width: inherit;
   height: lineHeight;
   transition: transform 500ms ease-in-out;

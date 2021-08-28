@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import type { Route } from './../../../../routes/routes';
+import type { Route } from '../../../../routes/routes';
 
 import styles from './drawer.module.css';
 

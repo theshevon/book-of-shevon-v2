@@ -1,14 +1,18 @@
-@value monoMidGrey, semiTransparentDarkGrey from './../../../colors/colors.module.css';
-@value distanceFromEdge from './../buttons/toggle_menu_button.module.css';
+@value navHeight, navBackgroundColor, navBackgroundBlur, navBoxShadow, menuTransitionTime from './../../nav.module.css';
+@value monoMidGrey from './../../../colors/colors.module.css';
+@value distanceFromEdge, toggleButtonSideLength from './../buttons/toggle_menu_button/toggle_menu_button.module.css';
+
 @value drawerHeight: 30vh;
 
 .drawer {
-  background-color: semiTransparentDarkGrey;
+  background-color: navBackgroundColor;
+  backdrop-filter: navBackgroundBlur;
   display: flex;
   justify-content: center;
   transform: translateY(calc(-1 * drawerHeight));
-  padding: 70px distanceFromEdge;
+  padding: 70px calc(toggleButtonSideLength + distanceFromEdge);
   transition: 500ms;
+  box-shadow: navBoxShadow;
 }
 
 .show {
@@ -37,15 +41,17 @@
 .link {
   text-transform: uppercase;
   text-align: center;
-  color: white;
+  color: monoDarkGrey;
+  font-family: 'Arial';
   font-weight: 400;
   font-size: 0.85rem;
   text-decoration: none;
   padding: 10px;
   width: inherit;
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 .link.active {
+  color: white;
   background-color: monoMidGrey;
 }

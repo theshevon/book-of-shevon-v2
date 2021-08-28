@@ -1,1 +1,6 @@
 @value navHeight: 50px;
+@value navBackgroundColor: rgba(255, 255, 255, 0.5);
+@value navBackgroundBlur: blur(10px);
+@value navBoxShadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+
+@value menuTransitionTime: 500ms;

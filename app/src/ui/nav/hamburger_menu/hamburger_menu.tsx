@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { ToggleMenuButton } from './buttons/toggle_menu_button';
+import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
 import { Drawer } from './drawer/drawer';
 import type { Route } from './../../../routes/routes';
 

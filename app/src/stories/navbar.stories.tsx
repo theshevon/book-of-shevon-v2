@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { StoryGroup } from './stories';
-import { HorizontalMenu } from './../ui/nav/navbar/horizontal_menu/horizontal_menu';
+import { HorizontalMenu } from '../ui/nav/navbar/horizontal_menu/horizontal_menu';
 import { ToggleMenuButton } from './../ui/nav/navbar/buttons/toggle_menu_button/toggle_menu_button';
 import { Navbar } from './../ui/nav/navbar/navbar';
 
