@@ -1,5 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 
+import { Text } from './../../ui/text/text';
+import { ErrorMessages as Messages } from './error.messages';
+
 import styles from './error.module.css';
 import { CARDS_SPRITE } from './cards_sprite';
 
@@ -143,6 +146,15 @@ export const Error = () => {
         ref={errorPageRef}
         className={styles.errorPage}
     >
+      <div
+          className={styles.errorMsgContainer}
+      >
+        <Text.Large
+            className={styles.errorMsg}
+        >
+          {Messages.errorMsgTitle()}
+        </Text.Large>
+      </div>
       <canvas
           ref={canvasRef}
           onClick={e => addCard(e)}

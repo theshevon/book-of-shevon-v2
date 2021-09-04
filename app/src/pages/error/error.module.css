@@ -1,8 +1,41 @@
 .errorPage {
   height: 100vh;
   width: 100vw;
+  position: relative;
+}
+
+.errorMsgContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 50px;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid black;
+  transform: translate(-50%, -50%);
+  animation: blink infinite 2s step-start;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.errorMsg {
+  text-transform: uppercase;
 }
 
 .canvas {
   background-color: #008000;
+}
+
+@keyframes blink {
+
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
