@@ -6,10 +6,13 @@ import { ErrorMessages as Messages } from './error.messages';
 import styles from './error.module.css';
 import { CARDS_SPRITE } from './cards_sprite';
 
-const UPDATE_FREQ_PER_S = 60;
-const UPDATE_INTERVAL = 1000 / UPDATE_FREQ_PER_S;
+const POSITION_UPDATE_FREQ_PER_S = 60;
+const POSITION_UPDATE_INTERVAL = 1000 / POSITION_UPDATE_FREQ_PER_S;
 
-const N_CARDS = 52;
+const N_INITIAL_CARDS = 10; 
+const AUTO_ADDITION_UPDATE_INTERVAL = 2000;
+
+const N_CARDS_IN_DECK = 52;
 const CARD_WIDTH = 71;
 const CARD_WIDTH_HALF = CARD_WIDTH / 2;
 const CARD_HEIGHT = 96;
@@ -68,30 +71,37 @@ class Card {
 
 export const Error = () => {
 
-  const errorPageRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  const [nextCardId, setNextCardId] = useState<number>(0);
-  const [cards, setCards] = useState<Card[]>([]);
-  const [canvasWidth, setCanvasWidth] = useState<number>(1000);
-  const [canvasHeight, setCanvasHeight] = useState<number>(1000);
-
   const image = new Image();
   image.src = CARDS_SPRITE;
 
-  const addCard = (e: React.MouseEvent) => {
+  const errorPageRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  const [canvasWidth, setCanvasWidth] = useState<number>();
+  const [canvasHeight, setCanvasHeight] = useState<number>();
+  const [cards, setCards] = useState<Card[]>(Array.from({ length: N_INITIAL_CARDS }, () => {
+    return new Card(
+      Math.floor(Math.random() * (N_CARDS_IN_DECK - 1)),
+      Math.random() * window.innerWidth,
+      -CARD_HEIGHT,
+      Math.floor(Math.random() * 6 - 3 ) * 2,
+      -Math.random() * 16,
+      image,
+    );
+  }));
+
+  const addSingleCard = (x: number, y: number) => {
     setCards([
       ...cards,
       new Card(
-        nextCardId,
-        e.clientX,
-        e.clientY,
+        Math.floor(Math.random() * (N_CARDS_IN_DECK - 1)),
+        x,
+        y,
         Math.floor(Math.random() * 6 - 3 ) * 2,
-        - Math.random() * 16, 
+        -Math.random() * 16, 
         image
       ),
     ]);
-    setNextCardId(nextCardId === N_CARDS ? 0 : nextCardId + 1);
   }
 
   const updateCards = (canvas: HTMLCanvasElement, renderingCtx: CanvasRenderingContext2D) => {
@@ -107,7 +117,7 @@ export const Error = () => {
 
     // remove all cards that are out of the view
     for (let i=0; i<cards.length; i++) {
-      const cardsStillInView = cards.filter(card => !card.isOutOfView(canvas.height));
+      const cardsStillInView = cards.filter(card => !card.isOutOfView(canvas.width));
       if (cardsStillInView.length !== cards.length) {
         setCards(cardsStillInView);
       }
@@ -127,16 +137,21 @@ export const Error = () => {
     const canvas = canvasRef.current;
     const renderingCtx = canvas?.getContext('2d');
     
-    const updateLoop = setInterval(() => {
+    const cardAdditionLoop = setInterval(() => {
+      addSingleCard(Math.random() * (canvasWidth || window.innerWidth), -CARD_HEIGHT);
+    }, AUTO_ADDITION_UPDATE_INTERVAL);
+
+    const cardUpdateLoop = setInterval(() => {
       if (!(canvas && renderingCtx)) return;
       updateCards(canvas, renderingCtx);
-    }, UPDATE_INTERVAL);
+    }, POSITION_UPDATE_INTERVAL);
 
     updateCanvasSize();
     window.addEventListener('resize', updateCanvasSize);
 
     return () => {
-      clearInterval(updateLoop);
+      clearInterval(cardAdditionLoop);
+      clearInterval(cardUpdateLoop);
       window.removeEventListener('resize', updateCanvasSize);
     }
   }, [cards]);
@@ -157,7 +172,7 @@ export const Error = () => {
       </div>
       <canvas
           ref={canvasRef}
-          onClick={e => addCard(e)}
+          onClick={e => addSingleCard(e.clientX, e.clientY)}
           className={styles.canvas}
           width={canvasWidth}
           height={canvasHeight}
