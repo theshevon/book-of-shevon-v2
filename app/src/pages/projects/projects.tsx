@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useDocumentHeader } from '../../util/util';
+import { useDocumentHeader } from './../../util/hooks';
 import { Text } from './../../ui/text/text';
 
 import { Projects as TechProjects } from './info/projects';

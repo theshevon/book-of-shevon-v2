@@ -5,23 +5,31 @@ import { ErrorMessages as Messages } from './error.messages';
 
 import styles from './error.module.css';
 import { CARDS_SPRITE } from './cards_sprite';
+import { getRandomNumInRange } from './../../util/math';
 
 const POSITION_UPDATE_FREQ_PER_S = 60;
 const POSITION_UPDATE_INTERVAL = 1000 / POSITION_UPDATE_FREQ_PER_S;
 
-const MIN_INITIAL_CARDS = 5;
-const MAX_INITIAL_CARDS = 15; 
+const MIN_INITIAL_CARDS = 10;
+const MAX_INITIAL_CARDS = 20; 
 const AUTO_ADDITION_UPDATE_INTERVAL = 2000;
 
 const N_CARDS_IN_DECK = 52;
 const N_SUITES = 4;
+
 const CARD_WIDTH = 71;
 const CARD_WIDTH_HALF = CARD_WIDTH / 2;
 const CARD_HEIGHT = 96;
 const CARD_HEIGHT_HALF = CARD_HEIGHT / 2;
 
+const MAX_INITIAL_UPWARD_ACC = -16;
+const GRAVITATIONAL_ACC = 0.98;
+const REBOUND_FORCE_MULTIPLIER = 0.85;
+const MIN_HORIZONTAL_ACC = 6;
+const MAX_HORIZONTAL_ACC = -6;
+
 /**
- * This implementation is based on the one the Winning Solitaire implementation by Ricardo Cabello
+ * This implementation is based on the Winning Solitaire implementation by Ricardo Cabello
  * (https://mrdoob.com/lab/javascript/effects/solitaire/)
  */
 class Card {
@@ -42,8 +50,8 @@ class Card {
     this.currY = y;
     this.prevX = x;
     this.prevY = y;
-    this.dx = Math.floor(Math.random() * 6 - 3) * 2;
-    this.dy = -Math.random() * 16;
+    this.dx = getRandomNumInRange(MIN_HORIZONTAL_ACC, MAX_HORIZONTAL_ACC);
+    this.dy = Math.random() * MAX_INITIAL_UPWARD_ACC;
     this.sx = (id % N_SUITES) * CARD_WIDTH;
     this.sy = Math.floor(id / N_SUITES) * CARD_HEIGHT;
   }
@@ -57,10 +65,10 @@ class Card {
 
     if (this.currY > canvasHeight - CARD_HEIGHT_HALF) {
       this.currY = canvasHeight - CARD_HEIGHT_HALF;
-      this.dy = -(this.dy *  0.85); // TODO
+      this.dy = -(this.dy * REBOUND_FORCE_MULTIPLIER);
     }
 
-    this.dy += 0.98; // TODO
+    this.dy += GRAVITATIONAL_ACC; 
   }
  
   isActiveWithinCanvas(canvasWidth: number) {
@@ -94,7 +102,7 @@ export const Error = () => {
 
   const [canvasWidth, setCanvasWidth] = useState<number>();
   const [canvasHeight, setCanvasHeight] = useState<number>();
-  const [cards, setCards] = useState<Card[]>(Array.from({ length: Math.floor(Math.random() * (MAX_INITIAL_CARDS - MIN_INITIAL_CARDS)) + MIN_INITIAL_CARDS  }, () => {
+  const [cards, setCards] = useState<Card[]>(Array.from({ length: getRandomNumInRange(MIN_INITIAL_CARDS, MAX_INITIAL_CARDS)  }, () => {
     return new Card(
       image,
       Math.floor(Math.random() * (N_CARDS_IN_DECK - 1)),
