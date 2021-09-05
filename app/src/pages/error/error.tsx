@@ -25,7 +25,7 @@ const CARD_HEIGHT_HALF = CARD_HEIGHT / 2;
 
 const MAX_INITIAL_UPWARD_ACC = -16;
 const GRAVITATIONAL_ACC = 0.98;
-const REBOUND_FORCE_MULTIPLIER = 0.85;
+const REBOUND_FORCE_MULTIPLIER = -0.85;
 const MIN_HORIZONTAL_ACC = 6;
 const MAX_HORIZONTAL_ACC = -6;
 
@@ -66,7 +66,7 @@ class Card {
 
     if (this.currY > canvasHeight - CARD_HEIGHT_HALF) {
       this.currY = canvasHeight - CARD_HEIGHT_HALF;
-      this.dy = -(this.dy * REBOUND_FORCE_MULTIPLIER);
+      this.dy = this.dy * REBOUND_FORCE_MULTIPLIER;
     }
 
     this.dy += GRAVITATIONAL_ACC; 
