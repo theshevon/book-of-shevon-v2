@@ -36,14 +36,14 @@ class Card {
   private sx: number;
   private sy: number;
 
-  constructor(image: HTMLImageElement, id: number, x: number, y: number, dx: number, dy: number) {
+  constructor(image: HTMLImageElement, id: number, x: number, y: number) {
     this.image = image;
     this.currX = x;
     this.currY = y;
     this.prevX = x;
     this.prevY = y;
-    this.dx = dx;
-    this.dy = dy;
+    this.dx = Math.floor(Math.random() * 6 - 3) * 2;
+    this.dy = -Math.random() * 16;
     this.sx = (id % N_SUITES) * CARD_WIDTH;
     this.sy = Math.floor(id / N_SUITES) * CARD_HEIGHT;
   }
@@ -100,8 +100,6 @@ export const Error = () => {
       Math.floor(Math.random() * (N_CARDS_IN_DECK - 1)),
       Math.random() * window.innerWidth,
       -CARD_HEIGHT,
-      Math.floor(Math.random() * 6 - 3) * 2, // TODO
-      -Math.random() * 16, // TODO
     );
   }));
 
@@ -113,8 +111,6 @@ export const Error = () => {
         Math.floor(Math.random() * (N_CARDS_IN_DECK - 1)),
         x,
         y,
-        Math.floor(Math.random() * 6 - 3) * 2,
-        -Math.random() * 16,
       ),
     ]);
   }
