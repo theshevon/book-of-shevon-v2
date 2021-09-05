@@ -3,7 +3,7 @@ import React from 'react';
 import { Links } from './links';
 import { IconLink } from './icon_link/icon_link';
 import { Text } from './../../ui/text/text';
-import { useDocumentHeader } from '../../util/util';
+import { useDocumentHeader } from './../../util/hooks';
 
 import { HomeMessages as Messages } from './home.messages';
 

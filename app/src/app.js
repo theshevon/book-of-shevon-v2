@@ -10,6 +10,7 @@ import 'aos/dist/aos.css';
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Projects } from './pages/projects/projects';
+import { Error } from './pages/error/error';
 import { Nav } from './ui/nav/nav';
 import { Routes as routes } from './routes/routes';
 
@@ -47,6 +48,11 @@ export const App = () => {
               exact
               path='/projects'
               component={Projects}
+					/>
+					<Route
+              exact
+              path='/*'
+              component={Error}
 					/>
 				</Switch>
 			</Router>
