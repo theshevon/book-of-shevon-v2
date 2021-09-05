@@ -6,6 +6,7 @@ import { ErrorMessages as Messages } from './error.messages';
 import styles from './error.module.css';
 import { CARDS_SPRITE } from './cards_sprite';
 import { getRandomNumInRange } from './../../util/math';
+import { useDocumentHeader } from '../../util/hooks';
 
 const POSITION_UPDATE_FREQ_PER_S = 60;
 const POSITION_UPDATE_INTERVAL = 1000 / POSITION_UPDATE_FREQ_PER_S;
@@ -96,6 +97,8 @@ export const Error = () => {
 
   const image = new Image();
   image.src = CARDS_SPRITE;
+
+  useDocumentHeader(Messages.pageTitle());
 
   const errorPageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
