@@ -3,10 +3,11 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Text } from './../../ui/text/text';
 import { ErrorMessages as Messages } from './error.messages';
 
-import styles from './error.module.css';
-import { CARDS_SPRITE } from './cards_sprite';
 import { getRandomNumInRange } from './../../util/math';
 import { useDocumentHeader } from '../../util/hooks';
+
+import styles from './error.module.css';
+import { CARDS_SPRITE } from './cards_sprite';
 
 const POSITION_UPDATE_FREQ_PER_S = 60;
 const POSITION_UPDATE_INTERVAL = 1000 / POSITION_UPDATE_FREQ_PER_S;
