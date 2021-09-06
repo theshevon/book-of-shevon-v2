@@ -9,7 +9,6 @@ import { TertiaryEducation } from './info/education/education';
 import { SkillsLists } from './info/skills/skills';
 import { CommercialExperiences, VolunteerExperiences } from './info/experiences/experiences';
 import { useDocumentHeader } from './../../util/hooks';
-import { PageContainer } from './../../ui/page_container/page_container';
 
 import { AboutMessages as Messages } from './about.messages';
 
@@ -21,7 +20,8 @@ export const About = () => {
 
 	const Profile = createProfile();
 
-	const Content = () => (
+	return (
+
 		<div
 				className={styles.page}
 		>
@@ -64,13 +64,7 @@ export const About = () => {
 						experiences={VolunteerExperiences}
 				/>
 			</Section>
-		
+    
 		</div>
-	);
-
-	return (
-		<PageContainer
-				Content={Content}
-		/>
 	);
 }

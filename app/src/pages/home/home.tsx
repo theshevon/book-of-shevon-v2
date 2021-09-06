@@ -4,7 +4,6 @@ import { Links } from './links';
 import { IconLink } from './icon_link/icon_link';
 import { Text } from './../../ui/text/text';
 import { useDocumentHeader } from './../../util/hooks';
-import { PageContainer } from './../../ui/page_container/page_container';
 
 import { HomeMessages as Messages } from './home.messages';
 
@@ -14,7 +13,7 @@ export const Home = () => {
 
 	useDocumentHeader(Messages.pageTitle());
 	
-	const Content = () => (
+	return (
 		<div
 				className={styles.siteTitleContainer}
 		>
@@ -34,11 +33,5 @@ export const Home = () => {
 				))}
 			</div>
 		</div>
-	);
-
-	return (
-		<PageContainer
-				Content={Content}
-		/>
 	);
 }

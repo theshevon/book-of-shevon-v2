@@ -2,7 +2,6 @@ import React from 'react';
 
 import { useDocumentHeader } from './../../util/hooks';
 import { Text } from './../../ui/text/text';
-import { PageContainer } from './../../ui/page_container/page_container';
 
 import { Projects as TechProjects } from './info/projects';
 import { Project } from './project/project';
@@ -15,7 +14,7 @@ export const Projects = () => {
 
   useDocumentHeader(Messages.pageTitle());
 
-  const Content = () => (
+  return (
     <div
       className={styles.projectsPage}
     >
@@ -40,10 +39,4 @@ export const Projects = () => {
       </div>
     </div>
   );
-
-  return (
-		<PageContainer
-				Content={Content}
-		/>
-	);
 }
