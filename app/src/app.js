@@ -14,7 +14,8 @@ import { Error } from './pages/error/error';
 
 import './app.css';
 import { Nav as NavImpl } from './ui/nav/nav';
-import { Routes as routes } from './routes/routes';
+import { Routes } from './routes/routes';
+import { RoutesData } from './routes/route_data/route_data';
 import { createPageContainer } from './ui/page_container/create';
 
 const AOS_DURATION_MILLISECONDS = 1500;
@@ -30,7 +31,7 @@ export const App = () => {
 
 		const Nav = () => (
 			<NavImpl
-					routes={routes}
+					routesData={RoutesData}
 					activeRoute={window.location.pathname}
 			/>
 		);
@@ -45,7 +46,7 @@ export const App = () => {
 				<Switch>
 					<Route
               exact
-              path='/'
+              path={Routes.HOME}
               component={HomePage}
 					/>
 					<Route

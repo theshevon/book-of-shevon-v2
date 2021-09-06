@@ -1,25 +1,5 @@
-import { RoutesMessages } from "./routes.messages";
-
-export type Route = {
-    route: string,
-    label: string,
-    index: number,
+export enum Routes {
+	HOME = '/',
+	ABOUT = '/about',
+	PROJECTS = '/projects',
 }
-
-export const Routes: Route[] = [
-    {
-        route: '/about',
-        label: RoutesMessages.About(),
-        index: -1,
-    },
-    {
-        route: '/',
-        label: RoutesMessages.Home(),
-        index: 0,
-    },
-    {
-        route: '/projects',
-        label: RoutesMessages.Projects(),
-        index: 1,
-    },
-];

@@ -1,43 +1,42 @@
-import classNames from 'classnames';
 import React from 'react';
-import type { Route } from '../../../../routes/routes';
+import classNames from 'classnames';
+
+import type { RouteData } from './../../../../routes/route_data/route_data';
 
 import styles from './drawer.module.css';
 
 type DrawerProps = {
-  routes: Route[],
+  routesData: RouteData[],
   activeRoute: string,
   show: boolean,
 }
 
 export const Drawer = ({
-  routes,
+  routesData,
   activeRoute,
   show,
-}: DrawerProps) => {
-  return (
-    <div
-        className={classNames(styles.drawer, {[styles.show]: show})}
+}: DrawerProps) => (
+  <div
+      className={classNames(styles.drawer, {[styles.show]: show})}
+  >
+    <ul
+        className={styles.verticalMenu}    
     >
-      <ul
-          className={styles.verticalMenu}    
-      >
-        { routes.map(route => (
-          <li
-              key={route.label}
-              className={styles.linkContainer}
+      { routesData.map(routeData => (
+        <li
+            key={routeData.label}
+            className={styles.linkContainer}
+        >
+          <a
+              href={routeData.pathname}
+              className={classNames(styles.link, {
+                [styles.active]: routeData.pathname === activeRoute,
+              })}
           >
-            <a
-                href={route.route}
-                className={classNames(styles.link, {
-                  [styles.active]: route.route === activeRoute,
-                })}
-            >
-                { route.label }
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+              { routeData.label }
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
