@@ -11,8 +11,6 @@ import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Projects } from './pages/projects/projects';
 import { Error } from './pages/error/error';
-import { Nav } from './ui/nav/nav';
-import { Routes as routes } from './routes/routes';
 
 import './app.css';
 
@@ -29,10 +27,6 @@ export const App = () => {
 
 		return (
 			<Router>
-				<Nav
-						routes={routes}
-						activeRoute={window.location.pathname}
-				/>
 				<Switch>
 					<Route
               exact
