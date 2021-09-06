@@ -9,8 +9,7 @@ import { TertiaryEducation } from './info/education/education';
 import { SkillsLists } from './info/skills/skills';
 import { CommercialExperiences, VolunteerExperiences } from './info/experiences/experiences';
 import { useDocumentHeader } from './../../util/hooks';
-import { Nav } from './../../ui/nav/nav';
-import { Routes as routes } from './../../routes/routes';
+import { PageContainer } from './../../ui/page_container/page_container';
 
 import { AboutMessages as Messages } from './about.messages';
 
@@ -22,57 +21,56 @@ export const About = () => {
 
 	const Profile = createProfile();
 
-	return (
-		<>
-			<Nav
-					routes={routes}
-					activeRoute='/home'
-			/>
+	const Content = () => (
+		<div
+				className={styles.page}
+		>
 
-			<div
-					className={styles.page}
+			{/* PROFILE SECTION */}
+			{Profile}
+
+			{/* WORK EXPERIENCE SECTION */}
+			<Section
+					title={'commercialXp'}
 			>
+				<Experiences
+						experiences={CommercialExperiences}
+				/>
+			</Section>
 
-				{/* PROFILE SECTION */}
-				{Profile}
+			{/* SKILLS SECTION */}
+			<Section
+					title={'skills'}
+			>
+				<Skills
+						skillsLists={SkillsLists}
+				/>
+			</Section>
 
-				{/* WORK EXPERIENCE SECTION */}
-				<Section
-						title={'commercialXp'}
-				>
-					<Experiences
-							experiences={CommercialExperiences}
-					/>
-				</Section>
+			{/* EDUCATION SECTION */}
+			<Section
+					title={'education'}
+			>
+				<Education
+						education={TertiaryEducation}
+				/>
+			</Section>
 
-				{/* SKILLS SECTION */}
-				<Section
-						title={'skills'}
-				>
-					<Skills
-							skillsLists={SkillsLists}
-					/>
-				</Section>
+			{/* VOLUNTEER EXPERIENCE SECTION */}
+			<Section
+					title={'volunteerXp'}
+			>
+				<Experiences
+						experiences={VolunteerExperiences}
+				/>
+			</Section>
+		
+		</div>
+	);
 
-				{/* EDUCATION SECTION */}
-				<Section
-						title={'education'}
-				>
-					<Education
-							education={TertiaryEducation}
-					/>
-				</Section>
-
-				{/* VOLUNTEER EXPERIENCE SECTION */}
-				<Section
-						title={'volunteerXp'}
-				>
-					<Experiences
-							experiences={VolunteerExperiences}
-					/>
-				</Section>
-			
-			</div>
-		</>
+	return (
+		<PageContainer
+				Content={Content}
+		/>
 	);
 }

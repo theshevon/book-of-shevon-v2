@@ -4,8 +4,7 @@ import { Links } from './links';
 import { IconLink } from './icon_link/icon_link';
 import { Text } from './../../ui/text/text';
 import { useDocumentHeader } from './../../util/hooks';
-import { Nav } from './../../ui/nav/nav';
-import { Routes as routes } from './../../routes/routes';
+import { PageContainer } from './../../ui/page_container/page_container';
 
 import { HomeMessages as Messages } from './home.messages';
 
@@ -15,31 +14,31 @@ export const Home = () => {
 
 	useDocumentHeader(Messages.pageTitle());
 	
-	return (
-		<>
-			<Nav
-					routes={routes}
-					activeRoute='/home'
-			/>
-			<div
-					className={styles.siteTitleContainer}
+	const Content = () => (
+		<div
+				className={styles.siteTitleContainer}
+		>
+			<Text.LargeTitle
+					alignment='center'
+					className={styles.siteTitle}
 			>
-				<Text.LargeTitle
-						alignment='center'
-						className={styles.siteTitle}
-				>
-					{Messages.bookOfShevon()}
-				</Text.LargeTitle>
-				<div
-						className={styles.links}
-				>
-					{ Links.map(link =>(
-						<IconLink
-							{...link}
-						/>
-					))}
-				</div>
+				{Messages.bookOfShevon()}
+			</Text.LargeTitle>
+			<div
+					className={styles.links}
+			>
+				{ Links.map(link =>(
+					<IconLink
+						{...link}
+					/>
+				))}
 			</div>
-		</>
+		</div>
+	);
+
+	return (
+		<PageContainer
+				Content={Content}
+		/>
 	);
 }
