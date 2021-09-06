@@ -5,7 +5,11 @@ import {
 	Route 
 } from 'react-router-dom';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+
+import { Nav as NavImpl } from './ui/nav/nav';
+import { Routes } from './routes/routes';
+import { RoutesData } from './routes/route_data/route_data';
+import { createPageContainer } from './ui/page_container/create';
 
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
@@ -13,10 +17,7 @@ import { Projects } from './pages/projects/projects';
 import { Error } from './pages/error/error';
 
 import './app.css';
-import { Nav as NavImpl } from './ui/nav/nav';
-import { Routes } from './routes/routes';
-import { RoutesData } from './routes/route_data/route_data';
-import { createPageContainer } from './ui/page_container/create';
+import 'aos/dist/aos.css';
 
 const AOS_DURATION_MILLISECONDS = 1500;
 
