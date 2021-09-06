@@ -1,33 +1,33 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import type { Route } from './../../../../routes/routes';
+import type { RouteData } from './../../../../routes/route_data/route_data';
 import styles from './horizontal_menu.module.css';
 
 type HorizontalMenuProps = {
-  routes: Route[],
+  routesData: RouteData[],
   activeRoute: string,
 }
 
 export const HorizontalMenu = ({
-  routes,
+  routesData,
   activeRoute,
 }: HorizontalMenuProps) => (
   <ul
       className={styles.horizontalMenu}    
   >
-    { routes.map(route => (
+    { routesData.map(routeData => (
       <li
-          key={route.label}
+          key={routeData.label}
           className={styles.linkContainer}
       >
         <a
-            href={route.route}
+            href={routeData.pathname}
             className={classNames(styles.link, {
-              [styles.active]: route.route === activeRoute,
+              [styles.active]: routeData.pathname === activeRoute,
             })}
         >
-            { route.label }
+            { routeData.label }
         </a>
       </li>
     ))}

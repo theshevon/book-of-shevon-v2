@@ -9,20 +9,20 @@ import { Navbar } from './../ui/nav/navbar/navbar';
 import { Drawer } from './../ui/nav/hamburger_menu/drawer/drawer';
 import { HamburgerMenu } from './../ui/nav/hamburger_menu/hamburger_menu';
 
-const routes = [
+const routesData = [
   {
     label: 'Route 1',
-    route: '#',
+    pathname: '#',
     index: -1,
   },
   {
     label: 'Route 2',
-    route: '##',
+    pathname: '##',
     index: 0,
   },
   {
     label: 'Route 3',
-    route: '#',
+    pathname: '#',
     index: 1,
   }
 ]
@@ -53,7 +53,7 @@ storiesOf('UI/Nav/Navbar/HorizontalMenu', module)
           }}
       >  
         <HorizontalMenu
-            routes={routes}
+            routesData={routesData}
             activeRoute='##'
         />
       </div>
@@ -63,7 +63,7 @@ storiesOf('UI/Nav/Navbar/HorizontalMenu', module)
 storiesOf('UI/Nav/Navbar/Navbar', module)
   .add('Navbar', () => (
     <Navbar 
-        routes={routes}
+        routesData={routesData}
         activeRoute='##'
     />
   ));
@@ -86,7 +86,7 @@ storiesOf('UI/Nav/HamburgerMenu/Drawer', module)
   .add('Drawer', () => (
     <StoryGroup>
         <Drawer
-            routes={routes}
+            routesData={routesData}
             activeRoute='##'
             show={true}
         />
@@ -96,7 +96,7 @@ storiesOf('UI/Nav/HamburgerMenu/Drawer', module)
 storiesOf('UI/Nav/HamburgerMenu/HamburgerMenu', module)
   .add('HamburgerMenu', () => (
     <HamburgerMenu 
-        routes={routes}
+        routesData={routesData}
         activeRoute='##'
     />
   ));

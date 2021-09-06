@@ -5,16 +5,19 @@ import {
 	Route 
 } from 'react-router-dom';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+
+import { Nav as NavImpl } from './ui/nav/nav';
+import { Routes } from './routes/routes';
+import { RoutesData } from './routes/route_data/route_data';
+import { createPageContainer } from './ui/page_container/create';
 
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Projects } from './pages/projects/projects';
 import { Error } from './pages/error/error';
-import { Nav } from './ui/nav/nav';
-import { Routes as routes } from './routes/routes';
 
 import './app.css';
+import 'aos/dist/aos.css';
 
 const AOS_DURATION_MILLISECONDS = 1500;
 
@@ -27,27 +30,35 @@ export const App = () => {
 			});
 		}, []);
 
+		const Nav = () => (
+			<NavImpl
+					routesData={RoutesData}
+					activeRoute={window.location.pathname}
+			/>
+		);
+
+		const PageContainer = createPageContainer(Nav);
+		const HomePage = () => <PageContainer Content={Home}/>
+		const AboutPage = () => <PageContainer Content={About}/>
+		const ProjectsPage = () => <PageContainer Content={Projects}/>
+
 		return (
 			<Router>
-				<Nav
-						routes={routes}
-						activeRoute={window.location.pathname}
-				/>
 				<Switch>
 					<Route
               exact
-              path='/'
-              component={Home}
+              path={Routes.HOME}
+              component={HomePage}
 					/>
 					<Route
               exact
               path='/about'
-              component={About}
+              component={AboutPage}
 					/>
 					<Route
               exact
               path='/projects'
-              component={Projects}
+              component={ProjectsPage}
 					/>
 					<Route
               exact

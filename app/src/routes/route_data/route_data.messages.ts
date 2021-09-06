@@ -1,4 +1,4 @@
-export const RoutesMessages = {
+export const RouteDataMessages = {
 
     // label for link to home page
     Home: (): string => 'Home',
