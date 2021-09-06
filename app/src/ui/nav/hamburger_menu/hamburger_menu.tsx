@@ -15,7 +15,7 @@ export const HamburgerMenu = ({
   routesData,
   activeRoute,
 }: HamburgerMenuProps) => {
-  const [menuOpen, setMenuOpen] = useState<boolean>(true);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
     <div
