@@ -42,6 +42,7 @@ export const App = () => {
 		const HomePage = () => <PageContainer Content={Home}/>
 		const AboutPage = () => <PageContainer Content={About}/>
 		const ProjectsPage = () => <PageContainer Content={Projects}/>
+		const BlogPage = () => <PageContainer Content={Blog}/>
 
 		return (
 			<Router>
@@ -63,8 +64,8 @@ export const App = () => {
 					/>
 					<Route
               exact
-              path='/blog'
-              component={Blog}
+              path={Routes.BLOG}
+              component={BlogPage}
 					/>
 					<Route
               exact
