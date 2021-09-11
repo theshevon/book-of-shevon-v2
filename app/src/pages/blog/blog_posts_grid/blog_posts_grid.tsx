@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
 
-import { BlogPostProps } from './../blog_post/blog_post';
+import { BlogPost, BlogPostProps } from './../blog_post/blog_post';
 
 import styles from './blog_posts_grid.module.css';
 
@@ -23,8 +23,18 @@ export const BlogPostsGrid = observer(({
   if (loadingState === 'loading') {
     BlogPosts = () => <div>Loading placeholder</div>;
   } else if (loadingState === 'complete') {
-    BlogPosts = () => <div>{posts.map((post) => <div key={post.title}>Placeholder for {post.title}</div>)}</div>; 
+    BlogPosts = () => (
+      <>
+        {posts.map((post) => (
+          <BlogPost
+              key={post.title}
+              {...post}
+          />
+        ))}
+      </>
+    ); 
   }
+  
   return (
     <div
         className={styles.blogPostsGrid}

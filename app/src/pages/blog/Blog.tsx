@@ -38,6 +38,10 @@ export const Blog = () => {
       <div
           className={styles.blogPostsGridContainer}
       >
+        {/* TODO: rename this to something better */}
+        <div
+            className={styles.topThing}
+        />
         <BlogPostsGrid
             loadingState={loadingState}
             posts={posts}
