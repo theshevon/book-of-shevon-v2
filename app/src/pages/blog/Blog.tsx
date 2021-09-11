@@ -6,38 +6,44 @@ import { useDocumentHeader } from '../../util/hooks';
 import { BlogMessages as Messages } from './blog.messages';
 
 import styles from './blog.module.css';
+import { BlogPostProps } from './blog_post/blog_post';
+import { BlogPostsGrid, LoadingState } from './blog_posts_grid/blog_posts_grid';
 
 const MEDIUM_BLOG_LINK = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@shevon_mendis";
-
-type Post = {
-  title: string,
-  thumbnail: string,
-  description: string,
-  link: string,
-}
 
 export const Blog = () => {
 
   useDocumentHeader(Messages.pageTitle());
 
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [error, setError] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [posts, setPosts] = useState<BlogPostProps[]>([]);
+  const [loadingState, setLoadingState] = useState<LoadingState>('complete');
 
   useEffect(() => {
     fetch(MEDIUM_BLOG_LINK)
         .then(res => res.json())
-        .catch(_ => setError(true))
+        .catch(_ => setLoadingState('error'))
         .then(feed => {
-            setError(false);
+            setLoadingState('complete');
             setPosts(feed.items.filter((item: { categories: string[] }) => item.categories.length > 0));
-            setLoading(false);
         });
   }, []);
+ 
+  const Fallback = () => <div>Fallback placeholder</div>;
 
   return (
-    <div>
+    <div
+        className={styles.blog}
+    >
       <BlogHeader/>
+      <div
+          className={styles.blogPostsGridContainer}
+      >
+        <BlogPostsGrid
+            loadingState={loadingState}
+            posts={posts}
+            Fallback={Fallback}
+        />
+      </div>
     </div>
   );
 }
