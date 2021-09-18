@@ -1,6 +1,6 @@
 # Book of Shevon
 
-_Initially, the website was called "The Book of Shevon", but then I thought "drop the 'the'- it's cleaner"._
+Initially, the website was called "The Book of Shevon", but Sean Parkinson asked me to get rid of the 'The'. Something about it being cleaner that way  🤷🏽‍♂️
 
 **Version:** 2.0
 
