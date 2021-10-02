@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
 
-import { BlogPost, BlogPostProps } from './../blog_post/blog_post';
+import { BlogPostCard, BlogPostProps } from '../blog_post/blog_post';
 
 import styles from './blog_posts_grid.module.css';
 
@@ -26,7 +26,7 @@ export const BlogPostsGrid = observer(({
     BlogPosts = () => (
       <>
         {posts.map((post) => (
-          <BlogPost
+          <BlogPostCard
               key={post.title}
               {...post}
           />

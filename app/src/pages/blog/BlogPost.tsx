@@ -1,6 +1,6 @@
 import React from 'react'
 
-import "../styles/components/BlogPost.css";
+import "./BlogPost.css";
 
 const getShortenedText = (str: string, maxLen: number, separator: string = ' '): string => {
     if (str.length <= maxLen) return str;

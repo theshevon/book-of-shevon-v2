@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import BlogPost         from "./BlogPost";
 import BlogPostSkeleton from "./BlogPostSkeleton";
 
-import "../styles/pages/Blog.css";
+import "./Blog.css";
 
 const MEDIUM_BLOG_LINK = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@shevon_mendis";
 
@@ -14,7 +14,7 @@ type Post = {
     link: string,
 }
 
-const Blog = () => {
+export const Blog = () => {
 
     const [date, setDate] = useState<string>('');
     const [posts, setPosts] = useState<Post[]>([]);
@@ -125,5 +125,3 @@ const Blog = () => {
 
     )
 }
-
-export default Blog;

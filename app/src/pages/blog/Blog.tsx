@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 import { BlogHeader } from './blog_header/blog_header';
 import { useDocumentHeader } from '../../util/hooks';
+import { BlogPostProps } from './blog_post/blog_post';
+import { BlogPostsGrid, LoadingState } from './blog_posts_grid/blog_posts_grid';
 
 import { BlogMessages as Messages } from './blog.messages';
 
 import styles from './blog.module.css';
-import { BlogPostProps } from './blog_post/blog_post';
-import { BlogPostsGrid, LoadingState } from './blog_posts_grid/blog_posts_grid';
 
 const MEDIUM_BLOG_LINK = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@shevon_mendis";
 
@@ -23,6 +23,7 @@ export const Blog = () => {
         .then(res => res.json())
         .catch(_ => setLoadingState('error'))
         .then(feed => {
+            console.log(feed.items.length);
             setLoadingState('complete');
             setPosts(feed.items.filter((item: { categories: string[] }) => item.categories.length > 0));
         });
@@ -39,9 +40,9 @@ export const Blog = () => {
           className={styles.blogPostsGridContainer}
       >
         {/* TODO: rename this to something better */}
-        <div
+        {/* <div
             className={styles.topThing}
-        />
+        /> */}
         <BlogPostsGrid
             loadingState={loadingState}
             posts={posts}

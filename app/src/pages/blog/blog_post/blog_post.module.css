@@ -1,4 +1,4 @@
-.blogPost {
+.blogPostCard {
 
 }
 
@@ -7,4 +7,9 @@
   object-fit: cover;
   height: 200px;
   border-radius: 8px;
+}
+
+.desc {
+  font-style: italic;
+  display: flex;
 }

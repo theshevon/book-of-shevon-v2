@@ -1,7 +1,7 @@
 import React from 'react';
 
-import "../styles/components/BlogPost.css"
-import "../styles/components/BlogPostSkeleton.css";
+import "./BlogPost.css"
+import "./BlogPostSkeleton.css";
 
 const BlogPostSkeleton = () => {
 
