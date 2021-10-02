@@ -5,6 +5,8 @@ import { Text } from '../../../ui/text/text';
 
 import styles from './blog_post.module.css';
 
+const MAX_DESC_LEN = 300;
+
 const getFormattedDate = (dateString: string) => {
   const dt = new Date(dateString);
   const month = new Intl.DateTimeFormat('en-AU', { month: 'long' }).format(dt);
@@ -12,11 +14,11 @@ const getFormattedDate = (dateString: string) => {
   return formattedDate;
 }
 
-// const getShortenedDescription = (desc: string): string => {
-//   const sanitisedDesc = desc.replace(/(<([^>]+)>)/ig, ' ');
-//   if (sanitisedDesc.length <= MAX_DESC_LEN) return sanitisedDesc;
-//   return sanitisedDesc.substr(0, sanitisedDesc.lastIndexOf(' ', MAX_DESC_LEN)) + '...';  
-// }
+const getShortenedDescription = (desc: string): string => {
+  const sanitisedDesc = desc.replace(/(<([^>]+)>)/ig, ' ');
+  if (sanitisedDesc.length <= MAX_DESC_LEN) return sanitisedDesc;
+  return sanitisedDesc.substr(0, sanitisedDesc.lastIndexOf(' ', MAX_DESC_LEN)) + '...';  
+}
 
 export type BlogPostProps = {
   title: string,
@@ -71,7 +73,7 @@ export const BlogPost = ({
     <Text.Small
         alignment='left'
     >
-      {description}
+      {getShortenedDescription(description)}
     </Text.Small>
   </div>
 );

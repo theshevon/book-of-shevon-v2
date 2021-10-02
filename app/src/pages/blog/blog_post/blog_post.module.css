@@ -1,7 +1,7 @@
 @value ordTextSizeXLarge from './../../../ui/text/text.module.css';
 
 .blogPost {
-
+  width: 350px;
 }
 
 .coverImg {
@@ -18,7 +18,7 @@
 .title {
   text-align: left;
   font-weight: bold;
-  font-size: ordTextSizeXLarge;
+  font-size: calc(ordTextSizeXLarge * 1.2);
 }
 
 .title:hover {
