@@ -5,83 +5,90 @@ import { Text } from '../../../ui/text/text';
 
 import styles from './blog_post.module.css';
 
-const MAX_DESC_LEN = 300;
+const getFormattedDate = (dateString: string) => {
+  const dt = new Date(dateString);
+  const month = new Intl.DateTimeFormat('en-AU', { month: 'long' }).format(dt);
+  const formattedDate = `${month}, ${dt.getDate().toString().padStart(2, '0')} ${dt.getFullYear()}`
+  return formattedDate;
+}
+
+// const getShortenedDescription = (desc: string): string => {
+//   const sanitisedDesc = desc.replace(/(<([^>]+)>)/ig, ' ');
+//   if (sanitisedDesc.length <= MAX_DESC_LEN) return sanitisedDesc;
+//   return sanitisedDesc.substr(0, sanitisedDesc.lastIndexOf(' ', MAX_DESC_LEN)) + '...';  
+// }
 
 export type BlogPostProps = {
   title: string,
+  pubDate: string,
+  link: string,
   thumbnail: string,
   description: string,
-  link: string,
+  categories: string[],
+  isFirst?: boolean,
 }
 
-const getShortenedDescription = (desc: string): string => {
-  const sanitisedDesc = desc.replace(/(<([^>]+)>)/ig, ' ');
-  if (sanitisedDesc.length <= MAX_DESC_LEN) return sanitisedDesc;
-  return sanitisedDesc.substr(0, sanitisedDesc.lastIndexOf(' ', MAX_DESC_LEN)) + '...';  
-}
-
-export const BlogPostJumbtron = ({
+export const BlogPost = ({
   title,
+  pubDate,
+  link,
   thumbnail,
   description,
-  link,
+  categories,
+  isFirst = false,
 }: BlogPostProps) => (
   <div
-      className={styles.blogPostJumbtron}
+      className={styles.blogPost}
   >
-    <Text.MediumTitle
-        alignment='center'
-        fontWeight='semi-bold'
-        keepDefaultMargins={true}
-    >
-      {title}
-    </Text.MediumTitle>
     <img
         src={thumbnail}
         alt={`Cover for '${title}'`}
         className={styles.coverImg}
     />
     <div
-        className={styles.desc}
+        className={styles.tags}
     >
-      <Text.Small
-          keepDefaultMargins={true}  
-      >
-        {getShortenedDescription(description)}
-      </Text.Small>
+      {categories.map(category => (
+        <Tag
+            tag={category}
+        />
+      ))}
     </div>
+    <Text.ExtraSmall
+        textCase='uppercase'
+    >
+      {getFormattedDate(pubDate)}
+    </Text.ExtraSmall>
+    <div
+        className={styles.titleContainer}
+    >
+      <Link
+          anchorText={title}
+          url={link}
+          className={styles.title}
+      />
+    </div>
+    <Text.Small
+        alignment='left'
+    >
+      {description}
+    </Text.Small>
   </div>
 );
 
-export const BlogPostCard = ({
-  title,
-  thumbnail,
-  description,
-  link,
-}: BlogPostProps) => (
+const Tag = ({
+  tag,
+}: {
+  tag: string,
+}) => (
   <div
-      className={styles.blogPostCard}
+      className={styles.tag}
   >
-    <Text.MediumTitle
+    <Text.ExtraSmall
         alignment='center'
-        fontWeight='semi-bold'
-        keepDefaultMargins={true}
+        textCase='lowercase'
     >
-      {title}
-    </Text.MediumTitle>
-    <img
-        src={thumbnail}
-        alt={`Cover for '${title}'`}
-        className={styles.coverImg}
-    />
-    <div
-        className={styles.desc}
-    >
-      <Text.Small
-          keepDefaultMargins={true}  
-      >
-        {getShortenedDescription(description)}
-      </Text.Small>
-    </div>
+      {tag}
+    </Text.ExtraSmall>
   </div>
 );

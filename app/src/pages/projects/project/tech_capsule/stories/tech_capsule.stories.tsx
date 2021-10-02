@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { TechCapsule } from '../tech_capsule';
 
-storiesOf('pages/projects/TechCapsule', module)
+storiesOf('pages/Projects/TechCapsule', module)
   .add('TechCapsule', () => (
     <div
         style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}

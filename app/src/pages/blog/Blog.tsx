@@ -23,7 +23,6 @@ export const Blog = () => {
         .then(res => res.json())
         .catch(_ => setLoadingState('error'))
         .then(feed => {
-            console.log(feed.items.length);
             setLoadingState('complete');
             setPosts(feed.items.filter((item: { categories: string[] }) => item.categories.length > 0));
         });

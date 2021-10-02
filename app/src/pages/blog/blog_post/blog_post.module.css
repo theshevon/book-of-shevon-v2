@@ -1,4 +1,6 @@
-.blogPostCard {
+@value ordTextSizeXLarge from './../../../ui/text/text.module.css';
+
+.blogPost {
 
 }
 
@@ -7,6 +9,32 @@
   object-fit: cover;
   height: 200px;
   border-radius: 8px;
+}
+
+.titleContainer {
+  margin: 15px 0;
+}
+
+.title {
+  text-align: left;
+  font-weight: bold;
+  font-size: ordTextSizeXLarge;
+}
+
+.title:hover {
+  text-decoration: underline;
+}
+
+.tags {
+  margin: 15px 0;
+  display: flex;
+}
+
+.tag {
+  color: #345729;
+  background-color: #D1F7C4;
+  border-radius: 4px;
+  padding: 6px;
 }
 
 .desc {
