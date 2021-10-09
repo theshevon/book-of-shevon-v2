@@ -1,25 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Project } from './../pages/projects/project/project';
-import { TechCapsule } from './../pages/projects/project/tech_capsule/tech_capsule';
-
-storiesOf('Pages/Projects/Project', module)
-  .add('Project', () => (
-    <Project
-        name='Test Project'
-        year={2021}
-        description={'Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsum'}
-        techStack={['React', 'MobX']}
-        otherContributors={[{name:'Test Contributor', githubUrl:'#'}]}
-        githubUrl='#'
-    />
-  ));
+import { TechCapsule } from '../tech_capsule';
 
 storiesOf('pages/projects/TechCapsule', module)
   .add('TechCapsule', () => (
     <div
-        style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}
+        style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}
     >
       <TechCapsule
           tech='Python'
