@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Capsule } from '../ui/capsule/capsule';
-import { Text } from '../ui/text/text';
+import { Capsule } from '../capsule';
 
 storiesOf('UI/Capsule', module)
   .add('Capsule', () => (
@@ -10,7 +9,7 @@ storiesOf('UI/Capsule', module)
           style={{ display: 'flex' }}
       >
         <Capsule>
-          This is a capsule
+          Capsule
         </Capsule>
       </div>
   ));
