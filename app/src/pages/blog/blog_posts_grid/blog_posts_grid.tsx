@@ -26,16 +26,18 @@ export const BlogPostsGrid = observer(({
   } else if (loadingState === 'complete') {
     BlogPosts = () => (
       <>
-        {posts.map((post) => (
+        {posts.map((post, index) => (
           <BlogPost
               key={post.title}
               {...post}
+              isFirst={index === 0}
           />
         ))}
       </>
     ); 
   }
   
+  // TODO: fallback
   return (
     <div
         className={styles.blogPostsGrid}

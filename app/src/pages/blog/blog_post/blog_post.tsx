@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { Link } from '../../../ui/link/link';
 import { Text } from '../../../ui/text/text';
@@ -8,9 +9,14 @@ import styles from './blog_post.module.css';
 const MAX_DESC_LEN = 300;
 
 const getFormattedDate = (dateString: string) => {
-  const dt = new Date(dateString);
-  const month = new Intl.DateTimeFormat('en-AU', { month: 'long' }).format(dt);
-  const formattedDate = `${month}, ${dt.getDate().toString().padStart(2, '0')} ${dt.getFullYear()}`
+  let formattedDate;
+  try {
+    const dt = new Date(dateString);
+    const month = new Intl.DateTimeFormat('en-AU', { month: 'long' }).format(dt);
+    formattedDate = `${month} ${dt.getDate().toString().padStart(2, '0')}, ${dt.getFullYear()}`;
+  } catch (_) {
+    // do nothing
+  }
   return formattedDate;
 }
 
@@ -40,41 +46,52 @@ export const BlogPost = ({
   isFirst = false,
 }: BlogPostProps) => (
   <div
-      className={styles.blogPost}
+      className={classNames(styles.blogPost, {
+        [styles.first]: isFirst,
+      })}
   >
-    <img
-        src={thumbnail}
-        alt={`Cover for '${title}'`}
-        className={styles.coverImg}
-    />
     <div
-        className={styles.tags}
+        className={styles.coverImgContainer}
     >
-      {categories.map(category => (
-        <Tag
-            tag={category}
-        />
-      ))}
-    </div>
-    <Text.ExtraSmall
-        textCase='uppercase'
-    >
-      {getFormattedDate(pubDate)}
-    </Text.ExtraSmall>
-    <div
-        className={styles.titleContainer}
-    >
-      <Link
-          anchorText={title}
-          url={link}
-          className={styles.title}
+      <img
+          src={thumbnail}
+          alt={`Cover for '${title}'`}
+          className={styles.coverImg}
       />
     </div>
-    <Text.Small
-        alignment='left'
+    <div
+        className={styles.content}
     >
-      {getShortenedDescription(description)}
-    </Text.Small>
+      <div
+          className={styles.titleContainer}
+      >
+        <Link
+            anchorText={title}
+            url={link}
+            className={classNames(styles.title)}
+        />
+      </div>
+      <Text.ExtraSmall
+          textCase='uppercase'
+          className={styles.date}
+      >
+        {getFormattedDate(pubDate)}
+      </Text.ExtraSmall>
+      <Text.Small
+          alignment='left'
+      >
+        {getShortenedDescription(description)}
+      </Text.Small>
+      <div
+          className={styles.tags}
+      >
+        {categories.map(category => (
+          <Tag
+              tag={category}
+          />
+        ))}
+      </div>
+    </div>
   </div>
 );
 

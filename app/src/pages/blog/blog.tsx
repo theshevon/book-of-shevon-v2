@@ -9,7 +9,7 @@ import { BlogMessages as Messages } from './blog.messages';
 
 import styles from './blog.module.css';
 
-const MEDIUM_BLOG_LINK = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@shevon_mendis";
+const MEDIUM_BLOG_LINK = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@shevon_mendis';
 
 export const Blog = () => {
 
@@ -28,6 +28,7 @@ export const Blog = () => {
         });
   }, []);
  
+  // TODO: create a fallback placeholder
   const Fallback = () => <div>Fallback placeholder</div>;
 
   return (

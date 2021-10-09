@@ -1,4 +1,6 @@
+@value breakpointSmall from './../../../ui/metrics/metrics.module.css';
 @value ordTextSizeXLarge from './../../../ui/text/text.module.css';
+@value monoDarkGrey from './../../../ui/colors/colors.module.css';
 
 .blogPost {
   width: 350px;
@@ -12,7 +14,8 @@
 }
 
 .titleContainer {
-  margin: 15px 0;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 .title {
@@ -26,8 +29,9 @@
 }
 
 .tags {
-  margin: 15px 0;
+  margin-top: 15px;
   display: flex;
+  column-gap: 5px;
 }
 
 .tag {
@@ -40,4 +44,21 @@
 .desc {
   font-style: italic;
   display: flex;
+}
+
+.date {
+  margin-bottom: 15px;
+  color: monoDarkGrey;
+}
+
+@media (min-width: breakpointSmall) {
+
+  .blogPost.first {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  .blogPost.first .tags {
+    margin-top: 0;
+  }
 }
