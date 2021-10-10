@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Links } from './links';
-import { IconLink } from './icon_link/icon_link';
+import { IconLink } from './../../ui/link/link';
 import { Text } from './../../ui/text/text';
 import { useDocumentHeader } from './../../util/hooks';
 

@@ -95,9 +95,10 @@ export const Project = ({
     >
       <ButtonLink
           url={githubUrl}
-          anchorText={Messages.ViewProject()}
-          className={[styles.githubLink]}
-      />
+          className={styles.githubLink}
+      >
+        {Messages.ViewProject()}
+      </ButtonLink>
     </div>
     
   </div>
@@ -139,9 +140,10 @@ const OtherContributors = ({
       >
         <CapsuleLink
             url={otherContributor.githubUrl}
-            anchorText={otherContributor.name}
-            className={[styles.contributorCapsule]}
-        />
+            className={styles.contributorCapsule}
+        >
+          {otherContributor.name}
+        </CapsuleLink>
       </li>
     ))}
   </ul>

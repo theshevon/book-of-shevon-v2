@@ -5,27 +5,23 @@ import {
 	faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
-import { IconLinkProps as Link } from './icon_link/icon_link';
+import { IconLinkProps } from '../../ui/link/link';
 
-export const Links: Link[] = [
+export const Links: IconLinkProps[] = [
 	{
-		type:	'web',
-		href: 'https://github.com/theshevon',
+		url: 'https://github.com/theshevon',
 		icon: faGithub,
 	},
 	{
-		type: 'web',
-		href: 'https://www.linkedin.com/in/mendiss',
+		url: 'https://www.linkedin.com/in/mendiss',
 		icon: faLinkedin,
 	},
 	{
-		type: 'web',
-		href: 'https://medium.com/@shevon_mendis',
+		url: 'https://medium.com/@shevon_mendis',
 		icon: faMedium,
 	},
 	{
-		type: 'web',
-		href: 'https://www.youtube.com/channel/UCkL1cYAWa9Wsx6xDT2H8zOg?view_as=subscriber',
+		url: 'https://www.youtube.com/channel/UCkL1cYAWa9Wsx6xDT2H8zOg?view_as=subscriber',
 		icon: faYoutube,
 	}
 ];

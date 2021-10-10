@@ -6,19 +6,22 @@ import { Link, ButtonLink, CapsuleLink } from '../link';
 storiesOf('UI/Link', module)
   .add('Link', () => (
     <Link
-        anchorText='Link'
         url='#'
-    />
+    >
+      Link
+    </Link>
   ))
   .add('ButtonLink', () => (
     <ButtonLink
-        anchorText='Button Link'
         url='#'
-    />
+    >
+      Button Link
+    </ButtonLink>
   ))
   .add('CapsuleLink', () => (
     <CapsuleLink
-        anchorText='Capsule Link'
         url='#'
-    />
+    >
+      Capsule Link
+    </CapsuleLink>
   ));

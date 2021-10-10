@@ -4,10 +4,8 @@ import type { ExperienceProps } from '../../experiences/experiences';
 export const CommercialExperiences: ExperienceProps[] = [
   {
     role: Messages.SoftwareEngineer(),
-    company: {
-      anchorText: Messages.Canva(),
-      url: 'https://www.canva.com/about',
-    },
+    companyName: Messages.Canva(),
+    companyWebsiteUrl: 'https://www.canva.com/about',
     startDate: {
       month: Messages.April(),
       year: 2021,
@@ -18,10 +16,8 @@ export const CommercialExperiences: ExperienceProps[] = [
   },
   {
     role: Messages.SoftwareEngineer(),
-    company: {
-      anchorText: Messages.DgitSystems(),
-      url: 'https://www.dgitsystems.com/',
-    },
+    companyName: Messages.DgitSystems(),
+    companyWebsiteUrl: 'https://www.dgitsystems.com/',
     startDate: {
       month: Messages.July(),
       year: 2020,
@@ -37,10 +33,8 @@ export const CommercialExperiences: ExperienceProps[] = [
   },
   {
     role: Messages.SoftwareEngineer(),
-    company: {
-      anchorText: Messages.UniMelb(),
-      url: 'https://www.unimelb.edu.au/',
-    },
+    companyName: Messages.UniMelb(),
+    companyWebsiteUrl: 'https://www.unimelb.edu.au/',
     startDate: {
       month: Messages.May(),
       year: 2020,
@@ -56,10 +50,8 @@ export const CommercialExperiences: ExperienceProps[] = [
   },
   {
     role: Messages.AcademicTutor(),
-    company: {
-      anchorText: Messages.UniMelb(),
-      url: 'https://www.unimelb.edu.au/',
-    },
+    companyName: Messages.UniMelb(),
+    companyWebsiteUrl: 'https://www.unimelb.edu.au/',
     startDate: {
       month: Messages.July(),
       year: 2019,
@@ -78,7 +70,7 @@ export const CommercialExperiences: ExperienceProps[] = [
 export const VolunteerExperiences: ExperienceProps[] = [
   {
     role: Messages.CoFounderAndVp(),
-    company: Messages.Codec(),
+    companyName: Messages.Codec(),
     startDate: {
       month: Messages.March(),
       year: 2019,
@@ -95,10 +87,8 @@ export const VolunteerExperiences: ExperienceProps[] = [
   },
   {
     role: Messages.GenCommMember(),
-    company: {
-      anchorText: Messages.Misc(),
-      url: 'https://www.umisc.info/',
-    },
+    companyName: Messages.Misc(),
+    companyWebsiteUrl: 'https://www.umisc.info/',
     startDate: {
       month: Messages.September(),
       year: 2018,
@@ -116,10 +106,8 @@ export const VolunteerExperiences: ExperienceProps[] = [
   },
   {
     role: Messages.PubGenCommMember(),
-    company: {
-      anchorText: Messages.Cissa(),
-      url: 'https://cissa.org.au/',
-    },
+    companyName: Messages.Cissa(),
+    companyWebsiteUrl: 'https://cissa.org.au/',
     startDate: {
       month: Messages.April(),
       year: 2019,
