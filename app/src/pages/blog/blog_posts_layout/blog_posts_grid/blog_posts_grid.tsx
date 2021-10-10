@@ -23,16 +23,32 @@ export const BlogPostsGrid = observer(({
   let BlogPosts: () => JSX.Element = Fallback;
   if (loadingState === 'loading') {
     BlogPosts = () => <div>Loading placeholder</div>;
-  } else if (loadingState === 'complete') {
+  } else if (loadingState === 'complete' && posts.length > 0) {
+    const jumbotronPost = posts[0];
+    const cardPosts = posts.splice(1);
     BlogPosts = () => (
       <>
-        {posts.map((post, index) => (
+        <div
+            className={styles.jumbotronContainer}
+        >
           <BlogPost
-              key={post.title}
-              {...post}
-              isFirst={index === 0}
+              {...jumbotronPost}
+              isJumbotron={true}
           />
-        ))}
+        </div>
+        <div
+            className={styles.separator}
+        />
+        <div
+            className={styles.blogPostsGrid}
+        >
+          {cardPosts.map((post) => (
+            <BlogPost
+                key={post.title}
+                {...post}
+            />
+          ))}
+        </div>
       </>
     ); 
   }
@@ -40,7 +56,7 @@ export const BlogPostsGrid = observer(({
   // TODO: fallback
   return (
     <div
-        className={styles.blogPostsGrid}
+        className={styles.blogPostsLayout}
     >
       {loadingState === 'error'
       ? <Fallback />

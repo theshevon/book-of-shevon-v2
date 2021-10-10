@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { Link } from '../../../ui/link/link';
-import { Text } from '../../../ui/text/text';
+import { Link } from '../../../../ui/link/link';
+import { Text } from '../../../../ui/text/text';
 
 import styles from './blog_post.module.css';
 
@@ -33,7 +33,7 @@ export type BlogPostProps = {
   thumbnail: string,
   description: string,
   categories: string[],
-  isFirst?: boolean,
+  isJumbotron?: boolean,
 }
 
 export const BlogPost = ({
@@ -43,11 +43,11 @@ export const BlogPost = ({
   thumbnail,
   description,
   categories,
-  isFirst = false,
+  isJumbotron,
 }: BlogPostProps) => (
   <div
       className={classNames(styles.blogPost, {
-        [styles.first]: isFirst,
+        [styles.jumbotron]: isJumbotron,
       })}
   >
     <div
@@ -60,19 +60,21 @@ export const BlogPost = ({
       />
     </div>
     <div
-        className={styles.content}
+        className={styles.contentContainer}
     >
       <div
           className={styles.titleContainer}
       >
         <Link
-            anchorText={title}
             url={link}
             className={classNames(styles.title)}
-        />
+        >
+          {title}
+        </Link>
       </div>
       <Text.ExtraSmall
           textCase='uppercase'
+          fontWeight='light'
           className={styles.date}
       >
         {getFormattedDate(pubDate)}

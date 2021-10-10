@@ -1,15 +1,21 @@
-@value breakpointSmall from './../../../ui/metrics/metrics.module.css';
-@value ordTextSizeXLarge from './../../../ui/text/text.module.css';
-@value monoDarkGrey from './../../../ui/colors/colors.module.css';
+@value breakpointSmall from './../../../../ui/metrics/metrics.module.css';
+@value ordTextSizeXLarge from './../../../../ui/text/text.module.css';
+@value monoDarkGrey from './../../../../ui/colors/colors.module.css';
+
+@value blogPostHeight: 478px;
 
 .blogPost {
-  width: 350px;
+  height: blogPostHeight;
+}
+
+.coverImgContainer {
+  height: 200px;
 }
 
 .coverImg {
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  height: 200px;
   border-radius: 8px;
 }
 
@@ -51,7 +57,22 @@
   color: monoDarkGrey;
 }
 
-@media (min-width: breakpointSmall) {
+.jumbotron {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 20px;
+}
+
+.jumbotron .coverImgContainer {
+  grid-column: 1 / 2;
+  height: inherit;
+}
+
+.jumbotron .contentContainer {
+  /* grid-column-start: 4; */
+}
+
+/* @media (min-width: breakpointSmall) {
 
   .blogPost.first {
     display: flex;
@@ -61,4 +82,4 @@
   .blogPost.first .tags {
     margin-top: 0;
   }
-}
+} */

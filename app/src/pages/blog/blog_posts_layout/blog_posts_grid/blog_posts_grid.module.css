@@ -1,8 +1,17 @@
+@value breakpointSmall from './../../../../ui/metrics/metrics.module.css';
+
 .blogPostsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 350px);
-  grid-gap: 10px;
+  grid-gap: 30px 10px;
   justify-content: space-around;
 }
 
 /* update this so that the first row is the jumbotron, followed by the cards in the following */
+@media (min-width: breakpointSmall) {
+
+  .blogPost.first {
+    grid-column-start: 0;
+    grid-column-end: 3;
+  }
+}
