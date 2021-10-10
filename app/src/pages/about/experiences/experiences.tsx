@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Text } from './../../../ui/text/text';
+import { Link } from '../../../ui/link/link';
 import { ExperiencesMessages as Messages } from './experiences.messages';
 import styles from './experiences.module.css';
 
@@ -9,14 +10,10 @@ type Date = {
   year: number,
 }
 
-type Link = {
-  anchorText: string,
-  url: string,
-}
-
 export type ExperienceProps = {
   role: string,
-  company: string | Link,
+  companyName: string,
+  companyWebsiteUrl?: string,
   startDate: Date,
   endDate?: Date,
   useResponsibilitiesLabel?: boolean,
@@ -33,7 +30,7 @@ export const Experiences = ({
 	>
 		{experiences.map(experience => (
 			<li
-					key={experience.company + experience.startDate.month + experience.startDate.year}
+					key={experience.companyName + experience.startDate.month + experience.startDate.year}
 					className={styles.experienceContainer}
 			>
 				<Experience
@@ -46,7 +43,8 @@ export const Experiences = ({
 
 const Experience = ({
   role,
-  company,
+  companyName,
+  companyWebsiteUrl,
   startDate,
   endDate,
   useResponsibilitiesLabel=true,
@@ -61,7 +59,8 @@ const Experience = ({
       {role}
     </Text.Small>
     <Company
-        company={company}
+        companyName={companyName}
+        companyWebsiteUrl={companyWebsiteUrl}
     />
     <TimePeriod
         startDate={startDate}
@@ -75,25 +74,24 @@ const Experience = ({
 );
 
 const Company = ({
-  company,
+  companyName,
+  companyWebsiteUrl,
 }: {
-  company: string | Link,
+  companyName: string,
+  companyWebsiteUrl?: string,
 }) => {
   let content;
-  if (typeof company === 'string') {
-    content = company;
-  } else {
-    const { anchorText, url } = company as Link;
+  if (companyWebsiteUrl) {
     content = (
-      <a
-          href={url}
-          target='_blank'
-          rel='noreferrer'
+      <Link
+          url={companyWebsiteUrl}
           className={styles.link}
       >
-        {anchorText}
-      </a>
+        {companyName}
+      </Link>
     );
+  } else {
+    content = companyName;
   }
   return (
     <Text.ExtraSmall

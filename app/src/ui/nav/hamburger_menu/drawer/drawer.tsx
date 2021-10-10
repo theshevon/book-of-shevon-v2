@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 import type { RouteData } from './../../../../routes/route_data/route_data';
+import { Link } from '../../../link/link';
 
 import styles from './drawer.module.css';
 
@@ -27,14 +28,15 @@ export const Drawer = ({
             key={routeData.label}
             className={styles.linkContainer}
         >
-          <a
-              href={routeData.pathname}
+          <Link
+              url={routeData.pathname}
               className={classNames(styles.link, {
                 [styles.active]: routeData.pathname === activeRoute,
               })}
+              targetSelf={true}
           >
-              { routeData.label }
-          </a>
+              {routeData.label}
+          </Link>
         </li>
       ))}
     </ul>
