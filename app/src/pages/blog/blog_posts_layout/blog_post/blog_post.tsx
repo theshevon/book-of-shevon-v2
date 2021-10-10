@@ -53,11 +53,15 @@ export const BlogPost = ({
     <div
         className={styles.coverImgContainer}
     >
-      <img
-          src={thumbnail}
-          alt={`Cover for '${title}'`}
-          className={styles.coverImg}
-      />
+      <Link
+          url={link}  
+      >
+        <img
+            src={thumbnail}
+            alt={`Cover for '${title}'`}
+            className={styles.coverImg}
+        />
+      </Link>
     </div>
     <div
         className={styles.contentContainer}
