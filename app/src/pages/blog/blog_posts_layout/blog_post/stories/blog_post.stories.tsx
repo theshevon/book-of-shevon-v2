@@ -6,7 +6,7 @@ import { BlogPost } from '../blog_post';
 import thumbail from './test_cover.png';
 
 storiesOf('Pages/Blog/BlogPost', module)
-  .add('First (Jumbotron)', () => (
+  .add('Jumbotron (first post)', () => (
     <BlogPost
         title='Test Blog Post'
         pubDate='2019-03-04 14:22:27'
@@ -17,7 +17,7 @@ storiesOf('Pages/Blog/BlogPost', module)
         isJumbotron={true}
     />
   ))
-  .add('Default (Card)', () => (
+  .add('Card (default)', () => (
     <BlogPost
         title='Test Blog Post'
         pubDate='2019-03-04 14:22:27'
