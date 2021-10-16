@@ -39,7 +39,7 @@ export const Blog = () => {
       <BlogHeader/>
       <BlogPostsLayout
           loadingState={loadingState}
-          posts={posts}
+          posts={[...posts, ...posts, ...posts]}
           Fallback={Fallback}
       />
     </div>

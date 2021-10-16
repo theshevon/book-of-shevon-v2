@@ -1,17 +1,29 @@
-@value breakpointSmall from './../../../../ui/metrics/metrics.module.css';
+@value breakpointSmall, breakpointMedium, breakpointLarge from './../../../../ui/metrics/metrics.module.css';
 
 .blogPostsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 350px);
     grid-gap: 30px 10px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-/* update this so that the first row is the jumbotron, followed by the cards in the following */
 @media (min-width: breakpointSmall) {
 
-  .blogPost.first {
-        grid-column-start: 0;
-        grid-column-end: 3;
-  }
+    .blogPostsGrid {
+        justify-content: space-around;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: breakpointMedium) {
+
+    .blogPostsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: breakpointLarge) {
+
+    .blogPostsGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }

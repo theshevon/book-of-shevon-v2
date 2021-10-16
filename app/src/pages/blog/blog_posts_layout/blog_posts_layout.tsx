@@ -4,6 +4,8 @@ import { BlogPost, BlogPostProps } from './blog_post/blog_post';
 import { BlogPostsGrid } from './blog_posts_grid/blog_posts_grid';
 
 import styles from './blog_posts_layout.module.css';
+import { observer } from 'mobx-react-lite';
+import { Breakpoint, DisplaySizeObserver } from '../../../util/display_size_observer';
 
 export type LoadingState = 'loading' | 'complete' | 'error';
 
@@ -13,49 +15,66 @@ type BlogPostsLayoutProps = {
   Fallback: () => JSX.Element,
 }
 
-type BlogPostsLayoutInternalProps = Pick<BlogPostsLayoutProps, 'loadingState' | 'posts'>;
-
-export const BlogPostsLayout = ({
+export const BlogPostsLayout = observer(({
   loadingState,
   posts,
   Fallback,
-}: BlogPostsLayoutProps) => (
+}: BlogPostsLayoutProps) => {
+  const displaySize = DisplaySizeObserver.size;
+  return (
   <div
       className={styles.blogPostsLayout}
   >
     {loadingState === 'error' || (loadingState === 'complete' && posts.length === 0)
     ? <Fallback />
     : <BlogPostsLayoutInternal
-        loadingState={loadingState}
-        posts={posts}
+          displaySize={displaySize}
+          loadingState={loadingState}
+          posts={posts}
       />
     }
   </div>
-);
+)});
 
-const BlogPostsLayoutInternal = ({
+const BlogPostsLayoutInternal = observer(({
+  displaySize,
   loadingState,
   posts,
-}: BlogPostsLayoutInternalProps) => {
-  const [first, ...rest] = posts;
-  return (
-    <>
-      <BlogPost
-          {...first}
-          isJumbotron={true}
+}: { displaySize: Breakpoint} & Omit<BlogPostsLayoutProps, 'Fallback'>) => {
+  console.log('re-render at', displaySize);
+  let Layout;
+  if (displaySize === 'large') {
+    const [first, ...rest] = posts;
+    Layout = () => (
+      <>
+        <BlogPost
+            {...first}
+            isJumbotron={true}
+        />
+        { rest.length > 0 &&
+          <>
+            <div
+                className={styles.separator}
+            >
+            </div>
+            <BlogPostsGrid
+                loadingState={loadingState}
+                posts={rest}
+            />
+          </>
+        }
+      </>
+    );
+  } else {
+    Layout = () => (
+      <BlogPostsGrid
+          loadingState={loadingState}
+          posts={posts}
       />
-      { rest.length > 0 &&
-        <>
-          <div
-              className={styles.separator}
-          >
-          </div>
-          <BlogPostsGrid
-              loadingState={loadingState}
-              posts={rest}
-          />
-        </>
-      }
-    </>
+    );
+  }
+
+  return (
+    <Layout />
   );
-}
+});

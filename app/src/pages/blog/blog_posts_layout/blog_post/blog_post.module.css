@@ -71,15 +71,3 @@
 .jumbotron .contentContainer .titleContainer {
     margin-top: 5px;
 }
-
-/* @media (min-width: breakpointSmall) {
-
-  .blogPost.first {
-    display: flex;
-    column-gap: 10px;
-  }
-
-  .blogPost.first .tags {
-    margin-top: 0;
-  }
-} */

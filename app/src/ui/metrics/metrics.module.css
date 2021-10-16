@@ -1,2 +1,5 @@
-@value breakpointSmall: 376px;
+@value breakpointSmall: 576px;
 @value breakpointMedium: 768px;
+@value breakpointLarge: 992px;
+@value breakpointXLarge: 1200px;
+@value breakpointXXLarge: 1400px;

@@ -4,7 +4,7 @@ import styles from './../ui/metrics/metrics.module.css';
 
 export type Breakpoint = 'small' | 'medium' | 'large';
 
-const BreakpointSmall = parseInt(styles.breakpointSmall, 10) || 375;
+const BreakpointSmall = parseInt(styles.breakpointSmall, 10) || 576;
 const BreakpointMedium = parseInt(styles.breakpointMedium, 10) || 768;
 
 const getSizeAsBreakpoint = (size: number) => {
