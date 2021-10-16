@@ -3,6 +3,12 @@
 @value monoDarkGrey from './../../../../ui/colors/colors.module.css';
 
 @value blogPostHeight: 478px;
+@value titleFontSize: calc(ordTextSizeXLarge * 1.2);
+@value titleContainerMarginTopForCard: 15px;
+@value titleContainerMarginBottomForCard: 5px;
+@value titleContainerMarginTopForJumbotron: 5px;
+@value dateMarginBottom: 15px;
+@value tagPadding: 6px;
 
 .blogPost {
     height: blogPostHeight;
@@ -20,14 +26,14 @@
 }
 
 .titleContainer {
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin-top: titleContainerMarginTopForCard;
+    margin-bottom: titleContainerMarginBottomForCard;
 }
 
 .title {
     text-align: left;
     font-weight: bold;
-    font-size: calc(ordTextSizeXLarge * 1.2);
+    font-size: titleFontSize;
 }
 
 .title:hover {
@@ -44,7 +50,7 @@
     color: #345729;
     background-color: #D1F7C4;
     border-radius: 4px;
-    padding: 6px;
+    padding: tagPadding;
 }
 
 .desc {
@@ -53,7 +59,7 @@
 }
 
 .date {
-    margin-bottom: 15px;
+    margin-bottom: dateMarginBottom;
     color: monoDarkGrey;
 }
 
@@ -69,5 +75,5 @@
 }
 
 .jumbotron .contentContainer .titleContainer {
-    margin-top: 5px;
+    margin-top: titleContainerMarginTopForJumbotron;
 }

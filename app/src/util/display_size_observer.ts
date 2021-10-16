@@ -4,6 +4,8 @@ import styles from './../ui/metrics/metrics.module.css';
 
 export type DisplaySize = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge';
 
+// TODO: add functions to to determine boundaries, eg. smallOrWider
+
 const BreakpointSmall = parseInt(styles.breakpointSmall, 10) || 576;
 const BreakpointMedium = parseInt(styles.breakpointMedium, 10) || 768;
 const BreakpointLarge = parseInt(styles.breakpointMedium, 10) || 992;

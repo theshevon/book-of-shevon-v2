@@ -1,0 +1,17 @@
+@value textElemBorderRadius: 4px;
+@value textElemLineHeightMultiple: 1.2;
+
+.preload {
+    background: linear-gradient(-90deg, #F0F0F0 0%, #F8F8F8 50%, #F0F0F0 100%);
+    animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: -135% 0%;
+    }
+}
