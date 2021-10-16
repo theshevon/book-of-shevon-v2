@@ -4,6 +4,7 @@
 .preload {
     background: linear-gradient(-90deg, #F0F0F0 0%, #F8F8F8 50%, #F0F0F0 100%);
     animation: pulse 1.2s ease-in-out infinite;
+    background-size: 400% 400%;
 }
 
 @keyframes pulse {
