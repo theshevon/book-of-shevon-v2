@@ -2,22 +2,29 @@ import { observable, action, makeObservable } from 'mobx';
 
 import styles from './../ui/metrics/metrics.module.css';
 
-export type Breakpoint = 'small' | 'medium' | 'large';
+export type DisplaySize = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge';
 
 const BreakpointSmall = parseInt(styles.breakpointSmall, 10) || 576;
 const BreakpointMedium = parseInt(styles.breakpointMedium, 10) || 768;
+const BreakpointLarge = parseInt(styles.breakpointMedium, 10) || 992;
+const BreakpointXLarge = parseInt(styles.BreakpointXLarge, 10) || 1200;
 
-const getSizeAsBreakpoint = (size: number) => {
-  if (size <= BreakpointSmall) {
+const getWindowSizeAsDisplaySize = (size: number) => {
+  if (size < BreakpointSmall) {
+    return 'xsmall';
+  } else if (size < BreakpointMedium) {
     return 'small';
-  } else if (size <= BreakpointMedium) {
+  } else if (size < BreakpointLarge) {
     return 'medium';
+  } else if (size < BreakpointXLarge) {
+    return 'xlarge'
+  } else {
+    return 'xxlarge';
   }
-  return 'large';
 };
 
 const getWindowSize = () => {
-  return getSizeAsBreakpoint(window.innerWidth);
+  return getWindowSizeAsDisplaySize(window.innerWidth);
 };
 
 const DisplaySizeObserverFactory = (() => {
@@ -25,7 +32,7 @@ const DisplaySizeObserverFactory = (() => {
 
   class DisplaySizeObserver {
     @observable
-    size: Breakpoint = getWindowSize();
+    size: DisplaySize = getWindowSize();
 
     constructor() {
       makeObservable(this);
