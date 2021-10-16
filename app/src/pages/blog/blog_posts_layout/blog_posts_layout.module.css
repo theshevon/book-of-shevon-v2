@@ -2,7 +2,7 @@
 @value breakpointSmall from '../../../ui/metrics/metrics.module.css';
 
 .blogPostsLayout {
-    padding: 20px;
+    padding: 5%;
 }
 
 .separator {
@@ -11,11 +11,11 @@
 
 @media (min-width: breakpointSmall) {
 
-  .separator {
-      width: 100%;
-      background-color: monoLightGrey;
-      height: 1px;
-      margin: 20px 0;
-      display: block;
-  }
+    .separator {
+        width: 100%;
+        background-color: monoLightGrey;
+        height: 1px;
+        margin: 20px 0;
+        display: block;
+    }
 }

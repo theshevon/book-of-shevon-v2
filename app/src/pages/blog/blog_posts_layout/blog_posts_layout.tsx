@@ -48,7 +48,7 @@ const BlogPostsLayoutInternal = observer(({
           displaySize={displaySize}
       />
     );
-  } else if (displaySize !== 'small' && displaySize !== 'medium') {
+  } else if (!['xsmall', 'small', 'medium'].includes(displaySize)) {
     const [first, ...rest] = posts;
     Layout = () => (
       <>
