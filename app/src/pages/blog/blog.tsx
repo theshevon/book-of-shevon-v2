@@ -17,7 +17,7 @@ export const Blog = () => {
   useDocumentHeader(Messages.pageTitle());
 
   const [posts, setPosts] = useState<BlogPostProps[]>([]);
-  const [loadingState, setLoadingState] = useState<LoadingState>('complete');
+  const [loadingState, setLoadingState] = useState<LoadingState>('loading');
 
   useEffect(() => {
     fetch(MEDIUM_BLOG_LINK)

@@ -12,12 +12,10 @@
 @media (min-width: breakpointSmall) {
 
   .separator {
-      width: 97.5%;
+      width: 100%;
       background-color: monoLightGrey;
       height: 1px;
       margin: 20px 0;
-      margin-left: 50%;
-      transform: translateX(-50%);
       display: block;
   }
 }

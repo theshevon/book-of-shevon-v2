@@ -7,6 +7,7 @@ import styles from './blog_posts_layout.module.css';
 import { observer } from 'mobx-react-lite';
 import type { DisplaySize } from '../../../util/display_size_observer';
 import { DisplaySizeObserver } from '../../../util/display_size_observer';
+import { BlogPostsLayoutPreload } from './preload/blog_posts_layout_preload';
 
 export type LoadingState = 'loading' | 'complete' | 'error';
 
@@ -41,7 +42,13 @@ const BlogPostsLayoutInternal = observer(({
   posts,
 }: { displaySize: DisplaySize } & Omit<BlogPostsLayoutProps, 'Fallback'>) => {
   let Layout;
-  if (displaySize !== 'small' && displaySize !== 'medium') {
+  if (loadingState === 'loading') {
+    Layout = () => (
+      <BlogPostsLayoutPreload
+          displaySize={displaySize}
+      />
+    );
+  } else if (displaySize !== 'small' && displaySize !== 'medium') {
     const [first, ...rest] = posts;
     Layout = () => (
       <>
