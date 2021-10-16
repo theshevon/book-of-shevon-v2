@@ -1,0 +1,10 @@
+@value monoLightGrey from '../../../ui/colors/colors.module.css';
+
+.separator {
+    width: 95%;
+    background-color: monoLightGrey;
+    height: 1px;
+    margin: 20px 0;
+    margin-left: 50%;
+    transform: translateX(-50%)
+}

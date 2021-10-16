@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import type { BlogPostProps } from '../../blog_post/blog_post';
-import { BlogPostsGrid } from '../blog_posts_grid';
+import type { BlogPostProps } from '../blog_post/blog_post';
+import { BlogPostsLayout } from '../blog_posts_layout';
 
 import thumbail from './test_cover.png';
 
@@ -17,10 +17,11 @@ const BlogPosts: BlogPostProps[] = Array.from({ length: NUM_TEST_POSTS }, (_, i)
   categories: ['category'],
 }));
 
-storiesOf('Pages/Blog/BlogPostsGrid', module)
-  .add('BlogPostsGrid', () => (
-    <BlogPostsGrid
-      loadingState='complete'
-      posts={BlogPosts}
+storiesOf('Pages/Blog/BlogPostsLayout', module)
+  .add('BlogPostsLayout', () => (
+    <BlogPostsLayout
+        loadingState='complete'
+        posts={BlogPosts}
+        Fallback={() => <div>Fallback</div>}
     />
   ));
