@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import type { BlogPostProps } from '../blog_post/blog_post';
 import { BlogPostsLayout } from '../blog_posts_layout';
+import { BlogPostsLayoutPreload } from '../preload/blog_posts_layout_preload';
+import { DisplaySizeObserver } from '../../../../util/display_size_observer';
 
 import thumbail from './test_cover.png';
 
@@ -18,6 +20,11 @@ const BlogPosts: BlogPostProps[] = Array.from({ length: NUM_TEST_POSTS }, (_, i)
 }));
 
 storiesOf('Pages/Blog/BlogPostsLayout', module)
+  .add('Preload', () => (
+    <BlogPostsLayoutPreload
+        displaySize={DisplaySizeObserver.size}
+    />
+  ))
   .add('BlogPostsLayout', () => (
     <BlogPostsLayout
         loadingState='complete'
