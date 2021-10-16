@@ -14,7 +14,6 @@ import { createPageContainer } from './ui/page_container/create';
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Projects } from './pages/projects/projects';
-import { Blog as OldBlog } from './pages/blog/oldBlog';
 import { Blog } from './pages/blog/blog';
 import { Error } from './pages/error/error';
 
@@ -67,11 +66,6 @@ export const App = () => {
               exact
               path={Routes.BLOG}
               component={BlogPage}
-					/>
-					<Route
-              exact
-              path={'/oldBlog'}
-              component={OldBlog}
 					/>
 					<Route
               exact
