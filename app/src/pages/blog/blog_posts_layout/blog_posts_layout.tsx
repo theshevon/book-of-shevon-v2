@@ -73,6 +73,6 @@ const BlogPostsLayoutInternal = observer(({
   }
 
   return (
-    <Layout />
+    <Layout/>
   );
 });

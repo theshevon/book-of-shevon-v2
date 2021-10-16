@@ -1,5 +1,9 @@
 @value breakpointSmall, breakpointMedium, breakpointLarge from './../../../../ui/metrics/metrics.module.css';
 
+@value cardsPerRowMedium: 2;
+@value cardsPerRowLarge: 3;
+@value cardsPerRowXLarge: 4;
+
 .blogPostsGrid {
     display: grid;
     grid-gap: 30px 10px;
@@ -10,20 +14,20 @@
 
     .blogPostsGrid {
         justify-content: space-around;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(cardsPerRowMedium, 1fr);
     }
 }
 
 @media (min-width: breakpointMedium) {
 
     .blogPostsGrid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(cardsPerRowLarge, 1fr);
     }
 }
 
 @media (min-width: breakpointLarge) {
 
     .blogPostsGrid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(cardsPerRowXLarge, 1fr);
     }
 }
