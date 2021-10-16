@@ -53,18 +53,10 @@ export const BlogPostPreload = ({
             className={preloadStyles.descriptionLineThree}
         >
         </div>
-        <div
-            className={preloadStyles.descriptionLineFour}
-        >
-        </div>
       </div>
       <div
           className={loadedStyles.tags}
       >
-        <div
-            className={classNames(loadedStyles.tag, preloadStyles.tag)}
-        >
-        </div>
         <div
             className={classNames(loadedStyles.tag, preloadStyles.tag)}
         >

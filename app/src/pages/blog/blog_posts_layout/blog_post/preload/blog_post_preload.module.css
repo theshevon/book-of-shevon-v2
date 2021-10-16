@@ -8,8 +8,7 @@
 .tag,
 .descriptionLineOne,
 .descriptionLineTwo,
-.descriptionLineThree,
-.descriptionLineFour {
+.descriptionLineThree {
     composes: preload;
 }
 
@@ -17,8 +16,7 @@
 .date,
 .descriptionLineOne,
 .descriptionLineTwo,
-.descriptionLineThree,
-.descriptionLineFour {
+.descriptionLineThree {
     border-radius: textElemBorderRadius;
 }
 
@@ -41,8 +39,7 @@
 
 .descriptionLineOne,
 .descriptionLineTwo,
-.descriptionLineThree,
-.descriptionLineFour {
+.descriptionLineThree {
     height: calc(ordTextSizeSmall * textElemLineHeightMultiple);
     margin: 5px 0;
 }
@@ -57,10 +54,6 @@
 
 .descriptionLineThree {
     width: 90%;
-}
-
-.descriptionLineFour {
-    width: 85%;
 }
 
 .tag {
