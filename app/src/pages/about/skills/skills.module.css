@@ -1,5 +1,5 @@
 @value monoLightGrey from '../../../ui/colors/colors.module.css';
-@value breakpointSmall from '../../../ui/metrics/metrics.module.css';
+@value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 .skillsListContainer:not(:last-of-type) {
     margin-bottom: calc(3 * 7.5px);

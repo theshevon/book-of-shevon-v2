@@ -1,4 +1,4 @@
-@value breakpointSmall from './../../ui/metrics/metrics.module.css';
+@value breakpointSmall from './../../ui/metrics/breakpoints.module.css';
 
 @value gridVerticalPadding: 2.5%;
 @value gridHorizontalPadding: 12.5%;

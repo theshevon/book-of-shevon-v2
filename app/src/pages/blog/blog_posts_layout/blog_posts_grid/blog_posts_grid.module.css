@@ -1,4 +1,4 @@
-@value breakpointSmall, breakpointMedium, breakpointLarge from './../../../../ui/metrics/metrics.module.css';
+@value breakpointSmall, breakpointMedium, breakpointLarge from './../../../../ui/metrics/breakpoints.module.css';
 
 @value cardsPerRowMedium: 2;
 @value cardsPerRowLarge: 3;

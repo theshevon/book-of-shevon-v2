@@ -1,5 +1,5 @@
 @value monoMidGrey from '../../../ui/colors/colors.module.css';
-@value breakpointSmall from '../../../ui/metrics/metrics.module.css';
+@value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 @value githubGreen: rgb(83, 197, 98);
 
