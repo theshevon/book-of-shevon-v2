@@ -1,0 +1,63 @@
+@value preload, textElemBorderRadius, textElemLineHeightMultiple from '../../../../../ui/preload/preload.module.css';
+@value ordTextSizeXSmall, ordTextSizeSmall from '../../../../../ui/text/text.module.css';
+@value titleFontSize, titleContainerMarginTopForCard, titleContainerMarginBottomForCard, titleContainerMarginTopForJumbotron, dateMarginBottom, tagPadding from '../blog_post.module.css';
+
+.coverImg,
+.title,
+.date,
+.tag,
+.descriptionLineOne,
+.descriptionLineTwo,
+.descriptionLineThree {
+    composes: preload;
+}
+
+.title,
+.date,
+.descriptionLineOne,
+.descriptionLineTwo,
+.descriptionLineThree {
+    border-radius: textElemBorderRadius;
+}
+
+.title {
+    height: calc(titleFontSize * textElemLineHeightMultiple);
+    margin-top: titleContainerMarginTopForCard;
+    margin-bottom: titleContainerMarginBottomForCard;
+    width: min(80%, 500px);
+}
+
+.jumbotron .title {
+    margin-top: titleContainerMarginTopForJumbotron;
+}
+
+.date {
+    height: calc(ordTextSizeSmall * textElemLineHeightMultiple);
+    margin-bottom: dateMarginBottom;
+    width: 175px;
+}
+
+.descriptionLineOne,
+.descriptionLineTwo,
+.descriptionLineThree {
+    height: calc(ordTextSizeSmall * textElemLineHeightMultiple);
+    margin: 5px 0;
+}
+
+.descriptionLineOne {
+    width: 95%;
+}
+
+.descriptionLineTwo {
+    width: 80%;
+}
+
+.descriptionLineThree {
+    width: 90%;
+}
+
+.tag {
+    height: ordTextSizeXSmall;
+    padding: tagPadding;
+    width: 75px;
+}

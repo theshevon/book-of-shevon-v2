@@ -1,0 +1,79 @@
+@value breakpointSmall from './../../../../ui/metrics/breakpoints.module.css';
+@value ordTextSizeXLarge from './../../../../ui/text/text.module.css';
+@value monoDarkGrey from './../../../../ui/colors/colors.module.css';
+
+@value blogPostHeight: 478px;
+@value titleFontSize: calc(ordTextSizeXLarge * 1.2);
+@value titleContainerMarginTopForCard: 15px;
+@value titleContainerMarginBottomForCard: 5px;
+@value titleContainerMarginTopForJumbotron: 5px;
+@value dateMarginBottom: 15px;
+@value tagPadding: 6px;
+
+.blogPost {
+    height: blogPostHeight;
+}
+
+.coverImgContainer {
+    height: 200px;
+}
+
+.coverImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.titleContainer {
+    margin-top: titleContainerMarginTopForCard;
+    margin-bottom: titleContainerMarginBottomForCard;
+}
+
+.title {
+    text-align: left;
+    font-weight: bold;
+    font-size: titleFontSize;
+}
+
+.title:hover {
+    text-decoration: underline;
+}
+
+.tags {
+    margin-top: 15px;
+    display: flex;
+    column-gap: 5px;
+}
+
+.tag {
+    color: #345729;
+    background-color: #D1F7C4;
+    border-radius: 4px;
+    padding: tagPadding;
+}
+
+.desc {
+    font-style: italic;
+    display: flex;
+}
+
+.date {
+    margin-bottom: dateMarginBottom;
+    color: monoDarkGrey;
+}
+
+.jumbotron {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 20px;
+}
+
+.jumbotron .coverImgContainer {
+    grid-column: 1 / 2;
+    height: inherit;
+}
+
+.jumbotron .contentContainer .titleContainer {
+    margin-top: titleContainerMarginTopForJumbotron;
+}

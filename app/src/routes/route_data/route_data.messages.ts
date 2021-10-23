@@ -1,11 +1,14 @@
 export const RouteDataMessages = {
 
     // label for link to home page
-    Home: (): string => 'Home',
+    home: (): string => 'Home',
 
     // label for link to about page
-    About: (): string => 'About',
+    about: (): string => 'About',
 
     // label for link to projects page
-    Projects: (): string => 'Projects',
+    projects: (): string => 'Projects',
+
+    // label for link to blog page
+    blog: (): string => 'Blog',
 }

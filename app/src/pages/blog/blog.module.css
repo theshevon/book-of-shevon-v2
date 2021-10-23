@@ -1,0 +1,33 @@
+@value breakpointSmall from './../../ui/metrics/breakpoints.module.css';
+
+@value gridVerticalPadding: 2.5%;
+@value gridHorizontalPadding: 12.5%;
+
+.blog {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogPostsGridContainer {
+  flex-grow: 1;
+  padding-top: gridVerticalPadding;
+  position: relative;
+}
+
+.topThing {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: white;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+@media(min-width: breakpointSmall) {
+  .blogPostsGridContainer {
+    padding: gridVerticalPadding gridHorizontalPadding;
+  }
+}

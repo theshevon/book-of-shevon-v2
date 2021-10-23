@@ -1,0 +1,21 @@
+@value monoLightGrey from '../../../ui/colors/colors.module.css';
+@value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
+
+.blogPostsLayout {
+    padding: 5%;
+}
+
+.separator {
+    display: none;
+}
+
+@media (min-width: breakpointSmall) {
+
+    .separator {
+        width: 100%;
+        background-color: monoLightGrey;
+        height: 1px;
+        margin: 20px 0;
+        display: block;
+    }
+}

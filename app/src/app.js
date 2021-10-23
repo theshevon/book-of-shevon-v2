@@ -14,6 +14,7 @@ import { createPageContainer } from './ui/page_container/create';
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Projects } from './pages/projects/projects';
+import { Blog } from './pages/blog/blog';
 import { Error } from './pages/error/error';
 
 import './app.css';
@@ -41,6 +42,7 @@ export const App = () => {
 		const HomePage = () => <PageContainer Content={Home}/>
 		const AboutPage = () => <PageContainer Content={About}/>
 		const ProjectsPage = () => <PageContainer Content={Projects}/>
+		const BlogPage = () => <PageContainer Content={Blog}/>
 
 		return (
 			<Router>
@@ -52,13 +54,18 @@ export const App = () => {
 					/>
 					<Route
               exact
-              path='/about'
+              path={Routes.ABOUT}
               component={AboutPage}
 					/>
 					<Route
               exact
-              path='/projects'
+              path={Routes.PROJECTS}
               component={ProjectsPage}
+					/>
+					<Route
+              exact
+              path={Routes.BLOG}
+              component={BlogPage}
 					/>
 					<Route
               exact
