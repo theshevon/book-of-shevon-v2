@@ -22,9 +22,9 @@ export const HorizontalMenu = ({
           className={styles.linkContainer}
       >
         <a
-            href={routeData.pathname}
+            href={routeData.path}
             className={classNames(styles.link, {
-              [styles.active]: routeData.pathname === activeRoute,
+              [styles.active]: routeData.path === activeRoute,
             })}
         >
           { routeData.label }

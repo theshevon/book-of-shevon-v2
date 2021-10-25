@@ -29,9 +29,9 @@ export const Drawer = ({
             className={styles.linkContainer}
         >
           <Link
-              url={routeData.pathname}
+              url={routeData.path}
               className={classNames(styles.link, {
-                [styles.active]: routeData.pathname === activeRoute,
+                [styles.active]: routeData.path === activeRoute,
               })}
               targetSelf={true}
           >
