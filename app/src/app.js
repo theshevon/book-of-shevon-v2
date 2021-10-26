@@ -17,6 +17,8 @@ import { Projects } from './pages/projects/projects';
 import { Blog } from './pages/blog/blog';
 import { Error } from './pages/error/error';
 
+import { AppMessages as Messages } from './app.messages';
+
 import './app.css';
 import 'aos/dist/aos.css';
 
@@ -31,6 +33,8 @@ export const App = () => {
 			});
 		}, []);
 
+		console.log(Messages.consoleGreeting());
+		
 		const Nav = () => (
 			<NavImpl
 					routesData={RoutesData}
@@ -43,7 +47,7 @@ export const App = () => {
 		const AboutPage = () => <PageContainer Content={About}/>
 		const ProjectsPage = () => <PageContainer Content={Projects}/>
 		const BlogPage = () => <PageContainer Content={Blog}/>
-
+		
 		return (
 			<Router>
 				<Switch>
