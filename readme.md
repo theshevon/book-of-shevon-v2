@@ -1,6 +1,6 @@
 # Book of Shevon
 
-_Initially, the website was called "The Book of Shevon", but Sean Parker asked me to drop the 'The'-- something about it being cleaner_ 🤷🏽‍♀️ _"._
+_Initially, the website was called "The Book of Shevon", but Sean Parker asked me to drop the 'The'-- something about it being cleaner_ 🤷🏽‍♂️ _._
 
 **Version:** 2.0
 
