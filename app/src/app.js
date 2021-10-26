@@ -33,8 +33,8 @@ export const App = () => {
 			});
 		}, []);
 
-		console.log(Messages.consoleGreeting());
-		
+		console.log(Messages.consoleGreetingImg(Messages.consoleGreetingMessage()));
+
 		const Nav = () => (
 			<NavImpl
 					routesData={RoutesData}
