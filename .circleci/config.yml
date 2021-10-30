@@ -16,7 +16,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            yarn install
+            yarn install --ignore-engines
 
       - save_cache:
           paths:
