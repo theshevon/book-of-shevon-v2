@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Project } from '../project';
+import { Project } from 'pages/projects/project/project';
 
 storiesOf('Pages/Projects/Project', module)
   .add('Project', () => (

@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import type { BlogPostProps } from '../blog_post/blog_post';
-import { BlogPostsLayout } from '../blog_posts_layout';
-import { BlogPostsLayoutPreload } from '../preload/blog_posts_layout_preload';
-import { DisplaySizeObserver } from '../../../../util/display_size_observer';
+import type { BlogPostProps } from 'pages/blog/blog_posts_layout/blog_post/blog_post';
+import { BlogPostsLayout } from 'pages/blog/blog_posts_layout/blog_posts_layout';
+import { BlogPostsLayoutPreload } from 'pages/blog/blog_posts_layout/preload/blog_posts_layout_preload';
+import { DisplaySizeObserver } from 'util/display_size_observer';
 
 import thumbail from './test_cover.png';
 

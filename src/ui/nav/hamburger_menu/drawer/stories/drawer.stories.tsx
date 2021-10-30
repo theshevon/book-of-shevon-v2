@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { StoryGroup } from '../../../../../util/storybook/stories';
-import { Drawer } from '../drawer';
+import { StoryGroup } from 'util/storybook/stories';
+import { Drawer } from 'ui/nav/hamburger_menu/drawer/drawer';
 
 const routesData = [
   {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { ToggleMenuButton } from '../toggle_menu_button';
+import { ToggleMenuButton } from 'ui/nav/hamburger_menu/buttons/toggle_menu_button/toggle_menu_button';
 
 storiesOf('UI/Nav/HamburgerMenu/Buttons', module)
 .add('ToggleMenuButton', () => {

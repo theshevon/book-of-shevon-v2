@@ -1,4 +1,4 @@
-import { AppMessages as Messages } from '../app.messages';
+import { AppMessages as Messages } from 'app.messages';
 
 export const useDocumentHeader = (title: string, favIconHref?: string) => {
   document.title = title + ' - ' + Messages.bookOfShevon();

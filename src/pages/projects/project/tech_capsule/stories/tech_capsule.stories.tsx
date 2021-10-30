@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { TechCapsule } from '../tech_capsule';
+import { TechCapsule } from 'pages/projects/project/tech_capsule/tech_capsule';
 
 storiesOf('pages/Projects/TechCapsule', module)
   .add('TechCapsule', () => (

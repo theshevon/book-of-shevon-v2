@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Text } from './../../../ui/text/text';
-import { TimePeriod } from '../experiences/experiences';
+import { Text } from 'ui/text/text';
+import { TimePeriod } from 'pages/about/experiences/experiences';
 
 import { EducationMessages as Messages } from './education.messages';
 import styles from './education.module.css';

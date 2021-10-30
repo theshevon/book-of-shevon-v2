@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import type { RouteData } from './../../../../routes/route_data/route_data';
-import { Link } from '../../../link/link';
+import type { RouteData } from 'routes/route_data/route_data';
+import { Link } from 'ui/link/link';
 
 import styles from './drawer.module.css';
 

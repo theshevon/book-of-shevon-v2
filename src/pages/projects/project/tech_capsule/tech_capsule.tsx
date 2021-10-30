@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Capsule } from './../../../../ui/capsule/capsule';
+import { Capsule } from 'ui/capsule/capsule';
 
 import styles from './tech_capsule.module.css';
 

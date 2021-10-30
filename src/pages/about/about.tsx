@@ -8,7 +8,7 @@ import { Experiences } from './experiences/experiences';
 import { TertiaryEducation } from './info/education/education';
 import { SkillsLists } from './info/skills/skills';
 import { CommercialExperiences, VolunteerExperiences } from './info/experiences/experiences';
-import { useDocumentHeader } from './../../util/hooks';
+import { useDocumentHeader } from 'util/hooks';
 
 import { AboutMessages as Messages } from './about.messages';
 

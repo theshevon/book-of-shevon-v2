@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { StoryGroup } from '../../../../../../util/storybook/stories';
-import { ToggleMenuButton } from '../toggle_menu_button';
+import { StoryGroup } from 'util/storybook/stories';
+import { ToggleMenuButton } from 'ui/nav/navbar/buttons/toggle_menu_button/toggle_menu_button';
 
 storiesOf('UI/Nav/Navbar/Buttons', module)
   .add('ToggleMenuButton', () => {

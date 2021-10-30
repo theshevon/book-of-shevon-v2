@@ -1,6 +1,6 @@
 import { observable, action, makeObservable } from 'mobx';
 
-import styles from './../ui/metrics/breakpoints.module.css';
+import styles from 'ui/metrics/breakpoints.module.css';
 
 export type DisplaySize = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge';
 

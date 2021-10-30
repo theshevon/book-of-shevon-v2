@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Text } from './../../../ui/text/text';
-import { Link } from '../../../ui/link/link';
+import { Text } from 'ui/text/text';
+import { Link } from 'ui/link/link';
 import { ExperiencesMessages as Messages } from './experiences.messages';
 import styles from './experiences.module.css';
 

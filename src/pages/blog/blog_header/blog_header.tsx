@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Text } from './../../../ui/text/text';
+import { Text } from 'ui/text/text';
 
 import { BlogHeaderMessages as Messages } from './blog_header.messages';
 

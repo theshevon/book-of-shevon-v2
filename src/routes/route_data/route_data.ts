@@ -1,4 +1,4 @@
-import { Routes } from './../routes';
+import { Routes } from 'routes/routes';
 import { RouteDataMessages as Messages } from './route_data.messages';
 
 export type RouteData = {

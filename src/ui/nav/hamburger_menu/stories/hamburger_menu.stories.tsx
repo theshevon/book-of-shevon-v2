@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { HamburgerMenu } from '../hamburger_menu';
+import { HamburgerMenu } from 'ui/nav/hamburger_menu/hamburger_menu';
 
 const routesData = [
   {

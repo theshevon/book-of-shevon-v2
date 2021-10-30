@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Capsule } from '../capsule';
+import { Capsule } from 'ui/capsule/capsule';
 
 storiesOf('UI/Capsule', module)
   .add('Capsule', () => (

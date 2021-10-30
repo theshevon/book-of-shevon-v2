@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Navbar } from '../navbar';
+import { Navbar } from 'ui/nav/navbar/navbar';
 
 const routesData = [
   {

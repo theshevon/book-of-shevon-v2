@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BlogPost } from '../blog_post';
-import { BlogPostPreload } from '../preload/blog_post_preload';
+import { BlogPost } from 'pages/blog/blog_posts_layout/blog_post/blog_post';
+import { BlogPostPreload } from 'pages/blog/blog_posts_layout/blog_post/preload/blog_post_preload';
 
 import thumbail from './test_cover.png';  
 

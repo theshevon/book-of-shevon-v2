@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { Link } from '../../../../ui/link/link';
-import { Text } from '../../../../ui/text/text';
+import { Link } from 'ui/link/link';
+import { Text } from 'ui/text/text';
 
 import styles from './blog_post.module.css';
 

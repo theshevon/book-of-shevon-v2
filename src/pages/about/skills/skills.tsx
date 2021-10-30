@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Text } from './../../../ui/text/text';
-import { Capsule } from './../../../ui/capsule/capsule';
+import { Text } from 'ui/text/text';
+import { Capsule } from 'ui/capsule/capsule';
 import { SkillsMessages as Messages } from './skills.messages';
 
 import styles from './skills.module.css';

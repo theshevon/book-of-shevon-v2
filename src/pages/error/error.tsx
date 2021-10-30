@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-import { Text } from './../../ui/text/text';
+import { Text } from 'ui/text/text';
 import { ErrorMessages as Messages } from './error.messages';
 
-import { getRandomNumInRange } from './../../util/math';
-import { useDocumentHeader } from '../../util/hooks';
+import { getRandomNumInRange } from 'util/math';
+import { useDocumentHeader } from 'util/hooks';
 
 import styles from './error.module.css';
 import { CARDS_SPRITE } from './cards_sprite';

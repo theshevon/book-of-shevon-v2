@@ -5,8 +5,8 @@ import { BlogPostsGrid } from './blog_posts_grid/blog_posts_grid';
 
 import styles from './blog_posts_layout.module.css';
 import { observer } from 'mobx-react-lite';
-import type { DisplaySize } from '../../../util/display_size_observer';
-import { DisplaySizeObserver } from '../../../util/display_size_observer';
+import type { DisplaySize } from 'util/display_size_observer';
+import { DisplaySizeObserver } from 'util/display_size_observer';
 import { BlogPostsLayoutPreload } from './preload/blog_posts_layout_preload';
 
 export type LoadingState = 'loading' | 'complete' | 'error';

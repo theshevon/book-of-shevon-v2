@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames';
 
-import { Text } from './../text/text';
+import { Text } from 'ui/text/text';
 
 import styles from './capsule.module.css';
 

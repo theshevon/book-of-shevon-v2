@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 
-import { StoryGroup } from '../../../util/storybook/stories';
-import { Text } from '../text';
+import { StoryGroup } from 'util/storybook/stories';
+import { Text } from 'ui/text/text';
 
 storiesOf('UI/Text', module)
   .add('Overview', () => {

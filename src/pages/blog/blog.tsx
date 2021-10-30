@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { BlogHeader } from './blog_header/blog_header';
-import { useDocumentHeader } from '../../util/hooks';
+import { useDocumentHeader } from 'util/hooks';
 import { BlogPostProps } from './blog_posts_layout/blog_post/blog_post';
 import { BlogPostsLayout } from './blog_posts_layout/blog_posts_layout';
 import type { LoadingState } from './blog_posts_layout/blog_posts_layout';

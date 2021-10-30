@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Text } from './../../../ui/text/text';
+import { Text } from 'ui/text/text';
 
 import styles from './profile.module.css';
 
