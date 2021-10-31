@@ -155,6 +155,7 @@ export const Error = () => {
     setCanvasHeight(errorPageDiv.clientHeight);
   };
 
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const renderingCtx = canvas?.getContext('2d');
@@ -176,7 +177,7 @@ export const Error = () => {
       clearInterval(cardUpdateLoop);
       window.removeEventListener('resize', updateCanvasSize);
     };
-  }, [cards]);
+  }, [canvasWidth, cards, addSingleCard, updateCards]);
 
   return (
     <div
