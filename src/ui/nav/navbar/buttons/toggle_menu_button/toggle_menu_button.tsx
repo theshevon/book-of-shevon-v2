@@ -1,9 +1,8 @@
 import React from 'react';
 
 import { Button } from 'ui/button/button';
-import { MenuButtonMessages as Messages } from './toggle_menu_botton.messages';
-
 import styles from 'ui/nav/navbar/buttons/navbar_button.module.css';
+import { MenuButtonMessages as Messages } from './toggle_menu_botton.messages';
 
 type ToggleMenuButtonProps = {
   menuOpen: boolean,

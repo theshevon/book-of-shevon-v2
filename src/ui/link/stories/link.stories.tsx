@@ -1,7 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 
-import { Link, ButtonLink, CapsuleLink } from 'ui/link/link';
+import { ButtonLink, CapsuleLink, Link } from 'ui/link/link';
 
 storiesOf('UI/Link', module)
   .add('Link', () => (

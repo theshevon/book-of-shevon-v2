@@ -1,11 +1,11 @@
-import { observer } from 'mobx-react-lite';
-import React from 'react';
 
 import type { DisplaySize } from 'util/display_size_observer';
+import { observer } from 'mobx-react-lite';
 import { BlogPostPreload } from 'pages/blog/blog_posts_layout/blog_post/preload/blog_post_preload';
 import { BlogPostsGridPreload } from 'pages/blog/blog_posts_layout/blog_posts_grid/preload/blog_posts_grid_preload';
 
 import loadedStyles from 'pages/blog/blog_posts_layout/blog_posts_layout.module.css';
+import React from 'react';
 
 export const BlogPostsLayoutPreload = observer(({
   displaySize,
@@ -40,5 +40,5 @@ export const BlogPostsLayoutPreload = observer(({
 
   return (
     <Layout/>
-  )
+  );
 });

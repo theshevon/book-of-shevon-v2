@@ -30,7 +30,7 @@ export const Profile = ({
         keepDefaultMargins={true}
         className={styles.name}
     >
-      {name}
+      { name }
     </Text.LargeTitle>
     <div
         className={styles.underline}

@@ -1,7 +1,7 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-
 import { StoryGroup } from 'util/storybook/stories';
+import { storiesOf } from '@storybook/react';
+import React from 'react';
+
 import { HorizontalMenu } from 'ui/nav/navbar/horizontal_menu/horizontal_menu';
 
 const routesData = [
@@ -26,13 +26,13 @@ storiesOf('UI/Nav/Navbar/HorizontalMenu', module)
   .add('HorizontalMenu', () => (
     <StoryGroup>
       <div
-          style={{ 
-            height: '50px', 
-            display: 'flex', 
+          style={{
+            height: '50px',
+            display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
           }}
-      >  
+      >
         <HorizontalMenu
             routesData={routesData}
             activeRoute='##'

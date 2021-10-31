@@ -1,8 +1,8 @@
 export const HomeMessages = {
 
-    // page title
-    pageTitle: (): string => 'Home',
+  // page title
+  pageTitle: (): string => 'Home',
 
-    // Website title
-    bookOfShevon: (): string => 'Book of Shevon',
-}
+  // Website title
+  bookOfShevon: (): string => 'Book of Shevon',
+};

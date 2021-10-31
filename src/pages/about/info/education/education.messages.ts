@@ -11,4 +11,4 @@ export const EducationMessages = {
   Bsc: (): string => 'Bachelor of Science',
 
   ComputingAndSoftwareSystems: (): string => 'Computing & Software Systems',
-}
+};

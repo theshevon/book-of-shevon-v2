@@ -1,5 +1,5 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 
 import styles from 'ui/preload/preload.module.css';
 

@@ -26,7 +26,7 @@ export const ExperiencesMessages = {
 
   /* Member of the General Committee */
   GenCommMember: (): string => 'General Committee Member',
-  
+
   Canva: (): string => 'Canva',
 
   CanvaResponsibility1: (): string => 'Building and maintaing UI components',
@@ -53,8 +53,8 @@ export const ExperiencesMessages = {
 
   Codec: (): string => 'CODEC (Community for Digital Entertainment Creation)',
 
-  CodecResponsibility1: (): string => 'Inaugural member of the committee that accumulated over 150 memberships in its first semester and was awarded the title of \'Best New Club\' by the University of Melbourne\'s Student Union', 
-  
+  CodecResponsibility1: (): string => 'Inaugural member of the committee that accumulated over 150 memberships in its first semester and was awarded the title of \'Best New Club\' by the University of Melbourne\'s Student Union',
+
   CodecResponsibility2: (): string => 'Touched base with every aspect of the club including designing the banner and logo, as well as in planning workshops for students interested in animation and game design',
 
   Misc: (): string => 'MISC (University of Melbourne Information Security Club)',
@@ -70,6 +70,6 @@ export const ExperiencesMessages = {
   Cissa: (): string => 'CISSA (Computing and Information Systems Students Association)',
 
   CissaResponsibility1: (): string => 'Responsible for designing marketing and promotional material for both club events and sponsor-collaborated events, as well as management of club\'s social media',
-  
+
   CissaResponsibility2: (): string => 'Created the design that won \'Most Entertaining Design\' at the University of Melbourne\'s Clubs & Societies Awards Night',
-}
+};

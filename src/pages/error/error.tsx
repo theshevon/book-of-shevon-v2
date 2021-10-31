@@ -1,19 +1,18 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useDocumentHeader } from 'util/hooks';
+import { getRandomNumInRange } from 'util/math';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Text } from 'ui/text/text';
+import { CARDS_SPRITE } from './cards_sprite';
 import { ErrorMessages as Messages } from './error.messages';
 
-import { getRandomNumInRange } from 'util/math';
-import { useDocumentHeader } from 'util/hooks';
-
 import styles from './error.module.css';
-import { CARDS_SPRITE } from './cards_sprite';
 
 const POSITION_UPDATE_FREQ_PER_S = 60;
 const POSITION_UPDATE_INTERVAL = 1000 / POSITION_UPDATE_FREQ_PER_S;
 
 const MIN_INITIAL_CARDS = 10;
-const MAX_INITIAL_CARDS = 20; 
+const MAX_INITIAL_CARDS = 20;
 const AUTO_ADDITION_UPDATE_INTERVAL = 2000;
 
 const N_CARDS_IN_DECK = 52;
@@ -35,7 +34,7 @@ const MAX_HORIZONTAL_ACC = -6;
  * (https://mrdoob.com/lab/javascript/effects/solitaire/)
  */
 class Card {
-  
+
   private image: HTMLImageElement;
   private currX: number;
   private currY: number;
@@ -70,9 +69,9 @@ class Card {
       this.dy = this.dy * REBOUND_FORCE_MULTIPLIER;
     }
 
-    this.dy += GRAVITATIONAL_ACC; 
+    this.dy += GRAVITATIONAL_ACC;
   }
- 
+
   isActiveWithinCanvas(canvasWidth: number) {
     const isOutOfView = this.currX < -CARD_WIDTH_HALF || this.currX > (canvasWidth + CARD_WIDTH_HALF);
     const hasStoppedMoving = this.currX === this.prevX && this.currY === this.prevY;
@@ -125,7 +124,7 @@ export const Error = () => {
         y,
       ),
     ]);
-  }
+  };
 
   const updateCards = (canvas: HTMLCanvasElement, renderingCtx: CanvasRenderingContext2D) => {
 
@@ -145,7 +144,7 @@ export const Error = () => {
         setCards(activeCards);
       }
     }
-  }
+  };
 
   const updateCanvasSize = () => {
     const errorPageDiv =  errorPageRef.current;
@@ -154,12 +153,12 @@ export const Error = () => {
     }
     setCanvasWidth(errorPageDiv.clientWidth);
     setCanvasHeight(errorPageDiv.clientHeight);
-  }
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const renderingCtx = canvas?.getContext('2d');
-    
+
     const cardAdditionLoop = setInterval(() => {
       addSingleCard(Math.random() * (canvasWidth || window.innerWidth), -CARD_HEIGHT);
     }, AUTO_ADDITION_UPDATE_INTERVAL);
@@ -176,7 +175,7 @@ export const Error = () => {
       clearInterval(cardAdditionLoop);
       clearInterval(cardUpdateLoop);
       window.removeEventListener('resize', updateCanvasSize);
-    }
+    };
   }, [cards]);
 
   return (
@@ -190,7 +189,7 @@ export const Error = () => {
         <Text.Large
             className={styles.errorMsg}
         >
-          {Messages.errorMsgTitle()}
+          { Messages.errorMsgTitle() }
         </Text.Large>
       </div>
       <canvas
@@ -199,8 +198,8 @@ export const Error = () => {
           className={styles.canvas}
           width={canvasWidth}
           height={canvasHeight}
-      >    
+      >
       </canvas>
     </div>
   );
-}
+};

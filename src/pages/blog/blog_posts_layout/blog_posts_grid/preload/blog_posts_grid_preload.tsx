@@ -1,10 +1,10 @@
-import { observer } from 'mobx-react-lite';
-import React from 'react';
 
 import type { DisplaySize } from 'util/display_size_observer';
+import { observer } from 'mobx-react-lite';
 import { BlogPostPreload } from 'pages/blog/blog_posts_layout/blog_post/preload/blog_post_preload';
 
 import loadedStyles from 'pages/blog/blog_posts_layout/blog_posts_grid/blog_posts_grid.module.css';
+import React from 'react';
 
 const cardsPerRowMedium = parseInt(loadedStyles.cardsPerRowMedium, 10) || 2;
 const cardsPerRowLarge = parseInt(loadedStyles.cardsPerRowLarge, 10) || 3;
@@ -23,7 +23,7 @@ const getNumberOfCardsNeeded = (size: DisplaySize) => {
     default:
       return cardsPerRowMedium;
   }
-}
+};
 
 export const BlogPostsGridPreload = observer(({
   displaySize,
@@ -33,10 +33,10 @@ export const BlogPostsGridPreload = observer(({
   <div
       className={loadedStyles.blogPostsGrid}
   >
-    {Array.from({ length: getNumberOfCardsNeeded(displaySize) }).map((_, index) => (
+    { Array.from({ length: getNumberOfCardsNeeded(displaySize) }).map((_, index) => (
       <BlogPostPreload
           key={index}
       />
-    ))}
+    )) }
   </div>
 ));

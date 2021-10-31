@@ -1,5 +1,5 @@
-import { ProjectsMessages as Messages } from './projects.messages';
 import type { ProjectProps } from '../project/project';
+import { ProjectsMessages as Messages } from './projects.messages';
 
 export const Projects: ProjectProps[] = [
   {
@@ -10,7 +10,7 @@ export const Projects: ProjectProps[] = [
       Messages.React(),
       Messages.Typescript(),
       Messages.MobX(),
-    ], 
+    ],
     githubUrl: 'https://github.com/theshevon/book-of-shevon-v2',
   },
   {
@@ -83,7 +83,7 @@ export const Projects: ProjectProps[] = [
       Messages.Node(),
       Messages.MongoDb(),
     ],
-  
+
     githubUrl: 'https://github.com/theshevon/book-of-shevon-v1',
   },
   {
@@ -96,7 +96,7 @@ export const Projects: ProjectProps[] = [
       Messages.JQuery(),
       Messages.Node(),
       Messages.MongoDb(),
-    ],  
+    ],
     githubUrl: 'https://github.com/theshevon/misc-website',
   },
   {
@@ -150,7 +150,7 @@ export const Projects: ProjectProps[] = [
       {
         name: Messages.BrendenLeung(),
         githubUrl: 'https://github.com/leungb2',
-      }
+      },
     ],
     githubUrl: 'https://github.com/theshevon/procedural-landscape',
   },
@@ -161,7 +161,7 @@ export const Projects: ProjectProps[] = [
     techStack: [
       Messages.Java(),
       Messages.AndroidStudio(),
-    ], 
+    ],
     githubUrl: 'https://github.com/theshevon/luby-jump-android',
   },
 ];

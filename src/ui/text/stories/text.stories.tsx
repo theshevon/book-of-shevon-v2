@@ -1,8 +1,8 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { boolean, select } from '@storybook/addon-knobs';
-
 import { StoryGroup } from 'util/storybook/stories';
+import { boolean, select } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
+import React from 'react';
+
 import { Text } from 'ui/text/text';
 
 storiesOf('UI/Text', module)
@@ -31,7 +31,7 @@ storiesOf('UI/Text', module)
       fontWeight,
       italicised,
       textCase,
-    }
+    };
     return (
       <StoryGroup>
         <Text.ExtraSmall

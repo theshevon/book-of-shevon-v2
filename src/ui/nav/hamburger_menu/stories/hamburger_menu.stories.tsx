@@ -1,5 +1,5 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 
 import { HamburgerMenu } from 'ui/nav/hamburger_menu/hamburger_menu';
 
@@ -23,7 +23,7 @@ const routesData = [
 
 storiesOf('UI/Nav/HamburgerMenu/HamburgerMenu', module)
   .add('HamburgerMenu', () => (
-    <HamburgerMenu 
+    <HamburgerMenu
         routesData={routesData}
         activeRoute='##'
     />

@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-import { Text } from 'ui/text/text';
 import { ButtonLink, CapsuleLink } from 'ui/link/link';
+import { Text } from 'ui/text/text';
 import { ProjectMessages as Messages } from './project.messages';
-import { TechCapsule } from './tech_capsule/tech_capsule';
-
 import styles from './project.module.css';
+import { TechCapsule } from './tech_capsule/tech_capsule';
 
 type Contributor = {
   name: string,
@@ -32,32 +31,32 @@ export const Project = ({
   <div
       className={styles.project}
   >
-    {/* TITLE */}
+    { /* TITLE */ }
     <Text.Large
         alignment='center'
         fontWeight='bold'
         className={styles.title}
     >
-      {name}
+      { name }
     </Text.Large>
 
-    {/* YEAR */}
+    { /* YEAR */ }
     <Text.ExtraSmall
         alignment='center'
         className={styles.year}
     >
-      {year.toString()}
+      { year.toString() }
     </Text.ExtraSmall>
 
-    {/* DESCRIPTION */}
+    { /* DESCRIPTION */ }
     <Text.Small
         alignment='center'
         className={styles.description}
     >
-      {description}
+      { description }
     </Text.Small>
 
-    {/* TECH STACK */}
+    { /* TECH STACK */ }
     <div
         className={styles.techStack}
     >
@@ -65,15 +64,15 @@ export const Project = ({
           alignment='center'
           fontWeight='bold'
       >
-        {Messages.TechStack()}
+        { Messages.TechStack() }
       </Text.Medium>
       <TechStack
           techStack={techStack}
       />
     </div>
 
-    {/* OTHER CONTRIBUTORS */}
-    {otherContributors &&
+    { /* OTHER CONTRIBUTORS */ }
+    { otherContributors &&
       <div
           className={styles.otherContributors}
       >
@@ -81,7 +80,7 @@ export const Project = ({
             alignment='center'
             fontWeight='bold'
         >
-          {Messages.OtherContributors()}
+          { Messages.OtherContributors() }
         </Text.Medium>
         <OtherContributors
             otherContributors={otherContributors}
@@ -89,7 +88,7 @@ export const Project = ({
       </div>
     }
 
-    {/* GITHUB LINK */}
+    { /* GITHUB LINK */ }
     <div
         className={styles.githubLinkContainer}
     >
@@ -97,10 +96,10 @@ export const Project = ({
           url={githubUrl}
           className={styles.githubLink}
       >
-        {Messages.ViewProject()}
+        { Messages.ViewProject() }
       </ButtonLink>
     </div>
-    
+
   </div>
 );
 
@@ -112,7 +111,7 @@ const TechStack = ({
   <ul
       className={styles.techList}
   >
-    {techStack.map(tech => (
+    { techStack.map(tech => (
       <li
           key={tech}
           className={styles.listCapsule}
@@ -121,7 +120,7 @@ const TechStack = ({
             tech={tech}
         />
       </li>
-    ))}
+    )) }
   </ul>
 );
 
@@ -133,7 +132,7 @@ const OtherContributors = ({
   <ul
       className={styles.contributorsList}
   >
-    {otherContributors.map(otherContributor => (
+    { otherContributors.map(otherContributor => (
       <li
           key={otherContributor.name}
           className={styles.contributorCapsuleContainer}
@@ -142,9 +141,9 @@ const OtherContributors = ({
             url={otherContributor.githubUrl}
             className={styles.contributorCapsule}
         >
-          {otherContributor.name}
+          { otherContributor.name }
         </CapsuleLink>
       </li>
-    ))}
+    )) }
   </ul>
 );

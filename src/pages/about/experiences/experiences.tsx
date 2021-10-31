@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Text } from 'ui/text/text';
 import { Link } from 'ui/link/link';
+import { Text } from 'ui/text/text';
 import { ExperiencesMessages as Messages } from './experiences.messages';
 import styles from './experiences.module.css';
 
@@ -21,25 +21,25 @@ export type ExperienceProps = {
 }
 
 export const Experiences = ({
-	experiences,
+  experiences,
 }: {
 	experiences: ExperienceProps[],
 }) => (
-	<ul
-			className={styles.experiences}
-	>
-		{experiences.map(experience => (
-			<li
-					key={experience.companyName + experience.startDate.month + experience.startDate.year}
-					className={styles.experienceContainer}
-			>
-				<Experience
-						{...experience}
-				/>
-			</li>
-		))}
-	</ul>
-)
+  <ul
+      className={styles.experiences}
+  >
+    { experiences.map(experience => (
+      <li
+          key={experience.companyName + experience.startDate.month + experience.startDate.year}
+          className={styles.experienceContainer}
+      >
+        <Experience
+            {...experience}
+        />
+      </li>
+    )) }
+  </ul>
+);
 
 const Experience = ({
   role,
@@ -56,7 +56,7 @@ const Experience = ({
     <Text.Small
         className={styles.role}
     >
-      {role}
+      { role }
     </Text.Small>
     <Company
         companyName={companyName}
@@ -87,7 +87,7 @@ const Company = ({
           url={companyWebsiteUrl}
           className={styles.link}
       >
-        {companyName}
+        { companyName }
       </Link>
     );
   } else {
@@ -98,10 +98,10 @@ const Company = ({
         fontWeight='bold'
         className={styles.company}
     >
-      {content}
+      { content }
     </Text.ExtraSmall>
   );
-}
+};
 
 const Responsibilities = ({
   useResponsibilitiesLabel,
@@ -113,26 +113,26 @@ const Responsibilities = ({
   <div
       className={styles.responsibilitiesContainer}
   >
-    {useResponsibilitiesLabel && 
+    { useResponsibilitiesLabel &&
       <Text.ExtraSmall
           className={styles.label}
       >
-        {Messages.ResponsibleFor()}:
+        { Messages.ResponsibleFor() }:
       </Text.ExtraSmall>
     }
     <ul
         className={styles.responsibilities}
     >
-      {responsibilities.map((responsibility, index) => (
+      { responsibilities.map((responsibility, index) => (
         <li
             key={index} // should be fine using index here since the order will never change
             className={styles.responsibility}
         >
           <Text.ExtraSmall>
-            {responsibility}
+            { responsibility }
           </Text.ExtraSmall>
         </li>
-      ))}
+      )) }
     </ul>
   </div>
 );
@@ -151,7 +151,7 @@ export const TimePeriod = ({
     <Text.ExtraSmall
         className={styles.period}
     >
-      {period}
+      { period }
     </Text.ExtraSmall>
   );
-}
+};

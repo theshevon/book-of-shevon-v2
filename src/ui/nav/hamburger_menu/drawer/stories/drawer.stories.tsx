@@ -1,7 +1,7 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-
 import { StoryGroup } from 'util/storybook/stories';
+import { storiesOf } from '@storybook/react';
+import React from 'react';
+
 import { Drawer } from 'ui/nav/hamburger_menu/drawer/drawer';
 
 const routesData = [
@@ -25,11 +25,10 @@ const routesData = [
 storiesOf('UI/Nav/HamburgerMenu/Drawer', module)
   .add('Drawer', () => (
     <StoryGroup>
-        <Drawer
-            routesData={routesData}
-            activeRoute='##'
-            show={true}
-        />
+      <Drawer
+          routesData={routesData}
+          activeRoute='##'
+          show={true}
+      />
     </StoryGroup>
   ));
-  

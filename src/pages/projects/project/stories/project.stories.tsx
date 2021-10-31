@@ -1,7 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Project } from 'pages/projects/project/project';
+import React from 'react';
 
 storiesOf('Pages/Projects/Project', module)
   .add('Project', () => (
@@ -10,7 +10,7 @@ storiesOf('Pages/Projects/Project', module)
         year={2021}
         description={'Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsum'}
         techStack={['React', 'MobX']}
-        otherContributors={[{name:'Test Contributor', githubUrl:'#'}]}
+        otherContributors={[{ name: 'Test Contributor', githubUrl: '#' }]}
         githubUrl='#'
     />
   ));

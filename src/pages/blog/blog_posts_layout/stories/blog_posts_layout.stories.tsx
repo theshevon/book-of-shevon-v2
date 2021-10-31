@@ -1,16 +1,16 @@
-import React from 'react';
+import { DisplaySizeObserver } from 'util/display_size_observer';
 import { storiesOf } from '@storybook/react';
 
 import type { BlogPostProps } from 'pages/blog/blog_posts_layout/blog_post/blog_post';
 import { BlogPostsLayout } from 'pages/blog/blog_posts_layout/blog_posts_layout';
 import { BlogPostsLayoutPreload } from 'pages/blog/blog_posts_layout/preload/blog_posts_layout_preload';
-import { DisplaySizeObserver } from 'util/display_size_observer';
+import React from 'react';
 
 import thumbail from './test_cover.png';
 
 const NUM_TEST_POSTS = 7;
 
-const BlogPosts: BlogPostProps[] = Array.from({ length: NUM_TEST_POSTS }, (_, i) => ({
+const BlogPosts: BlogPostProps[] = Array.from({ length: NUM_TEST_POSTS }, () => ({
   title: 'Test Blog Post',
   pubDate: '2019-03-04 14:22:27',
   link: '#',

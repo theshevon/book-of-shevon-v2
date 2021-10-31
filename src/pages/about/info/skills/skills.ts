@@ -1,5 +1,5 @@
-import { SkillsMessages as Messages } from './skills.messages';
 import type { SkillsListProps } from '../../skills/skills';
+import { SkillsMessages as Messages } from './skills.messages';
 
 export const SkillsLists: SkillsListProps[] = [
   {

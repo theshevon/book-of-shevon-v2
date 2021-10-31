@@ -1,5 +1,5 @@
-import React from 'react';
 import classnames from 'classnames';
+import React from 'react';
 
 import styles from './toggle_menu_button.module.css';
 
@@ -14,7 +14,7 @@ export const ToggleMenuButton = ({
 }: ToggleMenuButtonProps) => (
   <div
       role='button'
-      className={classnames(styles.toggleMenuButton, {[styles.menuOpen]: menuOpen })}
+      className={classnames(styles.toggleMenuButton, { [styles.menuOpen]: menuOpen })}
       onClick={onClick}
   >
     <div
