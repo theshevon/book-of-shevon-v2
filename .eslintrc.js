@@ -49,11 +49,13 @@ module.exports = {
 				],
 			},
     ],
-    indent: [
+		"no-undef": "warn",
+    "indent": [
 			"warn",
 			2,
 			{
 				ignoredNodes: ["JSXAttribute"],
+				SwitchCase: 1,
 			},
     ],
     "jsx-quotes": [
@@ -64,14 +66,13 @@ module.exports = {
     "no-duplicate-imports": "error",
     "no-unused-vars": "warn",
     "object-curly-spacing": [
-        "warn",
-        "always"
+			"warn",
+			"always",
     ],
-    quotes: [
+    "quotes": [
         "warn",
         "single",
     ],
-    // TODO: check this
     "key-spacing": [
 			"warn", 
 			{ 
@@ -84,20 +85,20 @@ module.exports = {
 			{
 				"when": "never",
 				"children": {
-					"when": "always"
+					"when": "always",
 				}
-    	}
+    	},
 		],
     "react/jsx-filename-extension": [
-        "error",
-        {
-            extensions: [
-                ".js",
-                ".jsx",
-                ".ts",
-                ".tsx"
-            ]
-        }
+			"error",
+			{
+				extensions: [
+					".js",
+					".jsx",
+					".ts",
+					".tsx",
+				],
+			},
     ],
     "react/jsx-indent": [
 			"warn",
@@ -108,7 +109,7 @@ module.exports = {
 			4,
     ],
     "react/prop-types": "off",
-    semi: [
+    "semi": [
       "warn",
       "always",
     ],
@@ -118,13 +119,13 @@ module.exports = {
 				ignoreCase: false,
 				ignoreDeclarationSort: true,
 				ignoreMemberSort: false,
-			}
+			},
     ],
   },
   settings: {
 		react: {
 			version: "detect" // Detect react version
-		}
+		},
   },
   overrides: [
     {
@@ -132,7 +133,7 @@ module.exports = {
 			parser: "@typescript-eslint/parser",
 			parserOptions: {
 				ecmaFeatures: {
-						jsx: true
+						jsx: true,
 				},
 				ecmaVersion: 2018,
 				sourceType: "module",
@@ -140,6 +141,6 @@ module.exports = {
 			plugins: [
 				"@typescript-eslint",
 			],
-		}
+		},
   ],
 };
