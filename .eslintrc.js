@@ -6,9 +6,9 @@ module.exports = {
     jest: true, // Jest global variables like `it` etc.
     node: true, // Defines things like process.env when generating through node
   },
-	globals: {
-		JSX: true,
-	},
+  globals: {
+    JSX: true,
+  },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -52,9 +52,10 @@ module.exports = {
         ],
       },
     ],
+    'import/no-duplicates': 'warn',
     'no-undef': 'warn',
     'no-multiple-empty-lines': [
-      'error',
+      'warn',
       {
         'max': 1,
         'maxEOF': 1,
@@ -74,8 +75,13 @@ module.exports = {
       'prefer-single',
     ],
     'no-console': 'warn',
-    'no-duplicate-imports': 'error',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': [
+      'warn',
+      {
+        varsIgnorePattern: '_', // vars named '_' will be treated as intentionally unused
+        argsIgnorePattern: '_', // args named '_' will be treated as intentionally unused
+      },
+    ],
     'object-curly-spacing': [
       'warn',
       'always',
@@ -98,7 +104,7 @@ module.exports = {
         'children': {
           'when': 'always',
         },
-    	},
+      },
     ],
     'react/jsx-filename-extension': [
       'error',
@@ -119,6 +125,7 @@ module.exports = {
       'warn',
       4,
     ],
+    'react/jsx-key': 'warn',
     'react/prop-types': 'off',
     'react/display-name': 'off',
     'semi': [
