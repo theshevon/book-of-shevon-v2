@@ -1,5 +1,5 @@
-import React from 'react'
 import classNames from 'classnames';
+import React from 'react';
 
 import { Text } from './../text/text';
 
@@ -17,7 +17,7 @@ export const Capsule: React.FC<CapsuleProps> = ({
       className={classNames(styles.capsule, className)}
   >
     <Text.ExtraSmall>
-      {children}
+      { children }
     </Text.ExtraSmall>
   </div>
 );

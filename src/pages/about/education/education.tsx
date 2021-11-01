@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Text } from './../../../ui/text/text';
 import { TimePeriod } from '../experiences/experiences';
+import { Text } from './../../../ui/text/text';
 
 import { EducationMessages as Messages } from './education.messages';
 import styles from './education.module.css';
@@ -30,19 +30,19 @@ export const Education = ({
   education: EducationProps[],
 }) => (
   <ul
-			className={styles.education}
-	>
-		{education.map(courseOfStudy => (
-			<li
-					key={courseOfStudy.university + courseOfStudy.startDate.month + courseOfStudy.startDate.year}
-					className={styles.educationContainer}
-			>
-				<CourseOfStudy
-						{...courseOfStudy}
-				/>
-			</li>
-		))}
-	</ul>
+      className={styles.education}
+  >
+    { education.map(courseOfStudy => (
+      <li
+          key={courseOfStudy.university + courseOfStudy.startDate.month + courseOfStudy.startDate.year}
+          className={styles.educationContainer}
+      >
+        <CourseOfStudy
+            {...courseOfStudy}
+        />
+      </li>
+    )) }
+  </ul>
 );
 
 const CourseOfStudy = ({
@@ -61,12 +61,12 @@ const CourseOfStudy = ({
     <Text.ExtraSmall
         className={styles.university}
     >
-      {university}
+      { university }
     </Text.ExtraSmall>
     <Text.ExtraSmall
         className={styles.course}
     >
-      {course}
+      { course }
     </Text.ExtraSmall>
     <TimePeriod
         startDate={startDate}
@@ -77,36 +77,36 @@ const CourseOfStudy = ({
     >
       <li>
         <div
-          className={styles.detailContainer}
+            className={styles.detailContainer}
         >
           <Text.ExtraSmall
-            fontWeight='semi-bold'
-            className={styles.detail}
+              fontWeight='semi-bold'
+              className={styles.detail}
           >
-            {Messages.Major()}:&nbsp;
+            { Messages.Major() }:&nbsp;
           </Text.ExtraSmall>
           <Text.ExtraSmall
-            className={styles.detail}
+              className={styles.detail}
           >
-            {major}
+            { major }
           </Text.ExtraSmall>
         </div>
       </li>
 
       <li>
         <div
-          className={styles.detailContainer}
+            className={styles.detailContainer}
         >
           <Text.ExtraSmall
-            fontWeight='semi-bold'
-            className={styles.detail}
+              fontWeight='semi-bold'
+              className={styles.detail}
           >
-            {getGradingSystemLabel(gradingSystem)}:&nbsp;
+            { getGradingSystemLabel(gradingSystem) }:&nbsp;
           </Text.ExtraSmall>
           <Text.ExtraSmall
-            className={styles.detail}
+              className={styles.detail}
           >
-            {mark}&nbsp;({grade})
+            { mark }&nbsp;({ grade })
           </Text.ExtraSmall>
         </div>
       </li>
@@ -119,4 +119,4 @@ const getGradingSystemLabel = (gradingSystem: GradingSystem) => {
     case 'WAM':
       return Messages.Wam();
   }
-}
+};

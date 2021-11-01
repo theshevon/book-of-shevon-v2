@@ -1,5 +1,5 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 
 import { Link } from '../../../../ui/link/link';
 import { Text } from '../../../../ui/text/text';
@@ -16,13 +16,13 @@ const getFormattedDate = (dateString: string) => {
   } catch (_) {
     // do nothing
   }
-}
+};
 
 const getShortenedDescription = (desc: string): string => {
   const sanitisedDesc = desc.replace(/(<([^>]+)>)/ig, ' ');
   if (sanitisedDesc.length <= MAX_DESC_LEN) return sanitisedDesc;
-  return sanitisedDesc.substr(0, sanitisedDesc.lastIndexOf(' ', MAX_DESC_LEN)) + '...';  
-}
+  return sanitisedDesc.substr(0, sanitisedDesc.lastIndexOf(' ', MAX_DESC_LEN)) + '...';
+};
 
 export type BlogPostProps = {
   title: string,
@@ -52,7 +52,7 @@ export const BlogPost = ({
         className={styles.coverImgContainer}
     >
       <Link
-          url={link}  
+          url={link}
       >
         <img
             src={thumbnail}
@@ -71,7 +71,7 @@ export const BlogPost = ({
             url={link}
             className={classNames(styles.title)}
         >
-          {title}
+          { title }
         </Link>
       </div>
       <Text.ExtraSmall
@@ -79,21 +79,22 @@ export const BlogPost = ({
           fontWeight='light'
           className={styles.date}
       >
-        {getFormattedDate(pubDate)}
+        { getFormattedDate(pubDate) }
       </Text.ExtraSmall>
       <Text.Small
           alignment='left'
       >
-        {getShortenedDescription(description)}
+        { getShortenedDescription(description) }
       </Text.Small>
       <div
           className={styles.tags}
       >
-        {categories.map(category => (
+        { categories.map((category, index) => (
           <Tag
+              key={index}
               tag={category}
           />
-        ))}
+        )) }
       </div>
     </div>
   </div>
@@ -111,7 +112,7 @@ const Tag = ({
         alignment='center'
         textCase='lowercase'
     >
-      {tag}
+      { tag }
     </Text.ExtraSmall>
   </div>
 );

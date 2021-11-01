@@ -1,8 +1,8 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 
-import preloadStyles from './blog_post_preload.module.css';
 import loadedStyles from '../blog_post.module.css';
+import preloadStyles from './blog_post_preload.module.css';
 
 export const BlogPostPreload = ({
   isJumbotron = false,

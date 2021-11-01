@@ -23,7 +23,7 @@ const getNumberOfCardsNeeded = (size: DisplaySize) => {
     default:
       return cardsPerRowMedium;
   }
-}
+};
 
 export const BlogPostsGridPreload = observer(({
   displaySize,
@@ -33,10 +33,10 @@ export const BlogPostsGridPreload = observer(({
   <div
       className={loadedStyles.blogPostsGrid}
   >
-    {Array.from({ length: getNumberOfCardsNeeded(displaySize) }).map((_, index) => (
+    { Array.from({ length: getNumberOfCardsNeeded(displaySize) }).map((_, index) => (
       <BlogPostPreload
           key={index}
       />
-    ))}
+    )) }
   </div>
 ));

@@ -1,6 +1,5 @@
-import React from 'react';
-
 import classNames from 'classnames';
+import React from 'react';
 
 import styles from './text.module.css';
 
@@ -38,7 +37,7 @@ const getSizeClassName = (size: Size | undefined) => {
     default:
       return size;
   }
-}
+};
 
 const getAligmentClassName = (alignment: Alignment) => {
   switch (alignment) {
@@ -49,9 +48,9 @@ const getAligmentClassName = (alignment: Alignment) => {
     case 'right':
       return styles.right;
     case 'justify':
-      return styles.justified
+      return styles.justified;
   }
-}
+};
 
 const getFontWeightClassName = (fontWeight: FontWeight) => {
   switch (fontWeight) {
@@ -64,7 +63,7 @@ const getFontWeightClassName = (fontWeight: FontWeight) => {
     default:
       return styles.normal;
   }
-}
+};
 
 const getTextCaseClassName = (textCase: TextCase | undefined) => {
   switch (textCase) {
@@ -77,7 +76,7 @@ const getTextCaseClassName = (textCase: TextCase | undefined) => {
     default:
       return styles.none;
   }
-}
+};
 
 const getClassNames = ({
   size,
@@ -94,12 +93,12 @@ const getClassNames = ({
     getFontWeightClassName(fontWeight),
     {
       [styles.italicised]: italicised,
-      [styles.removeMargins]: !keepDefaultMargins
+      [styles.removeMargins]: !keepDefaultMargins,
     },
     getTextCaseClassName(textCase),
     className,
   );
-}
+};
 
 const renderText = ({
   tag,
@@ -116,9 +115,9 @@ const renderText = ({
   size?: Size,
   children?: React.ReactNode,
 } & TextProps) => React.createElement(
-  tag, 
+  tag,
   { className: getClassNames({ size, alignment, fontWeight, italicised, keepDefaultMargins, textCase, className }) },
-  children
+  children,
 );
 
 // Ordinary text (ie. body text)
@@ -142,4 +141,4 @@ export const Text = {
   SmallTitle,
   MediumTitle,
   LargeTitle,
-}
+};

@@ -40,5 +40,5 @@ export const BlogPostsLayoutPreload = observer(({
 
   return (
     <Layout/>
-  )
+  );
 });

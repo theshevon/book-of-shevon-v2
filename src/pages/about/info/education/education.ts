@@ -17,5 +17,5 @@ export const TertiaryEducation: EducationProps[] = [
     gradingSystem: 'WAM',
     mark: 80.583,
     grade: 'H1',
-  }
+  },
 ];

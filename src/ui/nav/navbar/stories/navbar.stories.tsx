@@ -1,5 +1,5 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 
 import { Navbar } from '../navbar';
 
@@ -23,7 +23,7 @@ const routesData = [
 
 storiesOf('UI/Nav/Navbar/Navbar', module)
   .add('Navbar', () => (
-    <Navbar 
+    <Navbar
         routesData={routesData}
         activeRoute='##'
     />

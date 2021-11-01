@@ -4,7 +4,7 @@ import { Capsule } from './../../../../ui/capsule/capsule';
 
 import styles from './tech_capsule.module.css';
 
-const getTechClassName = (tech: string) => { 
+const getTechClassName = (tech: string) => {
   switch (tech.replace(/\s+/g, '').toLocaleLowerCase()) {
     case 'python':
       return styles.python;
@@ -41,7 +41,7 @@ const getTechClassName = (tech: string) => {
     case 'unity':
       return styles.unity;
   }
-}
+};
 
 export const TechCapsule = ({
   tech,
@@ -49,8 +49,8 @@ export const TechCapsule = ({
   tech: string,
 }) => (
   <Capsule
-      className={getTechClassName(tech)}  
+      className={getTechClassName(tech)}
   >
-    {tech}
+    { tech }
   </Capsule>
 );

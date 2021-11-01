@@ -9,11 +9,11 @@ export class StoryGroup extends React.Component {
       <div
           className={styles.group}
       >
-      { React.Children.map(children, (Story: React.ReactNode) => (
+        { React.Children.map(children, (Story: React.ReactNode) => (
           <SingleStory>
             { Story }
           </SingleStory>
-      ))}
+        )) }
       </div>
     );
   }

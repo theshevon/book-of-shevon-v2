@@ -1,8 +1,8 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 
-import type { RouteData } from './../../../../routes/route_data/route_data';
 import { Link } from '../../../link/link';
+import type { RouteData } from './../../../../routes/route_data/route_data';
 
 import styles from './drawer.module.css';
 
@@ -18,10 +18,10 @@ export const Drawer = ({
   show,
 }: DrawerProps) => (
   <div
-      className={classNames(styles.drawer, {[styles.show]: show})}
+      className={classNames(styles.drawer, { [styles.show]: show })}
   >
     <ul
-        className={styles.verticalMenu}    
+        className={styles.verticalMenu}
     >
       { routesData.map(routeData => (
         <li
@@ -35,10 +35,10 @@ export const Drawer = ({
               })}
               targetSelf={true}
           >
-              {routeData.label}
+            { routeData.label }
           </Link>
         </li>
-      ))}
+      )) }
     </ul>
   </div>
 );

@@ -17,14 +17,14 @@ export const BlogHeader = () => (
           alignment='center'
           className={styles.title}
       >
-        {Messages.title()}
+        { Messages.title() }
       </Text.LargeTitle>
       <Text.Small
           alignment='center'
           fontWeight='light'
           className={styles.subtitle}
       >
-        {Messages.subtitle()}
+        { Messages.subtitle() }
       </Text.Small>
     </div>
     <div
@@ -34,7 +34,7 @@ export const BlogHeader = () => (
           viewBox='0 0 750 50'
           fill='none'
       >
-        <path 
+        <path
             d='M 0 30 Q 150 50 300 30 Q 450 0 600 30 Q 750 50 900 30'
         />
       </svg>

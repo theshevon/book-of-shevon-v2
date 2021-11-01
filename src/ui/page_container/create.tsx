@@ -3,7 +3,7 @@ import React from 'react';
 import { PageContainer as PageContainerImpl } from './page_container';
 
 export const createPageContainer = (Nav: () => JSX.Element) => {
-  
+
   const PageContainer = ({
     Content,
   }: {
@@ -14,6 +14,6 @@ export const createPageContainer = (Nav: () => JSX.Element) => {
         Content={Content}
     />
   );
-  
+
   return PageContainer;
-}
+};
