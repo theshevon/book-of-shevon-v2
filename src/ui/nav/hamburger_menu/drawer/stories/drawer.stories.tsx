@@ -1,5 +1,5 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 
 import { StoryGroup } from '../../../../../util/storybook/stories';
 import { Drawer } from '../drawer';
@@ -25,11 +25,10 @@ const routesData = [
 storiesOf('UI/Nav/HamburgerMenu/Drawer', module)
   .add('Drawer', () => (
     <StoryGroup>
-        <Drawer
-            routesData={routesData}
-            activeRoute='##'
-            show={true}
-        />
+      <Drawer
+          routesData={routesData}
+          activeRoute='##'
+          show={true}
+      />
     </StoryGroup>
   ));
-  

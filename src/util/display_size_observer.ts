@@ -1,4 +1,4 @@
-import { observable, action, makeObservable } from 'mobx';
+import { action, makeObservable, observable } from 'mobx';
 
 import styles from './../ui/metrics/breakpoints.module.css';
 
@@ -19,7 +19,7 @@ const getWindowSizeAsDisplaySize = (size: number) => {
   } else if (size < BreakpointLarge) {
     return 'medium';
   } else if (size < BreakpointXLarge) {
-    return 'xlarge'
+    return 'xlarge';
   } else {
     return 'xxlarge';
   }
@@ -56,7 +56,7 @@ const DisplaySizeObserverFactory = (() => {
         instance = new DisplaySizeObserver();
       }
       return instance;
-    }
+    },
   };
 })();
 

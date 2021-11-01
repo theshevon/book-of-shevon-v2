@@ -1,5 +1,5 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 
 import type { RouteData } from './../../../../routes/route_data/route_data';
 import styles from './horizontal_menu.module.css';
@@ -14,7 +14,7 @@ export const HorizontalMenu = ({
   activeRoute,
 }: HorizontalMenuProps) => (
   <ul
-      className={styles.horizontalMenu}    
+      className={styles.horizontalMenu}
   >
     { routesData.map(routeData => (
       <li
@@ -27,9 +27,9 @@ export const HorizontalMenu = ({
               [styles.active]: routeData.pathname === activeRoute,
             })}
         >
-            { routeData.label }
+          { routeData.label }
         </a>
       </li>
-    ))}
+    )) }
   </ul>
 );

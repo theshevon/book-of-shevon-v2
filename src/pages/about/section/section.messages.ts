@@ -7,4 +7,4 @@ export const SectionMessages = {
   skills: (): string => 'Skills',
 
   volunteerExperience: (): string => 'Volunteer Experience',
-}
+};

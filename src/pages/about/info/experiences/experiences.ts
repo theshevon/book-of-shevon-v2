@@ -1,5 +1,5 @@
-import { ExperiencesMessages as Messages } from './experiences.messages';
 import type { ExperienceProps } from '../../experiences/experiences';
+import { ExperiencesMessages as Messages } from './experiences.messages';
 
 export const CommercialExperiences: ExperienceProps[] = [
   {

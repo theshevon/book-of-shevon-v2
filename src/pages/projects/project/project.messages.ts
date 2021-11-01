@@ -5,4 +5,4 @@ export const ProjectMessages = {
   OtherContributors: (): string => 'Other Contributors',
 
   ViewProject: (): string => 'View Project',
-}
+};
