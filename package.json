@@ -25,7 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "lint:ts": "eslint -c .eslintrc.js --ext .js,.jsx,.ts,.tsx .",
-    "lint:ts:fix": "yarn lint:ts -- --fix",
+    "lint:ts:fix": "yarn lint:ts --fix",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "test": "percy storybook:start",
@@ -50,6 +50,18 @@
   },
   "resolutions": {
     "**/babel-loader": "8.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "author": "Shevon Mendis"
 }
