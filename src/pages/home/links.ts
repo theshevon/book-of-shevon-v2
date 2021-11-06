@@ -1,27 +1,25 @@
-import {
-  faGithub,
-  faLinkedin,
-  faMedium,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
+import { GitHubIconDefition } from '../../ui/icons/definitions/github';
+import { LinkedInIconDefition } from '../../ui/icons/definitions/linkedin';
+import { MediumIconDefition } from '../../ui/icons/definitions/medium';
+import { YouTubeIconDefition } from '../../ui/icons/definitions/youtube';
 
 import { IconLinkProps } from '../../ui/link/link';
 
 export const Links: IconLinkProps[] = [
   {
     url: 'https://github.com/theshevon',
-    icon: faGithub,
+    iconDefinition: GitHubIconDefition,
   },
   {
     url: 'https://www.linkedin.com/in/mendiss',
-    icon: faLinkedin,
+    iconDefinition: LinkedInIconDefition,
   },
   {
     url: 'https://medium.com/@shevon_mendis',
-    icon: faMedium,
+    iconDefinition: MediumIconDefition,
   },
   {
     url: 'https://www.youtube.com/channel/UCkL1cYAWa9Wsx6xDT2H8zOg?view_as=subscriber',
-    icon: faYoutube,
+    iconDefinition: YouTubeIconDefition,
   },
 ];

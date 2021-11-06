@@ -1,5 +1,5 @@
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { IconDefinition } from '../icons/icon/icon';
+import { Icon } from '../icons/icon/icon';
 import classNames from 'classnames';
 import React from 'react';
 
@@ -12,7 +12,7 @@ export type LinkProps = {
 }
 
 export type IconLinkProps = Omit<LinkProps, 'className'> & {
-	icon: IconDefinition,
+	iconDefinition: IconDefinition,
 }
 
 export const Link: React.FC<LinkProps> = ({
@@ -63,15 +63,15 @@ export const CapsuleLink: React.FC<LinkProps> = ({
 );
 
 export const IconLink = ({
-  icon,
+  iconDefinition,
   ...linkProps
 }: IconLinkProps) => (
   <Link
       {...linkProps}
       className={styles.iconLink}
   >
-    <FontAwesomeIcon
-        icon={icon}
+    <Icon
+        {...iconDefinition}
     />
   </Link>
 );

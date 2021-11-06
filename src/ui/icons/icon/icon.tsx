@@ -17,7 +17,7 @@ type IconProps = {
   pathData: string,
 }
 
-export type IconDefintion = Omit<IconProps, 'className'>;
+export type IconDefinition = Omit<IconProps, 'className'>;
 
 const DEFAULT_WIDTH = 24;
 const DEFAULT_HEIGHT = 24;
