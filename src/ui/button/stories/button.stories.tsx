@@ -3,7 +3,7 @@ import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
-import { StoryGroup } from '../../../util/storybook/stories';
+import { StoryGroup } from '../../storybook/stories';
 import { Button } from '../button';
 
 storiesOf('UI/Button', module)

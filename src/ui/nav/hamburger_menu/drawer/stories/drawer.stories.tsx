@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
-import { StoryGroup } from '../../../../../util/storybook/stories';
+import { StoryGroup } from '../../../../storybook/stories';
 import { Drawer } from '../drawer';
 
 const routesData = [
