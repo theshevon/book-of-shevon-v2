@@ -14,8 +14,7 @@ type NavProps = {
 
 export const Nav = observer((props: NavProps) => {
 
-  const displaySize = DisplaySizeObserver.size;
-  const NavComponent = displaySize === DisplaySize.SMALL ? HamburgerMenu : Navbar;
+  const NavComponent = DisplaySizeObserver.size === DisplaySize.SMALL ? HamburgerMenu : Navbar;
 
   return (
     <NavComponent
