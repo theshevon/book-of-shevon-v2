@@ -4,8 +4,6 @@ import styles from './../ui/metrics/breakpoints.module.css';
 
 export type DisplaySize = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge';
 
-// TODO: add functions to to determine boundaries, eg. smallOrWider
-
 const BreakpointSmall = parseInt(styles.breakpointSmall, 10) || 576;
 const BreakpointMedium = parseInt(styles.breakpointMedium, 10) || 768;
 const BreakpointLarge = parseInt(styles.breakpointMedium, 10) || 992;
@@ -24,6 +22,13 @@ const getWindowSizeAsDisplaySize = (size: number) => {
     return 'xxlarge';
   }
 };
+
+export const isSmallOrNarrower = (size: DisplaySize) => size === 'xsmall' || size === 'small';
+export const isSmallOrWider = (size: DisplaySize) => size !== 'xsmall';
+export const isMediumOrNarrower = (size: DisplaySize) => isSmallOrNarrower(size) || size === 'medium';
+export const isMediumOrWider = (size: DisplaySize) => !isSmallOrNarrower(size);
+export const isLargeOrNarrower = (size: DisplaySize) => isMediumOrNarrower(size) || size === 'large';
+export const isLargeOrWider = (size: DisplaySize) => !isMediumOrNarrower(size);
 
 const getWindowSize = () => {
   return getWindowSizeAsDisplaySize(window.innerWidth);

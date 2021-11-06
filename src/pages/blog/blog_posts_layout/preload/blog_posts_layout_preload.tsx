@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React from 'react';
 
 import type { DisplaySize } from '../../../../util/display_size_observer';
+import { isMediumOrWider } from '../../../../util/display_size_observer';
 import { BlogPostPreload } from '../blog_post/preload/blog_post_preload';
 import { BlogPostsGridPreload } from '../blog_posts_grid/preload/blog_posts_grid_preload';
 
@@ -13,7 +14,7 @@ export const BlogPostsLayoutPreload = observer(({
   displaySize: DisplaySize,
 }) => {
   let Layout;
-  if (displaySize !== 'small' && displaySize !== 'medium') {
+  if (isMediumOrWider(displaySize)) {
     Layout = () => (
       <>
         <BlogPostPreload
