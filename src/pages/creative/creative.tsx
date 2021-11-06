@@ -1,12 +1,14 @@
-import React from 'react';
-import { useDocumentHeader } from '../../util/hooks';
+import React, { useEffect } from 'react';
+import { updateDocumentHeader } from '../../util/title_manager';
 import { CreativeMessages as Messages } from './creative.messages';
 
 import styles from './creative.module.css';
 
 export const Creative = () => {
 
-  useDocumentHeader(Messages.pageTitle());
+  useEffect(() => {
+    updateDocumentHeader(Messages.pageTitle());
+  }, []);
 
   return (
     <div>

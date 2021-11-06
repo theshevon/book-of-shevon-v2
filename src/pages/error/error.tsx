@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { useDocumentHeader } from '../../util/hooks';
+import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
 import { getRandomNumInRange } from './../../util/math';
 import { CARDS_SPRITE } from './cards_sprite';
@@ -98,8 +98,6 @@ export const Error = () => {
   const image = new Image();
   image.src = CARDS_SPRITE;
 
-  useDocumentHeader(Messages.pageTitle());
-
   const errorPageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -156,6 +154,9 @@ export const Error = () => {
   };
 
   useEffect(() => {
+
+    updateDocumentHeader(Messages.pageTitle());
+
     const canvas = canvasRef.current;
     const renderingCtx = canvas?.getContext('2d');
 

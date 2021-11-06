@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { useDocumentHeader } from './../../util/hooks';
+import { updateDocumentHeader } from '../../util/title_manager';
 import { AboutMessages as Messages } from './about.messages';
 import styles from './about.module.css';
 import { Education } from './education/education';
@@ -15,7 +15,9 @@ import { Skills } from './skills/skills';
 
 export const About = () => {
 
-  useDocumentHeader(Messages.pageTitle());
+  useEffect(() => {
+    updateDocumentHeader(Messages.pageTitle());
+  }, []);
 
   const Profile = createProfile();
 
