@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React from 'react';
 
 import type { DisplaySize } from '../../../util/display_size_observer';
-import { DisplaySizeObserver } from '../../../util/display_size_observer';
+import { DisplaySizeObserver, isMediumOrWider } from '../../../util/display_size_observer';
 import { BlogPost, BlogPostProps } from './blog_post/blog_post';
 import { BlogPostsGrid } from './blog_posts_grid/blog_posts_grid';
 
@@ -48,35 +48,37 @@ const BlogPostsLayoutInternal = observer(({
           displaySize={displaySize}
       />
     );
-  } else if (!['xsmall', 'small', 'medium'].includes(displaySize)) {
-    const [first, ...rest] = posts;
-    Layout = () => (
-      <>
-        <BlogPost
-            {...first}
-            isJumbotron={true}
-        />
-        { rest.length > 0 &&
-          <>
-            <div
-                className={styles.separator}
-            >
-            </div>
-            <BlogPostsGrid
-                loadingState={loadingState}
-                posts={rest}
-            />
-          </>
-        }
-      </>
-    );
   } else {
-    Layout = () => (
-      <BlogPostsGrid
-          loadingState={loadingState}
-          posts={posts}
-      />
-    );
+    if (isMediumOrWider(displaySize)) {
+      const [first, ...rest] = posts;
+      Layout = () => (
+        <>
+          <BlogPost
+              {...first}
+              isJumbotron={true}
+          />
+          { rest.length > 0 &&
+            <>
+              <div
+                  className={styles.separator}
+              >
+              </div>
+              <BlogPostsGrid
+                  loadingState={loadingState}
+                  posts={rest}
+              />
+            </>
+          }
+        </>
+      );
+    } else {
+      Layout = () => (
+        <BlogPostsGrid
+            loadingState={loadingState}
+            posts={posts}
+        />
+      );
+    }
   }
 
   return (
