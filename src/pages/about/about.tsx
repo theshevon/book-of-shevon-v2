@@ -3,11 +3,11 @@ import React, { useEffect } from 'react';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { AboutMessages as Messages } from './about.messages';
 import styles from './about.module.css';
+import { TertiaryEducation } from './data/education/education';
+import { CommercialExperiences, VolunteerExperiences } from './data/experiences/experiences';
+import { SkillsLists } from './data/skills/skills';
 import { Education } from './education/education';
 import { Experiences } from './experiences/experiences';
-import { TertiaryEducation } from './info/education/education';
-import { CommercialExperiences, VolunteerExperiences } from './info/experiences/experiences';
-import { SkillsLists } from './info/skills/skills';
 
 import { createProfile } from './profile/create';
 import { Section } from './section/section';

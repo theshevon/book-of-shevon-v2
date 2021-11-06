@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
 
-import { Projects as TechProjects } from './info/projects';
+import { Projects as TechProjects } from './data/projects';
 import { Project } from './project/project';
 
 import { ProjectsMessages as Messages } from './projects.messages';
