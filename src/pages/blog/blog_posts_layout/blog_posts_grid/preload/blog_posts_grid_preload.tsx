@@ -4,7 +4,9 @@ import React from 'react';
 import type { DisplaySize } from '../../../../../util/display_size_observer';
 import { BlogPostPreload } from '../../blog_post/preload/blog_post_preload';
 
+import preloadedStyles from './blog_posts_grid_preload.module.css';
 import loadedStyles from '../blog_posts_grid.module.css';
+import classNames from 'classnames';
 
 const cardsPerRowMedium = parseInt(loadedStyles.cardsPerRowMedium, 10) || 2;
 const cardsPerRowLarge = parseInt(loadedStyles.cardsPerRowLarge, 10) || 3;
@@ -31,7 +33,7 @@ export const BlogPostsGridPreload = observer(({
   displaySize: DisplaySize,
 }) => (
   <div
-      className={loadedStyles.blogPostsGrid}
+      className={classNames(loadedStyles.blogPostsGrid, preloadedStyles.blogPostsGrid)}
   >
     { Array.from({ length: getNumberOfCardsNeeded(displaySize) }).map((_, index) => (
       <BlogPostPreload

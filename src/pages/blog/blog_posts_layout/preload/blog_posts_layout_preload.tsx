@@ -13,7 +13,7 @@ export const BlogPostsLayoutPreload = observer(({
   displaySize: DisplaySize,
 }) => {
   let Layout;
-  if (displaySize !== 'small' && displaySize !== 'medium') {
+  if (displaySize !== 'xsmall' && displaySize !== 'small' && displaySize !== 'medium') {
     Layout = () => (
       <>
         <BlogPostPreload

@@ -28,9 +28,9 @@ export const BlogPostsLayout = observer(({
     { loadingState === 'error' || (loadingState === 'complete' && posts.length === 0)
       ? <Fallback />
       : <BlogPostsLayoutInternal
-              displaySize={DisplaySizeObserver.size}
-              loadingState={loadingState}
-              posts={posts}
+            displaySize={DisplaySizeObserver.size}
+            loadingState={loadingState}
+            posts={posts}
       />
     }
   </div>
