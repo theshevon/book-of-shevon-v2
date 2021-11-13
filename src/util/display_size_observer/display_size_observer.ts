@@ -8,7 +8,6 @@ const BreakpointLarge = parseInt(styles.breakpointMedium, 10) || 992;
 const BreakpointXLarge = parseInt(styles.breakpointXLarge, 10) || 1200;
 const BreakpointXXLarge = parseInt(styles.BreakpointXXLarge, 10) || 1400;
 
-// eslint-disable-next-line no-unused-vars
 export enum DisplaySize {
   X_SMALL = 0,
   SMALL = BreakpointSmall,
