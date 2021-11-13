@@ -1,0 +1,25 @@
+.thumbnals {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumbnails::after{
+  content: '';
+  flex-grow: 999999999;
+}
+
+.thumbnail {
+  flex-grow: 1;
+  margin: 2px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.thumbnail img {
+  height: 200px;
+  object-fit: cover;
+  max-width: 100%;
+  min-width: 100%;
+  vertical-align: bottom;
+}

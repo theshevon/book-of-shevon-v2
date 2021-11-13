@@ -8,29 +8,29 @@ export type RouteData = {
 }
 
 export const RoutesData: RouteData[] = [
-	{
-		path: Routes.CREATIVE,
-		label: Messages.creative(),
-		index: -2,
-	},
-	{
-		path: Routes.ABOUT,
-		label: Messages.about(),
-		index: -1,
-	},
-	{
-		path: Routes.HOME,
-		label: Messages.home(),
-		index: 0,
-	},
-	{
+  {
+    path: Routes.CREATIVE,
+    label: Messages.creative(),
+    index: -2,
+  },
+  {
+    path: Routes.ABOUT,
+    label: Messages.about(),
+    index: -1,
+  },
+  {
+    path: Routes.HOME,
+    label: Messages.home(),
+    index: 0,
+  },
+  {
     path: Routes.PROJECTS,
     label: Messages.projects(),
     index: 1,
-	},
-	{
+  },
+  {
     path: Routes.BLOG,
     label: Messages.blog(),
     index: 2,
-	},
+  },
 ];

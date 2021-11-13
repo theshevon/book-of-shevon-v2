@@ -1,13 +1,12 @@
-import type { SectionProps } from '../section/section';
-
 import { importAll } from '../../../util/image_importer/image_importer';
+import type { SectionContainerProps } from '../section/section';
 
 import { SectionsMessages as Messages } from './sections.messages';
 
-export const Sections: SectionProps[] = [
+export const Sections: SectionContainerProps[] = [
   {
     name: Messages.art(),
-    subSections: [
+    sections: [
       {
         name: Messages.handDrawn(),
         images: importAll(require.context('./assets/art/hand_drawn', false, /\.(png|jpe?g|svg)$/)),
@@ -31,7 +30,7 @@ export const Sections: SectionProps[] = [
   },
   {
     name: Messages.photography(),
-    subSections: [
+    sections: [
       {
         name: Messages.misc(),
         images: importAll(require.context('./assets/photography/misc', false, /\.(png|jpe?g|svg)$/)),

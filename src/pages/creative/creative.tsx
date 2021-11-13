@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
-import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from '../../ui/text/text';
+import { updateDocumentHeader } from '../../util/title_manager';
 
 import { CreativeMessages as Messages } from './creative.messages';
 
