@@ -1,6 +1,6 @@
 import { action, makeObservable, observable } from 'mobx';
 
-import styles from './../ui/metrics/breakpoints.module.css';
+import styles from '../../ui/metrics/breakpoints.module.css';
 
 const BreakpointSmall = parseInt(styles.breakpointSmall, 10) || 576;
 const BreakpointMedium = parseInt(styles.breakpointMedium, 10) || 768;
