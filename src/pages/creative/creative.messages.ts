@@ -1,4 +1,4 @@
 export const CreativeMessages = {
 
-  pageTitle: (): string => 'Creative',
+  title: (): string => 'Creative',
 };
