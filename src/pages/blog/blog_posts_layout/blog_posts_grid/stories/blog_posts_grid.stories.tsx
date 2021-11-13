@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
-import { DisplaySizeObserver } from '../../../../../util/display_size_observer';
+import { DisplaySizeObserver } from '../../../../../util/display_size_observer/display_size_observer';
 import type { BlogPostProps } from '../../blog_post/blog_post';
 import { BlogPostsGrid } from '../blog_posts_grid';
 import { BlogPostsGridPreload } from '../preload/blog_posts_grid_preload';

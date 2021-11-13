@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 
-import type { DisplaySize } from '../../../util/display_size_observer';
-import { DisplaySizeObserver, isMediumOrWider } from '../../../util/display_size_observer';
+import type { DisplaySize } from '../../../util/display_size_observer/display_size_observer';
+import { DisplaySizeObserver, isMediumOrWider } from '../../../util/display_size_observer/display_size_observer';
 import { BlogPost, BlogPostProps } from './blog_post/blog_post';
 import { BlogPostsGrid } from './blog_posts_grid/blog_posts_grid';
 
@@ -28,9 +28,9 @@ export const BlogPostsLayout = observer(({
     { loadingState === 'error' || (loadingState === 'complete' && posts.length === 0)
       ? <Fallback />
       : <BlogPostsLayoutInternal
-            displaySize={DisplaySizeObserver.size}
-            loadingState={loadingState}
-            posts={posts}
+              displaySize={DisplaySizeObserver.size}
+              loadingState={loadingState}
+              posts={posts}
       />
     }
   </div>

@@ -24,7 +24,8 @@
     "lint:ts:fix": "yarn lint:ts --fix",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "test": "percy storybook:start",
+    "test": "react-scripts test",
+    "run-percy": "percy storybook:start",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
@@ -42,7 +43,8 @@
     "@types/webpack-env": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
-    "eslint-plugin-jest": "^25.2.2"
+    "eslint-plugin-jest": "^25.2.2",
+    "jest": "26.6.0"
   },
   "resolutions": {
     "**/babel-loader": "8.1.0",
