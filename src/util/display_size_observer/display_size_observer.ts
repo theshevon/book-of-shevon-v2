@@ -2,33 +2,44 @@ import { action, makeObservable, observable } from 'mobx';
 
 import styles from './../ui/metrics/breakpoints.module.css';
 
-export type DisplaySize = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge';
-
 const BreakpointSmall = parseInt(styles.breakpointSmall, 10) || 576;
 const BreakpointMedium = parseInt(styles.breakpointMedium, 10) || 768;
 const BreakpointLarge = parseInt(styles.breakpointMedium, 10) || 992;
-const BreakpointXLarge = parseInt(styles.BreakpointXLarge, 10) || 1200;
+const BreakpointXLarge = parseInt(styles.breakpointXLarge, 10) || 1200;
+const BreakpointXXLarge = parseInt(styles.BreakpointXXLarge, 10) || 1400;
 
-const getWindowSizeAsDisplaySize = (size: number) => {
+// eslint-disable-next-line no-unused-vars
+export enum DisplaySize {
+  X_SMALL = 0,
+  SMALL = BreakpointSmall,
+  MEDIUM = BreakpointMedium,
+  LARGE = BreakpointLarge,
+  X_LARGE = BreakpointXLarge,
+  X_X_LARGE = BreakpointXXLarge,
+}
+
+export const getWindowSizeAsDisplaySize = (size: number): DisplaySize => {
   if (size < BreakpointSmall) {
-    return 'xsmall';
+    return DisplaySize.X_SMALL;
   } else if (size < BreakpointMedium) {
-    return 'small';
+    return DisplaySize.SMALL;
   } else if (size < BreakpointLarge) {
-    return 'medium';
+    return DisplaySize.MEDIUM;
   } else if (size < BreakpointXLarge) {
-    return 'xlarge';
+    return DisplaySize.LARGE;
+  } else if (size < BreakpointXXLarge) {
+    return DisplaySize.X_LARGE;
   } else {
-    return 'xxlarge';
+    return DisplaySize.X_X_LARGE;
   }
 };
 
-export const isSmallOrNarrower = (size: DisplaySize) => size === 'xsmall' || size === 'small';
-export const isSmallOrWider = (size: DisplaySize) => size !== 'xsmall';
-export const isMediumOrNarrower = (size: DisplaySize) => isSmallOrNarrower(size) || size === 'medium';
-export const isMediumOrWider = (size: DisplaySize) => !isSmallOrNarrower(size);
-export const isLargeOrNarrower = (size: DisplaySize) => isMediumOrNarrower(size) || size === 'large';
-export const isLargeOrWider = (size: DisplaySize) => !isMediumOrNarrower(size);
+export const isSmallOrNarrower = (size: DisplaySize) => size <= DisplaySize.SMALL;
+export const isSmallOrWider = (size: DisplaySize) => size >= DisplaySize.SMALL;
+export const isMediumOrNarrower = (size: DisplaySize) => size <= DisplaySize.MEDIUM;
+export const isMediumOrWider = (size: DisplaySize) => size >= DisplaySize.MEDIUM;
+export const isLargeOrNarrower = (size: DisplaySize) => size <= DisplaySize.LARGE;
+export const isLargeOrWider = (size: DisplaySize) => size >= DisplaySize.LARGE;
 
 const getWindowSize = () => {
   return getWindowSizeAsDisplaySize(window.innerWidth);

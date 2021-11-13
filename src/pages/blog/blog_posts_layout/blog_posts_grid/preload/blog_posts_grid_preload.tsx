@@ -1,12 +1,12 @@
+import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 
-import type { DisplaySize } from '../../../../../util/display_size_observer';
+import { DisplaySize } from '../../../../../util/display_size_observer/display_size_observer';
 import { BlogPostPreload } from '../../blog_post/preload/blog_post_preload';
 
-import preloadedStyles from './blog_posts_grid_preload.module.css';
 import loadedStyles from '../blog_posts_grid.module.css';
-import classNames from 'classnames';
+import preloadedStyles from './blog_posts_grid_preload.module.css';
 
 const cardsPerRowMedium = parseInt(loadedStyles.cardsPerRowMedium, 10) || 2;
 const cardsPerRowLarge = parseInt(loadedStyles.cardsPerRowLarge, 10) || 3;
@@ -14,14 +14,14 @@ const cardsPerRowXLarge = parseInt(loadedStyles.cardsPerRowXLarge, 10) || 4;
 
 const getNumberOfCardsNeeded = (size: DisplaySize) => {
   switch (size) {
-    case 'xxlarge':
-    case 'xlarge':
+    case DisplaySize.X_X_LARGE:
+    case DisplaySize.X_LARGE:
       return cardsPerRowXLarge;
-    case 'large':
+    case DisplaySize.LARGE:
       return cardsPerRowLarge;
-    case 'medium':
-    case 'small':
-    case 'xsmall':
+    case DisplaySize.MEDIUM:
+    case DisplaySize.SMALL:
+    case DisplaySize.X_SMALL:
     default:
       return cardsPerRowMedium;
   }

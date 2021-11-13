@@ -26,6 +26,11 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: run tests
+          name: run jest tests
           command: |
             yarn test
+
+      - run:
+          name: run percy snapshot tests
+          command: |
+            yarn run-percy

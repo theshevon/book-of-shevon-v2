@@ -77,8 +77,8 @@ module.exports = {
     'no-unused-vars': [
       'warn',
       {
-        varsIgnorePattern: '_', // vars named '_' will be treated as intentionally unused
-        argsIgnorePattern: '_', // args named '_' will be treated as intentionally unused
+        varsIgnorePattern: '^_', // vars named '_' will be treated as intentionally unused
+        argsIgnorePattern: '^_', // args named '_' will be treated as intentionally unused
       },
     ],
     'object-curly-spacing': [
