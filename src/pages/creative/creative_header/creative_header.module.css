@@ -1,8 +1,8 @@
-@value monoLightGrey, monoMidGrey from '../../../ui/colors/colors.module.css';
+@value monoMidGrey from '../../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
-.blogHeader {
-	height: 175px;
+.creativeHeader {
+	height: 150px;
 	position: relative;
 	padding-top: 45px;
 	box-sizing: border-box;
@@ -18,15 +18,6 @@
 	margin-bottom: 10px;
 }
 
-.wave {
-	width: 100%;
-}
-
-.wave svg path {
-   stroke: monoLightGrey;
-   stroke-width: 1px;
-}
-
 @media(min-width: breakpointSmall) {
 
 	.title {
@@ -37,8 +28,4 @@
 		margin-bottom: 0;
 	}
 
-	.wave svg path {
-		stroke-width: 0.5px;
-	}
-    
 }
