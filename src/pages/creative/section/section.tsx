@@ -34,9 +34,13 @@ export const CreativeCategory = ({
 type SectionProps = {
   name: string,
   desc?: string,
-  images?: string[],
-  subSections?: SubSectionProps[],
-};
+} & ({
+  images: string[],
+  subSections?: never,
+} | {
+  images?: never,
+  subSections: SubSectionProps[],
+});
 
 export const Section = ({
   name,
@@ -45,9 +49,9 @@ export const Section = ({
   subSections,
 }: SectionProps) => {
 
-  let Content: () => JSX.Element = () => <></>;
+  let SectionContent: () => JSX.Element = () => <></>;
   if (subSections) {
-    Content = () => (
+    SectionContent = () => (
       <>
         <Text.Large
             alignment='center'
@@ -68,7 +72,7 @@ export const Section = ({
       </>
     );
   } else if (images) {
-    Content = () => (
+    SectionContent = () => (
       <SubSection
           name={name}
           desc={desc}
@@ -78,8 +82,10 @@ export const Section = ({
   }
 
   return (
-    <div>
-      <Content />
+    <div
+        className={styles.section}
+    >
+      <SectionContent/>
     </div>
   );
 };
@@ -109,7 +115,7 @@ export const SubSection = ({
     <div
         className={styles.thumbnails}
     >
-      { images.map((image: string) => (
+      { images.map(image => (
         <img
             key={image}
             src={image}
