@@ -5,29 +5,29 @@ import { CreativeCategory, Section, SubSection } from '../creative_category';
 
 import testImage from './test_image.png';
 
-const images =  Array.from({ length: 10 }, () => testImage);
+const images =  Array.from({ length: 5 }, () => testImage);
 
 const subSection = {
-  name: 'Test Sub-Section',
+  name: 'Test sub-section',
   desc: 'Some description',
   images: images,
 }
 
-const subSections = Array.from({ length: 5 }, () => subSection);
+const subSections = Array.from({ length: 3 }, () => subSection);
 
 const sectionWithImages = {
-  name: 'Test Section with images',
+  name: 'Test section with images',
   desc: 'Some description',
   images: images,
 }
 
 const sectionWithSubSections = {
-  name: 'Test Section with sub-sections',
+  name: 'Test section with sub-sections',
   desc: 'Some description',
   subSections: subSections,
 }
 
-storiesOf('Pages/Creative/Section', module)
+storiesOf('Pages/Creative/CreativeCategory', module)
   .add('SubSection', () => (
     <SubSection
         {...subSection}

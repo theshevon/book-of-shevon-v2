@@ -1,4 +1,41 @@
-.thumbnals {
+.sections,
+.subSections {
+  display: flex;
+  flex-direction: column;
+}
+
+.sections {
+  padding: 10px 0;
+  row-gap: 10px;
+}
+
+.subSections {
+  padding: 5px 0;
+  row-gap: 5px;
+}
+
+.categoryName,
+.sectionName,
+.sectionDesc,
+.subSectionName,
+.subSectionDesc {
+  margin-top: 0;
+}
+
+.categoryName {
+  margin-bottom: 0.5rem;
+}
+
+.sectionName {
+  margin-bottom: 0.25rem;
+}
+
+.subSectionName {
+  margin-bottom: 0.15rem;
+}
+
+.thumbnails {
+  padding: 10px 0;
   display: flex;
   flex-wrap: wrap;
 }

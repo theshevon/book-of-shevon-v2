@@ -19,15 +19,20 @@ export const CreativeCategory = ({
     <Text.MediumTitle
         alignment='center'
         fontWeight='bold'
+        className={styles.categoryName}
     >
       { name }
     </Text.MediumTitle>
-    { sections.map(section => (
-      <Section
-          key={section.name}
-          {...section}
-      />
-    )) }
+    <div
+        className={styles.sections}
+    >
+      { sections.map(section => (
+        <Section
+            key={section.name}
+            {...section}
+        />
+      )) }
+    </div>
   </div>
 );
 
@@ -52,19 +57,21 @@ export const Section = ({
   let SectionContent: () => JSX.Element = () => <></>;
   if (subSections) {
     SectionContent = () => (
-      <>
+      <div
+          className={styles.subSections}
+      >
         { subSections.map(subSection => (
           <SubSection
               key={subSection.name}
               {...subSection}
           />
         )) }
-      </>
+      </div>
     );
   } else if (images) {
     SectionContent = () => (
       <SectionImages
-        images={images}
+          images={images}
       />
     );
   }
@@ -74,13 +81,16 @@ export const Section = ({
         className={styles.section}
     >
       <Text.Large
-            alignment='center'
-        >
+          fontWeight='bold'
+          alignment='center'
+          className={styles.sectionName}
+      >
         { name }
       </Text.Large>
       { desc && (
         <Text.Small
             alignment='center'
+            className={styles.sectionDesc}
         >
           { desc }
         </Text.Small>
@@ -104,11 +114,16 @@ export const SubSection = ({
   <div
       className={styles.subSection}
   >
-    <Text.Medium>
+    <Text.Medium
+        fontWeight='bold'
+        className={styles.subSectionName}
+    >
       { name }
     </Text.Medium>
     { desc && (
-      <Text.Small>
+      <Text.Small
+          className={styles.subSectionDesc}
+      >
         { desc }
       </Text.Small>
     ) }
