@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Text } from '../../../ui/text/text';
 
-import styles from './section.module.css';
+import styles from './creative_category.module.css';
 
 export type CreativeCategoryProps = {
   name: string,
@@ -53,16 +53,6 @@ export const Section = ({
   if (subSections) {
     SectionContent = () => (
       <>
-        <Text.Large
-            alignment='center'
-        >
-          { name }
-        </Text.Large>
-        { desc && (
-          <Text.Small>
-            { desc }
-          </Text.Small>
-        ) }
         { subSections.map(subSection => (
           <SubSection
               key={subSection.name}
@@ -73,10 +63,8 @@ export const Section = ({
     );
   } else if (images) {
     SectionContent = () => (
-      <SubSection
-          name={name}
-          desc={desc}
-          images={images}
+      <SectionImages
+        images={images}
       />
     );
   }
@@ -85,6 +73,18 @@ export const Section = ({
     <div
         className={styles.section}
     >
+      <Text.Large
+            alignment='center'
+        >
+        { name }
+      </Text.Large>
+      { desc && (
+        <Text.Small
+            alignment='center'
+        >
+          { desc }
+        </Text.Small>
+      ) }
       <SectionContent/>
     </div>
   );
@@ -101,27 +101,37 @@ export const SubSection = ({
   desc,
   images,
 }: SubSectionProps) => (
-  <>
+  <div
+      className={styles.subSection}
+  >
     <Text.Medium>
       { name }
     </Text.Medium>
     { desc && (
-      <Text.Small
-          italicised={true}
-      >
+      <Text.Small>
         { desc }
       </Text.Small>
     ) }
-    <div
-        className={styles.thumbnails}
-    >
-      { images.map(image => (
-        <img
-            key={image}
-            src={image}
-            className={styles.thumbnail}
-        />
-      )) }
-    </div>
-  </>
+    <SectionImages
+        images={images}
+    />
+  </div>
+);
+
+const SectionImages = ({
+  images,
+} : {
+  images: string[]
+}) => (
+  <div
+      className={styles.thumbnails}
+  >
+    { images.map(image => (
+      <img
+          key={image}
+          src={image}
+          className={styles.thumbnail}
+      />
+    )) }
+  </div>
 );

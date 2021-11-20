@@ -1,4 +1,4 @@
-export const SectionsMessages = {
+export const CreativeCategoriesMessages = {
 
   art: (): string => 'Art',
 

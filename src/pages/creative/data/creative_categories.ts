@@ -1,9 +1,9 @@
 import { importAll } from '../../../util/image_importer/image_importer';
-import type { CreativeCategoryProps } from '../section/section';
+import type { CreativeCategoryProps } from '../creative_category/creative_category';
 
-import { SectionsMessages as Messages } from './sections.messages';
+import { CreativeCategoriesMessages as Messages } from './creative_categories.messages';
 
-export const Sections: CreativeCategoryProps[] = [
+export const CreativeCategories: CreativeCategoryProps[] = [
   {
     name: Messages.art(),
     sections: [
