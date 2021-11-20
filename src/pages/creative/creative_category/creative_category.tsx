@@ -116,12 +116,14 @@ export const SubSection = ({
   >
     <Text.Medium
         fontWeight='bold'
+        alignment='center'
         className={styles.subSectionName}
     >
       { name }
     </Text.Medium>
     { desc && (
       <Text.Small
+          alignment='center'
           className={styles.subSectionDesc}
       >
         { desc }

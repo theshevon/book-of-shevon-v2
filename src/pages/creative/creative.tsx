@@ -6,6 +6,8 @@ import { updateDocumentHeader } from '../../util/title_manager';
 import { CreativeMessages as Messages } from './creative.messages';
 
 import styles from './creative.module.css';
+import { CreativeCategory } from './creative_category/creative_category';
+import { CreativeCategories } from './data/creative_categories'; 
 
 export const Creative = () => {
 
@@ -14,11 +16,29 @@ export const Creative = () => {
   }, []);
 
   return (
-    <Text.LargeTitle
-        alignment='center'
-        className={styles.title}
+    <div
+        className={styles.creativePage}
     >
-      { Messages.title() }
-    </Text.LargeTitle>
+      <div
+          className={styles.header}
+      >
+        <Text.LargeTitle
+            alignment='center'
+            className={styles.title}
+        >
+          { Messages.title() }
+        </Text.LargeTitle>
+      </div>
+      <div
+          className={styles.content}
+      >
+        { CreativeCategories.map(category => (
+          <CreativeCategory
+              key={category.name}
+              {...category}
+          />
+        )) }
+      </div>
+    </div>
   );
 };

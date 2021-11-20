@@ -10,8 +10,8 @@
 }
 
 .subSections {
-  padding: 5px 0;
-  row-gap: 5px;
+  padding: 7.5px 0;
+  row-gap: 7.5px;
 }
 
 .categoryName,
@@ -27,15 +27,15 @@
 }
 
 .sectionName {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.3rem;
 }
 
 .subSectionName {
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
 }
 
 .thumbnails {
-  padding: 10px 0;
+  padding: 15px 0;
   display: flex;
   flex-wrap: wrap;
 }

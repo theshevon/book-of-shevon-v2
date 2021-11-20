@@ -6,9 +6,9 @@ export const CreativeCategoriesMessages = {
 
   models: (): string => 'Models',
 
-  terrain: (): string => 'Terrain',
+  eternalSunshine: (): string => 'Eternal Sunshine',
 
-  visualSeq: (): string => 'Visual Sequence',
+  invertedRipples: (): string => 'Inverted Ripples',
 
   digital: (): string => 'Digital',
 
