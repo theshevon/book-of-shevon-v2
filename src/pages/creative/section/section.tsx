@@ -4,31 +4,24 @@ import { Text } from '../../../ui/text/text';
 
 import styles from './section.module.css';
 
-export type SectionContainerProps = {
+export type CreativeCategoryProps = {
   name: string,
-  desc?: string,
   sections: SectionProps[],
 };
 
-export const SectionContainer = ({
+export const CreativeCategory = ({
   name,
-  desc,
   sections,
-}: SectionContainerProps) => (
-  <div>
+}: CreativeCategoryProps) => (
+  <div
+      className={styles.creativeCategory}
+  >
     <Text.MediumTitle
         alignment='center'
         fontWeight='bold'
     >
       { name }
     </Text.MediumTitle>
-    { desc && (
-      <Text.Small
-          alignment='center'
-      >
-        { desc }
-      </Text.Small>
-    ) }
     { sections.map(section => (
       <Section
           key={section.name}
@@ -38,12 +31,13 @@ export const SectionContainer = ({
   </div>
 );
 
-export type SectionProps = Omit<SectionContainerProps, 'sections'> & {
+type SectionProps = {
+  name: string,
+  desc?: string,
   images?: string[],
   subSections?: SubSectionProps[],
 };
 
-// TODO: clean this up
 export const Section = ({
   name,
   desc,
@@ -67,6 +61,7 @@ export const Section = ({
         ) }
         { subSections.map(subSection => (
           <SubSection
+              key={subSection.name}
               {...subSection}
           />
         )) }
@@ -89,7 +84,9 @@ export const Section = ({
   );
 };
 
-type SubSectionProps = Omit<SectionContainerProps, 'sections'> & {
+type SubSectionProps = {
+  name: string,
+  desc?: string,
   images: string[],
 }
 
@@ -112,10 +109,9 @@ export const SubSection = ({
     <div
         className={styles.thumbnails}
     >
-      { images.map(image => (
+      { images.map((image: string) => (
         <img
             key={image}
-            alt={image}
             src={image}
             className={styles.thumbnail}
         />
