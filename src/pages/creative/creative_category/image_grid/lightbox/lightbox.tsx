@@ -1,6 +1,8 @@
 import React from 'react';
 import { IconButton } from '../../../../../ui/button/button';
 import { CloseIconDefinition } from '../../../../../ui/icons/definitions/close';
+import { RightArrowIconDefinition } from '../../../../../ui/icons/definitions/right_arrow';
+import { LeftArrowIconDefinition } from '../../../../../ui/icons/definitions/left_arrow';
 import styles from './lightbox.module.css';
 
 type LightboxProps = {
@@ -38,12 +40,11 @@ export const Lightbox = ({
           className={styles.prevButtonContainer}
       >
         { !isFirst && (
-          <button
+          <IconButton
+              iconDefinition={LeftArrowIconDefinition}
               onClick={() => onImgChange('prev')}
               className={styles.imgChangeButton}
-          >
-            &lt;
-          </button>
+          />
         ) }
       </div>
       <div
@@ -58,12 +59,11 @@ export const Lightbox = ({
           className={styles.nextButtonContainer}
       >
         { !isLast && (
-          <button
+          <IconButton
+              iconDefinition={RightArrowIconDefinition}
               onClick={() => onImgChange('next')}
               className={styles.imgChangeButton}
-          >
-            &gt;
-          </button>
+          />
         ) }
       </div>
     </div>
