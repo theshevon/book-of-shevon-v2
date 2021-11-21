@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Lightbox } from './lightbox/lightbox';
 import styles from './image_grid.module.css';
+import { Lightbox } from './lightbox/lightbox';
 
 type SelectedImg = {
   imgSrc: string,

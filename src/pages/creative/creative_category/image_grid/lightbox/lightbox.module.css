@@ -1,5 +1,5 @@
 @value imgRadius from '../image_grid.module.css';
-@value monoLightGrey, monoDarkGrey, semiTransparentLightGrey from '../../../../../ui/colors/colors.module.css';
+@value semiTransparentLightGrey from '../../../../../ui/colors/colors.module.css';
 
 .lightboxContainer {
   width: 100%;
@@ -50,7 +50,7 @@
 .closeButton {
   background: none;
   border: none;
-  fill: monoDarkGrey;
+  fill: #acacac;
   transition: 300ms;
 }
 
@@ -64,6 +64,6 @@
 
 .imgChangeButton:hover,
 .closeButton:hover {
-  fill: monoLightGrey;
+  fill: white;
   cursor: pointer;
 }
