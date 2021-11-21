@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Lightbox } from '../lightbox/lightbox';
+import { Lightbox } from './lightbox/lightbox';
 import styles from './image_grid.module.css';
 
 type SelectedImg = {
@@ -7,6 +7,7 @@ type SelectedImg = {
   index: number,
 }
 
+// TODO: close lightbox when non interactive space is clicked
 export const ImageGrid = ({
   images,
 }: {

@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { IconButton } from '../../../../../ui/button/button';
+import { CloseIconDefinition } from '../../../../../ui/icons/definitions/close';
 import styles from './lightbox.module.css';
 
 type LightboxProps = {
@@ -10,6 +11,7 @@ type LightboxProps = {
   onClose: () => void,
 }
 
+// TODO: add key listeners so that arrow keys trigger changes
 export const Lightbox = ({
   imgSrc,
   isFirst,
@@ -26,12 +28,23 @@ export const Lightbox = ({
       <div
           className={styles.closeButtonContainer}
       >
-        <button onClick={onClose} className={styles.closeButton}>&times;</button>
+        <IconButton
+            iconDefinition={CloseIconDefinition}
+            onClick={onClose}
+            className={styles.closeButton}
+        />
       </div>
       <div
           className={styles.prevButtonContainer}
       >
-        { !isFirst && <button onClick={() => onImgChange('prev')}>&lt;</button> }
+        { !isFirst && (
+          <button
+              onClick={() => onImgChange('prev')}
+              className={styles.imgChangeButton}
+          >
+            &lt;
+          </button>
+        ) }
       </div>
       <div
           className={styles.imgContainer}
@@ -44,7 +57,14 @@ export const Lightbox = ({
       <div
           className={styles.nextButtonContainer}
       >
-        { !isLast && <button onClick={() => onImgChange('next')}>&gt;</button> }
+        { !isLast && (
+          <button
+              onClick={() => onImgChange('next')}
+              className={styles.imgChangeButton}
+          >
+            &gt;
+          </button>
+        ) }
       </div>
     </div>
   </div>

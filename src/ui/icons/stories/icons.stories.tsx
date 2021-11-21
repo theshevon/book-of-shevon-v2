@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-
+import { CloseIconDefinition } from '../definitions/close';
 import { GitHubIconDefition } from '../definitions/github';
 import { LinkedInIconDefition } from '../definitions/linkedin';
 import { MediumIconDefition } from '../definitions/medium';
@@ -26,5 +26,10 @@ storiesOf('UI/Icons', module)
   .add('YouTube', () => (
     <Icon
         {...YouTubeIconDefition}
+    />
+  ))
+  .add('Close', () => (
+    <Icon
+        {...CloseIconDefinition}
     />
   ));
