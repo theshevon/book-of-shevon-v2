@@ -1,11 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Lightbox } from '../lightbox/lightbox';
 import styles from './image_grid.module.css';
+
+type SelectedImg = {
+  imgSrc: string,
+  index: number,
+}
 
 export const ImageGrid = ({
   images,
 }: {
   images: string[],
 }) => {
+
+  const [showLightbox, setShowLightbox] = useState<boolean>(false);
+  const [selectedImg, setSelectedImg] = useState<SelectedImg>({ imgSrc: '', index: -1 });
+
+  const onImgClick = (selectedImg: SelectedImg) => {
+    setSelectedImg(selectedImg);
+    setShowLightbox(true);
+  };
+
+  const onImgChange = (direction: 'prev' | 'next') => {
+    const selectedImgIndex = selectedImg.index;
+    let nextImgIndex = selectedImgIndex;
+    if (direction === 'prev') {
+      if (selectedImgIndex !== 0) {
+        nextImgIndex = selectedImgIndex - 1;
+      }
+    } else {
+      if (selectedImgIndex !== images.length - 1) {
+        nextImgIndex = selectedImgIndex + 1;
+      }
+    }
+    const nextSelectedImg = { imgSrc: images[nextImgIndex], index: nextImgIndex };
+    setSelectedImg(nextSelectedImg);
+  };
+
   return (
     <div
         className={styles.imageGrid}
@@ -13,18 +44,28 @@ export const ImageGrid = ({
       <div
           className={styles.thumbnails}
       >
-        { images.map(imageSrc => (
+        { images.map((imgSrc, index) => (
           <div
-              key={imageSrc}
+              key={imgSrc}
               className={styles.thumbnailContainer}
           >
             <img
-                src={imageSrc}
+                src={imgSrc}
                 className={styles.thumbnail}
+                onClick={() => onImgClick({ imgSrc, index })}
             />
           </div>
         )) }
       </div>
+      { showLightbox && (
+        <Lightbox
+            imgSrc={selectedImg.imgSrc}
+            isFirst={selectedImg.index === 0}
+            isLast={selectedImg.index === images.length - 1}
+            onImgChange={onImgChange}
+            onClose={() => setShowLightbox(false)}
+        />
+      ) }
     </div>
   );
-}
+};

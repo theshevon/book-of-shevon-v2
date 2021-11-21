@@ -1,12 +1,11 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
+import thumbail from '../../../../../ui/storybook/test_images/test_img_0.png';
 import { DisplaySizeObserver } from '../../../../../util/display_size_observer/display_size_observer';
 import type { BlogPostProps } from '../../blog_post/blog_post';
 import { BlogPostsGrid } from '../blog_posts_grid';
 import { BlogPostsGridPreload } from '../preload/blog_posts_grid_preload';
-
-import thumbail from '../../../../../ui/storybook/test_images/test_img_0.png';
 
 const NUM_TEST_POSTS = 7;
 

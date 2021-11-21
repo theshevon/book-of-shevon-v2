@@ -3,19 +3,19 @@ import React from 'react';
 import styles from './lightbox.module.css';
 
 type LightboxProps = {
-  imageSrc: string,
-  onImageChange: (direction: 'prev' | 'next') => void,
-  onClose: () => void,
+  imgSrc: string,
   isFirst: boolean,
   isLast: boolean,
+  onImgChange: (direction: 'prev' | 'next') => void,
+  onClose: () => void,
 }
 
 export const Lightbox = ({
-  imageSrc,
-  onImageChange,
-  onClose,
+  imgSrc,
   isFirst,
   isLast,
+  onImgChange,
+  onClose,
 }: LightboxProps) => (
   <div
       className={styles.lightboxContainer}
@@ -31,20 +31,20 @@ export const Lightbox = ({
       <div
           className={styles.prevButtonContainer}
       >
-        {!isFirst && <button onClick={() => onImageChange('prev')}>&lt;</button>}
+        { !isFirst && <button onClick={() => onImgChange('prev')}>&lt;</button> }
       </div>
       <div
-          className={styles.imageContainer}
+          className={styles.imgContainer}
       >
         <img
-            src={imageSrc}
-            className={styles.image}
+            src={imgSrc}
+            className={styles.img}
         />
       </div>
       <div
           className={styles.nextButtonContainer}
       >
-        {!isLast && <button onClick={() => onImageChange('next')}>&gt;</button>}
+        { !isLast && <button onClick={() => onImgChange('next')}>&gt;</button> }
       </div>
     </div>
   </div>
