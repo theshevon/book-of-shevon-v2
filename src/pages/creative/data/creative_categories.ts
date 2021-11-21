@@ -17,7 +17,7 @@ export const CreativeCategories: CreativeCategoryProps[] = [
           {
             name: Messages.eternalSunshine(),
             // TODO: Add this to messages file
-            desc: 'A visual sequence I created as my submission for Project 2 of Making Movies 1.Special thanks to Lideschi for helping bring life to these models',
+            desc: 'A visual sequence I created as my submission for Project 2 of Making Movies 1. Special thanks to Lideschi for helping bring life to these models',
             images: importAll(require.context('./assets/art/models/visual_seq', false, /\.(png|jpe?g|svg)$/)),
           },
           {

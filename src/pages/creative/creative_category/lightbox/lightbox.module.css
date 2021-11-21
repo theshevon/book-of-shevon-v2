@@ -1,0 +1,44 @@
+.lightboxContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: rgba(43, 43, 43, 0.8);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.lightbox {
+  height: 100%;
+  display: flex;
+}
+
+.imageContainer {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  max-height: 90%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.prevButtonContainer,
+.nextButtonContainer {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButtonContainer {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

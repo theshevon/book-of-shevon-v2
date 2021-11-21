@@ -11,7 +11,7 @@ const subSection = {
   name: 'Test sub-section',
   desc: 'Some description',
   images: images,
-}
+};
 
 const subSections = Array.from({ length: 3 }, () => subSection);
 
@@ -19,13 +19,13 @@ const sectionWithImages = {
   name: 'Test section with images',
   desc: 'Some description',
   images: images,
-}
+};
 
 const sectionWithSubSections = {
   name: 'Test section with sub-sections',
   desc: 'Some description',
   subSections: subSections,
-}
+};
 
 storiesOf('Pages/Creative/CreativeCategory', module)
   .add('SubSection', () => (
@@ -49,4 +49,4 @@ storiesOf('Pages/Creative/CreativeCategory', module)
         sections={[sectionWithImages, sectionWithSubSections]}
     />
   ));
-  
+

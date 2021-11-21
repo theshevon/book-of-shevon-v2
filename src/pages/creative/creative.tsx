@@ -6,9 +6,9 @@ import { CreativeMessages as Messages } from './creative.messages';
 
 import styles from './creative.module.css';
 
-import { CreativeHeader } from './creative_header/creative_header';
 import { CreativeCategory } from './creative_category/creative_category';
-import { CreativeCategories } from './data/creative_categories'; 
+import { CreativeHeader } from './creative_header/creative_header';
+import { CreativeCategories } from './data/creative_categories';
 
 export const Creative = () => {
 
