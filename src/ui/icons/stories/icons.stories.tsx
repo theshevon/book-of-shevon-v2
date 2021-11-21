@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { CloseIconDefinition } from '../definitions/close';
 import { GitHubIconDefition } from '../definitions/github';
+import { LeftArrowIconDefinition } from '../definitions/left_arrow';
 import { LinkedInIconDefition } from '../definitions/linkedin';
 import { MediumIconDefition } from '../definitions/medium';
 import { YouTubeIconDefition } from '../definitions/youtube';
@@ -31,5 +32,10 @@ storiesOf('UI/Icons', module)
   .add('Close', () => (
     <Icon
         {...CloseIconDefinition}
+    />
+  ))
+  .add('Left Arrow', () => (
+    <Icon
+        {...LeftArrowIconDefinition}
     />
   ));

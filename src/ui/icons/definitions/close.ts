@@ -1,4 +1,5 @@
 import { IconDefinition } from '../icon/icon';
+
 export const CloseIconDefinition: IconDefinition = {
   width: 512,
   height: 512,
