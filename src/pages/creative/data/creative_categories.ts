@@ -15,14 +15,13 @@ export const CreativeCategories: CreativeCategoryProps[] = [
         name: Messages.models(),
         subSections: [
           {
-            name: Messages.eternalSunshine(),
-            // TODO: Add this to messages file
-            desc: 'A visual sequence I created as my submission for Project 2 of Making Movies 1. Special thanks to Lideschi for helping bring life to these models',
+            name: Messages.eternalSunshineTitle(),
+            desc: Messages.eternalSunshineDesc(),
             images: importAll(require.context('./assets/art/models/visual_seq', false, /\.(png|jpe?g|svg)$/)),
           },
           {
-            name: Messages.invertedRipples(),
-            desc: 'A model I built as my submission for the \'Pattern vs Surface\' of Foundations of Design: Representation',
+            name: Messages.invertedRipplesTitle(),
+            desc: Messages.invertedRipplesDesc(),
             images: importAll(require.context('./assets/art/models/terrain', false, /\.(png|jpe?g|svg)$/)),
           },
         ],
@@ -33,9 +32,8 @@ export const CreativeCategories: CreativeCategoryProps[] = [
     name: Messages.photography(),
     sections: [
       {
-        name: Messages.southKorea(),
-        // TODO: Add this to messages file
-        desc: 'I\'d like to thank my friends Adam and Michael for convincing me to go on this unforgettable trip',
+        name: Messages.southKoreaTitle(),
+        desc: Messages.southKoreaDesc(),
         images: importAll(require.context('./assets/photography/south_korea', false, /\.(png|jpe?g|svg)$/)),
       },
       {

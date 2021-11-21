@@ -6,9 +6,13 @@ export const CreativeCategoriesMessages = {
 
   models: (): string => 'Models',
 
-  eternalSunshine: (): string => 'Eternal Sunshine',
+  eternalSunshineTitle: (): string => 'Eternal Sunshine',
 
-  invertedRipples: (): string => 'Inverted Ripples',
+  eternalSunshineDesc: (): string => 'A visual sequence I created as my submission for Project 2 of Making Movies 1. Special thanks to Lideschi for helping bring life to these models',
+
+  invertedRipplesTitle: (): string => 'Inverted Ripples',
+
+  invertedRipplesDesc: (): string => 'A model I built as my submission for the \'Pattern vs Surface\' of Foundations of Design: Representation',
 
   digital: (): string => 'Digital',
 
@@ -16,5 +20,7 @@ export const CreativeCategoriesMessages = {
 
   misc: (): string => 'Miscellaneous',
 
-  southKorea: (): string => 'South Korea',
+  southKoreaTitle: (): string => 'South Korea',
+
+  southKoreaDesc: (): string => 'Kudos to Adam and Michael for convincing me to go on this unforgettable trip',
 };
