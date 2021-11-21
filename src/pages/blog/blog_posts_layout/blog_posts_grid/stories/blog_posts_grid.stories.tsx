@@ -6,7 +6,7 @@ import type { BlogPostProps } from '../../blog_post/blog_post';
 import { BlogPostsGrid } from '../blog_posts_grid';
 import { BlogPostsGridPreload } from '../preload/blog_posts_grid_preload';
 
-import thumbail from './test_cover.png';
+import thumbail from '../../../../../ui/storybook/test_images/test_img_0.png';
 
 const NUM_TEST_POSTS = 7;
 

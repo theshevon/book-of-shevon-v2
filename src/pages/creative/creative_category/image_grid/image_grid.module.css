@@ -1,0 +1,32 @@
+.thumbnails {
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumbnails::after{
+  content: '';
+  flex-grow: 999999999;
+}
+
+.thumbnailContainer {
+  overflow: hidden;
+  border-radius: 4px;
+  height: 200px;
+  box-sizing: border-box;
+  margin: 2px;
+}
+
+.thumbnail {
+  flex-grow: 1;
+  object-fit: cover;
+  height: inherit;
+  border-radius: inherit;
+  vertical-align: bottom;
+  transition: transform .5s ease;
+}
+
+.thumbnail:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
