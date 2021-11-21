@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DisplaySizeObserver } from '../../../../util/display_size_observer/display_size_observer';
 import styles from './image_grid.module.css';
 import { Lightbox } from './lightbox/lightbox';
@@ -20,6 +20,19 @@ export const ImageGrid = ({
   const onImgClick = (selectedImg: SelectedImg) => {
     setSelectedImg(selectedImg);
     setShowLightbox(true);
+
+    // lock scrolling
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    window.onscroll = () => {
+      window.scrollTo({ top: scrollTop });
+    };
+  };
+
+  const onLightboxClose = () => {
+    setShowLightbox(false);
+
+    // unlock scrolling
+    window.onscroll = () => {};
   };
 
   const onImgChange = (direction: 'prev' | 'next') => {
@@ -64,7 +77,7 @@ export const ImageGrid = ({
             isFirst={selectedImg.index === 0}
             isLast={selectedImg.index === images.length - 1}
             onImgChange={onImgChange}
-            onClose={() => setShowLightbox(false)}
+            onClose={onLightboxClose}
             displaySize={DisplaySizeObserver.size}
         />
       ) }

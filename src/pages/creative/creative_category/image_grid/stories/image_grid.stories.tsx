@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react';
-import React, { useState } from 'react';
+import React from 'react';
 
 import testImg1 from '../../../../../ui/storybook/test_images/test_img_1.png';
 import testImg2 from '../../../../../ui/storybook/test_images/test_img_2.png';

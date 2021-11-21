@@ -92,7 +92,7 @@ export const Lightbox = observer(({
               className={styles.closeButton}
           />
         </div>
-        {isMediumOrWider(displaySize)  && <PrevButtonContainer/>}
+        { isMediumOrWider(displaySize)  && <PrevButtonContainer/> }
         <div
             className={styles.imgContainer}
         >
@@ -101,15 +101,15 @@ export const Lightbox = observer(({
               className={styles.img}
           />
         </div>
-        {isMediumOrWider(displaySize) && <NextButtonContainer/>}
-        {isSmallOrNarrower(displaySize) && (
+        { isMediumOrWider(displaySize) && <NextButtonContainer/> }
+        { isSmallOrNarrower(displaySize) && (
           <div
               className={styles.mobileControlsContainer}
           >
             <PrevButtonContainer/>
             <NextButtonContainer/>
           </div>
-        )}
+        ) }
       </div>
     </div>
   );
