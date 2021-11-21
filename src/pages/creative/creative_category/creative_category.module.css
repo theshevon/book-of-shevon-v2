@@ -1,3 +1,11 @@
+@value monoMidGrey, monoDarkGrey from '../../../ui/colors/colors.module.css';
+
+.creativeCategory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .sections,
 .subSections {
   display: flex;
@@ -23,40 +31,28 @@
 }
 
 .categoryName {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  display: inline;
+  position: relative;
 }
 
-.sectionName {
+.categoryName:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 1px;
+  background: monoMidGrey;
+}
+
+.sectionName,
+.subSectionName {
   margin-bottom: 0.3rem;
 }
 
-.subSectionName {
-  margin-bottom: 0.2rem;
-}
-
-.thumbnails {
-  padding: 15px 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.thumbnails::after{
-  content: '';
-  flex-grow: 999999999;
-}
-
-.thumbnail {
-  flex-grow: 1;
-  margin: 2px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.thumbnail img {
-  height: 200px;
-  object-fit: cover;
-  max-width: 100%;
-  min-width: 100%;
-  vertical-align: bottom;
+.sectionDesc,
+.subSectionDesc {
+  color: monoDarkGrey;
 }
