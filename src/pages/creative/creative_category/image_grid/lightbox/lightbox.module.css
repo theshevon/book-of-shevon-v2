@@ -1,5 +1,5 @@
 @value imgRadius from '../image_grid.module.css';
-@value monoLightGrey, semiTransparentDarkGrey from '../../../../../ui/colors/colors.module.css';
+@value monoLightGrey, monoDarkGrey, semiTransparentLightGrey from '../../../../../ui/colors/colors.module.css';
 
 .lightboxContainer {
   width: 100%;
@@ -8,7 +8,7 @@
   z-index: 1000;
   top: 0;
   left: 0;
-  background-color: semiTransparentDarkGrey;
+  background-color: semiTransparentLightGrey;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
@@ -42,20 +42,28 @@
 
 .closeButtonContainer {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 15px;
+  top: 15px;
 }
 
 .imgChangeButton,
 .closeButton {
   background: none;
   border: none;
-  color: monoLightGrey;
-  font-size: 2rem;
+  fill: monoDarkGrey;
+  transition: 300ms;
+}
+
+.imgChangeButton {
+  transform: scale(2);
+}
+
+.closeButton {
+  transform: scale(1.25);
 }
 
 .imgChangeButton:hover,
 .closeButton:hover {
-  color: white;
+  fill: monoLightGrey;
   cursor: pointer;
 }
