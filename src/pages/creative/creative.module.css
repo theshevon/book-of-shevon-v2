@@ -1,3 +1,9 @@
-.content {
-  padding: 0 5%;
+@value breakpointSmall from '../../ui/metrics/breakpoints.module.css';
+
+@media(min-width: breakpointSmall) {
+
+  .content {
+      padding: 0 5%;
+  }
+  
 }

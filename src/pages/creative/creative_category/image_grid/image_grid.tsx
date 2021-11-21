@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { DisplaySizeObserver } from '../../../../util/display_size_observer/display_size_observer';
 import styles from './image_grid.module.css';
 import { Lightbox } from './lightbox/lightbox';
 
@@ -64,6 +65,7 @@ export const ImageGrid = ({
             isLast={selectedImg.index === images.length - 1}
             onImgChange={onImgChange}
             onClose={() => setShowLightbox(false)}
+            displaySize={DisplaySizeObserver.size}
         />
       ) }
     </div>

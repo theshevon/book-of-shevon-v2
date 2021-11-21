@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import testImg1 from '../../../../../../ui/storybook/test_images/test_img_1.png';
 import testImg2 from '../../../../../../ui/storybook/test_images/test_img_2.png';
 import testImg3 from '../../../../../../ui/storybook/test_images/test_img_3.png';
+import { DisplaySizeObserver } from '../../../../../../util/display_size_observer/display_size_observer';
 import { Lightbox as LightboxImpl } from '../lightbox';
 
 const images = [testImg1, testImg2, testImg3];
@@ -35,6 +36,7 @@ const Lightbox = () => {
         isLast={selectedImg.index === images.length - 1}
         onImgChange={onImgChange}
         onClose={action('Close lightbox')}
+        displaySize={DisplaySizeObserver.size}
     />
   );
 };
