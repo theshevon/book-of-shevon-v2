@@ -7,7 +7,6 @@ type SelectedImg = {
   index: number,
 }
 
-// TODO: close lightbox when non interactive space is clicked
 export const ImageGrid = ({
   images,
 }: {

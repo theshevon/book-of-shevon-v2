@@ -37,6 +37,8 @@ export const Lightbox = memo(({
     }
   }, [onClose, onImgChange]);
 
+
+
   useEffect(() => {
     window.addEventListener('keydown', onKeyDownHandler);
     return () => {

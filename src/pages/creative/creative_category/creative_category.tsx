@@ -3,6 +3,7 @@ import React from 'react';
 import { Text } from '../../../ui/text/text';
 
 import styles from './creative_category.module.css';
+import { ImageGrid } from './image_grid/image_grid';
 
 export type CreativeCategoryProps = {
   name: string,
@@ -70,7 +71,7 @@ export const Section = ({
     );
   } else if (images) {
     SectionContent = () => (
-      <SectionImages
+      <ImageGrid
           images={images}
       />
     );
@@ -129,26 +130,8 @@ export const SubSection = ({
         { desc }
       </Text.Small>
     ) }
-    <SectionImages
+    <ImageGrid
         images={images}
     />
-  </div>
-);
-
-const SectionImages = ({
-  images,
-} : {
-  images: string[]
-}) => (
-  <div
-      className={styles.thumbnails}
-  >
-    { images.map(image => (
-      <img
-          key={image}
-          src={image}
-          className={styles.thumbnail}
-      />
-    )) }
   </div>
 );
