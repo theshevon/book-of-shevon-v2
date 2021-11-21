@@ -1,0 +1,96 @@
+@value breakpointSmall from '../../../../../ui/metrics/breakpoints.module.css';
+@value imgRadius from '../image_grid.module.css';
+@value semiTransparentLightGrey from '../../../../../ui/colors/colors.module.css';
+
+.lightboxContainer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: semiTransparentLightGrey;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.lightbox {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.imgContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 100%;
+  max-height: 90%;
+  border-radius: imgRadius;
+  object-fit: contain;
+}
+
+.prevButtonContainer,
+.nextButtonContainer {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButtonContainer {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.imgChangeButton,
+.closeButton {
+  background: none;
+  border: none;
+  fill: #acacac;
+  transition: 300ms;
+}
+
+.imgChangeButton {
+  transform: scale(2);
+}
+
+.closeButton {
+  transform: scale(1.25);
+}
+
+.imgChangeButton:hover,
+.closeButton:hover {
+  fill: white;
+  cursor: pointer;
+}
+
+.mobileControlsContainer {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+@media(min-width: breakpointSmall) {
+
+  .lightbox {
+    flex-direction: row;
+  }
+
+  .imgContainer {
+    width: 80%;
+    height: 100%;
+  }
+  
+}

@@ -9,6 +9,7 @@ import {
 import { AppMessages as Messages } from './app.messages';
 import { About } from './pages/about/about';
 import { Blog } from './pages/blog/blog';
+import { Creative } from './pages/creative/creative';
 import { Error } from './pages/error/error';
 import { Home } from './pages/home/home';
 import { Projects } from './pages/projects/projects';
@@ -46,6 +47,7 @@ export const App = () => {
   const AboutPage = () => <PageContainer Content={About}/>;
   const ProjectsPage = () => <PageContainer Content={Projects}/>;
   const BlogPage = () => <PageContainer Content={Blog}/>;
+  const CreativePage = () => <PageContainer Content={Creative}/>;
 
   return (
     <Router>
@@ -69,6 +71,11 @@ export const App = () => {
             exact
             path={Routes.BLOG}
             component={BlogPage}
+        />
+        <Route
+            exact
+            path={Routes.CREATIVE}
+            component={CreativePage}
         />
         <Route
             exact

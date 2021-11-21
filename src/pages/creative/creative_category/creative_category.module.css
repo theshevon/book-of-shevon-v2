@@ -1,0 +1,58 @@
+@value monoMidGrey, monoDarkGrey from '../../../ui/colors/colors.module.css';
+
+.creativeCategory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sections,
+.subSections {
+  display: flex;
+  flex-direction: column;
+}
+
+.sections {
+  padding: 10px 0;
+  row-gap: 10px;
+}
+
+.subSections {
+  padding: 7.5px 0;
+  row-gap: 7.5px;
+}
+
+.categoryName,
+.sectionName,
+.sectionDesc,
+.subSectionName,
+.subSectionDesc {
+  margin-top: 0;
+}
+
+.categoryName {
+  margin-bottom: 0.75rem;
+  display: inline;
+  position: relative;
+}
+
+.categoryName:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 1px;
+  background: monoMidGrey;
+}
+
+.sectionName,
+.subSectionName {
+  margin-bottom: 0.3rem;
+}
+
+.sectionDesc,
+.subSectionDesc {
+  color: monoDarkGrey;
+}

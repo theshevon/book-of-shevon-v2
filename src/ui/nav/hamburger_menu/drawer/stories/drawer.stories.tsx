@@ -7,17 +7,17 @@ import { Drawer } from '../drawer';
 const routesData = [
   {
     label: 'Route 1',
-    pathname: '#',
+    path: '#',
     index: -1,
   },
   {
     label: 'Route 2 (Active)',
-    pathname: '##',
+    path: '##',
     index: 0,
   },
   {
     label: 'Route 3',
-    pathname: '#',
+    path: '#',
     index: 1,
   },
 ];

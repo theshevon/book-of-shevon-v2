@@ -1,0 +1,50 @@
+@value breakpointSmall from '../../../../ui/metrics/breakpoints.module.css';
+@value imgRadius: 4px;
+
+.thumbnails {
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.thumbnails::after{
+  content: '';
+  flex-grow: 999999999;
+}
+
+.thumbnailContainer {
+  overflow: hidden;
+  border-radius: imgRadius;
+  height: 200px;
+  box-sizing: border-box;
+  margin: 2px;
+  width: 100%;
+}
+
+.thumbnail {
+  width: inherit;
+  flex-grow: 1;
+  object-fit: cover;
+  height: inherit;
+  border-radius: inherit;
+  vertical-align: bottom;
+  transition: transform .5s ease;
+}
+
+.thumbnail:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media(min-width: breakpointSmall) {
+
+  .thumbnails {
+    justify-content: unset;
+  }
+
+  .thumbnailContainer {
+    width: unset;
+  }
+  
+}

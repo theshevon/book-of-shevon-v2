@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
+import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
-import { useDocumentHeader } from './../../util/hooks';
 
-import { Projects as TechProjects } from './info/projects';
+import { Projects as TechProjects } from './data/projects';
 import { Project } from './project/project';
 
 import { ProjectsMessages as Messages } from './projects.messages';
@@ -12,7 +12,9 @@ import styles from './projects.module.css';
 
 export const Projects = () => {
 
-  useDocumentHeader(Messages.pageTitle());
+  useEffect(() => {
+    updateDocumentHeader(Messages.pageTitle());
+  }, []);
 
   return (
     <div

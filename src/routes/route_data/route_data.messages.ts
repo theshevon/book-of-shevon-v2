@@ -11,4 +11,7 @@ export const RouteDataMessages = {
 
   // label for link to blog page
   blog: (): string => 'Blog',
+
+  // label for link to creative page
+  creative: (): string => 'Creative',
 };

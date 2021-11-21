@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
+import { updateDocumentHeader } from '../../util/title_manager';
 import { IconLink } from './../../ui/link/link';
 import { Text } from './../../ui/text/text';
-import { useDocumentHeader } from './../../util/hooks';
 
 import { HomeMessages as Messages } from './home.messages';
 
@@ -11,7 +11,9 @@ import { Links } from './links';
 
 export const Home = () => {
 
-  useDocumentHeader(Messages.pageTitle());
+  useEffect(() => {
+    updateDocumentHeader(Messages.pageTitle());
+  }, []);
 
   return (
     <div

@@ -1,0 +1,31 @@
+@value monoMidGrey from '../../../ui/colors/colors.module.css';
+@value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
+
+.creativeHeader {
+	height: 120px;
+	position: relative;
+	padding-top: 45px;
+	box-sizing: border-box;
+}
+
+.title {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.subtitle {
+	color: monoMidGrey;
+	margin-bottom: 10px;
+}
+
+@media(min-width: breakpointSmall) {
+
+	.title {
+		margin-top: 10px;
+	}
+
+	.subtitle {
+		margin-bottom: 0;
+	}
+
+}

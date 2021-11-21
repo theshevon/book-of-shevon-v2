@@ -67,11 +67,11 @@ export const IconLink = ({
   ...linkProps
 }: IconLinkProps) => (
   <Link
-      {...linkProps}
+    {...linkProps}
       className={styles.iconLink}
   >
     <Icon
-        {...iconDefinition}
+      {...iconDefinition}
     />
   </Link>
 );
