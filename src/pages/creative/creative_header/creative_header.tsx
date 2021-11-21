@@ -16,12 +16,5 @@ export const CreativeHeader = () => (
     >
       { Messages.title() }
     </Text.LargeTitle>
-    <Text.Small
-        alignment='center'
-        fontWeight='light'
-        className={styles.subtitle}
-    >
-      { Messages.subtitle() }
-    </Text.Small>
   </div>
 );
