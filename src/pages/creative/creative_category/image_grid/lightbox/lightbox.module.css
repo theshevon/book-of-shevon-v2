@@ -2,7 +2,7 @@
 @value imgRadius from '../image_grid.module.css';
 @value semiTransparentLightGrey from '../../../../../ui/colors/colors.module.css';
 
-.lightboxContainer {
+.lightbox {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -12,10 +12,6 @@
   background-color: semiTransparentLightGrey;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-}
-
-.lightbox {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

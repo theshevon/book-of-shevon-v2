@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { IconButton } from '../../../../../ui/button/button';
 import { CloseIconDefinition } from '../../../../../ui/icons/definitions/close';
 import { LeftArrowIconDefinition } from '../../../../../ui/icons/definitions/left_arrow';
@@ -25,6 +25,8 @@ export const Lightbox = observer(({
   displaySize,
 }: LightboxProps) => {
 
+  const ref = useRef(null);
+
   const onKeyDownHandler = useCallback((e: KeyboardEvent) => {
     switch (e.key) {
       case 'ArrowLeft':
@@ -41,12 +43,20 @@ export const Lightbox = observer(({
     }
   }, [onClose, onImgChange]);
 
+  const onClickHandler = useCallback((e: MouseEvent) => {
+    if (e.target === ref.current) {
+      onClose();
+    }
+  }, [onClose]);
+
   useEffect(() => {
     window.addEventListener('keydown', onKeyDownHandler);
+    window.addEventListener('click', onClickHandler);
     return () => {
       window.removeEventListener('keydown', onKeyDownHandler);
+      window.removeEventListener('click', onClickHandler);
     };
-  }, [onKeyDownHandler]);
+  }, [onKeyDownHandler, onClickHandler]);
 
   const PrevButtonContainer = () => (
     <div
@@ -78,39 +88,36 @@ export const Lightbox = observer(({
 
   return (
     <div
-        className={styles.lightboxContainer}
+        className={styles.lightbox}
+        ref={ref}
     >
       <div
-          className={styles.lightbox}
+          className={styles.closeButtonContainer}
       >
-        <div
-            className={styles.closeButtonContainer}
-        >
-          <IconButton
-              iconDefinition={CloseIconDefinition}
-              onClick={onClose}
-              className={styles.closeButton}
-          />
-        </div>
-        { isMediumOrWider(displaySize)  && <PrevButtonContainer/> }
-        <div
-            className={styles.imgContainer}
-        >
-          <img
-              src={imgSrc}
-              className={styles.img}
-          />
-        </div>
-        { isMediumOrWider(displaySize) && <NextButtonContainer/> }
-        { isSmallOrNarrower(displaySize) && (
-          <div
-              className={styles.mobileControlsContainer}
-          >
-            <PrevButtonContainer/>
-            <NextButtonContainer/>
-          </div>
-        ) }
+        <IconButton
+            iconDefinition={CloseIconDefinition}
+            onClick={onClose}
+            className={styles.closeButton}
+        />
       </div>
+      { isMediumOrWider(displaySize)  && <PrevButtonContainer/> }
+      <div
+          className={styles.imgContainer}
+      >
+        <img
+            src={imgSrc}
+            className={styles.img}
+        />
+      </div>
+      { isMediumOrWider(displaySize) && <NextButtonContainer/> }
+      { isSmallOrNarrower(displaySize) && (
+        <div
+            className={styles.mobileControlsContainer}
+        >
+          <PrevButtonContainer/>
+          <NextButtonContainer/>
+        </div>
+      ) }
     </div>
   );
 });
