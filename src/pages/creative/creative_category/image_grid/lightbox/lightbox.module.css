@@ -2,7 +2,7 @@
 @value imgRadius from '../image_grid.module.css';
 @value semiTransparentLightGrey from '../../../../../ui/colors/colors.module.css';
 
-.lightboxContainer {
+.lightbox {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -12,10 +12,6 @@
   background-color: semiTransparentLightGrey;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-}
-
-.lightbox {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +22,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .img {
@@ -89,8 +86,17 @@
   }
 
   .imgContainer {
-    width: 80%;
+    width: 75%;
     height: 100%;
   }
-  
+
+  .prevButtonContainer {
+    padding-right: 25px;
+    justify-content: end;
+  }
+
+  .nextButtonContainer {
+    padding-left: 25px;
+    justify-content: start;
+  }
 }
