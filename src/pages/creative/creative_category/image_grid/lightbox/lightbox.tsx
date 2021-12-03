@@ -4,7 +4,7 @@ import { IconButton } from '../../../../../ui/button/button';
 import { CloseIconDefinition } from '../../../../../ui/icons/definitions/close';
 import { LeftArrowIconDefinition } from '../../../../../ui/icons/definitions/left_arrow';
 import { RightArrowIconDefinition } from '../../../../../ui/icons/definitions/right_arrow';
-import { DisplaySize, isMediumOrWider, isSmallOrNarrower } from '../../../../../util/display_size_observer/display_size_observer';
+import { DisplaySizeObserver, isMediumOrWider, isSmallOrNarrower } from '../../../../../util/display_size_observer/display_size_observer';
 import styles from './lightbox.module.css';
 
 type LightboxProps = {
@@ -13,7 +13,6 @@ type LightboxProps = {
   isLast: boolean,
   onImgChange: (direction: 'prev' | 'next') => void,
   onClose: () => void,
-  displaySize: DisplaySize,
 }
 
 export const Lightbox = observer(({
@@ -22,7 +21,6 @@ export const Lightbox = observer(({
   isLast,
   onImgChange,
   onClose,
-  displaySize,
 }: LightboxProps) => {
 
   const ref = useRef(null);
@@ -85,6 +83,8 @@ export const Lightbox = observer(({
       ) }
     </div>
   );
+
+  const displaySize = DisplaySizeObserver.size;
 
   return (
     <div
