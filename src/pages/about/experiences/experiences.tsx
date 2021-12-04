@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Link } from '../../../ui/link/link';
 import { Text } from './../../../ui/text/text';
 import { ExperiencesMessages as Messages } from './experiences.messages';

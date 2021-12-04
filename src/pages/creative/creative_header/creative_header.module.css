@@ -1,4 +1,4 @@
-@value monoMidGrey from '../../../ui/colors/colors.module.css';
+@value colorGrey300 from '../../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 .creativeHeader {
@@ -14,7 +14,7 @@
 }
 
 .subtitle {
-	color: monoMidGrey;
+	color: colorGrey300;
 	margin-bottom: 10px;
 }
 

@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Icon, IconDefinition } from '../icons/icon/icon';
-
 import styles from './button.module.css';
 
 type ButtonProps = {

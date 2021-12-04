@@ -1,6 +1,5 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-
 import { Capsule } from '../capsule';
 
 storiesOf('UI/Capsule', module)

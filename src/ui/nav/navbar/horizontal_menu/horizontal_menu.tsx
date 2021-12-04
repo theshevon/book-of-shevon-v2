@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import React from 'react';
-
 import type { RouteData } from './../../../../routes/route_data/route_data';
 import styles from './horizontal_menu.module.css';
 

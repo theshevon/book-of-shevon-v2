@@ -1,6 +1,5 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-
 import { Project } from '../project';
 
 storiesOf('Pages/Projects/Project', module)

@@ -1,6 +1,6 @@
 @value breakpointSmall from '../../../../../ui/metrics/breakpoints.module.css';
 @value imgRadius from '../image_grid.module.css';
-@value semiTransparentLightGrey from '../../../../../ui/colors/colors.module.css';
+@value colorGreyTransparentLight from '../../../../../ui/colors/colors.module.css';
 
 .lightbox {
   width: 100%;
@@ -9,7 +9,7 @@
   z-index: 1000;
   top: 0;
   left: 0;
-  background-color: semiTransparentLightGrey;
+  background-color: colorGreyTransparentLight;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   display: flex;

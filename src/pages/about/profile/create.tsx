@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Profile } from './profile';
 import { ProfileMessages as Messages } from './profile.messages';
 import ProfilePic from './profile_pic.jpg';

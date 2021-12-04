@@ -1,10 +1,8 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
-
 import type { RouteData } from './../../../routes/route_data/route_data';
 import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
 import { HorizontalMenu } from './horizontal_menu/horizontal_menu';
-
 import styles from './navbar.module.css';
 
 type NavbarProps = {

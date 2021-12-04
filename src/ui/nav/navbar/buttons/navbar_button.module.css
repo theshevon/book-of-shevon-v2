@@ -1,10 +1,10 @@
-@value monoLightGrey, monoDarkGrey from '../../../colors/colors.module.css';
+@value colorGrey100, colorGrey500 from '../../../colors/colors.module.css';
 
 .navbarButton {
-    border: 1px solid monoLightGrey;
+    border: 1px solid colorGrey100;
     box-sizing: border-box;
     transition: 500ms;
-    color: monoDarkGrey;
+    color: colorGrey500;
     text-transform: uppercase;
     min-width: 115px;
     backdrop-filter: blur(3px);
@@ -13,6 +13,6 @@
 
 .navbarButton:hover {
     color: white;
-    border: 1px solid monoDarkGrey;
-    background-color: monoDarkGrey;
+    border: 1px solid colorGrey500;
+    background-color: colorGrey500;
 }

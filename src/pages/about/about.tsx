@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-
 import { updateDocumentHeader } from '../../util/title_manager';
 import { AboutMessages as Messages } from './about.messages';
 import styles from './about.module.css';
@@ -8,7 +7,6 @@ import { CommercialExperiences, VolunteerExperiences } from './data/experiences/
 import { SkillsLists } from './data/skills/skills';
 import { Education } from './education/education';
 import { Experiences } from './experiences/experiences';
-
 import { createProfile } from './profile/create';
 import { Section } from './section/section';
 import { Skills } from './skills/skills';

@@ -1,6 +1,5 @@
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
-
 import { ToggleMenuButton } from '../toggle_menu_button';
 
 storiesOf('UI/Nav/HamburgerMenu/Buttons', module)

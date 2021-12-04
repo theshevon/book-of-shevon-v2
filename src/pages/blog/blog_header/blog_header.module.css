@@ -1,4 +1,4 @@
-@value monoLightGrey, monoMidGrey from '../../../ui/colors/colors.module.css';
+@value colorGrey100, colorGrey300 from '../../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 .blogHeader {
@@ -14,7 +14,7 @@
 }
 
 .subtitle {
-	color: monoMidGrey;
+	color: colorGrey300;
 	margin-bottom: 10px;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .wave svg path {
-   stroke: monoLightGrey;
+   stroke: colorGrey100;
    stroke-width: 1px;
 }
 

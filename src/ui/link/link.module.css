@@ -1,4 +1,4 @@
-@value monoLightGrey, monoMidGrey from './../colors/colors.module.css';
+@value colorGrey100, colorGrey300 from './../colors/colors.module.css';
 @value ordTextSizeXSmall from './../text/text.module.css';
 
 .link {
@@ -28,13 +28,13 @@
   padding: 5px 15px;
   font-size: ordTextSizeXSmall;
   text-align: center;
-  background-color: monoLightGrey;
+  background-color: colorGrey100;
   transition: 0.3s;
 }
 
 .capsuleLink:hover {
   color: white;
-  background-color: monoMidGrey;
+  background-color: colorGrey300;
 }
 
 .iconLink svg {

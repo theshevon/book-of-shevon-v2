@@ -1,4 +1,4 @@
-@value monoMidGrey, monoDarkGrey from '../../../ui/colors/colors.module.css';
+@value colorGrey300, colorGrey500 from '../../../ui/colors/colors.module.css';
 
 .creativeCategory {
   display: flex;
@@ -44,7 +44,7 @@
   transform: translateX(-50%);
   width: 30%;
   height: 1px;
-  background: monoMidGrey;
+  background: colorGrey300;
 }
 
 .sectionName,
@@ -54,5 +54,5 @@
 
 .sectionDesc,
 .subSectionDesc {
-  color: monoDarkGrey;
+  color: colorGrey500;
 }

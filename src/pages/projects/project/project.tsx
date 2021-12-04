@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { ButtonLink, CapsuleLink } from './../../../ui/link/link';
 import { Text } from './../../../ui/text/text';
 import { ProjectMessages as Messages } from './project.messages';

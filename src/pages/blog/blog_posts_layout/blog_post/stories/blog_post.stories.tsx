@@ -1,6 +1,5 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-
 import thumbail from '../../../../../ui/storybook/test_images/test_img_0.png';
 import { BlogPost } from '../blog_post';
 import { BlogPostPreload } from '../preload/blog_post_preload';

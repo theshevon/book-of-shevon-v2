@@ -1,4 +1,4 @@
-@value monoDarkGrey, flatGold from '../../../ui/colors/colors.module.css';
+@value colorGrey500, flatGold from '../../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 @value bottomMargin: 7.5px;
@@ -42,7 +42,7 @@
 }
 
 .period {
-    color: monoDarkGrey;
+    color: colorGrey500;
 }
 
 .responsibilities {

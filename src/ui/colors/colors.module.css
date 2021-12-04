@@ -1,6 +1,10 @@
-@value monoLightGrey: #e4e4e4;
-@value monoMidGrey: #7c7c7c;
-@value monoDarkGrey: #282828;
-@value semiTransparentLightGrey: rgba(20, 20, 20, 80%);
-@value semiTransparentDarkGrey: rgba(40, 40, 40, 80%);
-@value flatGold: #D4AF37;
+@value colorGrey100: hsl(0, 0%, 90%);
+@value colorGrey200: hsl(0, 0%, 70%);
+@value colorGrey300: hsl(0, 0%, 50%);
+@value colorGrey400: hsl(0, 0%, 30%);
+@value colorGrey500: hsl(0, 0%, 10%);
+
+@value colorGreyTransparentLight: hsla(0, 0%, 7.5%, 80%);
+@value colorGreyTransparentDark: hsla(0, 0%, 15%, 80%);
+
+@value colorFlatGold: hsl(46, 65%, 52%);

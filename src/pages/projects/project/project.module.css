@@ -1,4 +1,4 @@
-@value monoMidGrey from '../../../ui/colors/colors.module.css';
+@value colorGrey300 from '../../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 @value githubGreen: rgb(83, 197, 98);
@@ -21,7 +21,7 @@
 	content: '';
 	width: 90%;
 	height: 2px;
-	background-color: monoLightGrey;
+	background-color: colorGrey100;
 }
 
 .title {
@@ -29,7 +29,7 @@
 }
 
 .year {
-	color: monoMidGrey;
+	color: colorGrey300;
 	margin-bottom: 25px;
 }
 

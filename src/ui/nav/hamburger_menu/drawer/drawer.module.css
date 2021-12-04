@@ -1,4 +1,4 @@
-@value monoMidGrey from './../../../colors/colors.module.css';
+@value colorGrey300 from './../../../colors/colors.module.css';
 @value navHeight, navBackgroundColor, navBackgroundBlur, navBoxShadow, menuTransitionTime from './../../nav.module.css';
 @value toggleButtonDistanceFromEdge from './../hamburger_menu.module.css';
 @value toggleButtonSideLength from './../buttons/toggle_menu_button/toggle_menu_button.module.css';
@@ -42,7 +42,7 @@
 .link {
   text-transform: uppercase;
   text-align: center;
-  color: monoDarkGrey;
+  color: colorGrey500;
   font-family: 'Arial';
   font-weight: 400;
   font-size: 0.85rem;
@@ -54,5 +54,5 @@
 
 .link.active {
   color: white;
-  background-color: monoMidGrey;
+  background-color: colorGrey300;
 }

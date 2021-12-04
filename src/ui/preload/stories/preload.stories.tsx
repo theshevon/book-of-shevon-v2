@@ -1,6 +1,5 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-
 import styles from '../preload.module.css';
 
 const PreloadStub = () => (

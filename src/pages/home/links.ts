@@ -2,7 +2,6 @@ import { GitHubIconDefition } from '../../ui/icons/definitions/github';
 import { LinkedInIconDefition } from '../../ui/icons/definitions/linkedin';
 import { MediumIconDefition } from '../../ui/icons/definitions/medium';
 import { YouTubeIconDefition } from '../../ui/icons/definitions/youtube';
-
 import { IconLinkProps } from '../../ui/link/link';
 
 export const Links: IconLinkProps[] = [

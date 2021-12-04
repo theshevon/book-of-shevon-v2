@@ -1,6 +1,5 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-
 import { TechCapsule } from '../tech_capsule';
 
 storiesOf('pages/Projects/TechCapsule', module)
