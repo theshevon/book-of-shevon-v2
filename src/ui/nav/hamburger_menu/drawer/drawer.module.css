@@ -3,7 +3,7 @@
 @value toggleButtonDistanceFromEdge from './../hamburger_menu.module.css';
 @value toggleButtonSideLength from './../buttons/toggle_menu_button/toggle_menu_button.module.css';
 
-@value drawerHeight: 300px;
+@value drawerHeight: 375px;
 
 .drawer {
   background-color: navBackgroundColor;
@@ -34,7 +34,7 @@
 }
 
 .linkContainer {
-  width: inherit;
+  width: 90%;
   display: flex;
   justify-content: center;
 }

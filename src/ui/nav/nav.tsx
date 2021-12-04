@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 
-import { DisplaySize, DisplaySizeObserver } from '../../util/display_size_observer/display_size_observer';
+import { DisplaySizeObserver, isSmallOrNarrower } from '../../util/display_size_observer/display_size_observer';
 import type { RouteData } from './../../routes/route_data/route_data';
 
 import { HamburgerMenu } from './hamburger_menu/hamburger_menu';
@@ -14,7 +14,7 @@ type NavProps = {
 
 export const Nav = observer((props: NavProps) => {
 
-  const NavComponent = DisplaySizeObserver.size === DisplaySize.SMALL ? HamburgerMenu : Navbar;
+  const NavComponent = isSmallOrNarrower(DisplaySizeObserver.size) ? HamburgerMenu : Navbar;
 
   return (
     <NavComponent
