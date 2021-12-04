@@ -1,4 +1,4 @@
-@value monoLightGrey from '../../../ui/colors/colors.module.css';
+@value colorGrey100 from '../../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 .blogPostsLayout {
@@ -13,7 +13,7 @@
 
     .separator {
         width: 100%;
-        background-color: monoLightGrey;
+        background-color: colorGrey100;
         height: 1px;
         margin: 20px 0;
         display: block;

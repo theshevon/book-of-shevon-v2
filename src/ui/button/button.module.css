@@ -1,4 +1,4 @@
-@value monoLightGrey from './../colors/colors.module.css';
+@value colorGrey100 from './../colors/colors.module.css';
 
 @value iconButtonSize: 24px;
 
@@ -20,7 +20,7 @@
 
 .button:disabled {
     cursor: not-allowed;
-    border: 1px solid monoLightGrey;
+    border: 1px solid colorGrey100;
 }
 
 .iconButton {
@@ -33,7 +33,7 @@
 
 .iconButton:disabled svg {
     cursor: not-allowed;
-    fill: monoLightGrey;
+    fill: colorGrey100;
 }
 
 .iconButton svg {

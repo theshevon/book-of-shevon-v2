@@ -1,6 +1,6 @@
 @value breakpointSmall from './../../../../ui/metrics/breakpoints.module.css';
 @value ordTextSizeXLarge from './../../../../ui/text/text.module.css';
-@value monoDarkGrey from './../../../../ui/colors/colors.module.css';
+@value colorGrey500 from './../../../../ui/colors/colors.module.css';
 
 @value blogPostHeight: 478px;
 @value titleFontSize: calc(ordTextSizeXLarge * 1.2);
@@ -60,7 +60,7 @@
 
 .date {
     margin-bottom: dateMarginBottom;
-    color: monoDarkGrey;
+    color: colorGrey500;
 }
 
 .jumbotron {

@@ -1,8 +1,8 @@
-@value monoLightGrey from './../colors/colors.module.css';
+@value colorGrey100 from './../colors/colors.module.css';
 
 .capsule {
     border-radius: 15px;
     padding: 5px 15px;
     text-align: center;
-    background-color: monoLightGrey;
+    background-color: colorGrey100;
 }

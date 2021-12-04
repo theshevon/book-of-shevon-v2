@@ -1,4 +1,4 @@
-@value monoMidGrey, monoDarkGrey from './../../../colors/colors.module.css';
+@value colorGrey300, colorGrey500 from './../../../colors/colors.module.css';
 
 @value menuHeight: 35px;
 
@@ -27,13 +27,13 @@
     font-size: 0.85rem;
     text-transform: uppercase;
     text-decoration: none;
-    color: monoMidGrey;
+    color: colorGrey300;
     transition: 0.4s;
 }
 
 .link:hover,
 .link.active {
-    color: monoDarkGrey;
+    color: colorGrey500;
 }
 
 .link.active:after {
@@ -41,7 +41,7 @@
     height: 2px;
     border-radius: 1px;
     width: 50%;
-    background-color: monoMidGrey;
+    background-color: colorGrey300;
     position: absolute;
     left: 50%;
     bottom: -5px;
