@@ -1,11 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
 import { getRandomNumInRange } from './../../util/math';
 import { CARDS_SPRITE } from './cards_sprite';
 import { ErrorMessages as Messages } from './error.messages';
-
 import styles from './error.module.css';
 
 const POSITION_UPDATE_FREQ_PER_S = 60;

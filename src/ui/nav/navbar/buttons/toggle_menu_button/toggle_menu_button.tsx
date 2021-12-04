@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Button } from './../../../../button/button';
 import styles from './../navbar_button.module.css';
 import { MenuButtonMessages as Messages } from './toggle_menu_botton.messages';

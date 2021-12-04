@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { updateDocumentHeader } from '../../util/title_manager';
 import { BlogMessages as Messages } from './blog.messages';
 import styles from './blog.module.css';

@@ -1,7 +1,6 @@
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-
 import { StoryGroup } from '../../storybook/stories';
 import { Text } from '../text';
 

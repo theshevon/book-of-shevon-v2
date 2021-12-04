@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import React from 'react';
-
 import styles from './text.module.css';
 
 type Tag = 'p' | 'h3' | 'h2' | 'h1';

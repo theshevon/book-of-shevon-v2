@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { Text } from '../../../ui/text/text';
-
 import styles from './creative_category.module.css';
 import { ImageGrid } from './image_grid/image_grid';
 

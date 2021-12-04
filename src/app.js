@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Switch,
 } from 'react-router-dom';
-
 import { AppMessages as Messages } from './app.messages';
 import { About } from './pages/about/about';
 import { Blog } from './pages/blog/blog';
@@ -17,7 +16,6 @@ import { RoutesData } from './routes/route_data/route_data';
 import { Routes } from './routes/routes';
 import { Nav as NavImpl } from './ui/nav/nav';
 import { createPageContainer } from './ui/page_container/create';
-
 import './app.css';
 import 'aos/dist/aos.css';
 

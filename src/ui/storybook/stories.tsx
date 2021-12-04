@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styles from './stories.module.css';
 
 export class StoryGroup extends React.Component {

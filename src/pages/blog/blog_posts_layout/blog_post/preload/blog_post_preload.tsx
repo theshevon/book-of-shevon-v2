@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import React from 'react';
-
 import loadedStyles from '../blog_post.module.css';
 import preloadStyles from './blog_post_preload.module.css';
 

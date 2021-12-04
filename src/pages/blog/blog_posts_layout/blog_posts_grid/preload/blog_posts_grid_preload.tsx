@@ -1,10 +1,8 @@
 import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
-
 import { DisplaySize } from '../../../../../util/display_size_observer/display_size_observer';
 import { BlogPostPreload } from '../../blog_post/preload/blog_post_preload';
-
 import loadedStyles from '../blog_posts_grid.module.css';
 import preloadedStyles from './blog_posts_grid_preload.module.css';
 

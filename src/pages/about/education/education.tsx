@@ -1,8 +1,6 @@
 import React from 'react';
-
 import { TimePeriod } from '../experiences/experiences';
 import { Text } from './../../../ui/text/text';
-
 import { EducationMessages as Messages } from './education.messages';
 import styles from './education.module.css';
 

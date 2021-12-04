@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-
 import type { RouteData } from './../../../routes/route_data/route_data';
 import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
 import { Drawer } from './drawer/drawer';
-
 import styles from './hamburger_menu.module.css';
 
 type HamburgerMenuProps = {

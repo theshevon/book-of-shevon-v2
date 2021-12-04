@@ -1,6 +1,5 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-
 import { ButtonLink, CapsuleLink, Link } from '../link';
 
 storiesOf('UI/Link', module)

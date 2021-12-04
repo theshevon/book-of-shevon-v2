@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { Text } from './../../../ui/text/text';
-
 import styles from './profile.module.css';
 
 export type ProfileProps = {

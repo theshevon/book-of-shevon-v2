@@ -1,8 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-
 import { CreativeCategory, Section, SubSection } from '../creative_category';
-
 import testImage from './test_image.png';
 
 const images =  Array.from({ length: 5 }, () => testImage);

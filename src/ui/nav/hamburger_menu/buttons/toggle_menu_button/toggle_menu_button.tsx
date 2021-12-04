@@ -1,6 +1,5 @@
 import classnames from 'classnames';
 import React from 'react';
-
 import styles from './toggle_menu_button.module.css';
 
 type ToggleMenuButtonProps = {

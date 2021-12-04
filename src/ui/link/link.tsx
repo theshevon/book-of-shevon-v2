@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import React from 'react';
 import type { IconDefinition } from '../icons/icon/icon';
 import { Icon } from '../icons/icon/icon';
-
 import styles from './link.module.css';
 
 export type LinkProps = {
