@@ -1,7 +1,8 @@
 import { action, observable } from 'mobx';
 import { getRandomNumInRange } from '../math';
 
-const LOCAL_STORAGE_KEY = '_bos_theme';
+// exported for testing
+export const LOCAL_STORAGE_KEY = '_bos_theme';
 
 export enum THEME {
   DEFAULT = 'default',
@@ -11,7 +12,7 @@ export enum THEME {
 
 const THEMES = Object.values(THEME);
 
-const getTheme = (value: string | null): THEME => {
+const getTheme = (value: string | null | undefined): THEME => {
   switch (value) {
     case 'default':
       return THEME.DEFAULT;
@@ -22,22 +23,25 @@ const getTheme = (value: string | null): THEME => {
     default:
       return THEMES[getRandomNumInRange(0, THEMES.length - 1)];
   }
-}
+};
 
 export class ThemingService {
+
+  private localStorage: Storage | undefined;
 
   @observable.ref
   theme: THEME;
 
-  constructor() {
-    const storedTheme = localStorage.getItem(LOCAL_STORAGE_KEY);
+  constructor(localStorage: Storage | undefined) {
+    this.localStorage = localStorage;
+    const storedTheme = this.localStorage?.getItem(LOCAL_STORAGE_KEY);
     this.theme = getTheme(storedTheme);
   }
 
   @action
   setTheme(theme: THEME) {
     this.theme = theme;
-    localStorage.setItem(LOCAL_STORAGE_KEY, this.theme);
+    this.localStorage?.setItem(LOCAL_STORAGE_KEY, this.theme);
   }
-  
+
 }
