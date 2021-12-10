@@ -8,17 +8,19 @@ import { Button, IconButton } from '../button';
 storiesOf('UI/Button/Button', module)
   .add('Default', () => (
     <Button
-        label={text('label', 'click me')}
         onClick={action('clicked')}
         disabled={boolean('disabled', false)}
-    />
+    >
+      Click Me
+    </Button>
   ))
   .add('Disabled', () => (
     <Button
-        label={'disabled'}
         onClick={action('clicked')}
         disabled={true}
-    />
+    >
+      disabled
+    </Button>
   ));
 
 storiesOf('UI/Button/IconButton', module)

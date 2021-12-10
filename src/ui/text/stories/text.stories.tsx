@@ -18,7 +18,7 @@ storiesOf('UI/Text', module)
       'Semi-Bold': 'semi-bold',
       'Bold': 'bold',
     }, 'normal');
-    const italicised = boolean('Italicised', false);
+    const italicized = boolean('italicized', false);
     const textCase = select('Text Case', {
       'None': 'none',
       'Lowercase': 'lowercase',
@@ -28,7 +28,7 @@ storiesOf('UI/Text', module)
     const props = {
       alignment,
       fontWeight,
-      italicised,
+      italicized,
       textCase,
     };
     return (

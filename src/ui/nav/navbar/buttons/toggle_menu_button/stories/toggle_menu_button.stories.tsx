@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { StoryGroup } from '../../../../../storybook/stories';
 import { ToggleMenuButton } from '../toggle_menu_button';
 
-storiesOf('UI/Nav/Navbar/Buttons', module)
+storiesOf('UI/Nav/Navbar/Buttons/ToggleMenuButton', module)
   .add('ToggleMenuButton', () => {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const toggleMenu = () => setMenuOpen(!menuOpen);

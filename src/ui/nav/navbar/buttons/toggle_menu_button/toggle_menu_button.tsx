@@ -13,8 +13,9 @@ export const ToggleMenuButton = ({
   onClick,
 }: ToggleMenuButtonProps) => (
   <Button
-      label={menuOpen ? Messages.CloseMenuButtonLabel() : Messages.OpenMenuButtonLabel()}
       onClick={onClick}
       className={styles.navbarButton}
-  />
+  >
+    { menuOpen ? Messages.CloseMenuButtonLabel() : Messages.OpenMenuButtonLabel() }
+  </Button>
 );

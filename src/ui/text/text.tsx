@@ -15,7 +15,7 @@ type TextCase = 'none' | 'lowercase' | 'uppercase' | 'capitalize';
 type TextProps = {
   alignment?: Alignment,
   fontWeight?: FontWeight,
-  italicised?: boolean,
+  italicized?: boolean,
   keepDefaultMargins?: boolean,
   textCase?: TextCase,
   className?: string,
@@ -38,7 +38,7 @@ const getSizeClassName = (size: Size | undefined) => {
   }
 };
 
-const getAligmentClassName = (alignment: Alignment) => {
+const getAlignmentClassName = (alignment: Alignment) => {
   switch (alignment) {
     case 'left':
       return styles.left;
@@ -81,17 +81,17 @@ const getClassNames = ({
   size,
   alignment = 'left',
   fontWeight = 'normal',
-  italicised = false,
+  italicized = false,
   keepDefaultMargins = false,
   textCase,
   className,
 }: { size: Size | undefined } & TextProps) => {
   return classNames(
     getSizeClassName(size),
-    getAligmentClassName(alignment),
+    getAlignmentClassName(alignment),
     getFontWeightClassName(fontWeight),
     {
-      [styles.italicised]: italicised,
+      [styles.italicized]: italicized,
       [styles.removeMargins]: !keepDefaultMargins,
     },
     getTextCaseClassName(textCase),
@@ -104,7 +104,7 @@ const renderText = ({
   size,
   alignment,
   fontWeight,
-  italicised,
+  italicized,
   keepDefaultMargins,
   textCase,
   className,
@@ -115,7 +115,7 @@ const renderText = ({
   children?: React.ReactNode,
 } & TextProps) => React.createElement(
   tag,
-  { className: getClassNames({ size, alignment, fontWeight, italicised, keepDefaultMargins, textCase, className }) },
+  { className: getClassNames({ size, alignment, fontWeight, italicized, keepDefaultMargins, textCase, className }) },
   children,
 );
 
