@@ -13,14 +13,6 @@ storiesOf('UI/Button/Button', module)
     >
       Click Me
     </Button>
-  ))
-  .add('Disabled', () => (
-    <Button
-        onClick={action('clicked')}
-        disabled={true}
-    >
-      disabled
-    </Button>
   ));
 
 storiesOf('UI/Button/IconButton', module)
@@ -29,12 +21,5 @@ storiesOf('UI/Button/IconButton', module)
         iconDefinition={CloseIconDefinition}
         onClick={action('clicked')}
         disabled={boolean('disabled', false)}
-    />
-  ))
-  .add('Disabled', () => (
-    <IconButton
-        iconDefinition={CloseIconDefinition}
-        onClick={action('clicked')}
-        disabled={true}
     />
   ));
