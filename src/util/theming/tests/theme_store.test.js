@@ -7,9 +7,7 @@ describe('ThemeStore', () => {
   });
 
   it('Sets the theme to a specific one', () => {
-    ThemeStore.setTheme(THEME.BREAD);
-    expect(ThemeStore.theme).toBe(THEME.BREAD);
-    ThemeStore.setTheme(THEME.EIGHT_BIT);
-    expect(ThemeStore.theme).toBe(THEME.EIGHT_BIT);
+    ThemeStore.setTheme(THEME.BASIC);
+    expect(ThemeStore.theme).toBe(THEME.BASIC);
   });
 });

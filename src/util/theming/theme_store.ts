@@ -1,27 +1,47 @@
 import { action, observable } from 'mobx';
 import { getRandomNumInRange } from '../math';
+import { ThemeStoreMessages as Messages } from './theme_store.messages';
 
 // exported for testing
 export const LOCAL_STORAGE_KEY = '_bos_theme';
 
 export enum THEME {
-  DEFAULT = 'default',
-  EIGHT_BIT = '8bit',
-  BREAD = 'bread',
+  BASIC = 'basic',
+  // TODO: add support for the themes below
+  // EIGHT_BIT = '8bit',
+  // BREAD = 'bread',
 }
 
-const THEMES = Object.values(THEME);
+export const THEMES = [
+  {
+    theme: THEME.BASIC,
+    icon: '🌊',
+    label: Messages.basic(),
+  },
+  // TODO: add support for the themes below
+  // {
+  //   theme: THEME.EIGHT_BIT,
+  //   icon: '👾',
+  //   label: Messages.eightBit(),
+  // },
+  // {
+  //   theme: THEME.BREAD,
+  //   icon: '🍞',
+  //   label: Messages.bread(),
+  // },
+];
 
 const getTheme = (value: string | null | undefined): THEME => {
   switch (value) {
-    case 'default':
-      return THEME.DEFAULT;
-    case '8bit':
-      return THEME.EIGHT_BIT;
-    case 'bread':
-      return THEME.BREAD;
+    case 'basic':
+      return THEME.BASIC;
+    // TODO: add support for the themes below
+    // case '8bit':
+    //   return THEME.EIGHT_BIT;
+    // case 'bread':
+    //   return THEME.BREAD;
     default:
-      return THEMES[getRandomNumInRange(0, THEMES.length - 1)];
+      return THEMES[getRandomNumInRange(0, THEMES.length - 1)].theme;
   }
 };
 

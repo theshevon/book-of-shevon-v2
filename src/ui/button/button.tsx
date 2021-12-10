@@ -1,31 +1,30 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { FC } from 'react';
 import { Icon, IconDefinition } from '../icons/icon/icon';
 import styles from './button.module.css';
 
 type ButtonProps = {
-  label: string,
   onClick: () => void,
   disabled?: boolean,
   className?: string,
 }
 
-export const Button = ({
-  label,
+export const Button: FC<ButtonProps> = ({
   onClick,
   disabled=false,
   className='',
-}: ButtonProps) => (
+  children,
+}) => (
   <button
       className={classNames(styles.button, className)}
       onClick={onClick}
       disabled={disabled}
   >
-    { label }
+    { children }
   </button>
 );
 
-type IconButtonProps = Omit<ButtonProps, 'label'> & {
+type IconButtonProps = ButtonProps & {
   iconDefinition: IconDefinition,
 }
 
