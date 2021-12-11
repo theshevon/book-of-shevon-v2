@@ -6,15 +6,13 @@
     text-align: center;
     font-size: ordTextSizeXSmall;
     background-color: colorGrey100;
-}
-
-.capsule.basic {
     padding: 5px 15px;
     border-radius: 15px;
 }
 
 .capsule.eightBit {
     padding: 5px 10px;
+    border-radius: unset;
     font-family: "Press Start 2P", cursive;
     position: relative;
 }

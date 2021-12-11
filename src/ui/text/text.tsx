@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { FC, ReactNode, createElement } from 'react';
-import { THEME } from '../../util/theming/theme_provider';
+import { THEME, useTheme } from '../../util/theming/theme_provider';
 import styles from './text.module.css';
 
 type Tag = 'p' | 'h3' | 'h2' | 'h1';
@@ -19,7 +19,6 @@ type TextProps = {
   italicized?: boolean,
   keepDefaultMargins?: boolean,
   textCase?: TextCase,
-  theme?: THEME,
   className?: string,
 }
 
@@ -88,7 +87,10 @@ const getClassNames = ({
   textCase,
   theme,
   className,
-}: { size: Size | undefined } & TextProps) => {
+}: {
+  size: Size | undefined,
+  theme: THEME,
+} & TextProps) => {
   return classNames(
     getSizeClassName(size),
     getAlignmentClassName(alignment),
@@ -114,12 +116,13 @@ const renderText = ({
   italicized,
   keepDefaultMargins,
   textCase,
-  theme=THEME.BASIC,
+  theme,
   className,
   children,
 }: {
   tag: Tag,
   size?: Size,
+  theme: THEME,
   children?: ReactNode,
 } & TextProps) => createElement(
   tag,
@@ -128,16 +131,16 @@ const renderText = ({
 );
 
 // Ordinary text (ie. body text)
-const ExtraSmall: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xs', ...props });
-const Small: FC<TextProps> = (props) => renderText({ tag: 'p', size: 's', ...props });
-const Medium: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'm', ...props });
-const Large: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'l', ...props });
-const ExtraLarge: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xl', ...props });
+const ExtraSmall: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xs', theme: useTheme(), ...props });
+const Small: FC<TextProps> = (props) => renderText({ tag: 'p', size: 's', theme: useTheme(), ...props });
+const Medium: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'm', theme: useTheme(), ...props });
+const Large: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'l', theme: useTheme(), ...props });
+const ExtraLarge: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xl', theme: useTheme(), ...props });
 
 // Title text
-const SmallTitle: FC<TextProps> = (props) => renderText({ tag: 'h3', size: 's', ...props });
-const MediumTitle: FC<TextProps> = (props) => renderText({ tag: 'h2', size: 'm', ...props });
-const LargeTitle: FC<TextProps> = (props) => renderText({ tag: 'h1', size: 'l', ...props });
+const SmallTitle: FC<TextProps> = (props) => renderText({ tag: 'h3', size: 's', theme: useTheme(), ...props });
+const MediumTitle: FC<TextProps> = (props) => renderText({ tag: 'h2', size: 'm', theme: useTheme(), ...props });
+const LargeTitle: FC<TextProps> = (props) => renderText({ tag: 'h1', size: 'l', theme: useTheme(), ...props });
 
 export const Text = {
   ExtraSmall,

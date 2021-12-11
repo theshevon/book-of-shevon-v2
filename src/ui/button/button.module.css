@@ -12,17 +12,14 @@
     padding: 0.4rem 0.8rem;
     text-align: center;
     color: colorGrey500;
-    border-color: colorGrey500;
-}
-
-.button.basic {
+    border: 1px solid colorGrey500;
     border-radius: 5px;
-    border-width: 1px;
-    border-style: solid;
 }
 
 .button.eightBit {
     font-family: "Press Start 2P", cursive;
+    border: unset;
+    border-radius: unset;
     position: relative;
     box-shadow: inset -2px -2px 0px 0px colorGrey200;
 }

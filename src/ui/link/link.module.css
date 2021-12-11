@@ -14,7 +14,8 @@
   text-decoration: underline;
 }
 
-.buttonLink:hover, .capsuleLink:hover {
+.buttonLink:hover, 
+.capsuleLink:hover {
   text-decoration: none;
 }
 
@@ -22,15 +23,15 @@
   background: unset;
   box-sizing: border-box;
   padding: 0.4rem 0.8rem;
-}
-
-.buttonLink.basic {
   border-radius: 5px;
   border: 1px solid colorGrey500;
   transition: 0.3s;
 }
 
 .buttonLink.eightBit {
+  border-radius: unset;
+  border: unset;
+  transition: unset;
   position: relative;
   box-shadow: inset -2px -2px 0px 0px colorGrey200;
 }
@@ -67,6 +68,9 @@
   font-size: ordTextSizeXSmall;
   text-align: center;
   background-color: colorGrey100;
+  padding: 5px 15px;
+  border-radius: 15px;
+  transition: 0.3s;
 }
 
 .capsuleLink.basic {
@@ -76,6 +80,8 @@
 }
 
 .capsuleLink.eightBit {
+  border-radius: unset;
+  transition: unset;
   padding: 5px 10px;
   position: relative;
 }
