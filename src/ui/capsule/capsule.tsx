@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import type { FC } from 'react';
 import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { Text } from './../text/text';
 import styles from './capsule.module.css';
@@ -8,7 +9,7 @@ type CapsuleProps = {
   className?: string,
 }
 
-export const Capsule: React.FC<CapsuleProps> = ({
+export const Capsule: FC<CapsuleProps> = ({
   className,
   children,
 }) => {

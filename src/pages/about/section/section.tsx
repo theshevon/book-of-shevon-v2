@@ -1,4 +1,5 @@
 import React from 'react';
+import type { FC } from 'react';
 import { Text } from './../../../ui/text/text';
 import { SectionMessages as Messages } from './section.messages';
 import styles from './section.module.css';
@@ -10,7 +11,7 @@ type SectionProps = {
 	aosAnimation?: string,
 }
 
-export const Section: React.FC<SectionProps> = ({
+export const Section: FC<SectionProps> = ({
   title,
   aosAnimation = 'fade-up',
   children,

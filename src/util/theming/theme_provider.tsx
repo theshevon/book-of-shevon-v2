@@ -1,4 +1,5 @@
-import React, { FC, createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
+import type { FC } from 'react';
 import { getRandomNumInRange } from '../math';
 import { ThemeProviderMessages as Messages } from './theme_provider.messages';
 

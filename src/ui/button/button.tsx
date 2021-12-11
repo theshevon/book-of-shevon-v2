@@ -1,5 +1,6 @@
 import classNames from 'classnames';
-import React, { FC } from 'react';
+import React from 'react';
+import type { FC } from 'react';
 import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { Icon, IconDefinition } from '../icons/icon/icon';
 import styles from './button.module.css';
