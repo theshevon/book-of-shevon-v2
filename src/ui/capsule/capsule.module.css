@@ -1,8 +1,37 @@
-@value colorGrey100 from './../colors/colors.module.css';
+@value colorGrey100, colorGrey500 from './../colors/colors.module.css';
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .capsule {
-    border-radius: 15px;
-    padding: 5px 15px;
     text-align: center;
     background-color: colorGrey100;
+}
+
+.capsule.basic {
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+.capsule.eightBit {
+    padding: 5px 10px;
+    font-family: "Press Start 2P", cursive;
+    position: relative;
+}
+
+.capsule.eightBit:before,
+.capsule.eightBit:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: inherit;
+}
+
+.capsule.eightBit:before {
+    left: -5px;
+}
+
+.capsule.eightBit:after {
+    right: -5px;
 }

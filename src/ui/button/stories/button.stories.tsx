@@ -1,8 +1,8 @@
 import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { THEME } from '../../../util/theming/theme_provider';
+import { THEMES } from '../../../util/theming/theme_provider';
 import { CloseIconDefinition } from '../../icons/definitions/close';
 import { Button, IconButton } from '../button';
 
@@ -11,7 +11,7 @@ storiesOf('UI/Button/Button', module)
     <Button
         onClick={action('clicked')}
         disabled={boolean('disabled', false)}
-        theme={boolean('8bit', false) ? THEME.EIGHT_BIT : THEME.BASIC}
+        theme={select('theme', THEMES, THEMES[0]).theme}
     >
       Click Me
     </Button>
