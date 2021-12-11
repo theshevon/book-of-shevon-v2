@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
-import { THEME, useThemeContext } from '../../util/theming/theme_provider';
+import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { Icon, IconDefinition } from '../icons/icon/icon';
 import styles from './button.module.css';
 
@@ -20,7 +20,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
         className={classNames(styles.button, className, {
-          [styles.eightBit]: theme === THEME.EIGHT_BIT,
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
         })}
         onClick={onClick}
         disabled={disabled}

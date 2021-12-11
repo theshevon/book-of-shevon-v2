@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { FC, ReactNode, createElement } from 'react';
-import { THEME, useThemeContext } from '../../util/theming/theme_provider';
+import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import styles from './text.module.css';
 
 type Tag = 'p' | 'h3' | 'h2' | 'h1';
@@ -89,7 +89,7 @@ const getClassNames = ({
   className,
 }: {
   size: Size | undefined,
-  theme: THEME,
+  theme: Theme,
 } & TextProps) => {
   return classNames(
     getSizeClassName(size),
@@ -101,8 +101,8 @@ const getClassNames = ({
     },
     getTextCaseClassName(textCase),
     {
-      [styles.basic]: theme === THEME.BASIC,
-      [styles.eightBit]: theme === THEME.EIGHT_BIT,
+      [styles.basic]: theme === Theme.BASIC,
+      [styles.eightBit]: theme === Theme.EIGHT_BIT,
     },
     className,
   );
@@ -122,7 +122,7 @@ const renderText = ({
 }: {
   tag: Tag,
   size?: Size,
-  theme: THEME,
+  theme: Theme,
   children?: ReactNode,
 } & TextProps) => createElement(
   tag,

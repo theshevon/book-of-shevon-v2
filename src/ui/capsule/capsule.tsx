@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { THEME, useThemeContext } from '../../util/theming/theme_provider';
+import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { Text } from './../text/text';
 import styles from './capsule.module.css';
 
@@ -16,7 +16,7 @@ export const Capsule: React.FC<CapsuleProps> = ({
   return (
     <div
         className={classNames(styles.capsule, className, {
-          [styles.eightBit]: theme === THEME.EIGHT_BIT,
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
         })}
     >
       <Text.ExtraSmall>
@@ -24,4 +24,4 @@ export const Capsule: React.FC<CapsuleProps> = ({
       </Text.ExtraSmall>
     </div>
   );
-}
+};

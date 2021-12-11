@@ -1,4 +1,4 @@
-import { THEME, ThemeProvider, useThemeContext } from '../../src/util/theming/theme_provider';
+import { Theme, ThemeProvider, useThemeContext } from '../../src/util/theming/theme_provider';
 
 const ThemeProviderOuterWrapper = ({ theme, children } = props) => (
   <ThemeProvider>
@@ -31,14 +31,14 @@ export const contexts = [
       {
         name: 'Basic',
         props: {
-          theme: THEME.BASIC 
+          theme: Theme.BASIC 
         }, 
         default: true,
       },
       {
         name: '8 Bit',
         props: {
-          theme: THEME.EIGHT_BIT,
+          theme: Theme.EIGHT_BIT,
         }
       },
     ],

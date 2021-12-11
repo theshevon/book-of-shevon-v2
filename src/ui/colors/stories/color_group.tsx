@@ -49,7 +49,7 @@ export const ColorGroup = ({
     >
       { colors.map((color, index) => (
         <ColorRect
-            key={index}
+            key={color.name}
             {...color}
         />
       )) }

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
-import { THEME, useThemeContext } from '../../util/theming/theme_provider';
+import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import type { IconDefinition } from '../icons/icon/icon';
 import { Icon } from '../icons/icon/icon';
 import styles from './link.module.css';
@@ -30,7 +30,7 @@ export const Link: FC<LinkProps> = ({
     <a
         href={url}
         className={classNames(styles.link, className, {
-          [styles.eightBit]: theme === THEME.EIGHT_BIT,
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
         })}
         {...linkAttributes}
     >
