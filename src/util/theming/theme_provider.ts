@@ -1,14 +1,14 @@
 import { action, observable } from 'mobx';
 import { getRandomNumInRange } from '../math';
-import { ThemeStoreMessages as Messages } from './theme_store.messages';
+import { ThemeProviderMessages as Messages } from './theme_provider.messages';
 
 // exported for testing
 export const LOCAL_STORAGE_KEY = '_bos_theme';
 
 export enum THEME {
   BASIC = 'basic',
+  EIGHT_BIT = '8bit',
   // TODO: add support for the themes below
-  // EIGHT_BIT = '8bit',
   // BREAD = 'bread',
 }
 
@@ -18,12 +18,12 @@ export const THEMES = [
     icon: '🌊',
     label: Messages.basic(),
   },
+  {
+    theme: THEME.EIGHT_BIT,
+    icon: '👾',
+    label: Messages.eightBit(),
+  },
   // TODO: add support for the themes below
-  // {
-  //   theme: THEME.EIGHT_BIT,
-  //   icon: '👾',
-  //   label: Messages.eightBit(),
-  // },
   // {
   //   theme: THEME.BREAD,
   //   icon: '🍞',
@@ -35,9 +35,9 @@ const getTheme = (value: string | null | undefined): THEME => {
   switch (value) {
     case 'basic':
       return THEME.BASIC;
+    case '8bit':
+      return THEME.EIGHT_BIT;
     // TODO: add support for the themes below
-    // case '8bit':
-    //   return THEME.EIGHT_BIT;
     // case 'bread':
     //   return THEME.BREAD;
     default:
@@ -45,10 +45,10 @@ const getTheme = (value: string | null | undefined): THEME => {
   }
 };
 
-const ThemeStoreFactory = (() => {
-  let instance: ThemeStore;
+const ThemeProviderFactory = (() => {
+  let instance: ThemeProvider;
 
-  class ThemeStore {
+  class ThemeProvider {
 
     private localStorage: Storage | undefined;
 
@@ -72,11 +72,11 @@ const ThemeStoreFactory = (() => {
   return {
     getInstance: () => {
       if (!instance) {
-        instance = new ThemeStore(localStorage);
+        instance = new ThemeProvider(localStorage);
       }
       return instance;
     },
   };
 })();
 
-export const ThemeStore = ThemeStoreFactory.getInstance();
+export const ThemeProvider = ThemeProviderFactory.getInstance();

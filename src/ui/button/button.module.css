@@ -1,16 +1,68 @@
-@value colorGrey100 from './../colors/colors.module.css';
+@value colorGrey200, colorGrey500 from './../colors/colors.module.css';
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 @value iconButtonSize: 24px;
 
 /* TODO: focus and active state styling */
 
 .button {
-    background: none;
-    border-radius: 5px;
-    border: 1px solid black;
+    background: unset;
+    border: unset;
     box-sizing: border-box;
-    transition: 300ms;
     padding: 0.4rem 0.8rem;
+    text-align: center;
+    color: colorGrey500;
+    border-color: colorGrey500;
+}
+
+.button.basic {
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.button.eightBit {
+    font-family: "Press Start 2P", cursive;
+    position: relative;
+    box-shadow: inset -2px -2px 0px 0px colorGrey200;
+}
+
+.button.eightBit:not(:disabled):hover,
+.button.eightBit:not(:disabled):focus {
+    box-shadow: inset -3px -3px 0px 0px colorGrey200;
+}
+
+.button.eightBit:before,
+.button.eightBit:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+}
+
+.button.eightBit:before {
+    top: -2px;
+    left: 0;
+    border-top: 2px colorGrey500 solid;
+    border-bottom: 2px colorGrey500 solid;
+}
+
+.button.eightBit:after {
+    left: -2px;
+    top: 0;
+    border-left: 2px colorGrey500 solid;
+    border-right: 2px colorGrey500 solid;
+}
+
+.button.eightBit:disabled:before {
+    border-top: 2px colorGrey200 solid;
+    border-bottom: 2px colorGrey200 solid;
+}
+
+.button.eightBit:disabled:after {
+    border-left: 2px colorGrey200 solid;
+    border-right: 2px colorGrey200 solid;
 }
 
 .button:hover,
@@ -20,7 +72,8 @@
 
 .button:disabled {
     cursor: not-allowed;
-    border: 1px solid colorGrey100;
+    color: colorGrey200;
+    border-color: colorGrey200;
 }
 
 .iconButton {
@@ -33,7 +86,7 @@
 
 .iconButton:disabled svg {
     cursor: not-allowed;
-    fill: colorGrey100;
+    fill: colorGrey200;
 }
 
 .iconButton svg {
