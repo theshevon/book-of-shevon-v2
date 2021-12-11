@@ -1,8 +1,10 @@
-@value colorGrey100, colorGrey500 from './../colors/colors.module.css';
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@value colorGrey100, colorGrey500 from './../colors/colors.module.css';
+@value ordTextSizeXSmall from './../text/text.module.css';
 
 .capsule {
     text-align: center;
+    font-size: ordTextSizeXSmall;
     background-color: colorGrey100;
 }
 
