@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /* Ordinary text sizes */
 @value ordTextSizeXSmall: 1.0rem;
 @value ordTextSizeSmall: 1.1rem;
 @value ordTextSizeMedium: 1.2rem;
 @value ordTextSizeLarge: 1.4rem;
 @value ordTextSizeXLarge: 1.6rem;
+
+.eightBit {
+    font-family: "Press Start 2P", cursive;
+}
 
 p.xSmall {
     font-size: ordTextSizeXSmall;

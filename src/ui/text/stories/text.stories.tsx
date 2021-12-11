@@ -1,6 +1,7 @@
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { THEME, THEMES } from '../../../util/theming/theme_provider';
 import { StoryGroup } from '../../storybook/stories';
 import { Text } from '../text';
 
@@ -25,11 +26,13 @@ storiesOf('UI/Text', module)
       'Uppercase': 'uppercase',
       'Captialize': 'capitalize',
     }, 'none');
+    const theme = select('Theme', THEMES, THEMES[0]).theme;
     const props = {
       alignment,
       fontWeight,
       italicized,
       textCase,
+      theme,
     };
     return (
       <StoryGroup>

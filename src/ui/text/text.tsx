@@ -1,5 +1,6 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { FC, ReactNode, createElement } from 'react';
+import { THEME } from '../../util/theming/theme_provider';
 import styles from './text.module.css';
 
 type Tag = 'p' | 'h3' | 'h2' | 'h1';
@@ -18,6 +19,7 @@ type TextProps = {
   italicized?: boolean,
   keepDefaultMargins?: boolean,
   textCase?: TextCase,
+  theme?: THEME,
   className?: string,
 }
 
@@ -84,6 +86,7 @@ const getClassNames = ({
   italicized = false,
   keepDefaultMargins = false,
   textCase,
+  theme,
   className,
 }: { size: Size | undefined } & TextProps) => {
   return classNames(
@@ -95,6 +98,10 @@ const getClassNames = ({
       [styles.removeMargins]: !keepDefaultMargins,
     },
     getTextCaseClassName(textCase),
+    {
+      [styles.basic]: theme === THEME.BASIC,
+      [styles.eightBit]: theme === THEME.EIGHT_BIT,
+    },
     className,
   );
 };
@@ -107,29 +114,30 @@ const renderText = ({
   italicized,
   keepDefaultMargins,
   textCase,
+  theme=THEME.BASIC,
   className,
   children,
 }: {
   tag: Tag,
   size?: Size,
-  children?: React.ReactNode,
-} & TextProps) => React.createElement(
+  children?: ReactNode,
+} & TextProps) => createElement(
   tag,
-  { className: getClassNames({ size, alignment, fontWeight, italicized, keepDefaultMargins, textCase, className }) },
+  { className: getClassNames({ size, alignment, fontWeight, italicized, keepDefaultMargins, textCase, theme, className }) },
   children,
 );
 
 // Ordinary text (ie. body text)
-const ExtraSmall: React.FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xs', ...props });
-const Small: React.FC<TextProps> = (props) => renderText({ tag: 'p', size: 's', ...props });
-const Medium: React.FC<TextProps> = (props) => renderText({ tag: 'p', size: 'm', ...props });
-const Large: React.FC<TextProps> = (props) => renderText({ tag: 'p', size: 'l', ...props });
-const ExtraLarge: React.FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xl', ...props });
+const ExtraSmall: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xs', ...props });
+const Small: FC<TextProps> = (props) => renderText({ tag: 'p', size: 's', ...props });
+const Medium: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'm', ...props });
+const Large: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'l', ...props });
+const ExtraLarge: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xl', ...props });
 
 // Title text
-const SmallTitle: React.FC<TextProps> = (props) => renderText({ tag: 'h3', size: 's', ...props });
-const MediumTitle: React.FC<TextProps> = (props) => renderText({ tag: 'h2', size: 'm', ...props });
-const LargeTitle: React.FC<TextProps> = (props) => renderText({ tag: 'h1', size: 'l', ...props });
+const SmallTitle: FC<TextProps> = (props) => renderText({ tag: 'h3', size: 's', ...props });
+const MediumTitle: FC<TextProps> = (props) => renderText({ tag: 'h2', size: 'm', ...props });
+const LargeTitle: FC<TextProps> = (props) => renderText({ tag: 'h1', size: 'l', ...props });
 
 export const Text = {
   ExtraSmall,
