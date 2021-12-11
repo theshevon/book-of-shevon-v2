@@ -31,11 +31,14 @@ const getTheme = (value: string | null | undefined): THEME => {
   }
 };
 
-const ThemeContext = createContext<THEME>(undefined!);
-const ThemeUpdateContext = createContext<(_:THEME) => void>(undefined!);
+interface IThemeContext {
+  theme: THEME,
+  setTheme: React.Dispatch<React.SetStateAction<THEME>>,
+}
 
-export const useTheme = () => useContext(ThemeContext);
-export const useThemeUpdate = () => useContext(ThemeUpdateContext);
+const ThemeContext = createContext<IThemeContext>(undefined!);
+
+export const useThemeContext = () => useContext(ThemeContext);
 
 export const ThemeProvider: FC = ({ children }) => {
 
@@ -43,13 +46,9 @@ export const ThemeProvider: FC = ({ children }) => {
 
   return (
     <ThemeContext.Provider
-        value={theme}
+        value={{ theme, setTheme }}
     >
-      <ThemeUpdateContext.Provider
-          value={setTheme}
-      >
-        { children }
-      </ThemeUpdateContext.Provider>
+      { children }
     </ThemeContext.Provider>
   );
 };

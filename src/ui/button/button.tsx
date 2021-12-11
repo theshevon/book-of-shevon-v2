@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
-import { THEME, useTheme } from '../../util/theming/theme_provider';
+import { THEME, useThemeContext } from '../../util/theming/theme_provider';
 import { Icon, IconDefinition } from '../icons/icon/icon';
 import styles from './button.module.css';
 
@@ -16,7 +16,7 @@ export const Button: FC<ButtonProps> = ({
   className='',
   children,
 }) => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
   return (
     <button
         className={classNames(styles.button, className, {

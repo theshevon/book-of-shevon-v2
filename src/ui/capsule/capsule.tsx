@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { THEME, useTheme } from '../../util/theming/theme_provider';
+import { THEME, useThemeContext } from '../../util/theming/theme_provider';
 import { Text } from './../text/text';
 import styles from './capsule.module.css';
 
@@ -12,7 +12,7 @@ export const Capsule: React.FC<CapsuleProps> = ({
   className,
   children,
 }) => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
   return (
     <div
         className={classNames(styles.capsule, className, {

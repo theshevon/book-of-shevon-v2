@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
-import { THEME, useTheme } from '../../util/theming/theme_provider';
+import { THEME, useThemeContext } from '../../util/theming/theme_provider';
 import type { IconDefinition } from '../icons/icon/icon';
 import { Icon } from '../icons/icon/icon';
 import styles from './link.module.css';
@@ -21,7 +21,7 @@ export const Link: FC<LinkProps> = ({
   className,
   children,
 }) => {
-  const theme = useTheme();
+  const { theme } = useThemeContext();
   const linkAttributes = {
     target: targetSelf ? '_self' : '_blank',
     rel: !targetSelf ? 'noopener noreferrer' : undefined,

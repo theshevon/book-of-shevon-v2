@@ -1,4 +1,4 @@
-import { THEME, ThemeProvider, useThemeUpdate } from '../../src/util/theming/theme_provider';
+import { THEME, ThemeProvider, useThemeContext } from '../../src/util/theming/theme_provider';
 
 const ThemeProviderOuterWrapper = ({ theme, children } = props) => (
   <ThemeProvider>
@@ -11,8 +11,8 @@ const ThemeProviderOuterWrapper = ({ theme, children } = props) => (
 );
 
 const ThemeProviderInnerWrapper = ({ theme, children } = props) => {
-  const updateTheme = useThemeUpdate();
-  updateTheme(theme);
+  const { setTheme } = useThemeContext();
+  setTheme(theme);
   return (
     <>
       { children }
@@ -28,8 +28,19 @@ export const contexts = [
       ThemeProviderOuterWrapper,
     ],
     params: [
-      { name: 'Basic', props: { theme: THEME.BASIC }, default: true },
-      { name: '8 Bit', props: { theme: THEME.EIGHT_BIT }},
+      {
+        name: 'Basic',
+        props: {
+          theme: THEME.BASIC 
+        }, 
+        default: true,
+      },
+      {
+        name: '8 Bit',
+        props: {
+          theme: THEME.EIGHT_BIT,
+        }
+      },
     ],
     options: {
       deep: true,
