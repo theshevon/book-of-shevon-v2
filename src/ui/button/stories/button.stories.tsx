@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { boolean, select } from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { CloseIconDefinition } from '../../icons/definitions/close';
