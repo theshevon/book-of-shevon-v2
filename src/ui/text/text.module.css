@@ -1,32 +1,82 @@
-/* Ordinary text sizes */
-@value ordTextSizeXSmall: 1.0rem;
-@value ordTextSizeSmall: 1.1rem;
-@value ordTextSizeMedium: 1.2rem;
-@value ordTextSizeLarge: 1.4rem;
-@value ordTextSizeXLarge: 1.6rem;
+/* body text sizes */
+@value bodyTextSizeXSmall: 1.0rem;
+@value bodyTextSizeSmall: 1.1rem;
+@value bodyTextSizeMedium: 1.2rem;
+@value bodyTextSizeLarge: 1.4rem;
+@value bodyTextSizeXLarge: 1.6rem;
+
+@value titleTextSizeSmall: 1.17rem;
+@value titleTextSizeMedium: 1.5rem;
+@value titleTextSizeLarge: 2rem;
+
+@value eightBitFontScaleFactor: 0.6;
 
 .eightBit {
     font-family: "Press Start 2P", cursive;
 }
 
 p.xSmall {
-    font-size: ordTextSizeXSmall;
+    font-size: bodyTextSizeXSmall;
+}
+
+p.xSmall.eightBit {
+    font-size: calc(eightBitFontScaleFactor * bodyTextSizeXSmall);
 }
 
 p.small {
-    font-size: ordTextSizeSmall;
+    font-size: bodyTextSizeSmall;
+}
+
+p.small.eightBit {
+    font-size: calc(eightBitFontScaleFactor * bodyTextSizeSmall);
 }
 
 p.medium {
-    font-size: ordTextSizeMedium;
+    font-size: bodyTextSizeMedium;
+}
+
+p.medium.eightBit {
+    font-size: calc(eightBitFontScaleFactor * bodyTextSizeMedium);
 }
 
 p.large {
-    font-size: ordTextSizeLarge;
+    font-size: bodyTextSizeLarge;
+}
+
+p.large.eightBit {
+    font-size: calc(eightBitFontScaleFactor * bodyTextSizeLarge);
 }
 
 p.xLarge {
-    font-size: ordTextSizeXLarge;
+    font-size: bodyTextSizeXLarge;
+}
+
+p.xLarge.eightBit {
+    font-size: calc(eightBitFontScaleFactor * bodyTextSizeXLarge);
+}
+
+h3.small {
+    font-size: titleTextSizeSmall;
+}
+
+h3.small.eightBit {
+    font-size: calc(eightBitFontScaleFactor * titleTextSizeSmall);
+}
+
+h2.medium {
+    font-size: titleTextSizeMedium;
+}
+
+h2.medium.eightBit {
+    font-size: calc(eightBitFontScaleFactor * titleTextSizeMedium);
+}
+
+h1.large {
+    font-size: titleTextSizeLarge;
+}
+
+h1.large.eightBit {
+    font-size: calc(eightBitFontScaleFactor * titleTextSizeLarge);
 }
 
 .removeMargins {

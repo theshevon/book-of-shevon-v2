@@ -1,5 +1,5 @@
 @value preload, textElemBorderRadius, textElemLineHeightMultiple from '../../../../../ui/preload/preload.module.css';
-@value ordTextSizeXSmall, ordTextSizeSmall from '../../../../../ui/text/text.module.css';
+@value bodyTextSizeXSmall, bodyTextSizeSmall from '../../../../../ui/text/text.module.css';
 @value titleFontSize, titleContainerMarginTopForCard, titleContainerMarginBottomForCard, titleContainerMarginTopForJumbotron, dateMarginBottom, tagPadding from '../blog_post.module.css';
 
 .coverImg,
@@ -32,7 +32,7 @@
 }
 
 .date {
-    height: calc(ordTextSizeSmall * textElemLineHeightMultiple);
+    height: calc(bodyTextSizeSmall * textElemLineHeightMultiple);
     margin-bottom: dateMarginBottom;
     width: 175px;
 }
@@ -40,7 +40,7 @@
 .descriptionLineOne,
 .descriptionLineTwo,
 .descriptionLineThree {
-    height: calc(ordTextSizeSmall * textElemLineHeightMultiple);
+    height: calc(bodyTextSizeSmall * textElemLineHeightMultiple);
     margin: 5px 0;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .tag {
-    height: ordTextSizeXSmall;
+    height: bodyTextSizeXSmall;
     padding: tagPadding;
     width: 75px;
 }

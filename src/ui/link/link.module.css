@@ -1,5 +1,5 @@
 @value colorGrey100, colorGrey200, colorGrey300, colorGrey500 from './../colors/colors.module.css';
-@value ordTextSizeXSmall from './../text/text.module.css';
+@value bodyTextSizeXSmall, eightBitFontScaleFactor from './../text/text.module.css';
 
 .eightBit {
   font-family: "Press Start 2P", cursive;
@@ -65,7 +65,7 @@
 }
 
 .capsuleLink {
-  font-size: ordTextSizeXSmall;
+  font-size: bodyTextSizeXSmall;
   text-align: center;
   background-color: colorGrey100;
   padding: 5px 15px;
@@ -73,13 +73,8 @@
   transition: 0.3s;
 }
 
-.capsuleLink.basic {
-  padding: 5px 15px;
-  border-radius: 15px;
-  transition: 0.3s;
-}
-
 .capsuleLink.eightBit {
+  font-size: calc(eightBitFontScaleFactor * bodyTextSizeXSmall);
   border-radius: unset;
   transition: unset;
   padding: 5px 10px;

@@ -72,7 +72,7 @@
 }
 
 .githubLink.eightBit:hover {
-	box-shadow: inset -3px -3px 0px 0px colorGreen400;
+	box-shadow: inset -3px -3px 0px 0px colorGreen400 !important;
 }
 
 @media(min-width: breakpointSmall){
