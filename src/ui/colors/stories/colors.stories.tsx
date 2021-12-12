@@ -46,6 +46,23 @@ const COLOR_GROUPS: ColorGroupProps[] = [
       },
     ],
   },
+  {
+    name: 'Green',
+    colors: [
+      {
+        name: 'colorGreen200',
+        value: colorValues.colorGreen200,
+      },
+      {
+        name: 'colorGreen300',
+        value: colorValues.colorGreen300,
+      },
+      {
+        name: 'colorGreen400',
+        value: colorValues.colorGreen400,
+      },
+    ],
+  },
 ];
 
 storiesOf('UI/Colors', module)
