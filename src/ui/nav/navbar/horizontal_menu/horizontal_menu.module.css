@@ -32,6 +32,7 @@
 
 .link.eightBit {
     font-family: "Press Start 2P", cursive;
+    transition: unset;
 }
 
 .link:hover,

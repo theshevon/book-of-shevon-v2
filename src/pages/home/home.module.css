@@ -11,10 +11,13 @@
     width: 80%;
 }
 
-.siteTitle {
+.siteTitleContainer:not(.eightBit) .siteTitle {
     font-family: 'FreeMono', monospace;
+}
+
+.siteTitle {
     white-space: nowrap;
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
     margin-bottom: 15px;
 }
 

@@ -10,7 +10,7 @@ const routesData = [
     index: -1,
   },
   {
-    label: 'Route 2 (Active)',
+    label: 'Route 2',
     path: '##',
     index: 0,
   },
@@ -23,7 +23,9 @@ const routesData = [
 
 storiesOf('UI/Nav/Navbar/HorizontalMenu', module)
   .add('HorizontalMenu', () => (
-    <StoryWrapper>
+    <StoryWrapper
+        title='Route 2 is the active route'
+    >
       <div
           style={{
             height: '50px',

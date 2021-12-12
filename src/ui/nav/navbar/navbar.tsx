@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
+import { Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import type { RouteData } from './../../../routes/route_data/route_data';
 import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
 import { HorizontalMenu } from './horizontal_menu/horizontal_menu';
@@ -16,9 +17,12 @@ export const Navbar = ({
 }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  const { theme } = useThemeContext();
   return (
     <div
-        className={styles.navbarContainer}
+        className={classNames(styles.navbarContainer, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+        })}
     >
       <div
           className={styles.mainNavbar}
