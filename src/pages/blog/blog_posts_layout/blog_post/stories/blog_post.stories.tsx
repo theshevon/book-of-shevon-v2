@@ -21,7 +21,7 @@ storiesOf('Pages/Blog/BlogPost/Jumbotron (first post)', module)
         isJumbotron={true}
     />
   ))
-  .add('With a very long description', () => (
+  .add('With a long description', () => (
     <BlogPost
         title='Test Blog Post'
         pubDate='2019-03-04 14:22:27'
@@ -58,7 +58,7 @@ storiesOf('Pages/Blog/BlogPost/Card (default)', module)
         categories={['category1', 'category2']}
     />
   ))
-  .add('With a very long description', () => (
+  .add('With a long description', () => (
     <BlogPost
         title='Test Blog Post'
         pubDate='2019-03-04 14:22:27'

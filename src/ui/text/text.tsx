@@ -93,6 +93,7 @@ const getClassNames = ({
   theme: Theme,
 } & TextProps) => {
   return classNames(
+    styles.text,
     getSizeClassName(size),
     getAlignmentClassName(alignment),
     getFontWeightClassName(fontWeight),

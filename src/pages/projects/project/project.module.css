@@ -1,4 +1,4 @@
-@value colorGrey300, colorGrey500, colorGreen300, colorGreen400 from '../../../ui/colors/colors.module.css';
+@value colorGrey100, colorGrey200, colorGrey300, colorGrey500, colorGreen300, colorGreen400 from '../../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 .project {
@@ -35,7 +35,8 @@
 	margin-bottom: 15px;
 }
 
-.techList, .contributorsList {
+.techList,
+.contributorsList {
 	padding-left: 0;
 	list-style: none;
 	display: flex;
@@ -44,8 +45,18 @@
 	gap: 10px 5px;
 }
 
+.project.eightBit .techList,
+.project.eightBit .contributorsList {
+	gap: 10px 15px;
+}
+
 .contributorsList {
 	margin-bottom: 25px;
+}
+
+.contributorCapsuleContainer,
+.githubLinkContainer {
+	z-index: 5;
 }
 
 .contributorCapsuleContainer {
@@ -81,6 +92,36 @@
 		width: 25vw;
 		padding: 2.5%;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
+	}
+
+	.project.eightBit {
+		box-shadow: unset;
+		border-radius: unset;
+		position: relative;
+		box-shadow: inset -4px -4px 0px 0px colorGrey100;
+	}
+
+	.project.eightBit:before,
+	.project.eightBit:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			box-sizing: content-box;
+	}
+
+	.project.eightBit:before {
+			top: -2px;
+			left: 0;
+			border-top: 2px colorGrey200 solid;
+			border-bottom: 2px colorGrey200 solid;
+	}
+
+	.project.eightBit:after {
+			left: -2px;
+			top: 0;
+			border-left: 2px colorGrey200 solid;
+			border-right: 2px colorGrey200 solid;
 	}
 
 }

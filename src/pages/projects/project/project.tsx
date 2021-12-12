@@ -32,7 +32,9 @@ export const Project = ({
   const { theme } = useThemeContext();
   return (
     <div
-        className={styles.project}
+        className={classNames(styles.project, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+        })}
     >
       { /* TITLE */ }
       <Text.Large
