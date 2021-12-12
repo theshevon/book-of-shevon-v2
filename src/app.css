@@ -5,8 +5,13 @@ body {
     margin: 0;
     height: 100vh;  /* needed to act as a reference for the #root's height */
     min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 #root {
     height: 100%;
+}
+
+.eightBit {
+    font-family: "Press Start 2P", cursive;
 }

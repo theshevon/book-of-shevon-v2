@@ -1,6 +1,4 @@
 @value colorGrey200, colorGrey500 from './../colors/colors.module.css';
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 @value iconButtonSize: 24px;
 
 /* TODO: focus and active state styling */
