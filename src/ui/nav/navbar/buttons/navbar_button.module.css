@@ -17,7 +17,12 @@
 
 .navbarButton.eightBit {
     transition: unset;
-    box-shadow: inset -2px -2px 0px 0px colorGrey100;
+}
+
+.navbarButton.eightBit,
+.navbarButton.eightBit:active,
+.navbarButton.eightBit:focus {
+    box-shadow: inset -2px -2px 0px 0px colorGrey100 !important;
 }
 
 .navbarButton.eightBit:hover {

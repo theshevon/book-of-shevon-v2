@@ -30,6 +30,10 @@
     transition: 0.4s;
 }
 
+.link.eightBit {
+    font-family: "Press Start 2P", cursive;
+}
+
 .link:hover,
 .link.active {
     color: colorGrey500;
