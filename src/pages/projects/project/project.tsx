@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import React from 'react';
+import { Theme, THEMES, useThemeContext } from '../../../util/theming/theme_provider';
 import { ButtonLink, CapsuleLink } from './../../../ui/link/link';
 import { Text } from './../../../ui/text/text';
 import { ProjectMessages as Messages } from './project.messages';
@@ -26,81 +28,86 @@ export const Project = ({
   techStack,
   otherContributors,
   githubUrl,
-}: ProjectProps) => (
-  <div
-      className={styles.project}
-  >
-    { /* TITLE */ }
-    <Text.Large
-        alignment='center'
-        fontWeight='bold'
-        className={styles.title}
-    >
-      { name }
-    </Text.Large>
-
-    { /* YEAR */ }
-    <Text.ExtraSmall
-        alignment='center'
-        className={styles.year}
-    >
-      { year.toString() }
-    </Text.ExtraSmall>
-
-    { /* DESCRIPTION */ }
-    <Text.Small
-        alignment='center'
-        className={styles.description}
-    >
-      { description }
-    </Text.Small>
-
-    { /* TECH STACK */ }
+}: ProjectProps) => {
+  const { theme } = useThemeContext();
+  return (
     <div
-        className={styles.techStack}
+        className={styles.project}
     >
-      <Text.Medium
+      { /* TITLE */ }
+      <Text.Large
           alignment='center'
           fontWeight='bold'
+          className={styles.title}
       >
-        { Messages.TechStack() }
-      </Text.Medium>
-      <TechStack
-          techStack={techStack}
-      />
-    </div>
+        { name }
+      </Text.Large>
 
-    { /* OTHER CONTRIBUTORS */ }
-    { otherContributors &&
+      { /* YEAR */ }
+      <Text.ExtraSmall
+          alignment='center'
+          className={styles.year}
+      >
+        { year.toString() }
+      </Text.ExtraSmall>
+
+      { /* DESCRIPTION */ }
+      <Text.Small
+          alignment='center'
+          className={styles.description}
+      >
+        { description }
+      </Text.Small>
+
+      { /* TECH STACK */ }
       <div
-          className={styles.otherContributors}
+          className={styles.techStack}
       >
         <Text.Medium
             alignment='center'
             fontWeight='bold'
         >
-          { Messages.OtherContributors() }
+          { Messages.TechStack() }
         </Text.Medium>
-        <OtherContributors
-            otherContributors={otherContributors}
+        <TechStack
+            techStack={techStack}
         />
       </div>
-    }
 
-    { /* GITHUB LINK */ }
-    <div
-        className={styles.githubLinkContainer}
-    >
-      <ButtonLink
-          url={githubUrl}
-          className={styles.githubLink}
+      { /* OTHER CONTRIBUTORS */ }
+      { otherContributors &&
+        <div
+            className={styles.otherContributors}
+        >
+          <Text.Medium
+              alignment='center'
+              fontWeight='bold'
+          >
+            { Messages.OtherContributors() }
+          </Text.Medium>
+          <OtherContributors
+              otherContributors={otherContributors}
+          />
+        </div>
+      }
+
+      { /* GITHUB LINK */ }
+      <div
+          className={styles.githubLinkContainer}
       >
-        { Messages.ViewProject() }
-      </ButtonLink>
-    </div>
+        <ButtonLink
+            url={githubUrl}
+            className={classNames(styles.githubLink, {
+              [styles.eightBit]: theme === Theme.EIGHT_BIT,
+            })}
+        >
+          { Messages.ViewProject() }
+        </ButtonLink>
+      </div>
 
-  </div>
-);
+    </div>
+  );
+};
 
 const TechStack = ({
   techStack,

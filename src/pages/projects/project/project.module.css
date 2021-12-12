@@ -1,7 +1,5 @@
-@value colorGrey300 from '../../../ui/colors/colors.module.css';
+@value colorGrey300, colorGrey500, colorGreen300, colorGreen400 from '../../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
-
-@value githubGreen: rgb(83, 197, 98);
 
 .project {
 	width: 100%;
@@ -61,16 +59,20 @@
 }
 
 .githubLink {
-	color: #3e3e3e;
-	border: 2px solid #3e3e3e;
+	color: colorGrey300;
+	border-width: 2px;
 	font-weight: bold;
 	align-self: center;
 }
 
 .githubLink:hover {
-	background-color: githubGreen;
-	border-color: githubGreen;
+	background-color: colorGreen300;
+	border-color: colorGreen300;
 	color: white;
+}
+
+.githubLink.eightBit:hover {
+	box-shadow: inset -3px -3px 0px 0px colorGreen400;
 }
 
 @media(min-width: breakpointSmall){

@@ -59,8 +59,8 @@
   border-right: 2px colorGrey500 solid;
 }
 
-.buttonLink.eightBit:not(:disabled):hover,
-.buttonLink.eightBit:not(:disabled):focus {
+.buttonLink.eightBit:hover,
+.buttonLink.eightBit:focus {
     box-shadow: inset -3px -3px 0px 0px colorGrey200;
 }
 
