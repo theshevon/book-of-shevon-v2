@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { StoryGroup } from '../../../../storybook/stories';
+import { StoryWrapper } from '../../../../../util/storybook/story_wrapper';
 import { HorizontalMenu } from '../horizontal_menu';
 
 const routesData = [
@@ -23,7 +23,7 @@ const routesData = [
 
 storiesOf('UI/Nav/Navbar/HorizontalMenu', module)
   .add('HorizontalMenu', () => (
-    <StoryGroup>
+    <StoryWrapper>
       <div
           style={{
             height: '50px',
@@ -37,5 +37,5 @@ storiesOf('UI/Nav/Navbar/HorizontalMenu', module)
             activeRoute='##'
         />
       </div>
-    </StoryGroup>
+    </StoryWrapper>
   ));

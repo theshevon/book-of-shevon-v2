@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './image_grid.module.css';
-import { Lightbox } from './lightbox/lightbox';
+import { LightBox } from './light_box/light_box';
 
 type SelectedImg = {
   imgSrc: string,
@@ -13,12 +13,12 @@ export const ImageGrid = ({
   images: string[],
 }) => {
 
-  const [showLightbox, setShowLightbox] = useState<boolean>(false);
+  const [showLightBox, setShowLightBox] = useState<boolean>(false);
   const [selectedImg, setSelectedImg] = useState<SelectedImg>({ imgSrc: '', index: -1 });
 
   const onImgClick = (selectedImg: SelectedImg) => {
     setSelectedImg(selectedImg);
-    setShowLightbox(true);
+    setShowLightBox(true);
 
     // lock scrolling
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -27,8 +27,8 @@ export const ImageGrid = ({
     };
   };
 
-  const onLightboxClose = () => {
-    setShowLightbox(false);
+  const onLightBoxClose = () => {
+    setShowLightBox(false);
 
     // unlock scrolling
     window.onscroll = () => {};
@@ -70,13 +70,13 @@ export const ImageGrid = ({
           </div>
         )) }
       </div>
-      { showLightbox && (
-        <Lightbox
+      { showLightBox && (
+        <LightBox
             imgSrc={selectedImg.imgSrc}
             isFirst={selectedImg.index === 0}
             isLast={selectedImg.index === images.length - 1}
             onImgChange={onImgChange}
-            onClose={onLightboxClose}
+            onClose={onLightBoxClose}
         />
       ) }
     </div>

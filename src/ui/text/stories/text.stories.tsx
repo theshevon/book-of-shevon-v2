@@ -1,8 +1,10 @@
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { StoryGroup } from '../../storybook/stories';
+import { StoryWrapper } from '../../../util/storybook/story_wrapper';
 import { Text } from '../text';
+
+const TEXT = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit';
 
 storiesOf('UI/Text', module)
   .add('Overview', () => {
@@ -23,7 +25,7 @@ storiesOf('UI/Text', module)
       'None': 'none',
       'Lowercase': 'lowercase',
       'Uppercase': 'uppercase',
-      'Captialize': 'capitalize',
+      'Capitalize': 'capitalize',
     }, 'none');
     const props = {
       alignment,
@@ -32,47 +34,79 @@ storiesOf('UI/Text', module)
       textCase,
     };
     return (
-      <StoryGroup>
-        <Text.ExtraSmall
-            {...props}
+      <>
+        <StoryWrapper
+            title='Extra Small'
         >
-          This is a sentence using extra small text
-        </Text.ExtraSmall>
-        <Text.Small
-            {...props}
+          <Text.ExtraSmall
+              {...props}
+          >
+            { TEXT }
+          </Text.ExtraSmall>
+        </StoryWrapper>
+        <StoryWrapper
+            title='Small'
         >
-          This is a sentence using small text
-        </Text.Small>
-        <Text.Medium
-            {...props}
+          <Text.Small
+              {...props}
+          >
+            { TEXT }
+          </Text.Small>
+        </StoryWrapper>
+        <StoryWrapper
+            title='Medium'
         >
-          This is a sentence using medium text
-        </Text.Medium>
-        <Text.Large
-            {...props}
+          <Text.Medium
+              {...props}
+          >
+            { TEXT }
+          </Text.Medium>
+        </StoryWrapper>
+        <StoryWrapper
+            title='large'
         >
-          This is a sentence using large text
-        </Text.Large>
-        <Text.ExtraLarge
-            {...props}
+          <Text.Large
+              {...props}
+          >
+            { TEXT }
+          </Text.Large>
+        </StoryWrapper>
+        <StoryWrapper
+            title='Extra Large'
         >
-          This is a sentence using extra large text
-        </Text.ExtraLarge>
-        <Text.SmallTitle
-            {...props}
+          <Text.ExtraLarge
+              {...props}
+          >
+            { TEXT }
+          </Text.ExtraLarge>
+        </StoryWrapper>
+        <StoryWrapper
+            title='Small Title'
         >
-          This is a sentence using small title text
-        </Text.SmallTitle>
-        <Text.MediumTitle
-            {...props}
+          <Text.SmallTitle
+              {...props}
+          >
+            { TEXT }
+          </Text.SmallTitle>
+        </StoryWrapper>
+        <StoryWrapper
+            title='Medium Title'
         >
-          This is a sentence using medium title text
-        </Text.MediumTitle>
-        <Text.LargeTitle
-            {...props}
+          <Text.MediumTitle
+              {...props}
+          >
+            { TEXT }
+          </Text.MediumTitle>
+        </StoryWrapper>
+        <StoryWrapper
+            title='Large Title'
         >
-          This is a sentence using large title text
-        </Text.LargeTitle>
-      </StoryGroup>
+          <Text.LargeTitle
+              {...props}
+          >
+            { TEXT }
+          </Text.LargeTitle>
+        </StoryWrapper>
+      </>
     );
   });
