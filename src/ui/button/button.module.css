@@ -16,7 +16,6 @@
 
 .button.eightBit {
     font-family: "Press Start 2P", cursive;
-    border: unset;
     border-radius: unset;
     position: relative;
     box-shadow: inset -2px -2px 0px 0px colorGrey200;
