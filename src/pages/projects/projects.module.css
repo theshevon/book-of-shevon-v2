@@ -9,8 +9,11 @@
 }
 
 .pageTitle {
-  font-family: "FreeMono", monospace;
   position: relative;
+}
+
+.projectsPage:not(.eightBit) .pageTitle {
+  font-family: "FreeMono", monospace;
 }
 
 .pageTitle:before {

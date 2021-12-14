@@ -11,7 +11,7 @@
 	position: relative;
 }
 
-.project:not(:last-of-type):after {
+.project:not(.eightBit):not(:last-of-type):after {
 	position: absolute;
 	bottom: -11px; /* row gap (10px) / 2 + height of line (2px) / 2 */
 	left: 50%;
@@ -21,6 +21,7 @@
 	height: 2px;
 	background-color: colorGrey100;
 }
+
 
 .title {
 	margin-bottom: 10px;
@@ -86,6 +87,20 @@
 	box-shadow: inset -3px -3px 0px 0px colorGreen400 !important;
 }
 
+@media(max-width: breakpointSmall) {
+	
+	.project:not(:last-of-type):after {
+		position: absolute;
+		bottom: -11px; /* row gap (10px) / 2 + height of line (2px) / 2 */
+		left: 50%;
+		transform: translateX(-50%);
+		content: '';
+		width: 90%;
+		height: 2px;
+		background-color: colorGrey100;
+	}
+}
+
 @media(min-width: breakpointSmall){
 
 	.project {
@@ -99,6 +114,10 @@
 		border-radius: unset;
 		position: relative;
 		box-shadow: inset -4px -4px 0px 0px colorGrey100;
+	}
+
+	.project:not(.eightBit):not(:last-of-type):after {
+		display: none;
 	}
 
 	.project.eightBit:before,

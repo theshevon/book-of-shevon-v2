@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import React, { useEffect } from 'react';
+import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
 import { Projects as TechProjects } from './data/projects';
@@ -12,9 +14,13 @@ export const Projects = () => {
     updateDocumentHeader(Messages.pageTitle());
   }, []);
 
+  const { theme } = useThemeContext();
+
   return (
     <div
-        className={styles.projectsPage}
+        className={classNames(styles.projectsPage, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+        })}
     >
       <div
           className={styles.pageTitleContainer}
