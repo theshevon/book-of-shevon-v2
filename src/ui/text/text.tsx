@@ -79,6 +79,17 @@ const getTextCaseClassName = (textCase: TextCase | undefined) => {
   }
 };
 
+const getThemeClassName = (theme: Theme) => {
+  switch (theme) {
+    case '8bit':
+      return styles.eightBit;
+    case 'basic':
+    default:
+      return styles.basic;
+  }
+
+}
+
 const getClassNames = ({
   size,
   alignment = 'left',
@@ -102,10 +113,7 @@ const getClassNames = ({
       [styles.removeMargins]: !keepDefaultMargins,
     },
     getTextCaseClassName(textCase),
-    {
-      [styles.basic]: theme === Theme.BASIC,
-      [styles.eightBit]: theme === Theme.EIGHT_BIT,
-    },
+    getThemeClassName(theme),
     className,
   );
 };
