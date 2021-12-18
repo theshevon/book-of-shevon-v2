@@ -5,8 +5,7 @@
     transition: 500ms;
     text-transform: uppercase;
     min-width: 115px;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    background-color: colorGrey100;
 }
 
 .navbarButton:hover {
@@ -37,4 +36,12 @@
 .navbarButton.eightBit:not(:hover):after {
     border-left-color: colorGrey200;
     border-right-color: colorGrey200;
+}
+
+@supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .navbarButton {
+        background-color: unset;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    }
 }

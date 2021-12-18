@@ -1,17 +1,15 @@
 @value breakpointSmall from '../../../../../ui/metrics/breakpoints.module.css';
 @value imgRadius from '../image_grid.module.css';
-@value colorGreyTransparentLight from '../../../../../ui/colors/colors.module.css';
+@value colorGrey100, colorGreyTransparentLight, colorGreyTransparentDark from '../../../../../ui/colors/colors.module.css';
 
-.lightbox {
+.lightBox {
   width: 100%;
   height: 100%;
   position: fixed;
   z-index: 1000;
   top: 0;
   left: 0;
-  background-color: colorGreyTransparentLight;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  background-color: colorGreyTransparentDark;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,6 +48,7 @@
 .closeButton {
   background: none;
   border: none;
+  /* TODO replace with design sys color */
   fill: #acacac;
   transition: 300ms;
 }
@@ -81,7 +80,7 @@
 
 @media(min-width: breakpointSmall) {
 
-  .lightbox {
+  .lightBox {
     flex-direction: row;
   }
 
@@ -98,5 +97,13 @@
   .nextButtonContainer {
     padding-left: 25px;
     justify-content: start;
+  }
+}
+
+@supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .lightBox {
+      background-color: colorGreyTransparentLight;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
   }
 }

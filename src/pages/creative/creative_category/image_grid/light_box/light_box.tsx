@@ -88,7 +88,7 @@ export const LightBox = observer(({
 
   return (
     <div
-        className={styles.lightbox}
+        className={styles.lightBox}
         ref={ref}
     >
       <div

@@ -7,7 +7,6 @@
 
 .drawer {
   background-color: navBackgroundColor;
-  backdrop-filter: navBackgroundBlur;
   display: flex;
   justify-content: center;
   transform: translateY(calc(-1 * drawerHeight));
@@ -54,4 +53,11 @@
 .link.active {
   color: white;
   background-color: colorGrey300;
+}
+
+@supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .drawer {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+  }
 }
