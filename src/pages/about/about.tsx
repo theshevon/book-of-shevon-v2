@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import React, { useEffect } from 'react';
+import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { AboutMessages as Messages } from './about.messages';
 import styles from './about.module.css';
@@ -19,10 +21,14 @@ export const About = () => {
 
   const Profile = createProfile();
 
+  const { theme } = useThemeContext();
+
   return (
 
     <div
-        className={styles.page}
+        className={classNames(styles.page, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+        })}
     >
 
       { /* PROFILE SECTION */ }
@@ -30,7 +36,7 @@ export const About = () => {
 
       { /* WORK EXPERIENCE SECTION */ }
       <Section
-          title={'commercialXp'}
+          title='commercialXp'
       >
         <Experiences
             experiences={CommercialExperiences}
@@ -39,7 +45,7 @@ export const About = () => {
 
       { /* SKILLS SECTION */ }
       <Section
-          title={'skills'}
+          title='skills'
       >
         <Skills
             skillsLists={SkillsLists}
@@ -48,7 +54,7 @@ export const About = () => {
 
       { /* EDUCATION SECTION */ }
       <Section
-          title={'education'}
+          title='education'
       >
         <Education
             education={TertiaryEducation}
@@ -57,7 +63,7 @@ export const About = () => {
 
       { /* VOLUNTEER EXPERIENCE SECTION */ }
       <Section
-          title={'volunteerXp'}
+          title='volunteerXp'
       >
         <Experiences
             experiences={VolunteerExperiences}

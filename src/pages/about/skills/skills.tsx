@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import React from 'react';
+import { Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import { Capsule } from './../../../ui/capsule/capsule';
 import { Text } from './../../../ui/text/text';
 import { SkillsMessages as Messages } from './skills.messages';
@@ -33,28 +35,33 @@ export const Skills = ({
 const SkillsList = ({
   label,
   skills,
-}: SkillsListProps) => (
-  <div
-      className={styles.skillsList}
-  >
-    <Text.ExtraSmall
-        className={styles.label}
+}: SkillsListProps) => {
+  const { theme } = useThemeContext();
+  return (
+    <div
+        className={classNames(styles.skillsList, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+        })}
     >
-      { label === 'proficient' ? Messages.ProficientWith() : Messages.FamiliarWith() }:
-    </Text.ExtraSmall>
-    <ul
-        className={styles.list}
-    >
-      { skills.map(skill => (
-        <li
-            key={skill}
-            className={styles.skill}
-        >
-          <Capsule>
-            { skill }
-          </Capsule>
-        </li>
-      )) }
-    </ul>
-  </div>
-);
+      <Text.ExtraSmall
+          className={styles.label}
+      >
+        { label === 'proficient' ? Messages.ProficientWith() : Messages.FamiliarWith() }:
+      </Text.ExtraSmall>
+      <ul
+          className={styles.list}
+      >
+        { skills.map(skill => (
+          <li
+              key={skill}
+              className={styles.skill}
+          >
+            <Capsule>
+              { skill }
+            </Capsule>
+          </li>
+        )) }
+      </ul>
+    </div>
+  );
+};

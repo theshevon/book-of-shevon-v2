@@ -7,7 +7,11 @@
 
 .skills {
     padding-left: 0;
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
+}
+
+.skillsList.eightBit .list,
+.skillsList.eightBit .list {
+	gap: 10px 15px;
 }
 
 .label {
