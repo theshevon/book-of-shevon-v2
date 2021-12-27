@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { Link } from '../../../../ui/link/link';
 import { Text } from '../../../../ui/text/text';
+import { Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 
 import styles from './blog_post.module.css';
 
@@ -41,64 +42,67 @@ export const BlogPost = ({
   description,
   categories,
   isJumbotron,
-}: BlogPostProps) => (
-  <div
-      className={classNames(styles.blogPost, {
-        [styles.jumbotron]: isJumbotron,
-      })}
-  >
+}: BlogPostProps) => {
+  const { theme } = useThemeContext();
+  return (
     <div
-        className={styles.coverImgContainer}
-    >
-      <Link
-          url={link}
-      >
-        <img
-            src={thumbnail}
-            alt={`Cover for '${title}'`}
-            className={styles.coverImg}
-        />
-      </Link>
-    </div>
-    <div
-        className={styles.contentContainer}
+        className={classNames(styles.blogPost, {
+          [styles.jumbotron]: isJumbotron,
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+        })}
     >
       <div
-          className={styles.titleContainer}
+          className={styles.coverImgContainer}
       >
         <Link
             url={link}
-            className={classNames(styles.title)}
         >
-          { title }
+          <img
+              src={thumbnail}
+              alt={`Cover for '${title}'`}
+              className={styles.coverImg}
+          />
         </Link>
       </div>
-      <Text.ExtraSmall
-          textCase='uppercase'
-          fontWeight='light'
-          className={styles.date}
-      >
-        { getFormattedDate(pubDate) }
-      </Text.ExtraSmall>
-      <Text.Small
-          alignment='left'
-          className={styles.desc}
-      >
-        { getShortenedDescription(description) }
-      </Text.Small>
       <div
-          className={styles.tags}
+          className={styles.contentContainer}
       >
-        { categories.map((category, index) => (
-          <Tag
-              key={index}
-              tag={category}
-          />
-        )) }
+        <div
+            className={styles.titleContainer}
+        >
+          <Link
+              url={link}
+              className={classNames(styles.title)}
+          >
+            { title }
+          </Link>
+        </div>
+        <Text.ExtraSmall
+            textCase='uppercase'
+            fontWeight='light'
+            className={styles.date}
+        >
+          { getFormattedDate(pubDate) }
+        </Text.ExtraSmall>
+        <Text.Small
+            alignment='left'
+        >
+          { getShortenedDescription(description) }
+        </Text.Small>
+        <div
+            className={styles.tags}
+        >
+          { categories.map((category, index) => (
+            <Tag
+                key={index}
+                tag={category}
+            />
+          )) }
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Tag = ({
   tag,
