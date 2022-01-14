@@ -82,6 +82,7 @@ export const BlogPost = ({
       </Text.ExtraSmall>
       <Text.Small
           alignment='left'
+          className={styles.desc}
       >
         { getShortenedDescription(description) }
       </Text.Small>

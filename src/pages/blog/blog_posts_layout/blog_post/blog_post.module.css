@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @value breakpointSmall from './../../../../ui/metrics/breakpoints.module.css';
 @value ordTextSizeXLarge from './../../../../ui/text/text.module.css';
 @value colorGrey500 from './../../../../ui/colors/colors.module.css';
@@ -34,6 +36,7 @@
     text-align: left;
     font-weight: bold;
     font-size: titleFontSize;
+    font-family: 'Roboto';
 }
 
 .title:hover {
@@ -53,9 +56,10 @@
     padding: tagPadding;
 }
 
-.desc {
-    font-style: italic;
-    display: flex;
+.desc,
+.date,
+.tag {
+    font-family: 'Tinos', serif;
 }
 
 .date {
