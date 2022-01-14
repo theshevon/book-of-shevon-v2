@@ -7,7 +7,7 @@ import { BlogPostProps } from './blog_posts_layout/blog_post/blog_post';
 import { BlogPostsLayout } from './blog_posts_layout/blog_posts_layout';
 import type { LoadingState } from './blog_posts_layout/blog_posts_layout';
 
-const MEDIUM_BLOG_LINK = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@shevon_mendis';
+const MEDIUM_BLOG_LINK = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@shevn';
 
 export const Blog = () => {
 
