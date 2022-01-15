@@ -24,17 +24,5 @@ export const BlogHeader = () => (
         { Messages.subtitle() }
       </Text.Small>
     </div>
-    <div
-        className={styles.wave}
-    >
-      <svg
-          viewBox='0 0 750 50'
-          fill='none'
-      >
-        <path
-            d='M 0 30 Q 150 50 300 30 Q 450 0 600 30 Q 750 50 900 30'
-        />
-      </svg>
-    </div>
   </div>
 );
