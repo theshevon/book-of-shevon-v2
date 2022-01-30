@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
 import { getRandomNumInRange } from './../../util/math';
@@ -110,7 +110,7 @@ export const Error = () => {
     );
   }));
 
-  const addSingleCard = (x: number, y: number) => {
+  const addSingleCard = useCallback((x: number, y: number) => {
     setCards([
       ...cards,
       new Card(
@@ -120,9 +120,10 @@ export const Error = () => {
         y,
       ),
     ]);
-  };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const updateCards = (canvas: HTMLCanvasElement, renderingCtx: CanvasRenderingContext2D) => {
+  const updateCards = useCallback((canvas: HTMLCanvasElement, renderingCtx: CanvasRenderingContext2D) => {
 
     // update card positions
     for (let i=0; i<cards.length; i++) {
@@ -140,16 +141,17 @@ export const Error = () => {
         setCards(activeCards);
       }
     }
-  };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const updateCanvasSize = () => {
+  const updateCanvasSize = useCallback(() => {
     const errorPageDiv =  errorPageRef.current;
     if (!errorPageDiv) {
       return;
     }
     setCanvasWidth(errorPageDiv.clientWidth);
     setCanvasHeight(errorPageDiv.clientHeight);
-  };
+  }, []);
 
   useEffect(() => {
 
@@ -175,6 +177,7 @@ export const Error = () => {
       clearInterval(cardUpdateLoop);
       window.removeEventListener('resize', updateCanvasSize);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cards]);
 
   return (

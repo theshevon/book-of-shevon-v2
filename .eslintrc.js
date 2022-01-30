@@ -65,7 +65,8 @@ module.exports = {
       'warn',
       2,
       {
-        ignoredNodes: ['JSXAttribute'],
+        // https://github.com/typescript-eslint/typescript-eslint/issues/415#issuecomment-507385565
+        ignoredNodes: ['JSXAttribute', 'JSXSpreadAttribute'],
         SwitchCase: 1,
       },
     ],

@@ -56,6 +56,11 @@ storiesOf('UI/Colors', module)
           columnGap: '10px',
         }}
     >
-      { COLOR_GROUPS.map(colorGroup => <ColorGroup {...colorGroup}/>) }
+      { COLOR_GROUPS.map((colorGroup, index) => (
+        <ColorGroup
+            key={index}
+            {...colorGroup}
+        />
+      )) }
     </div>
   ));
