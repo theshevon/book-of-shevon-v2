@@ -62,7 +62,6 @@ const BlogPostsLayoutInternal = observer(({
               >
               </div>
               <BlogPostsGrid
-                  loadingState={loadingState}
                   posts={rest}
               />
             </>
@@ -72,7 +71,6 @@ const BlogPostsLayoutInternal = observer(({
     } else {
       Layout = () => (
         <BlogPostsGrid
-            loadingState={loadingState}
             posts={posts}
         />
       );

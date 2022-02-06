@@ -25,7 +25,6 @@ storiesOf('Pages/Blog/BlogPostsGrid', module)
   ))
   .add('BlogPostsGrid', () => (
     <BlogPostsGrid
-        loadingState='complete'
         posts={BlogPosts}
     />
   ));
