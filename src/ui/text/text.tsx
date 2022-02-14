@@ -88,7 +88,7 @@ const getThemeClassName = (theme: Theme) => {
       return styles.basic;
   }
 
-}
+};
 
 const getClassNames = ({
   size,

@@ -42,7 +42,7 @@ export const ColorGroup = ({
     <div
         className={styles.colors}
     >
-      { colors.map((color, index) => (
+      { colors.map(color => (
         <ColorRect
             key={color.name}
             {...color}

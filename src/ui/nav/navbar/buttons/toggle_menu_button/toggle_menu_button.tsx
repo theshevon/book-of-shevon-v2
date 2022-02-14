@@ -25,4 +25,4 @@ export const ToggleMenuButton = ({
       { menuOpen ? Messages.CloseMenuButtonLabel() : Messages.OpenMenuButtonLabel() }
     </Button>
   );
-}
+};

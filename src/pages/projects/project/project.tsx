@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Theme, THEMES, useThemeContext } from '../../../util/theming/theme_provider';
+import { Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import { ButtonLink, CapsuleLink } from './../../../ui/link/link';
 import { Text } from './../../../ui/text/text';
 import { ProjectMessages as Messages } from './project.messages';
