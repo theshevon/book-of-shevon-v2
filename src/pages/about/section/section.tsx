@@ -8,17 +8,14 @@ type SectionTitleOpt = 'education' | 'commercialXp' | 'skills' | 'volunteerXp';
 
 type SectionProps = {
 	title: SectionTitleOpt,
-	aosAnimation?: string,
 }
 
 export const Section: FC<SectionProps> = ({
   title,
-  aosAnimation = 'fade-up',
   children,
 }) => (
   <section
       className={styles.section}
-      data-aos={aosAnimation}
   >
     <Text.SmallTitle
         fontWeight='bold'
