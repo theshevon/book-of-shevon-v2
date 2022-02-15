@@ -1,6 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
-import type { FC } from 'react';
+import React, { FC } from 'react';
 import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import type { IconDefinition } from '../icons/icon/icon';
 import { Icon } from '../icons/icon/icon';

@@ -21,6 +21,8 @@ type TextProps = {
   keepDefaultMargins?: boolean,
   textCase?: TextCase,
   className?: string,
+  // ONLY USE FOR TESTING
+  __themeOverride?: Theme,
 }
 
 const getSizeClassName = (size: Size | undefined) => {
@@ -127,6 +129,7 @@ const renderText = ({
   keepDefaultMargins,
   textCase,
   theme,
+  __themeOverride,
   className,
   children,
 }: {
@@ -134,11 +137,16 @@ const renderText = ({
   size?: Size,
   theme: Theme,
   children?: ReactNode,
-} & TextProps) => createElement(
-  tag,
-  { className: getClassNames({ size, alignment, fontWeight, italicized, keepDefaultMargins, textCase, theme, className }) },
-  children,
-);
+} & TextProps) => {
+  if (__themeOverride) {
+    theme = __themeOverride;
+  }
+  return createElement(
+    tag,
+    { className: getClassNames({ size, alignment, fontWeight, italicized, keepDefaultMargins, textCase, theme, className }) },
+    children,
+  );
+};
 
 // Ordinary text (ie. body text)
 const ExtraSmall: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xs', theme: useThemeContext().theme, ...props });
