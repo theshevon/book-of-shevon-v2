@@ -2,7 +2,7 @@
 @value colorGrey100, colorGrey200 from '../../ui/colors/colors.module.css';
 
 .page {
-    margin: 10% 7.5%;
+    margin: auto 5%;
     position: relative;
 }
 

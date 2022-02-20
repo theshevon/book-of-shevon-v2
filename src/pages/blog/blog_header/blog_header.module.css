@@ -6,7 +6,6 @@
 .blogHeader {
 	height: 175px;
 	position: relative;
-	padding-top: 45px;
 	box-sizing: border-box;
 }
 
@@ -35,10 +34,6 @@
 }
 
 @media(min-width: breakpointSmall) {
-
-	.title {
-		margin-top: 10px;
-	}
 
 	.subtitle {
 		margin-bottom: 0;

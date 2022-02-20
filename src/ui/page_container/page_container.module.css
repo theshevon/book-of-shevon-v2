@@ -1,3 +1,21 @@
+@value breakpointSmall from '../metrics/breakpoints.module.css';
+
 .pageContainer, .pageContent {
   height: 100%;
+}
+
+.pageContent {
+  padding: max(5%, 40px) 2.5%;
+}
+
+.pageContent.withoutTopPaddingForContent {
+  padding-top: 0;
+}
+
+@media(min-width: breakpointSmall) {
+
+  .pageContent {
+    padding-top: max(5%, 85px);
+  }
+
 }
