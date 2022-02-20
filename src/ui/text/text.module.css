@@ -1,6 +1,7 @@
 @value colorGrey500 from '../colors/colors.module.css';
 
 @value bodyTextSizeXSmall: 1.0rem;
+@value bodyTextLineHeightXSmall: 1.5rem;
 @value bodyTextSizeSmall: 1.1rem;
 @value bodyTextSizeMedium: 1.2rem;
 @value bodyTextSizeLarge: 1.4rem;
@@ -12,6 +13,8 @@
 
 @value eightBitFontScaleFactor: 0.6;
 
+@value lineHeightScaleFactor: 1.4;
+
 .text {
     color: colorGrey500;
 }
@@ -22,6 +25,7 @@
 
 p.xSmall {
     font-size: bodyTextSizeXSmall;
+    line-height: calc(lineHeightScaleFactor * bodyTextSizeXSmall);
 }
 
 p.xSmall.eightBit {
@@ -30,6 +34,7 @@ p.xSmall.eightBit {
 
 p.small {
     font-size: bodyTextSizeSmall;
+    line-height: calc(lineHeightScaleFactor * bodyTextSizeSmall);
 }
 
 p.small.eightBit {
@@ -38,6 +43,7 @@ p.small.eightBit {
 
 p.medium {
     font-size: bodyTextSizeMedium;
+    line-height: calc(lineHeightScaleFactor * bodyTextSizeMedium);
 }
 
 p.medium.eightBit {
@@ -46,6 +52,7 @@ p.medium.eightBit {
 
 p.large {
     font-size: bodyTextSizeLarge;
+    line-height: calc(lineHeightScaleFactor * bodyTextSizeLarge);
 }
 
 p.large.eightBit {
@@ -54,6 +61,7 @@ p.large.eightBit {
 
 p.xLarge {
     font-size: bodyTextSizeXLarge;
+    line-height: calc(lineHeightScaleFactor * bodyTextSizeXLarge);
 }
 
 p.xLarge.eightBit {
@@ -62,6 +70,7 @@ p.xLarge.eightBit {
 
 h3.small {
     font-size: titleTextSizeSmall;
+    line-height: calc(lineHeightScaleFactor * titleTextSizeSmall);
 }
 
 h3.small.eightBit {
@@ -70,6 +79,7 @@ h3.small.eightBit {
 
 h2.medium {
     font-size: titleTextSizeMedium;
+    line-height: calc(lineHeightScaleFactor * titleTextSizeMedium);
 }
 
 h2.medium.eightBit {
@@ -78,6 +88,7 @@ h2.medium.eightBit {
 
 h1.large {
     font-size: titleTextSizeLarge;
+    line-height: calc(lineHeightScaleFactor * titleTextSizeLarge);
 }
 
 h1.large.eightBit {

@@ -146,7 +146,7 @@ storiesOf('UI/Text', module)
       italicized,
       textCase,
     };
-    const text = 'snafu';
+    const text = 'garlic bread';
     return (
       <div
           style={{
@@ -155,7 +155,8 @@ storiesOf('UI/Text', module)
           }}
       >
         <div
-            style={{ minWidth: '200px' }}>
+            style={{ minWidth: '200px' }}
+        >
           <TextStoryWrapper
               testText={text}
               __themeOverride={Theme.BASIC}
@@ -163,7 +164,8 @@ storiesOf('UI/Text', module)
           />
         </div>
         <div
-            style={{ minWidth: '200px' }}>
+            style={{ minWidth: '200px' }}
+        >
           <TextStoryWrapper
               testText={text}
               __themeOverride={Theme.EIGHT_BIT}
