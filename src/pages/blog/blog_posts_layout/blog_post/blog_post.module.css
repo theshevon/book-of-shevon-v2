@@ -39,7 +39,6 @@
     text-align: left;
     font-weight: bold;
     font-size: titleFontSize;
-    font-family: 'Roboto';
 }
 
 .title:hover {
@@ -59,9 +58,9 @@
     padding: tagPadding;
 }
 
-.desc,
-.date,
-.tag {
+.blogPost:not(.eightBit) .desc,
+.blogPost:not(.eightBit) .date,
+.blogPost:not(.eightBit) .tag {
     font-family: 'Tinos', serif;
 }
 

@@ -6,7 +6,6 @@
 @value experienceBottom: calc(4 * bottomMargin);
 
 .experiences {
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
     padding-left: 0;
 }
 

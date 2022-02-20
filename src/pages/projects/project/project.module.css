@@ -6,7 +6,6 @@
 	border-radius: 4px;
 	display: flex;
 	flex-direction: column;
-	font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
 	padding: 5%;
 	position: relative;
 }

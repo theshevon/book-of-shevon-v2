@@ -14,12 +14,14 @@
 	margin-top: 0;
 	margin-bottom: 10px;
 	font-weight: bold;
-	font-family: 'Roboto';
 }
 
 .subtitle {
 	color: colorGrey300;
 	margin-bottom: 10px;
+}
+
+.blogHeader.eightBit .subtitle {
 	font-family: 'Tinos', serif;
 }
 
