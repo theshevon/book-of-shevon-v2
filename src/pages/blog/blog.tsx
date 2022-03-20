@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { BlogMessages as Messages } from './blog.messages';
-import styles from './blog.module.css';
 import { BlogHeader } from './blog_header/blog_header';
 import { BlogPostProps } from './blog_posts_layout/blog_post/blog_post';
 import { BlogPostsLayout } from './blog_posts_layout/blog_posts_layout';
