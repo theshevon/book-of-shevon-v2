@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { ReactNode, createElement } from 'react';
+import { ReactNode, createElement } from 'react';
 import type { FC } from 'react';
 import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import styles from './text.module.css';
