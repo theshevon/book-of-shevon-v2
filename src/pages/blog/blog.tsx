@@ -29,18 +29,16 @@ export const Blog = () => {
   }, []);
 
   // TODO: create a fallback placeholder
-  const Fallback = () => <div>Fallback placeholder</div>;
+  const Fallback = () => <div>Loading...</div>;
 
   return (
-    <div
-        className={styles.blog}
-    >
+    <>
       <BlogHeader/>
       <BlogPostsLayout
           loadingState={loadingState}
           posts={posts}
           Fallback={Fallback}
       />
-    </div>
+    </>
   );
 };

@@ -2,7 +2,7 @@
 
 @value breakpointSmall from './../../../../ui/metrics/breakpoints.module.css';
 @value bodyTextSizeXLarge from './../../../../ui/text/text.module.css';
-@value colorGrey500 from './../../../../ui/colors/colors.module.css';
+@value colorLimeGreen100, colorLimeGreen500, colorGrey500 from './../../../../ui/colors/colors.module.css';
 
 @value blogPostHeight: 478px;
 @value titleFontSize: calc(bodyTextSizeXLarge * 1.2);
@@ -11,10 +11,6 @@
 @value titleContainerMarginTopForJumbotron: 5px;
 @value dateMarginBottom: 15px;
 @value tagPadding: 6px;
-
-.blogPost {
-    height: blogPostHeight;
-}
 
 .coverImgContainer {
     height: 200px;
@@ -52,8 +48,8 @@
 }
 
 .tag {
-    color: #345729;
-    background-color: #D1F7C4;
+    color: colorLimeGreen500;
+    background-color: colorLimeGreen100;
     border-radius: 4px;
     padding: tagPadding;
 }
@@ -73,6 +69,7 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-gap: 20px;
+    height: blogPostHeight;
 }
 
 .jumbotron .coverImgContainer {

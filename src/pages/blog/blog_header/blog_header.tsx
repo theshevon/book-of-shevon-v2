@@ -22,13 +22,13 @@ export const BlogHeader = () => {
         >
           { Messages.title() }
         </Text.LargeTitle>
-        <Text.Small
+        { /* <Text.Small
             alignment='center'
             fontWeight='light'
             className={styles.subtitle}
         >
           { Messages.subtitle() }
-        </Text.Small>
+        </Text.Small> */ }
       </div>
     </div>
   );

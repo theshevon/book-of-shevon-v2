@@ -3,11 +3,11 @@
 @value colorGrey100, colorGrey300 from '../../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
-.blogHeader {
+/* .blogHeader {
 	height: 175px;
 	position: relative;
 	box-sizing: border-box;
-}
+} */
 
 .title {
 	margin-top: 0;
@@ -20,7 +20,7 @@
 	margin-bottom: 10px;
 }
 
-.blogHeader.eightBit .subtitle {
+.blogHeader:not(.eightBit) .subtitle {
 	font-family: 'Tinos', serif;
 }
 

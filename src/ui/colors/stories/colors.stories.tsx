@@ -63,6 +63,19 @@ const COLOR_GROUPS: ColorGroupProps[] = [
       },
     ],
   },
+  {
+    name: 'Lime Green',
+    colors: [
+      {
+        name: 'colorLimeGreen100',
+        value: colorValues.colorLimeGreen100,
+      },
+      {
+        name: 'colorLimeGreen500',
+        value: colorValues.colorLimeGreen500,
+      },
+    ],
+  },
 ];
 
 storiesOf('UI/Colors', module)

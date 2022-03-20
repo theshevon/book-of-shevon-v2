@@ -26,7 +26,7 @@ export const About = () => {
   return (
 
     <div
-        className={classNames(styles.page, {
+        className={classNames(styles.aboutPage, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
         })}
     >
