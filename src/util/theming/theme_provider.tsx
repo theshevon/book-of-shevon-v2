@@ -14,10 +14,12 @@ export const THEMES = [
   {
     theme: Theme.BASIC,
     label: Messages.basic(),
+    icon: '🥛',
   },
   {
     theme: Theme.EIGHT_BIT,
     label: Messages.eightBit(),
+    icon: '👾',
   },
 ];
 

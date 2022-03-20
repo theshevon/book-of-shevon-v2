@@ -1,0 +1,9 @@
+.themeOptions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.themeOption:not(:hover):not(.active) {
+  opacity: 30%;
+  filter: grayscale(100%);
+}
