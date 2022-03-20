@@ -1,3 +1,7 @@
+.themeSwitcherButton:hover {
+  background-color: unset;
+}
+
 .themeOptions {
   display: flex;
   justify-content: space-evenly;
