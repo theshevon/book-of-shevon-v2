@@ -34,7 +34,7 @@ const getTheme = (value: string | null | undefined): Theme => {
 
 interface IThemeContext {
   theme: Theme,
-  setTheme: React.Dispatch<React.SetStateAction<Theme>>,
+  setTheme: (theme: Theme) => void,
 }
 
 const ThemeContext = createContext<IThemeContext>(undefined!);
@@ -43,7 +43,12 @@ export const useThemeContext = () => useContext(ThemeContext);
 
 export const ThemeProvider: FC = ({ children }) => {
 
-  const [theme, setTheme] = useState<Theme>(getTheme(window.localStorage.getItem(LOCAL_STORAGE_KEY)));
+  const [theme, _setTheme] = useState<Theme>(getTheme(window.localStorage.getItem(LOCAL_STORAGE_KEY)));
+
+  const setTheme = (theme: Theme) => {
+    _setTheme(theme);
+    window.localStorage.setItem(LOCAL_STORAGE_KEY, theme.toString());
+  };
 
   return (
     <ThemeContext.Provider
