@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
 import { THEMES, Theme, useThemeContext } from '../../../../../util/theming/theme_provider';
-import { Button } from '../../../../button/button';
 import baseStyles from './../navbar_button.module.css';
 import themeSwitcherButtonStyles from './theme_switcher_button.module.css';
 
@@ -11,6 +10,7 @@ export const ThemeSwitcherButton = () => {
     <div
         className={classNames(baseStyles.navbarButton, themeSwitcherButtonStyles.themeSwitcherButton, {
           [themeSwitcherButtonStyles.eightBit]: theme === Theme.EIGHT_BIT,
+          [baseStyles.eightBit]: theme === Theme.EIGHT_BIT,
         })}
     >
       <div

@@ -89,7 +89,6 @@ const getThemeClassName = (theme: Theme) => {
     default:
       return styles.basic;
   }
-
 };
 
 const getClassNames = ({

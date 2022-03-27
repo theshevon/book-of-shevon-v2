@@ -1,40 +1,8 @@
 @value colorGrey100, colorGrey200, colorGrey500 from '../../../../colors/colors.module.css';
 
-/* TODO: write this way better */
-
-.themeSwitcherButton:hover {
-  border-color: colorGrey200;
-  background-color: unset;
-}
-
-.themeOptions {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  z-index: 2000;
-}
-
-.themeOption:not(:hover):not(.active) {
-  opacity: 30%;
-  filter: grayscale(100%);
-}
-
-.themeOption {
-  padding: 0;
-  margin: 0;
-  background-color: unset;
-  border: none;
-  transition: opacity 300ms;
-}
-
-.themeOption:hover {
-  cursor: pointer;
-}
-
 .themeSwitcherButton {
   box-sizing: border-box;
   padding: 0.4rem 0.8rem;
-  text-align: center;
   color: colorGrey500;
   border: 1px solid colorGrey100;
   border-radius: 5px;
@@ -43,7 +11,6 @@
 }
 
 .themeSwitcherButton.eightBit {
-  font-family: "Press Start 2P", cursive;
   border-radius: unset;
   position: relative;
   box-shadow: inset -2px -2px 0px 0px colorGrey100;
@@ -70,4 +37,46 @@
   top: 0;
   border-left: 2px colorGrey200 solid;
   border-right: 2px colorGrey200 solid;
+}
+
+.themeSwitcherButton.eightBit:hover:before {
+  border-top-color: colorGrey500;
+  border-bottom-color: colorGrey500;
+}
+
+.themeSwitcherButton.eightBit:hover:after {
+  border-left-color: colorGrey500;
+  border-right-color: colorGrey500;
+}
+
+.themeSwitcherButton:hover {
+  border-color: colorGrey200;
+  background-color: unset;
+}
+
+.themeOptions {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  z-index: 200;
+}
+
+.themeOption:not(:hover):not(.active) {
+  opacity: 40%;
+  filter: grayscale(100%);
+}
+
+.themeOption {
+  padding: 0;
+  margin: 0;
+  background-color: unset;
+  border: none;
+}
+
+.themeSwitcherButton:not(.eightBit) {
+  transition: opacity 300ms;
+}
+
+.themeOption:hover {
+  cursor: pointer;
 }
