@@ -5,13 +5,13 @@
     transition: 500ms;
     text-transform: uppercase;
     min-width: 115px;
+    height: 32px;
     background-color: colorGrey100;
+    margin: auto 2px;
 }
 
 .navbarButton:hover {
-    color: white;
-    border: 1px solid colorGrey500;
-    background-color: colorGrey500;
+    border: 1px solid colorGrey200;
 }
 
 .navbarButton.eightBit {

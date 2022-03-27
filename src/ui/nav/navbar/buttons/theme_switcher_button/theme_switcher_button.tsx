@@ -8,8 +8,7 @@ import themeSwitcherButtonStyles from './theme_switcher_button.module.css';
 export const ThemeSwitcherButton = () => {
   const { theme, setTheme } = useThemeContext();
   return (
-    <Button
-        onClick={() => {}}
+    <div
         className={classNames(baseStyles.navbarButton, themeSwitcherButtonStyles.themeSwitcherButton, {
           [themeSwitcherButtonStyles.eightBit]: theme === Theme.EIGHT_BIT,
         })}
@@ -18,7 +17,7 @@ export const ThemeSwitcherButton = () => {
           className={themeSwitcherButtonStyles.themeOptions}
       >
         { THEMES.map(themeOption => (
-          <div
+          <button
               key={themeOption.theme.toString()}
               title={themeOption.label}
               onClick={() => setTheme(themeOption.theme)}
@@ -27,9 +26,9 @@ export const ThemeSwitcherButton = () => {
               })}
           >
             { themeOption.icon }
-          </div>
+          </button>
         )) }
       </div>
-    </Button>
+    </div>
   );
 };
