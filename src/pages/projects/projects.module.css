@@ -1,16 +1,14 @@
-.projectsPage {
-  padding: 5% 2.5%;
-}
-
 .pageTitleContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
 }
 
 .pageTitle {
-  font-family: "FreeMono", monospace;
   position: relative;
+}
+
+.projectsPage:not(.eightBit) .pageTitle {
+  font-family: "FreeMono", monospace;
 }
 
 .pageTitle:before {
@@ -25,4 +23,5 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
+  margin-top: 2.5%;
 }

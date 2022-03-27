@@ -46,6 +46,36 @@ const COLOR_GROUPS: ColorGroupProps[] = [
       },
     ],
   },
+  {
+    name: 'Green',
+    colors: [
+      {
+        name: 'colorGreen200',
+        value: colorValues.colorGreen200,
+      },
+      {
+        name: 'colorGreen300',
+        value: colorValues.colorGreen300,
+      },
+      {
+        name: 'colorGreen400',
+        value: colorValues.colorGreen400,
+      },
+    ],
+  },
+  {
+    name: 'Lime Green',
+    colors: [
+      {
+        name: 'colorLimeGreen100',
+        value: colorValues.colorLimeGreen100,
+      },
+      {
+        name: 'colorLimeGreen500',
+        value: colorValues.colorLimeGreen500,
+      },
+    ],
+  },
 ];
 
 storiesOf('UI/Colors', module)
@@ -56,9 +86,9 @@ storiesOf('UI/Colors', module)
           columnGap: '10px',
         }}
     >
-      { COLOR_GROUPS.map((colorGroup, index) => (
+      { COLOR_GROUPS.map(colorGroup => (
         <ColorGroup
-            key={index}
+            key={colorGroup.name}
             {...colorGroup}
         />
       )) }

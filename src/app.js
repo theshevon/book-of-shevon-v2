@@ -1,5 +1,4 @@
-import AOS from 'aos';
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Route,
   BrowserRouter as Router,
@@ -17,18 +16,8 @@ import { Routes } from './routes/routes';
 import { Nav as NavImpl } from './ui/nav/nav';
 import { createPageContainer } from './ui/page_container/create';
 import './app.css';
-import 'aos/dist/aos.css';
-
-const AOS_DURATION_MILLISECONDS = 1500;
 
 export const App = () => {
-
-  useEffect(() => {
-    AOS.init({
-      duration: AOS_DURATION_MILLISECONDS,
-      once: true,
-    });
-  }, []);
 
   // eslint-disable-next-line no-console
   console.log(Messages.consoleGreetingImg(Messages.consoleGreetingMessage()));
@@ -42,7 +31,7 @@ export const App = () => {
 
   const PageContainer = createPageContainer(Nav);
   const HomePage = () => <PageContainer Content={Home}/>;
-  const AboutPage = () => <PageContainer Content={About}/>;
+  const AboutPage = () => <PageContainer Content={About} withoutTopPaddingForContent={true}/>;
   const ProjectsPage = () => <PageContainer Content={Projects}/>;
   const BlogPage = () => <PageContainer Content={Blog}/>;
   const CreativePage = () => <PageContainer Content={Creative}/>;

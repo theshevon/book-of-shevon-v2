@@ -5,9 +5,9 @@ import { CloseIconDefinition } from '../../../../../ui/icons/definitions/close';
 import { LeftArrowIconDefinition } from '../../../../../ui/icons/definitions/left_arrow';
 import { RightArrowIconDefinition } from '../../../../../ui/icons/definitions/right_arrow';
 import { DisplaySizeObserver, isMediumOrWider, isSmallOrNarrower } from '../../../../../util/display_size_observer/display_size_observer';
-import styles from './lightbox.module.css';
+import styles from './light_box.module.css';
 
-type LightboxProps = {
+type LightBoxProps = {
   imgSrc: string,
   isFirst: boolean,
   isLast: boolean,
@@ -15,13 +15,13 @@ type LightboxProps = {
   onClose: () => void,
 }
 
-export const Lightbox = observer(({
+export const LightBox = observer(({
   imgSrc,
   isFirst,
   isLast,
   onImgChange,
   onClose,
-}: LightboxProps) => {
+}: LightBoxProps) => {
 
   const ref = useRef(null);
 
@@ -88,7 +88,7 @@ export const Lightbox = observer(({
 
   return (
     <div
-        className={styles.lightbox}
+        className={styles.lightBox}
         ref={ref}
     >
       <div

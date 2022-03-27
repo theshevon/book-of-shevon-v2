@@ -8,3 +8,10 @@
 @value colorGreyTransparentDark: hsla(0, 0%, 15%, 80%);
 
 @value colorFlatGold: hsl(46, 65%, 52%);
+
+@value colorGreen200: hsl(128, 50%, 66.25%);
+@value colorGreen300: hsl(128, 50%, 55%);
+@value colorGreen400: hsl(128, 50%, 41.25%);
+
+@value colorLimeGreen100: hsl(105, 76%, 87%);
+@value colorLimeGreen500: hsl(106, 36% , 25%);

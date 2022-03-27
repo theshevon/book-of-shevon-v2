@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from '../../text/text';
 import styles from './color_group.module.css';
 
 type ColorRectProps = {
@@ -18,9 +17,9 @@ export const ColorRect = ({
     <div
         className={styles.colorLabel}
     >
-      <Text.ExtraSmall>
+      <div>
         { name }
-      </Text.ExtraSmall>
+      </div>
     </div>
   </div>
 );
@@ -37,19 +36,15 @@ export const ColorGroup = ({
   <div
       className={styles.colorGroup}
   >
-    <Text.Small
-        fontWeight='bold'
-        textCase='uppercase'
-        keepDefaultMargins={true}
-    >
+    <div>
       { name }
-    </Text.Small>
+    </div>
     <div
         className={styles.colors}
     >
-      { colors.map((color, index) => (
+      { colors.map(color => (
         <ColorRect
-            key={index}
+            key={color.name}
             {...color}
         />
       )) }

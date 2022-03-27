@@ -1,18 +1,47 @@
-@value colorGrey100, colorGrey500 from '../../../colors/colors.module.css';
+@value colorGrey100, colorGrey200, colorGrey300, colorGrey500 from '../../../colors/colors.module.css';
 
 .navbarButton {
     border: 1px solid colorGrey100;
-    box-sizing: border-box;
     transition: 500ms;
-    color: colorGrey500;
     text-transform: uppercase;
-    min-width: 115px;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    width: 115px;
+    height: 32px;
+    background-color: colorGrey100;
+    margin: auto 2px;
 }
 
 .navbarButton:hover {
-    color: white;
-    border: 1px solid colorGrey500;
-    background-color: colorGrey500;
+    border: 1px solid colorGrey200;
+}
+
+.navbarButton.eightBit {
+    transition: unset;
+}
+
+.navbarButton.eightBit,
+.navbarButton.eightBit:active,
+.navbarButton.eightBit:focus {
+    box-shadow: inset -2px -2px 0px 0px colorGrey100 !important;
+}
+
+.navbarButton.eightBit:hover {
+    box-shadow: inset -3px -3px 0px 0px colorGrey300 !important;
+}
+
+.navbarButton.eightBit:not(:hover):before {
+    border-top-color: colorGrey200;
+    border-bottom-color: colorGrey200;
+}
+
+.navbarButton.eightBit:not(:hover):after {
+    border-left-color: colorGrey200;
+    border-right-color: colorGrey200;
+}
+
+@supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .navbarButton {
+        background-color: unset;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    }
 }

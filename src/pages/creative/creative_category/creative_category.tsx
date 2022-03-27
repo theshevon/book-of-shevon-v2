@@ -1,5 +1,7 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { Text } from '../../../ui/text/text';
+import { DisplaySizeObserver, isSmallOrNarrower } from '../../../util/display_size_observer/display_size_observer';
 import styles from './creative_category.module.css';
 import { ImageGrid } from './image_grid/image_grid';
 
@@ -8,7 +10,7 @@ export type CreativeCategoryProps = {
   sections: SectionProps[],
 };
 
-export const CreativeCategory = ({
+export const CreativeCategory = observer(({
   name,
   sections,
 }: CreativeCategoryProps) => (
@@ -16,7 +18,6 @@ export const CreativeCategory = ({
       className={styles.creativeCategory}
   >
     <Text.MediumTitle
-        alignment='center'
         fontWeight='bold'
         className={styles.categoryName}
     >
@@ -33,7 +34,7 @@ export const CreativeCategory = ({
       )) }
     </div>
   </div>
-);
+));
 
 type SectionProps = {
   name: string,
@@ -46,7 +47,7 @@ type SectionProps = {
   subSections: SubSectionProps[],
 });
 
-export const Section = ({
+export const Section = observer(({
   name,
   desc,
   images,
@@ -79,25 +80,25 @@ export const Section = ({
     <div
         className={styles.section}
     >
-      <Text.Large
+      <Text.SmallTitle
           fontWeight='bold'
-          alignment='center'
+          alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'center' : 'left'}
           className={styles.sectionName}
       >
         { name }
-      </Text.Large>
+      </Text.SmallTitle>
       { desc && (
-        <Text.Small
-            alignment='center'
+        <Text.ExtraSmall
+            alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'center' : 'left'}
             className={styles.sectionDesc}
         >
           { desc }
-        </Text.Small>
+        </Text.ExtraSmall>
       ) }
       <SectionContent/>
     </div>
   );
-};
+});
 
 type SubSectionProps = {
   name: string,
@@ -113,20 +114,20 @@ export const SubSection = ({
   <div
       className={styles.subSection}
   >
-    <Text.Medium
+    <Text.Small
         fontWeight='bold'
-        alignment='center'
+        alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'center' : 'left'}
         className={styles.subSectionName}
     >
       { name }
-    </Text.Medium>
+    </Text.Small>
     { desc && (
-      <Text.Small
-          alignment='center'
+      <Text.ExtraSmall
+          alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'center' : 'left'}
           className={styles.subSectionDesc}
       >
         { desc }
-      </Text.Small>
+      </Text.ExtraSmall>
     ) }
     <ImageGrid
         images={images}

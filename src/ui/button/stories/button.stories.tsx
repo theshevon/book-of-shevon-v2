@@ -6,35 +6,20 @@ import { CloseIconDefinition } from '../../icons/definitions/close';
 import { Button, IconButton } from '../button';
 
 storiesOf('UI/Button/Button', module)
-  .add('Default', () => (
+  .add('Button', () => (
     <Button
         onClick={action('clicked')}
         disabled={boolean('disabled', false)}
     >
       Click Me
     </Button>
-  ))
-  .add('Disabled', () => (
-    <Button
-        onClick={action('clicked')}
-        disabled={true}
-    >
-      disabled
-    </Button>
   ));
 
 storiesOf('UI/Button/IconButton', module)
-  .add('Default', () => (
+  .add('IconButton', () => (
     <IconButton
         iconDefinition={CloseIconDefinition}
         onClick={action('clicked')}
         disabled={boolean('disabled', false)}
-    />
-  ))
-  .add('Disabled', () => (
-    <IconButton
-        iconDefinition={CloseIconDefinition}
-        onClick={action('clicked')}
-        disabled={true}
     />
   ));

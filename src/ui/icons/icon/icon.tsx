@@ -21,7 +21,7 @@ export type IconDefinition = Omit<IconProps, 'className'>;
 
 const DEFAULT_WIDTH = 24;
 const DEFAULT_HEIGHT = 24;
-const DEFAULT_VIEWBOX = {
+const DEFAULT_VIEW_BOX = {
   minX: 0,
   minY: 0,
   width: DEFAULT_WIDTH,
@@ -32,7 +32,7 @@ export const Icon = ({
   className,
   width = DEFAULT_WIDTH,
   height = DEFAULT_HEIGHT,
-  viewBox = DEFAULT_VIEWBOX,
+  viewBox = DEFAULT_VIEW_BOX,
   fillRule,
   clipRule,
   pathData,

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { BlogMessages as Messages } from './blog.messages';
-import styles from './blog.module.css';
 import { BlogHeader } from './blog_header/blog_header';
 import { BlogPostProps } from './blog_posts_layout/blog_post/blog_post';
 import { BlogPostsLayout } from './blog_posts_layout/blog_posts_layout';
@@ -29,18 +28,16 @@ export const Blog = () => {
   }, []);
 
   // TODO: create a fallback placeholder
-  const Fallback = () => <div>Fallback placeholder</div>;
+  const Fallback = () => <div>Loading...</div>;
 
   return (
-    <div
-        className={styles.blog}
-    >
+    <>
       <BlogHeader/>
       <BlogPostsLayout
           loadingState={loadingState}
           posts={posts}
           Fallback={Fallback}
       />
-    </div>
+    </>
   );
 };

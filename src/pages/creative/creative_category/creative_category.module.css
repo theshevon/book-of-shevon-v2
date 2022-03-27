@@ -4,12 +4,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: left;
 }
 
 .sections,
 .subSections {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .sections {
@@ -33,18 +35,6 @@
 .categoryName {
   margin-bottom: 0.75rem;
   display: inline;
-  position: relative;
-}
-
-.categoryName:after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -6px;
-  transform: translateX(-50%);
-  width: 30%;
-  height: 1px;
-  background: colorGrey300;
 }
 
 .sectionName,

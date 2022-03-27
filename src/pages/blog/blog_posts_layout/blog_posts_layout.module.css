@@ -2,7 +2,7 @@
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 .blogPostsLayout {
-    padding: 5%;
+    margin-top: 2.5%;
 }
 
 .separator {

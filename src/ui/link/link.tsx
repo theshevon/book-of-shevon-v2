@@ -1,5 +1,6 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { FC } from 'react';
+import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import type { IconDefinition } from '../icons/icon/icon';
 import { Icon } from '../icons/icon/icon';
 import styles from './link.module.css';
@@ -14,12 +15,13 @@ export type IconLinkProps = Omit<LinkProps, 'className'> & {
 	iconDefinition: IconDefinition,
 }
 
-export const Link: React.FC<LinkProps> = ({
+export const Link: FC<LinkProps> = ({
   url,
   targetSelf,
   className,
   children,
 }) => {
+  const { theme } = useThemeContext();
   const linkAttributes = {
     target: targetSelf ? '_self' : '_blank',
     rel: !targetSelf ? 'noopener noreferrer' : undefined,
@@ -27,7 +29,9 @@ export const Link: React.FC<LinkProps> = ({
   return (
     <a
         href={url}
-        className={classNames(styles.link, className)}
+        className={classNames(styles.link, className, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+        })}
         {...linkAttributes}
     >
       { children }
@@ -35,7 +39,7 @@ export const Link: React.FC<LinkProps> = ({
   );
 };
 
-export const ButtonLink: React.FC<LinkProps> = ({
+export const ButtonLink: FC<LinkProps> = ({
   url,
   className,
   children,
@@ -48,7 +52,7 @@ export const ButtonLink: React.FC<LinkProps> = ({
   </Link>
 );
 
-export const CapsuleLink: React.FC<LinkProps> = ({
+export const CapsuleLink: FC<LinkProps> = ({
   url,
   className,
   children,

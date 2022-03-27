@@ -1,8 +1,36 @@
-@value colorGrey100 from './../colors/colors.module.css';
+@value colorGrey100, colorGrey500 from './../colors/colors.module.css';
+@value bodyTextSizeXSmall from './../text/text.module.css';
 
 .capsule {
-    border-radius: 15px;
-    padding: 5px 15px;
     text-align: center;
+    font-size: bodyTextSizeXSmall;
     background-color: colorGrey100;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+.capsule.eightBit {
+    padding: 5px 10px;
+    border-radius: unset;
+    font-family: "Press Start 2P", cursive;
+    position: relative;
+}
+
+.capsule.eightBit:before,
+.capsule.eightBit:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: inherit;
+}
+
+.capsule.eightBit:before {
+    left: -5px;
+}
+
+.capsule.eightBit:after {
+    right: -5px;
 }

@@ -22,7 +22,6 @@
 
 .link {
     position: relative;
-    font-family: 'Arial';
     font-weight: 400;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -31,21 +30,14 @@
     transition: 0.4s;
 }
 
+.link.eightBit {
+    font-family: "Press Start 2P", cursive;
+    transition: unset;
+}
+
 .link:hover,
 .link.active {
     color: colorGrey500;
-}
-
-.link.active:after {
-    content: '';
-    height: 2px;
-    border-radius: 1px;
-    width: 50%;
-    background-color: colorGrey300;
-    position: absolute;
-    left: 50%;
-    bottom: -5px;
-    transform: translateX(-50%);
 }
 
 @keyframes fadeIn {

@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { StoryGroup } from '../../../../storybook/stories';
+import { StoryWrapper } from '../../../../../util/storybook/story_wrapper';
 import { HorizontalMenu } from '../horizontal_menu';
 
 const routesData = [
@@ -10,7 +10,7 @@ const routesData = [
     index: -1,
   },
   {
-    label: 'Route 2 (Active)',
+    label: 'Route 2',
     path: '##',
     index: 0,
   },
@@ -23,7 +23,9 @@ const routesData = [
 
 storiesOf('UI/Nav/Navbar/HorizontalMenu', module)
   .add('HorizontalMenu', () => (
-    <StoryGroup>
+    <StoryWrapper
+        title='Route 2 is the active route'
+    >
       <div
           style={{
             height: '50px',
@@ -37,5 +39,5 @@ storiesOf('UI/Nav/Navbar/HorizontalMenu', module)
             activeRoute='##'
         />
       </div>
-    </StoryGroup>
+    </StoryWrapper>
   ));

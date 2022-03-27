@@ -5,7 +5,7 @@ import { TechCapsule } from '../tech_capsule';
 storiesOf('pages/Projects/TechCapsule', module)
   .add('TechCapsule', () => (
     <div
-        style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}
+        style={{ display: 'flex', flexWrap: 'wrap', gap: '5px 10px' }}
     >
       <TechCapsule
           tech='Python'

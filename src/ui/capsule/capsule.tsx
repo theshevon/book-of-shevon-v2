@@ -1,5 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
+import type { FC } from 'react';
+import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { Text } from './../text/text';
 import styles from './capsule.module.css';
 
@@ -7,15 +9,20 @@ type CapsuleProps = {
   className?: string,
 }
 
-export const Capsule: React.FC<CapsuleProps> = ({
+export const Capsule: FC<CapsuleProps> = ({
   className,
   children,
-}) => (
-  <div
-      className={classNames(styles.capsule, className)}
-  >
-    <Text.ExtraSmall>
-      { children }
-    </Text.ExtraSmall>
-  </div>
-);
+}) => {
+  const { theme } = useThemeContext();
+  return (
+    <div
+        className={classNames(styles.capsule, className, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+        })}
+    >
+      <Text.ExtraSmall>
+        { children }
+      </Text.ExtraSmall>
+    </div>
+  );
+};

@@ -1,0 +1,23 @@
+@value storyPadding: 15px;
+@value titleContainerHeight: 20px;
+@value titleContainerPadding: 5px;
+
+.storyWrapper {
+  border: 1px dashed black;
+  padding: storyPadding;
+  margin: storyPadding auto;
+  position: relative;
+}
+
+.titleContainer {
+  position: absolute;
+  background-color: white;
+  height: titleContainerHeight;
+  box-sizing: border-box;
+  left: calc(storyPadding - titleContainerPadding);
+  top: calc(-0.5 * titleContainerHeight);
+  padding: titleContainerPadding;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

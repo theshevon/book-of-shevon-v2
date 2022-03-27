@@ -33,7 +33,7 @@
 }
 
 .thumbnail:hover {
-  cursor: pointer;
+  cursor: zoom-in;
   transform: scale(1.1);
 }
 

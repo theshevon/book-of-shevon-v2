@@ -2,7 +2,7 @@ export const AppMessages = {
 
   bookOfShevon: (): string => 'Book of Shevon',
 
-  consoleGreetingMessage: (): string => 'What r u doing, Step Bro?',
+  consoleGreetingMessage: (): string => 'what r u doing, step-bro?',
 
   consoleGreetingImg: (msg: string): string => `
   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣷⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀

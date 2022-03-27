@@ -3,23 +3,24 @@
 @value colorGrey100, colorGrey300 from '../../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
-.blogHeader {
+/* .blogHeader {
 	height: 175px;
 	position: relative;
-	padding-top: 45px;
 	box-sizing: border-box;
-}
+} */
 
 .title {
 	margin-top: 0;
 	margin-bottom: 10px;
 	font-weight: bold;
-	font-family: 'Roboto';
 }
 
 .subtitle {
 	color: colorGrey300;
 	margin-bottom: 10px;
+}
+
+.blogHeader:not(.eightBit) .subtitle {
 	font-family: 'Tinos', serif;
 }
 
@@ -33,10 +34,6 @@
 }
 
 @media(min-width: breakpointSmall) {
-
-	.title {
-		margin-top: 10px;
-	}
 
 	.subtitle {
 		margin-bottom: 0;

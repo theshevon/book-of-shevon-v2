@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import React, { useEffect } from 'react';
+import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { IconLink } from './../../ui/link/link';
 import { Text } from './../../ui/text/text';
@@ -12,9 +14,13 @@ export const Home = () => {
     updateDocumentHeader(Messages.pageTitle());
   }, []);
 
+  const { theme } = useThemeContext();
+
   return (
     <div
-        className={styles.siteTitleContainer}
+        className={classNames(styles.siteTitleContainer, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+        })}
     >
       <Text.LargeTitle
           alignment='center'

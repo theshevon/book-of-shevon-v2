@@ -1,5 +1,7 @@
 import classNames from 'classnames';
-import React, { FC } from 'react';
+import React from 'react';
+import type { FC } from 'react';
+import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { Icon, IconDefinition } from '../icons/icon/icon';
 import styles from './button.module.css';
 
@@ -14,15 +16,20 @@ export const Button: FC<ButtonProps> = ({
   disabled=false,
   className='',
   children,
-}) => (
-  <button
-      className={classNames(styles.button, className)}
-      onClick={onClick}
-      disabled={disabled}
-  >
-    { children }
-  </button>
-);
+}) => {
+  const { theme } = useThemeContext();
+  return (
+    <button
+        className={classNames(styles.button, className, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+        })}
+        onClick={onClick}
+        disabled={disabled}
+    >
+      { children }
+    </button>
+  );
+};
 
 type IconButtonProps = ButtonProps & {
   iconDefinition: IconDefinition,

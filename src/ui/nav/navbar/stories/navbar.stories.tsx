@@ -9,7 +9,7 @@ const routesData = [
     index: -1,
   },
   {
-    label: 'Route 2 (Active)',
+    label: 'Route 2',
     path: '##',
     index: 0,
   },
