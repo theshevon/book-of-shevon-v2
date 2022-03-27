@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/book-of-shevon-v2/static/css/main.d75dafe0.chunk.css",
-    "main.js": "/book-of-shevon-v2/static/js/main.323f8d8f.chunk.js",
-    "main.js.map": "/book-of-shevon-v2/static/js/main.323f8d8f.chunk.js.map",
+    "main.js": "/book-of-shevon-v2/static/js/main.dc00e8a7.chunk.js",
+    "main.js.map": "/book-of-shevon-v2/static/js/main.dc00e8a7.chunk.js.map",
     "runtime-main.js": "/book-of-shevon-v2/static/js/runtime-main.b6e5a998.js",
     "runtime-main.js.map": "/book-of-shevon-v2/static/js/runtime-main.b6e5a998.js.map",
     "static/js/2.a741e588.chunk.js": "/book-of-shevon-v2/static/js/2.a741e588.chunk.js",
@@ -62,6 +62,6 @@
     "static/js/runtime-main.b6e5a998.js",
     "static/js/2.a741e588.chunk.js",
     "static/css/main.d75dafe0.chunk.css",
-    "static/js/main.323f8d8f.chunk.js"
+    "static/js/main.dc00e8a7.chunk.js"
   ]
 }
