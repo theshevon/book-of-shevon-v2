@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/book-of-shevon-v2/static/css/main.d75dafe0.chunk.css",
-    "main.js": "/book-of-shevon-v2/static/js/main.d25c60cb.chunk.js",
-    "main.js.map": "/book-of-shevon-v2/static/js/main.d25c60cb.chunk.js.map",
+    "main.js": "/book-of-shevon-v2/static/js/main.c2945003.chunk.js",
+    "main.js.map": "/book-of-shevon-v2/static/js/main.c2945003.chunk.js.map",
     "runtime-main.js": "/book-of-shevon-v2/static/js/runtime-main.b6e5a998.js",
     "runtime-main.js.map": "/book-of-shevon-v2/static/js/runtime-main.b6e5a998.js.map",
-    "static/js/2.50b567ed.chunk.js": "/book-of-shevon-v2/static/js/2.50b567ed.chunk.js",
-    "static/js/2.50b567ed.chunk.js.map": "/book-of-shevon-v2/static/js/2.50b567ed.chunk.js.map",
+    "static/js/2.a741e588.chunk.js": "/book-of-shevon-v2/static/js/2.a741e588.chunk.js",
+    "static/js/2.a741e588.chunk.js.map": "/book-of-shevon-v2/static/js/2.a741e588.chunk.js.map",
     "index.html": "/book-of-shevon-v2/index.html",
     "static/css/main.d75dafe0.chunk.css.map": "/book-of-shevon-v2/static/css/main.d75dafe0.chunk.css.map",
-    "static/js/2.50b567ed.chunk.js.LICENSE.txt": "/book-of-shevon-v2/static/js/2.50b567ed.chunk.js.LICENSE.txt",
+    "static/js/2.a741e588.chunk.js.LICENSE.txt": "/book-of-shevon-v2/static/js/2.a741e588.chunk.js.LICENSE.txt",
     "static/media/hand_drawn_0.jpg": "/book-of-shevon-v2/static/media/hand_drawn_0.72c3938f.jpg",
     "static/media/hand_drawn_1.jpg": "/book-of-shevon-v2/static/media/hand_drawn_1.fb9e4b1a.jpg",
     "static/media/hand_drawn_2.jpg": "/book-of-shevon-v2/static/media/hand_drawn_2.dc200bbb.jpg",
@@ -60,8 +60,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b6e5a998.js",
-    "static/js/2.50b567ed.chunk.js",
+    "static/js/2.a741e588.chunk.js",
     "static/css/main.d75dafe0.chunk.css",
-    "static/js/main.d25c60cb.chunk.js"
+    "static/js/main.c2945003.chunk.js"
   ]
 }
