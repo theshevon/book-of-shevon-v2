@@ -11,10 +11,9 @@ import styles from './projects.module.css';
 export const Projects = ({
   PageContainer,
 }: {
-  PageContainer: ({ Content, pageBackgroundStyles, withoutTopPaddingForContent, }: {
+  PageContainer: ({ Content, pageBackgroundStyles }: {
       Content: () => JSX.Element;
       pageBackgroundStyles?: string | undefined;
-      withoutTopPaddingForContent?: boolean | undefined;
   }) => JSX.Element,
 }) => {
 

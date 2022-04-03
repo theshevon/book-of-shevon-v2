@@ -1,3 +1,6 @@
+@value baseCloudHeight: calc(100vh / 6);
+@value brickHeight: max(5%, 40px);
+
 .pageTitleContainer {
   display: flex;
   justify-content: center;
@@ -9,6 +12,31 @@
 
 .projectsPage:not(.eightBit) .pageTitle {
   font-family: "FreeMono", monospace;
+}
+
+.pageBackground.eightBit {
+  background: 
+    url("./assets/cloud.svg") -2% baseCloudHeight/118px auto no-repeat,
+    url("./assets/cloud.svg") 6% calc(baseCloudHeight + 150px)/118px auto no-repeat,
+    url("./assets/cloud.svg") 101% calc(baseCloudHeight + 110px)/118px auto no-repeat,
+    url("./assets/cloud.svg") 90% baseCloudHeight/118px auto no-repeat,
+
+    url("./assets/cloud.svg") 102% calc(baseCloudHeight * 4)/118px auto no-repeat,
+    url("./assets/cloud.svg") 94% calc(baseCloudHeight * 4 + 150px)/118px auto no-repeat,
+    url("./assets/cloud.svg") -1% calc(baseCloudHeight * 4 + 110px)/118px auto no-repeat,
+    url("./assets/cloud.svg") 10% calc(baseCloudHeight * 4)/118px auto no-repeat,
+
+    url("./assets/cloud.svg") -2% calc(baseCloudHeight * 8)/118px auto no-repeat,
+    url("./assets/cloud.svg") 6% calc(baseCloudHeight * 8 + 150px)/118px auto no-repeat,
+    url("./assets/cloud.svg") 101% calc(baseCloudHeight * 8 + 110px)/118px auto no-repeat,
+    url("./assets/cloud.svg") 90% calc(baseCloudHeight * 8)/118px auto no-repeat,
+
+    url("./assets/blocks-left.svg") left calc(100% - 48px)/25% no-repeat,
+    url("./assets/blocks-right.svg") right calc(100% - 48px)/25% no-repeat,
+
+    url("./assets/brick.png") center bottom repeat-x,
+    #9290FF;
+  /* background-attachment: fixed; */
 }
 
 .pageTitle:before {
