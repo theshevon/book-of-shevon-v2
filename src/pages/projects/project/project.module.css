@@ -30,7 +30,7 @@
 }
 
 .project.eightBit .title {
-	color: #8C3301;
+	color: #DE5817;
 }
 
 .year {
@@ -98,7 +98,7 @@
 
 .project.eightBit .githubLink:not(:hover) {
 	color: black;
-	box-shadow: inset -2px -2px 0px 0px #8C3301;
+	box-shadow: inset -2px -2px 0px 0px #DE5817;
 }
 
 .githubLink:hover {
@@ -137,7 +137,7 @@
 		box-shadow: unset;
 		border-radius: unset;
 		position: relative;
-		box-shadow: inset -4px -4px 0px 0px black;
+		box-shadow: inset -4px -4px 0px 0px #DE5817;
 	}
 
 	.project:not(.eightBit):not(:last-of-type):after {
@@ -156,15 +156,15 @@
 	.project.eightBit:before {
 			top: -2px;
 			left: 0;
-			border-top: 2px #DE5819 solid;
-			border-bottom: 1px black solid;
+			border-top: 2px black solid;
+			border-bottom: 2px black solid;
 	}
 
 	.project.eightBit:after {
 			left: -2px;
 			top: 0;
-			border-left: 2px #DE5819 solid;
-			border-right: 1px black solid;
+			border-left: 2px black solid;
+			border-right: 2px black solid;
 	}
 
 }
