@@ -40,13 +40,6 @@
   /* background-attachment: fixed; */
 }
 
-.pageTitle:before {
-  content: ">>>";
-  font-weight: 100;
-  position: absolute;
-  transform: translateX(-65px);
-}
-
 .projects {
   display: flex;
   flex-wrap: wrap;
