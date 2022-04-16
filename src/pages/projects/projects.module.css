@@ -1,3 +1,4 @@
+@value marioWhite, marioOrange from '../../ui/colors/colors.module.css';
 @value baseCloudHeight: calc(100vh / 10);
 @value brickHeight: max(5%, 40px);
 
@@ -11,8 +12,8 @@
 }
 
 .projectsPage.eightBit .pageTitle {
-  background-color: #DE5817;
-  color: #FFFEDE;
+  background-color: marioOrange;
+  color: marioWhite;
   text-shadow: 0 3px black; 
   padding: 0 10px;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import colorValues from '../colors.module.css';
 import { ColorGroup, ColorGroupProps } from './color_group';
 
-const COLOR_GROUPS: ColorGroupProps[] = [
+const BASE_COLOR_GROUPS: ColorGroupProps[] = [
   {
     name: 'Grey',
     colors: [
@@ -78,19 +78,57 @@ const COLOR_GROUPS: ColorGroupProps[] = [
   },
 ];
 
+const MARIO_COLOR_GROUP: ColorGroupProps = {
+  name: 'Mario',
+  colors: [
+    {
+      name: 'marioWhite',
+      value: colorValues.marioWhite,
+    },
+    {
+      name: 'marioYellowLight',
+      value: colorValues.marioYellowLight,
+    },
+    {
+      name: 'marioYellow',
+      value: colorValues.marioYellow,
+    },
+    {
+      name: 'marioYellowDark',
+      value: colorValues.marioYellowDark,
+    },
+    {
+      name: 'marioOrange',
+      value: colorValues.marioOrange,
+    },
+  ],
+};
+
 storiesOf('UI/Colors', module)
-  .add('Colors', () => (
+  .add('Base Palette', () => (
     <div
         style={{
           display: 'flex',
           columnGap: '10px',
         }}
     >
-      { COLOR_GROUPS.map(colorGroup => (
+      { BASE_COLOR_GROUPS.map(colorGroup => (
         <ColorGroup
             key={colorGroup.name}
             {...colorGroup}
         />
       )) }
+    </div>
+  ))
+  .add('Mario Palette', () => (
+    <div
+        style={{
+          display: 'flex',
+          columnGap: '10px',
+        }}
+    >
+      <ColorGroup
+          {...MARIO_COLOR_GROUP}
+      />
     </div>
   ));
