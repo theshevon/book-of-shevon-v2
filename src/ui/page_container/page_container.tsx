@@ -5,14 +5,16 @@ import styles from './page_container.module.css';
 export const PageContainer = ({
   Nav,
   Content,
+  pageBackgroundStyles,
   withoutTopPaddingForContent,
 }: {
   Nav: () => JSX.Element,
   Content: () => JSX.Element,
+  pageBackgroundStyles?: string,
   withoutTopPaddingForContent?: boolean,
 }) => (
   <div
-      className={styles.pageContainer}
+      className={classNames(styles.pageContainer, pageBackgroundStyles)}
   >
     <Nav />
     <div

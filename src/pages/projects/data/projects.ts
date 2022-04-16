@@ -141,7 +141,7 @@ export const Projects: ProjectProps[] = [
   {
     name: Messages.LandscapeGenerator(),
     year: 2018,
-    description: Messages.LandscapeGenerator(),
+    description: Messages.LandscapeGeneratorDesc(),
     techStack: [
       Messages.CSharp(),
       Messages.Unity(),
@@ -157,7 +157,7 @@ export const Projects: ProjectProps[] = [
   {
     name: Messages.LubyJump(),
     year: 2018,
-    description: Messages.LubyJump(),
+    description: Messages.LubyJumpDesc(),
     techStack: [
       Messages.Java(),
       Messages.AndroidStudio(),

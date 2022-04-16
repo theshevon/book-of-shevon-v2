@@ -8,7 +8,14 @@ import { Project } from './project/project';
 import { ProjectsMessages as Messages } from './projects.messages';
 import styles from './projects.module.css';
 
-export const Projects = () => {
+export const Projects = ({
+  PageContainer,
+}: {
+  PageContainer: ({ Content, pageBackgroundStyles }: {
+      Content: () => JSX.Element;
+      pageBackgroundStyles?: string | undefined;
+  }) => JSX.Element,
+}) => {
 
   useEffect(() => {
     updateDocumentHeader(Messages.pageTitle());
@@ -16,7 +23,7 @@ export const Projects = () => {
 
   const { theme } = useThemeContext();
 
-  return (
+  const Content = () => (
     <div
         className={classNames(styles.projectsPage, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
@@ -29,7 +36,7 @@ export const Projects = () => {
             fontWeight='bold'
             className={styles.pageTitle}
         >
-          { 'ls ' + Messages.pageTitle() }
+          { Messages.pageTitle() }
         </Text.LargeTitle>
       </div>
       <div
@@ -43,5 +50,14 @@ export const Projects = () => {
         )) }
       </div>
     </div>
+  );
+
+  return (
+    <PageContainer
+        Content={Content}
+        pageBackgroundStyles={classNames(styles.pageBackground, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+        })}
+    />
   );
 };

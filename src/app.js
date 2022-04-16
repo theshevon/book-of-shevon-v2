@@ -32,7 +32,7 @@ export const App = () => {
   const PageContainer = createPageContainer(Nav);
   const HomePage = () => <PageContainer Content={Home}/>;
   const AboutPage = () => <PageContainer Content={About} withoutTopPaddingForContent={true}/>;
-  const ProjectsPage = () => <PageContainer Content={Projects}/>;
+  const ProjectsPage = () => <Projects PageContainer={PageContainer}/>;
   const BlogPage = () => <PageContainer Content={Blog}/>;
   const CreativePage = () => <PageContainer Content={Creative}/>;
 
