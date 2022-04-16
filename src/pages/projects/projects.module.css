@@ -10,10 +10,6 @@
   position: relative;
 }
 
-.projectsPage:not(.eightBit) .pageTitle {
-  font-family: "FreeMono", monospace;
-}
-
 .projectsPage.eightBit .pageTitle {
   background-color: #DE5817;
   color: #FFFEDE;
@@ -76,4 +72,12 @@
   justify-content: center;
   gap: 25px;
   margin-top: 2.5%;
+}
+
+@media(max-width: breakpointSmall) {
+
+  .projectsPage.eightBit .pageTitle {
+    margin-bottom: 25px;
+  }
+
 }
