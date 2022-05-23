@@ -99,7 +99,6 @@ export const Error = () => {
     return img;
   }, []);
 
-  const errorPageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const [canvasWidth, setCanvasWidth] = useState<number>();
@@ -133,14 +132,10 @@ export const Error = () => {
     }));
   }, []);
 
-  const updateCanvasSize = () => {
-    const errorPageDiv =  errorPageRef.current;
-    if (!errorPageDiv) {
-      return;
-    }
-    setCanvasWidth(errorPageDiv.clientWidth);
-    setCanvasHeight(errorPageDiv.clientHeight);
-  };
+  const updateCanvasSize = useCallback(() => {
+    setCanvasWidth(window.innerWidth);
+    setCanvasHeight(window.innerHeight);
+  }, []);
 
   useEffect(() => {
     updateDocumentHeader(Messages.pageTitle());
@@ -149,7 +144,7 @@ export const Error = () => {
     const renderingCtx = canvas?.getContext('2d');
 
     const cardAdditionLoop = setInterval(() => {
-      addSingleCard(Math.random() * (canvasWidth || window.innerWidth), -CARD_HEIGHT);
+      addSingleCard(Math.random() * window.innerWidth, -CARD_HEIGHT);
     }, AUTO_ADDITION_UPDATE_INTERVAL);
 
     const cardUpdateLoop = setInterval(() => {
@@ -165,11 +160,10 @@ export const Error = () => {
       clearInterval(cardUpdateLoop);
       window.removeEventListener('resize', updateCanvasSize);
     };
-  }, [addSingleCard, updateCards, canvasWidth]);
+  }, [addSingleCard, updateCards, updateCanvasSize]);
 
   return (
     <div
-        ref={errorPageRef}
         className={styles.errorPage}
     >
       <div
