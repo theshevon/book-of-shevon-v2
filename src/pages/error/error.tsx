@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
 import { getRandomNumInRange } from './../../util/math';
@@ -7,7 +7,7 @@ import { ErrorMessages as Messages } from './error.messages';
 import styles from './error.module.css';
 
 const POSITION_UPDATE_FREQ_PER_S = 60;
-const POSITION_UPDATE_INTERVAL = 1000 / POSITION_UPDATE_FREQ_PER_S;
+const POSITION_UPDATE_INTERVAL = 2000 / POSITION_UPDATE_FREQ_PER_S;
 
 const MIN_INITIAL_CARDS = 10;
 const MAX_INITIAL_CARDS = 20;
@@ -93,15 +93,17 @@ class Card {
 
 export const Error = () => {
 
-  const image = new Image();
-  image.src = CARDS_SPRITE;
+  const image = useMemo(() => {
+    const img = new Image();
+    img.src = CARDS_SPRITE;
+    return img;
+  }, []);
 
-  const errorPageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const [canvasWidth, setCanvasWidth] = useState<number>();
   const [canvasHeight, setCanvasHeight] = useState<number>();
-  const [cards, setCards] = useState<Card[]>(Array.from({ length: getRandomNumInRange(MIN_INITIAL_CARDS, MAX_INITIAL_CARDS)  }, () => {
+  const [_cards, setCards] = useState<Card[]>(Array.from({ length: getRandomNumInRange(MIN_INITIAL_CARDS, MAX_INITIAL_CARDS)  }, () => {
     return new Card(
       image,
       Math.floor(Math.random() * (N_CARDS_IN_DECK - 1)),
@@ -111,7 +113,7 @@ export const Error = () => {
   }));
 
   const addSingleCard = useCallback((x: number, y: number) => {
-    setCards([
+    setCards(cards => [
       ...cards,
       new Card(
         image,
@@ -120,48 +122,29 @@ export const Error = () => {
         y,
       ),
     ]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [image]);
 
   const updateCards = useCallback((canvas: HTMLCanvasElement, renderingCtx: CanvasRenderingContext2D) => {
-
-    // update card positions
-    for (let i=0; i<cards.length; i++) {
-      const card = cards[i];
+    setCards(cards => cards.filter(card => {
       card.updatePosition(canvas.height);
-      if (card.isActiveWithinCanvas(canvas.width)) {
-        card.draw(renderingCtx);
-      }
-    }
-
-    // remove all cards that are out of the view
-    for (let i=0; i<cards.length; i++) {
-      const activeCards = cards.filter(card => card.isActiveWithinCanvas(canvas.width));
-      if (activeCards.length !== cards.length) {
-        setCards(activeCards);
-      }
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+      card.draw(renderingCtx);
+      return card.isActiveWithinCanvas(canvas.width);
+    }));
   }, []);
 
   const updateCanvasSize = useCallback(() => {
-    const errorPageDiv =  errorPageRef.current;
-    if (!errorPageDiv) {
-      return;
-    }
-    setCanvasWidth(errorPageDiv.clientWidth);
-    setCanvasHeight(errorPageDiv.clientHeight);
+    setCanvasWidth(window.innerWidth);
+    setCanvasHeight(window.innerHeight);
   }, []);
 
   useEffect(() => {
-
     updateDocumentHeader(Messages.pageTitle());
 
     const canvas = canvasRef.current;
     const renderingCtx = canvas?.getContext('2d');
 
     const cardAdditionLoop = setInterval(() => {
-      addSingleCard(Math.random() * (canvasWidth || window.innerWidth), -CARD_HEIGHT);
+      addSingleCard(Math.random() * window.innerWidth, -CARD_HEIGHT);
     }, AUTO_ADDITION_UPDATE_INTERVAL);
 
     const cardUpdateLoop = setInterval(() => {
@@ -177,12 +160,10 @@ export const Error = () => {
       clearInterval(cardUpdateLoop);
       window.removeEventListener('resize', updateCanvasSize);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cards]);
+  }, [addSingleCard, updateCards, updateCanvasSize]);
 
   return (
     <div
-        ref={errorPageRef}
         className={styles.errorPage}
     >
       <div
