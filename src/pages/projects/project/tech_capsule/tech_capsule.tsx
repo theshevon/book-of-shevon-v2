@@ -16,6 +16,8 @@ const getTechClassName = (tech: string) => {
       return styles.css;
     case 'javascript':
       return styles.javascript;
+    case 'typescript':
+      return styles.typescript;
     case 'react':
       return styles.react;
     case 'redux':
