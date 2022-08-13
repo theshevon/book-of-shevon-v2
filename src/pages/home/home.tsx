@@ -11,7 +11,7 @@ import { Links } from './links';
 export const Home = () => {
 
   useEffect(() => {
-    updateDocumentHeader(Messages.pageTitle());
+    updateDocumentHeader(Messages.bookOfShevon(), { type: 'emoji', src: '🤠' });
   }, []);
 
   const { theme } = useThemeContext();

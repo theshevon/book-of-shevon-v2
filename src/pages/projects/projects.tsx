@@ -18,7 +18,7 @@ export const Projects = ({
 }) => {
 
   useEffect(() => {
-    updateDocumentHeader(Messages.pageTitle());
+    updateDocumentHeader(Messages.pageTitle(), { type: 'emoji', src: '🐝' });
   }, []);
 
   const { theme } = useThemeContext();

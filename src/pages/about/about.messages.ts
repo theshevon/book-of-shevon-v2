@@ -1,4 +1,4 @@
 export const AboutMessages = {
 
-  pageTitle: (): string => 'About',
+  pageTitle: (): string => 'About Shevon',
 };

@@ -1,4 +1,4 @@
 export const CreativeMessages = {
 
-  title: (): string => 'Creative',
+  title: (): string => 'Creativity of Shevon',
 };

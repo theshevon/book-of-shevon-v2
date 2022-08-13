@@ -29,7 +29,9 @@ export const ExperiencesMessages = {
 
   Canva: (): string => 'Canva',
 
-  CanvaResponsibility1: (): string => 'Building and maintaing UI components',
+  CanvaResponsibility1: (): string => 'Building and maintaining UI components and making performance optimisations for the home page',
+
+  CanvaResponsibility2: (): string => 'Member of the Canva Ambassador Program',
 
   DgitSystems: (): string => 'DGiT Systems',
 
@@ -41,7 +43,7 @@ export const ExperiencesMessages = {
 
   UniMelbEngResponsibility1: (): string => 'Developing a web app that would allow individuals to visualise and analyse data sourced from COVID-19 literature',
 
-  UniMelbEngResponsibility2: (): string => 'Integrating indiviudally developed analysis/ visualisation tools into a web server that would act as the API for the client app',
+  UniMelbEngResponsibility2: (): string => 'Integrating individually developed analysis/ visualisation tools into a web server that would act as the API for the client app',
 
   AcademicTutor: (): string => 'Academic Tutor',
 

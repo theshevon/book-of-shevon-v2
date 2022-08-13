@@ -16,7 +16,7 @@ import { Skills } from './skills/skills';
 export const About = () => {
 
   useEffect(() => {
-    updateDocumentHeader(Messages.pageTitle());
+    updateDocumentHeader(Messages.pageTitle(), { type: 'emoji', src: '👀' });
   }, []);
 
   const Profile = createProfile();

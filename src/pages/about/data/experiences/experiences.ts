@@ -12,6 +12,7 @@ export const CommercialExperiences: ExperienceProps[] = [
     },
     responsibilities: [
       Messages.CanvaResponsibility1(),
+      Messages.CanvaResponsibility2(),
     ],
   },
   {
