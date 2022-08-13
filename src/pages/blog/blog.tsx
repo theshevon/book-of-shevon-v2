@@ -11,7 +11,7 @@ const MEDIUM_BLOG_LINK = 'https://api.rss2json.com/v1/api.json?rss_url=https://m
 export const Blog = () => {
 
   useEffect(() => {
-    updateDocumentHeader(Messages.pageTitle());
+    updateDocumentHeader(Messages.pageTitle(), { type: 'emoji', src: '✏️' });
   }, []);
 
   const [posts, setPosts] = useState<BlogPostProps[]>([]);

@@ -1,4 +1,4 @@
 export const BlogMessages = {
 
-  pageTitle: (): string => 'Blog',
+  pageTitle: (): string => 'Blog of Shevon',
 };

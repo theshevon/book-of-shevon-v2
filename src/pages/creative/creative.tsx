@@ -9,7 +9,7 @@ import { CreativeCategories } from './data/creative_categories';
 export const Creative = () => {
 
   useEffect(() => {
-    updateDocumentHeader(Messages.title());
+    updateDocumentHeader(Messages.title(), { type: 'emoji', src: '🌊' });
   }, []);
 
   return (
