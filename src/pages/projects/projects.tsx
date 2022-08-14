@@ -36,7 +36,7 @@ export const Projects = ({
             fontWeight='bold'
             className={styles.pageTitle}
         >
-          { Messages.pageTitle() }
+          { Messages.projects() }
         </Text.LargeTitle>
       </div>
       <div
