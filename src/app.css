@@ -6,6 +6,9 @@ body {
     height: 100vh;  /* needed to act as a reference for the #root's height */
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
+    background-image: radial-gradient(rgb(185, 185, 185) 1px, transparent 0);
+    background-size: 40px 40px;
+    background-position: -19px -19px;
 }
 
 #root {

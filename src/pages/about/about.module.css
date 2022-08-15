@@ -6,6 +6,11 @@
     position: relative;
 }
 
+.aboutPage:not(.eightBit) {
+    background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(1px);
+}
+
 .aboutPage.eightBit {
     box-shadow: inset -4px -4px 0px 0px colorGrey100;
 }
