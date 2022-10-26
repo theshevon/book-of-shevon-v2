@@ -22,3 +22,4 @@ yarn-error.log*
 
 # OS noise
 .DS_Store
+.vscode/
