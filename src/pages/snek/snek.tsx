@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Button } from '../../ui/button/button';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
-import { startGame } from './game/main';
+import { runGame } from './game';
 import { SnekMessages as Messages } from './snek.messages';
 import styles from './snek.module.css';
 
@@ -12,7 +12,7 @@ export const Snek = () => {
 
   useEffect(() => {
     updateDocumentHeader(Messages.pageTitle(), { type: 'emoji', src: '🐍' });
-    startGame();
+    runGame();
   }, []);
 
   return (
@@ -41,7 +41,6 @@ export const Snek = () => {
           </Button>
         </div>
       </div>
-      <div id='game-board' className={styles.gameBoard}></div>
     </>
   );
 };
