@@ -62,7 +62,7 @@
 }
 
 .themeOption:not(:hover):not(.active) {
-  opacity: 40%;
+  opacity: 0.4 !important;
   filter: grayscale(100%);
 }
 

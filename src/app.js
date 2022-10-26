@@ -11,6 +11,7 @@ import { Creative } from './pages/creative/creative';
 import { Error } from './pages/error/error';
 import { Home } from './pages/home/home';
 import { Projects } from './pages/projects/projects';
+import { Snek } from './pages/snek/snek';
 import { RoutesData } from './routes/route_data/route_data';
 import { Routes } from './routes/routes';
 import { Nav as NavImpl } from './ui/nav/nav';
@@ -35,6 +36,7 @@ export const App = () => {
   const ProjectsPage = () => <Projects PageContainer={PageContainer}/>;
   const BlogPage = () => <PageContainer Content={Blog}/>;
   const CreativePage = () => <PageContainer Content={Creative}/>;
+  const SnekPage = () => <PageContainer Content={Snek}/>;
 
   return (
     <Router>
@@ -63,6 +65,11 @@ export const App = () => {
             exact
             path={Routes.CREATIVE}
             component={CreativePage}
+        />
+        <Route
+            exact
+            path={Routes.SNEK}
+            component={SnekPage}
         />
         <Route
             exact
