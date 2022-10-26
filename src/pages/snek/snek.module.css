@@ -26,3 +26,11 @@
 .gameInstructions {
   margin-bottom: 15px;
 }
+
+.gameBoard {
+  background-color: white;
+  display: grid;
+  height: 500px;
+  width: 500px;
+  grid-template: repeat(25, 1fr) / repeat(25, 1fr);
+}
