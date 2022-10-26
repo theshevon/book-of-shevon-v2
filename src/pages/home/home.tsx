@@ -23,7 +23,7 @@ export const Home = () => {
         })}
     >
       <Text.LargeTitle
-          alignment='center'
+          alignment='centre'
           className={styles.siteTitle}
       >
         { Messages.bookOfShevon() }

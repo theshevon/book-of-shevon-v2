@@ -113,7 +113,7 @@ const Tag = ({
       className={styles.tag}
   >
     <Text.ExtraSmall
-        alignment='center'
+        alignment='centre'
         textCase='lowercase'
     >
       { tag }

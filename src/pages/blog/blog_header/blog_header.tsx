@@ -17,13 +17,13 @@ export const BlogHeader = () => {
           className={styles.textContainer}
       >
         <Text.LargeTitle
-            alignment='center'
+            alignment='centre'
             className={styles.title}
         >
           { Messages.title() }
         </Text.LargeTitle>
         { /* <Text.Small
-            alignment='center'
+            alignment='centre'
             fontWeight='light'
             className={styles.subtitle}
         >
