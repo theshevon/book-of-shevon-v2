@@ -19,7 +19,7 @@ export const Section: FC<SectionProps> = ({
   >
     <Text.SmallTitle
         fontWeight='bold'
-        alignment='center'
+        alignment='centre'
         textCase='uppercase'
         className={styles.title}
     >

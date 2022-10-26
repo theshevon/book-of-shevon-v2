@@ -5,10 +5,10 @@ import { StoryWrapper } from '../../../util/storybook/story_wrapper';
 import { Theme } from '../../../util/theming/theme_provider';
 import { Text } from '../text';
 
-const ALIGNMENT_OPTS: Record<string, 'left' | 'right' | 'center' | 'justify'> = {
+const ALIGNMENT_OPTS: Record<string, 'left' | 'right' | 'centre' | 'justify'> = {
   'Left': 'left',
   'Right': 'right',
-  'Center': 'center',
+  'Centre': 'centre',
   'Justify': 'justify',
 };
 
@@ -31,7 +31,7 @@ const TextStoryWrapper = ({
   ...otherProps
 } : {
   testText: string,
-  alignment: 'left' | 'right' | 'center' | 'justify',
+  alignment: 'left' | 'right' | 'centre' | 'justify',
   fontWeight: 'light' | 'normal' | 'semi-bold' | 'bold',
   textCase: 'none' | 'lowercase' | 'uppercase' | 'capitalize',
   __themeOverride?: Theme,

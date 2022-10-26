@@ -82,14 +82,14 @@ export const Section = observer(({
     >
       <Text.SmallTitle
           fontWeight='bold'
-          alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'center' : 'left'}
+          alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'centre' : 'left'}
           className={styles.sectionName}
       >
         { name }
       </Text.SmallTitle>
       { desc && (
         <Text.ExtraSmall
-            alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'center' : 'left'}
+            alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'centre' : 'left'}
             className={styles.sectionDesc}
         >
           { desc }
@@ -116,14 +116,14 @@ export const SubSection = ({
   >
     <Text.Small
         fontWeight='bold'
-        alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'center' : 'left'}
+        alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'centre' : 'left'}
         className={styles.subSectionName}
     >
       { name }
     </Text.Small>
     { desc && (
       <Text.ExtraSmall
-          alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'center' : 'left'}
+          alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'centre' : 'left'}
           className={styles.subSectionDesc}
       >
         { desc }

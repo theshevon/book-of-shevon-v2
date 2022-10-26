@@ -8,7 +8,7 @@ export const CreativeHeader = () => (
       className={styles.creativeHeader}
   >
     <Text.LargeTitle
-        alignment='center'
+        alignment='centre'
         className={styles.title}
     >
       { Messages.title() }

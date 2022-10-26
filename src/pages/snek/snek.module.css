@@ -1,0 +1,36 @@
+.gameControls {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.topRow {
+  margin-bottom: 5px;
+}
+
+.gameControlBtn:hover {
+  cursor: default;
+}
+
+.bottomRow .gameControlBtn {
+  margin: 0 5px;
+}
+
+.gameWelcome {
+  margin-bottom: 20px;
+}
+
+.gameInstructions {
+  margin-bottom: 15px;
+}
+
+.gameBoard {
+  background-color: white;
+  display: grid;
+  height: 500px;
+  width: 500px;
+  grid-template: repeat(25, 1fr) / repeat(25, 1fr);
+}

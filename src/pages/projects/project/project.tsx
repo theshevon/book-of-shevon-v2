@@ -38,7 +38,7 @@ export const Project = ({
     >
       { /* TITLE */ }
       <Text.Large
-          alignment='center'
+          alignment='centre'
           fontWeight='bold'
           className={styles.title}
       >
@@ -47,7 +47,7 @@ export const Project = ({
 
       { /* YEAR */ }
       <Text.ExtraSmall
-          alignment='center'
+          alignment='centre'
           className={styles.year}
       >
         { year.toString() }
@@ -55,7 +55,7 @@ export const Project = ({
 
       { /* DESCRIPTION */ }
       <Text.Small
-          alignment='center'
+          alignment='centre'
           className={styles.description}
       >
         { description }
@@ -66,7 +66,7 @@ export const Project = ({
           className={styles.techStack}
       >
         <Text.Medium
-            alignment='center'
+            alignment='centre'
             fontWeight='bold'
         >
           { Messages.TechStack() }
@@ -82,7 +82,7 @@ export const Project = ({
             className={styles.otherContributors}
         >
           <Text.Medium
-              alignment='center'
+              alignment='centre'
               fontWeight='bold'
           >
             { Messages.OtherContributors() }

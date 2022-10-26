@@ -8,7 +8,7 @@ type Tag = 'p' | 'h3' | 'h2' | 'h1';
 
 type Size = 'xs' | 's' | 'm' | 'l' | 'xl';
 
-type Alignment = 'left' | 'right' | 'center' | 'justify';
+type Alignment = 'left' | 'right' | 'centre' | 'justify';
 
 type FontWeight = 'light' | 'normal' | 'semi-bold' | 'bold';
 
@@ -46,8 +46,8 @@ const getAlignmentClassName = (alignment: Alignment) => {
   switch (alignment) {
     case 'left':
       return styles.left;
-    case 'center':
-      return styles.center;
+    case 'centre':
+      return styles.centre;
     case 'right':
       return styles.right;
     case 'justify':
