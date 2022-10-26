@@ -16,7 +16,7 @@ export const Snek = () => {
   return (
     <>
       <div className={styles.gameWelcome}>
-        <Text.Large alignment='centre' fontWeight='bold'>🐍 Welcome to favicon SnEk! 🐍</Text.Large>
+        <Text.LargeTitle alignment='centre' fontWeight='bold'>🐍 Welcome to Favicon SnEk 🐍</Text.LargeTitle>
       </div>
       <div className={styles.gameInstructions}>
         <Text.Small alignment='centre'>Use the arrow keys to control the snek</Text.Small>
