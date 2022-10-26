@@ -36,19 +36,6 @@ let lastDirection: Direction = direction;
 
 const sleep = (s: number) => new Promise((resolve) => setTimeout(resolve, s * 1000));
 
-const setFavicon = (canvas: HTMLCanvasElement) => {
-  const src = canvas.toDataURL();
-  const link = document.createElement('link');
-  const oldLink = document.getElementById('dynamic-favicon');
-  link.id = 'dynamic-favicon';
-  link.rel = 'shortcut icon';
-  link.href = src;
-  if (oldLink) {
-    document.head.removeChild(oldLink);
-  }
-  document.head.appendChild(link);
-};
-
 const handleInput = (e: KeyboardEvent) => {
   switch (e.key) {
     case 'ArrowUp':
@@ -75,6 +62,37 @@ const handleInput = (e: KeyboardEvent) => {
   lastDirection = direction;
 };
 
+const colourCanvas = () => {
+  ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+  ctx.fillStyle = BG_COLOUR;
+  ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+  ctx.fillStyle = FOOD_COLOUR;
+  ctx.fillRect(foodX, foodY, 1, 1);
+
+  ctx.fillStyle = SNAKE_COLOUR;
+  ctx.fillRect(headX, headY, 1, 1);
+
+  snakeBody.forEach(part => {
+    ctx.fillRect(part.x, part.y, 1, 1);
+  });
+
+};
+
+const onSnake = (position: Position) => {
+  return snakeBody.some(part => part.x === position.x && part.y === position.y);
+};
+
+const getNewFoodPosition = () => {
+  let newPos = null;
+  while (newPos === null || onSnake(newPos)) {
+    newPos = { x: Math.floor(Math.random() * CANVAS_WIDTH), y: Math.floor(Math.random() * CANVAS_HEIGHT) };
+  }
+  foodX = newPos.x;
+  foodY = newPos.y;
+};
+
 const setDocumentTitle = (title: string) => {
   document.title = title;
 };
@@ -93,24 +111,6 @@ const updateHeadPosition = () => {
 
   headX = ((headX % CANVAS_WIDTH) + CANVAS_WIDTH) % CANVAS_WIDTH;
   headY = ((headY % CANVAS_HEIGHT) + CANVAS_HEIGHT) % CANVAS_HEIGHT;
-};
-
-const colourCanvas = () => {
-  ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-
-  ctx.fillStyle = BG_COLOUR;
-  ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-
-  ctx.fillStyle = FOOD_COLOUR;
-  ctx.fillRect(foodX, foodY, 1, 1);
-
-  ctx.fillStyle = SNAKE_COLOUR;
-  ctx.fillRect(headX, headY, 1, 1);
-
-  snakeBody.forEach(part => {
-    ctx.fillRect(part.x, part.y, 1, 1);
-  });
-
 };
 
 const handleFrame = async () => {
@@ -155,6 +155,19 @@ const handleFrame = async () => {
   window.requestAnimationFrame(handleFrame);
 };
 
+const setFavicon = (canvas: HTMLCanvasElement) => {
+  const src = canvas.toDataURL();
+  const link = document.createElement('link');
+  const oldLink = document.getElementById('dynamic-favicon');
+  link.id = 'dynamic-favicon';
+  link.rel = 'shortcut icon';
+  link.href = src;
+  if (oldLink) {
+    document.head.removeChild(oldLink);
+  }
+  document.head.appendChild(link);
+};
+
 const restart = () => {
   headX = 0;
   headY = CANVAS_HEIGHT / 2;
@@ -163,19 +176,6 @@ const restart = () => {
   gameSpeed = INIT_GAME_SPEED;
   score = INIT_SCORE;
   getNewFoodPosition();
-};
-
-const onSnake = (position: Position) => {
-  return snakeBody.some(part => part.x === position.x && part.y === position.y);
-}
-
-const getNewFoodPosition = () => {
-  let newPos = null;
-  while (newPos === null || onSnake(newPos)) {
-    newPos = { x: Math.floor(Math.random() * CANVAS_WIDTH), y: Math.floor(Math.random() * CANVAS_HEIGHT) };
-  }
-  foodX = newPos.x;
-  foodY = newPos.y;
 };
 
 export const runGame = () => {
