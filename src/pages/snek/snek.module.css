@@ -11,6 +11,10 @@
   margin-bottom: 5px;
 }
 
+.gameControlBtn:hover {
+  cursor: default;
+}
+
 .bottomRow .gameControlBtn {
   margin: 0 5px;
 }
