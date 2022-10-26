@@ -22,8 +22,8 @@ let foodX = 0;
 let foodY = 0;
 
 const canvas = document.createElement('canvas');
-canvas.width = 16;
-canvas.height = 16;
+canvas.width = CANVAS_WIDTH;
+canvas.height = CANVAS_HEIGHT;
 
 const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
@@ -184,7 +184,6 @@ export const runGame = () => {
   if (staticFavicon) {
     document.head.removeChild(staticFavicon);
   }
-  ctx.scale(2,2);
   getNewFoodPosition();
   handleFrame();
 };
