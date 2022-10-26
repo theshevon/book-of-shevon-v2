@@ -6,14 +6,14 @@ type Direction = { x: -1 | 0 | 1, y: -1 | 0 | 1 };
 const CANVAS_WIDTH = 8;
 const CANVAS_HEIGHT = 8;
 const BG_COLOUR = 'transparent';
-const SNAKE_COLOUR = 'green';
+const SNAKE_COLOUR = 'lightgreen';
 const FOOD_COLOUR = 'red';
 const SPEED_UPDATE_FREQ = 5;
 
 const INIT_DIRECTION: Direction = { x: 0, y: -1 };
 const INIT_HEAD_X = 0;
 const INIT_HEAD_Y = CANVAS_HEIGHT / 2;
-const INIT_GAME_SPEED = 1;
+const INIT_GAME_SPEED = 2;
 const INIT_SCORE = 0;
 
 let gameSpeed = INIT_GAME_SPEED;
@@ -140,7 +140,12 @@ const handleFrame = async () => {
 
   if (snakeBody.some(part => part.x === headX && part.y === headY)) {
     setDocumentTitle(`💀: ${score} 🍎`);
-    restart();
+    const playAgain = confirm(`💀💀💀💀💀\nFinal score: ${score} 🍎\nPlay again?`);
+    if (playAgain) {
+      restart();
+    } else {
+      return;
+    }
   }
 
   setFavicon(canvas);
