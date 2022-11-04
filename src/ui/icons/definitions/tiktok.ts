@@ -1,6 +1,6 @@
 import { IconDefinition } from '../icon/icon';
 
-export const TiktokIconDefition: IconDefinition = {
+export const TikTokIconDefinition: IconDefinition = {
   width: 24,
   height: 24,
   viewBox: {

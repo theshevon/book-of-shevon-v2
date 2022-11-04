@@ -1,33 +1,33 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { CloseIconDefinition } from '../definitions/close';
-import { GitHubIconDefition } from '../definitions/github';
+import { GitHubIconDefinition } from '../definitions/github';
 import { LeftArrowIconDefinition } from '../definitions/left_arrow';
-import { LinkedInIconDefition } from '../definitions/linkedin';
-import { MediumIconDefition } from '../definitions/medium';
+import { LinkedInIconDefinition } from '../definitions/linkedin';
+import { MediumIconDefinition } from '../definitions/medium';
 import { RightArrowIconDefinition } from '../definitions/right_arrow';
-import { YouTubeIconDefition } from '../definitions/youtube';
+import { YouTubeIconDefinition } from '../definitions/youtube';
 import { Icon } from '../icon/icon';
 
 storiesOf('UI/Icons', module)
   .add('GitHub', () => (
     <Icon
-        {...GitHubIconDefition}
+        {...GitHubIconDefinition}
     />
   ))
   .add('LinkedIn', () => (
     <Icon
-        {...LinkedInIconDefition}
+        {...LinkedInIconDefinition}
     />
   ))
   .add('Medium', () => (
     <Icon
-        {...MediumIconDefition}
+        {...MediumIconDefinition}
     />
   ))
   .add('YouTube', () => (
     <Icon
-        {...YouTubeIconDefition}
+        {...YouTubeIconDefinition}
     />
   ))
   .add('Close', () => (
