@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import { Navbar } from '../navbar';
 
 const routesData = [
@@ -22,7 +23,9 @@ const routesData = [
 
 storiesOf('UI/Nav/Navbar/Navbar', module)
   .add('Navbar', () => (
-    <Navbar
-        routesData={routesData}
-    />
+    <MemoryRouter>
+      <Navbar
+          routesData={routesData}
+      />
+    </MemoryRouter>
   ));
