@@ -1,4 +1,4 @@
-// shameless copied over from https://github.com/Defernus/favicon-snake/blob/master/main.js with some modifications
+// shamelessly copied over from https://github.com/Defernus/favicon-snake/blob/master/main.js with some modifications
 
 type Position = { x: number, y: number };
 type Direction = { x: -1 | 0 | 1, y: -1 | 0 | 1 };
@@ -8,15 +8,13 @@ const CANVAS_HEIGHT = 8;
 const BG_COLOUR = 'transparent';
 const SNAKE_COLOUR = 'lightgreen';
 const FOOD_COLOUR = 'red';
-const SPEED_UPDATE_FREQ = 5;
+const SNAKE_SPEED = 5;
 
 const INIT_DIRECTION: Direction = { x: 0, y: -1 };
 const INIT_HEAD_X = 0;
 const INIT_HEAD_Y = CANVAS_HEIGHT / 2;
-const INIT_GAME_SPEED = 2;
 const INIT_SCORE = 0;
 
-let gameSpeed = INIT_GAME_SPEED;
 let score = INIT_SCORE;
 let foodX = 0;
 let foodY = 0;
@@ -34,27 +32,27 @@ let snakeBody: Position[] = [];
 let direction: Direction = INIT_DIRECTION;
 let lastDirection: Direction = direction;
 
-const sleep = (s: number) => new Promise((resolve) => setTimeout(resolve, s * 1000));
+let lastRenderTime = 0;
 
 const handleInput = (e: KeyboardEvent) => {
   switch (e.key) {
     case 'ArrowUp':
-    case 'W':
+    case 'w':
       if (lastDirection.y !== 0) break;
       direction = { x: 0, y: -1 };
       break;
     case 'ArrowDown':
-    case 'S':
+    case 's':
       if (lastDirection.y !== 0) break;
       direction = { x: 0, y: 1 };
       break;
     case 'ArrowLeft':
-    case 'A':
+    case 'a':
       if (lastDirection.x !== 0) break;
       direction = { x: -1, y: 0 };
       break;
     case 'ArrowRight':
-    case 'D':
+    case 'd':
       if (lastDirection.x !== 0) break;
       direction = { x: 1, y: 0 };
       break;
@@ -113,7 +111,13 @@ const updateHeadPosition = () => {
   headY = ((headY % CANVAS_HEIGHT) + CANVAS_HEIGHT) % CANVAS_HEIGHT;
 };
 
-const handleFrame = async () => {
+const handleFrame = async (currentTime: number) => {
+
+  window.requestAnimationFrame(handleFrame);
+
+  const timeSinceLastRender = (currentTime - lastRenderTime) / 1000;
+  if (timeSinceLastRender < 1 / SNAKE_SPEED) return;
+  lastRenderTime = currentTime;
 
   colourCanvas();
 
@@ -122,10 +126,6 @@ const handleFrame = async () => {
     getNewFoodPosition();
     ateFood = true;
     score += 1;
-
-    if (score % SPEED_UPDATE_FREQ === 0) {
-      gameSpeed += 1;
-    }
 
     setDocumentTitle(`${ score } 🍎`);
   }
@@ -149,10 +149,6 @@ const handleFrame = async () => {
   }
 
   setFavicon(canvas);
-
-  await sleep(1 / gameSpeed);
-
-  window.requestAnimationFrame(handleFrame);
 };
 
 const setFavicon = (canvas: HTMLCanvasElement) => {
@@ -173,7 +169,6 @@ const restart = () => {
   headY = CANVAS_HEIGHT / 2;
   direction = INIT_DIRECTION;
   snakeBody = [];
-  gameSpeed = INIT_GAME_SPEED;
   score = INIT_SCORE;
   getNewFoodPosition();
 };
@@ -185,5 +180,5 @@ export const runGame = () => {
     document.head.removeChild(staticFavicon);
   }
   getNewFoodPosition();
-  handleFrame();
+  window.requestAnimationFrame(handleFrame);
 };
