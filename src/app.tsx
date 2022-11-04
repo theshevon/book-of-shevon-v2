@@ -5,13 +5,13 @@ import {
   Switch,
 } from 'react-router-dom';
 import { AppMessages as Messages } from './app.messages';
-import { About } from './pages/about/about';
-import { Blog } from './pages/blog/blog';
-import { Creative } from './pages/creative/creative';
-import { Error } from './pages/error/error';
-import { Home } from './pages/home/home';
-import { Projects } from './pages/projects/projects';
-import { Snek } from './pages/snek/snek';
+import { AboutPage } from './pages/about/lazy_about';
+import { BlogPage } from './pages/blog/lazy_blog';
+import { CreativePage } from './pages/creative/lazy_creative';
+import { ErrorPage } from './pages/error/lazy_error';
+import { Home as HomePage } from './pages/home/home';
+import { ProjectsPage } from './pages/projects/lazy_projects';
+import { SnekPage } from './pages/snek/lazy_snek';
 import { RoutesData } from './routes/route_data/route_data';
 import { Routes } from './routes/routes';
 import { Nav } from './ui/nav/nav';
@@ -29,37 +29,37 @@ export const App = () => {
         <Route
             exact
             path={Routes.HOME}
-            component={Home}
+            component={HomePage}
         />
         <Route
             exact
             path={Routes.ABOUT}
-            component={About}
+            component={AboutPage}
         />
         <Route
             exact
             path={Routes.PROJECTS}
-            component={Projects}
+            component={ProjectsPage}
         />
         <Route
             exact
             path={Routes.BLOG}
-            component={Blog}
+            component={BlogPage}
         />
         <Route
             exact
             path={Routes.CREATIVE}
-            component={Creative}
+            component={CreativePage}
         />
         <Route
             exact
             path={Routes.SNEK}
-            component={Snek}
+            component={SnekPage}
         />
         <Route
             exact
             path='/*'
-            component={Error}
+            component={ErrorPage}
         />
       </Switch>
     </Router>
