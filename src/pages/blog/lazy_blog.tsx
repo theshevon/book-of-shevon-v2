@@ -1,4 +1,5 @@
 import React from 'react';
+import { PagePlaceholder } from '../../ui/preload/page_placeholder/page_placeholder';
 
 export const BlogPage = () => {
   const LazyBlog = React.lazy(async () => {
@@ -8,7 +9,7 @@ export const BlogPage = () => {
     };
   });
   return (
-    <React.Suspense fallback={null}>
+    <React.Suspense fallback={<PagePlaceholder/>}>
       <LazyBlog/>
     </React.Suspense>
   );
