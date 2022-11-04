@@ -1,24 +1,29 @@
-import { GitHubIconDefition } from '../../ui/icons/definitions/github';
-import { LinkedInIconDefition } from '../../ui/icons/definitions/linkedin';
-import { MediumIconDefition } from '../../ui/icons/definitions/medium';
-import { YouTubeIconDefition } from '../../ui/icons/definitions/youtube';
+import { GitHubIconDefinition } from '../../ui/icons/definitions/github';
+import { LinkedInIconDefinition } from '../../ui/icons/definitions/linkedin';
+import { MediumIconDefinition } from '../../ui/icons/definitions/medium';
+import { TikTokIconDefinition } from '../../ui/icons/definitions/tiktok';
+import { YouTubeIconDefinition } from '../../ui/icons/definitions/youtube';
 import { IconLinkProps } from '../../ui/link/link';
 
 export const Links: IconLinkProps[] = [
   {
     url: 'https://github.com/theshevon',
-    iconDefinition: GitHubIconDefition,
+    iconDefinition: GitHubIconDefinition,
   },
   {
     url: 'https://www.linkedin.com/in/mendiss',
-    iconDefinition: LinkedInIconDefition,
+    iconDefinition: LinkedInIconDefinition,
   },
   {
     url: 'https://medium.com/@shevon_mendis',
-    iconDefinition: MediumIconDefition,
+    iconDefinition: MediumIconDefinition,
   },
   {
     url: 'https://www.youtube.com/channel/UCkL1cYAWa9Wsx6xDT2H8zOg?view_as=subscriber',
-    iconDefinition: YouTubeIconDefition,
+    iconDefinition: YouTubeIconDefinition,
+  },
+  {
+    url: 'https://www.tiktok.com/@shevywestside',
+    iconDefinition: TikTokIconDefinition,
   },
 ];
