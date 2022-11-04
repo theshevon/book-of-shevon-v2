@@ -24,6 +24,5 @@ storiesOf('UI/Nav/HamburgerMenu/HamburgerMenu', module)
   .add('HamburgerMenu', () => (
     <HamburgerMenu
         routesData={routesData}
-        activeRoute='##'
     />
   ));

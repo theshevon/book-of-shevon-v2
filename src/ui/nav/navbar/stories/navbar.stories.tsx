@@ -24,6 +24,5 @@ storiesOf('UI/Nav/Navbar/Navbar', module)
   .add('Navbar', () => (
     <Navbar
         routesData={routesData}
-        activeRoute='##'
     />
   ));

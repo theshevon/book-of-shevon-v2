@@ -14,7 +14,7 @@ import { Projects } from './pages/projects/projects';
 import { Snek } from './pages/snek/snek';
 import { RoutesData } from './routes/route_data/route_data';
 import { Routes } from './routes/routes';
-import { Nav as NavImpl } from './ui/nav/nav';
+import { Nav } from './ui/nav/nav';
 import { PageContainer } from './ui/page_container/page_container';
 import './app.css';
 
@@ -22,13 +22,6 @@ export const App = () => {
 
   // eslint-disable-next-line no-console
   console.log(Messages.consoleGreetingImg(Messages.consoleGreetingMessage()));
-
-  const Nav = React.memo(() => (
-    <NavImpl
-        routesData={RoutesData}
-        activeRoute={window.location.pathname}
-    />
-  ));
 
   const HomePage = () => <PageContainer Content={Home}/>;
   const AboutPage = () => <PageContainer Content={About} withoutTopPaddingForContent={true}/>;
@@ -38,47 +31,45 @@ export const App = () => {
   const SnekPage = () => <PageContainer Content={Snek}/>;
 
   return (
-    <>
-      <Router>
-        <Nav/>
-        <Switch>
-          <Route
-              exact
-              path={Routes.HOME}
-              component={HomePage}
-          />
-          <Route
-              exact
-              path={Routes.ABOUT}
-              component={AboutPage}
-          />
-          <Route
-              exact
-              path={Routes.PROJECTS}
-              component={ProjectsPage}
-          />
-          <Route
-              exact
-              path={Routes.BLOG}
-              component={BlogPage}
-          />
-          <Route
-              exact
-              path={Routes.CREATIVE}
-              component={CreativePage}
-          />
-          <Route
-              exact
-              path={Routes.SNEK}
-              component={SnekPage}
-          />
-          <Route
-              exact
-              path='/*'
-              component={Error}
-          />
-        </Switch>
-      </Router>
-    </>
+    <Router>
+      <Nav routesData={RoutesData}/>
+      <Switch>
+        <Route
+            exact
+            path={Routes.HOME}
+            component={HomePage}
+        />
+        <Route
+            exact
+            path={Routes.ABOUT}
+            component={AboutPage}
+        />
+        <Route
+            exact
+            path={Routes.PROJECTS}
+            component={ProjectsPage}
+        />
+        <Route
+            exact
+            path={Routes.BLOG}
+            component={BlogPage}
+        />
+        <Route
+            exact
+            path={Routes.CREATIVE}
+            component={CreativePage}
+        />
+        <Route
+            exact
+            path={Routes.SNEK}
+            component={SnekPage}
+        />
+        <Route
+            exact
+            path='/*'
+            component={Error}
+        />
+      </Switch>
+    </Router>
   );
 };

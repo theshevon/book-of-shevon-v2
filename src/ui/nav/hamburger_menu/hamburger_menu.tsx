@@ -6,12 +6,10 @@ import styles from './hamburger_menu.module.css';
 
 type HamburgerMenuProps = {
   routesData: RouteData[],
-  activeRoute: string,
 }
 
 export const HamburgerMenu = ({
   routesData,
-  activeRoute,
 }: HamburgerMenuProps) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -29,7 +27,6 @@ export const HamburgerMenu = ({
       </div>
       <Drawer
           routesData={routesData}
-          activeRoute={activeRoute}
           show={menuOpen}
       />
     </div>
