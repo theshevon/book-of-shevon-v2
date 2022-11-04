@@ -72,9 +72,13 @@ export const BlogPost = ({
         >
           <Link
               url={link}
-              className={classNames(styles.title)}
           >
-            { title }
+            <Text.LargeTitle
+                alignment='left'
+                fontWeight='bold'
+            >
+              { title }
+            </Text.LargeTitle>
           </Link>
         </div>
         <Text.ExtraSmall
