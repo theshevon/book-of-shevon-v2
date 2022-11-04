@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 import type { RouteData } from './../../../../routes/route_data/route_data';
 import styles from './horizontal_menu.module.css';
@@ -23,15 +24,15 @@ export const HorizontalMenu = ({
             key={routeData.label}
             className={styles.linkContainer}
         >
-          <a
-              href={routeData.path}
+          <Link
+              to={routeData.path}
               className={classNames(styles.link, {
                 [styles.active]: routeData.path === activeRoute,
                 [styles.eightBit]: theme === Theme.EIGHT_BIT,
               })}
           >
             { routeData.label }
-          </a>
+          </Link>
         </li>
       )) }
     </ul>
