@@ -15,20 +15,12 @@ import { Snek } from './pages/snek/snek';
 import { RoutesData } from './routes/route_data/route_data';
 import { Routes } from './routes/routes';
 import { Nav } from './ui/nav/nav';
-import { PageContainer } from './ui/page_container/page_container';
 import './app.css';
 
 export const App = () => {
 
   // eslint-disable-next-line no-console
   console.log(Messages.consoleGreetingImg(Messages.consoleGreetingMessage()));
-
-  const HomePage = () => <PageContainer Content={Home}/>;
-  const AboutPage = () => <PageContainer Content={About} withoutTopPaddingForContent={true}/>;
-  const ProjectsPage = () => <Projects PageContainer={PageContainer}/>;
-  const BlogPage = () => <PageContainer Content={Blog}/>;
-  const CreativePage = () => <PageContainer Content={Creative}/>;
-  const SnekPage = () => <PageContainer Content={Snek}/>;
 
   return (
     <Router>
@@ -37,32 +29,32 @@ export const App = () => {
         <Route
             exact
             path={Routes.HOME}
-            component={HomePage}
+            component={Home}
         />
         <Route
             exact
             path={Routes.ABOUT}
-            component={AboutPage}
+            component={About}
         />
         <Route
             exact
             path={Routes.PROJECTS}
-            component={ProjectsPage}
+            component={Projects}
         />
         <Route
             exact
             path={Routes.BLOG}
-            component={BlogPage}
+            component={Blog}
         />
         <Route
             exact
             path={Routes.CREATIVE}
-            component={CreativePage}
+            component={Creative}
         />
         <Route
             exact
             path={Routes.SNEK}
-            component={SnekPage}
+            component={Snek}
         />
         <Route
             exact

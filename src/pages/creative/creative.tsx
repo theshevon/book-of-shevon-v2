@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { PageContainer } from '../../ui/page_container/page_container';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { CreativeMessages as Messages } from './creative.messages';
 import styles from './creative.module.css';
@@ -12,7 +13,7 @@ export const Creative = () => {
     updateDocumentHeader(Messages.title(), { type: 'emoji', src: '🌊' });
   }, []);
 
-  return (
+  const Content = () => (
     <div
         className={styles.creativePage}
     >
@@ -28,5 +29,11 @@ export const Creative = () => {
         )) }
       </div>
     </div>
+  );
+
+  return (
+    <PageContainer
+        Content={Content}
+    />
   );
 };
