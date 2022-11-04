@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
+import { PageContainer } from '../../ui/page_container/page_container';
 import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { IconLink } from './../../ui/link/link';
@@ -16,7 +17,7 @@ export const Home = () => {
 
   const { theme } = useThemeContext();
 
-  return (
+  const Content = () => (
     <div
         className={classNames(styles.siteTitleContainer, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
@@ -39,5 +40,11 @@ export const Home = () => {
         )) }
       </div>
     </div>
+  );
+
+  return (
+    <PageContainer
+        Content={Content}
+    />
   );
 };

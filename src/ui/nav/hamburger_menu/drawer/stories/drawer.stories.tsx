@@ -26,7 +26,6 @@ storiesOf('UI/Nav/HamburgerMenu/Drawer', module)
     <StoryWrapper>
       <Drawer
           routesData={routesData}
-          activeRoute='##'
           show={true}
       />
     </StoryWrapper>

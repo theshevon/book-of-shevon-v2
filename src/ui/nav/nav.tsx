@@ -7,13 +7,11 @@ import { Navbar } from './navbar/navbar';
 
 type NavProps = {
   routesData: RouteData[],
-  activeRoute: string,
 }
 
 export const Nav = observer((props: NavProps) => {
 
   const NavComponent = isSmallOrNarrower(DisplaySizeObserver.size) ? HamburgerMenu : Navbar;
-
   return (
     <NavComponent
         {...props}

@@ -14,8 +14,7 @@ import { Projects } from './pages/projects/projects';
 import { Snek } from './pages/snek/snek';
 import { RoutesData } from './routes/route_data/route_data';
 import { Routes } from './routes/routes';
-import { Nav as NavImpl } from './ui/nav/nav';
-import { createPageContainer } from './ui/page_container/create';
+import { Nav } from './ui/nav/nav';
 import './app.css';
 
 export const App = () => {
@@ -23,53 +22,39 @@ export const App = () => {
   // eslint-disable-next-line no-console
   console.log(Messages.consoleGreetingImg(Messages.consoleGreetingMessage()));
 
-  const Nav = () => (
-    <NavImpl
-        routesData={RoutesData}
-        activeRoute={window.location.pathname}
-    />
-  );
-
-  const PageContainer = createPageContainer(Nav);
-  const HomePage = () => <PageContainer Content={Home}/>;
-  const AboutPage = () => <PageContainer Content={About} withoutTopPaddingForContent={true}/>;
-  const ProjectsPage = () => <Projects PageContainer={PageContainer}/>;
-  const BlogPage = () => <PageContainer Content={Blog}/>;
-  const CreativePage = () => <PageContainer Content={Creative}/>;
-  const SnekPage = () => <PageContainer Content={Snek}/>;
-
   return (
     <Router>
+      <Nav routesData={RoutesData}/>
       <Switch>
         <Route
             exact
             path={Routes.HOME}
-            component={HomePage}
+            component={Home}
         />
         <Route
             exact
             path={Routes.ABOUT}
-            component={AboutPage}
+            component={About}
         />
         <Route
             exact
             path={Routes.PROJECTS}
-            component={ProjectsPage}
+            component={Projects}
         />
         <Route
             exact
             path={Routes.BLOG}
-            component={BlogPage}
+            component={Blog}
         />
         <Route
             exact
             path={Routes.CREATIVE}
-            component={CreativePage}
+            component={Creative}
         />
         <Route
             exact
             path={Routes.SNEK}
-            component={SnekPage}
+            component={Snek}
         />
         <Route
             exact

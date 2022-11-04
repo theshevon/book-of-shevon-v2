@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
+import { PageContainer } from '../../ui/page_container/page_container';
 import { Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
@@ -8,14 +9,7 @@ import { Project } from './project/project';
 import { ProjectsMessages as Messages } from './projects.messages';
 import styles from './projects.module.css';
 
-export const Projects = ({
-  PageContainer,
-}: {
-  PageContainer: ({ Content, pageBackgroundStyles }: {
-      Content: () => JSX.Element;
-      pageBackgroundStyles?: string | undefined;
-  }) => JSX.Element,
-}) => {
+export const Projects = () => {
 
   useEffect(() => {
     updateDocumentHeader(Messages.pageTitle(), { type: 'emoji', src: '🐝' });

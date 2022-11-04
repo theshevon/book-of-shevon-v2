@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { PageContainer } from '../../ui/page_container/page_container';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { BlogMessages as Messages } from './blog.messages';
 import { BlogHeader } from './blog_header/blog_header';
@@ -30,7 +31,7 @@ export const Blog = () => {
   // TODO: create a fallback placeholder
   const Fallback = () => <div>Loading...</div>;
 
-  return (
+  const Content = () => (
     <>
       <BlogHeader/>
       <BlogPostsLayout
@@ -39,5 +40,11 @@ export const Blog = () => {
           Fallback={Fallback}
       />
     </>
+  );
+
+  return (
+    <PageContainer
+        Content={Content}
+    />
   );
 };

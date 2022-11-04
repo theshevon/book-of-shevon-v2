@@ -9,12 +9,10 @@ import styles from './navbar.module.css';
 
 type NavbarProps = {
   routesData: RouteData[],
-  activeRoute: string,
 }
 
 export const Navbar = ({
   routesData,
-  activeRoute,
 }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -44,7 +42,6 @@ export const Navbar = ({
         >
           <HorizontalMenu
               routesData={routesData}
-              activeRoute={activeRoute}
           />
         </div>
       </div>

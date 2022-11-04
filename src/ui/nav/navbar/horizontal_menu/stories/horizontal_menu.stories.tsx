@@ -36,7 +36,6 @@ storiesOf('UI/Nav/Navbar/HorizontalMenu', module)
       >
         <HorizontalMenu
             routesData={routesData}
-            activeRoute='##'
         />
       </div>
     </StoryWrapper>
