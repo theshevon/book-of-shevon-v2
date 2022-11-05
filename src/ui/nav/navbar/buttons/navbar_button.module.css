@@ -1,7 +1,7 @@
 @value colorGrey100, colorGrey200, colorGrey300, colorGrey500 from '../../../colors/colors.module.css';
 
 .navbarButton {
-    border: 1px solid colorGrey100;
+    border: 1px solid colorGrey100 !important;
     transition: 500ms;
     text-transform: uppercase;
     width: 115px;
