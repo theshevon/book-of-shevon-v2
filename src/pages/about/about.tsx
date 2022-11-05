@@ -77,7 +77,6 @@ export const About = () => {
   return (
     <PageContainer
         Content={Content}
-        withoutTopPaddingForContent={true}
     />
   );
 };

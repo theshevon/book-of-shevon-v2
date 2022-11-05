@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { PageContainer } from '../../ui/page_container/page_container';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { BlogMessages as Messages } from './blog.messages';
-import { BlogHeader } from './blog_header/blog_header';
 import { BlogPostProps } from './blog_posts_layout/blog_post/blog_post';
 import { BlogPostsLayout } from './blog_posts_layout/blog_posts_layout';
 import type { LoadingState } from './blog_posts_layout/blog_posts_layout';
@@ -32,14 +31,11 @@ export const Blog = () => {
   const Fallback = () => <div>Loading...</div>;
 
   const Content = () => (
-    <>
-      <BlogHeader/>
-      <BlogPostsLayout
-          loadingState={loadingState}
-          posts={posts}
-          Fallback={Fallback}
-      />
-    </>
+    <BlogPostsLayout
+        loadingState={loadingState}
+        posts={posts}
+        Fallback={Fallback}
+    />
   );
 
   return (

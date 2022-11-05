@@ -2,7 +2,6 @@
 @value colorGrey100, colorGrey200 from '../../ui/colors/colors.module.css';
 
 .aboutPage {
-    margin: auto 5%;
     position: relative;
 }
 
@@ -36,7 +35,7 @@
 @media(min-width: breakpointSmall) {
 
     .aboutPage {
-        margin: 100px 10%;
+        margin: auto 10%;
         padding: 75px 10%;
     }
 

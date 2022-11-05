@@ -1,10 +1,6 @@
 @value colorGrey100 from '../../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
-.blogPostsLayout {
-    margin-top: 2.5%;
-}
-
 .separator {
     display: none;
 }

@@ -1,3 +1,5 @@
+// disabling bc they're being used as decorators and eslint is still throwing a fit
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { action, makeObservable, observable } from 'mobx';
 
 import styles from '../../ui/metrics/breakpoints.module.css';
