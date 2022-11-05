@@ -5,6 +5,8 @@ import { ThemeSwitcherButton } from '../theme_switcher_button';
 storiesOf('UI/Nav/Navbar/Buttons/ThemeSwitcherButton', module)
   .add('ThemeSwitcherButton', () => {
     return (
-      <ThemeSwitcherButton/>
+      <ThemeSwitcherButton
+          activeRoute='#'
+      />
     );
   });

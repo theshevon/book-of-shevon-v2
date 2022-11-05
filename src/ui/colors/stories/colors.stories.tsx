@@ -101,6 +101,14 @@ const MARIO_COLOR_GROUP: ColorGroupProps = {
       name: 'marioOrange',
       value: colorValues.marioOrange,
     },
+    {
+      name: 'marioBrownLight',
+      value: colorValues.marioBrownLight,
+    },
+    {
+      name: 'marioBrownDark',
+      value: colorValues.marioBrownDark,
+    }
   ],
 };
 
