@@ -10,6 +10,7 @@ storiesOf('UI/Nav/Navbar/Buttons/ToggleMenuButton', module)
       <ToggleMenuButton
           menuOpen={menuOpen}
           onClick={toggleMenu}
+          activeRoute='#'
       />
     );
   });

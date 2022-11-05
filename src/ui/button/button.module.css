@@ -1,8 +1,6 @@
 @value colorGrey200, colorGrey500 from './../colors/colors.module.css';
 @value iconButtonSize: 24px;
 
-/* TODO: focus and active state styling */
-
 .button {
     background: unset;
     border: unset;

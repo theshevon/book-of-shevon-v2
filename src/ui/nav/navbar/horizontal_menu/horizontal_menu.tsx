@@ -1,19 +1,27 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Link , useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Routes } from '../../../../routes/routes';
 import { Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 import type { RouteData } from './../../../../routes/route_data/route_data';
 import styles from './horizontal_menu.module.css';
 
 type HorizontalMenuProps = {
   routesData: RouteData[],
+  activeRoute: string,
 }
+
+const getLocationSpecificThemeStyles = (activeRoute: string) => {
+  if (activeRoute === Routes.PROJECTS) {
+    return styles.projects;
+  }
+};
 
 export const HorizontalMenu = ({
   routesData,
+  activeRoute,
 }: HorizontalMenuProps) => {
   const { theme } = useThemeContext();
-  const { pathname } = useLocation();
   return (
     <ul
         className={styles.horizontalMenu}
@@ -26,9 +34,9 @@ export const HorizontalMenu = ({
           <Link
               to={routeData.path}
               className={classNames(styles.link, {
-                [styles.active]: routeData.path === pathname,
+                [styles.active]: routeData.path === activeRoute,
                 [styles.eightBit]: theme === Theme.EIGHT_BIT,
-              })}
+              }, getLocationSpecificThemeStyles(activeRoute))}
           >
             { routeData.label }
           </Link>
