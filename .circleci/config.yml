@@ -30,7 +30,7 @@ jobs:
           command: |
             yarn test
 
-      - run:
-          name: run percy snapshot tests
-          command: |
-            yarn run-percy
+      # - run:
+      #     name: run percy snapshot tests
+      #     command: |
+      #       yarn run-percy
