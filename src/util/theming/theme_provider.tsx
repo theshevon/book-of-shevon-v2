@@ -3,11 +3,17 @@ import type { FC } from 'react';
 import { getRandomNumInRange } from '../math';
 import { ThemeProviderMessages as Messages } from './theme_provider.messages';
 
-const LOCAL_STORAGE_KEY = '_bos_theme';
+const LOCAL_STORAGE_KEY_THEME = '_bos_theme';
+const LOCAL_STORAGE_KEY_APPEARANCE = '_bos_appearance';
 
 export enum Theme {
   BASIC = 'basic',
   EIGHT_BIT = '8bit',
+}
+
+export enum Appearance {
+  LIGHT = 'light',
+  DARK = 'dark',
 }
 
 export const THEMES = [
@@ -23,6 +29,19 @@ export const THEMES = [
   },
 ];
 
+export const APPEARANCES = [
+  {
+    appearance: Appearance.LIGHT,
+    label: Messages.light,
+    icon: '🌝',
+  },
+  {
+    appearance: Appearance.DARK,
+    label: Messages.dark,
+    icon: '🌚',
+  },
+];
+
 const getTheme = (value: string | null | undefined): Theme => {
   switch (value) {
     case 'basic':
@@ -34,9 +53,24 @@ const getTheme = (value: string | null | undefined): Theme => {
   }
 };
 
+const getAppearance = (value: string | null | undefined): Appearance => {
+  switch (value) {
+    case 'light':
+      return Appearance.LIGHT;
+    case 'dark':
+      return Appearance.DARK;
+    default: {
+      const userPrefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return userPrefersDarkMode ? Appearance.LIGHT : Appearance.DARK;
+    }
+  }
+};
+
 interface IThemeContext {
   theme: Theme,
   setTheme: (theme: Theme) => void,
+  appearance: Appearance,
+  setAppearance: (appearance: Appearance) => void,
 }
 
 const ThemeContext = createContext<IThemeContext>(undefined!);
@@ -45,16 +79,22 @@ export const useThemeContext = () => useContext(ThemeContext);
 
 export const ThemeProvider: FC = ({ children }) => {
 
-  const [theme, _setTheme] = useState<Theme>(getTheme(window.localStorage.getItem(LOCAL_STORAGE_KEY)));
+  const [theme, _setTheme] = useState<Theme>(getTheme(window.localStorage.getItem(LOCAL_STORAGE_KEY_THEME)));
+  const [appearance, _setAppearance] = useState<Appearance>(getAppearance(window.localStorage.getItem(LOCAL_STORAGE_KEY_APPEARANCE)));
 
   const setTheme = (theme: Theme) => {
     _setTheme(theme);
-    window.localStorage.setItem(LOCAL_STORAGE_KEY, theme.toString());
+    window.localStorage.setItem(LOCAL_STORAGE_KEY_THEME, theme.toString());
+  };
+
+  const setAppearance = (appearance: Appearance) => {
+    _setAppearance(appearance)
+    window.localStorage.setItem(LOCAL_STORAGE_KEY_APPEARANCE, appearance.toString());
   };
 
   return (
     <ThemeContext.Provider
-        value={{ theme, setTheme }}
+        value={{ theme, setTheme, appearance, setAppearance }}
     >
       { children }
     </ThemeContext.Provider>
