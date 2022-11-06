@@ -29,18 +29,16 @@ export const THEMES = [
   },
 ];
 
-export const APPEARANCES = [
-  {
-    appearance: Appearance.LIGHT,
-    label: Messages.light,
+export const APPEARANCES = {
+  [Appearance.LIGHT]: {
+    label: Messages.light(),
     icon: '🌝',
   },
-  {
-    appearance: Appearance.DARK,
-    label: Messages.dark,
+  [Appearance.DARK]: {
+    label: Messages.dark(),
     icon: '🌚',
   },
-];
+};
 
 const getTheme = (value: string | null | undefined): Theme => {
   switch (value) {
@@ -88,7 +86,7 @@ export const ThemeProvider: FC = ({ children }) => {
   };
 
   const setAppearance = (appearance: Appearance) => {
-    _setAppearance(appearance)
+    _setAppearance(appearance);
     window.localStorage.setItem(LOCAL_STORAGE_KEY_APPEARANCE, appearance.toString());
   };
 

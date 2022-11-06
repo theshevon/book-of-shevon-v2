@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Routes } from '../../../../../routes/routes';
-import { THEMES, Theme, useThemeContext } from '../../../../../util/theming/theme_provider';
+import { APPEARANCES, Appearance, THEMES, Theme, useThemeContext } from '../../../../../util/theming/theme_provider';
 import baseStyles from './../navbar_button.module.css';
 import themeSwitcherButtonStyles from './theme_switcher_button.module.css';
 
@@ -16,7 +16,7 @@ export const ThemeSwitcherButton = ({
 }: {
   activeRoute: string,
 }) => {
-  const { theme, setTheme } = useThemeContext();
+  const { theme, setTheme, appearance, setAppearance } = useThemeContext();
   return (
     <div
         className={classNames(baseStyles.navbarButton, themeSwitcherButtonStyles.themeSwitcherButton, {
@@ -39,6 +39,13 @@ export const ThemeSwitcherButton = ({
             { themeOption.icon }
           </button>
         )) }
+        <button
+            onClick={() => setAppearance(appearance === Appearance.LIGHT ? Appearance.DARK : Appearance.LIGHT)}
+            title={APPEARANCES[appearance].label}
+            className={themeSwitcherButtonStyles.appearanceOption}
+        >
+          { APPEARANCES[appearance].icon }
+        </button>
       </div>
     </div>
   );
