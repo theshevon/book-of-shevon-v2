@@ -33,6 +33,7 @@ let direction: Direction = INIT_DIRECTION;
 let lastDirection: Direction = direction;
 
 let lastRenderTime = 0;
+let gameOver = false;
 
 const handleInput = (e: KeyboardEvent) => {
   switch (e.key) {
@@ -113,7 +114,9 @@ const updateHeadPosition = () => {
 
 const handleFrame = async (currentTime: number) => {
 
-  window.requestAnimationFrame(handleFrame);
+  if (!gameOver) {
+    window.requestAnimationFrame(handleFrame);
+  }
 
   const timeSinceLastRender = (currentTime - lastRenderTime) / 1000;
   if (timeSinceLastRender < 1 / SNAKE_SPEED) return;
@@ -139,12 +142,11 @@ const handleFrame = async (currentTime: number) => {
   updateHeadPosition();
 
   if (snakeBody.some(part => part.x === headX && part.y === headY)) {
+    gameOver = true;
     setDocumentTitle(`💀: ${score} 🍎`);
     const playAgain = confirm(`💀💀💀💀💀\nFinal score: ${score} 🍎\nPlay again?`);
     if (playAgain) {
       restart();
-    } else {
-      return;
     }
   }
 
@@ -171,6 +173,8 @@ const restart = () => {
   snakeBody = [];
   score = INIT_SCORE;
   getNewFoodPosition();
+  gameOver = false;
+  window.requestAnimationFrame(handleFrame);
 };
 
 export const runGame = () => {
