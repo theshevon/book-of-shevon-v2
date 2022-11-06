@@ -1,4 +1,4 @@
-@value colorDarkModeGrey from '../colors/colors.module.css';
+@value colourDarkModeGrey from '../colours/colours.module.css';
 @value breakpointSmall from '../metrics/breakpoints.module.css';
 
 .pageContainer,
@@ -9,7 +9,7 @@
 
 .pageContainer.dark,
 .pageContainer.dark .pageContent {
-  background-color: colorDarkModeGrey;
+  background-color: colourDarkModeGrey;
 }
 
 .pageContent {

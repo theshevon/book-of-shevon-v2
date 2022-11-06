@@ -1,0 +1,30 @@
+@value colourGrey100: hsl(0, 0%, 90%);
+@value colourGrey200: hsl(0, 0%, 70%);
+@value colourGrey300: hsl(0, 0%, 50%);
+@value colourGrey400: hsl(0, 0%, 30%);
+@value colourGrey500: hsl(0, 0%, 10%);
+
+@value colourGreyTransparentLight: hsla(0, 0%, 7.5%, 80%);
+@value colourGreyTransparentDark: hsla(0, 0%, 15%, 80%);
+
+@value colourFlatGold: hsl(46, 65%, 52%);
+
+@value colourGreen200: hsl(128, 50%, 66.25%);
+@value colourGreen300: hsl(128, 50%, 55%);
+@value colourGreen400: hsl(128, 50%, 41.25%);
+
+@value colourLimeGreen100: hsl(105, 76%, 87%);
+@value colourLimeGreen500: hsl(106, 36% , 25%);
+
+/* mario palette */
+@value marioWhite: #fffede;
+@value marioYellowLight: #fbe1c2;
+@value marioYellow: #ffbf70;
+@value marioYellowDark: #cf9855;
+@value marioOrange: #de5817;
+@value marioBrownLight: #DC8552;
+@value marioBrownDark: #8C3301;
+
+/* dark mode palette */
+@value colourDarkModeGrey: #222222;
+@value colourDarkModeWhite: #F7F7F7;

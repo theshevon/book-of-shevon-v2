@@ -1,4 +1,4 @@
-@value colorGrey500 from '../colors/colors.module.css';
+@value colourGrey500 from '../colours/colours.module.css';
 
 @value bodyTextSizeXSmall: 1.0rem;
 @value bodyTextLineHeightXSmall: 1.5rem;
@@ -16,7 +16,7 @@
 @value lineHeightScaleFactor: 1.4;
 
 .text {
-    color: colorGrey500;
+    color: colourGrey500;
 }
 
 .eightBit {

@@ -1,4 +1,4 @@
-@value colorGrey100 from '../../../ui/colors/colors.module.css';
+@value colourGrey100 from '../../../ui/colours/colours.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 .separator {
@@ -9,7 +9,7 @@
 
     .separator {
         width: 100%;
-        background-color: colorGrey100;
+        background-color: colourGrey100;
         height: 1px;
         margin: 20px 0;
         display: block;

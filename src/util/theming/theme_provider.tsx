@@ -58,7 +58,7 @@ const getAppearance = (value: string | null | undefined): Appearance => {
     case 'dark':
       return Appearance.DARK;
     default: {
-      const userPrefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const userPrefersDarkMode = window.matchMedia && window.matchMedia('(prefers-colour-scheme: dark)').matches;
       return userPrefersDarkMode ? Appearance.LIGHT : Appearance.DARK;
     }
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Appearance, useThemeContext } from '../../../util/theming/theme_provider';
-import colors from '../../colors/colors.module.css';
+import colours from '../../colours/colours.module.css';
 
 type ViewBox = {
   minX: number,
@@ -43,7 +43,7 @@ export const Icon = ({
   return (
     <svg
         className={className}
-        fill={appearance === Appearance.LIGHT ? 'black' : colors.colorDarkModeWhite}
+        fill={appearance === Appearance.LIGHT ? 'black' : colours.colourDarkModeWhite}
         xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}

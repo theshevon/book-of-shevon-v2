@@ -1,4 +1,4 @@
-@value colorGrey300, colorGrey500 from '../../../ui/colors/colors.module.css';
+@value colourGrey300, colourGrey500 from '../../../ui/colours/colours.module.css';
 
 .creativeCategory {
   display: flex;
@@ -44,5 +44,5 @@
 
 .sectionDesc,
 .subSectionDesc {
-  color: colorGrey500;
+  color: colourGrey500;
 }

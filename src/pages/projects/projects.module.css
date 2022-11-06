@@ -1,4 +1,4 @@
-@value marioWhite, marioOrange from '../../ui/colors/colors.module.css';
+@value marioWhite, marioOrange from '../../ui/colours/colours.module.css';
 @value breakpointSmall from '../../ui/metrics/breakpoints.module.css';
 @value baseCloudHeight: calc(100vh / 10);
 @value brickHeight: max(5%, 40px);

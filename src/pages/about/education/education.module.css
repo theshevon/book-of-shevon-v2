@@ -1,4 +1,4 @@
-@value flatGold from '../../../ui/colors/colors.module.css';
+@value flatGold from '../../../ui/colours/colours.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 @value bottomMargin: 7.5px;

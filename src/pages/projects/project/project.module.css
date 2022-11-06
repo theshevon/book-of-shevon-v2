@@ -1,4 +1,4 @@
-@value colorGrey100, colorGrey300, colorGreen300, colorGreen400, marioYellowLight, marioYellow, marioYellowDark, marioOrange from '../../../ui/colors/colors.module.css';
+@value colourGrey100, colourGrey300, colourGreen300, colourGreen400, marioYellowLight, marioYellow, marioYellowDark, marioOrange from '../../../ui/colours/colours.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 .project {
@@ -18,7 +18,7 @@
 	content: '';
 	width: 90%;
 	height: 2px;
-	background-color: colorGrey100;
+	background-color: colourGrey100;
 }
 
 .project.eightBit {
@@ -65,7 +65,7 @@
 }
 
 .year {
-	color: colorGrey300;
+	color: colourGrey300;
 	margin-bottom: 25px;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .githubLink {
-	color: colorGrey300;
+	color: colourGrey300;
 	border-width: 2px;
 	font-weight: bold;
 	align-self: center;
@@ -133,13 +133,13 @@
 }
 
 .githubLink:hover {
-	background-color: colorGreen300;
-	border-color: colorGreen300;
+	background-color: colourGreen300;
+	border-color: colourGreen300;
 	color: white;
 }
 
 .githubLink.eightBit:hover {
-	box-shadow: inset -3px -3px 0px 0px colorGreen400 !important;
+	box-shadow: inset -3px -3px 0px 0px colourGreen400 !important;
 }
 
 @media(min-width: breakpointSmall) {

@@ -1,4 +1,4 @@
-@value colorGrey100, colorGrey200, colorGrey300, colorGrey500 from './../colors/colors.module.css';
+@value colourGrey100, colourGrey200, colourGrey300, colourGrey500 from './../colours/colours.module.css';
 @value bodyTextSizeXSmall, eightBitFontScaleFactor from './../text/text.module.css';
 
 .eightBit {
@@ -6,7 +6,7 @@
 }
 
 .link {
-  color: colorGrey500;
+  color: colourGrey500;
   text-decoration: none;
 }
 
@@ -24,7 +24,7 @@
   box-sizing: border-box;
   padding: 0.4rem 0.8rem;
   border-radius: 5px;
-  border: 1px solid colorGrey500;
+  border: 1px solid colourGrey500;
   transition: 0.3s;
 }
 
@@ -33,7 +33,7 @@
   border: unset;
   transition: unset;
   position: relative;
-  box-shadow: inset -2px -2px 0px 0px colorGrey200;
+  box-shadow: inset -2px -2px 0px 0px colourGrey200;
 }
 
 .buttonLink.eightBit:before,
@@ -48,26 +48,26 @@
 .buttonLink.eightBit:before {
   top: -2px;
   left: 0;
-  border-top: 2px colorGrey500 solid;
-  border-bottom: 2px colorGrey500 solid;
+  border-top: 2px colourGrey500 solid;
+  border-bottom: 2px colourGrey500 solid;
 }
 
 .buttonLink.eightBit:after {
   left: -2px;
   top: 0;
-  border-left: 2px colorGrey500 solid;
-  border-right: 2px colorGrey500 solid;
+  border-left: 2px colourGrey500 solid;
+  border-right: 2px colourGrey500 solid;
 }
 
 .buttonLink.eightBit:hover,
 .buttonLink.eightBit:focus {
-    box-shadow: inset -3px -3px 0px 0px colorGrey200;
+    box-shadow: inset -3px -3px 0px 0px colourGrey200;
 }
 
 .capsuleLink {
   font-size: bodyTextSizeXSmall;
   text-align: center;
-  background-color: colorGrey100;
+  background-color: colourGrey100;
   padding: 5px 15px;
   border-radius: 15px;
   transition: 0.3s;
@@ -102,7 +102,7 @@
 
 .capsuleLink:hover {
   color: white;
-  background-color: colorGrey300;
+  background-color: colourGrey300;
 }
 
 .iconLink svg {

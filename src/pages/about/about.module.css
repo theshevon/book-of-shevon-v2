@@ -1,12 +1,12 @@
 @value breakpointSmall from '../../ui/metrics/breakpoints.module.css';
-@value colorGrey100, colorGrey200 from '../../ui/colors/colors.module.css';
+@value colourGrey100, colourGrey200 from '../../ui/colours/colours.module.css';
 
 .aboutPage {
     position: relative;
 }
 
 .aboutPage.eightBit {
-    box-shadow: inset -4px -4px 0px 0px colorGrey100;
+    box-shadow: inset -4px -4px 0px 0px colourGrey100;
 }
 
 .aboutPage.eightBit:before,
@@ -21,15 +21,15 @@
 .aboutPage.eightBit:before {
     top: -2px;
     left: 0;
-    border-top: 2px colorGrey200 solid;
-    border-bottom: 2px colorGrey200 solid;
+    border-top: 2px colourGrey200 solid;
+    border-bottom: 2px colourGrey200 solid;
 }
 
 .aboutPage.eightBit:after {
     left: -2px;
     top: 0;
-    border-left: 2px colorGrey200 solid;
-    border-right: 2px colorGrey200 solid;
+    border-left: 2px colourGrey200 solid;
+    border-right: 2px colourGrey200 solid;
 }
 
 @media(min-width: breakpointSmall) {

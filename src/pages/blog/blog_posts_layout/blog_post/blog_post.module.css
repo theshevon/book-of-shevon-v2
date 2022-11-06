@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @value breakpointSmall from './../../../../ui/metrics/breakpoints.module.css';
-@value colorLimeGreen100, colorLimeGreen500, colorGrey500 from './../../../../ui/colors/colors.module.css';
+@value colourLimeGreen100, colourLimeGreen500, colourGrey500 from './../../../../ui/colours/colours.module.css';
 
 @value blogPostHeight: 478px;
 @value titleContainerMarginTopForCard: 15px;
@@ -41,8 +41,8 @@
 }
 
 .tag {
-    color: colorLimeGreen500;
-    background-color: colorLimeGreen100;
+    color: colourLimeGreen500;
+    background-color: colourLimeGreen100;
     border-radius: 4px;
     padding: tagPadding;
 }
@@ -55,7 +55,7 @@
 
 .date {
     margin-bottom: dateMarginBottom;
-    color: colorGrey500;
+    color: colourGrey500;
 }
 
 .jumbotron {

@@ -1,4 +1,4 @@
-@value colorDarkModeWhite from '../../ui/colors/colors.module.css';
+@value colourDarkModeWhite from '../../ui/colours/colours.module.css';
 @value breakpointSmall from '../../ui/metrics/breakpoints.module.css';
 
 .siteTitleContainer {
@@ -23,7 +23,7 @@
 }
 
 .siteTitleContainer.dark .siteTitle {
-    color: colorDarkModeWhite;
+    color: colourDarkModeWhite;
 }
 
 .links {

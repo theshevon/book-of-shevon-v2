@@ -1,4 +1,4 @@
-@value marioBrownLight, marioWhite, colorGrey300, colorGrey500 from './../../../colors/colors.module.css';
+@value marioBrownLight, marioWhite, colourGrey300, colourGrey500 from './../../../colours/colours.module.css';
 
 @value menuHeight: 35px;
 
@@ -26,7 +26,7 @@
     font-size: 0.85rem;
     text-transform: uppercase;
     text-decoration: none;
-    color: colorGrey300;
+    color: colourGrey300;
     transition: 0.4s;
 }
 
@@ -42,7 +42,7 @@
 
 .link:hover,
 .link.active {
-    color: colorGrey500;
+    color: colourGrey500;
 }
 
 .link.eightBit.projects:hover,
