@@ -1,4 +1,6 @@
 import React from 'react';
+import { Appearance, useThemeContext } from '../../../util/theming/theme_provider';
+import colors from '../../colors/colors.module.css';
 
 type ViewBox = {
   minX: number,
@@ -36,18 +38,21 @@ export const Icon = ({
   fillRule,
   clipRule,
   pathData,
-}: IconProps) => (
-  <svg
-      className={className}
-      xmlns='http://www.w3.org/2000/svg'
-      width={width}
-      height={height}
-      viewBox={`${viewBox.minX} ${viewBox.minY} ${viewBox.width} ${viewBox.height}`}
-      fillRule={fillRule}
-      clipRule={clipRule}
-  >
-    <path
-        d={pathData}
-    />
-  </svg>
-);
+}: IconProps) => {
+  const { appearance } = useThemeContext();
+  return (
+    <svg
+        className={className}
+        fill={appearance === Appearance.LIGHT ? 'black' : colors.colorDarkModeWhite}
+        xmlns='http://www.w3.org/2000/svg'
+        width={width}
+        height={height}
+        viewBox={`${viewBox.minX} ${viewBox.minY} ${viewBox.width} ${viewBox.height}`}
+        fillRule={fillRule}
+        clipRule={clipRule}
+    >
+      <path
+          d={pathData}
+      />
+    </svg>);
+};

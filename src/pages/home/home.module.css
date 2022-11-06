@@ -1,3 +1,4 @@
+@value colorDarkModeWhite from '../../ui/colors/colors.module.css';
 @value breakpointSmall from '../../ui/metrics/breakpoints.module.css';
 
 .siteTitleContainer {
@@ -19,6 +20,10 @@
     white-space: nowrap;
     font-size: 2.5rem !important;
     margin-bottom: 15px;
+}
+
+.siteTitleContainer.dark .siteTitle {
+    color: colorDarkModeWhite;
 }
 
 .links {

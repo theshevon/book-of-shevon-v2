@@ -1,7 +1,15 @@
+@value colorDarkModeGrey from '../colors/colors.module.css';
 @value breakpointSmall from '../metrics/breakpoints.module.css';
 
-.pageContainer, .pageContent {
+.pageContainer,
+.pageContent {
   min-height: 100%;
+  background-color: white;
+}
+
+.pageContainer.dark,
+.pageContainer.dark .pageContent {
+  background-color: colorDarkModeGrey;
 }
 
 .pageContent {
