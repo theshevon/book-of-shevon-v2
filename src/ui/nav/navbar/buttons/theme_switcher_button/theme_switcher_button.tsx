@@ -22,6 +22,7 @@ export const ThemeSwitcherButton = ({
         className={classNames(baseStyles.navbarButton, themeSwitcherButtonStyles.themeSwitcherButton, {
           [themeSwitcherButtonStyles.eightBit]: theme === Theme.EIGHT_BIT,
           [baseStyles.eightBit]: theme === Theme.EIGHT_BIT,
+          [baseStyles.dark]: appearance === Appearance.DARK,
         }, getLocationSpecificThemeStyles(activeRoute))}
     >
       <div
@@ -44,7 +45,7 @@ export const ThemeSwitcherButton = ({
             title={APPEARANCES[appearance].label}
             className={themeSwitcherButtonStyles.appearanceOption}
         >
-          { APPEARANCES[appearance].icon }
+          { appearance === Appearance.LIGHT ? APPEARANCES[Appearance.DARK].icon : APPEARANCES[Appearance.LIGHT].icon }
         </button>
       </div>
     </div>

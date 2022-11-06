@@ -1,6 +1,6 @@
-@value navHeight, navBackgroundColour, navBackgroundBlur, navBoxShadow, menuTransitionTime from './../nav.module.css';
+@value navHeight, navBackgroundColourLight, navBackgroundColourDark, navBackgroundBlur, navBoxShadowLight, menuTransitionTime from './../nav.module.css';
 @value menuHeight from './horizontal_menu/horizontal_menu.module.css';
-@value colourGrey100, colourGrey200, marioBrownDark, marioBrownLight from '../../colours/colours.module.css';
+@value colourGrey100, colourGrey200, marioBrownDark, marioBrownLight, colourDarkModeGrey800 from '../../colours/colours.module.css';
 
 @value menuContainerHeight: calc(navHeight + menuHeight);
 
@@ -30,14 +30,26 @@
     justify-content: center;
     align-items: flex-end;
     z-index: 1;
-    box-shadow: navBoxShadow;
+    box-shadow: navBoxShadowLight;
     padding: 2.5px 0;
     width: 100%;
     height: menuContainerHeight;
     box-sizing: border-box;
     transition: transform menuTransitionTime ease-in-out;
     transform: translateY(calc(-1 * menuContainerHeight));
-    background-color: navBackgroundColour;
+    background-color: navBackgroundColourLight;
+}
+
+.navbarContainer.dark .menuContainerOuter {
+    background-color: navBackgroundColourDark;
+    box-shadow: none;
+    border-bottom: 1px solid colourDarkModeGrey800;
+}
+
+.navbarContainer.dark:not(.eightBit) .menuContainerOuter {
+    background-color: navBackgroundColourDark;
+    box-shadow: none;
+    border-bottom: 1px solid colourDarkModeGrey800;
 }
 
 .navbarContainer.eightBit:not(.projects) .menuContainerOuter {

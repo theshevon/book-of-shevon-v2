@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Routes } from '../../../routes/routes';
-import { Theme, useThemeContext } from '../../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import type { RouteData } from './../../../routes/route_data/route_data';
 import { ThemeSwitcherButton } from './buttons/theme_switcher_button/theme_switcher_button';
 import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
@@ -24,12 +24,13 @@ export const Navbar = ({
 }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
-  const { theme } = useThemeContext();
+  const { theme, appearance } = useThemeContext();
   const { pathname: activeRoute } = useLocation();
   return (
     <div
         className={classNames(styles.navbarContainer, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
+          [styles.dark]: appearance === Appearance.DARK,
         }, getLocationSpecificThemeStyles(activeRoute))}
     >
       <div

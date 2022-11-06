@@ -1,4 +1,4 @@
-@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, marioWhite, marioBrownDark, marioBrownLight from '../../../colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey800, marioWhite, marioBrownDark, marioBrownLight from '../../../colours/colours.module.css';
 
 .navbarButton {
     transition: 500ms;
@@ -9,8 +9,17 @@
     margin: auto 2px;
 }
 
+.navbarButton.dark {
+    background-color: transparent;
+    color: colourDarkModeGrey200;
+}
+
 .navbarButton:not(.eightBit) {
     border: 1px solid colourGrey100 !important;
+}
+
+.navbarButton:not(.eightBit).dark {
+    border-color: colourDarkModeGrey800 !important;
 }
 
 .navbarButton.eightBit {
@@ -45,6 +54,10 @@
 
 .navbarButton:not(.projects):hover {
     border: 1px solid colourGrey200 !important;
+}
+
+.navbarButton:not(.projects).dark:hover {
+    border-color: colourDarkModeGrey200 !important;
 }
 
 .navbarButton.eightBit:not(.projects):not(:hover):before {

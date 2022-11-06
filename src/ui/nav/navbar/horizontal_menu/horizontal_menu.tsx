@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Routes } from '../../../../routes/routes';
-import { Theme, useThemeContext } from '../../../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 import type { RouteData } from './../../../../routes/route_data/route_data';
 import styles from './horizontal_menu.module.css';
 
@@ -21,7 +21,7 @@ export const HorizontalMenu = ({
   routesData,
   activeRoute,
 }: HorizontalMenuProps) => {
-  const { theme } = useThemeContext();
+  const { theme, appearance } = useThemeContext();
   return (
     <ul
         className={styles.horizontalMenu}
@@ -36,6 +36,7 @@ export const HorizontalMenu = ({
               className={classNames(styles.link, {
                 [styles.active]: routeData.path === activeRoute,
                 [styles.eightBit]: theme === Theme.EIGHT_BIT,
+                [styles.dark]: appearance === Appearance.DARK,
               }, getLocationSpecificThemeStyles(activeRoute))}
           >
             { routeData.label }

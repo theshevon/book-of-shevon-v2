@@ -26,5 +26,10 @@
 @value marioBrownDark: #8C3301;
 
 /* dark mode palette */
-@value colourDarkModeGrey: #222222;
-@value colourDarkModeWhite: #F7F7F7;
+@value colourDarkModeGrey50: #F7F7F7;
+@value colourDarkModeGrey100: #E1E1E1;
+@value colourDarkModeGrey200: #CFCFCF;
+@value colourDarkModeGrey500: #7E7E7E;
+@value colourDarkModeGrey700: #515151;
+@value colourDarkModeGrey800: #3B3B3B;
+@value colourDarkModeGrey900: #222222;

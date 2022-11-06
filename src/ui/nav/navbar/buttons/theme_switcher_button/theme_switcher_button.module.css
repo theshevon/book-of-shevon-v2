@@ -4,7 +4,6 @@
   box-sizing: border-box;
   padding: 0.4rem 0.8rem;
   color: colourGrey500;
-  border: 1px solid colourGrey100;
   border-radius: 5px;
   display: flex;
   align-items: center;

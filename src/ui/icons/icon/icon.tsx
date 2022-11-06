@@ -43,7 +43,7 @@ export const Icon = ({
   return (
     <svg
         className={className}
-        fill={appearance === Appearance.LIGHT ? 'black' : colours.colourDarkModeWhite}
+        fill={appearance === Appearance.LIGHT ? 'black' : colours.colourDarkModeGrey50}
         xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}

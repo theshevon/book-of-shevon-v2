@@ -1,4 +1,4 @@
-@value marioBrownLight, marioWhite, colourGrey300, colourGrey500 from './../../../colours/colours.module.css';
+@value marioBrownLight, marioWhite, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey500 from './../../../colours/colours.module.css';
 
 @value menuHeight: 35px;
 
@@ -30,6 +30,10 @@
     transition: 0.4s;
 }
 
+.link.dark {
+    color: colourDarkModeGrey500;
+}
+
 .link.eightBit {
     font-family: "Press Start 2P", cursive;
     transition: unset;
@@ -43,6 +47,11 @@
 .link:hover,
 .link.active {
     color: colourGrey500;
+}
+
+.link.dark:hover,
+.link.dark.active {
+    color: colourDarkModeGrey200;
 }
 
 .link.eightBit.projects:hover,
