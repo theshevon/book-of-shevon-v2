@@ -1,5 +1,5 @@
 @value breakpointSmall from '../../ui/metrics/breakpoints.module.css';
-@value colourGrey100, colourGrey200 from '../../ui/colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourDarkModeGrey400, colourDarkModeGrey700 from '../../ui/colours/colours.module.css';
 
 .aboutPage {
     position: relative;
@@ -7,6 +7,10 @@
 
 .aboutPage.eightBit {
     box-shadow: inset -4px -4px 0px 0px colourGrey100;
+}
+
+.aboutPage.dark.eightBit {
+    box-shadow: inset -4px -4px 0px 0px colourDarkModeGrey400;
 }
 
 .aboutPage.eightBit:before,
@@ -32,6 +36,16 @@
     border-right: 2px colourGrey200 solid;
 }
 
+.aboutPage.dark.eightBit:before {
+    border-top: 2px colourDarkModeGrey700 solid;
+    border-bottom: 2px colourDarkModeGrey700 solid;
+}
+
+.aboutPage.dark.eightBit:after {
+    border-left: 2px colourDarkModeGrey700 solid;
+    border-right: 2px colourDarkModeGrey700 solid;
+}
+
 @media(min-width: breakpointSmall) {
 
     .aboutPage {
@@ -43,5 +57,9 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
         border-radius: 8px;
     }
-    
+
+    .aboutPage.dark:not(.eightBit) {
+        box-shadow: none;
+        border: 1px colourDarkModeGrey700 solid;
+    }
 }

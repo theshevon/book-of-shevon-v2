@@ -1,4 +1,4 @@
-@value colourGrey100 from '../../../ui/colours/colours.module.css';
+@value colourGrey100, colourDarkModeGrey400 from '../../../ui/colours/colours.module.css';
 
 .profile {
     display: flex;
@@ -18,6 +18,10 @@
     object-fit: cover;
 }
 
+.eightBit.dark .picture {
+    outline: 1px solid colourDarkModeGrey400;
+}
+
 .underline {
     position: absolute;
     bottom: 17.5px;
@@ -27,7 +31,11 @@
 }
 
 .eightBit .underline {
-    bottom: 0px;
+    bottom: 10px;
+}
+
+.eightBit.dark .underline {
+    background-color: colourDarkModeGrey400;
 }
 
 @keyframes stretch {

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Theme, useThemeContext } from '../../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import { Capsule } from './../../../ui/capsule/capsule';
 import { Text } from './../../../ui/text/text';
 import { SkillsMessages as Messages } from './skills.messages';
@@ -15,28 +15,33 @@ export const Skills = ({
   skillsLists,
 }: {
 	skillsLists: SkillsListProps[],
-}) => (
-  <ul
-      className={styles.skills}
-  >
-    { skillsLists.map(skillsList => (
-      <li
-          key={skillsList.label} // assumption: there will at most be two lists: one for 'proficient' and one for 'familiar'
-          className={styles.skillsListContainer}
-      >
-        <SkillsList
-            {...skillsList}
-        />
-      </li>
-    )) }
-  </ul>
-);
+}) => {
+  const { appearance } = useThemeContext();
+  return (
+    <ul
+        className={styles.skills}
+    >
+      { skillsLists.map(skillsList => (
+        <li
+            key={skillsList.label} // assumption: there will at most be two lists: one for 'proficient' and one for 'familiar'
+            className={classNames(styles.skillsListContainer, {
+              [styles.dark]: appearance === Appearance.DARK,
+            })}
+        >
+          <SkillsList
+              {...skillsList}
+          />
+        </li>
+      )) }
+    </ul>
+  );
+};
 
 const SkillsList = ({
   label,
   skills,
 }: SkillsListProps) => {
-  const { theme } = useThemeContext();
+  const { theme, appearance } = useThemeContext();
   return (
     <div
         className={classNames(styles.skillsList, {
@@ -54,9 +59,12 @@ const SkillsList = ({
         { skills.map(skill => (
           <li
               key={skill}
-              className={styles.skill}
           >
-            <Capsule>
+            <Capsule
+                className={classNames(styles.skill, {
+                  [styles.dark]: appearance === Appearance.DARK,
+                })}
+            >
               { skill }
             </Capsule>
           </li>
