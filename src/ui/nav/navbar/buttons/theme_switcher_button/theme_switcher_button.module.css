@@ -7,6 +7,8 @@
   border-radius: 5px;
   display: flex;
   align-items: center;
+  height: 30px;
+  box-sizing: border-box;
 }
 
 .themeSwitcherButton.eightBit {
@@ -71,6 +73,7 @@
   margin: 0;
   background-color: unset;
   border: none;
+  z-index: 100;
 }
 
 .themeSwitcherButton:not(.eightBit) {

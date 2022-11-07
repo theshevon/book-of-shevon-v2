@@ -1,6 +1,6 @@
 @value navHeight, navBackgroundColourLight, navBackgroundColourDark, navBackgroundBlur, navBoxShadowLight, menuTransitionTime from './../nav.module.css';
 @value menuHeight from './horizontal_menu/horizontal_menu.module.css';
-@value colourGrey100, colourGrey200, marioBrownDark, marioBrownLight, colourDarkModeGrey800 from '../../colours/colours.module.css';
+@value colourGrey100, colourGrey200, marioBrownDark, marioBrownLight, colourDarkModeGrey400, colourDarkModeGrey700 from '../../colours/colours.module.css';
 
 @value menuContainerHeight: calc(navHeight + menuHeight);
 
@@ -43,17 +43,21 @@
 .navbarContainer.dark .menuContainerOuter {
     background-color: navBackgroundColourDark;
     box-shadow: none;
-    border-bottom: 1px solid colourDarkModeGrey800;
+    border-bottom: 1px solid colourDarkModeGrey700;
 }
 
 .navbarContainer.dark:not(.eightBit) .menuContainerOuter {
     background-color: navBackgroundColourDark;
     box-shadow: none;
-    border-bottom: 1px solid colourDarkModeGrey800;
+    border-color: colourDarkModeGrey700;
 }
 
 .navbarContainer.eightBit:not(.projects) .menuContainerOuter {
     box-shadow: inset -3px -3px 0px 0px colourGrey100;
+}
+
+.navbarContainer.eightBit.dark:not(.projects) .menuContainerOuter {
+    box-shadow: inset -3px -3px 0px 0px colourDarkModeGrey400;
 }
 
 .navbarContainer.eightBit.projects .menuContainerOuter {
@@ -70,6 +74,10 @@
     top: 0;
     border-bottom: 2px colourGrey200 solid;
     z-index: -1;
+}
+
+.navbarContainer.eightBit.dark .menuContainerOuter.withMenuOpen::after {
+    border-color: colourDarkModeGrey700;
 }
 
 .navbarContainer.eightBit.projects .menuContainerOuter.withMenuOpen::after {
