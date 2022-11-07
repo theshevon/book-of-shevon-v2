@@ -4,11 +4,13 @@
 .pageContainer,
 .pageContent {
   min-height: 100%;
+}
+
+.pageContainer {
   background-color: white;
 }
 
-.pageContainer.dark,
-.pageContainer.dark .pageContent {
+.pageContainer.dark {
   background-color: colourDarkModeGrey900;
 }
 
