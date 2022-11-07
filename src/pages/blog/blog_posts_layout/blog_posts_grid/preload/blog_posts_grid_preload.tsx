@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { DisplaySize } from '../../../../../util/display_size_observer/display_size_observer';
+import { Appearance } from '../../../../../util/theming/theme_provider';
 import { BlogPostPreload } from '../../blog_post/preload/blog_post_preload';
 import loadedStyles from '../blog_posts_grid.module.css';
 import preloadedStyles from './blog_posts_grid_preload.module.css';
@@ -27,8 +28,10 @@ const getNumberOfCardsNeeded = (size: DisplaySize) => {
 
 export const BlogPostsGridPreload = observer(({
   displaySize,
+  appearance,
 }: {
   displaySize: DisplaySize,
+  appearance: Appearance,
 }) => (
   <div
       className={classNames(loadedStyles.blogPostsGrid, preloadedStyles.blogPostsGrid)}
@@ -36,6 +39,7 @@ export const BlogPostsGridPreload = observer(({
     { Array.from({ length: getNumberOfCardsNeeded(displaySize) }).map((_, index) => (
       <BlogPostPreload
           key={index}
+          appearance={appearance}
       />
     )) }
   </div>

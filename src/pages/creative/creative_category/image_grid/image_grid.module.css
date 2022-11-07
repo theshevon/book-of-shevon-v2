@@ -22,6 +22,10 @@
   width: 100%;
 }
 
+.eightBit.thumbnailContainer {
+  border-radius: 0;
+}
+
 .thumbnail {
   width: inherit;
   flex-grow: 1;

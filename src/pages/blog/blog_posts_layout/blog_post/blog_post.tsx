@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { Link } from '../../../../ui/link/link';
 import { Text } from '../../../../ui/text/text';
-import { Theme, useThemeContext } from '../../../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 
 import styles from './blog_post.module.css';
 
@@ -112,15 +112,21 @@ const Tag = ({
   tag,
 }: {
   tag: string,
-}) => (
-  <div
-      className={styles.tag}
-  >
-    <Text.ExtraSmall
-        alignment='centre'
-        textCase='lowercase'
+}) => {
+  const { appearance } = useThemeContext();
+  return (
+    <div
+        className={classNames(styles.tag, {
+          [styles.dark]: appearance === Appearance.DARK,
+        })}
     >
-      { tag }
-    </Text.ExtraSmall>
-  </div>
-);
+      <Text.ExtraSmall
+          alignment='centre'
+          textCase='lowercase'
+          className={styles.tagText}
+      >
+        { tag }
+      </Text.ExtraSmall>
+    </div>
+  );
+};

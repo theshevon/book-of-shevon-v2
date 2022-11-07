@@ -1,12 +1,15 @@
 import classNames from 'classnames';
 import React from 'react';
+import { Appearance } from '../../../../../util/theming/theme_provider';
 import loadedStyles from '../blog_post.module.css';
 import preloadStyles from './blog_post_preload.module.css';
 
 export const BlogPostPreload = ({
   isJumbotron = false,
+  appearance,
 }: {
   isJumbotron?: boolean,
+  appearance: Appearance;
 }) => (
   <div
       className={classNames(loadedStyles.blogPost, {
@@ -18,7 +21,9 @@ export const BlogPostPreload = ({
         className={loadedStyles.coverImgContainer}
     >
       <div
-          className={classNames(loadedStyles.coverImg, preloadStyles.coverImg)}
+          className={classNames(loadedStyles.coverImg, preloadStyles.coverImg, {
+            [preloadStyles.darkCoverImg]: appearance === Appearance.DARK,
+          })}
       >
       </div>
     </div>
@@ -29,27 +34,37 @@ export const BlogPostPreload = ({
           className={loadedStyles.titleContainer}
       >
         <div
-            className={preloadStyles.title}
+            className={classNames(preloadStyles.title, {
+              [preloadStyles.darkTitle]: appearance === Appearance.DARK,
+            })}
         >
         </div>
       </div>
       <div
-          className={classNames(loadedStyles.date, preloadStyles.date)}
+          className={classNames(loadedStyles.date, preloadStyles.date, {
+            [preloadStyles.darkDate]: appearance === Appearance.DARK,
+          })}
       >
       </div>
       <div
           className={classNames(loadedStyles.description, preloadStyles.description)}
       >
         <div
-            className={preloadStyles.descriptionLineOne}
+            className={classNames(preloadStyles.descriptionLineOne, {
+              [preloadStyles.darkDescriptionLineOne]: appearance === Appearance.DARK,
+            })}
         >
         </div>
         <div
-            className={preloadStyles.descriptionLineTwo}
+            className={classNames(preloadStyles.descriptionLineTwo, {
+              [preloadStyles.darkDescriptionLineTwo]: appearance === Appearance.DARK,
+            })}
         >
         </div>
         <div
-            className={preloadStyles.descriptionLineThree}
+            className={classNames(preloadStyles.descriptionLineThree, {
+              [preloadStyles.darkDescriptionLineThree]: appearance === Appearance.DARK,
+            })}
         >
         </div>
       </div>
@@ -57,7 +72,9 @@ export const BlogPostPreload = ({
           className={loadedStyles.tags}
       >
         <div
-            className={classNames(loadedStyles.tag, preloadStyles.tag)}
+            className={classNames(loadedStyles.tag, preloadStyles.tag, {
+              [preloadStyles.darkTag]: appearance === Appearance.DARK,
+            })}
         >
         </div>
       </div>

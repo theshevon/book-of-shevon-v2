@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @value breakpointSmall from './../../../../ui/metrics/breakpoints.module.css';
-@value colourLimeGreen100, colourLimeGreen500, colourGrey500 from './../../../../ui/colours/colours.module.css';
+@value colourLimeGreen100, colourLimeGreen500, colourGrey500, colourDarkModeGrey900 from './../../../../ui/colours/colours.module.css';
 
 @value blogPostHeight: 478px;
 @value titleContainerMarginTopForCard: 15px;
@@ -18,7 +18,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
 }
 
 .blogPost:not(.eightBit) .coverImg {
@@ -45,6 +44,10 @@
     background-color: colourLimeGreen100;
     border-radius: 4px;
     padding: tagPadding;
+}
+
+.tag.dark .tagText {
+    color: colourDarkModeGrey900;
 }
 
 .blogPost:not(.eightBit) .desc,

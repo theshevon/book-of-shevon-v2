@@ -1,4 +1,4 @@
-@value preload, textElemBorderRadius, textElemLineHeightMultiple from '../../../../../ui/preload/preload.module.css';
+@value preload, darkPreload, textElemBorderRadius, textElemLineHeightMultiple from '../../../../../ui/preload/preload.module.css';
 @value bodyTextSizeXSmall, bodyTextSizeSmall, bodyTextSizeXLarge from '../../../../../ui/text/text.module.css';
 @value titleContainerMarginTopForCard, titleContainerMarginBottomForCard, titleContainerMarginTopForJumbotron, dateMarginBottom, tagPadding from '../blog_post.module.css';
 
@@ -10,6 +10,16 @@
 .descriptionLineTwo,
 .descriptionLineThree {
     composes: preload;
+}
+
+.darkCoverImg,
+.darkTitle,
+.darkDate,
+.darkTag,
+.darkDescriptionLineOne,
+.darkDescriptionLineTwo,
+.darkDescriptionLineThree {
+    composes: darkPreload;
 }
 
 .title,

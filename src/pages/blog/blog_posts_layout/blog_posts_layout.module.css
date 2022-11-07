@@ -1,8 +1,12 @@
-@value colourGrey100 from '../../../ui/colours/colours.module.css';
+@value colourGrey100, colourDarkModeGrey700 from '../../../ui/colours/colours.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 .separator {
     display: none;
+}
+
+.separator.dark {
+    background-color: colourDarkModeGrey700;
 }
 
 @media (min-width: breakpointSmall) {
