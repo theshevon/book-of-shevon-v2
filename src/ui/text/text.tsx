@@ -21,7 +21,7 @@ type TextProps = {
   keepDefaultMargins?: boolean,
   textCase?: TextCase,
   className?: string,
-  withTextShadow?: boolean,
+  retainDarkTextOnDarkMode?: boolean,
   // ONLY USE FOR TESTING
   __themeOverride?: Theme,
 }
@@ -100,9 +100,9 @@ const getClassNames = ({
   keepDefaultMargins = false,
   textCase,
   theme,
+  retainDarkTextOnDarkMode = false,
   appearance,
   className,
-  withTextShadow,
 }: {
   size: Size | undefined,
   theme: Theme,
@@ -120,10 +120,7 @@ const getClassNames = ({
     getTextCaseClassName(textCase),
     getThemeClassName(theme),
     {
-      [styles.dark]: appearance === Appearance.DARK,
-    },
-    {
-      [styles.withTextShadow]: withTextShadow,
+      [styles.dark]: appearance === Appearance.DARK && !retainDarkTextOnDarkMode,
     },
     className,
   );
@@ -138,10 +135,10 @@ const renderText = ({
   keepDefaultMargins,
   textCase,
   theme,
+  retainDarkTextOnDarkMode,
   __themeOverride,
   appearance,
   className,
-  withTextShadow,
   children,
 }: {
   tag: Tag,
@@ -155,7 +152,7 @@ const renderText = ({
   }
   return createElement(
     tag,
-    { className: getClassNames({ size, alignment, fontWeight, italicized, keepDefaultMargins, textCase, theme, appearance, className, withTextShadow }) },
+    { className: getClassNames({ size, alignment, fontWeight, italicized, keepDefaultMargins, textCase, theme, retainDarkTextOnDarkMode, appearance, className }) },
     children,
   );
 };

@@ -290,4 +290,4 @@ storiesOf('UI/Colours', module)
           {...DARK_MODE_COLOUR_GROUP}
       />
     </div>
-  ))
+  ));

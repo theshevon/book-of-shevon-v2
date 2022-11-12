@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Appearance, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
+import { Appearance, useThemeContext } from '../../../../util/theming/theme_provider';
 import { Capsule } from './../../../../ui/capsule/capsule';
 import styles from './tech_capsule.module.css';
 
@@ -50,14 +50,13 @@ export const TechCapsule = ({
 }: {
   tech: string,
 }) => {
-  const { theme, appearance } = useThemeContext();
-  const isDark = appearance === Appearance.DARK;
+  const { appearance } = useThemeContext();
   return (
     <Capsule
         className={classNames(getTechClassName(tech), {
-          [styles.dark]: isDark,
+          [styles.dark]: appearance === Appearance.DARK,
         })}
-        withTextShadow={isDark && theme === Theme.EIGHT_BIT}
+        retainDarkTextOnDarkMode={true}
     >
       { tech }
     </Capsule>

@@ -34,6 +34,7 @@ export const Project = ({
     <div
         className={classNames(styles.project, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
+          [styles.dark]: appearance === Appearance.DARK,
         })}
     >
       { /* TITLE */ }
@@ -56,9 +57,8 @@ export const Project = ({
       { /* DESCRIPTION */ }
       <Text.Small
           alignment='centre'
-          className={classNames(styles.description, {
-            [styles.darkText]: appearance === Appearance.DARK,
-          })}
+          className={styles.description}
+          retainDarkTextOnDarkMode={theme === Theme.EIGHT_BIT}
       >
         { description }
       </Text.Small>
@@ -70,7 +70,7 @@ export const Project = ({
         <Text.Medium
             alignment='centre'
             fontWeight='bold'
-            className={classNames({ [styles.darkText]: appearance === Appearance.DARK })}
+            retainDarkTextOnDarkMode={theme === Theme.EIGHT_BIT}
         >
           { Messages.TechStack() }
         </Text.Medium>
@@ -87,7 +87,7 @@ export const Project = ({
           <Text.Medium
               alignment='centre'
               fontWeight='bold'
-              className={classNames({ [styles.darkText]: appearance === Appearance.DARK })}
+              retainDarkTextOnDarkMode={theme === Theme.EIGHT_BIT}
           >
             { Messages.OtherContributors() }
           </Text.Medium>
