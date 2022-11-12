@@ -16,8 +16,10 @@ import { RoutesData } from './routes/route_data/route_data';
 import { Routes } from './routes/routes';
 import { Nav } from './ui/nav/nav';
 import './app.css';
+import { DisplaySizeObserver, isLargeOrWider } from './util/display_size_observer/display_size_observer';
+import { observer } from 'mobx-react-lite';
 
-export const App = () => {
+export const App = observer(() => {
 
   // eslint-disable-next-line no-console
   console.log(Messages.consoleGreetingImg(Messages.consoleGreetingMessage()));
@@ -51,11 +53,13 @@ export const App = () => {
             path={Routes.CREATIVE}
             component={CreativePage}
         />
-        <Route
-            exact
-            path={Routes.SNEK}
-            component={SnekPage}
-        />
+        { isLargeOrWider(DisplaySizeObserver.size) &&
+          <Route
+              exact
+              path={Routes.SNEK}
+              component={SnekPage}
+          />
+        }
         <Route
             exact
             path='/*'
@@ -64,4 +68,4 @@ export const App = () => {
       </Switch>
     </Router>
   );
-};
+});
