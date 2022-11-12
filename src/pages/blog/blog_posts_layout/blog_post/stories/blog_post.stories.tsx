@@ -1,12 +1,14 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import thumbnail from '../../../../../util/storybook/test_images/test_img_0.png';
+import { Appearance } from '../../../../../util/theming/theme_provider';
 import { BlogPost } from '../blog_post';
 import { BlogPostPreload } from '../preload/blog_post_preload';
 
 storiesOf('Pages/Blog/BlogPost/Jumbotron (first post)', module)
   .add('Preload', () => (
     <BlogPostPreload
+        appearance={Appearance.LIGHT}
         isJumbotron={true}
     />
   ))
@@ -46,7 +48,7 @@ storiesOf('Pages/Blog/BlogPost/Jumbotron (first post)', module)
 
 storiesOf('Pages/Blog/BlogPost/Card (default)', module)
   .add('Preload', () => (
-    <BlogPostPreload/>
+    <BlogPostPreload appearance={Appearance.LIGHT}/>
   ))
   .add('Loaded', () => (
     <BlogPost
