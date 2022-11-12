@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import React from 'react';
+import { Appearance, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 import { Capsule } from './../../../../ui/capsule/capsule';
 import styles from './tech_capsule.module.css';
 
@@ -47,10 +49,17 @@ export const TechCapsule = ({
   tech,
 }: {
   tech: string,
-}) => (
-  <Capsule
-      className={getTechClassName(tech)}
-  >
-    { tech }
-  </Capsule>
-);
+}) => {
+  const { theme, appearance } = useThemeContext();
+  const isDark = appearance === Appearance.DARK;
+  return (
+    <Capsule
+        className={classNames(getTechClassName(tech), {
+          [styles.dark]: isDark,
+        })}
+        withTextShadow={isDark && theme === Theme.EIGHT_BIT}
+    >
+      { tech }
+    </Capsule>
+  );
+};

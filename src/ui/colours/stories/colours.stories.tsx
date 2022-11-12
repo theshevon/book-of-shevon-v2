@@ -41,14 +41,18 @@ const BASE_COLOR_GROUPS: ColourGroupProps[] = [
     name: 'Flat Gold',
     colours: [
       {
-        name: 'colourFlatGold',
-        value: colourValues.colourFlatGold,
+        name: 'colourFlatGold800',
+        value: colourValues.colourFlatGold800,
       },
     ],
   },
   {
     name: 'Green',
     colours: [
+      {
+        name: 'colourGreen50',
+        value: colourValues.colourGreen50,
+      },
       {
         name: 'colourGreen200',
         value: colourValues.colourGreen200,
@@ -61,18 +65,111 @@ const BASE_COLOR_GROUPS: ColourGroupProps[] = [
         name: 'colourGreen400',
         value: colourValues.colourGreen400,
       },
+      {
+        name: 'colourGreen800',
+        value: colourValues.colourGreen800,
+      },
     ],
   },
   {
     name: 'Lime Green',
     colours: [
       {
-        name: 'colourLimeGreen100',
-        value: colourValues.colourLimeGreen100,
+        name: 'colourLimeGreen400',
+        value: colourValues.colourLimeGreen400,
+      },
+    ],
+  },
+  {
+    name: 'Pink',
+    colours: [
+      {
+        name: 'colourPink500',
+        value: colourValues.colourPink500,
+      },
+    ],
+  },
+  {
+    name: 'Red',
+    colours: [
+      {
+        name: 'colourRed100',
+        value: colourValues.colourRed100,
       },
       {
-        name: 'colourLimeGreen500',
-        value: colourValues.colourLimeGreen500,
+        name: 'colourRed300',
+        value: colourValues.colourRed300,
+      },
+    ],
+  },
+  {
+    name: 'Lavender',
+    colours: [
+      {
+        name: 'colourLavender500',
+        value: colourValues.colourLavender500,
+      },
+    ],
+  },
+  {
+    name: 'Sky Blue',
+    colours: [
+      {
+        name: 'colourSkyBlue300',
+        value: colourValues.colourSkyBlue300,
+      },
+    ],
+  },
+  {
+    name: 'Royal Blue',
+    colours: [
+      {
+        name: 'colourRoyalBlue300',
+        value: colourValues.colourRoyalBlue300,
+      },
+      {
+        name: 'colourRoyalBlue500',
+        value: colourValues.colourRoyalBlue500,
+      },
+    ],
+  },
+  {
+    name: 'Purple',
+    colours: [
+      {
+        name: 'colourPurple300',
+        value: colourValues.colourPurple300,
+      },
+      {
+        name: 'colourPurple500',
+        value: colourValues.colourPurple500,
+      },
+    ],
+  },
+  {
+    name: 'Yellow',
+    colours: [
+      {
+        name: 'colourYellow400',
+        value: colourValues.colourYellow400,
+      },
+    ],
+  },
+  {
+    name: 'Gold',
+    colours: [
+      {
+        name: 'colourGold300',
+        value: colourValues.colourGold300,
+      },
+    ],
+  },
+  {
+    name: 'Teal',
+    colours: [
+      {
+        name: 'colourTeal500',
+        value: colourValues.colourTeal500,
       },
     ],
   },
@@ -82,32 +179,74 @@ const MARIO_COLOR_GROUP: ColourGroupProps = {
   name: 'Mario',
   colours: [
     {
-      name: 'marioWhite',
-      value: colourValues.marioWhite,
+      name: 'colourMarioWhite',
+      value: colourValues.colourMarioWhite,
     },
     {
-      name: 'marioYellowLight',
-      value: colourValues.marioYellowLight,
+      name: 'colourMarioLightYellow',
+      value: colourValues.colourMarioLightYellow,
     },
     {
-      name: 'marioYellow',
-      value: colourValues.marioYellow,
+      name: 'colourMarioYellow',
+      value: colourValues.colourMarioYellow,
     },
     {
-      name: 'marioYellowDark',
-      value: colourValues.marioYellowDark,
+      name: 'colourMarioDarkYellow',
+      value: colourValues.colourMarioDarkYellow,
     },
     {
-      name: 'marioOrange',
-      value: colourValues.marioOrange,
+      name: 'colourMarioOrange',
+      value: colourValues.colourMarioOrange,
     },
     {
-      name: 'marioBrownLight',
-      value: colourValues.marioBrownLight,
+      name: 'colourMarioLightBrown',
+      value: colourValues.colourMarioLightBrown,
     },
     {
-      name: 'marioBrownDark',
-      value: colourValues.marioBrownDark,
+      name: 'colourMarioDarkBrown',
+      value: colourValues.colourMarioDarkBrown,
+    },
+  ],
+};
+
+const DARK_MODE_COLOUR_GROUP: ColourGroupProps = {
+  name: 'Dark Mode',
+  colours: [
+    {
+      name: 'colourDarkModeGrey50',
+      value: colourValues.colourDarkModeGrey50,
+    },
+    {
+      name: 'colourDarkModeGrey100',
+      value: colourValues.colourDarkModeGrey100,
+    },
+    {
+      name: 'colourDarkModeGrey200',
+      value: colourValues.colourDarkModeGrey200,
+    },
+    {
+      name: 'colourDarkModeGrey300',
+      value: colourValues.colourDarkModeGrey300,
+    },
+    {
+      name: 'colourDarkModeGrey400',
+      value: colourValues.colourDarkModeGrey400,
+    },
+    {
+      name: 'colourDarkModeGrey500',
+      value: colourValues.colourDarkModeGrey500,
+    },
+    {
+      name: 'colourDarkModeGrey700',
+      value: colourValues.colourDarkModeGrey700,
+    },
+    {
+      name: 'colourDarkModeGrey800',
+      value: colourValues.colourDarkModeGrey800,
+    },
+    {
+      name: 'colourDarkModeGrey900',
+      value: colourValues.colourDarkModeGrey900,
     },
   ],
 };
@@ -139,4 +278,16 @@ storiesOf('UI/Colours', module)
           {...MARIO_COLOR_GROUP}
       />
     </div>
-  ));
+  ))
+  .add('Dark Mode Palette', () => (
+    <div
+        style={{
+          display: 'flex',
+          columnGap: '10px',
+        }}
+    >
+      <ColourGroup
+          {...DARK_MODE_COLOUR_GROUP}
+      />
+    </div>
+  ))

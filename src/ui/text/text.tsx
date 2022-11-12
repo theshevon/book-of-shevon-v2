@@ -21,6 +21,7 @@ type TextProps = {
   keepDefaultMargins?: boolean,
   textCase?: TextCase,
   className?: string,
+  withTextShadow?: boolean,
   // ONLY USE FOR TESTING
   __themeOverride?: Theme,
 }
@@ -101,6 +102,7 @@ const getClassNames = ({
   theme,
   appearance,
   className,
+  withTextShadow,
 }: {
   size: Size | undefined,
   theme: Theme,
@@ -120,6 +122,9 @@ const getClassNames = ({
     {
       [styles.dark]: appearance === Appearance.DARK,
     },
+    {
+      [styles.withTextShadow]: withTextShadow,
+    },
     className,
   );
 };
@@ -136,6 +141,7 @@ const renderText = ({
   __themeOverride,
   appearance,
   className,
+  withTextShadow,
   children,
 }: {
   tag: Tag,
@@ -149,7 +155,7 @@ const renderText = ({
   }
   return createElement(
     tag,
-    { className: getClassNames({ size, alignment, fontWeight, italicized, keepDefaultMargins, textCase, theme, appearance, className }) },
+    { className: getClassNames({ size, alignment, fontWeight, italicized, keepDefaultMargins, textCase, theme, appearance, className, withTextShadow }) },
     children,
   );
 };

@@ -1,4 +1,4 @@
-@value marioWhite, marioOrange from '../../ui/colours/colours.module.css';
+@value colourMarioWhite, colourMarioOrange from '../../ui/colours/colours.module.css';
 @value breakpointSmall from '../../ui/metrics/breakpoints.module.css';
 @value baseCloudHeight: calc(100vh / 10);
 @value brickHeight: max(5%, 40px);
@@ -27,6 +27,10 @@
     url("./assets/brick.png") center bottom repeat-x,
     #9290FF;
   /* background-attachment: fixed; */
+}
+
+.pageBackground.eightBit.dark {
+  background-color: #08082d;
 }
 
 .projects {

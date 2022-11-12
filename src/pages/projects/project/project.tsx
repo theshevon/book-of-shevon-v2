@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Theme, useThemeContext } from '../../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import { ButtonLink, CapsuleLink } from './../../../ui/link/link';
 import { Text } from './../../../ui/text/text';
 import { ProjectMessages as Messages } from './project.messages';
@@ -29,7 +29,7 @@ export const Project = ({
   otherContributors,
   githubUrl,
 }: ProjectProps) => {
-  const { theme } = useThemeContext();
+  const { theme, appearance } = useThemeContext();
   return (
     <div
         className={classNames(styles.project, {
@@ -56,7 +56,9 @@ export const Project = ({
       { /* DESCRIPTION */ }
       <Text.Small
           alignment='centre'
-          className={styles.description}
+          className={classNames(styles.description, {
+            [styles.darkText]: appearance === Appearance.DARK,
+          })}
       >
         { description }
       </Text.Small>
@@ -68,6 +70,7 @@ export const Project = ({
         <Text.Medium
             alignment='centre'
             fontWeight='bold'
+            className={classNames({ [styles.darkText]: appearance === Appearance.DARK })}
         >
           { Messages.TechStack() }
         </Text.Medium>
@@ -84,6 +87,7 @@ export const Project = ({
           <Text.Medium
               alignment='centre'
               fontWeight='bold'
+              className={classNames({ [styles.darkText]: appearance === Appearance.DARK })}
           >
             { Messages.OtherContributors() }
           </Text.Medium>

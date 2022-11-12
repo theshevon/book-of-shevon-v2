@@ -40,7 +40,7 @@ export const Projects: ProjectProps[] = [
       },
       {
         name: Messages.GraceSng(),
-        githubUrl: 'https://github.com/sngweoien',
+        githubUrl: 'https://github.com/ginseng88',
       },
       {
         name: Messages.MichaelManoussakis(),

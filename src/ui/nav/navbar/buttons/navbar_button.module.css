@@ -1,4 +1,4 @@
-@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey700, colourDarkModeGrey800, marioWhite, marioBrownDark, marioBrownLight from '../../../colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey700, colourDarkModeGrey800, colourMarioWhite, colourMarioDarkBrown, colourMarioLightBrown from '../../../colours/colours.module.css';
 
 .navbarButton {
     transition: 500ms;
@@ -42,11 +42,11 @@
 .navbarButton.eightBit.projects,
 .navbarButton.eightBit.projects:active,
 .navbarButton.eightBit.projects:focus {
-    border-color: marioBrownDark;
-    color: marioWhite;
+    border-color: colourMarioDarkBrown;
+    color: colourMarioWhite;
     text-shadow: 0 2px black;
-    background-color: marioBrownLight;
-    box-shadow: inset -2px -2px 0px 0px marioBrownDark !important;
+    background-color: colourMarioLightBrown;
+    box-shadow: inset -2px -2px 0px 0px colourMarioDarkBrown !important;
 }
 
 .navbarButton.eightBit:hover {
@@ -72,8 +72,8 @@
 }
 
 .navbarButton.eightBit.projects:hover {
-    border-color: marioBrownDark;
-    box-shadow: inset -3px -3px 0px 0px marioBrownDark !important;
+    border-color: colourMarioDarkBrown;
+    box-shadow: inset -3px -3px 0px 0px colourMarioDarkBrown !important;
 }
 
 .navbarButton.dark:not(.eightBit):not(.projects).dark:hover {
@@ -101,12 +101,12 @@
 }
 
 .navbarButton.eightBit.projects:not(:hover):before {
-    border-top-color: marioWhite;
+    border-top-color: colourMarioWhite;
     border-bottom-color: black;
 }
 
 .navbarButton.eightBit.projects:not(:hover):after {
-    border-left-color: marioWhite;
+    border-left-color: colourMarioWhite;
     border-right-color: black;
 }
 

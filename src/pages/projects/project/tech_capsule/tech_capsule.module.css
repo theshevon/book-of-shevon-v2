@@ -1,79 +1,162 @@
+@value colourGrey500, colourYellow400, colourRed100, colourPink500, colourLavender500, colourRoyalBlue300, colourRoyalBlue500, colourSkyBlue300, colourPurple300, colourPurple500, colourGold300, colourTeal500, colourLimeGreen400, colourGreen50 from '../../../../ui/colours/colours.module.css';
+@value colourRed300, colourPurple700, colourRoyalBlue500, colourLavender700, colourPurple500, colourYellow600, colourSkyBlue500, colourGold500, colourPink700, colourPink700, colourGold500, colourLavender700, colourGreen200, colourTeal700, colourLimeGreen600, colourRoyalBlue700 from '../../../../ui/colours/colours.module.css';
+
 .react {
-  background-color: #FEDCE5;
+  background-color: colourRed100;
+}
+
+.react.dark {
+  background-color: colourRed300;
 }
 
 .redux {
-  background-color: rgb(217, 206, 253);
+  background-color: colourPurple500;
+}
+
+.redux.dark {
+  background-color: colourPurple700;
 }
 
 .html {
-  background-color: #CFDFFF;
+  background-color: colourRoyalBlue300;
+}
+
+.html.dark {
+  background-color: colourRoyalBlue500;
 }
 
 .css {
-  background-color: rgb(239, 213, 254);
+  background-color: colourLavender500;
+}
+
+.css.dark {
+  background-color: colourLavender700;
 }
 
 .python {
-  background-color: #EDE2FE;
+  background-color: colourPurple300;
+}
+
+.python.dark {
+  background-color: colourPurple500;
 }
 
 .java {
-  background-color: rgb(255, 240, 153);
+  background-color: colourYellow400;
+}
+
+.java.dark {
+  background-color: colourYellow600;
 }
 
 .javascript {
-  background-color: #D0F0FD;
+  background-color: colourSkyBlue300;
+}
+
+.javascript.dark {
+  background-color: colourSkyBlue500;
 }
 
 .typescript {
-  background-color: #FFEAB6;
+  background-color: colourGold300;
+}
+
+.typescript.dark {
+  background-color: colourGold500;
 }
 
 .mySql {
-  background-color: #FEDAF6;
+  background-color: colourPink500;
+}
+
+.mySql.dark {
+  background-color: colourPink700;
 }
 
 .redux {
-  background-color: rgb(231, 218, 254);
+  background-color: colourPurple300;
+}
+
+.redux.dark {
+  background-color: colourPurple500;
 }
 
 .mobx {
-  background-color: rgb(231, 218, 254);
+  background-color: colourPurple300;
+}
+
+.mobx.dark {
+  background-color: colourPurple500;
 }
 
 .firebase {
-  background-color: #D0F0FD;
+  background-color: colourSkyBlue300;
+}
+
+.firebase.dark {
+  background-color: colourSkyBlue500;
 }
 
 .node {
-  background-color: #FEDAF6;
+  background-color: colourPink500;
+}
+
+.node.dark {
+  background-color: colourPink700;
 }
 
 .cSharp {
-  background-color: #D1F7C4;
+  background-color: colourGreen50;
+}
+
+.cSharp.dark {
+  background-color: colourGreen200;
 }
 
 .git {
-  background-color: #FFEAB6;
+  background-color: colourGold300;
+}
+
+.git.dark {
+  background-color: colourGold500;
 }
 
 .mongoDb {
-  background-color: rgb(247, 220, 254);
+  background-color: colourLavender500;
 }
 
-.csharp {
-  background-color: #D1F7C4;
+.mongoDb.dark {
+  background-color: colourLavender700;
+}
+
+.cSharp {
+  background-color: colourGreen50;
+}
+
+.cSharp.dark {
+  background-color: colourGreen200;
 }
 
 .unity {
-  background-color: #C2F5E9;
+  background-color: colourTeal500;
+}
+
+.unity.dark {
+  background-color: colourTeal700;
 }
 
 .androidStudio {
-  background-color: #f1ffb1;
+  background-color: colourLimeGreen400;
+}
+
+.androidStudio.dark {
+  background-color: colourLimeGreen600;
 }
 
 .jQuery {
-  background-color: rgb(207, 220, 255);
+  background-color: colourRoyalBlue500;
+}
+
+.jQuery.dark {
+  background-color: colourRoyalBlue700;
 }
