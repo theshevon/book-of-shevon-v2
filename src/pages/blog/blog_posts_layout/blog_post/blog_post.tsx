@@ -113,17 +113,15 @@ const Tag = ({
 }: {
   tag: string,
 }) => {
-  const { appearance } = useThemeContext();
   return (
     <div
-        className={classNames(styles.tag, {
-          [styles.dark]: appearance === Appearance.DARK,
-        })}
+        className={styles.tag}
     >
       <Text.ExtraSmall
           alignment='centre'
           textCase='lowercase'
           className={styles.tagText}
+          retainDarkTextOnDarkMode={true}
       >
         { tag }
       </Text.ExtraSmall>
