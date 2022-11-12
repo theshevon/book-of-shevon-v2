@@ -1,3 +1,5 @@
+@value colourDarkModeGrey800 from '../../ui/colours/colours.module.css';
+
 .gameControls {
   margin-left: 50%;
   transform: translateX(-50%);
@@ -33,4 +35,8 @@
   height: 500px;
   width: 500px;
   grid-template: repeat(25, 1fr) / repeat(25, 1fr);
+}
+
+.dark {
+  background-color: colourDarkModeGrey800;
 }
