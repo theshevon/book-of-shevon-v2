@@ -1,4 +1,4 @@
-@value colorGrey500 from './../../../../colors/colors.module.css';
+@value colourGrey500 from './../../../../colours/colours.module.css';
 
 @value toggleButtonSideLength: 40px;
 @value lineHeight: 2.5px;
@@ -16,7 +16,7 @@
 }
 
 .line {
-  background-color: colorGrey500;
+  background-color: colourGrey500;
   width: inherit;
   height: lineHeight;
   transition: transform 500ms ease-in-out;

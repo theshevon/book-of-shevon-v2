@@ -1,6 +1,6 @@
-@value navHeight, navBackgroundColor, navBackgroundBlur, navBoxShadow, menuTransitionTime from './../nav.module.css';
+@value navHeight, navBackgroundColourLight, navBackgroundColourDark, navBackgroundBlur, navBoxShadowLight, menuTransitionTime from './../nav.module.css';
 @value menuHeight from './horizontal_menu/horizontal_menu.module.css';
-@value colorGrey100, colorGrey200, marioBrownDark, marioBrownLight from '../../colors/colors.module.css';
+@value colourGrey100, colourGrey200, colourMarioDarkBrown, colourMarioLightBrown, colourDarkModeGrey400, colourDarkModeGrey700 from '../../colours/colours.module.css';
 
 @value menuContainerHeight: calc(navHeight + menuHeight);
 
@@ -30,23 +30,39 @@
     justify-content: center;
     align-items: flex-end;
     z-index: 1;
-    box-shadow: navBoxShadow;
+    box-shadow: navBoxShadowLight;
     padding: 2.5px 0;
     width: 100%;
     height: menuContainerHeight;
     box-sizing: border-box;
     transition: transform menuTransitionTime ease-in-out;
     transform: translateY(calc(-1 * menuContainerHeight));
-    background-color: navBackgroundColor;
+    background-color: navBackgroundColourLight;
+}
+
+.navbarContainer.dark .menuContainerOuter {
+    background-color: navBackgroundColourDark;
+    box-shadow: none;
+    border-bottom: 1px solid colourDarkModeGrey700;
+}
+
+.navbarContainer.dark:not(.eightBit) .menuContainerOuter {
+    background-color: navBackgroundColourDark;
+    box-shadow: none;
+    border-color: colourDarkModeGrey700;
 }
 
 .navbarContainer.eightBit:not(.projects) .menuContainerOuter {
-    box-shadow: inset -3px -3px 0px 0px colorGrey100;
+    box-shadow: inset -3px -3px 0px 0px colourGrey100;
+}
+
+.navbarContainer.eightBit.dark:not(.projects) .menuContainerOuter {
+    box-shadow: inset -3px -3px 0px 0px colourDarkModeGrey400;
 }
 
 .navbarContainer.eightBit.projects .menuContainerOuter {
-    background-color: marioBrownDark;
-    box-shadow: inset -3px -3px 0px 0px marioBrownLight;
+    background-color: colourMarioDarkBrown;
+    box-shadow: inset -3px -3px 0px 0px colourMarioLightBrown;
 }
 
 .navbarContainer.eightBit .menuContainerOuter.withMenuOpen::after {
@@ -56,8 +72,12 @@
     height: 100%;
     box-sizing: content-box;
     top: 0;
-    border-bottom: 2px colorGrey200 solid;
+    border-bottom: 2px colourGrey200 solid;
     z-index: -1;
+}
+
+.navbarContainer.eightBit.dark .menuContainerOuter.withMenuOpen::after {
+    border-color: colourDarkModeGrey700;
 }
 
 .navbarContainer.eightBit.projects .menuContainerOuter.withMenuOpen::after {

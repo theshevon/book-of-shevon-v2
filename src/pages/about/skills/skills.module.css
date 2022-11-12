@@ -1,8 +1,12 @@
-@value colorGrey100 from '../../../ui/colors/colors.module.css';
+@value colourGrey100, colourDarkModeGrey50, colourDarkModeGrey700 from '../../../ui/colours/colours.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 .skillsListContainer:not(:last-of-type) {
     margin-bottom: calc(3 * 7.5px);
+}
+
+.skillsListContainer.dark::marker {
+    color: colourDarkModeGrey50;
 }
 
 .skills {
@@ -12,6 +16,10 @@
 .skillsList.eightBit .list,
 .skillsList.eightBit .list {
 	gap: 10px 15px;
+}
+
+.skill.dark {
+    background-color: colourDarkModeGrey700;
 }
 
 .label {

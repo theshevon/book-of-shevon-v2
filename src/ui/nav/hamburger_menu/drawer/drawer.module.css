@@ -1,18 +1,18 @@
-@value colorGrey300 from './../../../colors/colors.module.css';
-@value navHeight, navBackgroundColor, navBackgroundBlur, navBoxShadow, menuTransitionTime from './../../nav.module.css';
+@value colourGrey300 from './../../../colours/colours.module.css';
+@value navHeight, navBackgroundColourLight, navBackgroundBlur, navBoxShadowLight, menuTransitionTime from './../../nav.module.css';
 @value toggleButtonDistanceFromEdge from './../hamburger_menu.module.css';
 @value toggleButtonSideLength from './../buttons/toggle_menu_button/toggle_menu_button.module.css';
 
 @value drawerHeight: 375px;
 
 .drawer {
-  background-color: navBackgroundColor;
+  background-color: navBackgroundColourLight;
   display: flex;
   justify-content: center;
   transform: translateY(calc(-1 * drawerHeight));
   padding: 70px calc(toggleButtonSideLength + toggleButtonDistanceFromEdge);
   transition: menuTransitionTime;
-  box-shadow: navBoxShadow;
+  box-shadow: navBoxShadowLight;
 }
 
 .show {
@@ -41,7 +41,7 @@
 .link {
   text-transform: uppercase;
   text-align: center;
-  color: colorGrey500;
+  color: colourGrey500;
   font-weight: 400;
   font-size: 0.85rem;
   text-decoration: none;
@@ -52,7 +52,7 @@
 
 .link.active {
   color: white;
-  background-color: colorGrey300;
+  background-color: colourGrey300;
 }
 
 @supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {

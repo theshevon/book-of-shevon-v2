@@ -7,10 +7,12 @@ import styles from './capsule.module.css';
 
 type CapsuleProps = {
   className?: string,
+  retainDarkTextOnDarkMode?: boolean,
 }
 
 export const Capsule: FC<CapsuleProps> = ({
   className,
+  retainDarkTextOnDarkMode = false,
   children,
 }) => {
   const { theme } = useThemeContext();
@@ -20,7 +22,9 @@ export const Capsule: FC<CapsuleProps> = ({
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
         })}
     >
-      <Text.ExtraSmall>
+      <Text.ExtraSmall
+          retainDarkTextOnDarkMode={retainDarkTextOnDarkMode}
+      >
         { children }
       </Text.ExtraSmall>
     </div>

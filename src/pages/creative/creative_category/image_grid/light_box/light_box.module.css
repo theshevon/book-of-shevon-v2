@@ -1,6 +1,6 @@
 @value breakpointSmall from '../../../../../ui/metrics/breakpoints.module.css';
 @value imgRadius from '../image_grid.module.css';
-@value colorGrey100, colorGrey200, colorGreyTransparentLight, colorGreyTransparentDark from '../../../../../ui/colors/colors.module.css';
+@value colourGrey100, colourGrey200, colourGreyTransparentLight, colourGreyTransparentDark from '../../../../../ui/colours/colours.module.css';
 
 .lightBox {
   width: 100%;
@@ -9,7 +9,7 @@
   z-index: 1000;
   top: 0;
   left: 0;
-  background-color: colorGreyTransparentDark;
+  background-color: colourGreyTransparentDark;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,8 +48,8 @@
 .closeButton {
   background: none;
   border: none;
-  /* TODO replace with design sys color */
-  fill: colorGrey200;
+  /* TODO replace with design sys colour */
+  fill: colourGrey200;
   transition: 300ms;
 }
 
@@ -102,7 +102,7 @@
 
 @supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .lightBox {
-      background-color: colorGreyTransparentLight;
+      background-color: colourGreyTransparentLight;
       backdrop-filter: blur(3px);
       -webkit-backdrop-filter: blur(3px);
   }

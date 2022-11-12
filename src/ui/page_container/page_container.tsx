@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { Appearance, useThemeContext } from '../../util/theming/theme_provider';
 import styles from './page_container.module.css';
 
 export const PageContainer = ({
@@ -8,14 +9,19 @@ export const PageContainer = ({
 }: {
   Content: () => JSX.Element,
   pageBackgroundStyles?: string,
-}) => (
-  <div
-      className={classNames(styles.pageContainer, pageBackgroundStyles)}
-  >
+}) => {
+  const { appearance } = useThemeContext();
+  return (
     <div
-        className={styles.pageContent}
+        className={classNames(styles.pageContainer, pageBackgroundStyles, {
+          [styles.dark]: appearance === Appearance.DARK,
+        })}
     >
-      <Content />
+      <div
+          className={styles.pageContent}
+      >
+        <Content />
+      </div>
     </div>
-  </div>
-);
+  );
+};

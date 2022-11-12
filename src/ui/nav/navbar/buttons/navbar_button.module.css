@@ -1,16 +1,25 @@
-@value colorGrey100, colorGrey200, colorGrey300, colorGrey500, marioWhite, marioBrownDark, marioBrownLight from '../../../colors/colors.module.css';
+@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey700, colourDarkModeGrey800, colourMarioWhite, colourMarioDarkBrown, colourMarioLightBrown from '../../../colours/colours.module.css';
 
 .navbarButton {
     transition: 500ms;
     text-transform: uppercase;
     width: 115px;
     height: 32px;
-    background-color: colorGrey100;
+    background-color: colourGrey100;
     margin: auto 2px;
 }
 
+.navbarButton.dark {
+    background-color: transparent;
+    color: colourDarkModeGrey200;
+}
+
 .navbarButton:not(.eightBit) {
-    border: 1px solid colorGrey100 !important;
+    border: 1px solid colourGrey100 !important;
+}
+
+.navbarButton:not(.eightBit).dark {
+    border-color: colourDarkModeGrey800 !important;
 }
 
 .navbarButton.eightBit {
@@ -21,49 +30,83 @@
 .navbarButton.eightBit:active,
 .navbarButton.eightBit:focus {
     border-color: transparent;
-    box-shadow: inset -2px -2px 0px 0px colorGrey100 !important;
+    box-shadow: inset -2px -2px 0px 0px colourGrey100 !important;
+}
+
+.navbarButton.eightBit.dark,
+.navbarButton.eightBit.dark:active,
+.navbarButton.eightBit.dark:focus {
+    box-shadow: inset -2px -2px 0px 0px colourDarkModeGrey400 !important;
 }
 
 .navbarButton.eightBit.projects,
 .navbarButton.eightBit.projects:active,
 .navbarButton.eightBit.projects:focus {
-    border-color: marioBrownDark;
-    color: marioWhite;
+    border-color: colourMarioDarkBrown;
+    color: colourMarioWhite;
     text-shadow: 0 2px black;
-    background-color: marioBrownLight;
-    box-shadow: inset -2px -2px 0px 0px marioBrownDark !important;
+    background-color: colourMarioLightBrown;
+    box-shadow: inset -2px -2px 0px 0px colourMarioDarkBrown !important;
 }
 
 .navbarButton.eightBit:hover {
-    box-shadow: inset -3px -3px 0px 0px colorGrey300 !important;
+    box-shadow: inset -3px -3px 0px 0px colourGrey300 !important;
+}
+
+.navbarButton.eightBit.dark:hover {
+    box-shadow: inset -3px -3px 0px 0px colourGrey700 !important;
+}
+
+.navbarButton.eightBit.dark:not(.projects):hover:before {
+    border-top-color: colourDarkModeGrey700;
+    border-bottom-color: colourDarkModeGrey700;
+}
+
+.navbarButton.eightBit.dark:not(.projects):hover:after {
+    border-left-color: colourDarkModeGrey700;
+    border-right-color: colourDarkModeGrey700;
+}
+
+.navbarButton:not(.eightBit):not(.projects):not(.dark):hover {
+    border: 1px solid colourGrey200 !important;
 }
 
 .navbarButton.eightBit.projects:hover {
-    border-color: marioBrownDark;
-    box-shadow: inset -3px -3px 0px 0px marioBrownDark !important;
+    border-color: colourMarioDarkBrown;
+    box-shadow: inset -3px -3px 0px 0px colourMarioDarkBrown !important;
 }
 
-.navbarButton:not(.projects):hover {
-    border: 1px solid colorGrey200 !important;
+.navbarButton.dark:not(.eightBit):not(.projects).dark:hover {
+    border-color: colourDarkModeGrey200 !important;
 }
 
 .navbarButton.eightBit:not(.projects):not(:hover):before {
-    border-top-color: colorGrey200;
-    border-bottom-color: colorGrey200;
+    border-top-color: colourGrey200;
+    border-bottom-color: colourGrey200;
 }
 
 .navbarButton.eightBit:not(.projects):not(:hover):after {
-    border-left-color: colorGrey200;
-    border-right-color: colorGrey200;
+    border-left-color: colourGrey200;
+    border-right-color: colourGrey200;
+}
+
+.navbarButton.eightBit.dark:not(.projects):not(:hover):before {
+    border-top-color: colourDarkModeGrey700;
+    border-bottom-color: colourDarkModeGrey700;
+}
+
+.navbarButton.eightBit.dark:not(.projects):not(:hover):after {
+    border-left-color: colourDarkModeGrey700;
+    border-right-color: colourDarkModeGrey700;
 }
 
 .navbarButton.eightBit.projects:not(:hover):before {
-    border-top-color: marioWhite;
+    border-top-color: colourMarioWhite;
     border-bottom-color: black;
 }
 
 .navbarButton.eightBit.projects:not(:hover):after {
-    border-left-color: marioWhite;
+    border-left-color: colourMarioWhite;
     border-right-color: black;
 }
 

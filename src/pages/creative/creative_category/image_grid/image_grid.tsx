@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import React, { useState } from 'react';
+import { Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 import styles from './image_grid.module.css';
 import { LightBox } from './light_box/light_box';
 
@@ -15,6 +17,7 @@ export const ImageGrid = ({
 
   const [showLightBox, setShowLightBox] = useState<boolean>(false);
   const [selectedImg, setSelectedImg] = useState<SelectedImg>({ imgSrc: '', index: -1 });
+  const { theme } = useThemeContext();
 
   const onImgClick = (selectedImg: SelectedImg) => {
     setSelectedImg(selectedImg);
@@ -60,7 +63,9 @@ export const ImageGrid = ({
         { images.map((imgSrc, index) => (
           <div
               key={imgSrc}
-              className={styles.thumbnailContainer}
+              className={classNames(styles.thumbnailContainer, {
+                [styles.eightBit]: theme === Theme.EIGHT_BIT,
+              })}
           >
             <img
                 src={imgSrc}

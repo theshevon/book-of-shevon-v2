@@ -1,4 +1,4 @@
-@value colorGrey500, flatGold from '../../../ui/colors/colors.module.css';
+@value colourGrey500, colourDarkModeGrey50, flatGold from '../../../ui/colours/colours.module.css';
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
 
 @value bottomMargin: 7.5px;
@@ -11,6 +11,11 @@
 
 .experienceContainer:not(:last-of-type) {
     margin-bottom: experienceBottom;
+}
+
+.experienceContainer.dark::marker,
+.responsibility.dark::marker {
+    color: colourDarkModeGrey50;
 }
 
 .role,
@@ -41,7 +46,7 @@
 }
 
 .period {
-    color: colorGrey500;
+    color: colourGrey500;
 }
 
 .responsibilities {

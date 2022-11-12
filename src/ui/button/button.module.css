@@ -1,4 +1,4 @@
-@value colorGrey200, colorGrey500 from './../colors/colors.module.css';
+@value colourGrey200, colourGrey500 from './../colours/colours.module.css';
 @value iconButtonSize: 24px;
 
 .button {
@@ -7,8 +7,8 @@
     box-sizing: border-box;
     padding: 0.4rem 0.8rem;
     text-align: center;
-    color: colorGrey500;
-    border: 1px solid colorGrey500;
+    color: colourGrey500;
+    border: 1px solid colourGrey500;
     border-radius: 5px;
 }
 
@@ -16,12 +16,12 @@
     font-family: "Press Start 2P", cursive;
     border-radius: unset;
     position: relative;
-    box-shadow: inset -2px -2px 0px 0px colorGrey200;
+    box-shadow: inset -2px -2px 0px 0px colourGrey200;
 }
 
 .button.eightBit:not(:disabled):hover,
 .button.eightBit:not(:disabled):focus {
-    box-shadow: inset -3px -3px 0px 0px colorGrey200;
+    box-shadow: inset -3px -3px 0px 0px colourGrey200;
 }
 
 .button.eightBit:before,
@@ -36,25 +36,25 @@
 .button.eightBit:before {
     top: -2px;
     left: 0;
-    border-top: 2px colorGrey500 solid;
-    border-bottom: 2px colorGrey500 solid;
+    border-top: 2px colourGrey500 solid;
+    border-bottom: 2px colourGrey500 solid;
 }
 
 .button.eightBit:after {
     left: -2px;
     top: 0;
-    border-left: 2px colorGrey500 solid;
-    border-right: 2px colorGrey500 solid;
+    border-left: 2px colourGrey500 solid;
+    border-right: 2px colourGrey500 solid;
 }
 
 .button.eightBit:disabled:before {
-    border-top: 2px colorGrey200 solid;
-    border-bottom: 2px colorGrey200 solid;
+    border-top: 2px colourGrey200 solid;
+    border-bottom: 2px colourGrey200 solid;
 }
 
 .button.eightBit:disabled:after {
-    border-left: 2px colorGrey200 solid;
-    border-right: 2px colorGrey200 solid;
+    border-left: 2px colourGrey200 solid;
+    border-right: 2px colourGrey200 solid;
 }
 
 .button:hover,
@@ -64,8 +64,8 @@
 
 .button:disabled {
     cursor: not-allowed;
-    color: colorGrey200;
-    border-color: colorGrey200;
+    color: colourGrey200;
+    border-color: colourGrey200;
 }
 
 .iconButton {
@@ -78,7 +78,7 @@
 
 .iconButton:disabled svg {
     cursor: not-allowed;
-    fill: colorGrey200;
+    fill: colourGrey200;
 }
 
 .iconButton svg {

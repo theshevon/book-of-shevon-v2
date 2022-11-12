@@ -1,7 +1,9 @@
+import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 import type { DisplaySize } from '../../../util/display_size_observer/display_size_observer';
 import { DisplaySizeObserver, isMediumOrWider } from '../../../util/display_size_observer/display_size_observer';
+import { Appearance, useThemeContext } from '../../../util/theming/theme_provider';
 import { BlogPost, BlogPostProps } from './blog_post/blog_post';
 import { BlogPostsGrid } from './blog_posts_grid/blog_posts_grid';
 import styles from './blog_posts_layout.module.css';
@@ -39,11 +41,14 @@ const BlogPostsLayoutInternal = observer(({
   loadingState,
   posts,
 }: { displaySize: DisplaySize } & Omit<BlogPostsLayoutProps, 'Fallback'>) => {
+  const { appearance } = useThemeContext();
+
   let Layout;
   if (loadingState === 'loading') {
     Layout = () => (
       <BlogPostsLayoutPreload
           displaySize={displaySize}
+          appearance={appearance}
       />
     );
   } else {
@@ -58,7 +63,9 @@ const BlogPostsLayoutInternal = observer(({
           { rest.length > 0 &&
             <>
               <div
-                  className={styles.separator}
+                  className={classNames(styles.separator, {
+                    [styles.dark]: appearance === Appearance.DARK,
+                  })}
               >
               </div>
               <BlogPostsGrid

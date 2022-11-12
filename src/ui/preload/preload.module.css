@@ -1,3 +1,4 @@
+@value colourDarkModeGrey800 from '../colours/colours.module.css';
 @value textElemBorderRadius: 4px;
 @value textElemLineHeightMultiple: 1.2;
 
@@ -5,6 +6,10 @@
     background: linear-gradient(-90deg, #F0F0F0 0%, #F8F8F8 50%, #F0F0F0 100%);
     animation: pulse 1.2s ease-in-out infinite;
     background-size: 400% 400%;
+}
+
+.darkPreload {
+    background: linear-gradient(-90deg, colourDarkModeGrey800 0%, colourDarkModeGrey800 50%, colourDarkModeGrey800 100%);
 }
 
 @keyframes pulse {

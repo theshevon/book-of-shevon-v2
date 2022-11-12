@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Theme, useThemeContext } from '../../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import { Text } from './../../../ui/text/text';
 import styles from './profile.module.css';
 
@@ -15,11 +15,12 @@ export const Profile = ({
   imgSrc,
   imgAltTag,
 }: ProfileProps) => {
-  const { theme } = useThemeContext();
+  const { theme, appearance } = useThemeContext();
   return (
     <div
         className={classNames(styles.profile, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
+          [styles.dark]: appearance === Appearance.DARK,
         })}
     >
       <img

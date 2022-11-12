@@ -1,10 +1,10 @@
-@value colorGrey100, colorGrey500 from './../colors/colors.module.css';
+@value colourGrey100, colourGrey500 from './../colours/colours.module.css';
 @value bodyTextSizeXSmall from './../text/text.module.css';
 
 .capsule {
     text-align: center;
     font-size: bodyTextSizeXSmall;
-    background-color: colorGrey100;
+    background-color: colourGrey100;
     padding: 5px 15px;
     border-radius: 15px;
 }

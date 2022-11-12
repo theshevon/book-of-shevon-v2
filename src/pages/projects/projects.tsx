@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { PageContainer } from '../../ui/page_container/page_container';
-import { Theme, useThemeContext } from '../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Projects as TechProjects } from './data/projects';
 import { Project } from './project/project';
@@ -14,7 +14,7 @@ export const Projects = () => {
     updateDocumentHeader(Messages.pageTitle(), { type: 'emoji', src: '🐝' });
   }, []);
 
-  const { theme } = useThemeContext();
+  const { theme, appearance } = useThemeContext();
 
   const Content = () => (
     <div
@@ -40,6 +40,7 @@ export const Projects = () => {
         Content={Content}
         pageBackgroundStyles={classNames(styles.pageBackground, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
+          [styles.dark]: appearance === Appearance.DARK,
         })}
     />
   );

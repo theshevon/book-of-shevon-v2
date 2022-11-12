@@ -1,0 +1,65 @@
+@value colourGrey100: hsl(0, 0%, 90%);
+@value colourGrey200: hsl(0, 0%, 70%);
+@value colourGrey300: hsl(0, 0%, 50%);
+@value colourGrey400: hsl(0, 0%, 30%);
+@value colourGrey500: hsl(0, 0%, 10%);
+
+@value colourGreyTransparentLight: hsla(0, 0%, 7.5%, 80%);
+@value colourGreyTransparentDark: hsla(0, 0%, 15%, 80%);
+
+@value colourFlatGold800: hsl(46, 65%, 52%);
+
+@value colourGreen50: hsl(105, 76%, 87%);
+@value colourGreen200: hsl(105, 50%, 66.25%);
+@value colourGreen300: hsl(105, 50%, 55%);
+@value colourGreen400: hsl(105, 50%, 41.25%);
+@value colourGreen800: hsl(105, 36% , 25%);
+
+/* colours from projects page */
+@value colourRed100: hsl(344, 94%, 93%);
+@value colourRed300: hsl(344, 94%, 87%);
+
+@value colourPink500: hsl(313, 95%, 93%);
+@value colourPink700: hsl(313, 95%, 87%);
+
+@value colourLavender500: hsl(278, 95%, 92%);
+
+@value colourRoyalBlue300: hsl(224, 100%, 90%);
+@value colourRoyalBlue500: hsl(224, 100%, 85%);
+
+@value colourSkyBlue300: hsl(197, 92%, 90%);
+@value colourSkyBlue500: hsl(197, 92%, 85%);
+
+@value colourPurple300: hsl(264, 93%, 94%);
+@value colourPurple500: hsl(264, 92%, 90%);
+
+@value colourGold300: hsl(43, 100%, 86%);
+@value colourGold500: hsl(43, 100%, 80%);
+
+@value colourYellow400: hsl(51, 100%, 80%);
+@value colourYellow600: hsl(51, 100%, 75%);
+
+@value colourTeal500: hsl(166, 72%, 86%);
+
+@value colourLimeGreen400: hsl(71, 100%, 85%);
+@value colourLimeGreen600: hsl(71, 100%, 80%);
+
+/* mario palette */
+@value colourMarioWhite: hsl(58, 100%, 94%);
+@value colourMarioLightYellow: hsl(33, 88%, 87%);
+@value colourMarioYellow: hsl(33, 100%, 72%);
+@value colourMarioDarkYellow: hsl(33, 56%, 57%);
+@value colourMarioOrange: hsl(20, 81%, 48%);
+@value colourMarioLightBrown: hsl(22, 66%, 59%);
+@value colourMarioDarkBrown: hsl(22, 99%, 28%);
+
+/* dark mode palette */
+@value colourDarkModeGrey50: hsl(0, 0%, 97%);
+@value colourDarkModeGrey100: hsl(0, 0%, 88%);
+@value colourDarkModeGrey200: hsl(0, 0%, 81%);
+@value colourDarkModeGrey300: hsl(0, 0%, 69%);
+@value colourDarkModeGrey400: hsl(0, 0%, 62%);
+@value colourDarkModeGrey500: hsl(0, 0%, 49%);
+@value colourDarkModeGrey700: hsl(0, 0%, 32%);
+@value colourDarkModeGrey800: hsl(0, 0%, 23%);
+@value colourDarkModeGrey900: hsl(0, 0%, 13%);

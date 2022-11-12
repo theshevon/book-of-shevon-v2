@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { PageContainer } from '../../ui/page_container/page_container';
-import { Theme, useThemeContext } from '../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { AboutMessages as Messages } from './about.messages';
 import styles from './about.module.css';
@@ -22,13 +22,14 @@ export const About = () => {
 
   const Profile = createProfile();
 
-  const { theme } = useThemeContext();
+  const { theme, appearance } = useThemeContext();
 
   const Content = () => (
 
     <div
         className={classNames(styles.aboutPage, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
+          [styles.dark]: appearance === Appearance.DARK,
         })}
     >
 

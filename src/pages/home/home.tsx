@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { PageContainer } from '../../ui/page_container/page_container';
-import { Theme, useThemeContext } from '../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { IconLink } from './../../ui/link/link';
 import { Text } from './../../ui/text/text';
@@ -15,12 +15,13 @@ export const Home = () => {
     updateDocumentHeader(Messages.bookOfShevon(), { type: 'emoji', src: '🤠' });
   }, []);
 
-  const { theme } = useThemeContext();
+  const { theme, appearance } = useThemeContext();
 
   const Content = () => (
     <div
         className={classNames(styles.siteTitleContainer, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
+          [styles.dark]: appearance === Appearance.DARK,
         })}
     >
       <Text.LargeTitle
