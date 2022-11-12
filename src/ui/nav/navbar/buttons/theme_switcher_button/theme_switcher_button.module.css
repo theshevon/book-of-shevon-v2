@@ -1,4 +1,4 @@
-@value colourGrey100, colourGrey200, colourGrey500 from '../../../../colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourGrey500, colourDarkModeGrey800 from '../../../../colours/colours.module.css';
 
 .themeSwitcherButton {
   box-sizing: border-box;
@@ -83,4 +83,16 @@
 .themeOption:hover,
 .appearanceOption:hover {
   cursor: pointer;
+}
+
+.verticalDivider {
+  top: 50%;
+  content: '';
+  height: 17.5px;
+  width: 1px;
+  background-color: colourGrey100;
+}
+
+.themeSwitcherButton.dark .verticalDivider {
+  background-color: colourDarkModeGrey800;
 }

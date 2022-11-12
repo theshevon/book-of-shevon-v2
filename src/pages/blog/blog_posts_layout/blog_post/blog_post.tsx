@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { Link } from '../../../../ui/link/link';
 import { Text } from '../../../../ui/text/text';
-import { Appearance, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
+import { Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 
 import styles from './blog_post.module.css';
 

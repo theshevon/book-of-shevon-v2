@@ -23,6 +23,7 @@ export const ThemeSwitcherButton = ({
           [themeSwitcherButtonStyles.eightBit]: theme === Theme.EIGHT_BIT,
           [baseStyles.eightBit]: theme === Theme.EIGHT_BIT,
           [baseStyles.dark]: appearance === Appearance.DARK,
+          [themeSwitcherButtonStyles.dark]: appearance === Appearance.DARK,
         }, getLocationSpecificThemeStyles(activeRoute))}
     >
       <div
@@ -40,6 +41,7 @@ export const ThemeSwitcherButton = ({
             { themeOption.icon }
           </button>
         )) }
+        <div className={themeSwitcherButtonStyles.verticalDivider}></div>
         <button
             onClick={() => setAppearance(appearance === Appearance.LIGHT ? Appearance.DARK : Appearance.LIGHT)}
             title={APPEARANCES[appearance].label}
