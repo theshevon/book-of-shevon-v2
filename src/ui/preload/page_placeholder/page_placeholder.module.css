@@ -1,3 +1,14 @@
+@value colourDarkModeGrey900 from '../../colours/colours.module.css';
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container.dark {
+  background-color: colourDarkModeGrey900;
+}
+
 /* Shamelessly copied over from https://codepen.io/_fbrz/pen/QwYLGV */
 
 .spinner {
