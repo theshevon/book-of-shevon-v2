@@ -157,7 +157,7 @@
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
 	}
 
-	.project.dark {
+	.project.dark:not(.eightBit) {
 		box-shadow: none;
 		border: 1px colourDarkModeGrey700 solid;
 	}
