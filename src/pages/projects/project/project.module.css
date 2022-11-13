@@ -163,3 +163,16 @@
 	}
 
 }
+
+@media(max-width: breakpointSmall) {
+
+	.githubLink {
+		background-color: colourGreen300;
+		border-color: colourGreen300;
+		color: white !important;
+	}
+	
+	.githubLink.eightBit {
+		box-shadow: inset -3px -3px 0px 0px colourGreen400 !important;
+	}
+}
