@@ -15,13 +15,14 @@
 }
 
 .pageContent {
-  padding: max(5%, 40px) 2.5%;
+  padding: max(5%, 40px) 5%;
   padding-top: 70px;
 }
 
 @media(min-width: breakpointSmall) {
 
   .pageContent {
+    padding: max(5%, 40px) 2.5%;
     padding-top: 100px;
   }
 }
