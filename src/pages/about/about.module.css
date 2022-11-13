@@ -7,6 +7,8 @@
 
 .aboutPage.eightBit {
     box-shadow: inset -4px -4px 0px 0px colourGrey100;
+    margin: auto 5%;
+    padding: 32px;
 }
 
 .aboutPage.dark.eightBit {
@@ -49,8 +51,8 @@
 @media(min-width: breakpointSmall) {
 
     .aboutPage {
-        margin: auto 10%;
-        padding: 75px 10%;
+        margin: auto 10% !important;
+        padding: 75px 10% !important;
     }
 
     .aboutPage:not(.eightBit) {
