@@ -1,4 +1,4 @@
-@value colourGrey500, colourDarkModeGrey50 from './../../../../colours/colours.module.css';
+@value colourGrey500, colourDarkModeGrey50, colourMarioWhite from './../../../../colours/colours.module.css';
 
 @value toggleButtonSideLength: 40px;
 @value lineHeight: 2.5px;
@@ -26,6 +26,10 @@
 
 .toggleMenuButton.dark .line {
   background-color: colourDarkModeGrey50;
+}
+
+.toggleMenuButton.projects .line {
+  background-color: colourMarioWhite;
 }
 
 .line:nth-of-type(1) {
