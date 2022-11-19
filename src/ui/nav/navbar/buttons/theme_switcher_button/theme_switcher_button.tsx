@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Routes } from '../../../../../routes/routes';
+import { useLocaleContext } from '../../../../../util/localisation/locale_provider';
 import { APPEARANCES, Appearance, THEMES, Theme, useThemeContext } from '../../../../../util/theming/theme_provider';
 import baseStyles from '../navbar_button.module.css';
 import themeSwitcherButtonStyles from './theme_switcher_button.module.css';
@@ -16,6 +17,7 @@ export const ThemeSwitcherButton = ({
 }: {
   activeRoute: string,
 }) => {
+  const { locale } = useLocaleContext();
   const { theme, setTheme, appearance, setAppearance } = useThemeContext();
   return (
     <div
@@ -32,7 +34,7 @@ export const ThemeSwitcherButton = ({
         { THEMES.map(themeOption => (
           <button
               key={themeOption.theme.toString()}
-              title={themeOption.label}
+              title={themeOption.label(locale)}
               onClick={() => setTheme(themeOption.theme)}
               className={classNames(themeSwitcherButtonStyles.themeOption, {
                 [themeSwitcherButtonStyles.active]: themeOption.theme === theme,
@@ -44,7 +46,7 @@ export const ThemeSwitcherButton = ({
         <div className={themeSwitcherButtonStyles.verticalDivider}></div>
         <button
             onClick={() => setAppearance(appearance === Appearance.LIGHT ? Appearance.DARK : Appearance.LIGHT)}
-            title={APPEARANCES[appearance].label}
+            title={APPEARANCES[appearance].label(locale)}
             className={themeSwitcherButtonStyles.appearanceOption}
         >
           { appearance === Appearance.LIGHT ? APPEARANCES[Appearance.DARK].icon : APPEARANCES[Appearance.LIGHT].icon }

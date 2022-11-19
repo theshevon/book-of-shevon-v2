@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Routes } from '../../../../routes/routes';
+import { useLocaleContext } from '../../../../util/localisation/locale_provider';
 import { Appearance, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 import type { RouteData } from './../../../../routes/route_data/route_data';
 import styles from './horizontal_menu.module.css';
@@ -21,6 +22,7 @@ export const HorizontalMenu = ({
   routesData,
   activeRoute,
 }: HorizontalMenuProps) => {
+  const { locale } = useLocaleContext();
   const { theme, appearance } = useThemeContext();
   return (
     <ul
@@ -28,7 +30,7 @@ export const HorizontalMenu = ({
     >
       { routesData.map(routeData => (
         <li
-            key={routeData.label}
+            key={routeData.path}
             className={styles.linkContainer}
         >
           <Link
@@ -39,7 +41,7 @@ export const HorizontalMenu = ({
                 [styles.dark]: appearance === Appearance.DARK,
               }, getLocationSpecificThemeStyles(activeRoute))}
           >
-            { routeData.label }
+            { routeData.label(locale) }
           </Link>
         </li>
       )) }

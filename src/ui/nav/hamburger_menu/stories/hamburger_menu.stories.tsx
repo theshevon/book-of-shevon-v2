@@ -4,17 +4,17 @@ import { HamburgerMenu } from '../hamburger_menu';
 
 const routesData = [
   {
-    label: 'Route 1',
+    label: (_:any) => 'Route 1',
     path: '#',
     index: -1,
   },
   {
-    label: 'Route 2',
+    label: (_:any) => 'Route 2',
     path: '##',
     index: 0,
   },
   {
-    label: 'Route 3',
+    label: (_:any) => 'Route 3',
     path: '#',
     index: 1,
   },

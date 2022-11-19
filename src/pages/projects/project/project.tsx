@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import React from 'react';
-import { useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import { ButtonLink, CapsuleLink } from './../../../ui/link/link';
 import { Text } from './../../../ui/text/text';
@@ -30,7 +29,6 @@ export const Project = ({
   otherContributors,
   githubUrl,
 }: ProjectProps) => {
-  const { locale } = useLocaleContext();
   const { theme, appearance } = useThemeContext();
   return (
     <div
@@ -39,9 +37,6 @@ export const Project = ({
           [styles.dark]: appearance === Appearance.DARK,
         })}
     >
-      <div>
-        {locale}
-      </div>
       { /* TITLE */ }
       <Text.Large
           alignment='centre'

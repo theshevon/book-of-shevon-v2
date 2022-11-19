@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import type { FC } from 'react';
+import { Locale } from '../localisation/locale_provider';
 import { getRandomNumInRange } from '../math';
 import { ThemeProviderMessages as Messages } from './theme_provider.messages';
 
@@ -19,23 +20,23 @@ export enum Appearance {
 export const THEMES = [
   {
     theme: Theme.BASIC,
-    label: Messages.basic(),
+    label: (locale: Locale) => Messages.basic[locale],
     icon: '🥛',
   },
   {
     theme: Theme.EIGHT_BIT,
-    label: Messages.eightBit(),
+    label: (locale: Locale) => Messages.eightBit[locale],
     icon: '👾',
   },
 ];
 
 export const APPEARANCES = {
   [Appearance.LIGHT]: {
-    label: Messages.light(),
+    label: (locale: Locale) => Messages.light[locale],
     icon: '🌝',
   },
   [Appearance.DARK]: {
-    label: Messages.dark(),
+    label: (locale: Locale) => Messages.dark[locale],
     icon: '🌚',
   },
 };
