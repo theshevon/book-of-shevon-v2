@@ -1,4 +1,10 @@
-import { Theme, ThemeProvider, useThemeContext } from '../../src/util/theming/theme_provider';
+import { Appearance, Theme, ThemeProvider, useThemeContext } from '../../src/util/theming/theme_provider';
+
+const STORY_STYLES = {
+  width: '100%',
+  height: '100%',
+  padding: '25px'
+};
 
 const ThemeProviderOuterWrapper = ({ theme, children } = props) => (
   <ThemeProvider>
@@ -14,9 +20,30 @@ const ThemeProviderInnerWrapper = ({ theme, children } = props) => {
   const { setTheme } = useThemeContext();
   setTheme(theme);
   return (
-    <>
+    <div styles={STORY_STYLES}>
       { children }
-    </>
+    </div>
+  );
+};
+
+const AppearanceProviderOuterWrapper = ({ appearance, children } = props) => (
+  <ThemeProvider>
+    <AppearanceProviderInnerWrapper 
+        appearance={appearance}
+    >
+      { children }
+    </AppearanceProviderInnerWrapper>
+  </ThemeProvider>
+);
+
+const AppearanceProviderInnerWrapper = ({ appearance, children } = props) => {
+  const { setAppearance } = useThemeContext();
+  setAppearance(appearance);
+  const backgroundColor = appearance === Appearance.DARK ? 'hsl(0, 0%, 13%)' : 'white';
+  return (
+    <div style={{ ...STORY_STYLES, backgroundColor }}>
+      { children }
+    </div>
   );
 };
 
@@ -31,7 +58,7 @@ export const contexts = [
       {
         name: 'Basic',
         props: {
-          theme: Theme.BASIC 
+          theme: Theme.BASIC,
         }, 
         default: true,
       },
@@ -39,6 +66,33 @@ export const contexts = [
         name: '8 Bit',
         props: {
           theme: Theme.EIGHT_BIT,
+        }
+      },
+    ],
+    options: {
+      deep: true,
+      disable: false,
+      cancelable: false,
+    },
+  },
+  {
+    icon: 'box',
+    title: 'Appearance',
+    components: [
+      AppearanceProviderOuterWrapper,
+    ],
+    params: [
+      {
+        name: 'Light',
+        props: {
+          appearance: Appearance.LIGHT, 
+        }, 
+        default: true,
+      },
+      {
+        name: 'Dark',
+        props: {
+          appearance: Appearance.DARK,
         }
       },
     ],

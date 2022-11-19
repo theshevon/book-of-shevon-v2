@@ -12,7 +12,7 @@ type ToggleMenuButtonProps = {
   onClick: () => void,
 }
 
-const getLocationSpecificThemeStyles = (activeRoute: string, theme: Theme,) => {
+const getLocationSpecificThemeStyles = (activeRoute: string, theme: Theme) => {
   if (activeRoute === Routes.PROJECTS && theme === Theme.EIGHT_BIT) {
     return styles.projects;
   }
