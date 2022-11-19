@@ -1,26 +1,59 @@
+import { Locale } from '../../../util/localisation/locale_provider';
+
 export const CreativeCategoriesMessages = {
 
-  art: (): string => 'Art',
+  art: {
+    [Locale.ENGLISH]: 'Art',
+    [Locale.KOREAN]: '미술',
+  },
 
-  handDrawn: (): string => 'Hand Drawn',
+  handDrawn: {
+    [Locale.ENGLISH]: 'Hand Drawn',
+    [Locale.KOREAN]: '손으로 그린',
+  },
 
-  models: (): string => 'Models',
+  models: {
+    [Locale.ENGLISH]: 'Models',
+    [Locale.KOREAN]: '모델',
+  },
 
-  eternalSunshineTitle: (): string => 'Eternal Sunshine',
+  eternalSunshineTitle: {
+    [Locale.ENGLISH]: 'Eternal Sunshine',
+    [Locale.KOREAN]: '영원한 햇살',
+  },
 
-  eternalSunshineDesc: (): string => 'A visual sequence I created for Making Movies 1. Thank you Lideschi for helping bring life to these models',
+  eternalSunshineDesc: {
+    [Locale.ENGLISH]: 'A visual sequence I created for \'Making Movies 1\'. Thank you Lideschi for helping bring life to these models',
+    [Locale.KOREAN]: '내가 만든 시각적 시퀀스 \'영화 만들기 1\'. 고맙습니다 리데스키 이 모델에 생명을 불어넣는 데 도움을 주셔서',
+  },
 
-  invertedRipplesTitle: (): string => 'Inverted Ripples',
+  invertedRipplesTitle: {
+    [Locale.ENGLISH]: 'Inverted Ripples',
+    [Locale.KOREAN]: '반전된 잔물결',
+  },
 
-  invertedRipplesDesc: (): string => 'A model I built for the \'Pattern vs Surface\' module of Foundations of Design: Representation',
+  invertedRipplesDesc: {
+    [Locale.ENGLISH]: 'A model I built for the \'Pattern vs Surface\' module of \'Foundations of Design: Representation\'',
+    [Locale.KOREAN]: '내가 만든 모델 ~을 위해 \'패턴 대 표면\' 모듈 \'디자인의 기초: 대표\'',
+  },
 
-  digital: (): string => 'Digital',
+  digital: {
+    [Locale.ENGLISH]: 'Digital',
+    [Locale.KOREAN]: '디지털',
+  },
 
-  photography: (): string => 'Photography',
+  photography: {
+    [Locale.ENGLISH]: 'Photography',
+    [Locale.KOREAN]: '사진술',
+  },
 
-  misc: (): string => 'Miscellaneous',
+  misc: {
+    [Locale.ENGLISH]: 'Miscellaneous',
+    [Locale.KOREAN]: '여러 가지 잡다한',
+  },
 
-  southKoreaTitle: (): string => 'South Korea',
-
-  southKoreaDesc: (): string => 'Kudos to Adam and Michael for convincing me to go on this unforgettable trip',
+  southKoreaTitle: {
+    [Locale.ENGLISH]: 'South Korea',
+    [Locale.KOREAN]: '대한민국',
+  },
 };

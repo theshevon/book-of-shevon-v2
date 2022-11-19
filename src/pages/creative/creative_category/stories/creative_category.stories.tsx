@@ -6,22 +6,22 @@ import testImage from './test_image.png';
 const images =  Array.from({ length: 5 }, () => testImage);
 
 const subSection = {
-  name: 'Test sub-section',
-  desc: 'Some description',
+  name: () => 'Test sub-section',
+  desc: () => 'Some description',
   images: images,
 };
 
 const subSections = Array.from({ length: 3 }, () => subSection);
 
 const sectionWithImages = {
-  name: 'Test section with images',
-  desc: 'Some description',
+  name: () => 'Test section with images',
+  desc: () => 'Some description',
   images: images,
 };
 
 const sectionWithSubSections = {
-  name: 'Test section with sub-sections',
-  desc: 'Some description',
+  name: () => 'Test section with sub-sections',
+  desc: () => 'Some description',
   subSections: subSections,
 };
 
@@ -43,7 +43,7 @@ storiesOf('Pages/Creative/CreativeCategory', module)
   ))
   .add('CreativeCategory', () => (
     <CreativeCategory
-        name='Creative Category'
+        name={() => 'Creative Category'}
         sections={[sectionWithImages, sectionWithSubSections]}
     />
   ));

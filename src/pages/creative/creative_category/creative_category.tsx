@@ -2,43 +2,47 @@ import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { Text } from '../../../ui/text/text';
 import { DisplaySizeObserver, isSmallOrNarrower } from '../../../util/display_size_observer/display_size_observer';
+import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
 import styles from './creative_category.module.css';
 import { ImageGrid } from './image_grid/image_grid';
 
 export type CreativeCategoryProps = {
-  name: string,
+  name: (locale: Locale) => string,
   sections: SectionProps[],
 };
 
 export const CreativeCategory = observer(({
   name,
   sections,
-}: CreativeCategoryProps) => (
-  <div
-      className={styles.creativeCategory}
-  >
-    <Text.MediumTitle
-        fontWeight='bold'
-        className={styles.categoryName}
-    >
-      { name }
-    </Text.MediumTitle>
+}: CreativeCategoryProps) => {
+  const { locale } = useLocaleContext();
+  return (
     <div
-        className={styles.sections}
+        className={styles.creativeCategory}
     >
-      { sections.map(section => (
-        <Section
-            key={section.name}
-            {...section}
-        />
-      )) }
+      <Text.MediumTitle
+          fontWeight='bold'
+          className={styles.categoryName}
+      >
+        { name }
+      </Text.MediumTitle>
+      <div
+          className={styles.sections}
+      >
+        { sections.map(section => (
+          <Section
+              key={section.name(locale)}
+              {...section}
+          />
+        )) }
+      </div>
     </div>
-  </div>
-));
+  );
+});
 
 type SectionProps = {
-  name: string,
-  desc?: string,
+  name: (locale: Locale) => string,
+  desc?: (locale: Locale) => string,
 } & ({
   images: string[],
   subSections?: never,
@@ -53,6 +57,7 @@ export const Section = observer(({
   images,
   subSections,
 }: SectionProps) => {
+  const { locale } = useLocaleContext();
 
   let SectionContent: () => JSX.Element = () => <></>;
   if (subSections) {
@@ -62,7 +67,7 @@ export const Section = observer(({
       >
         { subSections.map(subSection => (
           <SubSection
-              key={subSection.name}
+              key={subSection.name(locale)}
               {...subSection}
           />
         )) }
@@ -85,14 +90,14 @@ export const Section = observer(({
           alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'centre' : 'left'}
           className={styles.sectionName}
       >
-        { name }
+        { name(locale) }
       </Text.SmallTitle>
       { desc && (
         <Text.ExtraSmall
             alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'centre' : 'left'}
             className={styles.sectionDesc}
         >
-          { desc }
+          { desc(locale) }
         </Text.ExtraSmall>
       ) }
       <SectionContent/>
@@ -101,8 +106,8 @@ export const Section = observer(({
 });
 
 type SubSectionProps = {
-  name: string,
-  desc?: string,
+  name: (locale: Locale) => string,
+  desc?: (locale: Locale) => string,
   images: string[],
 }
 
@@ -110,27 +115,30 @@ export const SubSection = ({
   name,
   desc,
   images,
-}: SubSectionProps) => (
-  <div
-      className={styles.subSection}
-  >
-    <Text.Small
-        fontWeight='bold'
-        alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'centre' : 'left'}
-        className={styles.subSectionName}
+}: SubSectionProps) => {
+  const { locale } = useLocaleContext();
+  return (
+    <div
+        className={styles.subSection}
     >
-      { name }
-    </Text.Small>
-    { desc && (
-      <Text.ExtraSmall
+      <Text.Small
+          fontWeight='bold'
           alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'centre' : 'left'}
-          className={styles.subSectionDesc}
+          className={styles.subSectionName}
       >
-        { desc }
-      </Text.ExtraSmall>
-    ) }
-    <ImageGrid
-        images={images}
-    />
-  </div>
-);
+        { name(locale) }
+      </Text.Small>
+      { desc && (
+        <Text.ExtraSmall
+            alignment={isSmallOrNarrower(DisplaySizeObserver.size) ? 'centre' : 'left'}
+            className={styles.subSectionDesc}
+        >
+          { desc(locale) }
+        </Text.ExtraSmall>
+      ) }
+      <ImageGrid
+          images={images}
+      />
+    </div>
+  );
+};
