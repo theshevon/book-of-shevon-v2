@@ -6,7 +6,7 @@ import styles from './text.module.css';
 
 type Tag = 'p' | 'h3' | 'h2' | 'h1';
 
-type Size = 'xs' | 's' | 'm' | 'l' | 'xl';
+type Size = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl';
 
 type Alignment = 'left' | 'right' | 'centre' | 'justify';
 
@@ -28,6 +28,8 @@ type TextProps = {
 
 const getSizeClassName = (size: Size | undefined) => {
   switch (size) {
+    case 'xxs':
+      return styles.xxSmall;
     case 'xs':
       return styles.xSmall;
     case 's':
@@ -158,6 +160,7 @@ const renderText = ({
 };
 
 // Ordinary text (ie. body text)
+const UltraSmall: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xxs', ...useThemeContext(), ...props });
 const ExtraSmall: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'xs', ...useThemeContext(), ...props });
 const Small: FC<TextProps> = (props) => renderText({ tag: 'p', size: 's', ...useThemeContext(), ...props });
 const Medium: FC<TextProps> = (props) => renderText({ tag: 'p', size: 'm', ...useThemeContext(), ...props });
@@ -170,6 +173,7 @@ const MediumTitle: FC<TextProps> = (props) => renderText({ tag: 'h2', size: 'm',
 const LargeTitle: FC<TextProps> = (props) => renderText({ tag: 'h1', size: 'l', ...useThemeContext(), ...props });
 
 export const Text = {
+  UltraSmall,
   ExtraSmall,
   Small,
   Medium,

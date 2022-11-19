@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import {
   Route,
@@ -17,7 +18,6 @@ import { Routes } from './routes/routes';
 import { Nav } from './ui/nav/nav';
 import './app.css';
 import { DisplaySizeObserver, isLargeOrWider } from './util/display_size_observer/display_size_observer';
-import { observer } from 'mobx-react-lite';
 
 export const App = observer(() => {
 

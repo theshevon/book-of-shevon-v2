@@ -8,17 +8,17 @@
 }
 
 .picture {
-    height: 200px;
+    height: 150px;
+    width: 150px;
     width: auto;
     border-radius: 50%;
     left: 50%;
     outline: 1px solid colourGrey100;
     outline-offset: 4px;
-    width: 200px;
     object-fit: cover;
 }
 
-.eightBit.dark .picture {
+.eightBit.dark .picture { 
     outline: 1px solid colourDarkModeGrey400;
 }
 
@@ -46,5 +46,13 @@
 
     100% {
         width: 75px;
+    }
+}
+
+@media(min-width: breakpointSmall) {
+
+    .picture {
+        height: 200px;
+        width: 200px;
     }
 }

@@ -21,6 +21,7 @@ export const HamburgerMenu = ({
           className={styles.toggleButtonContainer}
       >
         <ToggleMenuButton
+            routesData={routesData}
             menuOpen={menuOpen}
             onClick={toggleMenu}
         />

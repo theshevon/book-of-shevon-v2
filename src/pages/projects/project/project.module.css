@@ -157,9 +157,22 @@
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
 	}
 
-	.project.dark {
+	.project.dark:not(.eightBit) {
 		box-shadow: none;
 		border: 1px colourDarkModeGrey700 solid;
 	}
 
+}
+
+@media(max-width: breakpointSmall) {
+
+	.githubLink {
+		background-color: colourGreen300;
+		border-color: colourGreen300;
+		color: white !important;
+	}
+	
+	.githubLink.eightBit {
+		box-shadow: inset -3px -3px 0px 0px colourGreen400 !important;
+	}
 }
