@@ -1,9 +1,9 @@
-@value colourGrey100, colourGrey200, colourDarkModeGrey700, colourDarkModeGrey800, colourDarkModeGrey50 from './../../../colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey600, colourDarkModeGrey700, colourDarkModeGrey800, colourDarkModeGrey50 from './../../../colours/colours.module.css';
 @value navHeight, navBackgroundColourLight, navBackgroundBlur, navBoxShadowLight, navBackgroundColourDark, menuTransitionTime from './../../nav.module.css';
 @value toggleButtonDistanceFromEdge from './../hamburger_menu.module.css';
 @value toggleButtonSideLength from './../buttons/toggle_menu_button/toggle_menu_button.module.css';
 
-@value drawerHeight: 560px;
+@value drawerHeight: 600px;
 
 .drawer {
   background-color: navBackgroundColourLight;
@@ -21,6 +21,21 @@
   background-color: navBackgroundColourDark;
   box-shadow: unset;
   border-bottom: 1px solid colourDarkModeGrey700;
+}
+
+.drawer.eightBit::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 3px); /* 3px to match size of inset box shadow */
+  height: 100%;
+  box-sizing: content-box;
+  top: 0;
+  border-bottom: 2px colourGrey200 solid;
+  z-index: -1;
+}
+
+.drawer.eightBit.dark::after {
+  border-color: colourDarkModeGrey700;
 }
 
 .show {
@@ -53,14 +68,88 @@
   padding: 10px;
   width: inherit;
   border-radius: 5px;
+  border: 1px solid black;
 }
 
 .drawer.dark .link {
-  color: colourDarkModeGrey50;
+  background-color: transparent;
 }
 
-.link.active {
+.drawer.eightBit .link {
+  box-shadow: inset -2px -2px 0px 0px colourGrey100 !important;
+}
+
+.drawer.eightBit.dark .link {
+  box-shadow: inset -2px -2px 0px 0px colourDarkModeGrey700 !important;
+}
+
+.drawer.eightBit .link.active {
+  box-shadow: inset -3px -3px 0px 0px colourGrey300 !important;
+}
+
+.drawer.eightBit .themeOption,
+.drawer.eightBit .appearanceOption {
+  box-shadow: inset -2px -2px 0px 0px colourGrey300 !important;
+}
+
+.drawer.eightBit.dark .link.active {
+  box-shadow: inset -3px -3px 0px 0px colourDarkModeGrey400 !important;
+}
+
+.drawer.eightBit.dark .themeOption,
+.drawer.eightBit.dark .appearanceOption {
+  box-shadow: inset -2px -2px 0px 0px colourDarkModeGrey400 !important;
+}
+
+.drawer.eightBit .link.active::before,
+.drawer.eightBit .link.active::after,
+.drawer.eightBit .themeOption::before,
+.drawer.eightBit .themeOption::after,
+.drawer.eightBit .appearanceOption::before,
+.drawer.eightBit .appearanceOption::after {
+  border-color: colourGrey500 !important;
+}
+
+.drawer.eightBit.dark .link.active::before,
+.drawer.eightBit.dark .link.active::after,
+.drawer.eightBit.dark .themeOption::before,
+.drawer.eightBit.dark .themeOption::after,
+.drawer.eightBit.dark .appearanceOption::before,
+.drawer.eightBit.dark .appearanceOption::after {
+  border-color: colourDarkModeGrey700 !important;
+}
+
+.drawer.eightBit .link::before,
+.drawer.eightBit .link::after {
+  border-color: colourGrey200 !important;
+}
+
+.drawer.eightBit.dark .link::before,
+.drawer.eightBit.dark .link::after {
+  border-color: colourDarkModeGrey800 !important;
+}
+
+.drawer.eightBit.dark .link.active::before,
+.drawer.eightBit.dark .link.active::after {
+  border-color: colourDarkModeGrey500 !important;
+}
+
+.drawer:not(.eightBit) .link {
+  border: 1px solid colourGrey100;
+}
+
+.drawer:not(.eightBit) .link.active,
+.drawer:not(.eightBit) .themeOption,
+.drawer:not(.eightBit) .appearanceOption {
   border: 1px solid colourGrey200;
+}
+
+.drawer.dark:not(.eightBit) .link {
+  border: 1px solid colourDarkModeGrey700;
+}
+
+.drawer.dark:not(.eightBit) .link.active {
+  border: 1px solid colourDarkModeGrey200;
 }
 
 .horizontalDivider {
@@ -91,7 +180,6 @@
   background-color: transparent;
   font-size: 1.5rem;
   border-radius: 4px;
-  border: 1px solid colourGrey200;
   margin-bottom: 5px;
 }
 
@@ -107,7 +195,7 @@
 }
 
 .themeAppearanceButton:not(.active) {
-  opacity: 0.5 !important;
+  opacity: 0.4 !important;
   filter: grayscale(100%);
 }
 
@@ -129,7 +217,7 @@
 
 @supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .drawer {
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(10px);
   }
 }

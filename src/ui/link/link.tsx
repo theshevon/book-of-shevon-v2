@@ -46,6 +46,7 @@ export const ButtonLink: FC<LinkProps> = ({
 }) => (
   <Link
       url={url}
+      targetSelf={true}
       className={classNames(styles.buttonLink, className)}
   >
     { children }

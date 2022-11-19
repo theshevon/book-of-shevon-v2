@@ -1,8 +1,9 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { APPEARANCES, Appearance, THEMES, useThemeContext } from '../../../../util/theming/theme_provider';
-import { Link } from '../../../link/link';
+import { APPEARANCES, Appearance, THEMES, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
+import { Button } from '../../../button/button';
+import { ButtonLink, Link } from '../../../link/link';
 import { Text } from '../../../text/text';
 import type { RouteData } from './../../../../routes/route_data/route_data';
 import styles from './drawer.module.css';
@@ -17,12 +18,12 @@ export const Drawer = ({
   show,
 }: DrawerProps) => {
   const { pathname: activeRoute } = useLocation();
-  const { appearance } = useThemeContext();
-  // TODO: add theming and fix overflow when closed
+  const { theme, appearance } = useThemeContext();
   return (
     <div
         className={classNames(styles.drawer, {
           [styles.show]: show,
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
           [styles.dark]: appearance === Appearance.DARK,
         })}
     >
@@ -34,7 +35,7 @@ export const Drawer = ({
               key={routeData.label}
               className={styles.linkContainer}
           >
-            <Link
+            <ButtonLink
                 url={routeData.path}
                 className={classNames(styles.link, {
                   [styles.active]: routeData.path === activeRoute,
@@ -47,7 +48,7 @@ export const Drawer = ({
               >
                 { routeData.label }
               </Text.Small>
-            </Link>
+            </ButtonLink>
           </li>
         )) }
       </ul>
@@ -122,12 +123,12 @@ const ThemeAppearanceButton = ({
         [styles.active]: active,
       })}
   >
-    <button
+    <Button
         onClick={onClick}
         className={className}
     >
       { icon }
-    </button>
+    </Button>
     <Text.UltraSmall
         textCase='uppercase'
     >
