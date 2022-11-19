@@ -15,8 +15,7 @@ export const LOCALES = [
   },
   {
     id: Locale.KOREAN,
-    // TODO: replace with korean symbol for hangul
-    label: 'KR',
+    label: '한국어',
   },
 ];
 
