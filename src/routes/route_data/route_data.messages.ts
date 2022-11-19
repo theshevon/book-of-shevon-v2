@@ -11,7 +11,7 @@ export const RouteDataMessages = {
   // label for link to about page
   about: {
     [Locale.ENGLISH]: 'About',
-    [Locale.KOREAN]: '~에 대한',
+    [Locale.KOREAN]: '근',
   },
 
   // label for link to projects page
