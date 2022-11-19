@@ -3,7 +3,7 @@
 @value toggleButtonDistanceFromEdge from './../hamburger_menu.module.css';
 @value toggleButtonSideLength from './../buttons/toggle_menu_button/toggle_menu_button.module.css';
 
-@value drawerHeight: 500px;
+@value drawerHeight: 560px;
 
 .drawer {
   background-color: navBackgroundColourLight;
@@ -47,7 +47,6 @@
 }
 
 .link {
-  /* color: colourGrey500; */
   font-weight: 400;
   font-size: 0.85rem;
   text-decoration: none;
@@ -64,7 +63,24 @@
   border: 1px solid colourGrey200;
 }
 
-.themeOptions {
+.horizontalDivider {
+  width: 50%;
+  height: 1px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-color: colourGrey200;
+}
+
+.drawer.dark .horizontalDivider {
+  background-color: colourDarkModeGrey700;
+}
+
+.themeAppearanceOptionsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.themeAppearanceOptions {
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -75,23 +91,23 @@
   background-color: transparent;
   font-size: 1.5rem;
   border-radius: 4px;
-  border: 1px solid grey;
+  border: 1px solid colourGrey200;
   margin-bottom: 5px;
 }
 
-.themeAppearanceSwitcherButton:not(:first-of-type) {
+.themeAppearanceButton:not(:first-of-type) {
   margin: 0 15px;
 }
 
-.themeAppearanceSwitcherButton {
+.themeAppearanceButton {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 50px;
 }
 
-.themeOption:not(.active) {
-  opacity: 0.4 !important;
+.themeAppearanceButton:not(.active) {
+  opacity: 0.5 !important;
   filter: grayscale(100%);
 }
 
@@ -100,6 +116,10 @@
   content: '';
   height: 50px;
   width: 1px;
+  background-color: colourGrey200;
+}
+
+.drawer.dark .verticalDivider {
   background-color: colourDarkModeGrey800;
 }
 
