@@ -38,6 +38,7 @@ export const LanguageSwitcherButton = ({
               title={localeOption.label}
               onClick={() => setLocale(localeOption.id)}
               className={classNames(languageSwitcherButtonStyles.themeOption, {
+                [languageSwitcherButtonStyles.active]: localeOption.id === locale,
               })}
           >
             <Text.Small>
