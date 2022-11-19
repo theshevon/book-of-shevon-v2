@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { PageContainer } from '../../ui/page_container/page_container';
+import { useLocaleContext } from '../../util/localisation/locale_provider';
 import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { IconLink } from './../../ui/link/link';
@@ -11,9 +12,11 @@ import { Links } from './links';
 
 export const Home = () => {
 
+  const { locale } = useLocaleContext();
+
   useEffect(() => {
-    updateDocumentHeader(Messages.bookOfShevon(), { type: 'emoji', src: '🤠' });
-  }, []);
+    updateDocumentHeader(Messages.bookOfShevon[locale], { type: 'emoji', src: '🤠' });
+  }, [locale]);
 
   const { theme, appearance } = useThemeContext();
 
@@ -28,7 +31,7 @@ export const Home = () => {
           alignment='centre'
           className={styles.siteTitle}
       >
-        { Messages.bookOfShevon() }
+        { Messages.bookOfShevon[locale] }
       </Text.LargeTitle>
       <div
           className={styles.links}

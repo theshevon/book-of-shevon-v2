@@ -18,11 +18,14 @@ import { Routes } from './routes/routes';
 import { Nav } from './ui/nav/nav';
 import './app.css';
 import { DisplaySizeObserver, isLargeOrWider } from './util/display_size_observer/display_size_observer';
+import { useLocaleContext } from './util/localisation/locale_provider';
 
 export const App = observer(() => {
 
+  const { locale } = useLocaleContext();
+
   // eslint-disable-next-line no-console
-  console.log(Messages.consoleGreetingImg(Messages.consoleGreetingMessage()));
+  console.log(Messages.consoleGreetingImg(Messages.consoleGreetingMessage[locale]));
 
   return (
     <Router>

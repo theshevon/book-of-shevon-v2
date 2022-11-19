@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Routes } from '../../../../../routes/routes';
+import { LOCALES, useLocaleContext } from '../../../../../util/localisation/locale_provider';
 import {  Appearance, Theme, useThemeContext } from '../../../../../util/theming/theme_provider';
 import { Text } from '../../../../text/text';
 import baseStyles from '../navbar_button.module.css';
@@ -12,22 +13,12 @@ const getLocationSpecificThemeStyles = (activeRoute: string) => {
   }
 };
 
-const LANGUAGES = [
-  {
-    id: 'en',
-    label: 'ENG',
-  },
-  {
-    id: 'kr',
-    label: 'ㅊ',
-  },
-];
-
 export const LanguageSwitcherButton = ({
   activeRoute,
 }: {
   activeRoute: string,
 }) => {
+  const { locale, setLocale } = useLocaleContext();
   const { theme, appearance } = useThemeContext();
   return (
     <div
@@ -41,16 +32,16 @@ export const LanguageSwitcherButton = ({
       <div
           className={languageSwitcherButtonStyles.themeOptions}
       >
-        { LANGUAGES.map(langOption => (
+        { LOCALES.map(localeOption => (
           <button
-              key={langOption.id}
-              title={langOption.label}
-              onClick={() => {}}
+              key={localeOption.id}
+              title={localeOption.label}
+              onClick={() => setLocale(localeOption.id)}
               className={classNames(languageSwitcherButtonStyles.themeOption, {
               })}
           >
             <Text.Small>
-              { langOption.label }
+              { localeOption.label }
             </Text.Small>
           </button>
         )) }
