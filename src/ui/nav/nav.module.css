@@ -1,6 +1,8 @@
+@value colourGreyTransparentDark from '../colours/colours.module.css';
+
 @value navHeight: 50px;
 @value navBackgroundColourLight: rgba(255, 255, 255, 0.5);
-@value navBackgroundColourDark: transparent;
+@value navBackgroundColourDark: colourGreyTransparentDark;
 @value navBackgroundBlur: blur(10px);
 @value navBoxShadowLight: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
 

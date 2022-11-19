@@ -44,11 +44,3 @@
 .menuOpen.line:nth-of-type(2) {
   transform: translateY(-9.67px) rotate(-225deg);
 }
-
-@supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-  .toggleMenuButton {
-      background-color: unset;
-      backdrop-filter: blur(3px);
-      -webkit-backdrop-filter: blur(3px);
-  }
-}

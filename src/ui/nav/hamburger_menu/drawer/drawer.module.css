@@ -1,18 +1,26 @@
-@value colourGrey300 from './../../../colours/colours.module.css';
-@value navHeight, navBackgroundColourLight, navBackgroundBlur, navBoxShadowLight, menuTransitionTime from './../../nav.module.css';
+@value colourGrey100, colourGrey200, colourDarkModeGrey700, colourDarkModeGrey800, colourDarkModeGrey50 from './../../../colours/colours.module.css';
+@value navHeight, navBackgroundColourLight, navBackgroundBlur, navBoxShadowLight, navBackgroundColourDark, menuTransitionTime from './../../nav.module.css';
 @value toggleButtonDistanceFromEdge from './../hamburger_menu.module.css';
 @value toggleButtonSideLength from './../buttons/toggle_menu_button/toggle_menu_button.module.css';
 
-@value drawerHeight: 375px;
+@value drawerHeight: 500px;
 
 .drawer {
   background-color: navBackgroundColourLight;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   transform: translateY(calc(-1 * drawerHeight));
   padding: 70px calc(toggleButtonSideLength + toggleButtonDistanceFromEdge);
   transition: menuTransitionTime;
   box-shadow: navBoxShadowLight;
+}
+
+.drawer.dark {
+  background-color: navBackgroundColourDark;
+  box-shadow: unset;
+  border-bottom: 1px solid colourDarkModeGrey700;
 }
 
 .show {
@@ -39,9 +47,7 @@
 }
 
 .link {
-  text-transform: uppercase;
-  text-align: center;
-  color: colourGrey500;
+  /* color: colourGrey500; */
   font-weight: 400;
   font-size: 0.85rem;
   text-decoration: none;
@@ -50,9 +56,55 @@
   border-radius: 5px;
 }
 
+.drawer.dark .link {
+  color: colourDarkModeGrey50;
+}
+
 .link.active {
-  color: white;
-  background-color: colourGrey300;
+  border: 1px solid colourGrey200;
+}
+
+.themeOptions {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.themeOption,
+.appearanceOption {
+  background-color: transparent;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid grey;
+  margin-bottom: 5px;
+}
+
+.themeAppearanceSwitcherButton:not(:first-of-type) {
+  margin: 0 15px;
+}
+
+.themeAppearanceSwitcherButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+}
+
+.themeOption:not(.active) {
+  opacity: 0.4 !important;
+  filter: grayscale(100%);
+}
+
+.verticalDivider {
+  top: 50%;
+  content: '';
+  height: 50px;
+  width: 1px;
+  background-color: colourDarkModeGrey800;
+}
+
+.themeOptions.dark .verticalDivider {
+  background-color: colourGrey100;
 }
 
 @supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {

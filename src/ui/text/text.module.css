@@ -1,5 +1,6 @@
 @value colourGrey500, colourDarkModeGrey50 from '../colours/colours.module.css';
 
+@value bodyTextSizeXXSmall: 0.8rem;
 @value bodyTextSizeXSmall: 1.0rem;
 @value bodyTextLineHeightXSmall: 1.5rem;
 @value bodyTextSizeSmall: 1.1rem;
@@ -29,6 +30,15 @@
 
 .eightBit {
     font-family: "Press Start 2P", cursive;
+}
+
+p.xxSmall {
+    font-size: bodyTextSizeXXSmall;
+    line-height: calc(lineHeightScaleFactor * bodyTextSizeXXSmall);
+}
+
+p.xxSmall.eightBit {
+    font-size: calc(eightBitFontScaleFactor * bodyTextSizeXXSmall);
 }
 
 p.xSmall {

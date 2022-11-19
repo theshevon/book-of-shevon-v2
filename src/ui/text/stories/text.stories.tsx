@@ -38,6 +38,15 @@ const TextStoryWrapper = ({
 }) => (
   <>
     <StoryWrapper
+        title='Ultra Small'
+    >
+      <Text.UltraSmall
+          {...otherProps}
+      >
+        { testText }
+      </Text.UltraSmall>
+    </StoryWrapper>
+    <StoryWrapper
         title='Extra Small'
     >
       <Text.ExtraSmall
