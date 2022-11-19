@@ -38,7 +38,7 @@ interface ILocale {
 
 const LocaleContext = createContext<ILocale>(undefined!);
 
-export const useLocale = () => useContext(LocaleContext);
+export const useLocaleContext = () => useContext(LocaleContext);
 
 export const LocaleProvider: FC = ({ children }) => {
 
