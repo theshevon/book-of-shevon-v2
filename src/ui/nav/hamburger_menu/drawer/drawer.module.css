@@ -1,4 +1,4 @@
-@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey600, colourDarkModeGrey700, colourDarkModeGrey800, colourDarkModeGrey50 from './../../../colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey600, colourDarkModeGrey700, colourDarkModeGrey800, colourDarkModeGrey50, colourMarioWhite, colourMarioLightBrown, colourMarioDarkBrown from './../../../colours/colours.module.css';
 @value navHeight, navBackgroundColourLight, navBackgroundBlur, navBoxShadowLight, navBackgroundColourDark, menuTransitionTime from './../../nav.module.css';
 @value toggleButtonDistanceFromEdge from './../hamburger_menu.module.css';
 @value toggleButtonSideLength from './../buttons/toggle_menu_button/toggle_menu_button.module.css';
@@ -23,6 +23,11 @@
   border-bottom: 1px solid colourDarkModeGrey700;
 }
 
+.drawer.eightBit.projects {
+  background-color: colourMarioDarkBrown;
+  box-shadow: inset -3px -3px 0px 0px colourMarioLightBrown;
+}
+
 .drawer.eightBit::after {
   content: "";
   position: absolute;
@@ -34,7 +39,11 @@
   z-index: -1;
 }
 
-.drawer.eightBit.dark::after {
+.drawer.eightBit.projects::after {
+  border-color: black;
+}
+
+.drawer.eightBit:not(.projects).dark::after {
   border-color: colourDarkModeGrey700;
 }
 
@@ -87,6 +96,12 @@
   box-shadow: inset -3px -3px 0px 0px colourGrey300 !important;
 }
 
+.drawer.eightBit.projects .link,
+.drawer.eightBit.projects .themeOption,
+.drawer.eightBit.projects .appearanceOption {
+  background-color: colourMarioLightBrown;
+}
+
 .drawer.eightBit .themeOption,
 .drawer.eightBit .appearanceOption {
   box-shadow: inset -2px -2px 0px 0px colourGrey300 !important;
@@ -134,6 +149,30 @@
   border-color: colourDarkModeGrey500 !important;
 }
 
+.drawer.eightBit.projects .link,
+.drawer.eightBit.projects .themeOption,
+.drawer.eightBit.projects .appearanceOption {
+  box-shadow: inset -2px -2px 0px 0px colourMarioDarkBrown !important;
+}
+
+.drawer.eightBit.projects .link.active {
+  box-shadow: inset -3px -3px 0px 0px colourMarioDarkBrown !important;
+}
+
+.drawer.eightBit.projects .link::before,
+.drawer.eightBit.projects .link::after {
+  border-color: colourMarioDarkBrown !important;
+}
+
+.drawer.eightBit.projects .link.active::before,
+.drawer.eightBit.projects .link.active::after,
+.drawer.eightBit.projects .themeOption::before,
+.drawer.eightBit.projects .themeOption::after,
+.drawer.eightBit.projects .appearanceOption::before,
+.drawer.eightBit.projects .appearanceOption::after {
+  border-color: black !important;
+}
+
 .drawer:not(.eightBit) .link {
   border: 1px solid colourGrey100;
 }
@@ -150,14 +189,6 @@
 
 .drawer.dark:not(.eightBit) .link.active {
   border: 1px solid colourDarkModeGrey200;
-}
-
-.horizontalDivider {
-  width: 50%;
-  height: 1px;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  background-color: colourGrey200;
 }
 
 .drawer.dark .horizontalDivider {
@@ -196,6 +227,9 @@
 
 .themeAppearanceButton:not(.active) {
   opacity: 0.4 !important;
+}
+
+.drawer:not(.projects.eightBit) .themeAppearanceButton:not(.active) {
   filter: grayscale(100%);
 }
 
@@ -204,15 +238,33 @@
   content: '';
   height: 50px;
   width: 1px;
+}
+
+.horizontalDivider {
+  width: 50%;
+  height: 1px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.verticalDivider,
+.horizontalDivider {
   background-color: colourGrey200;
 }
 
-.drawer.dark .verticalDivider {
+.drawer.dark .verticalDivider,
+.drawer.dark .horizontalDivider {
   background-color: colourDarkModeGrey800;
 }
 
-.themeOptions.dark .verticalDivider {
-  background-color: colourGrey100;
+.drawer.projects.eightBit .verticalDivider, 
+.drawer.projects.eightBit .horizontalDivider {
+  background-color: colourMarioLightBrown;
+}
+
+.drawer.projects.eightBit .textContent {
+  color: colourMarioWhite;
+  text-shadow: 0 2px black;
 }
 
 @supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {

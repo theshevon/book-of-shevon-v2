@@ -2,12 +2,12 @@ import classNames from 'classnames';
 import React from 'react';
 import { Routes } from '../../../../../routes/routes';
 import { APPEARANCES, Appearance, THEMES, Theme, useThemeContext } from '../../../../../util/theming/theme_provider';
-import baseStyles from './../navbar_button.module.css';
+import baseStyles from '../navbar_button.module.css';
 import themeSwitcherButtonStyles from './theme_switcher_button.module.css';
 
 const getLocationSpecificThemeStyles = (activeRoute: string) => {
   if (activeRoute === Routes.PROJECTS) {
-    return baseStyles.projects;
+    return classNames(baseStyles.projects, themeSwitcherButtonStyles.projects);
   }
 };
 

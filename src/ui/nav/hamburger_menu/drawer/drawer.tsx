@@ -1,9 +1,10 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { Routes } from '../../../../routes/routes';
 import { APPEARANCES, Appearance, THEMES, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 import { Button } from '../../../button/button';
-import { ButtonLink, Link } from '../../../link/link';
+import { ButtonLink } from '../../../link/link';
 import { Text } from '../../../text/text';
 import type { RouteData } from './../../../../routes/route_data/route_data';
 import styles from './drawer.module.css';
@@ -12,6 +13,12 @@ type DrawerProps = {
   routesData: RouteData[],
   show: boolean,
 }
+
+const getLocationSpecificThemeStyles = (activeRoute: string) => {
+  if (activeRoute === Routes.PROJECTS) {
+    return styles.projects;
+  }
+};
 
 export const Drawer = ({
   routesData,
@@ -25,7 +32,7 @@ export const Drawer = ({
           [styles.show]: show,
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
           [styles.dark]: appearance === Appearance.DARK,
-        })}
+        }, getLocationSpecificThemeStyles(activeRoute))}
     >
       <ul
           className={styles.verticalMenu}
@@ -45,6 +52,7 @@ export const Drawer = ({
               <Text.Small
                   textCase='uppercase'
                   alignment='centre'
+                  className={styles.textContent}
               >
                 { routeData.label }
               </Text.Small>
@@ -72,6 +80,7 @@ const ThemeAppearanceOptions = () => {
       <Text.ExtraSmall
           textCase='uppercase'
           alignment='centre'
+          className={styles.textContent}
       >
         Themes / Appearance
       </Text.ExtraSmall>
@@ -131,6 +140,7 @@ const ThemeAppearanceButton = ({
     </Button>
     <Text.UltraSmall
         textCase='uppercase'
+        className={styles.textContent}
     >
       { label }
     </Text.UltraSmall>
