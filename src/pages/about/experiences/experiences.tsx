@@ -1,24 +1,25 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Link } from '../../../ui/link/link';
+import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Appearance, useThemeContext } from '../../../util/theming/theme_provider';
 import { Text } from './../../../ui/text/text';
 import { ExperiencesMessages as Messages } from './experiences.messages';
 import styles from './experiences.module.css';
 
 type Date = {
-  month: string,
+  month: (locale: Locale) => string,
   year: number,
 }
 
 export type ExperienceProps = {
-  role: string,
-  companyName: string,
+  role: (locale: Locale) => string,
+  companyName: (locale: Locale) => string,
   companyWebsiteUrl?: string,
   startDate: Date,
   endDate?: Date,
   useResponsibilitiesLabel?: boolean,
-  responsibilities: string[],
+  responsibilities: ((locale: Locale) => string)[],
 }
 
 export const Experiences = ({
@@ -26,6 +27,7 @@ export const Experiences = ({
 }: {
 	experiences: ExperienceProps[],
 }) => {
+  const { locale } = useLocaleContext();
   const { appearance } = useThemeContext();
   return (
     <ul
@@ -33,7 +35,7 @@ export const Experiences = ({
     >
       { experiences.map(experience => (
         <li
-            key={experience.companyName + experience.startDate.month + experience.startDate.year}
+            key={experience.companyName(locale) + experience.startDate.month(locale) + experience.startDate.year}
             className={classNames(styles.experienceContainer, {
               [styles.dark]: appearance === Appearance.DARK,
             })}
@@ -55,29 +57,33 @@ const Experience = ({
   endDate,
   useResponsibilitiesLabel=true,
   responsibilities,
-}: ExperienceProps) => (
-  <div
-      className={styles.experience}
-  >
-    <Text.Small
-        className={styles.role}
+}: ExperienceProps) => {
+  const { locale } = useLocaleContext();
+
+  return (
+    <div
+        className={styles.experience}
     >
-      { role }
-    </Text.Small>
-    <Company
-        companyName={companyName}
-        companyWebsiteUrl={companyWebsiteUrl}
-    />
-    <TimePeriod
-        startDate={startDate}
-        endDate={endDate}
-    />
-    <Responsibilities
-        useResponsibilitiesLabel={useResponsibilitiesLabel}
-        responsibilities={responsibilities}
-    />
-  </div>
-);
+      <Text.Small
+          className={styles.role}
+      >
+        { role(locale) }
+      </Text.Small>
+      <Company
+          companyName={companyName(locale)}
+          companyWebsiteUrl={companyWebsiteUrl}
+      />
+      <TimePeriod
+          startDate={startDate}
+          endDate={endDate}
+      />
+      <Responsibilities
+          useResponsibilitiesLabel={useResponsibilitiesLabel}
+          responsibilities={responsibilities}
+      />
+    </div>
+  );
+};
 
 const Company = ({
   companyName,
@@ -114,9 +120,12 @@ const Responsibilities = ({
   responsibilities,
 }: {
   useResponsibilitiesLabel: boolean,
-  responsibilities: string[],
+  responsibilities: ((locale: Locale) => string)[],
 }) => {
+  const { locale } = useLocaleContext();
   const { appearance } = useThemeContext();
+
+  const localisedResponsibilities = responsibilities.map(r => r(locale));
   return (
     <div
         className={styles.responsibilitiesContainer}
@@ -125,13 +134,13 @@ const Responsibilities = ({
       <Text.ExtraSmall
           className={styles.label}
       >
-        { Messages.ResponsibleFor() }:
+        { Messages.ResponsibleFor[locale] }:
       </Text.ExtraSmall>
       }
       <ul
           className={styles.responsibilities}
       >
-        { responsibilities.map((responsibility, index) => (
+        { localisedResponsibilities.map((responsibility, index) => (
           <li
               key={index} // should be fine using index here since the order will never change
               className={classNames(styles.responsibility, {
@@ -155,8 +164,10 @@ export const TimePeriod = ({
   startDate: Date,
   endDate?: Date,
 }) => {
-  const start = `${startDate.month} ${startDate.year}`;
-  const end = endDate ? `${endDate.month} ${endDate.year}` : Messages.Present();
+  const { locale } = useLocaleContext();
+
+  const start = `${startDate.month(locale)} ${startDate.year}`;
+  const end = endDate ? `${endDate.month(locale)} ${endDate.year}` : Messages.Present[locale];
   const period = `${start} - ${end}`;
   return (
     <Text.ExtraSmall

@@ -1,4 +1,9 @@
+import { Locale } from '../../util/localisation/locale_provider';
+
 export const AboutMessages = {
 
-  pageTitle: (): string => 'About Shevon',
+  pageTitle: {
+    [Locale.ENGLISH]: 'About Shevon',
+    [Locale.KOREAN]: '셰본에 대해',
+  },
 };

@@ -1,8 +1,16 @@
+import { Locale } from '../../../../../util/localisation/locale_provider';
+
 export const MenuButtonMessages = {
 
   // Label on Menu Button toggle when the menu is closed and can be opened.
-  OpenMenuButtonLabel: (): string => 'Menu',
+  OpenMenuButtonLabel: {
+    [Locale.ENGLISH]: 'Menu',
+    [Locale.KOREAN]: '메뉴',
+  },
 
   // Label on Menu Button toggle when the menu is open and can be closed.
-  CloseMenuButtonLabel: (): string => 'Close',
+  CloseMenuButtonLabel: {
+    [Locale.ENGLISH]: 'Menu',
+    [Locale.KOREAN]: '닫다',
+  },
 };

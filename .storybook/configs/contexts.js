@@ -1,4 +1,5 @@
 import { Appearance, Theme, ThemeProvider, useThemeContext } from '../../src/util/theming/theme_provider';
+import { Locale, LocaleProvider } from '../../src/util/localisation/locale_provider';
 
 const STORY_STYLES = {
   width: '100%',
@@ -46,6 +47,14 @@ const AppearanceProviderInnerWrapper = ({ appearance, children } = props) => {
     </div>
   );
 };
+
+const LocaleProviderComponent = ({ children } = props) => {
+  return (
+    <LocaleProvider>
+      {children}
+    </LocaleProvider>
+  )
+}
 
 export const contexts = [
   {
@@ -102,4 +111,22 @@ export const contexts = [
       cancelable: false,
     },
   },
+  {
+    icon: 'box',
+    title: 'Locale',
+    components: [
+      LocaleProviderComponent,
+    ],
+    params: [
+      {
+        name: 'English',
+        default: true,
+      },
+    ],
+    options: {
+      deep: true,
+      disable: false,
+      cancelable: false,
+    },
+  }
 ];

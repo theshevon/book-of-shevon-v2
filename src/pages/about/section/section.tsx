@@ -1,5 +1,6 @@
 import React from 'react';
 import type { FC } from 'react';
+import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Text } from './../../../ui/text/text';
 import { SectionMessages as Messages } from './section.messages';
 import styles from './section.module.css';
@@ -13,35 +14,38 @@ type SectionProps = {
 export const Section: FC<SectionProps> = ({
   title,
   children,
-}) => (
-  <section
-      className={styles.section}
-  >
-    <Text.SmallTitle
-        fontWeight='bold'
-        alignment='centre'
-        textCase='uppercase'
-        className={styles.title}
+}) => {
+  const { locale } = useLocaleContext();
+  return (
+    <section
+        className={styles.section}
     >
-      { getSectionTitleLabel(title) }
-    </Text.SmallTitle>
-    <div
-        className={styles.info}
-    >
-      { children }
-    </div>
-  </section>
-);
+      <Text.SmallTitle
+          fontWeight='bold'
+          alignment='centre'
+          textCase='uppercase'
+          className={styles.title}
+      >
+        { getSectionTitleLabel(title, locale) }
+      </Text.SmallTitle>
+      <div
+          className={styles.info}
+      >
+        { children }
+      </div>
+    </section>
+  );
+};
 
-const getSectionTitleLabel = (sectionTitleOpt: SectionTitleOpt): string => {
+const getSectionTitleLabel = (sectionTitleOpt: SectionTitleOpt, locale: Locale): string => {
   switch (sectionTitleOpt) {
     case 'education':
-      return Messages.education();
+      return Messages.education[locale];
     case 'commercialXp':
-      return Messages.commercialExperience();
+      return Messages.commercialExperience[locale];
     case 'skills':
-      return Messages.skills();
+      return Messages.skills[locale];
     case 'volunteerXp':
-      return Messages.volunteerExperience();
+      return Messages.volunteerExperience[locale];
   }
 };

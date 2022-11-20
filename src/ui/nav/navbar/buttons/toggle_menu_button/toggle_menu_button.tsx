@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Routes } from '../../../../../routes/routes';
+import { useLocaleContext } from '../../../../../util/localisation/locale_provider';
 import { Appearance, Theme, useThemeContext } from '../../../../../util/theming/theme_provider';
 import { Button } from './../../../../button/button';
 import styles from './../navbar_button.module.css';
@@ -23,6 +24,7 @@ export const ToggleMenuButton = ({
   onClick,
   activeRoute,
 }: ToggleMenuButtonProps) => {
+  const { locale } = useLocaleContext();
   const { theme, appearance } = useThemeContext();
   return (
     <Button
@@ -32,7 +34,7 @@ export const ToggleMenuButton = ({
           [styles.dark]: appearance === Appearance.DARK,
         }, getLocationSpecificThemeStyles(activeRoute))}
     >
-      { menuOpen ? Messages.CloseMenuButtonLabel() : Messages.OpenMenuButtonLabel() }
+      { menuOpen ? Messages.CloseMenuButtonLabel[locale] : Messages.OpenMenuButtonLabel[locale] }
     </Button>
   );
 };

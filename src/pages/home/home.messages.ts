@@ -1,8 +1,16 @@
+import { Locale } from '../../util/localisation/locale_provider';
+
 export const HomeMessages = {
 
   // page title
-  pageTitle: (): string => 'Home',
+  pageTitle: {
+    [Locale.ENGLISH]: 'Home',
+    [Locale.KOREAN]: '집',
+  },
 
   // Website title
-  bookOfShevon: (): string => 'Book of Shevon',
+  bookOfShevon: {
+    [Locale.ENGLISH]: 'Book of Shevon',
+    [Locale.KOREAN]: '의 책 셰본',
+  },
 };

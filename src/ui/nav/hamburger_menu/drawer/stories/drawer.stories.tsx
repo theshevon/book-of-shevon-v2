@@ -5,17 +5,17 @@ import { Drawer } from '../drawer';
 
 const routesData = [
   {
-    label: 'Route 1',
+    label: () => 'Route 1',
     path: '#',
     index: -1,
   },
   {
-    label: 'Route 2 (Active)',
+    label: () => 'Route 2 (Active)',
     path: '##',
     index: 0,
   },
   {
-    label: 'Route 3',
+    label: () => 'Route 3',
     path: '#',
     index: 1,
   },

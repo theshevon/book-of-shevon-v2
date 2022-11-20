@@ -2,11 +2,13 @@ import classNames from 'classnames';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Routes } from '../../../../routes/routes';
+import { LOCALES, useLocaleContext } from '../../../../util/localisation/locale_provider';
 import { APPEARANCES, Appearance, THEMES, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 import { Button } from '../../../button/button';
 import { ButtonLink } from '../../../link/link';
 import { Text } from '../../../text/text';
 import type { RouteData } from './../../../../routes/route_data/route_data';
+import { DrawerMessages } from './drawer.messages';
 import styles from './drawer.module.css';
 
 type DrawerProps = {
@@ -25,6 +27,7 @@ export const Drawer = ({
   show,
 }: DrawerProps) => {
   const { pathname: activeRoute } = useLocation();
+  const { locale } = useLocaleContext();
   const { theme, appearance } = useThemeContext();
   return (
     <div
@@ -39,7 +42,7 @@ export const Drawer = ({
       >
         { routesData.map(routeData => (
           <li
-              key={routeData.label}
+              key={routeData.path}
               className={styles.linkContainer}
           >
             <ButtonLink
@@ -54,12 +57,17 @@ export const Drawer = ({
                   alignment='centre'
                   className={styles.textContent}
               >
-                { routeData.label }
+                { routeData.label(locale) }
               </Text.Small>
             </ButtonLink>
           </li>
         )) }
       </ul>
+      <div
+          className={styles.horizontalDivider}
+      >
+      </div>
+      <LocaleOptions/>
       <div
           className={styles.horizontalDivider}
       >
@@ -71,6 +79,7 @@ export const Drawer = ({
 
 const ThemeAppearanceOptions = () => {
 
+  const { locale } = useLocaleContext();
   const { theme, setTheme, appearance, setAppearance } = useThemeContext();
 
   return (
@@ -82,7 +91,7 @@ const ThemeAppearanceOptions = () => {
           alignment='centre'
           className={styles.textContent}
       >
-        Themes / Appearance
+        { DrawerMessages.ThemeAppearanceOptionsLabel[locale] }
       </Text.ExtraSmall>
       <div
           className={classNames(styles.themeAppearanceOptions, {
@@ -92,7 +101,7 @@ const ThemeAppearanceOptions = () => {
         { THEMES.map(themeOption => (
           <ThemeAppearanceButton
               key={themeOption.theme.toString()}
-              label={themeOption.label}
+              label={themeOption.label(locale)}
               onClick={() => setTheme(themeOption.theme)}
               icon={themeOption.icon}
               className={styles.themeOption}
@@ -104,7 +113,7 @@ const ThemeAppearanceOptions = () => {
         >
         </div>
         <ThemeAppearanceButton
-            label={APPEARANCES[appearance].label}
+            label={APPEARANCES[appearance].label(locale)}
             onClick={() => setAppearance(appearance === Appearance.LIGHT ? Appearance.DARK : Appearance.LIGHT)}
             icon={appearance === Appearance.LIGHT ? APPEARANCES[Appearance.DARK].icon : APPEARANCES[Appearance.LIGHT].icon}
             className={styles.appearanceOption}
@@ -140,9 +149,76 @@ const ThemeAppearanceButton = ({
     </Button>
     <Text.UltraSmall
         textCase='uppercase'
+        alignment='centre'
         className={styles.textContent}
     >
       { label }
     </Text.UltraSmall>
+  </div>
+);
+
+const LocaleOptions = () => {
+
+  const { locale, setLocale } = useLocaleContext();
+  const { appearance } = useThemeContext();
+
+  return (
+    <div
+        className={styles.localeOptionsContainer}
+    >
+      <Text.ExtraSmall
+          textCase='uppercase'
+          alignment='centre'
+          className={styles.textContent}
+      >
+        { DrawerMessages.LocaleOptionsLabel[locale] }
+      </Text.ExtraSmall>
+      <div
+          className={classNames(styles.localeOptions, {
+            [styles.dark]: appearance === Appearance.DARK,
+          })}
+      >
+        { LOCALES.map(localeOption => (
+          <LocaleButton
+              key={localeOption.id}
+              label={localeOption.label}
+              onClick={() => setLocale(localeOption.id)}
+              className={classNames(styles.localeOption)}
+              active={localeOption.id === locale}
+          />
+        )) }
+      </div>
+    </div>
+  );
+};
+
+const LocaleButton = ({
+  label,
+  onClick,
+  className,
+  active=true,
+}: {
+  label: string,
+  onClick: () => void,
+  className: string,
+  active?: boolean,
+}) => (
+  <div
+      className={classNames(styles.localeButton, {
+        [styles.active]: active,
+      })}
+  >
+    <Button
+        onClick={onClick}
+        className={className}
+    >
+      <Text.UltraSmall
+          textCase='uppercase'
+          alignment='centre'
+          className={styles.textContent}
+      >
+        { label }
+      </Text.UltraSmall>
+    </Button>
   </div>
 );

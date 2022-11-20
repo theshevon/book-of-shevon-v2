@@ -1,6 +1,6 @@
-@value colourGrey100, colourGrey200, colourGrey500, colourDarkModeGrey800, colourMarioDarkBrown from '../../../../colours/colours.module.css';
+@value colourDarkModeGrey50, colourGrey100, colourGrey200, colourGrey500 from '../../../../colours/colours.module.css';
 
-.themeSwitcherButton {
+.localeSwitcherButton {
   box-sizing: border-box;
   padding: 0.4rem 0.8rem;
   color: colourGrey500;
@@ -11,14 +11,14 @@
   box-sizing: border-box;
 }
 
-.themeSwitcherButton.eightBit {
+.localeSwitcherButton.eightBit {
   border-radius: unset;
   position: relative;
   box-shadow: inset -2px -2px 0px 0px colourGrey100;
 }
 
-.themeSwitcherButton.eightBit:before,
-.themeSwitcherButton.eightBit:after {
+.localeSwitcherButton.eightBit:before,
+.localeSwitcherButton.eightBit:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -26,49 +26,48 @@
   box-sizing: content-box;
 }
 
-.themeSwitcherButton.eightBit:before {
+.localeSwitcherButton.eightBit:before {
   top: -2px;
   left: 0;
   border-top: 2px colourGrey200 solid;
   border-bottom: 2px colourGrey200 solid;
 }
 
-.themeSwitcherButton.eightBit:after {
+.localeSwitcherButton.eightBit:after {
   left: -2px;
   top: 0;
   border-left: 2px colourGrey200 solid;
   border-right: 2px colourGrey200 solid;
 }
 
-.themeSwitcherButton.eightBit:hover:before {
+.localeSwitcherButton.eightBit:hover:before {
   border-top-color: colourGrey500;
   border-bottom-color: colourGrey500;
 }
 
-.themeSwitcherButton.eightBit:hover:after {
+.localeSwitcherButton.eightBit:hover:after {
   border-left-color: colourGrey500;
   border-right-color: colourGrey500;
 }
 
-.themeSwitcherButton:hover {
+.localeSwitcherButton:hover {
   border-color: colourGrey200;
   background-color: unset;
 }
 
-.themeOptions {
+.localeOptions {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
   z-index: 200;
 }
 
-.themeOption:not(:hover):not(.active) {
+.localeOption:not(:hover):not(.active) {
   opacity: 0.4 !important;
   filter: grayscale(100%);
 }
 
-.themeOption,
-.appearanceOption {
+.localeOption {
   padding: 0;
   margin: 0;
   background-color: unset;
@@ -76,27 +75,18 @@
   z-index: 100;
 }
 
-.themeSwitcherButton:not(.eightBit) {
+.localeSwitcherButton:not(.eightBit) {
   transition: opacity 300ms;
 }
 
-.themeOption:hover,
-.appearanceOption:hover {
+.localeOption:hover {
   cursor: pointer;
 }
 
-.verticalDivider {
-  top: 50%;
-  content: '';
-  height: 17.5px;
-  width: 1px;
-  background-color: colourGrey100;
+.eightBit .localeOption {
+  font-family: "Press Start 2P", cursive;
 }
 
-.themeSwitcherButton.dark .verticalDivider {
-  background-color: colourDarkModeGrey800;
-}
-
-.themeSwitcherButton.projects.eightBit .verticalDivider {
-  background-color: colourMarioDarkBrown;
+.dark .localeOption {
+  color: colourDarkModeGrey50;
 }

@@ -1,6 +1,14 @@
+import { Locale } from '../../../util/localisation/locale_provider';
+
 export const SkillsMessages = {
 
-  ProficientWith: (): string => 'Proficient with',
+  ProficientWith: {
+    [Locale.ENGLISH]: 'Proficient with',
+    [Locale.KOREAN]: '능숙하다',
+  },
 
-  FamiliarWith: (): string => 'Familiar with',
+  FamiliarWith: {
+    [Locale.ENGLISH]: 'Familiar with',
+    [Locale.KOREAN]: '에 익숙한',
+  },
 };

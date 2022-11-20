@@ -1,10 +1,24 @@
+import { Locale } from '../localisation/locale_provider';
+
 export const ThemeProviderMessages = {
 
-  basic: (): string => 'basic',
+  basic: {
+    [Locale.ENGLISH]: 'basic',
+    [Locale.KOREAN]: '기초적인',
+  },
 
-  eightBit: (): string => '8bit',
+  eightBit: {
+    [Locale.ENGLISH]: '8bit',
+    [Locale.KOREAN]: '8비트',
+  },
 
-  light: (): string => 'light',
+  light: {
+    [Locale.ENGLISH]: 'light',
+    [Locale.KOREAN]: '빛',
+  },
 
-  dark: (): string => 'dark',
+  dark: {
+    [Locale.ENGLISH]: 'dark',
+    [Locale.KOREAN]: '거무스름한',
+  },
 };
