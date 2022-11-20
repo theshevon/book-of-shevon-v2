@@ -19,12 +19,13 @@
     url("./assets/cloud.svg") -1% calc(baseCloudHeight * 8 + 110px)/118px auto no-repeat,
     url("./assets/cloud.svg") 10% calc(baseCloudHeight * 8)/118px auto no-repeat,
 
+    url("./assets/brick.png") center bottom repeat-x,
+    
     url("./assets/cloud.svg") -2% calc(baseCloudHeight * 16)/118px auto no-repeat,
     url("./assets/cloud.svg") 6% calc(baseCloudHeight * 16 + 150px)/118px auto no-repeat,
     url("./assets/cloud.svg") 101% calc(baseCloudHeight * 16 + 110px)/118px auto no-repeat,
     url("./assets/cloud.svg") 90% calc(baseCloudHeight * 16)/118px auto no-repeat,
 
-    url("./assets/brick.png") center bottom repeat-x,
     #9290FF;
   /* background-attachment: fixed; */
 }
