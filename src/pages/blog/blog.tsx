@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PageContainer } from '../../ui/page_container/page_container';
+import { useLocaleContext } from '../../util/localisation/locale_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { BlogMessages as Messages } from './blog.messages';
 import { BlogPostProps } from './blog_posts_layout/blog_post/blog_post';
@@ -10,9 +11,11 @@ const MEDIUM_BLOG_LINK = 'https://api.rss2json.com/v1/api.json?rss_url=https://m
 
 export const Blog = () => {
 
+  const { locale } = useLocaleContext();
+
   useEffect(() => {
-    updateDocumentHeader(Messages.pageTitle(), { type: 'emoji', src: '✏️' });
-  }, []);
+    updateDocumentHeader(Messages.pageTitle[locale], { type: 'emoji', src: '✏️' });
+  }, [locale]);
 
   const [posts, setPosts] = useState<BlogPostProps[]>([]);
   const [loadingState, setLoadingState] = useState<LoadingState>('loading');
