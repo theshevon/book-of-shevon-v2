@@ -17,7 +17,7 @@
 .mainNavbar {
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     z-index: 200;
     height: inherit;
@@ -27,16 +27,24 @@
 .mainNavbar .centrePartition,
 .mainNavbar .rightPartition {
     display: flex;
-    justify-content: center;
 }
 
 .mainNavbar .centrePartition {
     width: 80%;
+    justify-content: center;
 }
 
 .mainNavbar .leftPartition,
 .mainNavbar .rightPartition {
-    width: 10%;
+    width: 7.5%;
+}
+
+.mainNavbar .leftPartition {
+    justify-content: left;
+}
+
+.mainNavbar .rightPartition {
+    justify-content: right;
 }
 
 .menuContainerOuter {
