@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useLocaleContext } from '../../util/localisation/locale_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
 import { getRandomNumInRange } from './../../util/math';
@@ -93,6 +94,8 @@ class Card {
 
 export const Error = () => {
 
+  const { locale } = useLocaleContext();
+
   const image = useMemo(() => {
     const img = new Image();
     img.src = CARDS_SPRITE;
@@ -138,7 +141,7 @@ export const Error = () => {
   }, []);
 
   useEffect(() => {
-    updateDocumentHeader(Messages.pageTitle());
+    updateDocumentHeader(Messages.pageTitle[locale]);
 
     const canvas = canvasRef.current;
     const renderingCtx = canvas?.getContext('2d');
@@ -160,7 +163,7 @@ export const Error = () => {
       clearInterval(cardUpdateLoop);
       window.removeEventListener('resize', updateCanvasSize);
     };
-  }, [addSingleCard, updateCards, updateCanvasSize]);
+  }, [locale, addSingleCard, updateCards, updateCanvasSize]);
 
   return (
     <div
@@ -172,7 +175,7 @@ export const Error = () => {
         <Text.Large
             className={styles.errorMsg}
         >
-          { Messages.errorMsgTitle() }
+          { Messages.errorMsgTitle[locale] }
         </Text.Large>
       </div>
       <canvas
