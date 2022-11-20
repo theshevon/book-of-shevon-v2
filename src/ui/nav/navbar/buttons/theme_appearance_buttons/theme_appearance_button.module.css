@@ -1,5 +1,11 @@
 @value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey50, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey600, colourDarkModeGrey700, colourDarkModeGrey800, colourMarioDarkBrown, colourMarioWhite, colourMarioLightBrown from '../../../../colours/colours.module.css';
 
+
+.themeAppearanceButton {
+  box-sizing: border-box;
+  height: 32px;
+}
+
 /* light mode - basic */
 
 .themeAppearanceButton:not(.eightBit) {
