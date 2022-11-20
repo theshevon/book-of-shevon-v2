@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import { Capsule } from './../../../ui/capsule/capsule';
 import { Text } from './../../../ui/text/text';
@@ -41,6 +42,7 @@ const SkillsList = ({
   label,
   skills,
 }: SkillsListProps) => {
+  const { locale } = useLocaleContext();
   const { theme, appearance } = useThemeContext();
   return (
     <div
@@ -51,7 +53,7 @@ const SkillsList = ({
       <Text.ExtraSmall
           className={styles.label}
       >
-        { label === 'proficient' ? Messages.ProficientWith() : Messages.FamiliarWith() }:
+        { label === 'proficient' ? Messages.ProficientWith[locale] : Messages.FamiliarWith[locale] }:
       </Text.ExtraSmall>
       <ul
           className={styles.list}

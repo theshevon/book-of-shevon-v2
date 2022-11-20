@@ -13,13 +13,11 @@ type Contributor = {
   githubUrl: string,
 }
 
-type TechStackType = ((locale: Locale) => string)[];
-
 export type ProjectProps = {
   name: (locale: Locale) => string,
   year: number,
   description: (locale: Locale) => string,
-  techStack: TechStackType,
+  techStack: ((locale: Locale) => string)[],
   otherContributors?: Contributor[],
   githubUrl: string,
 }
@@ -122,7 +120,7 @@ export const Project = ({
 const TechStack = ({
   techStack,
 }: {
-  techStack: TechStackType,
+  techStack: ((locale: Locale) => string)[],
 }) => {
   const { locale } = useLocaleContext();
   const localisedTechStack = techStack.map(tech => tech(locale));

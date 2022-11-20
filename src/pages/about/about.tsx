@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { PageContainer } from '../../ui/page_container/page_container';
+import { useLocaleContext } from '../../util/localisation/locale_provider';
 import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { AboutMessages as Messages } from './about.messages';
@@ -10,17 +11,17 @@ import { CommercialExperiences, VolunteerExperiences } from './data/experiences/
 import { SkillsLists } from './data/skills/skills';
 import { Education } from './education/education';
 import { Experiences } from './experiences/experiences';
-import { createProfile } from './profile/create';
+import { Profile } from './profile/profile';
 import { Section } from './section/section';
 import { Skills } from './skills/skills';
 
 export const About = () => {
 
-  useEffect(() => {
-    updateDocumentHeader(Messages.pageTitle(), { type: 'emoji', src: '👀' });
-  }, []);
+  const { locale } = useLocaleContext();
 
-  const Profile = createProfile();
+  useEffect(() => {
+    updateDocumentHeader(Messages.pageTitle[locale], { type: 'emoji', src: '👀' });
+  }, [locale]);
 
   const { theme, appearance } = useThemeContext();
 
@@ -34,7 +35,7 @@ export const About = () => {
     >
 
       { /* PROFILE SECTION */ }
-      { Profile }
+      <Profile/>
 
       { /* WORK EXPERIENCE SECTION */ }
       <Section

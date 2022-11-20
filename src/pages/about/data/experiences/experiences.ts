@@ -1,126 +1,127 @@
+import { Locale } from '../../../../util/localisation/locale_provider';
 import type { ExperienceProps } from '../../experiences/experiences';
 import { ExperiencesMessages as Messages } from './experiences.messages';
 
 export const CommercialExperiences: ExperienceProps[] = [
   {
-    role: Messages.SoftwareEngineer(),
-    companyName: Messages.Canva(),
+    role: (locale: Locale) => Messages.SoftwareEngineer[locale],
+    companyName: (locale: Locale) => Messages.Canva[locale],
     companyWebsiteUrl: 'https://www.canva.com/about',
     startDate: {
-      month: Messages.April(),
+      month: (locale: Locale) => Messages.April[locale],
       year: 2021,
     },
     responsibilities: [
-      Messages.CanvaResponsibility1(),
-      Messages.CanvaResponsibility2(),
+      (locale: Locale) => Messages.CanvaResponsibility1[locale],
+      (locale: Locale) => Messages.CanvaResponsibility2[locale],
     ],
   },
   {
-    role: Messages.SoftwareEngineer(),
-    companyName: Messages.DgitSystems(),
+    role: (locale: Locale) => Messages.SoftwareEngineer[locale],
+    companyName: (locale: Locale) => Messages.DgitSystems[locale],
     companyWebsiteUrl: 'https://www.dgitsystems.com/',
     startDate: {
-      month: Messages.July(),
+      month: (locale: Locale) => Messages.July[locale],
       year: 2020,
     },
     endDate: {
-      month: Messages.March(),
+      month: (locale: Locale) => Messages.March[locale],
       year: 2021,
     },
     responsibilities: [
-      Messages.DgitResponsibility1(),
-      Messages.DgitResponsibility2(),
+      (locale: Locale) => Messages.DgitResponsibility1[locale],
+      (locale: Locale) => Messages.DgitResponsibility2[locale],
     ],
   },
   {
-    role: Messages.SoftwareEngineer(),
-    companyName: Messages.UniMelb(),
+    role: (locale: Locale) => Messages.SoftwareEngineer[locale],
+    companyName: (locale: Locale) => Messages.UniMelb[locale],
     companyWebsiteUrl: 'https://www.unimelb.edu.au/',
     startDate: {
-      month: Messages.May(),
+      month: (locale: Locale) => Messages.May[locale],
       year: 2020,
     },
     endDate: {
-      month: Messages.December(),
+      month: (locale: Locale) => Messages.December[locale],
       year: 2020,
     },
     responsibilities: [
-      Messages.UniMelbEngResponsibility1(),
-      Messages.UniMelbEngResponsibility2(),
+      (locale: Locale) => Messages.UniMelbEngResponsibility1[locale],
+      (locale: Locale) => Messages.UniMelbEngResponsibility2[locale],
     ],
   },
   {
-    role: Messages.AcademicTutor(),
-    companyName: Messages.UniMelb(),
+    role: (locale: Locale) => Messages.AcademicTutor[locale],
+    companyName: (locale: Locale) => Messages.UniMelb[locale],
     companyWebsiteUrl: 'https://www.unimelb.edu.au/',
     startDate: {
-      month: Messages.July(),
+      month: (locale: Locale) => Messages.July[locale],
       year: 2019,
     },
     endDate: {
-      month: Messages.July(),
+      month: (locale: Locale) => Messages.July[locale],
       year: 2020,
     },
     responsibilities: [
-      Messages.UniMelbTutResponsibility1(),
-      Messages.UniMelbTutResponsibility2(),
+      (locale: Locale) => Messages.UniMelbTutResponsibility1[locale],
+      (locale: Locale) => Messages.UniMelbTutResponsibility2[locale],
     ],
   },
 ];
 
 export const VolunteerExperiences: ExperienceProps[] = [
   {
-    role: Messages.CoFounderAndVp(),
-    companyName: Messages.Codec(),
+    role: (locale: Locale) => Messages.CoFounderAndVp[locale],
+    companyName: (locale: Locale) => Messages.Codec[locale],
     startDate: {
-      month: Messages.March(),
+      month: (locale: Locale) => Messages.March[locale],
       year: 2019,
     },
     endDate: {
-      month: Messages.October(),
+      month: (locale: Locale) => Messages.October[locale],
       year: 2019,
     },
     useResponsibilitiesLabel: false,
     responsibilities: [
-      Messages.CodecResponsibility1(),
-      Messages.CodecResponsibility2(),
+      (locale: Locale) => Messages.CodecResponsibility1[locale],
+      (locale: Locale) => Messages.CodecResponsibility2[locale],
     ],
   },
   {
-    role: Messages.GenCommMember(),
-    companyName: Messages.Misc(),
+    role: (locale: Locale) => Messages.GenCommMember[locale],
+    companyName: (locale: Locale) => Messages.Misc[locale],
     companyWebsiteUrl: 'https://www.umisc.info/',
     startDate: {
-      month: Messages.September(),
+      month: (locale: Locale) => Messages.September[locale],
       year: 2018,
     },
     endDate: {
-      month: Messages.September(),
+      month: (locale: Locale) => Messages.September[locale],
       year: 2019,
     },
     useResponsibilitiesLabel: false,
     responsibilities: [
-      Messages.MiscResponsibility1(),
-      Messages.MiscResponsibility2(),
-      Messages.MiscResponsibility3(),
+      (locale: Locale) => Messages.MiscResponsibility1[locale],
+      (locale: Locale) => Messages.MiscResponsibility2[locale],
+      (locale: Locale) => Messages.MiscResponsibility3[locale],
     ],
   },
   {
-    role: Messages.PubGenCommMember(),
-    companyName: Messages.Cissa(),
+    role: (locale: Locale) => Messages.PubGenCommMember[locale],
+    companyName: (locale: Locale) => Messages.Cissa[locale],
     companyWebsiteUrl: 'https://cissa.org.au/',
     startDate: {
-      month: Messages.April(),
+      month: (locale: Locale) => Messages.April[locale],
       year: 2019,
     },
     endDate: {
-      month: Messages.October(),
+      month: (locale: Locale) => Messages.October[locale],
       year: 2019,
     },
     useResponsibilitiesLabel: false,
     responsibilities: [
-      Messages.CissaResponsibility1(),
-      Messages.CissaResponsibility2(),
+      (locale: Locale) => Messages.CissaResponsibility1[locale],
+      (locale: Locale) => Messages.CissaResponsibility2[locale],
     ],
   },
 ];

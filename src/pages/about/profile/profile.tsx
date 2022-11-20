@@ -1,20 +1,14 @@
 import classNames from 'classnames';
 import React from 'react';
+import { useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import { Text } from './../../../ui/text/text';
+import profilePic from './profile.jpeg';
+import { ProfileMessages as Messages } from './profile.messages';
 import styles from './profile.module.css';
 
-export type ProfileProps = {
-  name: string,
-  imgSrc: string,
-  imgAltTag: string,
-}
-
-export const Profile = ({
-  name,
-  imgSrc,
-  imgAltTag,
-}: ProfileProps) => {
+export const Profile = () => {
+  const { locale } = useLocaleContext();
   const { theme, appearance } = useThemeContext();
   return (
     <div
@@ -25,8 +19,8 @@ export const Profile = ({
     >
       <img
           className={styles.picture}
-          src={imgSrc}
-          alt={imgAltTag}
+          src={profilePic}
+          alt={Messages.AltTag[locale]}
       />
       <Text.LargeTitle
           alignment='centre'
@@ -35,7 +29,7 @@ export const Profile = ({
           keepDefaultMargins={true}
           className={styles.name}
       >
-        { name }
+        { Messages.ShevonMendis[locale] }
       </Text.LargeTitle>
       <div
           className={styles.underline}
