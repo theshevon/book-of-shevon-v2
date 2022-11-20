@@ -11,17 +11,21 @@ export const ThemeSwitcherButtons = ({
   const { theme, setTheme } = useThemeContext();
   return (
     <div
-        className={styles.themeSwitcherButtonsContainer}
+        className={styles.themeSwitcherButtons}
     >
       { THEMES.map(themeOption => (
-        <ThemeAppearanceButton
+        <div
+            className={styles.themeSwitcherButtonContainer}
             key={themeOption.theme.toString()}
-            // title={themeOption.label(locale)}
-            onClick={() => setTheme(themeOption.theme)}
-            inActive={themeOption.theme !== theme}
-            label={themeOption.icon}
-            activeRoute={activeRoute}
-        />
+        >
+          <ThemeAppearanceButton
+              // title={themeOption.label(locale)}
+              onClick={() => setTheme(themeOption.theme)}
+              inActive={themeOption.theme !== theme}
+              label={themeOption.icon}
+              activeRoute={activeRoute}
+          />
+        </div>
       )) }
     </div>
   );

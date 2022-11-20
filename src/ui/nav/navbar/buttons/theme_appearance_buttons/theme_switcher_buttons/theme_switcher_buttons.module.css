@@ -1,3 +1,7 @@
-.themeSwitcherButtonsContainer {
+.themeSwitcherButtons {
   display: flex;
+}
+
+.themeSwitcherButtonContainer:first-of-type {
+  margin-right: 4px;
 }
