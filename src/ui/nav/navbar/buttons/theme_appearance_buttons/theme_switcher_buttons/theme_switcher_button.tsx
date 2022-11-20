@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Routes } from '../../../../../routes/routes';
-import { useLocaleContext } from '../../../../../util/localisation/locale_provider';
-import { APPEARANCES, Appearance, THEMES, Theme, useThemeContext } from '../../../../../util/theming/theme_provider';
-import baseStyles from '../navbar_button.module.css';
+import { Routes } from '../../../../../../routes/routes';
+import { useLocaleContext } from '../../../../../../util/localisation/locale_provider';
+import { APPEARANCES, Appearance, THEMES, Theme, useThemeContext } from '../../../../../../util/theming/theme_provider';
+import baseStyles from '../../navbar_button.module.css';
 import themeSwitcherButtonStyles from './theme_switcher_button.module.css';
 
 const getLocationSpecificThemeStyles = (activeRoute: string) => {

@@ -1,57 +1,53 @@
 @value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey50, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey600, colourDarkModeGrey700, colourDarkModeGrey800, colourMarioDarkBrown, colourMarioWhite, colourMarioLightBrown from '../../../../colours/colours.module.css';
 
-.themeSwitcherButtonsContainer {
-  display: flex;
-}
-
 /* light mode - basic */
 
-.themeOptionButton:not(.eightBit) {
+.themeAppearanceButton:not(.eightBit) {
   border-color: colourGrey100;
 }
 
-.themeOptionButton:not(.eightBit).active,
-.themeOptionButton:not(.eightBit):hover {
+.themeAppearanceButton:not(.eightBit).active,
+.themeAppearanceButton:not(.eightBit):hover {
   border-color: colourGrey200;
 }
 
 /* dark mode - basic */
 
-.themeOptionButton:not(.eightBit).dark {
+.themeAppearanceButton:not(.eightBit).dark {
   border-color: colourDarkModeGrey800;
 }
 
-.themeOptionButton:not(.eightBit).dark.active,
-.themeOptionButton:not(.eightBit).dark:hover {
+.themeAppearanceButton:not(.eightBit).dark.active,
+.themeAppearanceButton:not(.eightBit).dark:hover {
   border-color: colourDarkModeGrey200;
 }
 
 /* light mode - 8bit */
 
-.themeOptionButton.eightBit:not(.projects) {
+.themeAppearanceButton.eightBit:not(.projects) {
   box-shadow: inset -2px -2px 0px 0px colourGrey100 !important;
 }
 
-.themeOptionButton.eightBit:not(.projects)::before,
-.themeOptionButton.eightBit:not(.projects)::after {
+.themeAppearanceButton.eightBit:not(.projects)::before,
+.themeAppearanceButton.eightBit:not(.projects)::after {
   border-color: colourGrey200 !important;
 }
 
-.themeOptionButton.eightBit:not(.projects).active,
-.themeOptionButton.eightBit:not(.projects):hover {
+.themeAppearanceButton.eightBit:not(.projects).active,
+.themeAppearanceButton.eightBit:not(.projects):hover {
   box-shadow: inset -3px -3px 0px 0px colourGrey300 !important;
 }
 
-.themeOptionButton.eightBit:not(.projects).active::before,
-.themeOptionButton.eightBit:not(.projects).active::after,
-.themeOptionButton.eightBit:not(.projects):hover::before,
-.themeOptionButton.eightBit:not(.projects):hover::after {
+.themeAppearanceButton.eightBit:not(.projects).active::before,
+.themeAppearanceButton.eightBit:not(.projects).active::after,
+.themeAppearanceButton.eightBit:not(.projects):hover::before,
+.themeAppearanceButton.eightBit:not(.projects):hover::after {
   border-color: colourGrey500 !important;
 }
 
 /* dark mode - 8bit */
 
-.themeOptionButton.eightBit.dark {
+.themeAppearanceButton.eightBit.dark {
   box-shadow: inset -2px -2px 0px 0px colourDarkModeGrey400 !important;
 }
 

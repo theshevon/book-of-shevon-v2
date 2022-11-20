@@ -1,4 +1,4 @@
-@value colourGrey100, colourGrey200, colourGrey500, colourDarkModeGrey800, colourMarioDarkBrown from '../../../../colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourGrey500, colourDarkModeGrey800, colourMarioDarkBrown from '../../../../../colours/colours.module.css';
 
 .themeSwitcherButton {
   box-sizing: border-box;
