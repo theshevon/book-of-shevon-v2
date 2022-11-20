@@ -1,4 +1,4 @@
-@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey50, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey600, colourDarkModeGrey700, colourDarkModeGrey800, colourMarioDarkBrown, colourMarioWhite, colourMarioLightBrown from '../../../../colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey50, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey600, colourDarkModeGrey700, colourDarkModeGrey800, colourMarioDarkBrown, colourMarioWhite, colourMarioLightBrown, colourGreen400, colourGreen800 from '../../../../colours/colours.module.css';
 
 .themeAppearanceButton {
   box-sizing: border-box;
@@ -89,3 +89,44 @@
   border-top-color: colourMarioWhite!important;
 }
 
+/* error - light mode */
+
+.themeAppearanceButton.error:not(.eightBit) {
+  background-color: colourGreen400;
+  border-color: colourGreen800;
+}
+
+.themeAppearanceButton.error:not(.eightBit):hover {
+  border-color: white;
+}
+
+/* error - 8 bit */
+
+.themeAppearanceButton.eightBit.error {
+  background-color: colourGreen400;
+  box-shadow: inset -2px -2px 0px 0px white !important;
+}
+
+.themeAppearanceButton.eightBit.error::after {
+  border-left-color: colourGreen800 !important;
+  border-right-color: colourGreen800 !important;
+}
+
+.themeAppearanceButton.eightBit.error::before {
+  border-top-color: colourGreen800 !important;
+  border-bottom-color: colourGreen800 !important;
+}
+
+.themeAppearanceButton.eightBit.error:hover {
+  box-shadow: inset -3px -3px 0px 0px colourGreen800 !important;
+}
+
+.themeAppearanceButton.eightBit.error:hover::after {
+  border-left-color: white !important;
+  border-right-color: white !important;
+}
+
+.themeAppearanceButton.eightBit.error:hover::before {
+  border-top-color: white !important;
+  border-bottom-color: white !important;
+}

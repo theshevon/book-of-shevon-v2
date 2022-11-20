@@ -10,6 +10,9 @@ const getLocationSpecificThemeStyles = (activeRoute: string) => {
   if (activeRoute === Routes.PROJECTS) {
     return classNames(baseStyles.projects, localeSwitcherButtonStyles.projects);
   }
+  if (!(Object.values(Routes).some(route => route.toString() === activeRoute))) {
+    return classNames(baseStyles.error, localeSwitcherButtonStyles.error);
+  }
 };
 
 export const LocaleSwitcherButton = ({

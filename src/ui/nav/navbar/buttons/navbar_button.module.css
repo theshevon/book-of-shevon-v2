@@ -1,7 +1,7 @@
-@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey700, colourDarkModeGrey800, colourMarioWhite, colourMarioDarkBrown, colourMarioLightBrown from '../../../colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey700, colourDarkModeGrey800, colourMarioWhite, colourMarioDarkBrown, colourMarioLightBrown, colourGreen400, colourGreen800 from '../../../colours/colours.module.css';
 
 .navbarButton {
-    transition: 500ms;
+    transition: 200ms;
     text-transform: uppercase;
     width: 115px;
     height: 32px;
@@ -57,17 +57,17 @@
     box-shadow: inset -3px -3px 0px 0px colourGrey700 !important;
 }
 
-.navbarButton.eightBit.dark:not(.projects):hover:before {
+.navbarButton.eightBit.dark:not(.projects):not(.error):hover:before {
     border-top-color: colourDarkModeGrey700;
     border-bottom-color: colourDarkModeGrey700;
 }
 
-.navbarButton.eightBit.dark:not(.projects):hover:after {
+.navbarButton.eightBit.dark:not(.projects):not(.error):hover:after {
     border-left-color: colourDarkModeGrey700;
     border-right-color: colourDarkModeGrey700;
 }
 
-.navbarButton:not(.eightBit):not(.projects):not(.dark):hover {
+.navbarButton:not(.eightBit):not(.projects):not(.error):not(.dark):hover {
     border: 1px solid colourGrey200 !important;
 }
 
@@ -76,26 +76,26 @@
     box-shadow: inset -3px -3px 0px 0px colourMarioDarkBrown !important;
 }
 
-.navbarButton.dark:not(.eightBit):not(.projects).dark:hover {
+.navbarButton.dark:not(.eightBit):not(.projects):not(.error).dark:hover {
     border-color: colourDarkModeGrey200 !important;
 }
 
-.navbarButton.eightBit:not(.projects):not(:hover):before {
+.navbarButton.eightBit:not(.projects):not(.error):not(:hover):before {
     border-top-color: colourGrey200;
     border-bottom-color: colourGrey200;
 }
 
-.navbarButton.eightBit:not(.projects):not(:hover):after {
+.navbarButton.eightBit:not(.projects):not(.error):not(:hover):after {
     border-left-color: colourGrey200;
     border-right-color: colourGrey200;
 }
 
-.navbarButton.eightBit.dark:not(.projects):not(:hover):before {
+.navbarButton.eightBit.dark:not(.projects):not(.error):not(:hover):before {
     border-top-color: colourDarkModeGrey700;
     border-bottom-color: colourDarkModeGrey700;
 }
 
-.navbarButton.eightBit.dark:not(.projects):not(:hover):after {
+.navbarButton.eightBit.dark:not(.projects):not(.error):not(:hover):after {
     border-left-color: colourDarkModeGrey700;
     border-right-color: colourDarkModeGrey700;
 }
@@ -117,6 +117,43 @@
 .navbarButton.eightBit.projects:hover:after {
     border-left-color: colourMarioWhite !important;
 }
+
+/* error page */
+.navbarButton.error {
+    color: white;
+    background-color: colourGreen400 !important;
+    border-color: colourGreen800  !important;
+}
+
+.navbarButton.error:hover {
+    border-color: white !important;
+}
+
+.navbarButton.eightBit.error:not(:hover):before {
+    border-top-color: colourGreen800;
+    border-bottom-color: colourGreen800;
+}
+
+.navbarButton.eightBit.error:not(:hover):after {
+    border-left-color: colourGreen800;
+    border-right-color: colourGreen800;
+}
+
+.navbarButton.eightBit.error:hover {
+    border-color: colourGreen800;
+    box-shadow: inset -3px -3px 0px 0px colourGreen800 !important;
+}
+
+.navbarButton.eightBit.error:hover:before {
+    border-top-color: white;
+    border-bottom-color: white;
+}
+
+.navbarButton.eightBit.error:hover:after {
+    border-left-color: white;
+    border-right-color: white;
+}
+
 
 @supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .navbarButton {

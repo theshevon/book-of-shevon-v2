@@ -8,7 +8,10 @@ import { TooltipWrapper } from './tooltip_wrapper/tooltip_wrapper';
 
 const getLocationSpecificThemeStyles = (activeRoute: string) => {
   if (activeRoute === Routes.PROJECTS) {
-    return classNames(styles.projects, styles.projects);
+    return styles.projects;
+  }
+  if (!(Object.values(Routes).some(route => route.toString() === activeRoute))) {
+    return styles.error;
   }
 };
 
