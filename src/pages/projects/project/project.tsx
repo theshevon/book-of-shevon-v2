@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import { ButtonLink, CapsuleLink } from './../../../ui/link/link';
 import { Text } from './../../../ui/text/text';
@@ -8,15 +9,17 @@ import styles from './project.module.css';
 import { TechCapsule } from './tech_capsule/tech_capsule';
 
 type Contributor = {
-  name: string,
+  name: (locale: Locale) => string,
   githubUrl: string,
 }
 
+type TechStackType = ((locale: Locale) => string)[];
+
 export type ProjectProps = {
-  name: string,
+  name: (locale: Locale) => string,
   year: number,
-  description: string,
-  techStack: string[],
+  description: (locale: Locale) => string,
+  techStack: TechStackType,
   otherContributors?: Contributor[],
   githubUrl: string,
 }
@@ -29,6 +32,7 @@ export const Project = ({
   otherContributors,
   githubUrl,
 }: ProjectProps) => {
+  const { locale } = useLocaleContext();
   const { theme, appearance } = useThemeContext();
   return (
     <div
@@ -43,7 +47,7 @@ export const Project = ({
           fontWeight='bold'
           className={styles.title}
       >
-        { name }
+        { name(locale) }
       </Text.Large>
 
       { /* YEAR */ }
@@ -60,7 +64,7 @@ export const Project = ({
           className={styles.description}
           retainDarkTextOnDarkMode={theme === Theme.EIGHT_BIT}
       >
-        { description }
+        { description(locale) }
       </Text.Small>
 
       { /* TECH STACK */ }
@@ -72,7 +76,7 @@ export const Project = ({
             fontWeight='bold'
             retainDarkTextOnDarkMode={theme === Theme.EIGHT_BIT}
         >
-          { Messages.TechStack() }
+          { Messages.TechStack[locale] }
         </Text.Medium>
         <TechStack
             techStack={techStack}
@@ -89,7 +93,7 @@ export const Project = ({
               fontWeight='bold'
               retainDarkTextOnDarkMode={theme === Theme.EIGHT_BIT}
           >
-            { Messages.OtherContributors() }
+            { Messages.OtherContributors[locale] }
           </Text.Medium>
           <OtherContributors
               otherContributors={otherContributors}
@@ -107,7 +111,7 @@ export const Project = ({
               [styles.eightBit]: theme === Theme.EIGHT_BIT,
             })}
         >
-          { Messages.ViewProject() }
+          { Messages.ViewProject[locale] }
         </ButtonLink>
       </div>
 
@@ -118,44 +122,51 @@ export const Project = ({
 const TechStack = ({
   techStack,
 }: {
-  techStack: string[],
-}) => (
-  <ul
-      className={styles.techList}
-  >
-    { techStack.map(tech => (
-      <li
-          key={tech}
-          className={styles.listCapsule}
-      >
-        <TechCapsule
-            tech={tech}
-        />
-      </li>
-    )) }
-  </ul>
-);
+  techStack: TechStackType,
+}) => {
+  const { locale } = useLocaleContext();
+  const localisedTechStack = techStack.map(tech => tech(locale));
+  return (
+    <ul
+        className={styles.techList}
+    >
+      { localisedTechStack.map(tech => (
+        <li
+            key={tech}
+            className={styles.listCapsule}
+        >
+          <TechCapsule
+              tech={tech}
+          />
+        </li>
+      )) }
+    </ul>
+  );
+};
 
 const OtherContributors = ({
   otherContributors,
 }: {
   otherContributors: Contributor[],
-}) => (
-  <ul
-      className={styles.contributorsList}
-  >
-    { otherContributors.map(otherContributor => (
-      <li
-          key={otherContributor.name}
-          className={styles.contributorCapsuleContainer}
-      >
-        <CapsuleLink
-            url={otherContributor.githubUrl}
-            className={styles.contributorCapsule}
+}) => {
+  const { locale } = useLocaleContext();
+  return (
+    <ul
+        className={styles.contributorsList}
+    >
+      { otherContributors.map(otherContributor => (
+        <li
+            key={otherContributor.name(locale)}
+            className={styles.contributorCapsuleContainer}
         >
-          { otherContributor.name }
-        </CapsuleLink>
-      </li>
-    )) }
-  </ul>
-);
+          <CapsuleLink
+              url={otherContributor.githubUrl}
+              className={styles.contributorCapsule}
+          >
+            { otherContributor.name(locale) }
+          </CapsuleLink>
+        </li>
+      )) }
+    </ul>
+  );
+};
