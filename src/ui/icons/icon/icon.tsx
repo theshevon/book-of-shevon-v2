@@ -17,6 +17,7 @@ type IconProps = {
   fillRule?: 'evenodd' | 'nonzero' | 'inherit',
   clipRule?: string | number,
   pathData: string,
+  overrideTheming?: boolean,
 }
 
 export type IconDefinition = Omit<IconProps, 'className'>;
@@ -38,12 +39,17 @@ export const Icon = ({
   fillRule,
   clipRule,
   pathData,
+  overrideTheming=false,
 }: IconProps) => {
   const { appearance } = useThemeContext();
+  let fill = undefined;
+  if (!overrideTheming) {
+    fill = appearance === Appearance.LIGHT ? 'black' : colours.colourDarkModeGrey50;
+  }
   return (
     <svg
         className={className}
-        fill={appearance === Appearance.LIGHT ? 'black' : colours.colourDarkModeGrey50}
+        fill={fill}
         xmlns='http://www.w3.org/2000/svg'
         width={width}
         height={height}

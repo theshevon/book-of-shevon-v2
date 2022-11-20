@@ -33,11 +33,13 @@ export const Button: FC<ButtonProps> = ({
 
 type IconButtonProps = ButtonProps & {
   iconDefinition: IconDefinition,
+  overrideTheming?: boolean,
 }
 
 export const IconButton = ({
   iconDefinition,
   className,
+  overrideTheming=false,
   ...buttonProps
 }: IconButtonProps) => (
   <button
@@ -46,6 +48,7 @@ export const IconButton = ({
   >
     <Icon
         {...iconDefinition}
+        overrideTheming={overrideTheming}
     />
   </button>
 );

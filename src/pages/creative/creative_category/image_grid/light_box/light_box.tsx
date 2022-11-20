@@ -42,6 +42,7 @@ export const LightBox = observer(({
   }, [onClose, onImgChange]);
 
   const onClickHandler = useCallback((e: MouseEvent) => {
+
     if (e.target === ref.current) {
       onClose();
     }
@@ -65,6 +66,7 @@ export const LightBox = observer(({
             iconDefinition={LeftArrowIconDefinition}
             onClick={() => onImgChange('prev')}
             className={styles.imgChangeButton}
+            overrideTheming={true}
         />
       ) }
     </div>
@@ -79,6 +81,7 @@ export const LightBox = observer(({
             iconDefinition={RightArrowIconDefinition}
             onClick={() => onImgChange('next')}
             className={styles.imgChangeButton}
+            overrideTheming={true}
         />
       ) }
     </div>
@@ -98,6 +101,7 @@ export const LightBox = observer(({
             iconDefinition={CloseIconDefinition}
             onClick={onClose}
             className={styles.closeButton}
+            overrideTheming={true}
         />
       </div>
       { isMediumOrWider(displaySize)  && <PrevButtonContainer/> }
