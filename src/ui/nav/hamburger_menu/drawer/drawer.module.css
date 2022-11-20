@@ -3,7 +3,7 @@
 @value toggleButtonDistanceFromEdge from './../hamburger_menu.module.css';
 @value toggleButtonSideLength from './../buttons/toggle_menu_button/toggle_menu_button.module.css';
 
-@value drawerHeight: 600px;
+@value drawerHeight: 715px;
 
 .drawer {
   background-color: navBackgroundColourLight;
@@ -98,12 +98,14 @@
 
 .drawer.eightBit.projects .link,
 .drawer.eightBit.projects .themeOption,
-.drawer.eightBit.projects .appearanceOption {
-  background-color: colourMarioLightBrown;
+.drawer.eightBit.projects .appearanceOption,
+.drawer.eightBit.projects .localeOption {
+background-color: colourMarioLightBrown;
 }
 
 .drawer.eightBit .themeOption,
-.drawer.eightBit .appearanceOption {
+.drawer.eightBit .appearanceOption,
+.drawer.eightBit .localeOption {
   box-shadow: inset -2px -2px 0px 0px colourGrey300 !important;
 }
 
@@ -112,7 +114,8 @@
 }
 
 .drawer.eightBit.dark .themeOption,
-.drawer.eightBit.dark .appearanceOption {
+.drawer.eightBit.dark .appearanceOption,
+.drawer.eightBit.dark .localeOption {
   box-shadow: inset -2px -2px 0px 0px colourDarkModeGrey400 !important;
 }
 
@@ -121,7 +124,9 @@
 .drawer.eightBit .themeOption::before,
 .drawer.eightBit .themeOption::after,
 .drawer.eightBit .appearanceOption::before,
-.drawer.eightBit .appearanceOption::after {
+.drawer.eightBit .appearanceOption::after,
+.drawer.eightBit .localeOption::before,
+.drawer.eightBit .localeOption::after {
   border-color: colourGrey500 !important;
 }
 
@@ -130,7 +135,9 @@
 .drawer.eightBit.dark .themeOption::before,
 .drawer.eightBit.dark .themeOption::after,
 .drawer.eightBit.dark .appearanceOption::before,
-.drawer.eightBit.dark .appearanceOption::after {
+.drawer.eightBit.dark .appearanceOption::after,
+.drawer.eightBit.dark .localeOption::before,
+.drawer.eightBit.dark .localeOption::after {
   border-color: colourDarkModeGrey700 !important;
 }
 
@@ -151,7 +158,8 @@
 
 .drawer.eightBit.projects .link,
 .drawer.eightBit.projects .themeOption,
-.drawer.eightBit.projects .appearanceOption {
+.drawer.eightBit.projects .appearanceOption,
+.drawer.eightBit.projects .localeOption {
   box-shadow: inset -2px -2px 0px 0px colourMarioDarkBrown !important;
 }
 
@@ -169,7 +177,9 @@
 .drawer.eightBit.projects .themeOption::before,
 .drawer.eightBit.projects .themeOption::after,
 .drawer.eightBit.projects .appearanceOption::before,
-.drawer.eightBit.projects .appearanceOption::after {
+.drawer.eightBit.projects .appearanceOption::after,
+.drawer.eightBit.projects .localeOption::before,
+.drawer.eightBit.projects .localeOption::after {
   border-color: black !important;
 }
 
@@ -179,7 +189,8 @@
 
 .drawer:not(.eightBit) .link.active,
 .drawer:not(.eightBit) .themeOption,
-.drawer:not(.eightBit) .appearanceOption {
+.drawer:not(.eightBit) .appearanceOption,
+.drawer:not(.eightBit) .localeOption {
   border: 1px solid colourGrey200;
 }
 
@@ -195,19 +206,25 @@
   background-color: colourDarkModeGrey700;
 }
 
-.themeAppearanceOptionsContainer {
+.themeAppearanceOptionsContainer,
+.localeOptionsContainer {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.themeAppearanceOptions {
+.themeAppearanceOptions,
+.localeOptions {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 20px;
+  width: 100%;
 }
 
 .themeOption,
-.appearanceOption {
+.appearanceOption,
+.localeOption {
   background-color: transparent;
   font-size: 1.5rem;
   border-radius: 4px;
@@ -218,18 +235,31 @@
   margin: 0 15px;
 }
 
-.themeAppearanceButton {
+.themeAppearanceButton,
+.localeButton {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50px;
+  justify-content: center;
+  width: 60px;
 }
 
-.themeAppearanceButton:not(.active) {
+.themeAppearanceButton:not(.active),
+.localeButton:not(.active) {
   opacity: 0.4 !important;
 }
 
-.drawer:not(.projects.eightBit) .themeAppearanceButton:not(.active) {
+.localeButton {
+  width: 65px;
+  margin: 0 7.5px;
+}
+
+.localeOption {
+  width: 65px;
+}
+
+.drawer:not(.projects.eightBit) .themeAppearanceButton:not(.active)
+.drawer:not(.projects.eightBit) .localeButton:not(.active) {
   filter: grayscale(100%);
 }
 

@@ -7,4 +7,8 @@ export const DrawerMessages = {
     [Locale.KOREAN]: '테마/ 모습',
   },
 
+  LocaleOptionsLabel: {
+    [Locale.ENGLISH]: 'Language',
+    [Locale.KOREAN]: '언어',
+  },
 };
