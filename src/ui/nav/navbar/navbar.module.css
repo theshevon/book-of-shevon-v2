@@ -17,10 +17,26 @@
 .mainNavbar {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     z-index: 200;
     height: inherit;
+}
+
+.mainNavbar .leftPartition,
+.mainNavbar .centrePartition,
+.mainNavbar .rightPartition {
+    display: flex;
+    justify-content: center;
+}
+
+.mainNavbar .centrePartition {
+    width: 80%;
+}
+
+.mainNavbar .leftPartition,
+.mainNavbar .rightPartition {
+    width: 10%;
 }
 
 .menuContainerOuter {
