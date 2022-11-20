@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { Routes } from '../../../routes/routes';
 import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import type { RouteData } from './../../../routes/route_data/route_data';
-import { LanguageSwitcherButton } from './buttons/language_switcher_button/language_switcher_button';
+import { LocaleSwitcherButton } from './buttons/locale_switcher_button/locale_switcher_button';
 import { ThemeSwitcherButton } from './buttons/theme_switcher_button/theme_switcher_button';
 import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
 import { HorizontalMenu } from './horizontal_menu/horizontal_menu';
@@ -37,7 +37,7 @@ export const Navbar = ({
       <div
           className={styles.mainNavbar}
       >
-        <LanguageSwitcherButton
+        <LocaleSwitcherButton
             activeRoute={activeRoute}
         />
         <ToggleMenuButton

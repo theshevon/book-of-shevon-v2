@@ -3,17 +3,16 @@ import React from 'react';
 import { Routes } from '../../../../../routes/routes';
 import { LOCALES, useLocaleContext } from '../../../../../util/localisation/locale_provider';
 import {  Appearance, Theme, useThemeContext } from '../../../../../util/theming/theme_provider';
-import { Text } from '../../../../text/text';
 import baseStyles from '../navbar_button.module.css';
-import languageSwitcherButtonStyles from './language_switcher_button.module.css';
+import localeSwitcherButtonStyles from './locale_switcher_button.module.css';
 
 const getLocationSpecificThemeStyles = (activeRoute: string) => {
   if (activeRoute === Routes.PROJECTS) {
-    return classNames(baseStyles.projects, languageSwitcherButtonStyles.projects);
+    return classNames(baseStyles.projects, localeSwitcherButtonStyles.projects);
   }
 };
 
-export const LanguageSwitcherButton = ({
+export const LocaleSwitcherButton = ({
   activeRoute,
 }: {
   activeRoute: string,
@@ -22,28 +21,26 @@ export const LanguageSwitcherButton = ({
   const { theme, appearance } = useThemeContext();
   return (
     <div
-        className={classNames(baseStyles.navbarButton, languageSwitcherButtonStyles.languageSwitcherButton, {
-          [languageSwitcherButtonStyles.eightBit]: theme === Theme.EIGHT_BIT,
+        className={classNames(baseStyles.navbarButton, localeSwitcherButtonStyles.localeSwitcherButton, {
+          [localeSwitcherButtonStyles.eightBit]: theme === Theme.EIGHT_BIT,
           [baseStyles.eightBit]: theme === Theme.EIGHT_BIT,
           [baseStyles.dark]: appearance === Appearance.DARK,
-          [languageSwitcherButtonStyles.dark]: appearance === Appearance.DARK,
+          [localeSwitcherButtonStyles.dark]: appearance === Appearance.DARK,
         }, getLocationSpecificThemeStyles(activeRoute))}
     >
       <div
-          className={languageSwitcherButtonStyles.themeOptions}
+          className={localeSwitcherButtonStyles.localeOptions}
       >
         { LOCALES.map(localeOption => (
           <button
               key={localeOption.id}
               title={localeOption.label}
               onClick={() => setLocale(localeOption.id)}
-              className={classNames(languageSwitcherButtonStyles.themeOption, {
-                [languageSwitcherButtonStyles.active]: localeOption.id === locale,
+              className={classNames(localeSwitcherButtonStyles.localeOption, {
+                [localeSwitcherButtonStyles.active]: localeOption.id === locale,
               })}
           >
-            <Text.Small>
-              { localeOption.label }
-            </Text.Small>
+            { localeOption.label }
           </button>
         )) }
       </div>
