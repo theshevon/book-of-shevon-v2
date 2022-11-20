@@ -10,7 +10,7 @@ export const MenuButtonMessages = {
 
   // Label on Menu Button toggle when the menu is open and can be closed.
   CloseMenuButtonLabel: {
-    [Locale.ENGLISH]: 'Menu',
+    [Locale.ENGLISH]: 'Close',
     [Locale.KOREAN]: '닫다',
   },
 };
