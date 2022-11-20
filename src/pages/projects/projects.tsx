@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { PageContainer } from '../../ui/page_container/page_container';
+import { useLocaleContext } from '../../util/localisation/locale_provider';
 import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Projects as TechProjects } from './data/projects';
@@ -10,9 +11,11 @@ import styles from './projects.module.css';
 
 export const Projects = () => {
 
+  const { locale } = useLocaleContext();
+
   useEffect(() => {
-    updateDocumentHeader(Messages.pageTitle(), { type: 'emoji', src: '🐝' });
-  }, []);
+    updateDocumentHeader(Messages.pageTitle[locale], { type: 'emoji', src: '🐝' });
+  }, [locale]);
 
   const { theme, appearance } = useThemeContext();
 
