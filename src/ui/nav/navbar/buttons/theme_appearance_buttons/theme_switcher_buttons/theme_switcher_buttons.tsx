@@ -18,7 +18,7 @@ export const ThemeSwitcherButtons = ({
             key={themeOption.theme.toString()}
             // title={themeOption.label(locale)}
             onClick={() => setTheme(themeOption.theme)}
-            active={themeOption.theme === theme}
+            inActive={themeOption.theme !== theme}
             label={themeOption.icon}
             activeRoute={activeRoute}
         />

@@ -14,7 +14,6 @@ export const AppearanceSwitcherButton = ({
         // title={APPEARANCES[appearance].label(locale)}
         label={appearance === Appearance.LIGHT ? APPEARANCES[Appearance.DARK].icon : APPEARANCES[Appearance.LIGHT].icon}
         activeRoute={activeRoute}
-        active={true}
     />
 
   );

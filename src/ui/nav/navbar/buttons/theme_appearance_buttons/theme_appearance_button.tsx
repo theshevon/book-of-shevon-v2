@@ -13,12 +13,12 @@ const getLocationSpecificThemeStyles = (activeRoute: string) => {
 
 export const ThemeAppearanceButton = ({
   onClick,
-  active,
+  inActive,
   label,
   activeRoute,
 }: {
   onClick: () => void,
-  active: boolean,
+  inActive?: boolean,
   label: string,
   activeRoute: string,
 }) => {
@@ -26,10 +26,9 @@ export const ThemeAppearanceButton = ({
   // TODO: add tooltips
   return (
     <Button
-        // title={themeOption.label(locale)}
         onClick={onClick}
         className={classNames(styles.themeAppearanceButton, {
-          [styles.active]: active,
+          [styles.inActive]: inActive,
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
           [styles.dark]: appearance === Appearance.DARK,
         }, getLocationSpecificThemeStyles(activeRoute))}

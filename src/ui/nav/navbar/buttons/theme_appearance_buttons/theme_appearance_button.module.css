@@ -6,13 +6,17 @@
   height: 32px;
 }
 
+.themeAppearanceButton.inActive:not(:hover) {
+  filter: grayscale(100%);
+  transition: 300ms ease;
+}
+
 /* light mode - basic */
 
 .themeAppearanceButton:not(.eightBit) {
   border-color: colourGrey100;
 }
 
-.themeAppearanceButton:not(.eightBit).active,
 .themeAppearanceButton:not(.eightBit):hover {
   border-color: colourGrey200;
 }
@@ -23,7 +27,6 @@
   border-color: colourDarkModeGrey800;
 }
 
-.themeAppearanceButton:not(.eightBit).dark.active,
 .themeAppearanceButton:not(.eightBit).dark:hover {
   border-color: colourDarkModeGrey200;
 }
@@ -39,13 +42,10 @@
   border-color: colourGrey200 !important;
 }
 
-.themeAppearanceButton.eightBit:not(.projects).active,
 .themeAppearanceButton.eightBit:not(.projects):hover {
   box-shadow: inset -3px -3px 0px 0px colourGrey300 !important;
 }
 
-.themeAppearanceButton.eightBit:not(.projects).active::before,
-.themeAppearanceButton.eightBit:not(.projects).active::after,
 .themeAppearanceButton.eightBit:not(.projects):hover::before,
 .themeAppearanceButton.eightBit:not(.projects):hover::after {
   border-color: colourGrey500 !important;
@@ -62,8 +62,6 @@
   border-color: colourDarkModeGrey700 !important;
 }
 
-.themeOptionButton.eightBit:not(.projects).active::before,
-.themeOptionButton.eightBit:not(.projects).active::after,
 .themeOptionButton.eightBit:not(.projects).dark:hover {
   box-shadow: inset -3px -3px 0px 0px colourGrey300 !important;
 }
@@ -85,12 +83,7 @@
   border-bottom-color: black !important;
 }
 
-.themeOptionButton.eightBit.projects.active::before,
-.themeOptionButton.eightBit.projects.active::after {
-  border-color: black !important;
-}
-
-.themeOptionButton.eightBit.projects.active,
 .themeOptionButton.eightBit.projects:hover {
   box-shadow: inset -3px -3px 0px 0px colourMarioDarkBrown !important;
 }
+
