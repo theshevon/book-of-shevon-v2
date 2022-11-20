@@ -148,7 +148,7 @@ export const ExperiencesMessages = {
 
   MiscResponsibility2: {
     [Locale.ENGLISH]: 'Created and maintained the club\'s former (and first) website, and designed all of event posters and other marketing material',
-    [Locale.KOREAN]: '클럽의 이전(그리고 첫 번째) 웹사이트를 만들고 유지했으며 모든 이벤트 포스터 및 기타 마케팅 자료를 디자인했습니다.',
+    [Locale.KOREAN]: '클럽의 이전(그리고 첫 번째) 웹사이트를 만들고 유지했으며 모든 이벤트 포스터 및 기타 마케팅 자료를 디자인했습니다',
   },
 
   MiscResponsibility3: {

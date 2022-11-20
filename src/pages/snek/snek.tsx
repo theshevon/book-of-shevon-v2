@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { Button } from '../../ui/button/button';
 import { PageContainer } from '../../ui/page_container/page_container';
+import { useLocaleContext } from '../../util/localisation/locale_provider';
 import { Appearance, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
@@ -13,10 +14,12 @@ const noop = () => {};
 
 export const Snek = () => {
 
+  const { locale } = useLocaleContext();
+
   useEffect(() => {
-    updateDocumentHeader(Messages.pageTitle(), { type: 'emoji', src: '🐍' });
+    updateDocumentHeader(Messages.pageTitle[locale], { type: 'emoji', src: '🐍' });
     runGame();
-  }, []);
+  }, [locale]);
 
   const { appearance } = useThemeContext();
 
@@ -29,7 +32,7 @@ export const Snek = () => {
             alignment='centre'
             fontWeight='bold'
         >
-          🐍 Welcome to Favicon SnEk 🐍
+          🐍 { Messages.welcome[locale] } 🐍
         </Text.LargeTitle>
       </div>
       <div
@@ -38,7 +41,7 @@ export const Snek = () => {
         <Text.Small
             alignment='centre'
         >
-          Use the arrow keys to control the snek
+          { Messages.controls[locale] }
         </Text.Small>
       </div>
       <div
