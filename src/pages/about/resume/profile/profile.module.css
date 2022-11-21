@@ -7,21 +7,6 @@
     position: relative;
 }
 
-.picture {
-    height: 150px;
-    width: 150px;
-    width: auto;
-    border-radius: 50%;
-    left: 50%;
-    outline: 1px solid colourGrey100;
-    outline-offset: 4px;
-    object-fit: cover;
-}
-
-.eightBit.dark .picture { 
-    outline: 1px solid colourDarkModeGrey400;
-}
-
 .underline {
     position: absolute;
     bottom: 17.5px;

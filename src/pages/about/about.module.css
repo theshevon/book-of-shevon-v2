@@ -1,0 +1,23 @@
+@value colourGrey100, colourDarkModeGrey700 from '../../ui/colours/colours.module.css';
+
+.aboutPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.picture {
+    height: 150px;
+    width: 150px;
+    width: auto;
+    border-radius: 50%;
+    left: 50%;
+    outline: 1px solid colourGrey100;
+    outline-offset: 4px;
+    object-fit: cover;    
+}
+
+.dark .picture { 
+    outline: 1px solid colourDarkModeGrey700;
+}

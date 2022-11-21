@@ -1,11 +1,13 @@
+import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { PageContainer } from '../../ui/page_container/page_container';
 import { Text } from '../../ui/text/text';
 import { useLocaleContext } from '../../util/localisation/locale_provider';
-import { useThemeContext } from '../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { AboutMessages as Messages } from './about.messages';
 import styles from './about.module.css';
+import profilePic from './profile.jpeg';
 import { Resume } from './resume/resume';
 
 export const About = () => {
@@ -19,25 +21,35 @@ export const About = () => {
   const { theme, appearance } = useThemeContext();
 
   const Content = () => (
-    <>
+    <div
+        className={classNames(styles.aboutPage, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+          [styles.dark]: appearance === Appearance.DARK,
+        })}
+    >
+      <img
+          className={styles.picture}
+          src={profilePic}
+          alt={Messages.AltTag[locale]}
+      />
       <Text.LargeTitle
           alignment='centre'
       >
-        hej 👋🏽
+        hey, i&apos;m shevon 👋🏽
       </Text.LargeTitle>
-      <Text.LargeTitle
+      <Text.UltraSmall
           alignment='centre'
       >
-        i&apos;m shevon
-      </Text.LargeTitle>
+        (don&apos;t call me shev; that&apos;s for close friends only 😤)
+      </Text.UltraSmall>
       <Text.Small
           alignment='centre'
           keepDefaultMargins={true}
       >
-        anyway here&apos;s my resume if you wanted to know what i&apos;ve been up to professionally:
+        and if you wanted to know what i&apos;ve been up to professionally, here&apos;s my (hopefully up-to-date) resume:
       </Text.Small>
       <Resume/>
-    </>
+    </div>
   );
 
   return (
