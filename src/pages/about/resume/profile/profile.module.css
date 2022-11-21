@@ -1,4 +1,4 @@
-@value colourGrey100, colourDarkModeGrey400 from '../../../ui/colours/colours.module.css';
+@value colourGrey100, colourDarkModeGrey400 from '../../../../ui/colours/colours.module.css';
 
 .profile {
     display: flex;

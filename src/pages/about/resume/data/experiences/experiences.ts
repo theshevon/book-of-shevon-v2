@@ -1,4 +1,4 @@
-import { Locale } from '../../../../util/localisation/locale_provider';
+import { Locale } from '../../../../../util/localisation/locale_provider';
 import type { ExperienceProps } from '../../experiences/experiences';
 import { ExperiencesMessages as Messages } from './experiences.messages';
 

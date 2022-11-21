@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import React from 'react';
-import { useLocaleContext } from '../../../util/localisation/locale_provider';
-import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
-import { Capsule } from './../../../ui/capsule/capsule';
-import { Text } from './../../../ui/text/text';
+import { Capsule } from '../../../../ui/capsule/capsule';
+import { Text } from '../../../../ui/text/text';
+import { useLocaleContext } from '../../../../util/localisation/locale_provider';
+import { Appearance, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 import { SkillsMessages as Messages } from './skills.messages';
 import styles from './skills.module.css';
 

@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
-import { Appearance, useThemeContext } from '../../../util/theming/theme_provider';
+import { Locale, useLocaleContext } from '../../../../util/localisation/locale_provider';
+import { Appearance, useThemeContext } from '../../../../util/theming/theme_provider';
 import { TimePeriod } from '../experiences/experiences';
-import { Text } from './../../../ui/text/text';
+import { Text } from './../../../../ui/text/text';
 import { EducationMessages as Messages } from './education.messages';
 import styles from './education.module.css';
 

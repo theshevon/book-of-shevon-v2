@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
-import { useLocaleContext } from '../../../util/localisation/locale_provider';
-import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
-import { Text } from './../../../ui/text/text';
+import { useLocaleContext } from '../../../../util/localisation/locale_provider';
+import { Appearance, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
+import { Text } from './../../../../ui/text/text';
 import profilePic from './profile.jpeg';
 import { ProfileMessages as Messages } from './profile.messages';
 import styles from './profile.module.css';

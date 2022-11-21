@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Link } from '../../../ui/link/link';
-import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
-import { Appearance, useThemeContext } from '../../../util/theming/theme_provider';
-import { Text } from './../../../ui/text/text';
+import { Link } from '../../../..//ui/link/link';
+import { Locale, useLocaleContext } from '../../../../util/localisation/locale_provider';
+import { Appearance, useThemeContext } from '../../../../util/theming/theme_provider';
+import { Text } from './../../../../ui/text/text';
 import { ExperiencesMessages as Messages } from './experiences.messages';
 import styles from './experiences.module.css';
 

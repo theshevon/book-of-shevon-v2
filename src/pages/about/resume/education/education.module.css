@@ -1,5 +1,5 @@
-@value colourDarkModeGrey50, flatGold from '../../../ui/colours/colours.module.css';
-@value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
+@value colourDarkModeGrey50, flatGold from '../../../../ui/colours/colours.module.css';
+@value breakpointSmall from '../../../../ui/metrics/breakpoints.module.css';
 
 @value bottomMargin: 7.5px;
 @value boldFontWeight: 500;

@@ -1,4 +1,4 @@
-import { Locale } from '../../../../util/localisation/locale_provider';
+import { Locale } from '../../../../../util/localisation/locale_provider';
 import type { EducationProps } from '../../education/education';
 import { EducationMessages as Messages } from './education.messages';
 

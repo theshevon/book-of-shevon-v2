@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FC } from 'react';
-import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
-import { Text } from './../../../ui/text/text';
+import { Text } from '../../../../ui/text/text';
+import { Locale, useLocaleContext } from '../../../../util/localisation/locale_provider';
 import { SectionMessages as Messages } from './section.messages';
 import styles from './section.module.css';
 

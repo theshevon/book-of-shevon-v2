@@ -1,5 +1,5 @@
-@value colourGrey100, colourDarkModeGrey50, colourDarkModeGrey700 from '../../../ui/colours/colours.module.css';
-@value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
+@value colourGrey100, colourDarkModeGrey50, colourDarkModeGrey700 from '../../../../ui/colours/colours.module.css';
+@value breakpointSmall from '../../../../ui/metrics/breakpoints.module.css';
 
 .skillsListContainer:not(:last-of-type) {
     margin-bottom: calc(3 * 7.5px);

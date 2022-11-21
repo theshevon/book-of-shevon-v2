@@ -1,4 +1,4 @@
-import { Locale } from '../../../../util/localisation/locale_provider';
+import { Locale } from '../../../../../util/localisation/locale_provider';
 
 export const ExperiencesMessages = {
 
