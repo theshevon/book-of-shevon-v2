@@ -9,7 +9,7 @@ export const ThemeProviderMessages = {
 
   eightBit: {
     [Locale.ENGLISH]: '8 Bit',
-    [Locale.KOREAN]: '8비트',
+    [Locale.KOREAN]: '8 비트',
   },
 
   light: {

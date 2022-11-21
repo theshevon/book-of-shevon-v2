@@ -115,7 +115,7 @@ const ThemeAppearanceOptions = () => {
         <ThemeAppearanceButton
             label={APPEARANCES[appearance].label(locale)}
             onClick={() => setAppearance(appearance === Appearance.LIGHT ? Appearance.DARK : Appearance.LIGHT)}
-            icon={appearance === Appearance.LIGHT ? APPEARANCES[Appearance.DARK].icon : APPEARANCES[Appearance.LIGHT].icon}
+            icon={appearance === Appearance.LIGHT ? APPEARANCES[Appearance.LIGHT].icon : APPEARANCES[Appearance.DARK].icon}
             className={styles.appearanceOption}
         />
       </div>

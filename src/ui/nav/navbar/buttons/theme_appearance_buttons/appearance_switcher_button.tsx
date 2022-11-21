@@ -14,7 +14,7 @@ export const AppearanceSwitcherButton = ({
   return (
     <ThemeAppearanceButton
         onClick={() => setAppearance(appearance === Appearance.LIGHT ? Appearance.DARK : Appearance.LIGHT)}
-        label={appearance === Appearance.LIGHT ? APPEARANCES[Appearance.DARK].icon : APPEARANCES[Appearance.LIGHT].icon}
+        label={appearance === Appearance.LIGHT ? APPEARANCES[Appearance.LIGHT].icon : APPEARANCES[Appearance.DARK].icon}
         tooltipLabel={`${ Messages.Appearance[locale] }: ${ APPEARANCES[appearance].label(locale) }`}
         activeRoute={activeRoute}
     />
