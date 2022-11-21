@@ -4,7 +4,7 @@ import { Routes } from '../../../../../routes/routes';
 import { Appearance, Theme, useThemeContext } from '../../../../../util/theming/theme_provider';
 import { Button } from '../../../../button/button';
 import styles from './theme_appearance_button.module.css';
-import { TooltipWrapper } from './tooltip/tooltip';
+import { TooltipWrapper } from './tooltip_wrapper/tooltip_wrapper';
 
 const getLocationSpecificThemeStyles = (activeRoute: string) => {
   if (activeRoute === Routes.PROJECTS) {
@@ -16,17 +16,20 @@ export const ThemeAppearanceButton = ({
   onClick,
   inActive,
   label,
+  tooltipLabel,
   activeRoute,
 }: {
   onClick: () => void,
   inActive?: boolean,
   label: string,
+  tooltipLabel: string,
   activeRoute: string,
 }) => {
   const { theme, appearance } = useThemeContext();
   return (
     <TooltipWrapper
-        label={'something'}
+        label={tooltipLabel}
+        activeRoute={activeRoute}
     >
       <Button
           onClick={onClick}
