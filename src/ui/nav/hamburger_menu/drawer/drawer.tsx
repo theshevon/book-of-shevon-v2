@@ -137,13 +137,13 @@ const ThemeAppearanceButton = ({
   active?: boolean,
 }) => (
   <div
-      className={classNames(styles.themeAppearanceButton, {
-        [styles.active]: active,
-      })}
+      className={styles.themeAppearanceButton}
   >
     <Button
         onClick={onClick}
-        className={className}
+        className={classNames(className, {
+          [styles.active]: active,
+        })}
     >
       { icon }
     </Button>
@@ -204,13 +204,13 @@ const LocaleButton = ({
   active?: boolean,
 }) => (
   <div
-      className={classNames(styles.localeButton, {
-        [styles.active]: active,
-      })}
+      className={styles.localeButton}
   >
     <Button
         onClick={onClick}
-        className={className}
+        className={classNames(className, {
+          [styles.active]: active,
+        })}
     >
       <Text.UltraSmall
           textCase='uppercase'

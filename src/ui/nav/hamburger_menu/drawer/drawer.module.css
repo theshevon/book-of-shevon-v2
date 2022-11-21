@@ -92,7 +92,10 @@
   box-shadow: inset -2px -2px 0px 0px colourDarkModeGrey700 !important;
 }
 
-.drawer.eightBit .link.active {
+.drawer.eightBit .link.active,
+.drawer.eightBit .themeOption.active,
+.drawer.eightBit .appearanceOption.active,
+.drawer.eightBit .localeOption.active {
   box-shadow: inset -3px -3px 0px 0px colourGrey300 !important;
 }
 
@@ -100,45 +103,70 @@
 .drawer.eightBit.projects .themeOption,
 .drawer.eightBit.projects .appearanceOption,
 .drawer.eightBit.projects .localeOption {
-background-color: colourMarioLightBrown;
+  background-color: colourMarioLightBrown;
 }
 
 .drawer.eightBit .themeOption,
 .drawer.eightBit .appearanceOption,
 .drawer.eightBit .localeOption {
-  box-shadow: inset -2px -2px 0px 0px colourGrey300 !important;
+  border: none;
+  box-shadow: inset -2px -2px 0px 0px colourGrey100 !important;
 }
 
-.drawer.eightBit.dark .link.active {
+.drawer.eightBit.dark .link.active,
+.drawer.eightBit.dark .themeOption.active,
+.drawer.eightBit.dark .appearanceOption.active,
+.drawer.eightBit.dark .localeOption.active {
   box-shadow: inset -3px -3px 0px 0px colourDarkModeGrey400 !important;
 }
 
 .drawer.eightBit.dark .themeOption,
 .drawer.eightBit.dark .appearanceOption,
 .drawer.eightBit.dark .localeOption {
-  box-shadow: inset -2px -2px 0px 0px colourDarkModeGrey400 !important;
+  box-shadow: inset -2px -2px 0px 0px colourDarkModeGrey700 !important;
 }
 
 .drawer.eightBit .link.active::before,
-.drawer.eightBit .link.active::after,
+.drawer.eightBit .link.active::after {
+  border-color: colourGrey500 !important;
+}
+
 .drawer.eightBit .themeOption::before,
 .drawer.eightBit .themeOption::after,
 .drawer.eightBit .appearanceOption::before,
 .drawer.eightBit .appearanceOption::after,
 .drawer.eightBit .localeOption::before,
 .drawer.eightBit .localeOption::after {
-  border-color: colourGrey500 !important;
+  border-color: colourGrey200 !important;
 }
 
-.drawer.eightBit.dark .link.active::before,
-.drawer.eightBit.dark .link.active::after,
+.drawer.eightBit .themeOption.active::before,
+.drawer.eightBit .themeOption.active::after,
+.drawer.eightBit .appearanceOption.active::before,
+.drawer.eightBit .appearanceOption.active::after,
+.drawer.eightBit .localeOption.active::before,
+.drawer.eightBit .localeOption.active::after {
+  border-color: black !important;
+}
+
 .drawer.eightBit.dark .themeOption::before,
 .drawer.eightBit.dark .themeOption::after,
 .drawer.eightBit.dark .appearanceOption::before,
 .drawer.eightBit.dark .appearanceOption::after,
 .drawer.eightBit.dark .localeOption::before,
 .drawer.eightBit.dark .localeOption::after {
-  border-color: colourDarkModeGrey700 !important;
+  border-color: colourDarkModeGrey800 !important;
+}
+
+.drawer.eightBit.dark .link.active::before,
+.drawer.eightBit.dark .link.active::after,
+.drawer.eightBit.dark .themeOption.active::before,
+.drawer.eightBit.dark .themeOption.active::after,
+.drawer.eightBit.dark .appearanceOption.active::before,
+.drawer.eightBit.dark .appearanceOption.active::after,
+.drawer.eightBit.dark .localeOption.active::before,
+.drawer.eightBit.dark .localeOption.active::after {
+  border-color: colourDarkModeGrey500 !important;
 }
 
 .drawer.eightBit .link::before,
@@ -151,11 +179,6 @@ background-color: colourMarioLightBrown;
   border-color: colourDarkModeGrey800 !important;
 }
 
-.drawer.eightBit.dark .link.active::before,
-.drawer.eightBit.dark .link.active::after {
-  border-color: colourDarkModeGrey500 !important;
-}
-
 .drawer.eightBit.projects .link,
 .drawer.eightBit.projects .themeOption,
 .drawer.eightBit.projects .appearanceOption,
@@ -163,7 +186,16 @@ background-color: colourMarioLightBrown;
   box-shadow: inset -2px -2px 0px 0px colourMarioDarkBrown !important;
 }
 
-.drawer.eightBit.projects .link.active {
+.drawer.eightBit.projects .themeOption,
+.drawer.eightBit.projects .appearanceOption,
+.drawer.eightBit.projects .localeOption {
+  box-shadow: none !important;
+}
+
+.drawer.eightBit.projects .link.active,
+.drawer.eightBit.projects .themeOption.active,
+.drawer.eightBit.projects .appearanceOption.active,
+.drawer.eightBit.projects .localeOption.active {
   box-shadow: inset -3px -3px 0px 0px colourMarioDarkBrown !important;
 }
 
@@ -172,33 +204,51 @@ background-color: colourMarioLightBrown;
   border-color: colourMarioDarkBrown !important;
 }
 
+.drawer.eightBit.projects .themeOption:not(.active)::before,
+.drawer.eightBit.projects .themeOption:not(.active)::after,
+.drawer.eightBit.projects .appearanceOption:not(.active)::before,
+.drawer.eightBit.projects .appearanceOption:not(.active)::after,
+.drawer.eightBit.projects .localeOption:not(.active)::before,
+.drawer.eightBit.projects .localeOption:not(.active)::after {
+  border: none;
+}
+
 .drawer.eightBit.projects .link.active::before,
 .drawer.eightBit.projects .link.active::after,
-.drawer.eightBit.projects .themeOption::before,
-.drawer.eightBit.projects .themeOption::after,
-.drawer.eightBit.projects .appearanceOption::before,
-.drawer.eightBit.projects .appearanceOption::after,
-.drawer.eightBit.projects .localeOption::before,
-.drawer.eightBit.projects .localeOption::after {
+.drawer.eightBit.projects .themeOption.active::before,
+.drawer.eightBit.projects .themeOption.active::after,
+.drawer.eightBit.projects .appearanceOption.active::before,
+.drawer.eightBit.projects .appearanceOption.active::after,
+.drawer.eightBit.projects .localeOption.active::before,
+.drawer.eightBit.projects .localeOption.active::after {
   border-color: black !important;
 }
 
-.drawer:not(.eightBit) .link {
+.drawer:not(.eightBit) .link,
+.drawer:not(.eightBit) .themeOption,
+.drawer:not(.eightBit) .appearanceOption,
+.drawer:not(.eightBit) .localeOption {
   border: 1px solid colourGrey100;
 }
 
 .drawer:not(.eightBit) .link.active,
-.drawer:not(.eightBit) .themeOption,
-.drawer:not(.eightBit) .appearanceOption,
-.drawer:not(.eightBit) .localeOption {
+.drawer:not(.eightBit) .themeOption.active,
+.drawer:not(.eightBit) .appearanceOption.active,
+.drawer:not(.eightBit) .localeOption.active {
   border: 1px solid colourGrey200;
 }
 
-.drawer.dark:not(.eightBit) .link {
+.drawer.dark:not(.eightBit) .link,
+.drawer.dark:not(.eightBit) .themeOption,
+.drawer.dark:not(.eightBit) .appearanceOption,
+.drawer.dark:not(.eightBit) .localeOption {
   border: 1px solid colourDarkModeGrey700;
 }
 
-.drawer.dark:not(.eightBit) .link.active {
+.drawer.dark:not(.eightBit) .link.active,
+.drawer.dark:not(.eightBit) .themeOption.active,
+.drawer.dark:not(.eightBit) .appearanceOption.active,
+.drawer.dark:not(.eightBit) .localeOption.active {
   border: 1px solid colourDarkModeGrey200;
 }
 
@@ -242,11 +292,6 @@ background-color: colourMarioLightBrown;
   align-items: center;
   justify-content: center;
   width: 60px;
-}
-
-.themeAppearanceButton:not(.active),
-.localeButton:not(.active) {
-  opacity: 0.4 !important;
 }
 
 .localeButton {
