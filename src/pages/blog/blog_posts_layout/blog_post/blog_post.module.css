@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 @value breakpointSmall from './../../../../ui/metrics/breakpoints.module.css';
 @value colourLimeGreen400, colourLimeGreen600, colourGrey500, colourDarkModeGrey900 from './../../../../ui/colours/colours.module.css';
 
@@ -44,12 +42,6 @@
     background-color: colourLimeGreen400;
     border-radius: 4px;
     padding: tagPadding;
-}
-
-.blogPost:not(.eightBit) .desc,
-.blogPost:not(.eightBit) .date,
-.blogPost:not(.eightBit) .tag {
-    font-family: 'Tinos', serif;
 }
 
 .date {

@@ -2,6 +2,8 @@
 @value breakpointSmall from '../../ui/metrics/breakpoints.module.css';
 @value eightBitFontScaleFactor from '../../ui/text/text.module.css';
 
+@value titleFontSize: 3.25rem;
+
 .siteTitleContainer {
     position: absolute;
     left: 50%;
@@ -13,18 +15,14 @@
     width: 80%;
 }
 
-.siteTitleContainer:not(.eightBit) .siteTitle {
-    font-family: 'FreeMono', monospace;
-}
-
 .siteTitle {
     white-space: nowrap;
-    font-size: 2.5rem !important;
-    margin-bottom: 15px;
+    font-size: titleFontSize !important;
+    margin-bottom: 20px;
 }
 
 .siteTitleContainer.eightBit .siteTitle {
-    font-size: calc(0.6 * 2.5rem) !important;
+    font-size: calc(eightBitFontScaleFactor * titleFontSize) !important;
 }
 
 .siteTitleContainer.dark .siteTitle {

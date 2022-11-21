@@ -172,7 +172,7 @@ export const ExperiencesMessages = {
   },
 
   CissaResponsibility2: {
-    [Locale.ENGLISH]: 'University of Melbourne\'s Clubs & Societies Awards Night에서 \'가장 재미있는 디자인\'을 수상한 디자인 제작',
-    [Locale.KOREAN]: '2월',
+    [Locale.ENGLISH]: 'Created the design that won \'Most Entertaining Design\' at the University of Melbourne\'s Clubs & Societies Awards Night',
+    [Locale.KOREAN]: 'University of Melbourne의 Clubs & Societies Awards Night에서 \'가장 재미있는 디자인\'을 수상한 디자인 제작',
   },
 };
