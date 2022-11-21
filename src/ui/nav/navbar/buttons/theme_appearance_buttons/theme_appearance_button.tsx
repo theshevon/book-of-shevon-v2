@@ -42,7 +42,7 @@ export const ThemeAppearanceButton = ({
             [styles.dark]: appearance === Appearance.DARK,
           }, getLocationSpecificThemeStyles(activeRoute))}
       >
-        { label }
+        { label.toUpperCase() }
       </Button>
     </TooltipWrapper>
   );

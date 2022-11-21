@@ -12,7 +12,7 @@ type Alignment = 'left' | 'right' | 'centre' | 'justify';
 
 type FontWeight = 'light' | 'normal' | 'semi-bold' | 'bold';
 
-type TextCase = 'none' | 'lowercase' | 'uppercase' | 'capitalize';
+type TextCase = 'none' | 'lowercase' | 'uppercase' | 'capitalise';
 
 type TextProps = {
   alignment?: Alignment,
@@ -77,8 +77,8 @@ const getTextCaseClassName = (textCase: TextCase | undefined) => {
       return styles.lowercase;
     case 'uppercase':
       return styles.uppercase;
-    case 'capitalize':
-      return styles.capitalize;
+    case 'capitalise':
+      return styles.capitalise;
     default:
       return styles.none;
   }

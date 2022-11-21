@@ -60,7 +60,7 @@ export const TooltipWrapper: React.FC<TooltipProps> = ({
         >
           <Text.UltraSmall
               alignment='centre'
-              textCase='capitalize'
+              textCase='capitalise'
               className={styles.tooltipLabel}
           >
             { label }

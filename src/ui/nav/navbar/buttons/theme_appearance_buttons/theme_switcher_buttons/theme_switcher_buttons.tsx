@@ -25,7 +25,7 @@ export const ThemeSwitcherButtons = ({
               onClick={() => setTheme(themeOption.theme)}
               inActive={themeOption.theme !== theme}
               label={themeOption.icon}
-              tooltipLabel={`${ Messages.Theme[locale] }: ${ themeOption.label(locale) }`}
+              tooltipLabel={`${ Messages.theme[locale] }: ${ themeOption.label(locale) }`}
               activeRoute={activeRoute}
           />
         </div>
