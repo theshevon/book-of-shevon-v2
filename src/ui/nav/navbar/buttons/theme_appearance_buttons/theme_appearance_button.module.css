@@ -1,0 +1,84 @@
+@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey50, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey600, colourDarkModeGrey700, colourDarkModeGrey800, colourMarioDarkBrown, colourMarioWhite, colourMarioLightBrown from '../../../../colours/colours.module.css';
+
+
+.themeAppearanceButton {
+  box-sizing: border-box;
+  height: 32px;
+}
+
+/* light mode - basic */
+
+.themeAppearanceButton:not(.eightBit) {
+  border-color: colourGrey100;
+}
+
+.themeAppearanceButton:not(.eightBit):hover {
+  border-color: colourGrey200;
+}
+
+/* dark mode - basic */
+
+.themeAppearanceButton:not(.eightBit).dark {
+  border-color: colourDarkModeGrey800;
+}
+
+.themeAppearanceButton:not(.eightBit).dark:hover {
+  border-color: colourDarkModeGrey200;
+}
+
+/* light mode - 8bit */
+
+.themeAppearanceButton.eightBit:not(.projects) {
+  box-shadow: inset -2px -2px 0px 0px colourGrey100 !important;
+}
+
+.themeAppearanceButton.eightBit:not(.projects)::before,
+.themeAppearanceButton.eightBit:not(.projects)::after {
+  border-color: colourGrey200 !important;
+}
+
+.themeAppearanceButton.eightBit:not(.projects):hover {
+  box-shadow: inset -3px -3px 0px 0px colourGrey300 !important;
+}
+
+.themeAppearanceButton.eightBit:not(.projects):hover::before,
+.themeAppearanceButton.eightBit:not(.projects):hover::after {
+  border-color: colourGrey500 !important;
+}
+
+/* dark mode - 8bit */
+
+.themeAppearanceButton.eightBit.dark {
+  box-shadow: inset -2px -2px 0px 0px colourDarkModeGrey400 !important;
+}
+
+.themeAppearanceButton.eightBit:not(.projects).dark::before,
+.themeAppearanceButton.eightBit:not(.projects).dark::after {
+  border-color: colourDarkModeGrey700 !important;
+}
+
+.themeAppearanceButton.eightBit:not(.projects).dark:hover {
+  box-shadow: inset -3px -3px 0px 0px colourGrey300 !important;
+}
+
+/* projects - 8 bit */
+
+.themeAppearanceButton.eightBit.projects {
+  background-color: colourMarioLightBrown;
+  box-shadow: inset -2px -2px 0px 0px colourMarioDarkBrown !important;
+}
+
+.themeAppearanceButton.eightBit.projects::after {
+  border-left-color: colourMarioWhite !important;
+  border-right-color: black !important;
+}
+
+.themeAppearanceButton.eightBit.projects::before {
+  border-top-color: colourMarioWhite !important;
+  border-bottom-color: black !important;
+}
+
+.themeAppearanceButton.eightBit.projects:hover {
+  box-shadow: inset -3px -3px 0px 0px colourMarioDarkBrown !important;
+}
+

@@ -23,6 +23,30 @@
     height: inherit;
 }
 
+.mainNavbar .leftPartition,
+.mainNavbar .centrePartition,
+.mainNavbar .rightPartition {
+    display: flex;
+}
+
+.mainNavbar .centrePartition {
+    width: 80%;
+    justify-content: center;
+}
+
+.mainNavbar .leftPartition,
+.mainNavbar .rightPartition {
+    width: 7.5%;
+}
+
+.mainNavbar .leftPartition {
+    justify-content: left;
+}
+
+.mainNavbar .rightPartition {
+    justify-content: right;
+}
+
 .menuContainerOuter {
     position: absolute;
     top: 0;
