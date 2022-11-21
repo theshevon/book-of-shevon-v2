@@ -9,7 +9,7 @@ export const PagePlaceholder = () => {
     <div className={classNames(styles.container, {
       [styles.dark]: appearance === Appearance.DARK,
     })}>
-      <div className={styles.spinner}></div>
+      <div className={styles.loader}></div>
     </div>
   );
 };

@@ -124,9 +124,7 @@ export const contexts = [
       },
     ],
     options: {
-      deep: true,
-      disable: false,
-      cancelable: false,
+      disable: true,
     },
   }
 ];
