@@ -6,11 +6,6 @@
   height: 32px;
 }
 
-.themeAppearanceButton.inActive:not(:hover) {
-  filter: grayscale(100%);
-  transition: 300ms ease;
-}
-
 /* light mode - basic */
 
 .themeAppearanceButton:not(.eightBit) {
@@ -57,33 +52,33 @@
   box-shadow: inset -2px -2px 0px 0px colourDarkModeGrey400 !important;
 }
 
-.themeOptionButton.eightBit:not(.projects).dark::before,
-.themeOptionButton.eightBit:not(.projects).dark::after {
+.themeAppearanceButton.eightBit:not(.projects).dark::before,
+.themeAppearanceButton.eightBit:not(.projects).dark::after {
   border-color: colourDarkModeGrey700 !important;
 }
 
-.themeOptionButton.eightBit:not(.projects).dark:hover {
+.themeAppearanceButton.eightBit:not(.projects).dark:hover {
   box-shadow: inset -3px -3px 0px 0px colourGrey300 !important;
 }
 
 /* projects - 8 bit */
 
-.themeOptionButton.eightBit.projects {
+.themeAppearanceButton.eightBit.projects {
   background-color: colourMarioLightBrown;
   box-shadow: inset -2px -2px 0px 0px colourMarioDarkBrown !important;
 }
 
-.themeOptionButton.eightBit.projects::after {
+.themeAppearanceButton.eightBit.projects::after {
   border-left-color: colourMarioWhite !important;
   border-right-color: black !important;
 }
 
-.themeOptionButton.eightBit.projects::before {
+.themeAppearanceButton.eightBit.projects::before {
   border-top-color: colourMarioWhite !important;
   border-bottom-color: black !important;
 }
 
-.themeOptionButton.eightBit.projects:hover {
+.themeAppearanceButton.eightBit.projects:hover {
   box-shadow: inset -3px -3px 0px 0px colourMarioDarkBrown !important;
 }
 

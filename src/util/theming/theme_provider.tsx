@@ -33,11 +33,11 @@ export const THEMES = [
 export const APPEARANCES = {
   [Appearance.LIGHT]: {
     label: (locale: Locale) => Messages.light[locale],
-    icon: '🌝',
+    icon: '☀️',
   },
   [Appearance.DARK]: {
     label: (locale: Locale) => Messages.dark[locale],
-    icon: '🌚',
+    icon: '🌙',
   },
 };
 
