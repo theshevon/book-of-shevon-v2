@@ -82,3 +82,13 @@
   box-shadow: inset -3px -3px 0px 0px colourMarioDarkBrown !important;
 }
 
+.themeAppearanceButton.eightBit.projects:hover::after {
+  border-left-color: black !important;
+  border-right-color: black !important;
+}
+
+.themeAppearanceButton.eightBit.projects:hover::before {
+  border-top-color: black !important;
+  border-bottom-color: black !important;
+}
+
