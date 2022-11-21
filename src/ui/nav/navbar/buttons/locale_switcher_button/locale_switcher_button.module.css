@@ -1,4 +1,4 @@
-@value colourDarkModeGrey50, colourGrey100, colourGrey200, colourGrey500 from '../../../../colours/colours.module.css';
+@value colourDarkModeGrey50, colourGrey100, colourGrey200, colourGrey500, colourMarioWhite from '../../../../colours/colours.module.css';
 
 .localeSwitcherButton {
   box-sizing: border-box;
@@ -89,4 +89,9 @@
 
 .dark .localeOption {
   color: colourDarkModeGrey50;
+}
+
+.eightBit.projects .localeOption {
+  color: colourMarioWhite;
+  text-shadow: 0 2px black;
 }
