@@ -11,8 +11,8 @@
     position: absolute;
     bottom: 17.5px;
     height: 2px;
+    width: 75px;
     background-color: colourGrey100;
-    animation: stretch 1.75s ease 1 forwards;
 }
 
 .eightBit .underline {
@@ -21,17 +21,6 @@
 
 .eightBit.dark .underline {
     background-color: colourDarkModeGrey400;
-}
-
-@keyframes stretch {
-    
-    0% {
-        width: 0px;
-    }
-
-    100% {
-        width: 75px;
-    }
 }
 
 @media(min-width: breakpointSmall) {
