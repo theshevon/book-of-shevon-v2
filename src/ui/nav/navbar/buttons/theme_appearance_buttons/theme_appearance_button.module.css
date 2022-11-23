@@ -68,12 +68,12 @@
 }
 
 .themeAppearanceButton.eightBit.projects::after {
-  border-left-color: colourMarioWhite !important;
+  border-left-color: black !important;
   border-right-color: black !important;
 }
 
 .themeAppearanceButton.eightBit.projects::before {
-  border-top-color: colourMarioWhite !important;
+  border-top-color: black !important;
   border-bottom-color: black !important;
 }
 
@@ -82,12 +82,10 @@
 }
 
 .themeAppearanceButton.eightBit.projects:hover::after {
-  border-left-color: black !important;
-  border-right-color: black !important;
+  border-left-color: colourMarioWhite !important;
 }
 
 .themeAppearanceButton.eightBit.projects:hover::before {
-  border-top-color: black !important;
-  border-bottom-color: black !important;
+  border-top-color: colourMarioWhite!important;
 }
 

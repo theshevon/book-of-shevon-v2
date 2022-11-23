@@ -101,13 +101,21 @@
 }
 
 .navbarButton.eightBit.projects:not(:hover):before {
-    border-top-color: colourMarioWhite;
+    border-top-color: black;
     border-bottom-color: black;
 }
 
 .navbarButton.eightBit.projects:not(:hover):after {
-    border-left-color: colourMarioWhite;
+    border-left-color: black;
     border-right-color: black;
+}
+
+.navbarButton.eightBit.projects:hover:before {
+    border-top-color: colourMarioWhite !important;
+}
+
+.navbarButton.eightBit.projects:hover:after {
+    border-left-color: colourMarioWhite !important;
 }
 
 @supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
