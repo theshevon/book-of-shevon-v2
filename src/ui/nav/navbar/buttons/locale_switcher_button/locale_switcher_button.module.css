@@ -76,7 +76,7 @@
 }
 
 .localeSwitcherButton:not(.eightBit) {
-  transition: opacity 300ms;
+  transition: 200ms;
 }
 
 .localeOption:hover {
@@ -94,4 +94,8 @@
 .eightBit.projects .localeOption {
   color: colourMarioWhite;
   text-shadow: 0 2px black;
+}
+
+.error .localeOption {
+  color: white;
 }

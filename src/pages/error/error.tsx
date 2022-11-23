@@ -174,6 +174,7 @@ export const Error = () => {
       >
         <Text.Large
             className={styles.errorMsg}
+            retainDarkTextOnDarkMode={true}
         >
           { Messages.errorMsgTitle[locale] }
         </Text.Large>

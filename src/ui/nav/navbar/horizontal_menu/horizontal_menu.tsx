@@ -16,6 +16,9 @@ const getLocationSpecificThemeStyles = (activeRoute: string) => {
   if (activeRoute === Routes.PROJECTS) {
     return styles.projects;
   }
+  if (!(Object.values(Routes).some(route => route.toString() === activeRoute))) {
+    return styles.error;
+  }
 };
 
 export const HorizontalMenu = ({

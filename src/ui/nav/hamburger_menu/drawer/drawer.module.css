@@ -1,4 +1,4 @@
-@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey600, colourDarkModeGrey700, colourDarkModeGrey800, colourDarkModeGrey50, colourMarioWhite, colourMarioLightBrown, colourMarioDarkBrown from './../../../colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey400, colourDarkModeGrey600, colourDarkModeGrey700, colourDarkModeGrey800, colourDarkModeGrey50, colourMarioWhite, colourMarioLightBrown, colourMarioDarkBrown, colourGreen400, colourGreen800 from './../../../colours/colours.module.css';
 @value navHeight, navBackgroundColourLight, navBackgroundBlur, navBoxShadowLight, navBackgroundColourDark, menuTransitionTime from './../../nav.module.css';
 @value toggleButtonDistanceFromEdge from './../hamburger_menu.module.css';
 @value toggleButtonSideLength from './../buttons/toggle_menu_button/toggle_menu_button.module.css';
@@ -17,10 +17,18 @@
   box-shadow: navBoxShadowLight;
 }
 
-.drawer.dark {
+.drawer.dark:not(.error) {
   background-color: navBackgroundColourDark;
   box-shadow: unset;
   border-bottom: 1px solid colourDarkModeGrey700;
+}
+
+.drawer.error {
+  background-color: colourGreen400;
+}
+
+.drawer.eightBit.error {
+  box-shadow: inset -3px -3px 0px 0px colourGreen800;
 }
 
 .drawer.eightBit.projects {
@@ -45,6 +53,10 @@
 
 .drawer.eightBit:not(.projects).dark::after {
   border-color: colourDarkModeGrey700;
+}
+
+.drawer.eightBit.error::after {
+  border-color: black;
 }
 
 .show {
@@ -179,6 +191,33 @@
   border-color: colourDarkModeGrey800 !important;
 }
 
+.drawer.eightBit.error .link::before,
+.drawer.eightBit.error .link::after,
+.drawer.eightBit.error .themeOption::before,
+.drawer.eightBit.error .themeOption::after,
+.drawer.eightBit.error .appearanceOption::before,
+.drawer.eightBit.error .appearanceOption::after,
+.drawer.eightBit.error .localeOption::before,
+.drawer.eightBit.error .localeOption::after {
+  border-color: colourGreen800 !important;
+}
+
+.drawer.eightBit.error .themeOption.active::before,
+.drawer.eightBit.error .themeOption.active::after,
+.drawer.eightBit.error .appearanceOption.active::before,
+.drawer.eightBit.error .appearanceOption.active::after,
+.drawer.eightBit.error .localeOption.active::before,
+.drawer.eightBit.error .localeOption.active::after {
+  border-color: white !important;
+}
+
+.drawer.eightBit.error .link.active,
+.drawer.eightBit.error .themeOption.active,
+.drawer.eightBit.error .appearanceOption.active,
+.drawer.eightBit.error .localeOption.active {
+  box-shadow: inset -3px -3px 0px 0px colourGreen800 !important;
+}
+
 .drawer.eightBit.projects .link,
 .drawer.eightBit.projects .themeOption,
 .drawer.eightBit.projects .appearanceOption,
@@ -252,6 +291,13 @@
   border: 1px solid colourDarkModeGrey200;
 }
 
+.drawer.eightBit.error .link,
+.drawer.eightBit.error .themeOption,
+.drawer.eightBit.error .appearanceOption,
+.drawer.eightBit.error .localeOption {
+  box-shadow: inset -2px -2px 0px 0px white !important;
+}
+
 .drawer.dark .horizontalDivider {
   background-color: colourDarkModeGrey700;
 }
@@ -303,11 +349,6 @@
   width: 65px;
 }
 
-.drawer:not(.projects.eightBit) .themeAppearanceButton:not(.active)
-.drawer:not(.projects.eightBit) .localeButton:not(.active) {
-  filter: grayscale(100%);
-}
-
 .verticalDivider {
   top: 50%;
   content: '';
@@ -340,6 +381,28 @@
 .drawer.projects.eightBit .textContent {
   color: colourMarioWhite;
   text-shadow: 0 2px black;
+}
+
+.drawer.error .link,
+.drawer.error .appearanceOption,
+.drawer.error .themeOption,
+.drawer.error .localeOption {
+  border-color: colourGreen800;
+}
+
+.drawer.error .appearanceOption.active,
+.drawer.error .themeOption.active,
+.drawer.error .localeOption.active {
+  border-color: white;
+}
+
+.drawer.error .textContent {
+  color: white;
+}
+
+.drawer.error .verticalDivider,
+.drawer.error .horizontalDivider {
+  background-color: white;
 }
 
 @supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {

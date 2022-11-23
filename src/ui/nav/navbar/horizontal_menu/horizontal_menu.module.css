@@ -1,4 +1,4 @@
-@value colourMarioLightBrown, colourMarioWhite, colourGrey300, colourGrey500, colourDarkModeGrey200, colourDarkModeGrey500 from './../../../colours/colours.module.css';
+@value colourMarioLightBrown, colourMarioWhite, colourGrey300, colourGrey500, colourGreen800, colourDarkModeGrey200, colourDarkModeGrey500 from './../../../colours/colours.module.css';
 
 @value menuHeight: 35px;
 
@@ -27,7 +27,7 @@
     text-transform: uppercase;
     text-decoration: none;
     color: colourGrey300;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
 .link.dark {
@@ -42,6 +42,14 @@
 .link.eightBit.projects {
   color: colourMarioWhite;
   text-shadow: 0 2px black;
+}
+
+.link.error {
+  color: white;
+}
+
+.link.error:hover {
+  color: colourGreen800;
 }
 
 .link:hover,

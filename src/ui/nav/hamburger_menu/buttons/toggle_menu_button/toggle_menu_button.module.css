@@ -32,6 +32,10 @@
   background-color: colourMarioWhite;
 }
 
+.toggleMenuButton.error.menuOpen .line {
+  background-color: white;
+}
+
 .line:nth-of-type(1) {
   transform: translateY(5px);
 }
