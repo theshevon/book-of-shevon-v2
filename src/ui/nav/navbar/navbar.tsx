@@ -5,7 +5,7 @@ import { Routes } from '../../../routes/routes';
 import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
 import type { RouteData } from './../../../routes/route_data/route_data';
 import { LocaleSwitcherButton } from './buttons/locale_switcher_button/locale_switcher_button';
-import { AppearanceSwitcherButton } from './buttons/theme_appearance_buttons/appearance_switcher_button';
+import { AppearanceSwitcherButton } from './buttons/theme_appearance_buttons/appearance_switcher_button/appearance_switcher_button';
 import { ThemeSwitcherButtons } from './buttons/theme_appearance_buttons/theme_switcher_buttons/theme_switcher_buttons';
 import { ToggleMenuButton } from './buttons/toggle_menu_button/toggle_menu_button';
 import { HorizontalMenu } from './horizontal_menu/horizontal_menu';
@@ -41,9 +41,6 @@ export const Navbar = ({
         <div
             className={styles.leftPartition}
         >
-          <ThemeSwitcherButtons
-              activeRoute={activeRoute}
-          />
         </div>
         <div
             className={styles.centrePartition}
@@ -60,6 +57,14 @@ export const Navbar = ({
         <div
             className={styles.rightPartition}
         >
+          <ThemeSwitcherButtons
+              activeRoute={activeRoute}
+          />
+          <div
+              className={styles.verticalDivider}
+          >
+            &nbsp;
+          </div>
           <AppearanceSwitcherButton
               activeRoute={activeRoute}
           />
