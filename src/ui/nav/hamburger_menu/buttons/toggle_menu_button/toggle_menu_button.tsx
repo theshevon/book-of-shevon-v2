@@ -16,6 +16,9 @@ const getLocationSpecificThemeStyles = (activeRoute: string, theme: Theme) => {
   if (activeRoute === Routes.PROJECTS && theme === Theme.EIGHT_BIT) {
     return styles.projects;
   }
+  if (!(Object.values(Routes).some(route => route.toString() === activeRoute))) {
+    return styles.error;
+  }
 };
 
 export const ToggleMenuButton = ({
