@@ -142,6 +142,10 @@
 .navbarContainer.projects.eightBit .verticalDivider {
     background-color: colourMarioLightBrown !important;
 }
+
+.navbarContainer.error .verticalDivider {
+    background-color: white !important;
+}
   
 
 @supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {

@@ -5,6 +5,10 @@
   height: 32px;
 }
 
+.themeAppearanceButton:not(.eightBit) {
+  transition: 200ms;
+}
+
 /* light mode - basic */
 
 .themeAppearanceButton:not(.eightBit) {
