@@ -63,7 +63,7 @@
 }
 
 .localeOption:not(:hover):not(.active) {
-  opacity: 0.7 !important;
+  opacity: 0.5 !important;
   filter: grayscale(100%);
 }
 
