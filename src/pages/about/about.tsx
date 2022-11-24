@@ -7,6 +7,7 @@ import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_pro
 import { updateDocumentHeader } from '../../util/title_manager';
 import { AboutMessages as Messages } from './about.messages';
 import styles from './about.module.css';
+import { FriendshipsPhoto } from './friendships_photo/friendships_photo';
 import profilePic from './profile.jpeg';
 import { Resume } from './resume/resume';
 
@@ -42,6 +43,7 @@ export const About = () => {
       >
         (don&apos;t call me shev; that&apos;s for close friends only 😤)
       </Text.UltraSmall>
+      <FriendshipsPhoto/>
       <Text.Small
           alignment='centre'
           keepDefaultMargins={true}
