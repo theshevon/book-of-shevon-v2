@@ -8,16 +8,8 @@ import doItForThemSrc from './photos/do_it_for_them.png';
 type OverlayFriendPictureProps = {
   id: string,
   imageSrc: string,
-  tooltipLabel: (locale: Locale) => string,
-  description: (locale: Locale) => string,
-  dimensions: {
-    width: number,
-    height: number,
-  },
-  relativePosition: {
-    top: number,
-    left: number,
-  },
+  tooltipLabel?: (locale: Locale) => string,
+  description?: (locale: Locale) => string,
 };
 
 export const FriendshipsPhoto = () => {
@@ -46,8 +38,6 @@ const OverlayFriendPicture = ({
   imageSrc,
   tooltipLabel,
   description,
-  dimensions,
-  relativePosition,
 }: OverlayFriendPictureProps) => {
   const { locale } = useLocaleContext();
   return (
@@ -55,5 +45,5 @@ const OverlayFriendPicture = ({
         src={imageSrc}
         className={classNames(styles.overlayFriendPicture, styles[id])}
     />
-  )
+  );
 };

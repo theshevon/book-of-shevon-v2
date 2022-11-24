@@ -1,6 +1,7 @@
 .friendshipsPhotoContainer {
-  width: 50%;
+  width: 1000px;
   position: relative;
+  margin: 150px 0;
 }
 
 .pictureFrame {
@@ -9,5 +10,69 @@
 
 .overlayFriendPicture {
   position: absolute;
-  z-index: 20;
+  z-index: 1;
+}
+
+.stefan {
+  width: 260px;
+  left: -15px;
+  top: -90px
+}
+
+.asil {
+  z-index: 2;
+  width: 230px;
+  right: -40px;
+  top: 155px;
+}
+
+.cissa {
+  width: 335px;
+  right: -5px;
+  top: -40px;
+}
+
+.curzon {
+  z-index: 2;
+  width: 300px;
+  left: -5px;
+  bottom: 30px;
+}
+
+.family {
+  z-index: 3;
+  width: 240px;
+  left: 210px;
+  bottom: -60px;
+}
+
+.johnAsil {
+  width: 280px;
+  left: 370px;
+  top: -95px;
+}
+
+.josh {
+  width: 230px;
+  left: 280px;
+  bottom: 150px;
+}
+
+.mihirBev {
+  z-index: 3;
+  width: 360px;
+  left: 465px;
+  bottom: -60px;
+}
+
+.rohyl {
+  width: 55px;
+  left: 300px;
+  top: 70px;
+}
+
+.shevon {
+  width: 67.5px;
+  left: 220px;
+  top: 99px;
 }
