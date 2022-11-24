@@ -1,0 +1,13 @@
+.friendshipsPhotoContainer {
+  width: 50%;
+  position: relative;
+}
+
+.pictureFrame {
+  width: 100%;
+}
+
+.overlayFriendPicture {
+  position: absolute;
+  z-index: 20;
+}

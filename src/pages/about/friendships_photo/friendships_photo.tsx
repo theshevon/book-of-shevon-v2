@@ -1,8 +1,59 @@
-import React from 'react';
+import classNames from 'classnames';
+import React, { useRef } from 'react';
+import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
+import { Friends as FriendsPictureData } from './data/friends';
+import styles from './friendships_photo.module.css';
 import doItForThemSrc from './photos/do_it_for_them.png';
 
+type OverlayFriendPictureProps = {
+  id: string,
+  imageSrc: string,
+  tooltipLabel: (locale: Locale) => string,
+  description: (locale: Locale) => string,
+  dimensions: {
+    width: number,
+    height: number,
+  },
+  relativePosition: {
+    top: number,
+    left: number,
+  },
+};
+
 export const FriendshipsPhoto = () => {
+  const ref = useRef(null);
   return (
-    <img src={doItForThemSrc}></img>
+    <div
+        className={styles.friendshipsPhotoContainer}
+    >
+      <img
+          className={styles.pictureFrame}
+          src={doItForThemSrc}
+      />
+      { FriendsPictureData.map((friendPictureData, index) => (
+        <OverlayFriendPicture
+            key={index}
+            {...friendPictureData}
+        />
+      )) }
+
+    </div>
   );
+};
+
+const OverlayFriendPicture = ({
+  id,
+  imageSrc,
+  tooltipLabel,
+  description,
+  dimensions,
+  relativePosition,
+}: OverlayFriendPictureProps) => {
+  const { locale } = useLocaleContext();
+  return (
+    <img
+        src={imageSrc}
+        className={classNames(styles.overlayFriendPicture, styles[id])}
+    />
+  )
 };
