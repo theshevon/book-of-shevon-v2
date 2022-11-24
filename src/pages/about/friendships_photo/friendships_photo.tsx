@@ -1,8 +1,8 @@
 import React from 'react';
-import DoItForThemSrc from './photos/do_it_for_them.jpeg';
+import doItForThemSrc from './photos/do_it_for_them.png';
 
 export const FriendshipsPhoto = () => {
   return (
-    <img src={DoItForThemSrc}></img>
+    <img src={doItForThemSrc}></img>
   );
 };
