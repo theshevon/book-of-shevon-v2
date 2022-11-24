@@ -2,48 +2,53 @@ import { Locale } from '../../../../util/localisation/locale_provider';
 
 export const FriendsMessages = {
 
-  asil: {
+  asilTooltipLabel: {
     [Locale.ENGLISH]: 'Asil',
     [Locale.KOREAN]: '',
   },
 
-  cissa: {
+  cissaTooltipLabel: {
     [Locale.ENGLISH]: 'Raj, Grace, Jonathan and Michael',
     [Locale.KOREAN]: '',
   },
 
-  curzon: {
+  curzonTooltipLabel: {
     [Locale.ENGLISH]: 'Toby, Mia, Maiko and Florian',
     [Locale.KOREAN]: '',
   },
 
-  family: {
+  familyTooltipLabel: {
     [Locale.ENGLISH]: 'My family',
     [Locale.KOREAN]: '',
   },
 
-  josh: {
+  joshTooltipLabel: {
     [Locale.ENGLISH]: 'Josh',
     [Locale.KOREAN]: '',
   },
 
-  mihirAndBev: {
+  mihirAndBevTooltipLabel: {
     [Locale.ENGLISH]: 'Mihir and Bev',
     [Locale.KOREAN]: '',
   },
 
-  johnAndAsil: {
+  johnAndAsilTooltipLabel: {
     [Locale.ENGLISH]: 'John and Asil',
     [Locale.KOREAN]: '',
   },
 
-  rohyl: {
+  rohylTooltipLabel: {
     [Locale.ENGLISH]: 'Rohyl',
     [Locale.KOREAN]: '',
   },
 
-  stefan: {
+  stefanTooltipLabel: {
     [Locale.ENGLISH]: 'Stefan',
+    [Locale.KOREAN]: '',
+  },
+
+  shevonTooltipLabel: {
+    [Locale.ENGLISH]: 'Young Shevon',
     [Locale.KOREAN]: '',
   },
 

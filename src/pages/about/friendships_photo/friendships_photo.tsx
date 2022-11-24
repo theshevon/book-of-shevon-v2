@@ -41,9 +41,13 @@ const OverlayFriendPicture = ({
 }: OverlayFriendPictureProps) => {
   const { locale } = useLocaleContext();
   return (
-    <img
-        src={imageSrc}
-        className={classNames(styles.overlayFriendPicture, styles[id])}
-    />
+    <div
+        className={classNames(styles.overlayFriendPictureContainer, styles[id])}
+    >
+      <img
+          src={imageSrc}
+          className={styles.overlayFriendPicture}
+      />
+    </div>
   );
 };
