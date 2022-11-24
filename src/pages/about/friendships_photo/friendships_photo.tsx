@@ -11,6 +11,7 @@ type OverlayFriendPictureProps = {
   id: string,
   imageSrc: string,
   tooltipLabel: (locale: Locale) => string,
+  tooltipDirection: 'top' | 'bottom' | 'left' | 'right',
   description?: (locale: Locale) => string,
 };
 
@@ -38,6 +39,7 @@ const OverlayFriendPicture = ({
   id,
   imageSrc,
   tooltipLabel,
+  tooltipDirection,
   description,
 }: OverlayFriendPictureProps) => {
   const { locale } = useLocaleContext();
@@ -71,14 +73,17 @@ const OverlayFriendPicture = ({
             className={styles.overlayFriendPicture}
         />
         { active && (
-          <div className={classNames(styles.tooltip, styles.bottom, {
+          <div className={classNames(styles.tooltip, {
             [styles.eightBit]: theme === Theme.EIGHT_BIT,
             [styles.dark]: appearance === Appearance.DARK,
+            [styles.top]: tooltipDirection === 'top',
+            [styles.bottom]: tooltipDirection === 'bottom',
+            [styles.left]: tooltipDirection === 'left',
+            [styles.right]: tooltipDirection === 'right',
           })}
           >
             <Text.UltraSmall
                 alignment='centre'
-                textCase='capitalise'
                 className={styles.tooltipLabel}
             >
               { tooltipLabel(locale) }
