@@ -152,7 +152,7 @@
   }
   
   .tooltip.right {
-    left: calc(100% + tooltipMargin);
+    left: calc(100% + calc(tooltipMargin * 0.25));
     top: 50%;
     transform: translateX(0) translateY(-50%);
   }
@@ -175,7 +175,7 @@
   
   .tooltip.left {
     left: auto;
-    right: calc(100% + tooltipMargin);
+    right: calc(100% + calc(tooltipMargin * 0.25));
     top: 50%;
     transform: translateX(0) translateY(-50%);
   }

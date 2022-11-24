@@ -44,26 +44,14 @@ const OverlayFriendPicture = ({
 }: OverlayFriendPictureProps) => {
   const { locale } = useLocaleContext();
 
-  const [active, setActive] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
   const { appearance } = useThemeContext();
-
-  // eslint-disable-next-line no-undef
-  let timeout: string | number | NodeJS.Timeout | undefined;
-
-  const showTip = () => {
-    timeout = setTimeout(() => setActive(true), 400);
-  };
-
-  const hideTip = () => {
-    clearInterval(timeout);
-    setActive(false);
-  };
 
   return (
     <div
         className={classNames(styles.overlayFriendPictureContainerOuter, styles[id])}
-        onMouseEnter={showTip}
-        onMouseLeave={hideTip}
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
     >
       <div
           className={styles.overlayFriendPictureContainerInner}
@@ -72,8 +60,7 @@ const OverlayFriendPicture = ({
             src={imageSrc}
             className={styles.overlayFriendPicture}
         />
-        { /* TODO: fix tooltip positioning */ }
-        { active && (
+        { showTooltip && (
           <div className={classNames(styles.tooltip, {
             [styles.dark]: appearance === Appearance.DARK,
             [styles.top]: tooltipDirection === 'top',
