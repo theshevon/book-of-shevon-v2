@@ -1,5 +1,5 @@
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
-@value colourDarkModeGrey50 from '../../../ui/colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourDarkModeGrey50 from '../../../ui/colours/colours.module.css';
 
 @value tooltipMargin: 40px;
 @value tooltipArrowSize: 6px;
@@ -100,6 +100,60 @@
   width: 6.75%;
   left: 22%;
   top: 17.92%;
+}
+
+/* Tape section styles shamelessly copied over from https://codepen.io/aitchiss/pen/QWKmPqx */
+
+.tapeSectionTop,
+.tapeSectionBottom {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+
+.tapeSectionTop {
+  top: 0;
+}
+
+.tapeSectionBottom {
+  bottom: 0;
+}
+
+.tapeSectionTop::before,
+.tapeSectionTop::after,
+.tapeSectionBottom::before,
+.tapeSectionBottom::after {
+  content: "";
+  width: 15%;
+  height: 10%;
+  position: absolute;
+  background-color: colourGrey100;
+  opacity: 0.3;
+  border-right: 1px dotted colourGrey200;
+  border-left: 1px dotted colourGrey200;
+}
+
+.tapeSectionBottom::after {
+  transform: rotate(-45deg);
+  right: -5.6%;
+  bottom: 4.2%;
+}
+
+.tapeSectionTop::before {
+  transform: rotate(-45deg);
+  left: -5.6%;
+}
+
+.tapeSectionTop::after {
+  transform: rotate(45deg);
+  right: -5.6%;
+  top: 0;
+}
+
+.tapeSectionBottom::before {
+  transform: rotate(45deg);
+  left: -5.6%;
+  bottom: 0;
 }
 
 @media(min-width: breakpointSmall) {
