@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { useState } from 'react';
 import { Text } from '../../../ui/text/text';
 import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
-import { Appearance, Theme, useThemeContext } from '../../../util/theming/theme_provider';
+import { Appearance, useThemeContext } from '../../../util/theming/theme_provider';
 import { Friends as FriendsPictureData } from './data/friends';
 import doItForThemImgSrc from './data/photos/do_it_for_them.png';
 import styles from './friendships_photo.module.css';
@@ -45,7 +45,7 @@ const OverlayFriendPicture = ({
   const { locale } = useLocaleContext();
 
   const [active, setActive] = useState(false);
-  const { theme, appearance } = useThemeContext();
+  const { appearance } = useThemeContext();
 
   // eslint-disable-next-line no-undef
   let timeout: string | number | NodeJS.Timeout | undefined;
@@ -72,9 +72,9 @@ const OverlayFriendPicture = ({
             src={imageSrc}
             className={styles.overlayFriendPicture}
         />
+        { /* TODO: fix tooltip positioning */ }
         { active && (
           <div className={classNames(styles.tooltip, {
-            [styles.eightBit]: theme === Theme.EIGHT_BIT,
             [styles.dark]: appearance === Appearance.DARK,
             [styles.top]: tooltipDirection === 'top',
             [styles.bottom]: tooltipDirection === 'bottom',
