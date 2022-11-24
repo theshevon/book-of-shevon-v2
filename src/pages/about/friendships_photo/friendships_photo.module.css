@@ -1,5 +1,7 @@
+@value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
+
 .friendshipsPhotoContainer {
-  width: 1000px;
+  width: 100%;
   position: relative;
   margin: 150px 0;
 }
@@ -14,65 +16,72 @@
 }
 
 .stefan {
-  width: 260px;
-  left: -15px;
-  top: -90px
+  width: 26%;
+  left: -1.5%;
+  top: -16.28%;
 }
 
 .asil {
   z-index: 2;
-  width: 230px;
-  right: -40px;
-  top: 155px;
+  width: 23%;
+  right: -4%;
+  top: 28%;
 }
 
 .cissa {
-  width: 335px;
-  right: -5px;
-  top: -40px;
+  width: 33.5%;
+  right: -0.5%;
+  top: -7.24%;
 }
 
 .curzon {
   z-index: 2;
-  width: 300px;
-  left: -5px;
-  bottom: 30px;
+  width: 30%;
+  left: -0.5%;
+  bottom: 5.43%;
 }
 
 .family {
   z-index: 3;
-  width: 240px;
-  left: 210px;
-  bottom: -60px;
+  width: 24%;
+  left: 21%;
+  bottom: -10.86%;
 }
 
 .johnAsil {
-  width: 280px;
-  left: 370px;
-  top: -95px;
+  width: 28%;
+  left: 37%;
+  top: -17.19%;
 }
 
 .josh {
-  width: 230px;
-  left: 280px;
-  bottom: 150px;
+  width: 23%;
+  left: 28%;
+  bottom: 27.14%;
 }
 
 .mihirBev {
   z-index: 3;
-  width: 360px;
-  left: 465px;
-  bottom: -60px;
+  width: 36%;
+  left: 46.5%;
+  bottom: -10.86%;
 }
 
 .rohyl {
-  width: 55px;
-  left: 300px;
-  top: 70px;
+  width: 5.5%;
+  left: 30%;
+  top: 12.67%;
 }
 
 .shevon {
-  width: 67.5px;
-  left: 220px;
-  top: 99px;
+  width: 6.75%;
+  left: 22%;
+  top: 17.92%;
+}
+
+@media(min-width: breakpointSmall) {
+
+  .friendshipsPhotoContainer {
+    width: 65%;
+  }
 }
