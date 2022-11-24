@@ -1,81 +1,81 @@
 import { Locale } from '../../../../util/localisation/locale_provider';
 import { FriendsMessages as Messages } from './friends.messages';
-import asilPicSrc from './photos/asil.png';
-import cissaPicSrc from './photos/cissa.png';
-import curzonPicSrc from './photos/curzon.png';
-import familyPicSrc from './photos/family.png';
-import johnAsilPicSrc from './photos/john_asil.png';
-import joshPicSrc from './photos/josh.png';
-import mihirBevPicSrc from './photos/mihir_bev.png';
-import rohylPicSrc from './photos/rohyl.png';
-import shevonPicSrc from './photos/shevon.png';
-import stefanPicSrc from './photos/stefan.png';
+import asilImgSrc from './photos/asil.png';
+import cissaImgSrc from './photos/cissa.png';
+import curzonImgSrc from './photos/curzon.png';
+import familyImgSrc from './photos/family.png';
+import johnAsilImgSrc from './photos/john_asil.png';
+import joshImgSrc from './photos/josh.png';
+import mihirBevImgSrc from './photos/mihir_bev.png';
+import rohylImgSrc from './photos/rohyl.png';
+import shevonImgSrc from './photos/shevon.png';
+import stefanImgSrc from './photos/stefan.png';
 
 type FriendPicture = {
   id: string,
   imageSrc: string,
-  tooltipLabel?: (locale: Locale) => string,
+  tooltipLabel: (locale: Locale) => string,
   description?: (locale: Locale) => string,
 };
 
 export const Friends: FriendPicture[] = [
   {
     id: 'asil',
-    imageSrc: asilPicSrc,
+    imageSrc: asilImgSrc,
     tooltipLabel: (locale: Locale) => Messages.asilTooltipLabel[locale],
     description: (locale: Locale) => Messages.asilTooltipLabel[locale],
   },
   {
     id: 'cissa',
-    imageSrc: cissaPicSrc,
+    imageSrc: cissaImgSrc,
     tooltipLabel: (locale: Locale) => Messages.cissaTooltipLabel[locale],
     description: (locale: Locale) => Messages.cissaTooltipLabel[locale],
   },
   {
     id: 'curzon',
-    imageSrc: curzonPicSrc,
+    imageSrc: curzonImgSrc,
     tooltipLabel: (locale: Locale) => Messages.curzonTooltipLabel[locale],
     description: (locale: Locale) => Messages.curzonTooltipLabel[locale],
   },
   {
     id: 'family',
-    imageSrc: familyPicSrc,
+    imageSrc: familyImgSrc,
     tooltipLabel: (locale: Locale) => Messages.familyTooltipLabel[locale],
     description: (locale: Locale) => Messages.familyTooltipLabel[locale],
   },
   {
     id: 'johnAsil',
-    imageSrc: johnAsilPicSrc,
+    imageSrc: johnAsilImgSrc,
     tooltipLabel: (locale: Locale) => Messages.johnAndAsilTooltipLabel[locale],
     description: (locale: Locale) => Messages.johnAndAsilTooltipLabel[locale],
   },
   {
     id: 'josh',
-    imageSrc: joshPicSrc,
+    imageSrc: joshImgSrc,
     tooltipLabel: (locale: Locale) => Messages.joshTooltipLabel[locale],
     description: (locale: Locale) => Messages.joshTooltipLabel[locale],
   },
   {
     id: 'mihirBev',
-    imageSrc: mihirBevPicSrc,
+    imageSrc: mihirBevImgSrc,
     tooltipLabel: (locale: Locale) => Messages.mihirAndBevTooltipLabel[locale],
     description: (locale: Locale) => Messages.mihirAndBevTooltipLabel[locale],
   },
   {
     id: 'rohyl',
-    imageSrc: rohylPicSrc,
+    imageSrc: rohylImgSrc,
     tooltipLabel: (locale: Locale) => Messages.rohylTooltipLabel[locale],
     description: (locale: Locale) => Messages.rohylTooltipLabel[locale],
   },
   {
     id: 'stefan',
-    imageSrc: stefanPicSrc,
+    imageSrc: stefanImgSrc,
     tooltipLabel: (locale: Locale) => Messages.stefanTooltipLabel[locale],
     description: (locale: Locale) => Messages.stefanTooltipLabel[locale],
   },
   {
     id: 'shevon',
-    imageSrc: shevonPicSrc,
+    imageSrc: shevonImgSrc,
     tooltipLabel: (locale: Locale) => Messages.shevonTooltipLabel[locale],
     description: (locale: Locale) => Messages.shevonTooltipLabel[locale],
   },

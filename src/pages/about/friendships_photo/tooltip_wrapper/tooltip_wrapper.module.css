@@ -1,0 +1,117 @@
+/* Shamelessly copied over from https://codesandbox.io/s/how-to-make-an-extremely-reusable-tooltip-component-with-react-and-nothing-else-7opo3 */
+
+@value colourGrey200, colourDarkModeGrey50, colourDarkModeGrey700, colourMarioWhite, colourMarioLightBrown, colourMarioDarkBrown from '../../../../ui/colours/colours.module.css';
+
+@value tooltipMargin: 40px;
+@value tooltipArrowSize: 6px;
+
+.tooltipWrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px;
+  font-size: 14px;
+  font-family: sans-serif;
+  line-height: 1;
+  z-index: 100;
+  white-space: nowrap;
+  background-color: black;
+}
+
+.tooltip::before {
+  content: " ";
+  left: 50%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-width: tooltipArrowSize;
+  margin-left: calc(tooltipArrowSize * -1);
+}
+
+.tooltipLabel {
+  color: white;
+}
+
+.tooltip.dark .tooltipLabel {
+  color: colourDarkModeGrey50;
+}
+
+.tooltip.eightBit.projects {
+  border-radius: 0;
+  background-color: colourMarioLightBrown;
+}
+
+.tooltip.eightBit.projects.bottom::before {
+  border-bottom-color: colourMarioLightBrown !important;
+}
+
+.tooltip.eightBit.projects.top::before {
+  border-top-color: colourMarioLightBrown !important;
+}
+
+.tooltip.eightBit.projects.right::before {
+  border-right-color: colourMarioLightBrown !important;
+}
+
+.tooltip.eightBit.projects.left::before {
+  border-left-color: colourMarioLightBrown !important;
+}
+
+.tooltip.projects.eightBit .tooltipLabel {
+  color: colourMarioWhite;
+  text-shadow: 0 1px black;
+}
+
+.tooltip.top {
+  top: calc(tooltipMargin * -1);
+}
+
+.tooltip.top::before {
+  top: 100%;
+  border-top-color: black;
+}
+
+.tooltip.right {
+  left: calc(100% + tooltipMargin);
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+
+.tooltip.right::before {
+  left: calc(tooltipArrowSize * -1);
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  border-right-color: black;
+}
+
+.tooltip.bottom {
+  bottom: calc(tooltipMargin * -1);
+}
+
+.tooltip.bottom::before {
+  bottom: 100%;
+  border-bottom-color: black;
+}
+
+.tooltip.left {
+  left: auto;
+  right: calc(100% + tooltipMargin);
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+
+.tooltip.left::before {
+  left: auto;
+  right: calc(tooltipArrowSize * -2);
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  border-left-color: black;
+}
