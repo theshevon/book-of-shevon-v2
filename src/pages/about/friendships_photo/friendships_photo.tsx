@@ -1,5 +1,7 @@
 import classNames from 'classnames';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { IconButton } from '../../../ui/button/button';
+import { CloseIconDefinition } from '../../../ui/icons/definitions/close';
 import { Text } from '../../../ui/text/text';
 import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Appearance, useThemeContext } from '../../../util/theming/theme_provider';
@@ -48,47 +50,75 @@ const OverlayFriendPicture = ({
   const [waitTimeElapsed, setWaitTimeElapsed] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
+  const [showLightBox, setShowLightBox] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setWaitTimeElapsed(true), index * 500);
   }, [index]);
 
+  const onImgClick = () => {
+    setShowLightBox(true);
+
+    // lock scrolling
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    window.onscroll = () => {
+      window.scrollTo({ top: scrollTop });
+    };
+  };
+
+  const onLightBoxClose = () => {
+    setShowLightBox(false);
+
+    // unlock scrolling
+    window.onscroll = () => {};
+  }
+
   return (
-    <div
-        className={classNames(styles.overlayFriendPictureContainerOuter, styles[id], {
-          [styles.hide]: !(waitTimeElapsed && imageLoaded),
-        })}
-        onMouseEnter={() => setShowTooltip(true)}
-        onMouseLeave={() => setShowTooltip(false)}
-    >
+    <>
       <div
-          className={styles.overlayFriendPictureContainerInner}
+          className={classNames(styles.overlayFriendPictureContainerOuter, styles[id], {
+            [styles.hide]: !(waitTimeElapsed && imageLoaded),
+          })}
+          onMouseEnter={() => setShowTooltip(true)}
+          onMouseLeave={() => setShowTooltip(false)}
+          onClick={onImgClick}
       >
-        <img
-            src={imageSrc}
-            className={styles.overlayFriendPicture}
-            onLoad={() => setImageLoaded(true)}
-        />
-        { showTooltip && (
-          <Tooltip
-              tooltipLabel={tooltipLabel}
-              tooltipDirection={tooltipDirection}
+        <div
+            className={styles.overlayFriendPictureContainerInner}
+        >
+          <img
+              src={imageSrc}
+              className={styles.overlayFriendPicture}
+              onLoad={() => setImageLoaded(true)}
           />
-        ) }
-        <div
-            className={styles.tapeTopLeft}
-        ></div>
-        <div
-            className={styles.tapeTopRight}
-        ></div>
-        <div
-            className={styles.tapeBottomLeft}
-        ></div>
-        <div
-            className={styles.tapeBottomRight}
-        ></div>
+          { showTooltip && (
+            <Tooltip
+                tooltipLabel={tooltipLabel}
+                tooltipDirection={tooltipDirection}
+            />
+          ) }
+          <div
+              className={styles.tapeTopLeft}
+          ></div>
+          <div
+              className={styles.tapeTopRight}
+          ></div>
+          <div
+              className={styles.tapeBottomLeft}
+          ></div>
+          <div
+              className={styles.tapeBottomRight}
+          ></div>
+        </div>
       </div>
-    </div>
+      { showLightBox && (
+        <LightBox
+            imageSrc={imageSrc}
+            description={description}
+            onClose={onLightBoxClose}
+        />
+      ) }
+    </>
   );
 };
 
@@ -118,6 +148,64 @@ const Tooltip = ({
       >
         { tooltipLabel(locale) }
       </Text.UltraSmall>
+    </div>
+  );
+};
+
+const LightBox = ({
+  imageSrc,
+  description,
+  onClose,
+}: {
+  imageSrc: string,
+  description?: (locale: Locale) => string,
+  onClose: () => void,
+}) => {
+
+  const ref = useRef(null);
+
+  const onClickHandler = useCallback((e: MouseEvent) => {
+
+    if (e.target === ref.current) {
+      onClose();
+    }
+  }, [onClose]);
+
+  useEffect(() => {
+    window.addEventListener('click', onClickHandler);
+    return () => {
+      window.removeEventListener('click', onClickHandler);
+    };
+  }, [onClickHandler]);
+
+  return (
+    <div
+        className={styles.lightBox}
+        ref={ref}
+    >
+      <div
+          className={styles.closeButtonContainer}
+      >
+        <IconButton
+            iconDefinition={CloseIconDefinition}
+            onClick={onClose}
+            className={styles.closeButton}
+            overrideTheming={true}
+        />
+      </div>
+      <div
+          className={styles.imgContainer}
+      >
+        <img
+            src={imageSrc}
+            className={styles.img}
+        />
+      </div>
+      { description && (
+        <Text.Small>
+          { description }
+        </Text.Small>
+      ) }
     </div>
   );
 };

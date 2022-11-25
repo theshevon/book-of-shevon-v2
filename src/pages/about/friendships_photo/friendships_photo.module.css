@@ -1,5 +1,5 @@
 @value breakpointSmall from '../../../ui/metrics/breakpoints.module.css';
-@value colourGrey100, colourGrey200, colourDarkModeGrey50 from '../../../ui/colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourDarkModeGrey50, colourGreyTransparentDark from '../../../ui/colours/colours.module.css';
 
 @value tooltipMargin: 40px;
 @value tooltipArrowSize: 6px;
@@ -20,6 +20,10 @@
   z-index: 1;
   transition: opacity 250ms;
   opacity: 1;
+}
+
+.overlayFriendPictureContainerOuter:hover {
+  cursor: pointer;
 }
 
 .overlayFriendPictureContainerOuter.hide {
@@ -166,6 +170,52 @@
   bottom: 0;
 }
 
+.lightBox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: colourGreyTransparentDark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightBox .imgContainer {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightBox .img {
+  width: 100%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.closeButtonContainer {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  fill: colourGrey200;
+  transition: 300ms;
+  transform: scale(1.25);
+}
+
+.closeButton:hover {
+  fill: white;
+  cursor: pointer;
+}
+
 @media(min-width: breakpointSmall) {
 
   .friendshipsPhotoContainer {
@@ -250,5 +300,13 @@
     top: 50%;
     transform: translateX(0) translateY(-50%);
     border-left-color: black;
+  }
+}
+
+@supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .lightBox {
+      background-color: colourGreyTransparentLight;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
   }
 }
