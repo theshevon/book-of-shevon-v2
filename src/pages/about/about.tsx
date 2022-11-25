@@ -13,26 +13,9 @@ import { Resume } from './resume/resume';
 
 export const About = () => {
 
-  const { locale } = useLocaleContext();
-
-  useEffect(() => {
-    updateDocumentHeader(Messages.pageTitle[locale], { type: 'emoji', src: '👀' });
-  }, [locale]);
-
-  const { theme, appearance } = useThemeContext();
-
   const Content = () => (
-    <div
-        className={classNames(styles.aboutPage, {
-          [styles.eightBit]: theme === Theme.EIGHT_BIT,
-          [styles.dark]: appearance === Appearance.DARK,
-        })}
-    >
-      <img
-          className={styles.picture}
-          src={profilePic}
-          alt={Messages.AltTag[locale]}
-      />
+    <ContentContainer>
+      <ProfilePicture/>
       <Text.LargeTitle
           alignment='centre'
       >
@@ -51,12 +34,44 @@ export const About = () => {
         and if you wanted to know what i&apos;ve been up to professionally, here&apos;s my (hopefully up-to-date) resume:
       </Text.Small>
       <Resume/>
-    </div>
+    </ContentContainer>
   );
 
   return (
     <PageContainer
         Content={Content}
+    />
+  );
+};
+
+const ContentContainer: React.FC = ({ children }) => {
+  const { locale } = useLocaleContext();
+
+  useEffect(() => {
+    updateDocumentHeader(Messages.pageTitle[locale], { type: 'emoji', src: '👀' });
+  }, [locale]);
+
+  const { theme, appearance } = useThemeContext();
+
+  return (
+    <div
+        className={classNames(styles.aboutPage, {
+          [styles.eightBit]: theme === Theme.EIGHT_BIT,
+          [styles.dark]: appearance === Appearance.DARK,
+        })}
+    >
+      { children }
+    </div>
+  );
+};
+
+const ProfilePicture = () => {
+  const { locale } = useLocaleContext();
+  return (
+    <img
+        className={styles.picture}
+        src={profilePic}
+        alt={Messages.AltTag[locale]}
     />
   );
 };
