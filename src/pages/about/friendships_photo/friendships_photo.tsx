@@ -56,9 +56,6 @@ const OverlayFriendPicture = ({
       <div
           className={styles.overlayFriendPictureContainerInner}
       >
-        <div
-            className={styles.tapeSectionTop}
-        ></div>
         <img
             src={imageSrc}
             className={styles.overlayFriendPicture}
@@ -81,7 +78,16 @@ const OverlayFriendPicture = ({
           </div>
         ) }
         <div
-            className={styles.tapeSectionBottom}
+            className={styles.tapeTopLeft}
+        ></div>
+        <div
+            className={styles.tapeTopRight}
+        ></div>
+        <div
+            className={styles.tapeBottomLeft}
+        ></div>
+        <div
+            className={styles.tapeBottomRight}
         ></div>
       </div>
     </div>

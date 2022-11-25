@@ -104,25 +104,29 @@
 
 /* Tape section styles shamelessly copied over from https://codepen.io/aitchiss/pen/QWKmPqx */
 
-.tapeSectionTop,
-.tapeSectionBottom {
+.tapeTopLeft,
+.tapeTopRight,
+.tapeBottomLeft,
+.tapeBottomRight {
   position: absolute;
   width: inherit;
   height: inherit;
 }
 
-.tapeSectionTop {
+.tapeTopLeft,
+.tapeTopRight {
   top: 0;
 }
 
-.tapeSectionBottom {
+.tapeBottomLeft,
+.tapeBottomRight {
   bottom: 0;
 }
 
-.tapeSectionTop::before,
-.tapeSectionTop::after,
-.tapeSectionBottom::before,
-.tapeSectionBottom::after {
+.tapeTopLeft,
+.tapeTopRight,
+.tapeBottomLeft,
+.tapeBottomRight {
   content: "";
   width: 15%;
   height: 10%;
@@ -133,24 +137,24 @@
   border-left: 1px dotted colourGrey200;
 }
 
-.tapeSectionBottom::after {
-  transform: rotate(-45deg);
-  right: -5.6%;
-  bottom: 4.2%;
-}
-
-.tapeSectionTop::before {
+.tapeTopLeft {
   transform: rotate(-45deg);
   left: -5.6%;
 }
 
-.tapeSectionTop::after {
+.tapeTopRight {
   transform: rotate(45deg);
   right: -5.6%;
   top: 0;
 }
 
-.tapeSectionBottom::before {
+.tapeBottomRight {
+  transform: rotate(-45deg);
+  right: -5.6%;
+  bottom: 4.2%;
+}
+
+.tapeBottomLeft {
   transform: rotate(45deg);
   left: -5.6%;
   bottom: 0;
