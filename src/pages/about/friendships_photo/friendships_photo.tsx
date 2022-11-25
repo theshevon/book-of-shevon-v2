@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text } from '../../../ui/text/text';
 import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Appearance, useThemeContext } from '../../../util/theming/theme_provider';
@@ -8,6 +8,7 @@ import doItForThemImgSrc from './data/photos/do_it_for_them.png';
 import styles from './friendships_photo.module.css';
 
 type OverlayFriendPictureProps = {
+  index: number,
   id: string,
   imageSrc: string,
   tooltipLabel: (locale: Locale) => string,
@@ -27,6 +28,7 @@ export const FriendshipsPhoto = () => {
       { FriendsPictureData.map((friendPictureData, index) => (
         <OverlayFriendPicture
             key={index}
+            index={index}
             {...friendPictureData}
         />
       )) }
@@ -36,6 +38,7 @@ export const FriendshipsPhoto = () => {
 };
 
 const OverlayFriendPicture = ({
+  index,
   id,
   imageSrc,
   tooltipLabel,
@@ -43,13 +46,21 @@ const OverlayFriendPicture = ({
   description,
 }: OverlayFriendPictureProps) => {
   const { locale } = useLocaleContext();
-
-  const [showTooltip, setShowTooltip] = useState(false);
   const { appearance } = useThemeContext();
+
+  const [waitTimeElapsed, setWaitTimeElapsed] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setWaitTimeElapsed(true), index * 500);
+  });
 
   return (
     <div
-        className={classNames(styles.overlayFriendPictureContainerOuter, styles[id])}
+        className={classNames(styles.overlayFriendPictureContainerOuter, styles[id], {
+          [styles.hide]: !(waitTimeElapsed && imageLoaded),
+        })}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
     >
@@ -59,6 +70,7 @@ const OverlayFriendPicture = ({
         <img
             src={imageSrc}
             className={styles.overlayFriendPicture}
+            onLoad={() => setImageLoaded(true)}
         />
         { showTooltip && (
           <div className={classNames(styles.tooltip, {

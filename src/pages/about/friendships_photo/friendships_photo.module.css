@@ -20,6 +20,10 @@
   z-index: 1;
 }
 
+.overlayFriendPictureContainerOuter.hide {
+  display: none;
+}
+
 .overlayFriendPictureContainerOuter:hover .overlayFriendPicture {
   transform: scale(1.03);
 }
