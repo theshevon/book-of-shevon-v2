@@ -16,7 +16,7 @@ type OverlayFriendPictureProps = {
   description?: (locale: Locale) => string,
 };
 
-export const FriendshipsPhoto = () => {
+export const FriendshipsPhoto = React.memo(() => {
   return (
     <div
         className={styles.friendshipsPhotoContainer}
@@ -32,10 +32,9 @@ export const FriendshipsPhoto = () => {
             {...friendPictureData}
         />
       )) }
-
     </div>
   );
-};
+});
 
 const OverlayFriendPicture = ({
   index,
@@ -45,8 +44,6 @@ const OverlayFriendPicture = ({
   tooltipDirection,
   description,
 }: OverlayFriendPictureProps) => {
-  const { locale } = useLocaleContext();
-  const { appearance } = useThemeContext();
 
   const [waitTimeElapsed, setWaitTimeElapsed] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -54,7 +51,7 @@ const OverlayFriendPicture = ({
 
   useEffect(() => {
     setTimeout(() => setWaitTimeElapsed(true), index * 500);
-  });
+  }, [index]);
 
   return (
     <div
@@ -73,21 +70,10 @@ const OverlayFriendPicture = ({
             onLoad={() => setImageLoaded(true)}
         />
         { showTooltip && (
-          <div className={classNames(styles.tooltip, {
-            [styles.dark]: appearance === Appearance.DARK,
-            [styles.top]: tooltipDirection === 'top',
-            [styles.bottom]: tooltipDirection === 'bottom',
-            [styles.left]: tooltipDirection === 'left',
-            [styles.right]: tooltipDirection === 'right',
-          })}
-          >
-            <Text.UltraSmall
-                alignment='centre'
-                className={styles.tooltipLabel}
-            >
-              { tooltipLabel(locale) }
-            </Text.UltraSmall>
-          </div>
+          <Tooltip
+              tooltipLabel={tooltipLabel}
+              tooltipDirection={tooltipDirection}
+          />
         ) }
         <div
             className={styles.tapeTopLeft}
@@ -102,6 +88,36 @@ const OverlayFriendPicture = ({
             className={styles.tapeBottomRight}
         ></div>
       </div>
+    </div>
+  );
+};
+
+const Tooltip = ({
+  tooltipDirection,
+  tooltipLabel,
+}: {
+  tooltipDirection: 'top' | 'bottom' | 'left' | 'right',
+  tooltipLabel: (locale: Locale) => string,
+}) => {
+
+  const { locale } = useLocaleContext();
+  const { appearance } = useThemeContext();
+
+  return (
+    <div className={classNames(styles.tooltip, {
+      [styles.dark]: appearance === Appearance.DARK,
+      [styles.top]: tooltipDirection === 'top',
+      [styles.bottom]: tooltipDirection === 'bottom',
+      [styles.left]: tooltipDirection === 'left',
+      [styles.right]: tooltipDirection === 'right',
+    })}
+    >
+      <Text.UltraSmall
+          alignment='centre'
+          className={styles.tooltipLabel}
+      >
+        { tooltipLabel(locale) }
+      </Text.UltraSmall>
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import { observer } from 'mobx-react-lite';
 import React from 'react';
 import {
   Route,
@@ -20,55 +19,58 @@ import './app.css';
 import { DisplaySizeObserver, isLargeOrWider } from './util/display_size_observer/display_size_observer';
 import { useLocaleContext } from './util/localisation/locale_provider';
 
-export const App = observer(() => {
+export const App = () => (
+  <Router>
+    <ConsoleMessage/>
+    <Nav routesData={RoutesData}/>
+    <Switch>
+      <Route
+          exact
+          path={Routes.HOME}
+          component={HomePage}
+      />
+      <Route
+          exact
+          path={Routes.ABOUT}
+          component={AboutPage}
+      />
+      <Route
+          exact
+          path={Routes.PROJECTS}
+          component={ProjectsPage}
+      />
+      <Route
+          exact
+          path={Routes.BLOG}
+          component={BlogPage}
+      />
+      <Route
+          exact
+          path={Routes.CREATIVE}
+          component={CreativePage}
+      />
+      { isLargeOrWider(DisplaySizeObserver.size) &&
+      <Route
+          exact
+          path={Routes.SNEK}
+          component={SnekPage}
+      />
+      }
+      <Route
+          exact
+          path='/*'
+          component={ErrorPage}
+      />
+    </Switch>
+  </Router>
+);
 
+// Needs to be kept in an isolated component so that a change in locale doesn't cause a full page re-render
+const ConsoleMessage = () => {
   const { locale } = useLocaleContext();
 
   // eslint-disable-next-line no-console
   console.log(Messages.consoleGreetingImg(Messages.consoleGreetingMessage[locale]));
 
-  return (
-    <Router>
-      <Nav routesData={RoutesData}/>
-      <Switch>
-        <Route
-            exact
-            path={Routes.HOME}
-            component={HomePage}
-        />
-        <Route
-            exact
-            path={Routes.ABOUT}
-            component={AboutPage}
-        />
-        <Route
-            exact
-            path={Routes.PROJECTS}
-            component={ProjectsPage}
-        />
-        <Route
-            exact
-            path={Routes.BLOG}
-            component={BlogPage}
-        />
-        <Route
-            exact
-            path={Routes.CREATIVE}
-            component={CreativePage}
-        />
-        { isLargeOrWider(DisplaySizeObserver.size) &&
-          <Route
-              exact
-              path={Routes.SNEK}
-              component={SnekPage}
-          />
-        }
-        <Route
-            exact
-            path='/*'
-            component={ErrorPage}
-        />
-      </Switch>
-    </Router>
-  );
-});
+  return <></>;
+};

@@ -18,10 +18,12 @@
 .overlayFriendPictureContainerOuter {
   position: absolute;
   z-index: 1;
+  transition: opacity 250ms;
+  opacity: 1;
 }
 
 .overlayFriendPictureContainerOuter.hide {
-  display: none;
+  opacity: 0;
 }
 
 .overlayFriendPictureContainerOuter:hover .overlayFriendPicture {
