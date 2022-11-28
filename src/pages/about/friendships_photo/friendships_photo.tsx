@@ -193,14 +193,10 @@ const LightBox = ({
             overrideTheming={true}
         />
       </div>
-      <div
-          className={styles.imgContainer}
-      >
-        <img
-            src={imageSrc}
-            className={styles.img}
-        />
-      </div>
+      <img
+          src={imageSrc}
+          className={styles.img}
+      />
       { description && (
         <Text.Small>
           { description }

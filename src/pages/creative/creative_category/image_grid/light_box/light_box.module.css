@@ -48,7 +48,6 @@
 .closeButton {
   background: none;
   border: none;
-  /* TODO replace with design sys colour */
   fill: colourGrey200;
   transition: 300ms;
 }

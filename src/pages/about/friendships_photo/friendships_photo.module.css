@@ -182,13 +182,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.lightBox .imgContainer {
-  width: 60%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10%;
+  box-sizing: border-box;
 }
 
 .lightBox .img {
