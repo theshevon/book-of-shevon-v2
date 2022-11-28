@@ -152,6 +152,24 @@ const Tooltip = ({
   );
 };
 
+function isPaddingClick(element: HTMLElement | null, e: MouseEvent) {
+  if (!element) {
+    return false;
+  }
+  const style = window.getComputedStyle(element, null);
+  const pTop = parseInt(style.getPropertyValue('padding-top'));
+  const pRight = parseFloat(style.getPropertyValue('padding-right'));
+  const pLeft = parseFloat(style.getPropertyValue('padding-left') );
+  const pBottom = parseFloat(style.getPropertyValue('padding-bottom'));
+  const width = element.offsetWidth;
+  const height = element.offsetHeight;
+  const x = e.offsetX;
+  const y = e.offsetY;
+
+  return !(( x > pLeft && x < width - pRight) &&
+           ( y > pTop && y < height - pBottom));
+}
+
 const LightBox = ({
   imageSrc,
   description,
@@ -162,11 +180,12 @@ const LightBox = ({
   onClose: () => void,
 }) => {
 
-  const ref = useRef(null);
+  const lightBoxRef = useRef(null);
+  const imgRef = useRef(null);
   const { locale } = useLocaleContext();
 
   const onClickHandler = useCallback((e: MouseEvent) => {
-    if (e.target === ref.current) {
+    if (e.target === lightBoxRef.current || isPaddingClick(imgRef.current, e)) {
       onClose();
     }
   }, [onClose]);
@@ -189,7 +208,7 @@ const LightBox = ({
   return (
     <div
         className={styles.lightBox}
-        ref={ref}
+        ref={lightBoxRef}
     >
       <div
           className={styles.closeButtonContainer}
@@ -204,6 +223,7 @@ const LightBox = ({
       <img
           src={imageSrc}
           className={styles.img}
+          ref={imgRef}
       />
       { description && (
         <Text.Small
