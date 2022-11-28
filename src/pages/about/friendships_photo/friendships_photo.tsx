@@ -1,14 +1,13 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import { Text } from '../../../ui/text/text';
-import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
-import { Appearance, useThemeContext } from '../../../util/theming/theme_provider';
+import { Locale } from '../../../util/localisation/locale_provider';
 import { Friends as FriendsPictureData } from './data/friends';
 import doItForThemImgSrc from './data/photos/do_it_for_them.png';
 import letterMImgSrc from './data/photos/letter_m.png';
 import letterTImgSrc from './data/photos/letter_t.png';
 import styles from './friendships_photo.module.css';
 import { LightBox } from './light_box/light_box';
+import { Tooltip } from './tooltip/tooltip';
 
 type OverlayFriendPictureProps = {
   index: number,
@@ -28,7 +27,7 @@ export const FriendshipsPhoto = React.memo(() => (
         src={doItForThemImgSrc}
     />
     { FriendsPictureData.map((friendPictureData, index) => (
-      <OverlayFriendPicture
+      <OverlayPicture
           key={index}
           index={index + 1}
           {...friendPictureData}
@@ -47,39 +46,7 @@ export const FriendshipsPhoto = React.memo(() => (
   </div>
 ));
 
-const OverlayLetter = ({
-  id,
-  index,
-  imageSrc,
-}: {
-  id: string,
-  index: number,
-  imageSrc: string,
-}) => {
-
-  const [waitTimeElapsed, setWaitTimeElapsed] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => setWaitTimeElapsed(true), index * 600);
-  }, [index]);
-
-  return (
-    <div
-        className={classNames(styles.overlayLetter, styles[id], {
-          [styles.hidden]: !(waitTimeElapsed && imageLoaded),
-        })}
-    >
-      <img
-          src={imageSrc}
-          className={styles.overlayFriendPicture}
-          onLoad={() => setImageLoaded(true)}
-      />
-    </div>
-  );
-};
-
-const OverlayFriendPicture = ({
+const OverlayPicture = ({
   index,
   id,
   imageSrc,
@@ -163,32 +130,34 @@ const OverlayFriendPicture = ({
   );
 };
 
-const Tooltip = ({
-  tooltipDirection,
-  tooltipLabel,
+const OverlayLetter = ({
+  id,
+  index,
+  imageSrc,
 }: {
-  tooltipDirection: 'top' | 'bottom' | 'left' | 'right',
-  tooltipLabel: (locale: Locale) => string,
+  id: string,
+  index: number,
+  imageSrc: string,
 }) => {
 
-  const { locale } = useLocaleContext();
-  const { appearance } = useThemeContext();
+  const [waitTimeElapsed, setWaitTimeElapsed] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setWaitTimeElapsed(true), index * 600);
+  }, [index]);
 
   return (
-    <div className={classNames(styles.tooltip, {
-      [styles.dark]: appearance === Appearance.DARK,
-      [styles.top]: tooltipDirection === 'top',
-      [styles.bottom]: tooltipDirection === 'bottom',
-      [styles.left]: tooltipDirection === 'left',
-      [styles.right]: tooltipDirection === 'right',
-    })}
+    <div
+        className={classNames(styles.overlayLetter, styles[id], {
+          [styles.hidden]: !(waitTimeElapsed && imageLoaded),
+        })}
     >
-      <Text.UltraSmall
-          alignment='centre'
-          className={styles.tooltipLabel}
-      >
-        { tooltipLabel(locale) }
-      </Text.UltraSmall>
+      <img
+          src={imageSrc}
+          className={styles.overlayFriendPicture}
+          onLoad={() => setImageLoaded(true)}
+      />
     </div>
   );
 };
