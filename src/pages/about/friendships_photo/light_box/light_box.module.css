@@ -1,0 +1,54 @@
+@value colourGrey200, colourGreyTransparentLight, colourGreyTransparentDark from '../../../../ui/colours/colours.module.css';
+
+.lightBox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: colourGreyTransparentDark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10%;
+  box-sizing: border-box;
+}
+
+.img {
+  width: 100%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.closeButtonContainer {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  fill: colourGrey200;
+  transition: 300ms;
+  transform: scale(1.25);
+}
+
+.closeButton:hover {
+  fill: white;
+  cursor: pointer;
+}
+
+.description {
+  padding-top: 20px;
+}
+
+@supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .lightBox {
+      background-color: colourGreyTransparentLight;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+  }
+}

@@ -21,11 +21,6 @@ export const About = () => {
       >
         hey, i&apos;m shevon 👋🏽
       </Text.LargeTitle>
-      <Text.UltraSmall
-          alignment='centre'
-      >
-        (don&apos;t call me shev; that&apos;s for close friends only 😤)
-      </Text.UltraSmall>
       <FriendshipsPhoto/>
       <Text.Small
           alignment='centre'

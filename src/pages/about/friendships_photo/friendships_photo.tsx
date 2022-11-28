@@ -1,13 +1,14 @@
 import classNames from 'classnames';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { IconButton } from '../../../ui/button/button';
-import { CloseIconDefinition } from '../../../ui/icons/definitions/close';
+import React, { useEffect, useState } from 'react';
 import { Text } from '../../../ui/text/text';
 import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Appearance, useThemeContext } from '../../../util/theming/theme_provider';
 import { Friends as FriendsPictureData } from './data/friends';
 import doItForThemImgSrc from './data/photos/do_it_for_them.png';
+import letterMImgSrc from './data/photos/letter_m.png';
+import letterTImgSrc from './data/photos/letter_t.png';
 import styles from './friendships_photo.module.css';
+import { LightBox } from './light_box/light_box';
 
 type OverlayFriendPictureProps = {
   index: number,
@@ -18,25 +19,65 @@ type OverlayFriendPictureProps = {
   description?: (locale: Locale) => string,
 };
 
-export const FriendshipsPhoto = React.memo(() => {
+export const FriendshipsPhoto = React.memo(() => (
+  <div
+      className={styles.friendshipsPhotoContainer}
+  >
+    <img
+        className={styles.pictureFrame}
+        src={doItForThemImgSrc}
+    />
+    { FriendsPictureData.map((friendPictureData, index) => (
+      <OverlayFriendPicture
+          key={index}
+          index={index + 1}
+          {...friendPictureData}
+      />
+    )) }
+    <OverlayLetter
+        id='letterT'
+        index={FriendsPictureData.length + 1}
+        imageSrc={letterTImgSrc}
+    />
+    <OverlayLetter
+        id='letterM'
+        index={FriendsPictureData.length + 2}
+        imageSrc={letterMImgSrc}
+    />
+  </div>
+));
+
+const OverlayLetter = ({
+  id,
+  index,
+  imageSrc,
+}: {
+  id: string,
+  index: number,
+  imageSrc: string,
+}) => {
+
+  const [waitTimeElapsed, setWaitTimeElapsed] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setWaitTimeElapsed(true), index * 600);
+  }, [index]);
+
   return (
     <div
-        className={styles.friendshipsPhotoContainer}
+        className={classNames(styles.overlayLetter, styles[id], {
+          [styles.hidden]: !(waitTimeElapsed && imageLoaded),
+        })}
     >
       <img
-          className={styles.pictureFrame}
-          src={doItForThemImgSrc}
+          src={imageSrc}
+          className={styles.overlayFriendPicture}
+          onLoad={() => setImageLoaded(true)}
       />
-      { FriendsPictureData.map((friendPictureData, index) => (
-        <OverlayFriendPicture
-            key={index}
-            index={index}
-            {...friendPictureData}
-        />
-      )) }
     </div>
   );
-});
+};
 
 const OverlayFriendPicture = ({
   index,
@@ -53,7 +94,7 @@ const OverlayFriendPicture = ({
   const [showLightBox, setShowLightBox] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setWaitTimeElapsed(true), index * 500);
+    setTimeout(() => setWaitTimeElapsed(true), index * 600);
   }, [index]);
 
   const onImgClick = () => {
@@ -77,7 +118,7 @@ const OverlayFriendPicture = ({
     <>
       <div
           className={classNames(styles.overlayFriendPictureContainerOuter, styles[id], {
-            [styles.hide]: !(waitTimeElapsed && imageLoaded),
+            [styles.hidden]: !(waitTimeElapsed && imageLoaded),
           })}
           onMouseEnter={() => setShowTooltip(true)}
           onMouseLeave={() => setShowTooltip(false)}
@@ -148,91 +189,6 @@ const Tooltip = ({
       >
         { tooltipLabel(locale) }
       </Text.UltraSmall>
-    </div>
-  );
-};
-
-function isPaddingClick(element: HTMLElement | null, e: MouseEvent) {
-  if (!element) {
-    return false;
-  }
-  const style = window.getComputedStyle(element, null);
-  const pTop = parseInt(style.getPropertyValue('padding-top'));
-  const pRight = parseFloat(style.getPropertyValue('padding-right'));
-  const pLeft = parseFloat(style.getPropertyValue('padding-left') );
-  const pBottom = parseFloat(style.getPropertyValue('padding-bottom'));
-  const width = element.offsetWidth;
-  const height = element.offsetHeight;
-  const x = e.offsetX;
-  const y = e.offsetY;
-
-  return !(( x > pLeft && x < width - pRight) &&
-           ( y > pTop && y < height - pBottom));
-}
-
-const LightBox = ({
-  imageSrc,
-  description,
-  onClose,
-}: {
-  imageSrc: string,
-  description?: (locale: Locale) => string,
-  onClose: () => void,
-}) => {
-
-  const lightBoxRef = useRef(null);
-  const imgRef = useRef(null);
-  const { locale } = useLocaleContext();
-
-  const onClickHandler = useCallback((e: MouseEvent) => {
-    if (e.target === lightBoxRef.current || isPaddingClick(imgRef.current, e)) {
-      onClose();
-    }
-  }, [onClose]);
-
-  const onKeyDownHandler = useCallback((e: KeyboardEvent) => {
-    if (e.key ==='Escape') {
-      onClose();
-    }
-  }, [onClose]);
-
-  useEffect(() => {
-    window.addEventListener('keydown', onKeyDownHandler);
-    window.addEventListener('click', onClickHandler);
-    return () => {
-      window.removeEventListener('keydown', onKeyDownHandler);
-      window.removeEventListener('click', onClickHandler);
-    };
-  }, [onClickHandler, onKeyDownHandler]);
-
-  return (
-    <div
-        className={styles.lightBox}
-        ref={lightBoxRef}
-    >
-      <div
-          className={styles.closeButtonContainer}
-      >
-        <IconButton
-            iconDefinition={CloseIconDefinition}
-            onClick={onClose}
-            className={styles.closeButton}
-            overrideTheming={true}
-        />
-      </div>
-      <img
-          src={imageSrc}
-          className={styles.img}
-          ref={imgRef}
-      />
-      { description && (
-        <Text.Small
-            alignment='left'
-            className={styles.description}
-        >
-          { description(locale) }
-        </Text.Small>
-      ) }
     </div>
   );
 };
