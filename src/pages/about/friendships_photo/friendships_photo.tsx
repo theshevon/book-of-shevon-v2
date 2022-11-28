@@ -1,11 +1,12 @@
 import classNames from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from '../../../ui/link/link';
-import { Locale } from '../../../util/localisation/locale_provider';
+import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Friends as FriendsPictureData } from './data/friends';
 import doItForThemImgSrc from './data/photos/do_it_for_them.png';
 import letterMImgSrc from './data/photos/letter_m.png';
 import letterTImgSrc from './data/photos/letter_t.png';
+import { FriendshipsPhotoMessages as Messages } from './friendships_photo.messages';
 import styles from './friendships_photo.module.css';
 import { LightBox } from './light_box/light_box';
 import { Tooltip } from './tooltip/tooltip';
@@ -77,12 +78,7 @@ export const FriendshipsPhoto = React.memo(() => {
       { showOverlayElements && (
         <OverlayElements/>
       ) }
-      <Link
-          url={MEME_REF_URL}
-          className={styles.memeRef}
-      >
-        [meme ref]
-      </Link>
+      <MemeRef/>
     </div>
   );
 });
@@ -200,5 +196,17 @@ const OverlayLetter = ({
           onLoad={() => setImageLoaded(true)}
       />
     </div>
+  );
+};
+
+const MemeRef = () => {
+  const { locale } = useLocaleContext();
+  return (
+    <Link
+        url={MEME_REF_URL}
+        className={styles.memeRef}
+    >
+      [{ Messages.memeRef[locale] }]
+    </Link>
   );
 };

@@ -19,12 +19,7 @@ export const About = () => {
       <ProfilePicture/>
       <PersonableContent/>
       <HorizontalDivider/>
-      <Text.Small
-          alignment='centre'
-          keepDefaultMargins={true}
-      >
-        oh and if you still wanted to know what i&apos;ve been up to professionally, here&apos;s my resume (pretty much a scrape of my linkedin tbh):
-      </Text.Small>
+      <ResumePlug/>
       <Resume/>
     </ContentContainer>
   );
@@ -63,54 +58,57 @@ const ProfilePicture = () => {
     <img
         className={styles.picture}
         src={profileImgSrc}
-        alt={Messages.AltTag[locale]}
+        alt={Messages.altTag[locale]}
     />
   );
 };
 
-const PersonableContent = () => (
-  <div
-      className={styles.personableContent}
-  >
-    <Text.LargeTitle
-        alignment='centre'
-        keepDefaultMargins={true}
+const PersonableContent = () => {
+  const { locale } = useLocaleContext();
+  return (
+    <div
+        className={styles.personableContent}
     >
-      hey, i&apos;m shevon 👋🏽
-    </Text.LargeTitle>
-    <Text.Small>
-      welcome to my portfolio! an earlier version of this page pretty much just listed out my resume, and after a friend pointed this out, i decided to make it more personality (and pizzazz™) to it. so let me give you a quick rundown of my life.
-    </Text.Small>
-    <Text.Small
-        keepDefaultMargins={true}
-    >
-      i grew up in sri lanka and moved to australia when i was 18, where i graduated from uni and started working as a software engineer. apart from writing code (either for work or fun), i enjoy:
-    </Text.Small>
-    <InterestsList/>
-    <Text.Small>
-      and of course, making memories with people i care about, which is why this website is dedicated to some of my favourite homies (づ｡◕‿‿◕｡)づ
-    </Text.Small>
-    <Text.UltraSmall
-        alignment='centre'
-        className={styles.hint}
-    >
-      (click on the pics to find out more! 😬)
-    </Text.UltraSmall>
-    <FriendshipsPhoto/>
-    <Text.Small
-        alignment='centre'
-        keepDefaultMargins={true}
-    >
-      thanks so much for visiting my website btw! dingding and i appreciate you!
-    </Text.Small>
-    <img
-        src={dingDingImgSrc}
-        width='25px'
-    ></img>
-  </div>
-);
+      <Text.LargeTitle
+          alignment='centre'
+          keepDefaultMargins={true}
+      >
+        { Messages.hello[locale] }
+      </Text.LargeTitle>
+      <Text.Small>
+        { Messages.welcome[locale] }
+      </Text.Small>
+      <Text.Small
+          keepDefaultMargins={true}
+      >
+        { Messages.rundown[locale] }
+      </Text.Small>
+      <InterestsList/>
+      <Text.Small>
+        { Messages.friendDedication[locale] }
+      </Text.Small>
+      <Text.UltraSmall
+          alignment='centre'
+          className={styles.hint}
+      >
+        { Messages.hint[locale] }
+      </Text.UltraSmall>
+      <FriendshipsPhoto/>
+      <Text.Small
+          alignment='centre'
+          keepDefaultMargins={true}
+      >
+        { Messages.thanks[locale] }
+      </Text.Small>
+      <img
+          src={dingDingImgSrc}
+          width='25px'
+      ></img>
+    </div>);
+};
 
 const InterestsList = () => {
+  const { locale } = useLocaleContext();
   const { appearance } = useThemeContext();
   return (
     <ul
@@ -120,27 +118,27 @@ const InterestsList = () => {
     >
       <li>
         <Text.Small>
-          singing 🎤
+          { Messages.singing[locale] }
         </Text.Small>
       </li>
       <li>
         <Text.Small>
-          drawing ✏️
+          { Messages.drawing[locale] }
         </Text.Small>
       </li>
       <li>
         <Text.Small>
-          basketball 🏀
+          { Messages.basketball[locale] }
         </Text.Small>
       </li>
       <li>
         <Text.Small>
-          working out 💪🏽
+          { Messages.workingOut[locale] }
         </Text.Small>
       </li>
       <li>
         <Text.Small>
-          making dumb jokes 🥦
+          { Messages.makingDumbJokes[locale] }
         </Text.Small>
       </li>
     </ul>
@@ -155,5 +153,17 @@ const HorizontalDivider = () => {
           [styles.dark]: appearance === Appearance.DARK,
         })}
     ></div>
+  );
+};
+
+const ResumePlug = () => {
+  const { locale } = useLocaleContext();
+  return (
+    <Text.Small
+        alignment='centre'
+        keepDefaultMargins={true}
+    >
+      { Messages.resumePlug[locale] }
+    </Text.Small>
   );
 };
