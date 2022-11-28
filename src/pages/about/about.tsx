@@ -92,6 +92,7 @@ const PersonableContent = () => (
     </Text.Small>
     <Text.UltraSmall
         alignment='centre'
+        className={styles.hint}
     >
       (hint: click on the pics to find out more! 😬)
     </Text.UltraSmall>
