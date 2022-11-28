@@ -171,12 +171,20 @@ const LightBox = ({
     }
   }, [onClose]);
 
+  const onKeyDownHandler = useCallback((e: KeyboardEvent) => {
+    if (e.key ==='Escape') {
+      onClose();
+    }
+  }, [onClose]);
+
   useEffect(() => {
+    window.addEventListener('keydown', onKeyDownHandler);
     window.addEventListener('click', onClickHandler);
     return () => {
+      window.removeEventListener('keydown', onKeyDownHandler);
       window.removeEventListener('click', onClickHandler);
     };
-  }, [onClickHandler]);
+  }, [onClickHandler, onKeyDownHandler]);
 
   return (
     <div
