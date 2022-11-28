@@ -71,7 +71,7 @@ const OverlayFriendPicture = ({
 
     // unlock scrolling
     window.onscroll = () => {};
-  }
+  };
 
   return (
     <>
@@ -163,9 +163,9 @@ const LightBox = ({
 }) => {
 
   const ref = useRef(null);
+  const { locale } = useLocaleContext();
 
   const onClickHandler = useCallback((e: MouseEvent) => {
-
     if (e.target === ref.current) {
       onClose();
     }
@@ -206,8 +206,11 @@ const LightBox = ({
           className={styles.img}
       />
       { description && (
-        <Text.Small>
-          { description }
+        <Text.Small
+            alignment='left'
+            className={styles.description}
+        >
+          { description(locale) }
         </Text.Small>
       ) }
     </div>

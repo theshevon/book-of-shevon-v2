@@ -211,6 +211,10 @@
   cursor: pointer;
 }
 
+.description {
+  padding-top: 20px;
+}
+
 @media(min-width: breakpointSmall) {
 
   .friendshipsPhotoContainer {
