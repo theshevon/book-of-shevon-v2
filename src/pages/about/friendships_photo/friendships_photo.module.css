@@ -189,3 +189,9 @@
   left: -5.6%;
   bottom: 0;
 }
+
+.memeRef {
+  position: absolute;
+  right: 10px;
+  bottom: -5px;
+}

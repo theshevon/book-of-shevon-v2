@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from '../../../ui/link/link';
 import { Locale } from '../../../util/localisation/locale_provider';
 import { Friends as FriendsPictureData } from './data/friends';
 import doItForThemImgSrc from './data/photos/do_it_for_them.png';
@@ -17,6 +18,8 @@ type OverlayFriendPictureProps = {
   tooltipDirection: 'top' | 'bottom' | 'left' | 'right',
   description?: (locale: Locale) => string,
 };
+
+const MEME_REF_URL = 'https://www.youtube.com/watch?v=x2mS3uDqQL4&ab_channel=ThingsICantFindOtherwise';
 
 export const FriendshipsPhoto = React.memo(() => {
 
@@ -74,6 +77,12 @@ export const FriendshipsPhoto = React.memo(() => {
       { showOverlayElements && (
         <OverlayElements/>
       ) }
+      <Link
+          url={MEME_REF_URL}
+          className={styles.memeRef}
+      >
+        [meme ref]
+      </Link>
     </div>
   );
 });

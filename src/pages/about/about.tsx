@@ -94,7 +94,7 @@ const PersonableContent = () => (
         alignment='centre'
         className={styles.hint}
     >
-      (hint: click on the pics to find out more! 😬)
+      (click on the pics to find out more! 😬)
     </Text.UltraSmall>
     <FriendshipsPhoto/>
     <Text.Small
