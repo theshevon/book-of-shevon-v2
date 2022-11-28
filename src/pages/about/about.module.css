@@ -1,4 +1,5 @@
-@value colourGrey100, colourDarkModeGrey700 from '../../ui/colours/colours.module.css';
+@value breakpointSmall from '../../ui/metrics/breakpoints.module.css';
+@value colourGrey100, colourDarkModeGrey50, colourDarkModeGrey700 from '../../ui/colours/colours.module.css';
 
 .aboutPage {
     display: flex;
@@ -20,4 +21,21 @@
 
 .dark .picture { 
     outline: 1px solid colourDarkModeGrey700;
+}
+
+.interestsList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.interestsList.dark li::marker {
+    color: colourDarkModeGrey50;
+}
+
+@media(min-width: breakpointSmall) {
+
+    .personableContent {
+      width: 65%;
+    }
 }
