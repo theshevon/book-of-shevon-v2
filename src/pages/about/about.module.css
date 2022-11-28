@@ -1,5 +1,5 @@
 @value breakpointSmall from '../../ui/metrics/breakpoints.module.css';
-@value colourGrey100, colourDarkModeGrey50, colourDarkModeGrey700 from '../../ui/colours/colours.module.css';
+@value colourGrey100, colourDarkModeGrey50, colourDarkModeGrey700, colourDarkModeGrey800 from '../../ui/colours/colours.module.css';
 
 .aboutPage {
     display: flex;
@@ -31,6 +31,20 @@
 
 .interestsList.dark li::marker {
     color: colourDarkModeGrey50;
+}
+
+.horizontalDivider {
+    width: 60%;
+    height: 1px;
+    margin: 30px auto;
+  }
+  
+.horizontalDivider {
+    background-color: colourGrey100;
+}
+
+.horizontalDivider.dark {
+    background-color: colourDarkModeGrey800;
 }
 
 @media(min-width: breakpointSmall) {

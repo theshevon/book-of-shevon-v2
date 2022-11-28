@@ -18,6 +18,13 @@ export const About = () => {
     <ContentContainer>
       <ProfilePicture/>
       <PersonableContent/>
+      <HorizontalDivider/>
+      <Text.Small
+          alignment='centre'
+          keepDefaultMargins={true}
+      >
+        oh and if you still wanted to know what i&apos;ve been up to professionally, here&apos;s my resume (pretty much a scrape of my linkedin tbh):
+      </Text.Small>
       <Resume/>
     </ContentContainer>
   );
@@ -99,15 +106,6 @@ const PersonableContent = () => (
         src={dingDingImgSrc}
         width='25px'
     ></img>
-    <div
-        className={styles.horizontalDivider}
-    ></div>
-    <Text.Small
-        alignment='centre'
-        keepDefaultMargins={true}
-    >
-      oh and if you still wanted to know what i&apos;ve been up to professionally, here&apos;s my resume (pretty much a scrape of my linkedin tbh):
-    </Text.Small>
   </div>
 );
 
@@ -145,5 +143,16 @@ const InterestsList = () => {
         </Text.Small>
       </li>
     </ul>
+  );
+};
+
+const HorizontalDivider = () => {
+  const { appearance } = useThemeContext();
+  return (
+    <div
+        className={classNames(styles.horizontalDivider, {
+          [styles.dark]: appearance === Appearance.DARK,
+        })}
+    ></div>
   );
 };
