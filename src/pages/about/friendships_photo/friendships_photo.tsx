@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Locale } from '../../../util/localisation/locale_provider';
 import { Friends as FriendsPictureData } from './data/friends';
 import doItForThemImgSrc from './data/photos/do_it_for_them.png';
@@ -18,33 +18,65 @@ type OverlayFriendPictureProps = {
   description?: (locale: Locale) => string,
 };
 
-export const FriendshipsPhoto = React.memo(() => (
-  <div
-      className={styles.friendshipsPhotoContainer}
-  >
-    <img
-        className={styles.pictureFrame}
-        src={doItForThemImgSrc}
-    />
-    { FriendsPictureData.map((friendPictureData, index) => (
-      <OverlayPicture
-          key={index}
-          index={index + 1}
-          {...friendPictureData}
+export const FriendshipsPhoto = React.memo(() => {
+
+  const ref = useRef(null);
+  const [showOverlayElements, setShowOverlayElements] = useState(false);
+
+  useEffect(() => {
+    const callback = (entries: IntersectionObserverEntry[]) => {
+      for (let i=0; i<entries.length; i++) {
+        if (entries[i].isIntersecting) {
+          setShowOverlayElements(true);
+        }
+      }
+    };
+    const observer = new IntersectionObserver(callback, { threshold: 1 });
+    const element = ref.current;
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, [ref]);
+
+  const OverlayElements = () => (
+    <>
+      { FriendsPictureData.map((friendPictureData, index) => (
+        <OverlayPicture
+            key={index}
+            index={index + 1}
+            {...friendPictureData}
+        />
+      )) }
+      <OverlayLetter
+          id='letterT'
+          index={FriendsPictureData.length + 1}
+          imageSrc={letterTImgSrc}
       />
-    )) }
-    <OverlayLetter
-        id='letterT'
-        index={FriendsPictureData.length + 1}
-        imageSrc={letterTImgSrc}
-    />
-    <OverlayLetter
-        id='letterM'
-        index={FriendsPictureData.length + 2}
-        imageSrc={letterMImgSrc}
-    />
-  </div>
-));
+      <OverlayLetter
+          id='letterM'
+          index={FriendsPictureData.length + 2}
+          imageSrc={letterMImgSrc}
+      />
+    </>
+  );
+
+  return (
+    <div
+        className={styles.friendshipsPhotoContainer}
+    >
+      <img
+          ref={ref}
+          className={styles.pictureFrame}
+          src={doItForThemImgSrc}
+      />
+      { showOverlayElements && (
+        <OverlayElements/>
+      ) }
+    </div>
+  );
+});
 
 const OverlayPicture = ({
   index,
