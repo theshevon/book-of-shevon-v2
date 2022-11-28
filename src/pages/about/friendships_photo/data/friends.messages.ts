@@ -3,7 +3,7 @@ import { Locale } from '../../../../util/localisation/locale_provider';
 export const FriendsMessages = {
 
   asilTooltipLabel: {
-    [Locale.ENGLISH]: 'Asil',
+    [Locale.ENGLISH]: 'asil',
     [Locale.KOREAN]: '',
   },
 
@@ -13,17 +13,17 @@ export const FriendsMessages = {
   },
 
   cissaTooltipLabel: {
-    [Locale.ENGLISH]: 'Raj, Grace, Jonathan and Michael',
+    [Locale.ENGLISH]: 'raj, grace, jonathan and michael',
     [Locale.KOREAN]: '',
   },
 
   cissaDesc: {
-    [Locale.ENGLISH]: 'Raj, Grace, Jonathan and Michael Desc',
+    [Locale.ENGLISH]: 'raj, grace, jonathan and michael Desc',
     [Locale.KOREAN]: '',
   },
 
   curzonTooltipLabel: {
-    [Locale.ENGLISH]: 'Toby, Mia, Maiko and Florian',
+    [Locale.ENGLISH]: 'toby, mia, maiko and florian',
     [Locale.KOREAN]: '',
   },
 
@@ -33,7 +33,7 @@ export const FriendsMessages = {
   },
 
   familyTooltipLabel: {
-    [Locale.ENGLISH]: 'My family',
+    [Locale.ENGLISH]: 'my family',
     [Locale.KOREAN]: '',
   },
 
@@ -43,7 +43,7 @@ export const FriendsMessages = {
   },
 
   joshTooltipLabel: {
-    [Locale.ENGLISH]: 'Josh',
+    [Locale.ENGLISH]: 'josh',
     [Locale.KOREAN]: '',
   },
 
@@ -53,7 +53,7 @@ export const FriendsMessages = {
   },
 
   mihirAndBevTooltipLabel: {
-    [Locale.ENGLISH]: 'Mihir and Bev',
+    [Locale.ENGLISH]: 'mihir and bev',
     [Locale.KOREAN]: '',
   },
 
@@ -63,7 +63,7 @@ export const FriendsMessages = {
   },
 
   johnAndAsilTooltipLabel: {
-    [Locale.ENGLISH]: 'John and Asil',
+    [Locale.ENGLISH]: 'john and asil',
     [Locale.KOREAN]: '',
   },
 
@@ -73,7 +73,7 @@ export const FriendsMessages = {
   },
 
   rohylTooltipLabel: {
-    [Locale.ENGLISH]: 'Rohyl',
+    [Locale.ENGLISH]: 'rohyl',
     [Locale.KOREAN]: '',
   },
 
@@ -83,7 +83,7 @@ export const FriendsMessages = {
   },
 
   stefanTooltipLabel: {
-    [Locale.ENGLISH]: 'Stefan',
+    [Locale.ENGLISH]: 'stefan',
     [Locale.KOREAN]: '',
   },
 
@@ -93,7 +93,7 @@ export const FriendsMessages = {
   },
 
   shevonTooltipLabel: {
-    [Locale.ENGLISH]: 'Young Shevon',
+    [Locale.ENGLISH]: 'young shevon',
     [Locale.KOREAN]: '',
   },
 
