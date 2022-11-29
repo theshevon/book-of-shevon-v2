@@ -1,4 +1,4 @@
-@value colourGrey200, colourGreyTransparentLight, colourGreyTransparentDark from '../../../../ui/colours/colours.module.css';
+@value colourGrey200, colourGreyTransparentLight from '../../../../ui/colours/colours.module.css';
 
 .lightBox {
   width: 100%;
@@ -7,7 +7,7 @@
   z-index: 1000;
   top: 0;
   left: 0;
-  background-color: colourGreyTransparentDark;
+  background-color: colourGreyTransparentLight;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,12 +43,11 @@
 
 .description {
   padding-top: 20px;
-  width: 90%;
+  width: 60%;
 }
 
 @supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .lightBox {
-      background-color: colourGreyTransparentLight;
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
   }

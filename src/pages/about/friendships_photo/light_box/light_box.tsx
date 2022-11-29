@@ -63,7 +63,7 @@ export const LightBox = ({
       />
       { description && (
         <Text.Small
-            alignment='left'
+            alignment='centre'
             className={styles.description}
             appearanceOverride={Appearance.DARK}
         >
