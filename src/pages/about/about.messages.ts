@@ -28,18 +28,18 @@ export const AboutMessages = {
   },
 
   friendDedication: {
-    [Locale.ENGLISH]: 'and of course, making memories with people i care about, which is why this website is dedicated to some of my favourite homies (づ｡◕‿‿◕｡)づ',
-    [Locale.KOREAN]: '그리고 물론 내가 아끼는 사람들과의 추억을 만들기 위해 이 웹사이트는 내가 가장 좋아하는 친구들을 위한 것입니다 (づ｡◕‿‿◕｡)づ',
+    [Locale.ENGLISH]: 'anyway, i\'d like to make a shout out to all my homies, who\'ve constantly made me realise that life doesn\'t have to be that hard. life\'s really short and i think it\'s important to tell people who care about how much you appreciate them, and so, this website is dedicated to some of my favourite people in the world 🫶🏼',
+    [Locale.KOREAN]: '어쨌든 인생이 그렇게 힘들 필요는 없다는 것을 끊임없이 깨닫게 해준 친구들에게 큰 소리로 외치고 싶습니다. 인생은 정말 짧고 당신이 그들에게 얼마나 감사하고 있는지 관심 있는 사람들에게 말하는 것이 중요하다고 생각합니다. 그래서 이 웹사이트는 제가 세상에서 가장 좋아하는 사람들에게 바칩니다 🫶🏼',
   },
 
   hint: {
-    [Locale.ENGLISH]: '(click on the pics to find out more! 😬)',
-    [Locale.KOREAN]: '(자세한 내용을 보려면 사진을 클릭하세요! 😬)',
+    [Locale.ENGLISH]: '(hint: click on the pics to find out more! 😬)',
+    [Locale.KOREAN]: '(힌트: 자세한 내용을 보려면 사진을 클릭하세요! 😬)',
   },
 
   thanks: {
-    [Locale.ENGLISH]: 'thanks so much for visiting my website btw! i appreciate you! 🫶🏽',
-    [Locale.KOREAN]: '제 웹사이트 btw를 방문해 주셔서 감사합니다! 감사합니다! 🫶🏽',
+    [Locale.ENGLISH]: 'thanks so much for visiting my website btw!i appreciate you! (づ｡◕‿‿◕｡)づ',
+    [Locale.KOREAN]: '제 웹사이트 btw를 방문해 주셔서 감사합니다! 감사합니다! (づ｡◕‿‿◕｡)づ',
   },
 
   singing: {

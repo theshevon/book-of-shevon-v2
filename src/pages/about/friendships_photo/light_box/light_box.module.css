@@ -55,7 +55,6 @@
 }
 
 @media(min-width: breakpointSmall) {
-
   .description {
     width: 60%;
   }

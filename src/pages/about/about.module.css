@@ -51,6 +51,10 @@
     margin-top: 7.5px;
 }
 
+.resumePlug {
+    margin-bottom: 25px;
+}
+
 @media(min-width: breakpointSmall) {
 
     .personableContent {

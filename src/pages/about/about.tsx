@@ -157,6 +157,7 @@ const ResumePlug = () => {
     <Text.Small
         alignment='centre'
         keepDefaultMargins={true}
+        className={styles.resumePlug}
     >
       { Messages.resumePlug[locale] }
     </Text.Small>

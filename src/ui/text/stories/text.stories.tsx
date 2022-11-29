@@ -34,7 +34,7 @@ const TextStoryWrapper = ({
   alignment: 'left' | 'right' | 'centre' | 'justify',
   fontWeight: 'light' | 'normal' | 'semi-bold' | 'bold',
   textCase: 'none' | 'lowercase' | 'uppercase' | 'capitalise',
-  __themeOverride?: Theme,
+  themeOverride?: Theme,
 }) => (
   <>
     <StoryWrapper
@@ -168,7 +168,7 @@ storiesOf('UI/Text', module)
         >
           <TextStoryWrapper
               testText={text}
-              __themeOverride={Theme.BASIC}
+              themeOverride={Theme.BASIC}
               {...props}
           />
         </div>
@@ -177,7 +177,7 @@ storiesOf('UI/Text', module)
         >
           <TextStoryWrapper
               testText={text}
-              __themeOverride={Theme.EIGHT_BIT}
+              themeOverride={Theme.EIGHT_BIT}
               {...props}
           />
         </div>
