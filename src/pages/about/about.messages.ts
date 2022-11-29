@@ -38,8 +38,8 @@ export const AboutMessages = {
   },
 
   thanks: {
-    [Locale.ENGLISH]: 'thanks so much for visiting my website btw! dingding and i appreciate you!',
-    [Locale.KOREAN]: '그건 그렇고 내 웹 사이트를 방문해 주셔서 감사합니다! dingding과 나는 당신을 감사합니다!',
+    [Locale.ENGLISH]: 'thanks so much for visiting my website btw! i appreciate you! 🫶🏽',
+    [Locale.KOREAN]: '제 웹사이트 btw를 방문해 주셔서 감사합니다! 감사합니다! 🫶🏽',
   },
 
   singing: {
