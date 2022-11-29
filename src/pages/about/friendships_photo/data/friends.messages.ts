@@ -4,7 +4,7 @@ export const FriendsMessages = {
 
   asilTooltipLabel: {
     [Locale.ENGLISH]: 'asil',
-    [Locale.KOREAN]: '',
+    [Locale.KOREAN]: '아실',
   },
 
   asilDesc: {
@@ -14,7 +14,7 @@ export const FriendsMessages = {
 
   cissaTooltipLabel: {
     [Locale.ENGLISH]: 'raj, grace, jonathan and michael',
-    [Locale.KOREAN]: '',
+    [Locale.KOREAN]: '주권, 우아함, 홍옥 그리고 남자 이름',
   },
 
   cissaDesc: {
@@ -24,7 +24,7 @@ export const FriendsMessages = {
 
   curzonTooltipLabel: {
     [Locale.ENGLISH]: 'toby, mia, maiko and florian',
-    [Locale.KOREAN]: '',
+    [Locale.KOREAN]: '토비, ​​미아, 마이코, 플로리안',
   },
 
   curzonDesc: {
@@ -34,7 +34,7 @@ export const FriendsMessages = {
 
   familyTooltipLabel: {
     [Locale.ENGLISH]: 'my family',
-    [Locale.KOREAN]: '',
+    [Locale.KOREAN]: '나의 가족',
   },
 
   familyDesc: {
@@ -44,7 +44,7 @@ export const FriendsMessages = {
 
   joshTooltipLabel: {
     [Locale.ENGLISH]: 'josh',
-    [Locale.KOREAN]: '',
+    [Locale.KOREAN]: '조롱',
   },
 
   joshDesc: {
@@ -54,7 +54,7 @@ export const FriendsMessages = {
 
   mihirAndBevTooltipLabel: {
     [Locale.ENGLISH]: 'mihir and bev',
-    [Locale.KOREAN]: '',
+    [Locale.KOREAN]: '미히르와 베벌리',
   },
 
   mihirAndBevDesc: {
@@ -64,7 +64,7 @@ export const FriendsMessages = {
 
   johnAndAsilTooltipLabel: {
     [Locale.ENGLISH]: 'john and asil',
-    [Locale.KOREAN]: '',
+    [Locale.KOREAN]: '존과 아실',
   },
 
   johnAndAsilDesc: {
@@ -84,7 +84,7 @@ export const FriendsMessages = {
 
   stefanTooltipLabel: {
     [Locale.ENGLISH]: 'stefan',
-    [Locale.KOREAN]: '',
+    [Locale.KOREAN]: '스테판',
   },
 
   stefanDesc: {
@@ -94,7 +94,7 @@ export const FriendsMessages = {
 
   shevonTooltipLabel: {
     [Locale.ENGLISH]: 'young shevon',
-    [Locale.KOREAN]: '',
+    [Locale.KOREAN]: '젊은 셰본',
   },
 
   shevonDesc: {
