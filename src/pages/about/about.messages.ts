@@ -38,7 +38,7 @@ export const AboutMessages = {
   },
 
   thanks: {
-    [Locale.ENGLISH]: 'thanks so much for visiting my website btw!i appreciate you! (づ｡◕‿‿◕｡)づ',
+    [Locale.ENGLISH]: 'thanks so much for visiting my website btw! i appreciate you! (づ｡◕‿‿◕｡)づ',
     [Locale.KOREAN]: '제 웹사이트 btw를 방문해 주셔서 감사합니다! 감사합니다! (づ｡◕‿‿◕｡)づ',
   },
 
