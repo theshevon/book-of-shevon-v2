@@ -20,13 +20,6 @@ type FriendPicture = {
 
 export const Friends: FriendPicture[] = [
   {
-    id: 'asil',
-    imageSrc: asilImgSrc,
-    tooltipLabel: (locale: Locale) => Messages.asilTooltipLabel[locale],
-    tooltipDirection: 'right',
-    description: (locale: Locale) => Messages.asilDesc[locale],
-  },
-  {
     id: 'cissa',
     imageSrc: cissaImgSrc,
     tooltipLabel: (locale: Locale) => Messages.cissaTooltipLabel[locale],
@@ -34,18 +27,11 @@ export const Friends: FriendPicture[] = [
     description: (locale: Locale) => Messages.cissaDesc[locale],
   },
   {
-    id: 'curzon',
-    imageSrc: curzonImgSrc,
-    tooltipLabel: (locale: Locale) => Messages.curzonTooltipLabel[locale],
-    tooltipDirection: 'left',
-    description: (locale: Locale) => Messages.curzonDesc[locale],
-  },
-  {
-    id: 'family',
-    imageSrc: familyImgSrc,
-    tooltipLabel: (locale: Locale) => Messages.familyTooltipLabel[locale],
-    tooltipDirection: 'bottom',
-    description: (locale: Locale) => Messages.familyDesc[locale],
+    id: 'asil',
+    imageSrc: asilImgSrc,
+    tooltipLabel: (locale: Locale) => Messages.asilTooltipLabel[locale],
+    tooltipDirection: 'right',
+    description: (locale: Locale) => Messages.asilDesc[locale],
   },
   {
     id: 'johnAsil',
@@ -62,11 +48,25 @@ export const Friends: FriendPicture[] = [
     description: (locale: Locale) => Messages.joshDesc[locale],
   },
   {
-    id: 'mihirBev',
-    imageSrc: mihirBevImgSrc,
-    tooltipLabel: (locale: Locale) => Messages.mihirAndBevTooltipLabel[locale],
+    id: 'curzon',
+    imageSrc: curzonImgSrc,
+    tooltipLabel: (locale: Locale) => Messages.curzonTooltipLabel[locale],
+    tooltipDirection: 'left',
+    description: (locale: Locale) => Messages.curzonDesc[locale],
+  },
+  {
+    id: 'shevon',
+    imageSrc: shevonImgSrc,
+    tooltipLabel: (locale: Locale) => Messages.shevonTooltipLabel[locale],
     tooltipDirection: 'bottom',
-    description: (locale: Locale) => Messages.mihirAndBevDesc[locale],
+    description: (locale: Locale) => Messages.shevonDesc[locale],
+  },
+  {
+    id: 'family',
+    imageSrc: familyImgSrc,
+    tooltipLabel: (locale: Locale) => Messages.familyTooltipLabel[locale],
+    tooltipDirection: 'bottom',
+    description: (locale: Locale) => Messages.familyDesc[locale],
   },
   {
     id: 'stefan',
@@ -76,10 +76,10 @@ export const Friends: FriendPicture[] = [
     description: (locale: Locale) => Messages.stefanDesc[locale],
   },
   {
-    id: 'shevon',
-    imageSrc: shevonImgSrc,
-    tooltipLabel: (locale: Locale) => Messages.shevonTooltipLabel[locale],
+    id: 'mihirBev',
+    imageSrc: mihirBevImgSrc,
+    tooltipLabel: (locale: Locale) => Messages.mihirAndBevTooltipLabel[locale],
     tooltipDirection: 'bottom',
-    description: (locale: Locale) => Messages.shevonDesc[locale],
+    description: (locale: Locale) => Messages.mihirAndBevDesc[locale],
   },
 ];

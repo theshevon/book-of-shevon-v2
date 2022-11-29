@@ -13,8 +13,8 @@ import { LightBox } from './light_box/light_box';
 import { Tooltip } from './tooltip/tooltip';
 
 type OverlayFriendPictureProps = {
-  index: number,
   id: string,
+  delayMultiple: number,
   imageSrc: string,
   tooltipLabel: (locale: Locale) => string,
   tooltipDirection: 'top' | 'bottom' | 'left' | 'right',
@@ -22,6 +22,7 @@ type OverlayFriendPictureProps = {
 };
 
 const MEME_REF_URL = 'https://www.youtube.com/watch?v=x2mS3uDqQL4&ab_channel=ThingsICantFindOtherwise';
+const DELAY_MS = 600;
 
 export const FriendshipsPhoto = React.memo(() => {
 
@@ -50,23 +51,23 @@ export const FriendshipsPhoto = React.memo(() => {
       { FriendsPictureData.map((friendPictureData, index) => (
         <OverlayPicture
             key={index}
-            index={index + 1}
+            delayMultiple={index + 1}
             {...friendPictureData}
         />
       )) }
       <OverlayElement
           id='dingding'
-          index={FriendsPictureData.length + 1}
+          delayMultiplier={FriendsPictureData.length + 1}
           imageSrc={dingDingImgSrc}
       />
       <OverlayElement
           id='letterT'
-          index={FriendsPictureData.length + 2}
+          delayMultiplier={FriendsPictureData.length + 2}
           imageSrc={letterTImgSrc}
       />
       <OverlayElement
           id='letterM'
-          index={FriendsPictureData.length + 3}
+          delayMultiplier={FriendsPictureData.length + 3}
           imageSrc={letterMImgSrc}
       />
     </>
@@ -90,8 +91,8 @@ export const FriendshipsPhoto = React.memo(() => {
 });
 
 const OverlayPicture = ({
-  index,
   id,
+  delayMultiple,
   imageSrc,
   tooltipLabel,
   tooltipDirection,
@@ -104,8 +105,8 @@ const OverlayPicture = ({
   const [showLightBox, setShowLightBox] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setWaitTimeElapsed(true), index * 600);
-  }, [index]);
+    setTimeout(() => setWaitTimeElapsed(true), delayMultiple * DELAY_MS);
+  }, [delayMultiple]);
 
   const onImgClick = () => {
     setShowLightBox(true);
@@ -175,11 +176,11 @@ const OverlayPicture = ({
 
 const OverlayElement = ({
   id,
-  index,
+  delayMultiplier,
   imageSrc,
 }: {
   id: string,
-  index: number,
+  delayMultiplier: number,
   imageSrc: string,
 }) => {
 
@@ -187,8 +188,8 @@ const OverlayElement = ({
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setWaitTimeElapsed(true), index * 600);
-  }, [index]);
+    setTimeout(() => setWaitTimeElapsed(true), delayMultiplier * DELAY_MS);
+  }, [delayMultiplier]);
 
   return (
     <div
