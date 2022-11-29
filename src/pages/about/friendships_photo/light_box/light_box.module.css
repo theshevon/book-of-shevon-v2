@@ -43,6 +43,7 @@
 
 .description {
   padding-top: 20px;
+  width: 90%;
 }
 
 @supports((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
