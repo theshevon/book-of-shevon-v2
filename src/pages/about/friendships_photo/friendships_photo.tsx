@@ -24,6 +24,7 @@ type OverlayFriendPictureProps = {
 
 const MEME_REF_URL = 'https://www.youtube.com/watch?v=x2mS3uDqQL4&ab_channel=ThingsICantFindOtherwise';
 const DELAY_MS = 600;
+const INTERSECTION_THRESHOLD = 0.9;
 
 export const FriendshipsPhoto = React.memo(() => {
 
@@ -33,12 +34,12 @@ export const FriendshipsPhoto = React.memo(() => {
   useEffect(() => {
     const callback = (entries: IntersectionObserverEntry[]) => {
       for (let i=0; i<entries.length; i++) {
-        if (entries[i].isIntersecting) {
+        if (entries[i].isIntersecting && entries[i].intersectionRatio >= INTERSECTION_THRESHOLD && entries[i].intersectionRatio < 1) {
           setShowOverlayElements(true);
         }
       }
     };
-    const observer = new IntersectionObserver(callback, { threshold: 1 });
+    const observer = new IntersectionObserver(callback, { threshold: INTERSECTION_THRESHOLD });
     const element = ref.current;
     if (element) observer.observe(element);
 
