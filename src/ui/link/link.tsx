@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
-import { Theme, useThemeContext } from '../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_provider';
 import type { IconDefinition } from '../icons/icon/icon';
 import { Icon } from '../icons/icon/icon';
 import styles from './link.module.css';
@@ -21,7 +21,7 @@ export const Link: FC<LinkProps> = ({
   className,
   children,
 }) => {
-  const { theme } = useThemeContext();
+  const { theme, appearance } = useThemeContext();
   const linkAttributes = {
     target: targetSelf ? '_self' : '_blank',
     rel: !targetSelf ? 'noopener noreferrer' : undefined,
@@ -31,6 +31,7 @@ export const Link: FC<LinkProps> = ({
         href={url}
         className={classNames(styles.link, className, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
+          [styles.dark]: appearance === Appearance.DARK,
         })}
         {...linkAttributes}
     >

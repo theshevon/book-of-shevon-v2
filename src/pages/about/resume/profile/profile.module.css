@@ -1,0 +1,32 @@
+@value colourGrey100, colourDarkModeGrey400 from '../../../../ui/colours/colours.module.css';
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.underline {
+    position: absolute;
+    bottom: 17.5px;
+    height: 2px;
+    width: 75px;
+    background-color: colourGrey100;
+}
+
+.eightBit .underline {
+    bottom: 10px;
+}
+
+.eightBit.dark .underline {
+    background-color: colourDarkModeGrey400;
+}
+
+@media(min-width: breakpointSmall) {
+
+    .picture {
+        height: 200px;
+        width: 200px;
+    }
+}

@@ -1,18 +1,18 @@
 import classNames from 'classnames';
 import React from 'react';
 import type { FC } from 'react';
-import { Theme, useThemeContext } from '../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { Text } from './../text/text';
 import styles from './capsule.module.css';
 
 type CapsuleProps = {
   className?: string,
-  retainDarkTextOnDarkMode?: boolean,
+  appearanceOverride?: Appearance,
 }
 
 export const Capsule: FC<CapsuleProps> = ({
   className,
-  retainDarkTextOnDarkMode = false,
+  appearanceOverride,
   children,
 }) => {
   const { theme } = useThemeContext();
@@ -23,7 +23,7 @@ export const Capsule: FC<CapsuleProps> = ({
         })}
     >
       <Text.ExtraSmall
-          retainDarkTextOnDarkMode={retainDarkTextOnDarkMode}
+          appearanceOverride={appearanceOverride}
       >
         { children }
       </Text.ExtraSmall>

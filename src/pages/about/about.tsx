@@ -1,22 +1,36 @@
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { PageContainer } from '../../ui/page_container/page_container';
+import { Text } from '../../ui/text/text';
 import { useLocaleContext } from '../../util/localisation/locale_provider';
 import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { AboutMessages as Messages } from './about.messages';
 import styles from './about.module.css';
-import { TertiaryEducation } from './data/education/education';
-import { CommercialExperiences, VolunteerExperiences } from './data/experiences/experiences';
-import { SkillsLists } from './data/skills/skills';
-import { Education } from './education/education';
-import { Experiences } from './experiences/experiences';
-import { Profile } from './profile/profile';
-import { Section } from './section/section';
-import { Skills } from './skills/skills';
+import { FriendshipsPhoto } from './friendships_photo/friendships_photo';
+import profileImgSrc from './profile.jpeg';
+import { Resume } from './resume/resume';
 
 export const About = () => {
 
+  const Content = () => (
+    <ContentContainer>
+      <ProfilePicture/>
+      <PersonableContent/>
+      <HorizontalDivider/>
+      <ResumePlug/>
+      <Resume/>
+    </ContentContainer>
+  );
+
+  return (
+    <PageContainer
+        Content={Content}
+    />
+  );
+};
+
+const ContentContainer: React.FC = ({ children }) => {
   const { locale } = useLocaleContext();
 
   useEffect(() => {
@@ -25,60 +39,127 @@ export const About = () => {
 
   const { theme, appearance } = useThemeContext();
 
-  const Content = () => (
-
+  return (
     <div
         className={classNames(styles.aboutPage, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
           [styles.dark]: appearance === Appearance.DARK,
         })}
     >
-
-      { /* PROFILE SECTION */ }
-      <Profile/>
-
-      { /* WORK EXPERIENCE SECTION */ }
-      <Section
-          title='commercialXp'
-      >
-        <Experiences
-            experiences={CommercialExperiences}
-        />
-      </Section>
-
-      { /* SKILLS SECTION */ }
-      <Section
-          title='skills'
-      >
-        <Skills
-            skillsLists={SkillsLists}
-        />
-      </Section>
-
-      { /* EDUCATION SECTION */ }
-      <Section
-          title='education'
-      >
-        <Education
-            education={TertiaryEducation}
-        />
-      </Section>
-
-      { /* VOLUNTEER EXPERIENCE SECTION */ }
-      <Section
-          title='volunteerXp'
-      >
-        <Experiences
-            experiences={VolunteerExperiences}
-        />
-      </Section>
-
+      { children }
     </div>
   );
+};
 
+const ProfilePicture = () => {
+  const { locale } = useLocaleContext();
   return (
-    <PageContainer
-        Content={Content}
+    <img
+        className={styles.picture}
+        src={profileImgSrc}
+        alt={Messages.altTag[locale]}
     />
+  );
+};
+
+const PersonableContent = () => {
+  const { locale } = useLocaleContext();
+  return (
+    <div
+        className={styles.personableContent}
+    >
+      <Text.LargeTitle
+          alignment='centre'
+          keepDefaultMargins={true}
+      >
+        { Messages.hello[locale] }
+      </Text.LargeTitle>
+      <Text.Small>
+        { Messages.welcome[locale] }
+      </Text.Small>
+      <Text.Small
+          keepDefaultMargins={true}
+      >
+        { Messages.rundown[locale] }
+      </Text.Small>
+      <InterestsList/>
+      <Text.Small>
+        { Messages.friendDedication[locale] }
+      </Text.Small>
+      <Text.UltraSmall
+          alignment='centre'
+          className={styles.hint}
+      >
+        { Messages.hint[locale] }
+      </Text.UltraSmall>
+      <FriendshipsPhoto/>
+      <Text.Small
+          alignment='centre'
+          keepDefaultMargins={true}
+      >
+        { Messages.thanks[locale] }
+      </Text.Small>
+    </div>);
+};
+
+const InterestsList = () => {
+  const { locale } = useLocaleContext();
+  const { appearance } = useThemeContext();
+  return (
+    <ul
+        className={classNames(styles.interestsList, {
+          [styles.dark]: appearance === Appearance.DARK,
+        })}
+    >
+      <li>
+        <Text.Small>
+          { Messages.singing[locale] }
+        </Text.Small>
+      </li>
+      <li>
+        <Text.Small>
+          { Messages.drawing[locale] }
+        </Text.Small>
+      </li>
+      <li>
+        <Text.Small>
+          { Messages.basketball[locale] }
+        </Text.Small>
+      </li>
+      <li>
+        <Text.Small>
+          { Messages.workingOut[locale] }
+        </Text.Small>
+      </li>
+      <li>
+        <Text.Small>
+          { Messages.makingDumbJokes[locale] }
+        </Text.Small>
+      </li>
+    </ul>
+  );
+};
+
+const HorizontalDivider = () => {
+  const { appearance } = useThemeContext();
+  return (
+    <div
+        className={classNames(styles.horizontalDivider, {
+          [styles.dark]: appearance === Appearance.DARK,
+        })}
+    ></div>
+  );
+};
+
+const ResumePlug = () => {
+  const { locale } = useLocaleContext();
+  return (
+    <Text.Small
+        alignment='centre'
+        keepDefaultMargins={true}
+        className={styles.resumePlug}
+    >
+      { Messages.resumePlug[locale] }
+    </Text.Small>
   );
 };

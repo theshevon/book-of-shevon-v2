@@ -56,7 +56,7 @@ export const TechCapsule = ({
         className={classNames(getTechClassName(tech), {
           [styles.dark]: appearance === Appearance.DARK,
         })}
-        retainDarkTextOnDarkMode={true}
+        appearanceOverride={Appearance.LIGHT}
     >
       { tech }
     </Capsule>

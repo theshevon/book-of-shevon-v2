@@ -19,11 +19,11 @@ const FONT_WEIGHT_OPTS: Record<string, 'light' | 'normal' | 'semi-bold' | 'bold'
   'Bold': 'bold',
 };
 
-const TEXT_CASE_OPTS: Record<string, 'none' | 'lowercase' | 'uppercase' | 'capitalize'> = {
+const TEXT_CASE_OPTS: Record<string, 'none' | 'lowercase' | 'uppercase' | 'capitalise'> = {
   'None': 'none',
   'Lowercase': 'lowercase',
   'Uppercase': 'uppercase',
-  'Capitalize': 'capitalize',
+  'Capitalise': 'capitalise',
 };
 
 const TextStoryWrapper = ({
@@ -33,8 +33,8 @@ const TextStoryWrapper = ({
   testText: string,
   alignment: 'left' | 'right' | 'centre' | 'justify',
   fontWeight: 'light' | 'normal' | 'semi-bold' | 'bold',
-  textCase: 'none' | 'lowercase' | 'uppercase' | 'capitalize',
-  __themeOverride?: Theme,
+  textCase: 'none' | 'lowercase' | 'uppercase' | 'capitalise',
+  themeOverride?: Theme,
 }) => (
   <>
     <StoryWrapper
@@ -168,7 +168,7 @@ storiesOf('UI/Text', module)
         >
           <TextStoryWrapper
               testText={text}
-              __themeOverride={Theme.BASIC}
+              themeOverride={Theme.BASIC}
               {...props}
           />
         </div>
@@ -177,7 +177,7 @@ storiesOf('UI/Text', module)
         >
           <TextStoryWrapper
               testText={text}
-              __themeOverride={Theme.EIGHT_BIT}
+              themeOverride={Theme.EIGHT_BIT}
               {...props}
           />
         </div>

@@ -2,12 +2,12 @@ import { Locale } from '../../../../../util/localisation/locale_provider';
 
 export const ThemeAppearanceButtonMessages = {
 
-  Theme: {
+  theme: {
     [Locale.ENGLISH]: 'Theme',
     [Locale.KOREAN]: '주제',
   },
 
-  Appearance: {
+  appearance: {
     [Locale.ENGLISH]: 'Appearance',
     [Locale.KOREAN]: '모습',
   },

@@ -49,7 +49,7 @@ export const ProjectsMessages = {
 
   LubyJumpDesc: {
     [Locale.ENGLISH]: 'A \'Flappy Bird\'-style mobile game. The \'pipes\' in this game are dynamic and so, make the game quite difficult to beat. The current high score sits at 115',
-    [Locale.KOREAN]: '\'플래피 버드\' 스타일의 모바일 게임. 이 게임의 \'파이프\'는 역동적이어서 게임을 이기기가 매우 어렵습니다. 현재 최고 점수는 115점입니다.',
+    [Locale.KOREAN]: '\'플래피 버드\' 스타일의 모바일 게임. 이 게임의 \'파이프\'는 역동적이어서 게임을 이기기가 매우 어렵습니다. 현재 최고 점수는 115점입니다',
   },
 
   TheTreasurePlatform: {

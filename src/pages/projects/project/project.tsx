@@ -60,7 +60,7 @@ export const Project = ({
       <Text.Small
           alignment='centre'
           className={styles.description}
-          retainDarkTextOnDarkMode={theme === Theme.EIGHT_BIT}
+          appearanceOverride={theme === Theme.EIGHT_BIT ? Appearance.LIGHT : undefined}
       >
         { description(locale) }
       </Text.Small>
@@ -72,7 +72,7 @@ export const Project = ({
         <Text.Medium
             alignment='centre'
             fontWeight='bold'
-            retainDarkTextOnDarkMode={theme === Theme.EIGHT_BIT}
+            appearanceOverride={theme === Theme.EIGHT_BIT ? Appearance.LIGHT : undefined}
         >
           { Messages.TechStack[locale] }
         </Text.Medium>
@@ -89,7 +89,7 @@ export const Project = ({
           <Text.Medium
               alignment='centre'
               fontWeight='bold'
-              retainDarkTextOnDarkMode={theme === Theme.EIGHT_BIT}
+              appearanceOverride={theme === Theme.EIGHT_BIT ? Appearance.LIGHT : undefined}
           >
             { Messages.OtherContributors[locale] }
           </Text.Medium>

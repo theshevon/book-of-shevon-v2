@@ -1,0 +1,84 @@
+@value colourDarkModeGrey50 from '../../../../ui/colours/colours.module.css';
+
+@value tooltipMargin: 40px;
+@value tooltipArrowSize: 6px;
+
+.tooltip {
+  position: absolute;
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px;
+  font-size: 14px;
+  font-family: sans-serif;
+  line-height: 1;
+  z-index: 200;
+  white-space: nowrap;
+  background-color: black;
+}
+
+.tooltip::before {
+  content: " ";
+  left: 50%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-width: tooltipArrowSize;
+  margin-left: calc(tooltipArrowSize * -1);
+}
+
+.tooltipLabel {
+  color: white;
+}
+
+.tooltip.dark .tooltipLabel {
+  color: colourDarkModeGrey50;
+}
+
+.tooltip.top {
+  top: calc(tooltipMargin * -1);
+}
+
+.tooltip.top::before {
+  top: 100%;
+  border-top-color: black;
+}
+
+.tooltip.right {
+  left: calc(100% + calc(tooltipMargin * 0.25));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+
+.tooltip.right::before {
+  left: calc(tooltipArrowSize * -1);
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  border-right-color: black;
+}
+
+.tooltip.bottom {
+  bottom: calc(tooltipMargin * -1);
+}
+
+.tooltip.bottom::before {
+  bottom: 100%;
+  border-bottom-color: black;
+}
+
+.tooltip.left {
+  left: auto;
+  right: calc(100% + calc(tooltipMargin * 0.25));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+
+.tooltip.left::before {
+  left: auto;
+  right: calc(tooltipArrowSize * -2);
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  border-left-color: black;
+}

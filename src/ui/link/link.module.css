@@ -1,4 +1,4 @@
-@value colourGrey100, colourGrey200, colourGrey300, colourGrey500 from './../colours/colours.module.css';
+@value colourGrey100, colourGrey200, colourGrey300, colourGrey500, colourDarkModeGrey50 from './../colours/colours.module.css';
 @value bodyTextSizeXSmall, eightBitFontScaleFactor from './../text/text.module.css';
 
 .eightBit {
@@ -8,6 +8,10 @@
 .link {
   color: colourGrey500;
   text-decoration: none;
+}
+
+.link.dark {
+  color: colourDarkModeGrey50;
 }
 
 .link:hover {
