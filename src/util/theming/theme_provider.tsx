@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import type { FC } from 'react';
 import { Locale } from '../localisation/locale_provider';
-import { getRandomNumInRange } from '../math';
 import { ThemeProviderMessages as Messages } from './theme_provider.messages';
 
 const LOCAL_STORAGE_KEY_THEME = '_bos_theme';
@@ -48,7 +47,7 @@ const getTheme = (value: string | null | undefined): Theme => {
     case '8bit':
       return Theme.EIGHT_BIT;
     default:
-      return THEMES[getRandomNumInRange(0, THEMES.length - 1)].theme;
+      return Theme.BASIC;
   }
 };
 
