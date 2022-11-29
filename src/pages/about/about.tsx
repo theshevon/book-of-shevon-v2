@@ -7,7 +7,6 @@ import { Appearance, Theme, useThemeContext } from '../../util/theming/theme_pro
 import { updateDocumentHeader } from '../../util/title_manager';
 import { AboutMessages as Messages } from './about.messages';
 import styles from './about.module.css';
-import dingDingImgSrc from './dingding.png';
 import { FriendshipsPhoto } from './friendships_photo/friendships_photo';
 import profileImgSrc from './profile.jpeg';
 import { Resume } from './resume/resume';
@@ -100,10 +99,6 @@ const PersonableContent = () => {
       >
         { Messages.thanks[locale] }
       </Text.Small>
-      <img
-          src={dingDingImgSrc}
-          width='25px'
-      ></img>
     </div>);
 };
 

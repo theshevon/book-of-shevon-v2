@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from '../../../ui/link/link';
 import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Friends as FriendsPictureData } from './data/friends';
+import dingDingImgSrc from './data/photos/dingding.png';
 import doItForThemImgSrc from './data/photos/do_it_for_them.png';
 import letterMImgSrc from './data/photos/letter_m.png';
 import letterTImgSrc from './data/photos/letter_t.png';
@@ -53,14 +54,19 @@ export const FriendshipsPhoto = React.memo(() => {
             {...friendPictureData}
         />
       )) }
-      <OverlayLetter
-          id='letterT'
+      <OverlayElement
+          id='dingding'
           index={FriendsPictureData.length + 1}
+          imageSrc={dingDingImgSrc}
+      />
+      <OverlayElement
+          id='letterT'
+          index={FriendsPictureData.length + 2}
           imageSrc={letterTImgSrc}
       />
-      <OverlayLetter
+      <OverlayElement
           id='letterM'
-          index={FriendsPictureData.length + 2}
+          index={FriendsPictureData.length + 3}
           imageSrc={letterMImgSrc}
       />
     </>
@@ -167,7 +173,7 @@ const OverlayPicture = ({
   );
 };
 
-const OverlayLetter = ({
+const OverlayElement = ({
   id,
   index,
   imageSrc,

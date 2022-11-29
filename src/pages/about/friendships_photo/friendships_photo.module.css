@@ -116,8 +116,15 @@
 }
 
 .letterT,
-.letterM {
+.letterM,
+.dingding {
   position: absolute;
+}
+
+.dingding {
+  width: 3.5%;
+  left: 30.75%;
+  top: 17%;
 }
 
 .letterT {

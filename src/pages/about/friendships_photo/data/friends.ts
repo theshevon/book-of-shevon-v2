@@ -7,7 +7,6 @@ import familyImgSrc from './photos/family.png';
 import johnAsilImgSrc from './photos/john_asil.png';
 import joshImgSrc from './photos/josh.png';
 import mihirBevImgSrc from './photos/mihir_bev.png';
-import rohylImgSrc from './photos/rohyl.png';
 import shevonImgSrc from './photos/shevon.png';
 import stefanImgSrc from './photos/stefan.png';
 
@@ -68,13 +67,6 @@ export const Friends: FriendPicture[] = [
     tooltipLabel: (locale: Locale) => Messages.mihirAndBevTooltipLabel[locale],
     tooltipDirection: 'bottom',
     description: (locale: Locale) => Messages.mihirAndBevDesc[locale],
-  },
-  {
-    id: 'rohyl',
-    imageSrc: rohylImgSrc,
-    tooltipLabel: (locale: Locale) => Messages.rohylTooltipLabel[locale],
-    tooltipDirection: 'top',
-    description: (locale: Locale) => Messages.rohylDesc[locale],
   },
   {
     id: 'stefan',

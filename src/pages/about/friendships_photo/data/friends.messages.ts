@@ -72,16 +72,6 @@ export const FriendsMessages = {
     [Locale.KOREAN]: 'john은 우리가 대학에 있을 때 정보 보안 동아리에 가입했을 때 만났는데, 그곳에서 그는 워크샵을 운영하는 슈퍼스타였습니다. 그는 멍청한 농담을 너무 많이 하지만(내가 웃은 죄가 있다), 그는 내가 만난 가장 진실한 사람들 중 한 명이다',
   },
 
-  rohylTooltipLabel: {
-    [Locale.ENGLISH]: 'rohyl',
-    [Locale.KOREAN]: '',
-  },
-
-  rohylDesc: {
-    [Locale.ENGLISH]: 'Rohyl desc',
-    [Locale.KOREAN]: '',
-  },
-
   stefanTooltipLabel: {
     [Locale.ENGLISH]: 'stefan',
     [Locale.KOREAN]: '스테판',
