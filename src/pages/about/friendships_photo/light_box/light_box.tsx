@@ -3,6 +3,7 @@ import { IconButton } from '../../../../ui/button/button';
 import { CloseIconDefinition } from '../../../../ui/icons/definitions/close';
 import { Text } from '../../../../ui/text/text';
 import { Locale, useLocaleContext } from '../../../../util/localisation/locale_provider';
+import { Appearance } from '../../../../util/theming/theme_provider';
 import styles from './light_box.module.css';
 
 export const LightBox = ({
@@ -64,6 +65,7 @@ export const LightBox = ({
         <Text.Small
             alignment='left'
             className={styles.description}
+            appearanceOverride={Appearance.DARK}
         >
           { description(locale) }
         </Text.Small>

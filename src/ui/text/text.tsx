@@ -21,9 +21,8 @@ type TextProps = {
   keepDefaultMargins?: boolean,
   textCase?: TextCase,
   className?: string,
-  retainDarkTextOnDarkMode?: boolean,
-  // ONLY USE FOR TESTING
-  __themeOverride?: Theme,
+  appearanceOverride?: Appearance,
+  themeOverride?: Theme,
 }
 
 const getSizeClassName = (size: Size | undefined) => {
@@ -102,7 +101,6 @@ const getClassNames = ({
   keepDefaultMargins = false,
   textCase,
   theme,
-  retainDarkTextOnDarkMode = false,
   appearance,
   className,
 }: {
@@ -122,7 +120,7 @@ const getClassNames = ({
     getTextCaseClassName(textCase),
     getThemeClassName(theme),
     {
-      [styles.dark]: appearance === Appearance.DARK && !retainDarkTextOnDarkMode,
+      [styles.dark]: appearance === Appearance.DARK,
     },
     className,
   );
@@ -137,9 +135,9 @@ const renderText = ({
   keepDefaultMargins,
   textCase,
   theme,
-  retainDarkTextOnDarkMode,
-  __themeOverride,
+  themeOverride,
   appearance,
+  appearanceOverride,
   className,
   children,
 }: {
@@ -149,12 +147,15 @@ const renderText = ({
   appearance: Appearance,
   children?: ReactNode,
 } & TextProps) => {
-  if (__themeOverride) {
-    theme = __themeOverride;
+  if (themeOverride) {
+    theme = themeOverride;
+  }
+  if (appearanceOverride) {
+    appearance = appearanceOverride;
   }
   return createElement(
     tag,
-    { className: getClassNames({ size, alignment, fontWeight, italicized, keepDefaultMargins, textCase, theme, retainDarkTextOnDarkMode, appearance, className }) },
+    { className: getClassNames({ size, alignment, fontWeight, italicized, keepDefaultMargins, textCase, theme, appearance, className }) },
     children,
   );
 };

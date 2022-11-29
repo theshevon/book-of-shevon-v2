@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { Link } from '../../../../ui/link/link';
 import { Text } from '../../../../ui/text/text';
-import { Theme, useThemeContext } from '../../../../util/theming/theme_provider';
+import { Appearance, Theme, useThemeContext } from '../../../../util/theming/theme_provider';
 
 import styles from './blog_post.module.css';
 
@@ -121,7 +121,7 @@ const Tag = ({
           alignment='centre'
           textCase='lowercase'
           className={styles.tagText}
-          retainDarkTextOnDarkMode={true}
+          appearanceOverride={Appearance.LIGHT}
       >
         { tag }
       </Text.ExtraSmall>

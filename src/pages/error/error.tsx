@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocaleContext } from '../../util/localisation/locale_provider';
+import { Appearance } from '../../util/theming/theme_provider';
 import { updateDocumentHeader } from '../../util/title_manager';
 import { Text } from './../../ui/text/text';
 import { getRandomNumInRange } from './../../util/math';
@@ -174,7 +175,7 @@ export const Error = () => {
       >
         <Text.Large
             className={styles.errorMsg}
-            retainDarkTextOnDarkMode={true}
+            appearanceOverride={Appearance.LIGHT}
         >
           { Messages.errorMsgTitle[locale] }
         </Text.Large>
