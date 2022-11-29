@@ -199,6 +199,13 @@
 
 .memeRef {
   position: absolute;
-  right: 10px;
-  bottom: -5px;
+  right: 1%;
+  bottom: -5%;
+}
+
+@media(min-width: breakpointSmall) {
+
+  .memeRef {
+    bottom: -1%;
+  }
 }

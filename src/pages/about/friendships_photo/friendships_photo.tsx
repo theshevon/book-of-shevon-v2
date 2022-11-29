@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from '../../../ui/link/link';
+import { Text } from '../../../ui/text/text';
 import { Locale, useLocaleContext } from '../../../util/localisation/locale_provider';
 import { Friends as FriendsPictureData } from './data/friends';
 import dingDingImgSrc from './data/photos/dingding.png';
@@ -213,7 +214,9 @@ const MemeRef = () => {
         url={MEME_REF_URL}
         className={styles.memeRef}
     >
-      [{ Messages.memeRef[locale] }]
+      <Text.UltraSmall>
+        [{ Messages.memeRef[locale] }]
+      </Text.UltraSmall>
     </Link>
   );
 };
