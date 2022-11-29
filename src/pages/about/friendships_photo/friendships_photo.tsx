@@ -156,7 +156,7 @@ const OverlayPicture = ({
           ></div>
         </div>
       </div>
-      { showLightBox && (
+      { showLightBox && description && (
         <LightBox
             imageSrc={imageSrc}
             description={description}
