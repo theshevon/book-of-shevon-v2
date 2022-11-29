@@ -160,6 +160,7 @@ const OtherContributors = ({
           <CapsuleLink
               url={otherContributor.githubUrl}
               className={styles.contributorCapsule}
+              appearanceOverride={Appearance.LIGHT}
           >
             { otherContributor.name(locale) }
           </CapsuleLink>

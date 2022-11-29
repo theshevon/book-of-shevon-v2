@@ -9,6 +9,7 @@ export type LinkProps = {
   url: string,
   targetSelf?: boolean,
   className?: string,
+  appearanceOverride?: Appearance,
 }
 
 export type IconLinkProps = Omit<LinkProps, 'className'> & {
@@ -19,6 +20,7 @@ export const Link: FC<LinkProps> = ({
   url,
   targetSelf,
   className,
+  appearanceOverride,
   children,
 }) => {
   const { theme, appearance } = useThemeContext();
@@ -26,12 +28,13 @@ export const Link: FC<LinkProps> = ({
     target: targetSelf ? '_self' : '_blank',
     rel: !targetSelf ? 'noopener noreferrer' : undefined,
   };
+  const _appearance = appearanceOverride ? appearanceOverride : appearance;
   return (
     <a
         href={url}
         className={classNames(styles.link, className, {
           [styles.eightBit]: theme === Theme.EIGHT_BIT,
-          [styles.dark]: appearance === Appearance.DARK,
+          [styles.dark]: _appearance === Appearance.DARK,
         })}
         {...linkAttributes}
     >
@@ -43,12 +46,14 @@ export const Link: FC<LinkProps> = ({
 export const ButtonLink: FC<LinkProps> = ({
   url,
   className,
+  appearanceOverride,
   children,
 }) => (
   <Link
       url={url}
       targetSelf={true}
       className={classNames(styles.buttonLink, className)}
+      appearanceOverride={appearanceOverride}
   >
     { children }
   </Link>
@@ -57,11 +62,13 @@ export const ButtonLink: FC<LinkProps> = ({
 export const CapsuleLink: FC<LinkProps> = ({
   url,
   className,
+  appearanceOverride,
   children,
 }) => (
   <Link
       url={url}
       className={classNames(styles.capsuleLink, className)}
+      appearanceOverride={appearanceOverride}
   >
     { children }
   </Link>
